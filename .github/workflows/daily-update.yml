@@ -47,7 +47,10 @@ jobs:
           dotnet run --project Tour.Collector -- init
           dotnet run --project Tour.Collector -- restore
 
+      # KTO GW가 장시간 응답 불능인 날에도 복원분(어제 데이터)으로 빌드·배포는 계속한다.
+      # 수집 실패는 그날 갱신만 건너뛰는 것 — 사이트가 하루 통째로 안 나가는 것보다 낫다.
       - name: 축제 수집 (목록 갱신 + 신규 상세 + 이미지 드레인)
+        continue-on-error: true
         run: |
           dotnet run --project Tour.Collector -- festivals
           dotnet run --project Tour.Collector -- details eng
