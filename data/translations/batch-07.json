@@ -1,0 +1,469 @@
+{
+"2028176": {
+  "title": "Heo Jun Festival",
+  "overview": "A festival honoring Heo Jun — Joseon's greatest physician, whose 25-volume medical encyclopedia Donguibogam (1610) is inscribed in UNESCO's Memory of the World — held in the Seoul district where he was born and wrote it. Since 2023 it fills the Seoul Botanic Park lawn with traditional-medicine experiences and performances.",
+  "addr": "161 Magokdong-ro, Gangseo-gu, Seoul",
+  "place": "Seoul Botanic Park lawn",
+  "fee": "Free",
+  "hours": "11:00–21:00",
+  "sponsor": "Gangseo-gu"
+},
+"2754710": {
+  "title": "Korea Forest Expo 2025",
+  "overview": "A national forestry expo at Gonjiam Ceramic Park with 50 institutions and 100 companies: forest-tech exhibitions, a national forest-interpretation contest, carbon-zero camping, and family programs on climate and green living.",
+  "addr": "727 Gyeongchung-daero, Gonjiam-eup, Gwangju-si, Gyeonggi-do",
+  "place": "Gonjiam Ceramic Park",
+  "fee": "Free",
+  "hours": "10:00–21:00",
+  "sponsor": "Korea Forest Service"
+},
+"3551127": {
+  "title": "Gimhae Music Festival 'Salmon'",
+  "overview": "A citizen-run forest music festival since 2006, named for the salmon returning to its home stream — as Gimhae-raised musicians come home to play. Jazz and rock band stages with markets, food, and workshops in Gaya Theme Park.",
+  "addr": "161 Gayatema-gil, Gimhae-si, Gyeongsangnam-do",
+  "place": "Gimhae Gaya Theme Park",
+  "fee": "Free with reservation (park admission on site)",
+  "hours": "12:00–21:00",
+  "sponsor": "Gimhae Culture Network"
+},
+"3545515": {
+  "title": "Seoriji Family Adventure Festival",
+  "overview": "A family festival at Seoriji Eco Park in Daegu styled as an 'adventure forest' — visitors become heroes on a quest through nature-themed challenges and hands-on programs.",
+  "addr": "Dongho-dong, Buk-gu, Daegu",
+  "place": "Seoriji Eco Park",
+  "fee": "Free",
+  "hours": "11:00–17:00",
+  "sponsor": "Buk-gu, Daegu"
+},
+"2561795": {
+  "title": "Yuseong Chrysanthemum Festival",
+  "overview": "Yurim Park at peak chrysanthemum season: flower sculptures, fragrance, and evening performances in Daejeon's hot-spring district. Free, open late.",
+  "addr": "27 Eoeun-ro, Yuseong-gu, Daejeon",
+  "place": "Yurim Park",
+  "fee": "Free (some booths paid)",
+  "hours": "10:00–22:00",
+  "sponsor": "Yuseong-gu, Daejeon"
+},
+"2952484": {
+  "title": "Bbang Bbang Day Cheonan",
+  "overview": "The bread festival of Cheonan — a city proud of its bakery culture — gathering fresh-baked breads and desserts in one big 'bread market' at the stadium plaza, with performances and family programs. Come hungry.",
+  "addr": "208 Beonyeong-ro, Seobuk-gu, Cheonan-si, Chungcheongnam-do",
+  "place": "Cheonan Stadium Oryunmun Plaza",
+  "fee": "Free entry (bread paid)",
+  "hours": "11:00–20:30",
+  "sponsor": "Cheonan City · Korea Bakers Association Cheonan"
+},
+"626944": {
+  "title": "Seoul Silver Grass Festival",
+  "overview": "Haneul (Sky) Park — a 98m hill built on Seoul's former landfill and reborn as an eco-park for the 2002 World Cup — waves with vast eulalia grass fields every October. The festival opens the park late for sunset and night walks through the silver grass with the city skyline beyond. One of Seoul's defining autumn scenes.",
+  "addr": "95 Haneulgongwon-ro, Mapo-gu, Seoul",
+  "place": "Haneul Park, World Cup Park",
+  "fee": "Free",
+  "hours": "10:00–21:00",
+  "sponsor": "Seoul Metropolitan Government"
+},
+"2858894": {
+  "title": "Seongju Gayasan Golden Fields Grasshopper Festival",
+  "overview": "A farm-country festival in the clean valleys below Gayasan: catch grasshoppers in the rice paddies, dig sweet potatoes, fish for apples and catfish — childhood nostalgia for adults, first-time farm play for kids.",
+  "addr": "Suseong-ri, Suryun-myeon, Seongju-gun, Gyeongsangbuk-do",
+  "place": "Suryun-myeon community grounds",
+  "fee": "Free (some programs paid)",
+  "hours": "10:00–17:00",
+  "sponsor": "Festival Committee"
+},
+"3001045": {
+  "title": "Hangang Paper Airplane Festival",
+  "addr": "Yeouido-dong, Yeongdeungpo-gu, Seoul",
+  "place": "Yeouido Hangang Park"
+},
+"2740046": {
+  "title": "Hanbok Culture Week",
+  "overview": "Korea's national hanbok week, held every third week of October with 330 participating venues nationwide: fashion shows, performances, and try-on programs under the banner 'Modern Hanbokpan', with satellite events in Hong Kong, New York, and Berlin.",
+  "addr": "45 Jong-ro 1-gil, Jongno-gu, Seoul",
+  "place": "Uijeongbu-ji Historic Site Plaza",
+  "fee": "Free",
+  "hours": "10:00–18:00",
+  "sponsor": "Ministry of Culture, Sports and Tourism"
+},
+"506376": {
+  "title": "Ganggyeong Jeotgal Festival",
+  "overview": "Ganggyeong was once one of Joseon's three great markets, and its salted-seafood (jeotgal) trade survives as Korea's largest — this riverside festival celebrates that pungent heritage with tastings, kimchi-making with fresh jeotgal, and themed riverside lounges on the Geumgang.",
+  "addr": "45 Geumbaek-ro, Ganggyeong-eup, Nonsan-si, Chungcheongnam-do",
+  "place": "Geumgang riverside, Ganggyeong",
+  "fee": "Free (some programs paid)",
+  "hours": "10:00–20:00",
+  "sponsor": "Nonsan City"
+},
+"1322668": {
+  "title": "Gokseong Simcheong Children's Festival",
+  "overview": "A children's festival at the Gokseong Train Village — the steam-train theme park on the Seomjin River — built on the filial-daughter folktale of Simcheong: character shows, musicals, magic, and mission adventures through the rose garden.",
+  "addr": "232 Gichamaeul-ro, Ogok-myeon, Gokseong-gun, Jeollanam-do",
+  "place": "Gokseong Seomjingang Train Village",
+  "fee": "Paid entry",
+  "hours": "09:00–21:00",
+  "sponsor": "Gokseong County"
+},
+"142233": {
+  "title": "Jeongdong Culture Festival",
+  "overview": "A street festival on Jeongdong-gil — the stone-wall lane by Deoksugung Palace that was the diplomatic quarter of the Korean Empire. Street performances, retro arcades, pump-organ playing, and caricature booths along one of Seoul's most beloved walks.",
+  "addr": "Jeong-dong, Jung-gu, Seoul",
+  "place": "Jeongdong rotary, Deoksugung stone-wall road",
+  "fee": "Free",
+  "hours": "12:00–17:00",
+  "sponsor": "Kyunghyang Shinmun"
+},
+"3012429": {
+  "title": "Namdo Film Festival Season 2: Gwangyang",
+  "overview": "A traveling film festival touring Jeonnam's 22 cities and counties — season two lands in Gwangyang, the city of light and steel, for five days of competition and open-air screenings in plazas, museums, and even container docks.",
+  "addr": "99 Jungmajungang-ro, Gwangyang-si, Jeollanam-do",
+  "place": "Gwangyang Citizen Plaza",
+  "fee": "Free",
+  "hours": "10:00–22:00",
+  "sponsor": "Jeollanam-do · Gwangyang City"
+},
+"3379778": {
+  "title": "Garak Oktoberfest Gourmet Night",
+  "overview": "A rooftop Oktoberfest on the sky garden of Garak Market — Korea's largest wholesale food market: 20 craft breweries, barbecue and camping vibes, market-fresh cooking pop-ups, and chef battles featuring Culinary Class Wars alumni.",
+  "addr": "932 Yangjae-daero, Songpa-gu, Seoul",
+  "place": "Garak Mall 3F sky garden",
+  "fee": "Free entry",
+  "hours": "16:00–22:00",
+  "sponsor": "Seoul Agro-Fisheries & Food Corp."
+},
+"637276": {
+  "title": "Iksan Ten Million Chrysanthemum Festival",
+  "overview": "Korea's biggest chrysanthemum festival: ten million blooms shaped into giant sculptures — phoenixes, Baekje gates, dragons — plus the country's largest chrysanthemum garden, bonsai exhibitions, music fountains, and night lighting.",
+  "addr": "322 Hana-ro, Iksan-si, Jeonbuk",
+  "place": "Jungang Sports Park",
+  "fee": "Free",
+  "hours": "10:00–21:00",
+  "sponsor": "Iksan City"
+},
+"234235": {
+  "title": "Danyang Ondal Culture Festival",
+  "overview": "Korea's only Goguryeo-kingdom festival, built on the legend of General Ondal and Princess Pyeonggang at Danyang's riverside drama-set park: period costume experiences, a recreated Goguryeo market street, and free entry to the Ondal filming location during the festival.",
+  "addr": "23 Ondal-ro, Yeongchun-myeon, Danyang-gun, Chungcheongbuk-do",
+  "place": "Ondal Tourist Site",
+  "fee": "Free (some programs paid)",
+  "hours": "10:00–18:00",
+  "sponsor": "Ondal Festival Committee"
+},
+"638576": {
+  "title": "Korea Chrysanthemum Grand Festival (Hampyeong)",
+  "overview": "Hampyeong's signature autumn show — 'Magic Chrysanthemum Land': carousel, ferris wheel, and giant cups built entirely of chrysanthemums across the Expo Park, with food streets under the fragrance.",
+  "addr": "27 Gonjae-ro, Hampyeong-eup, Hampyeong-gun, Jeollanam-do",
+  "place": "Hampyeong Expo Park",
+  "fee": "Paid entry",
+  "hours": "09:00–18:00",
+  "sponsor": "Hampyeong County"
+},
+"2484237": {
+  "title": "La La La Festival",
+  "overview": "Busan Geumjeong's coffee-and-bread festival on the Oncheoncheon stream below Pusan National University station — 'Drink the coffee! Eat the bread! Enjoy the culture!' — with local roasters, bakeries, and stages.",
+  "addr": "48 Jangjeononcheoncheon-ro, Geumjeong-gu, Busan",
+  "place": "Oncheoncheon below PNU station",
+  "fee": "Free",
+  "hours": "Fri 14:00–20:00 · Sat–Sun 11:00–20:00",
+  "sponsor": "Geumjeong-gu, Busan"
+},
+"229052": {
+  "title": "Yangyang Salmon Festival",
+  "overview": "Every autumn salmon return up the Namdaecheon to spawn, and Yangyang celebrates with Korea's famous bare-hand salmon catching, salmon cooking shows, ecology programs, and riverside night stages. A living nature lesson for kids and a feast for adults.",
+  "addr": "589 Ilchul-ro, Yangyang-eup, Yangyang-gun, Gangwon-do",
+  "place": "Namdaecheon riverside",
+  "fee": "Free (some programs paid)",
+  "hours": "10:00–22:00",
+  "sponsor": "Yangyang County"
+},
+"3551526": {
+  "title": "Yongmaru Forest Trail Festival",
+  "overview": "Nine weekend days of healing along the Gyeongui Line Forest Trail in Yongsan: busking, one-day classes, street performances, and pop-up markets with local merchants under the slogan 'my healing oasis in the city'.",
+  "addr": "8 Hyochangwon-ro 55-gil, Yongsan-gu, Seoul",
+  "place": "Yongmaru forest trail",
+  "fee": "Free",
+  "hours": "13:00–20:00",
+  "sponsor": "Seoul Credit Guarantee Foundation"
+},
+"3375262": {
+  "title": "Jeonnam World Gimbap Festival",
+  "overview": "A festival for Korea's favorite seaweed roll in the province that grows most of the country's gim: specialty gimbap from all 22 Jeonnam counties, cooking competitions, live auctions, art-gimbap making, and multicultural gimbap workshops in Mokpo.",
+  "addr": "102 Namnong-ro, Mokpo-si, Jeollanam-do",
+  "place": "Mokpo Culture & Arts Center outdoor stage",
+  "fee": "Free (some market zones paid)",
+  "hours": "10:00–17:00",
+  "sponsor": "Jeollanam-do"
+},
+"3349628": {
+  "title": "Jeju Reading Festival",
+  "overview": "Jeju's largest book festival at Udang Library: author lectures, character-costume parades, book-themed AI chats, reading clinics, and family programs under the year's theme 'utterly fallen for books'.",
+  "addr": "30 Sarabongdong-gil, Jeju-si, Jeju",
+  "place": "Udang Library",
+  "fee": "Free",
+  "hours": "11:00–17:00",
+  "sponsor": "Jeju City"
+},
+"3377048": {
+  "title": "Hapcheon Hwangto Hanwoo Festival",
+  "overview": "Hapcheon's red-clay-raised hanwoo beef gets a three-day showcase — 'Come! Try! Taste! Buy!' — with grill zones, performances, and county food at the sports park.",
+  "addr": "62 Munhwa-ro, Hapcheon-eup, Hapcheon-gun, Gyeongsangnam-do",
+  "place": "Hapcheon Sports Park lawn",
+  "fee": "Free entry (beef paid)",
+  "hours": "10:00–21:00",
+  "sponsor": "Hapcheon Livestock Cooperative"
+},
+"3546882": {
+  "title": "Music Performers Festival 2025",
+  "overview": "Jeju musicians and mainstream Korean artists share a seaside stage at Tapdong Beach Theater — a festival by the musicians' union where live performance meets the ocean horizon. Free, evenings.",
+  "addr": "2 Jungang-ro, Jeju-si, Jeju",
+  "place": "Tapdong Beach Theater",
+  "fee": "Free",
+  "hours": "18:30–22:00",
+  "sponsor": "Korea Music Performers Association · Jeju"
+},
+"2860868": {
+  "title": "Gijang Conger Eel Festival in Chiram",
+  "overview": "The 19th sea-eel festival in the fishing village of Chiram, Busan: free conger-eel bibimbap tastings, bare-hand eel catching, quiz shows, a national song contest, and fireworks over the autumn sea.",
+  "addr": "Chiram-ri, Ilgwang-eup, Gijang-gun, Busan",
+  "place": "Chiram Conger Eel Village",
+  "fee": "Free (some programs 3,000–10,000 won)",
+  "hours": "10:00–21:00",
+  "sponsor": "Festival Committee"
+},
+"3387201": {
+  "title": "Yeongdeungpo Seonyudo Garden Festival",
+  "overview": "Autumn on Seonyudo — the water-plant island park in the Han River rebuilt from an old filtration plant: book festival, flea market, yoga and birdwatching walks, ballet and gugak performances among the ivy-covered structures.",
+  "addr": "343 Seonyu-ro, Yeongdeungpo-gu, Seoul",
+  "place": "Seonyudo Park",
+  "fee": "Free",
+  "hours": "12:00–20:00 (Sun to 18:00)",
+  "sponsor": "Yeongdeungpo-gu · Cultural Foundation"
+},
+"3551206": {
+  "title": "Gwangmyeong Cave Light Festival",
+  "overview": "A light festival at Gwangmyeong Cave — the abandoned gold mine turned culture space — themed on the whale as a messenger of hope and climate awareness, pairing cave light art with an eco-consumption campaign.",
+  "addr": "142 Gahak-ro 85beon-gil, Gwangmyeong-si, Gyeonggi-do",
+  "place": "Gwangmyeong Cave",
+  "fee": "Light festival free (cave admission paid)",
+  "hours": "11:00–21:00",
+  "sponsor": "Gwangmyeong City"
+},
+"2435280": {
+  "title": "Gangjin Bay Dancing Reeds Festival",
+  "overview": "Sunset over the reed beds of Gangjin Bay Eco Park — home to 1,572 recorded species — with boardwalk ecology walks, performances against the estuary light, and children's nature programs.",
+  "addr": "47 Saengtaegongwon-gil, Gangjin-eup, Gangjin-gun, Jeollanam-do",
+  "place": "Gangjin Bay Eco Park",
+  "fee": "Free (some programs paid)",
+  "hours": "10:00–20:00",
+  "sponsor": "Gangjin County"
+},
+"3506515": {
+  "title": "Damyang Damidamju Night Market",
+  "addr": "24-46 Damju 4-gil, Damyang-eup, Damyang-gun, Jeollanam-do",
+  "place": "Damyang-eup"
+},
+"1472205": {
+  "title": "Sea in the City Festival (Noryangjin)",
+  "overview": "The capital's biggest seafood festival at Noryangjin Fish Market: tuna-cutting shows, auctioneer experiences, grilled-fish streets, shrimp-net fishing for kids, K-trot concerts, and direct-from-the-boat markets from fishing co-ops nationwide.",
+  "addr": "688 Nodeul-ro, Dongjak-gu, Seoul",
+  "place": "Noryangjin Fish Market and sports fields",
+  "fee": "Free",
+  "hours": "12:00–21:00",
+  "sponsor": "Dongjak-gu · Suhyup"
+},
+"1749228": {
+  "title": "Cheongnamdae Autumn Festival",
+  "overview": "Autumn at Cheongnamdae — the former presidential villa on Daecheong Lake, opened to the public in 2003: foliage walks, chrysanthemum bonsai exhibitions, daily music performances, and a winery corner on the lakeside grounds.",
+  "addr": "646 Cheongnamdae-gil, Munui-myeon, Sangdang-gu, Cheongju-si, Chungcheongbuk-do",
+  "place": "Cheongnamdae",
+  "fee": "Paid entry",
+  "hours": "09:00–18:00 (Sat to 21:00)",
+  "sponsor": "Cheongnamdae Management Office"
+},
+"3551000": {
+  "title": "Edu Uiwang Harmony Festival",
+  "addr": "307 Wangsongmotdong-ro, Uiwang-si, Gyeonggi-do",
+  "place": "Wangsong Lake area"
+},
+"3550990": {
+  "title": "Incheon Wondosa Rite & Nakseom Festival",
+  "overview": "A revival of the Joseon-era Wondosa rite, in which Incheon's magistrate honored the spirits of the West Sea islands on Nakseom Island each spring and autumn — reenacted with a procession and village festival in Michuhol.",
+  "addr": "120 Maesohol-ro, Michuhol-gu, Incheon",
+  "place": "Yonghyeon-dong, near old Nakseom site",
+  "fee": "Free",
+  "hours": "11:00–18:30",
+  "sponsor": "Michuhol-gu · Festival Committee"
+},
+"3551014": {
+  "title": "7th Black Music Festival (BMF)",
+  "overview": "Hip-hop, R&B, and soul on a former US Army base: Camp Red Cloud in Uijeongbu, used by the military for 70 years, hosts top Korean and international acts as the city reclaims the space for culture.",
+  "addr": "Ganeung-dong, Uijeongbu-si, Gyeonggi-do",
+  "place": "Camp Red Cloud (CRC)",
+  "fee": "Free",
+  "hours": "17:00–21:30",
+  "sponsor": "Uijeongbu City"
+},
+"3016659": {
+  "title": "Busan Folk Arts Festival",
+  "addr": "73 Simingongwon-ro, Busanjin-gu, Busan",
+  "place": "Busan Citizens Park"
+},
+"3406027": {
+  "title": "Yeosu Dongdong Drum Festival",
+  "overview": "A drum festival rooted in the Goryeo-era song 'Dongdong' and General Yu Tak, Yeosu's forgotten defender: a citizen drum parade through the streets, drum competitions, EDM and guest stages at the old naval shipyard site.",
+  "addr": "606 Soho-ro, Yeosu-si, Jeollanam-do",
+  "place": "Seonso shipyard site and Yonggi Park",
+  "fee": "Free",
+  "hours": "11:00–22:00",
+  "sponsor": "Yeosu City"
+},
+"3544786": {
+  "title": "WOW Let's Play! Yangpyeong Festa",
+  "overview": "The Yangpyeong education campus becomes one big playground: booknic picnics, campus-wide treasure hunts and stamp rallies, a five-senses play zone, future-tech studio, and eco-craft workshops for families. Free.",
+  "addr": "209 Yeonsu-ro, Yongmun-myeon, Yangpyeong-gun, Gyeonggi-do",
+  "place": "Gyeonggi Future Education Yangpyeong Campus",
+  "fee": "Free",
+  "hours": "10:00–17:00",
+  "sponsor": "Gyeonggi Province"
+},
+"3021124": {
+  "title": "Bohyeonsa Temple Millennium Culture Festival",
+  "overview": "A temple festival at thousand-year-old Bohyeonsa near Gangneung: mountain-spirit rites, tea ceremonies for the temple's three great masters, healing temple concerts, Korean and Chinese tea tastings, ceramics exhibitions, and temple-food showcases.",
+  "addr": "396 Bohyeon-gil, Seongsan-myeon, Gangneung-si, Gangwon-do",
+  "place": "Bohyeonsa Temple",
+  "fee": "Free",
+  "hours": "Sat 13:00–18:00 · Sun 10:00–15:00",
+  "sponsor": "Bohyeonsa Temple"
+},
+"627825": {
+  "title": "Jeongeupsa Culture Festival",
+  "overview": "Jeongeup's flagship festival since 1990, honoring the devoted wife of 'Jeongeupsa' — the only surviving Baekje-era song in Korean — with performances and programs at the culture park named for her.",
+  "addr": "541 Jeongeupsa-ro, Jeongeup-si, Jeonbuk",
+  "place": "Jeongeupsa Culture Park",
+  "fee": "Free",
+  "hours": "10:00–20:00",
+  "sponsor": "Jeongeup City"
+},
+"3373104": {
+  "title": "Byeolgil Market",
+  "overview": "A neighborhood culture market on the street from Gileum Station to Mia Elementary: less-waste market with local shops, a youth start-up market, art market, and jazz, dance, and magic stages — building a walkable family street.",
+  "addr": "41 Samyang-ro, Seongbuk-gu, Seoul",
+  "place": "Street near Mia Elementary School",
+  "fee": "Free",
+  "hours": "14:00–20:00",
+  "sponsor": "Seongbuk-gu"
+},
+"1748721": {
+  "title": "Pohang Steel Art Festival 2025",
+  "overview": "The steel city's signature art festival: sculptures and installations exploring iron as material and metaphor, made with artists, steel companies, and steelworkers at the Dongbin Culture Warehouse 1969 on the harbor.",
+  "addr": "78 Seonchak-ro, Buk-gu, Pohang-si, Gyeongsangbuk-do",
+  "place": "Dongbin Culture Warehouse 1969",
+  "fee": "Free",
+  "hours": "10:00–18:00",
+  "sponsor": "Pohang City"
+},
+"3025858": {
+  "title": "Goyang Animal-Assisted Healing Festival",
+  "overview": "A pet culture festival on Ilsan Culture Plaza themed on animal-assisted healing: pet fashion show, mini sports day, agility demos, free animal registration, behavior classes, therapy zones, and a pet run across seven themed sectors.",
+  "addr": "1271-4 Jungang-ro, Ilsandong-gu, Goyang-si, Gyeonggi-do",
+  "place": "Ilsan Culture Plaza",
+  "fee": "Free",
+  "hours": "10:00–17:00",
+  "sponsor": "Goyang City"
+},
+"3384023": {
+  "title": "Yangcheon Family Street Festival",
+  "overview": "A 900-meter stretch by Sinjeongnegeori Station becomes a family commons for a day — generations sharing each other's culture through stages, booths, and street programs.",
+  "addr": "261 Jungang-ro (underground), Yangcheon-gu, Seoul",
+  "place": "Sinjeongnegeori Station area",
+  "fee": "Free",
+  "hours": "10:30–21:00",
+  "sponsor": "Yangcheon-gu"
+},
+"3553947": {
+  "title": "Korea Craft Exhibition: Future Heritage",
+  "addr": "627 Gyeonggam-ro, Gyeongju-si, Gyeongsangbuk-do",
+  "place": "Gyeongju Expo Park"
+},
+"3551562": {
+  "title": "20th Humanities Week",
+  "overview": "Korea's national humanities week — 29 universities and institutes sharing research with the public through lectures, exhibitions, performances, and field trips, themed 'connecting again: region and community through the humanities'.",
+  "addr": "201 Gajeong-ro, Yuseong-gu, Daejeon",
+  "place": "National Research Foundation, Daejeon and venues nationwide",
+  "fee": "Free",
+  "hours": "10:00–18:00",
+  "sponsor": "Ministry of Education · NRF"
+},
+"3558562": {
+  "title": "Urban Forest Art Healing: Garden of Quiet Breath",
+  "addr": "69 Dongtansunhwan-daero, Hwaseong-si, Gyeonggi-do",
+  "place": "Dongtan urban forest"
+},
+"3011126": {
+  "title": "Incheon Global Education Fair",
+  "overview": "An open education festival at Songdo Convensia: world-culture booths run by foreign embassies, 80 exhibition booths on Incheon's future industries — aviation, robotics, metaverse — a Hyundai future-mobility hall, and student stages.",
+  "addr": "123 Central-ro, Yeonsu-gu, Incheon",
+  "place": "Songdo Convensia Hall 4",
+  "fee": "Free",
+  "hours": "10:00–17:00",
+  "sponsor": "Incheon Office of Education"
+},
+"3547386": {
+  "title": "KEPCO Hope & Love Sharing Concert",
+  "addr": "110 Munhwa-ro, Jangseong-eup, Jangseong-gun, Jeollanam-do",
+  "place": "Jangseong-eup"
+},
+"2930716": {
+  "title": "Gangneung Noodle Festival",
+  "overview": "Gangneung may be Korea's best noodle city — jang-kalguksu, buckwheat makguksu, potato-dumpling soup — and this festival on Wolhwa Street serves them all at 5,000 won a bowl, mapping the city's famous and hidden noodle houses.",
+  "addr": "2111 Gyeonggang-ro, Gangneung-si, Gangwon-do",
+  "place": "Wolhwa Street",
+  "fee": "Free entry (bowls ~5,000 won)",
+  "hours": "12:00–21:00",
+  "sponsor": "Gangneung City"
+},
+"2873042": {
+  "title": "Hongcheon Apple Festival",
+  "overview": "Apples from Hongcheon's high valleys — Hongro, Arisu, Sinano Gold, Envy, Fuji — sold at source in the Tori Forest park, with stages, events, and autumn programs.",
+  "addr": "Galmagok-ri, Hongcheon-eup, Hongcheon-gun, Gangwon-do",
+  "place": "Tori Forest urban park",
+  "fee": "Free",
+  "hours": "10:00–22:00",
+  "sponsor": "Hongcheon Cultural Foundation"
+},
+"790124": {
+  "title": "Hongcheon Ginseng & Hanwoo Festival",
+  "overview": "Hongcheon's flagship harvest festival pairing its six-year ginseng with local hanwoo beef: direct farm sales, grill zones, folk games with residents and the local army garrison, and full days of stages in the Tori Forest.",
+  "addr": "Galmagok-ri, Hongcheon-eup, Hongcheon-gun, Gangwon-do",
+  "place": "Tori Forest urban park",
+  "fee": "Free entry (food paid)",
+  "hours": "09:00–22:00",
+  "sponsor": "Hongcheon County"
+},
+"2039752": {
+  "title": "Wolchulsan Chrysanthemum Festival",
+  "overview": "Chrysanthemum sculptures and photo zones fill Gichan Land at the foot of Wolchulsan — the jagged 'Matterhorn of the south' — for a fragrant, free autumn stroll in Yeongam.",
+  "addr": "19-10 Gichanland-ro, Yeongam-eup, Yeongam-gun, Jeollanam-do",
+  "place": "Wolchulsan Gichan Land",
+  "fee": "Free",
+  "hours": "09:00–18:00",
+  "sponsor": "Yeongam County"
+},
+"1122739": {
+  "title": "Yanggu Punchbowl Siraegi & Apple Festival",
+  "overview": "A harvest festival in the Punchbowl — the famous crater-like basin near the DMZ in Yanggu — celebrating its two specialties: siraegi (dried radish greens) and highland apples, with markets and programs at the healing house grounds.",
+  "addr": "15 Haeanseohwa-ro, Haean-myeon, Yanggu-gun, Gangwon-do",
+  "place": "Punchbowl Healing House grounds",
+  "fee": "Free (some programs paid)",
+  "hours": "10:00–18:00",
+  "sponsor": "Yanggu Cultural Foundation"
+},
+"3381612": {
+  "title": "Jeonju Makgeolli Festival",
+  "overview": "Jeonju's rice-wine festival: classic makgeolli with its perfect companions — yukjeon, samhap, pajeon — alongside fruit makgeolli and cocktail shows for younger drinkers, moju-brewing workshops, and fusion-gugak-to-EDM stages.",
+  "addr": "Hyoja-dong 2-ga, Wansan-gu, Jeonju-si, Jeonbuk",
+  "place": "Jeonju Vision University main field",
+  "fee": "Free entry",
+  "hours": "Fri 16:00–22:00 · Sat 13:00–22:00",
+  "sponsor": "Jeonju City"
+}
+}

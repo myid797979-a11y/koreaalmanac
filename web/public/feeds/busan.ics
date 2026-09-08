@@ -3,18 +3,18 @@ VERSION:2.0
 PRODID:-//KoreaAlmanac//EN
 X-WR-CALNAME:Korea Festivals - Busan
 BEGIN:VEVENT
-UID:4100946@koreaalmanac
-DTSTART;VALUE=DATE:20260904
-DTEND;VALUE=DATE:20260920
-SUMMARY:Starry Sea Busan - Night Camp Picnic
-LOCATION:Dadaepo Beach (Dadaepo Seaside Park)
-END:VEVENT
-BEGIN:VEVENT
 UID:4099532@koreaalmanac
 DTSTART;VALUE=DATE:20260904
 DTEND;VALUE=DATE:20260920
 SUMMARY:Starry Sea Busan: Night Camp-nic at Dadaepo
 LOCATION:Dadaepo Beach Park
+END:VEVENT
+BEGIN:VEVENT
+UID:4100946@koreaalmanac
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20260920
+SUMMARY:Starry Sea Busan - Night Camp Picnic
+LOCATION:Dadaepo Beach (Dadaepo Seaside Park)
 END:VEVENT
 BEGIN:VEVENT
 UID:3020552@koreaalmanac
@@ -73,11 +73,11 @@ SUMMARY:Hurshimchung Bräu Oktoberfest
 LOCATION:Outdoor space & beer garden of Hotel Nongshim
 END:VEVENT
 BEGIN:VEVENT
-UID:1876897@koreaalmanac
+UID:1275743@koreaalmanac
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261019
-SUMMARY:Dongnaeeupseong History Festival
-LOCATION:Areas of Dongnae Culture Center and Dongnaeeupseong Walled Town
+SUMMARY:Geumjeongsanseong Fortress Festival
+LOCATION:Geumjeongsanseong plaza and fortress area
 END:VEVENT
 BEGIN:VEVENT
 UID:3007256@koreaalmanac
@@ -87,11 +87,11 @@ SUMMARY:Jeonggwan Eco-Stream Culture Festival
 LOCATION:Jeonggwan Central Park
 END:VEVENT
 BEGIN:VEVENT
-UID:1275743@koreaalmanac
+UID:1876897@koreaalmanac
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261019
-SUMMARY:Geumjeongsanseong Fortress Festival
-LOCATION:Geumjeongsanseong plaza and fortress area
+SUMMARY:Dongnaeeupseong History Festival
+LOCATION:Areas of Dongnae Culture Center and Dongnaeeupseong Walled Town
 END:VEVENT
 BEGIN:VEVENT
 UID:3492576@koreaalmanac

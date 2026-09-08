@@ -45,11 +45,11 @@ SUMMARY:Korean Confucian Culture Festival
 LOCATION:Korean Confucian Culture Promotion Institute and Noseong-myeon area
 END:VEVENT
 BEGIN:VEVENT
-UID:229054@koreaalmanac
+UID:697195@koreaalmanac
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261006
-SUMMARY:Ground Forces Festival
-LOCATION:Gyeryongdae runway
+SUMMARY:Cheonan World Dance Festival
+LOCATION:Area of Cheonan Stadium
 END:VEVENT
 BEGIN:VEVENT
 UID:3520887@koreaalmanac
@@ -59,11 +59,11 @@ SUMMARY:Gyeryong Military Culture Festival
 LOCATION:Gyeryongdae Runway and various locations across Gyeryong-si
 END:VEVENT
 BEGIN:VEVENT
-UID:697195@koreaalmanac
+UID:229054@koreaalmanac
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261006
-SUMMARY:Cheonan World Dance Festival
-LOCATION:Area of Cheonan Stadium
+SUMMARY:Ground Forces Festival
+LOCATION:Gyeryongdae runway
 END:VEVENT
 BEGIN:VEVENT
 UID:293106@koreaalmanac
