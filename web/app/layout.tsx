@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Hahmlet } from 'next/font/google';
 import Logo from '@/app/components/Logo';
 import { SITE_URL, SITE_NAME } from '@/lib/site';
+import { fmt, today } from '@/lib/data';
 import './globals.css';
 
 const hahmlet = Hahmlet({ subsets: ['latin'], variable: '--font-display' });
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="wrap">
             <Link href="/" className="wordmark"><Logo />{SITE_NAME}</Link>
             <nav className="nav">
+              <Link href="/plan/">Trip Planner</Link>
               <Link href="/festivals/">Festivals</Link>
               <Link href="/calendar/">Calendar</Link>
               <Link href="/regions/">Regions</Link>
@@ -38,13 +40,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="site">
           <div className="wrap">
             <p className="strip" style={{ margin: '0 0 10px' }}>
+              <Link href="/plan/">Trip Planner</Link>
               <Link href="/festivals/">Festivals</Link>
               <Link href="/calendar/">Calendar</Link>
               <Link href="/regions/">Regions</Link>
               <Link href="/about/">About</Link>
               <Link href="/privacy/">Privacy</Link>
             </p>
-            Data: Korea Tourism Organization (TourAPI) · Updated daily ·
+            Data: Korea Tourism Organization (TourAPI) · Refreshed {fmt(today())} (KST) ·
             This site is not affiliated with KTO. Details can change — check official pages before you go.
           </div>
         </footer>

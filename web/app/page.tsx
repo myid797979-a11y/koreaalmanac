@@ -21,6 +21,13 @@ function photoFirst<T extends { image: string | null }>(list: T[]): T[] {
   return [...list.filter(f => f.image), ...list.filter(f => !f.image)];
 }
 
+// YYYYMMDD + n일 → input[type=date]용 YYYY-MM-DD
+function isoDay(t: string, days: number): string {
+  const x = new Date(Number(t.slice(0, 4)), Number(t.slice(4, 6)) - 1, Number(t.slice(6, 8)) + days);
+  const p = (n: number) => String(n).padStart(2, '0');
+  return String(x.getFullYear()) + '-' + p(x.getMonth() + 1) + '-' + p(x.getDate());
+}
+
 export default function Home() {
   const t = today();
   const ongoing = photoFirst(festivals
@@ -55,6 +62,15 @@ export default function Home() {
             refreshed every morning — dates, fees, venues, and what to expect.
             Hundreds of them appear in English only here.
           </p>
+          <form className="tripform" action="/plan/" method="get">
+            <label>Arrive
+              <input type="date" name="from" defaultValue={isoDay(t, 0)} />
+            </label>
+            <label>Leave
+              <input type="date" name="to" defaultValue={isoDay(t, 7)} />
+            </label>
+            <button type="submit">Find festivals</button>
+          </form>
           <p className="strip">
             {MONTH_SLUGS.map((slug, i) => (
               <Link key={slug} href={'/festivals/' + slug + '/'}>{MONTHS_FULL[i].slice(0, 3)}</Link>

@@ -9,6 +9,7 @@ export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   const urls: MetadataRoute.Sitemap = [
     { url: SITE_URL + '/', priority: 1.0 },
+    { url: SITE_URL + '/plan/', priority: 0.9 },
     { url: SITE_URL + '/festivals/', priority: 0.9 },
     { url: SITE_URL + '/calendar/', priority: 0.9 },
     { url: SITE_URL + '/regions/', priority: 0.8 },
