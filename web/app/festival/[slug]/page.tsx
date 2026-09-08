@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Card, { Stamp } from '@/app/components/Card';
+import Gallery from '@/app/components/Gallery';
 import {
   festivals, bySlug, status, dateRange, daysUntil, today,
   icsHref, MONTH_SLUGS, MONTHS_FULL, categoryLabel,
@@ -125,13 +126,7 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
       {(f.images ?? []).filter(u => u !== f.image).length > 0 && (
         <>
           <h2 className="sect">Photos</h2>
-          <div className="gallery">
-            {f.images!.filter(u => u !== f.image).map(u => (
-              <a key={u} href={u} target="_blank" rel="noopener">
-                <img src={u} alt={f.title} loading="lazy" />
-              </a>
-            ))}
-          </div>
+          <Gallery images={f.images!.filter(u => u !== f.image)} alt={f.title} />
           <p className="meta">Photos: Korea Tourism Organization</p>
         </>
       )}
