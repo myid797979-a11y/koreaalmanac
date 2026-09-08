@@ -17,18 +17,18 @@ SUMMARY:Yuseong On-Day
 LOCATION:Yuseong Hot Springs district
 END:VEVENT
 BEGIN:VEVENT
-UID:4106719@koreaalmanac
-DTSTART;VALUE=DATE:20260911
-DTEND;VALUE=DATE:20261018
-SUMMARY:Moonlight Music Nights
-LOCATION:Parks and streamsides across Daejeon
-END:VEVENT
-BEGIN:VEVENT
 UID:4104786@koreaalmanac
 DTSTART;VALUE=DATE:20260911
 DTEND;VALUE=DATE:20260914
 SUMMARY:Daejeon Jung-gu Heritage Night Tour
 LOCATION:Original downtown  Jung-gu  Daejeon
+END:VEVENT
+BEGIN:VEVENT
+UID:4106719@koreaalmanac
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20261018
+SUMMARY:Moonlight Music Nights
+LOCATION:Parks and streamsides across Daejeon
 END:VEVENT
 BEGIN:VEVENT
 UID:4091877@koreaalmanac

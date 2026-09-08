@@ -38,18 +38,18 @@ SUMMARY:Haksan Madanggeuk Nollae Festival
 LOCATION:Outdoor stage  Subong Park
 END:VEVENT
 BEGIN:VEVENT
-UID:1273884@koreaalmanac
-DTSTART;VALUE=DATE:20261002
-DTEND;VALUE=DATE:20261005
-SUMMARY:Bupyeong Pungmul Festival
-LOCATION:Bupyeong-daero and the Bupyeong Area
-END:VEVENT
-BEGIN:VEVENT
 UID:701688@koreaalmanac
 DTSTART;VALUE=DATE:20261002
 DTEND;VALUE=DATE:20261005
 SUMMARY:Soraepogu Festival
 LOCATION:Haeoreum Square and nearby area
+END:VEVENT
+BEGIN:VEVENT
+UID:1273884@koreaalmanac
+DTSTART;VALUE=DATE:20261002
+DTEND;VALUE=DATE:20261005
+SUMMARY:Bupyeong Pungmul Festival
+LOCATION:Bupyeong-daero and the Bupyeong Area
 END:VEVENT
 BEGIN:VEVENT
 UID:2408959@koreaalmanac

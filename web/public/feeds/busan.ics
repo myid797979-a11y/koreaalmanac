@@ -31,18 +31,18 @@ SUMMARY:14th Busan International Port Conference
 LOCATION:Busan Port International Exhibition & Convention Center
 END:VEVENT
 BEGIN:VEVENT
-UID:2412052@koreaalmanac
-DTSTART;VALUE=DATE:20260918
-DTEND;VALUE=DATE:20260921
-SUMMARY:Korea Youth Day Festival
-LOCATION:Gwangalli Beach
-END:VEVENT
-BEGIN:VEVENT
 UID:2558735@koreaalmanac
 DTSTART;VALUE=DATE:20260918
 DTEND;VALUE=DATE:20260921
 SUMMARY:Busan International Performing Arts Festival (BPAF)
 LOCATION:Oncheoncheon stream and PNU university street
+END:VEVENT
+BEGIN:VEVENT
+UID:2412052@koreaalmanac
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260921
+SUMMARY:Korea Youth Day Festival
+LOCATION:Gwangalli Beach
 END:VEVENT
 BEGIN:VEVENT
 UID:3493864@koreaalmanac

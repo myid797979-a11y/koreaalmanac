@@ -66,13 +66,6 @@ SUMMARY:Yeongju Punggi Insam Festival
 LOCATION:Punggi Insam Culture Pop-up Park
 END:VEVENT
 BEGIN:VEVENT
-UID:1718424@koreaalmanac
-DTSTART;VALUE=DATE:20261003
-DTEND;VALUE=DATE:20261005
-SUMMARY:Yeongju Museom Single-Log Bridge Festival
-LOCATION:Museom Village
-END:VEVENT
-BEGIN:VEVENT
 UID:506766@koreaalmanac
 DTSTART;VALUE=DATE:20261003
 DTEND;VALUE=DATE:20261012
@@ -80,11 +73,11 @@ SUMMARY:Yeongju Punggi Ginseng Festival
 LOCATION:Namwoncheon stream and Punggi Ginseng Park
 END:VEVENT
 BEGIN:VEVENT
-UID:1718137@koreaalmanac
-DTSTART;VALUE=DATE:20261009
-DTEND;VALUE=DATE:20261012
-SUMMARY:Silla Culture Festival
-LOCATION:Bonghwangdae Mound and Woljeonggyo Bridge
+UID:1718424@koreaalmanac
+DTSTART;VALUE=DATE:20261003
+DTEND;VALUE=DATE:20261005
+SUMMARY:Yeongju Museom Single-Log Bridge Festival
+LOCATION:Museom Village
 END:VEVENT
 BEGIN:VEVENT
 UID:2622679@koreaalmanac
@@ -92,6 +85,13 @@ DTSTART;VALUE=DATE:20261009
 DTEND;VALUE=DATE:20261012
 SUMMARY:8th Yecheon International Smartphone Film Festival
 LOCATION:Public lot by Gyeongbuk Library
+END:VEVENT
+BEGIN:VEVENT
+UID:1718137@koreaalmanac
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261012
+SUMMARY:Silla Culture Festival
+LOCATION:Bonghwangdae Mound and Woljeonggyo Bridge
 END:VEVENT
 BEGIN:VEVENT
 UID:1844150@koreaalmanac
