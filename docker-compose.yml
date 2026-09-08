@@ -1,0 +1,21 @@
+# ⚠ name 반드시 명시 — 청약각·온담 repo 폴더도 'project' 라서 name 없으면
+#   Compose 가 동일 프로젝트로 인식해 서로의 컨테이너를 지운다. (온담에서 실제 발생)
+name: tour
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: tour-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: tour
+      POSTGRES_USER: tour
+      POSTGRES_PASSWORD: tour_dev
+    ports:
+      # 회사 로컬(5432) · 청약각(5433) · 온담(5434) 과 충돌하지 않게 5435
+      - "5435:5432"
+    volumes:
+      - tour-pgdata:/var/lib/postgresql/data
+
+volumes:
+  tour-pgdata:

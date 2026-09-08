@@ -1,0 +1,89 @@
+# 매일 새벽 05:47 KST — 수집(증분) → 익스포트 → 빌드 → Cloudflare Pages 배포
+# DB는 잡 안의 임시 컨테이너. 수집분은 db/dump로 repo에 보존해 증분만 API로 받는다
+# (전량 재수집은 개발계정 쿼터 1,000콜/일/언어를 초과하므로 금지).
+name: daily-update
+
+on:
+  schedule:
+    - cron: '47 20 * * *'   # 20:47 UTC = 05:47 KST (청약각 05:23과 시간 분리)
+  workflow_dispatch:
+
+permissions:
+  contents: write            # 덤프·데이터 변경분 커밋용
+
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: tour
+          POSTGRES_USER: tour
+          POSTGRES_PASSWORD: tour_dev
+        ports:
+          - 5435:5432
+        options: >-
+          --health-cmd="pg_isready -U tour"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=12
+    env:
+      TOUR_DB: Host=localhost;Port=5435;Database=tour;Username=tour;Password=tour_dev
+      TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: 스키마 적용 + 어제까지 수집분 복원
+        run: |
+          dotnet run --project Tour.Collector -- init
+          dotnet run --project Tour.Collector -- restore
+
+      - name: 축제 수집 (목록 갱신 + 신규 상세만)
+        run: |
+          dotnet run --project Tour.Collector -- festivals
+          dotnet run --project Tour.Collector -- details eng
+          dotnet run --project Tour.Collector -- details kor
+          dotnet run --project Tour.Collector -- stats
+
+      - name: 익스포트 + 덤프 갱신
+        run: |
+          dotnet run --project Tour.Exporter
+          dotnet run --project Tour.Collector -- dump
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: 웹 빌드
+        working-directory: web
+        run: |
+          npm ci
+          npm run build
+
+      - name: Cloudflare Pages 배포
+        working-directory: web
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npx wrangler pages project create koreaalmanac --production-branch=main || true
+          npx wrangler pages deploy out --project-name=koreaalmanac --commit-dirty=true
+
+      - name: 데이터 변경분 커밋 (덤프·번역큐·익스포트)
+        run: |
+          git config user.name "daily-update"
+          git config user.email "actions@users.noreply.github.com"
+          git add db/dump data/translation_queue.json web/data
+          git diff --cached --quiet || git commit -m "data: daily update $(date -u +%F)"
+          git push

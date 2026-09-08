@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+node_modules/
+.next/
+out/
+appsettings.local.json
+*.user
+.wrangler/
+tsconfig.tsbuildinfo

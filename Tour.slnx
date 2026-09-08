@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Tour.Collector/Tour.Collector.csproj" />
+  <Project Path="Tour.Core/Tour.Core.csproj" />
+  <Project Path="Tour.Exporter/Tour.Exporter.csproj" />
+</Solution>
