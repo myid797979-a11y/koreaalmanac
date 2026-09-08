@@ -400,3 +400,31 @@ footer.site .strip a:hover { color: var(--seal); }
 @media (prefers-reduced-motion: reduce) {
   .lightbox { animation: none; }
 }
+
+/* ── 모바일 패스 (실기기 점검: 헤더 한 줄 초과가 전 페이지 가로 스크롤 원인) ── */
+.facts { table-layout: fixed; }
+.facts td { overflow-wrap: anywhere; }   /* 장문 URL·주소가 표를 밀어내지 않게 */
+
+@media (max-width: 720px) {
+  header.site .wrap {
+    height: auto; flex-wrap: wrap;
+    gap: 10px 14px; padding: 10px 16px 11px;
+  }
+  .wordmark { font-size: 17.5px; }
+  .searchbox { flex: 1 1 120px; margin-left: 0; }
+  .searchbox input, .searchbox input:focus { width: 100%; }
+  .search-drop { width: min(300px, calc(100vw - 32px)); }
+  .nav {
+    margin-left: 0; width: 100%;
+    justify-content: space-between; gap: 8px;
+    font-size: 13.5px; overflow-x: auto;
+    border-top: 1px solid var(--line); padding-top: 8px;
+  }
+  .nav a { white-space: nowrap; }
+
+  h1 { font-size: 26px; }
+  .facts th { width: 96px; padding: 10px 10px; }
+  .facts td { padding: 10px 12px; }
+  .featured h2 { font-size: 21px; }
+  .alm-day { font-size: 72px; }
+}
