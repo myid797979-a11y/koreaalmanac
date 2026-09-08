@@ -10,11 +10,11 @@ SUMMARY:The Painters
 LOCATION:The Painters Gwanghwamun Theater
 END:VEVENT
 BEGIN:VEVENT
-UID:3107059@koreaalmanac
+UID:2809535@koreaalmanac
 DTSTART;VALUE=DATE:20260101
 DTEND;VALUE=DATE:20270101
-SUMMARY:Sungnyemun Gate Guard Ceremony 2026
-LOCATION:Sungnyemun Gate Plaza
+SUMMARY:Namsan Beacon Ceremony and Traditional Culture Events
+LOCATION:Namsan Beacon Mound and Bosingak Pavilion
 END:VEVENT
 BEGIN:VEVENT
 UID:3473295@koreaalmanac
@@ -24,11 +24,11 @@ SUMMARY:DDP Architecture Tour
 LOCATION:Dongdaemun Design Plaza (DDP)
 END:VEVENT
 BEGIN:VEVENT
-UID:2809535@koreaalmanac
+UID:292961@koreaalmanac
 DTSTART;VALUE=DATE:20260101
 DTEND;VALUE=DATE:20270101
-SUMMARY:Namsan Beacon Ceremony and Traditional Culture Events
-LOCATION:Namsan Beacon Mound and Bosingak Pavilion
+SUMMARY:Royal Guard-Changing Ceremony at Deoksugung Palace
+LOCATION:In front of Daehanmun Gate  Deoksugung Palace
 END:VEVENT
 BEGIN:VEVENT
 UID:4060947@koreaalmanac
@@ -38,11 +38,11 @@ SUMMARY:Gugak Performance Jinyeon
 LOCATION:Jinyeon
 END:VEVENT
 BEGIN:VEVENT
-UID:292961@koreaalmanac
+UID:3107059@koreaalmanac
 DTSTART;VALUE=DATE:20260101
 DTEND;VALUE=DATE:20270101
-SUMMARY:Royal Guard-Changing Ceremony at Deoksugung Palace
-LOCATION:In front of Daehanmun Gate  Deoksugung Palace
+SUMMARY:Sungnyemun Gate Guard Ceremony 2026
+LOCATION:Sungnyemun Gate Plaza
 END:VEVENT
 BEGIN:VEVENT
 UID:3377038@koreaalmanac
@@ -143,18 +143,18 @@ SUMMARY:Gumi Local Food Festa in Seoul
 LOCATION:Seoul Plaza
 END:VEVENT
 BEGIN:VEVENT
-UID:3514846@koreaalmanac
-DTSTART;VALUE=DATE:20260911
-DTEND;VALUE=DATE:20260917
-SUMMARY:Seoul International Writers' Festival
-LOCATION:Ara Art Center
-END:VEVENT
-BEGIN:VEVENT
 UID:3317667@koreaalmanac
 DTSTART;VALUE=DATE:20260911
 DTEND;VALUE=DATE:20260914
 SUMMARY:Sinchon Global University Culture Festival
 LOCATION:Sinchon area (Yonsei-ro)
+END:VEVENT
+BEGIN:VEVENT
+UID:3514846@koreaalmanac
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260917
+SUMMARY:Seoul International Writers' Festival
+LOCATION:Ara Art Center
 END:VEVENT
 BEGIN:VEVENT
 UID:2505657@koreaalmanac
@@ -164,18 +164,18 @@ SUMMARY:Seoul Intangible Heritage Festival
 LOCATION:Namsangol Hanok Village
 END:VEVENT
 BEGIN:VEVENT
-UID:4098740@koreaalmanac
-DTSTART;VALUE=DATE:20260912
-DTEND;VALUE=DATE:20260913
-SUMMARY:Dongdaemun-gu Book Festival
-LOCATION:Dongdaemun-gu Office Future Plaza and auditorium
-END:VEVENT
-BEGIN:VEVENT
 UID:3520705@koreaalmanac
 DTSTART;VALUE=DATE:20260912
 DTEND;VALUE=DATE:20260914
 SUMMARY:Nowon Craft Beer Festival
 LOCATION:Hwarangdae Railroad Park
+END:VEVENT
+BEGIN:VEVENT
+UID:4098740@koreaalmanac
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260913
+SUMMARY:Dongdaemun-gu Book Festival
+LOCATION:Dongdaemun-gu Office Future Plaza and auditorium
 END:VEVENT
 BEGIN:VEVENT
 UID:4104955@koreaalmanac
@@ -199,13 +199,6 @@ SUMMARY:GES 2026: Game & Esports Seoul
 LOCATION:DDP Art Hall
 END:VEVENT
 BEGIN:VEVENT
-UID:3544886@koreaalmanac
-DTSTART;VALUE=DATE:20260918
-DTEND;VALUE=DATE:20260919
-SUMMARY:Seoul Autumn Festa Opening
-LOCATION:Riverside stage  Ttukseom Hangang Park
-END:VEVENT
-BEGIN:VEVENT
 UID:4106729@koreaalmanac
 DTSTART;VALUE=DATE:20260918
 DTEND;VALUE=DATE:20260921
@@ -213,18 +206,11 @@ SUMMARY:Mullae Arts Festival
 LOCATION:Mullae-dong area
 END:VEVENT
 BEGIN:VEVENT
-UID:4106842@koreaalmanac
-DTSTART;VALUE=DATE:20260919
-DTEND;VALUE=DATE:20260920
-SUMMARY:Seoul Philharmonic Park Concert
-LOCATION:Forest Stage  Seoul Children's Grand Park
-END:VEVENT
-BEGIN:VEVENT
-UID:715355@koreaalmanac
-DTSTART;VALUE=DATE:20260919
-DTEND;VALUE=DATE:20260921
-SUMMARY:Seoul Street Arts Festival
-LOCATION:Ttukseom Hangang Park & Seoul Forest
+UID:3544886@koreaalmanac
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260919
+SUMMARY:Seoul Autumn Festa Opening
+LOCATION:Riverside stage  Ttukseom Hangang Park
 END:VEVENT
 BEGIN:VEVENT
 UID:3359644@koreaalmanac
@@ -239,6 +225,20 @@ DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260921
 SUMMARY:Seoripul Music Festival
 LOCATION:Banpo-daero boulevard
+END:VEVENT
+BEGIN:VEVENT
+UID:715355@koreaalmanac
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260921
+SUMMARY:Seoul Street Arts Festival
+LOCATION:Ttukseom Hangang Park & Seoul Forest
+END:VEVENT
+BEGIN:VEVENT
+UID:4106842@koreaalmanac
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:Seoul Philharmonic Park Concert
+LOCATION:Forest Stage  Seoul Children's Grand Park
 END:VEVENT
 BEGIN:VEVENT
 UID:2845946@koreaalmanac

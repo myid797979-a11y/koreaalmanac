@@ -45,18 +45,18 @@ SUMMARY:2026 Culture Day: Culture Delivery
 LOCATION:Samgot-ri Village  Yeoncheon and other sites
 END:VEVENT
 BEGIN:VEVENT
-UID:4056606@koreaalmanac
-DTSTART;VALUE=DATE:20260905
-DTEND;VALUE=DATE:20261108
-SUMMARY:House of the Upright Minister
-LOCATION:Chunghyeon Museum
-END:VEVENT
-BEGIN:VEVENT
 UID:4099101@koreaalmanac
 DTSTART;VALUE=DATE:20260905
 DTEND;VALUE=DATE:20260920
 SUMMARY:Suwon Nammun Market Night Market 'Bulchwimugwi'
 LOCATION:Paldalmun plaza and Jidonggyo Bridge area
+END:VEVENT
+BEGIN:VEVENT
+UID:4056606@koreaalmanac
+DTSTART;VALUE=DATE:20260905
+DTEND;VALUE=DATE:20261108
+SUMMARY:House of the Upright Minister
+LOCATION:Chunghyeon Museum
 END:VEVENT
 BEGIN:VEVENT
 UID:4095402@koreaalmanac
@@ -66,6 +66,13 @@ SUMMARY:Bookshelf Concert: Sherlock Holmes
 LOCATION:Small Theater  Gyeonggi Arts Center
 END:VEVENT
 BEGIN:VEVENT
+UID:3333149@koreaalmanac
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260914
+SUMMARY:Gwangmyeong Madanggeuk Festival
+LOCATION:Gwangmyeong Civic Stadium grounds
+END:VEVENT
+BEGIN:VEVENT
 UID:3499401@koreaalmanac
 DTSTART;VALUE=DATE:20260911
 DTEND;VALUE=DATE:20260913
@@ -73,11 +80,11 @@ SUMMARY:GXG 2026
 LOCATION:Pangyo Station plaza
 END:VEVENT
 BEGIN:VEVENT
-UID:3333149@koreaalmanac
-DTSTART;VALUE=DATE:20260911
-DTEND;VALUE=DATE:20260914
-SUMMARY:Gwangmyeong Madanggeuk Festival
-LOCATION:Gwangmyeong Civic Stadium grounds
+UID:3099365@koreaalmanac
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20261006
+SUMMARY:Colorful Garden: Jaraseom Flower Festa
+LOCATION:Jaraseom Island
 END:VEVENT
 BEGIN:VEVENT
 UID:3303554@koreaalmanac
@@ -94,25 +101,11 @@ SUMMARY:Pocheon Hantangang Garden Festa
 LOCATION:Hantangang Eco Landscape Complex
 END:VEVENT
 BEGIN:VEVENT
-UID:3000203@koreaalmanac
-DTSTART;VALUE=DATE:20260912
-DTEND;VALUE=DATE:20260921
-SUMMARY:Yangju Heritage Night Tour
-LOCATION:Yangju Gwanaji (old government office site)
-END:VEVENT
-BEGIN:VEVENT
 UID:2034167@koreaalmanac
 DTSTART;VALUE=DATE:20260912
 DTEND;VALUE=DATE:20260913
 SUMMARY:Pyeongtaek Lake Light Festival
 LOCATION:Pyeongtaek Lake Tourist Complex
-END:VEVENT
-BEGIN:VEVENT
-UID:3099365@koreaalmanac
-DTSTART;VALUE=DATE:20260912
-DTEND;VALUE=DATE:20261006
-SUMMARY:Colorful Garden: Jaraseom Flower Festa
-LOCATION:Jaraseom Island
 END:VEVENT
 BEGIN:VEVENT
 UID:3494053@koreaalmanac
@@ -122,18 +115,11 @@ SUMMARY:Paju K-Culture Festival
 LOCATION:Gyeonggi Future Education Paju Campus (former Paju English Village)
 END:VEVENT
 BEGIN:VEVENT
-UID:1390147@koreaalmanac
-DTSTART;VALUE=DATE:20260918
+UID:3000203@koreaalmanac
+DTSTART;VALUE=DATE:20260912
 DTEND;VALUE=DATE:20260921
-SUMMARY:Anyang Dance Festival
-LOCATION:Pyeongchon Central Park and Samdeok Park
-END:VEVENT
-BEGIN:VEVENT
-UID:2999418@koreaalmanac
-DTSTART;VALUE=DATE:20260918
-DTEND;VALUE=DATE:20260921
-SUMMARY:Peace Nuri Picnic Festival
-LOCATION:Imjingak Pyeonghwa Nuri
+SUMMARY:Yangju Heritage Night Tour
+LOCATION:Yangju Gwanaji (old government office site)
 END:VEVENT
 BEGIN:VEVENT
 UID:293144@koreaalmanac
@@ -143,13 +129,6 @@ SUMMARY:Bucheon International Comics Festival
 LOCATION:Korea Manhwa Museum and Korea Manhwa Contents Agency area
 END:VEVENT
 BEGIN:VEVENT
-UID:2481976@koreaalmanac
-DTSTART;VALUE=DATE:20260918
-DTEND;VALUE=DATE:20260921
-SUMMARY:Siheung Gaetgol Festival
-LOCATION:Siheung Gaetgol Eco Park
-END:VEVENT
-BEGIN:VEVENT
 UID:1391047@koreaalmanac
 DTSTART;VALUE=DATE:20260918
 DTEND;VALUE=DATE:20261102
@@ -157,11 +136,18 @@ SUMMARY:Gyeonggi Ceramics Biennale
 LOCATION:Area around Cerapia in Icheon  Gyeonggi-do / Gonjiam Ceramic Park In Gwangju Gyeonggi-do / Yeoju Dojasesang (Yeoju Ceramics Village) in Yeoju  Gyeonggi-d
 END:VEVENT
 BEGIN:VEVENT
-UID:2029491@koreaalmanac
+UID:2481976@koreaalmanac
 DTSTART;VALUE=DATE:20260918
 DTEND;VALUE=DATE:20260921
-SUMMARY:Gwacheon Performing Arts Festival (GPAF)
-LOCATION:Gwacheon Government Complex plaza and Citizens Hall area
+SUMMARY:Siheung Gaetgol Festival
+LOCATION:Siheung Gaetgol Eco Park
+END:VEVENT
+BEGIN:VEVENT
+UID:1390147@koreaalmanac
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260921
+SUMMARY:Anyang Dance Festival
+LOCATION:Pyeongchon Central Park and Samdeok Park
 END:VEVENT
 BEGIN:VEVENT
 UID:2616316@koreaalmanac
@@ -178,6 +164,20 @@ SUMMARY:Namhansanseong Culture Festival
 LOCATION:Namhansanseong Provincial Park
 END:VEVENT
 BEGIN:VEVENT
+UID:2029491@koreaalmanac
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260921
+SUMMARY:Gwacheon Performing Arts Festival (GPAF)
+LOCATION:Gwacheon Government Complex plaza and Citizens Hall area
+END:VEVENT
+BEGIN:VEVENT
+UID:2999418@koreaalmanac
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260921
+SUMMARY:Peace Nuri Picnic Festival
+LOCATION:Imjingak Pyeonghwa Nuri
+END:VEVENT
+BEGIN:VEVENT
 UID:2851985@koreaalmanac
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260921
@@ -192,11 +192,11 @@ SUMMARY:Suwon Hwaseong Media Art
 LOCATION:Area of Hwaseomun Gate  Janganmun Gate  and Jangan Park
 END:VEVENT
 BEGIN:VEVENT
-UID:1389228@koreaalmanac
+UID:3364856@koreaalmanac
 DTSTART;VALUE=DATE:20260919
-DTEND;VALUE=DATE:20260921
-SUMMARY:Ansan Daebu Grape Festival
-LOCATION:Daebu Sea Fragrance Theme Park
+DTEND;VALUE=DATE:20261108
+SUMMARY:Han River Walk
+LOCATION:Varies by session
 END:VEVENT
 BEGIN:VEVENT
 UID:3538195@koreaalmanac
@@ -206,18 +206,18 @@ SUMMARY:Gwangmyeong Book Festival
 LOCATION:Gwangmyeong Civic Gymnasium outdoor lawn
 END:VEVENT
 BEGIN:VEVENT
+UID:1389228@koreaalmanac
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260921
+SUMMARY:Ansan Daebu Grape Festival
+LOCATION:Daebu Sea Fragrance Theme Park
+END:VEVENT
+BEGIN:VEVENT
 UID:3372236@koreaalmanac
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260921
 SUMMARY:Tuntun Pet Festa
 LOCATION:Dongtan Yeoul Park
-END:VEVENT
-BEGIN:VEVENT
-UID:3364856@koreaalmanac
-DTSTART;VALUE=DATE:20260919
-DTEND;VALUE=DATE:20261108
-SUMMARY:Han River Walk
-LOCATION:Varies by session
 END:VEVENT
 BEGIN:VEVENT
 UID:697439@koreaalmanac
@@ -269,18 +269,18 @@ SUMMARY:14th Gyeonggi Garden Culture Expo
 LOCATION:Semiwon Garden and Dumulmeori
 END:VEVENT
 BEGIN:VEVENT
-UID:2833186@koreaalmanac
-DTSTART;VALUE=DATE:20261017
-DTEND;VALUE=DATE:20261018
-SUMMARY:Siheung International Youth Festival (SIYF)
-LOCATION:Siheung City Hall
-END:VEVENT
-BEGIN:VEVENT
 UID:2756476@koreaalmanac
 DTSTART;VALUE=DATE:20261017
 DTEND;VALUE=DATE:20261026
 SUMMARY:Royal Tombs of Joseon World Heritage Festival
 LOCATION:12 Joseon royal tomb sites (Donggureung  Seooreung  Yungneung·Geolleung and others)
+END:VEVENT
+BEGIN:VEVENT
+UID:2833186@koreaalmanac
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:Siheung International Youth Festival (SIYF)
+LOCATION:Siheung City Hall
 END:VEVENT
 BEGIN:VEVENT
 UID:1856661@koreaalmanac

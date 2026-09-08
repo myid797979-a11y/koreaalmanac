@@ -1,0 +1,497 @@
+{
+"3109677": {
+  "title": "Andong Cherry Blossom Festival",
+  "overview": "Andong's spring festival timed to the bloom along the Nakdong riverside and downtown cherry roads: blossom tunnels, night lighting, street performances, flea markets, and food zones at the Mask Dance Park.",
+  "addr": "200 Chukjejang-gil, Andong-si, Gyeongsangbuk-do",
+  "place": "Mask Dance Park",
+  "fee": "Free",
+  "hours": "10:00–22:00",
+  "sponsor": "Korea Spirit & Culture Foundation"
+},
+"969709": {
+  "title": "Okcheon Sapling Festival",
+  "overview": "Korea's only nursery-tree district — 90 years of sapling growing in Okcheon — gives away 20,000 saplings and runs auctions, exhibitions, and consultations for gardeners: landscaping trees, houseplants, and kitchen-garden stock straight from the growers.",
+  "addr": "828 Iwon-ro, Iwon-myeon, Okcheon-gun, Chungcheongbuk-do",
+  "place": "Okcheon Sapling Park",
+  "fee": "Free",
+  "hours": "10:00–21:00",
+  "sponsor": "Okcheon County"
+},
+"2620577": {
+  "title": "Seoul International Buddhism Expo",
+  "overview": "Korea's flagship Buddhist culture fair at COEX since 2013, paired with the Buddha Art Fair: temple food, meditation goods, craft, and contemporary Buddhist art — this year playfully themed on the concept of emptiness (gong). Free with pre-registration.",
+  "addr": "513 Yeongdong-daero, Gangnam-gu, Seoul",
+  "place": "COEX Hall B",
+  "fee": "10,000 won (free with pre-registration)",
+  "hours": "10:00–18:00",
+  "sponsor": "Jogye Order of Korean Buddhism"
+},
+"2536122": {
+  "title": "Gangseo Nakdonggang 30-ri Cherry Blossom Festival",
+  "overview": "Busan Gangseo's riverside blossom festival at Daejeo Eco Park: blossom walks, pungmul parades, K-pop dance and busking stages, family and kids zones, food trucks, and flea markets along the Nakdong River petals.",
+  "addr": "1-17 Daejeo 1-dong, Gangseo-gu, Busan",
+  "place": "Daejeo Eco Park",
+  "fee": "Free (some paid)",
+  "hours": "10:00–19:00",
+  "sponsor": "Gangseo-gu Festival Committee"
+},
+"2953096": {
+  "title": "Gimje Flower Light Festival",
+  "overview": "A downtown spring festival in Gimje pairing flower displays by day with a light garden by night — this year styled as a springtime amusement park ('Flower Light Land') with performances, flea markets, and photo zones.",
+  "addr": "220 Dojak-ro, Gimje-si, Jeonbuk",
+  "place": "Gimje Culture & Sports Park",
+  "fee": "Free",
+  "hours": "11:00–20:00",
+  "sponsor": "Gimje City"
+},
+"3492561": {
+  "title": "Manseokgeo New Light Festival",
+  "overview": "A night festival at Manseokgeo — the Joseon-era reservoir listed as a World Heritage Irrigation Structure — opening Suwon's 2026 visit-year: a combined drone-fireworks-musical fountain show (500 drones, two fireworks rounds) with six busking stages.",
+  "addr": "1085 Jeongjo-ro, Jangan-gu, Suwon-si, Gyeonggi-do",
+  "place": "Manseok Park",
+  "fee": "Free",
+  "hours": "18:30–21:10",
+  "sponsor": "Suwon City"
+},
+"3109655": {
+  "title": "Boeun Cherry Blossom Road Festival",
+  "overview": "Spring on the Bocheongcheon blossom road in Boeun: busking, bubble-and-magic shows, picnic zones under the trees, and community blossom walks along the stream.",
+  "addr": "4412-13 Nambu-ro, Boeun-eup, Boeun-gun, Chungcheongbuk-do",
+  "place": "Bocheongcheon cherry road",
+  "fee": "Free",
+  "hours": "10:00–21:00",
+  "sponsor": "Boeun County"
+},
+"3483727": {
+  "title": "Seodaemun Spring Light Festival",
+  "overview": "Three thousand cherry trees on Ansan mountain plus the Hongje waterfall — Seoul's urban cascade — host spring concerts, madang plays, a singing contest, family musicals, daily busking, and month-long blossom lighting along the Hongjecheon.",
+  "addr": "370 Moraenae-ro, Seodaemun-gu, Seoul",
+  "place": "Ansan mountain to Hongjecheon stream",
+  "fee": "Free",
+  "hours": "10:00–18:00",
+  "sponsor": "Seodaemun-gu"
+},
+"3011948": {
+  "title": "Yangjae Art Salon",
+  "overview": "A rolling weekend culture series on the Yangjaecheon stream: sunset busking stages, craft markets and art workshops along the path, a lawn healing lounge with book corner, and food trucks under Yeongdong Bridge — new themes weekly through the season.",
+  "addr": "Yangjae-dong, Seocho-gu, Seoul",
+  "place": "Yangjaecheon Salon Stream",
+  "fee": "Free",
+  "hours": "13:00–20:00",
+  "sponsor": "Seocho-gu"
+},
+"4046353": {
+  "title": "Yeonje Ancient Tombs Fantasy Festival",
+  "overview": "A spring festival around the Yeonsan-dong ancient tomb mounds and Oncheoncheon park in Busan: a royal procession, falling-fire (nakhwa) show, blossom song contest — plus morning coffee raves and random-play dance aimed squarely at younger crowds.",
+  "addr": "84 Sebyeong-ro, Yeonje-gu, Busan",
+  "place": "Oncheoncheon Park and Yeonsan-dong tombs",
+  "fee": "Free (booths ~1,000 won)",
+  "hours": "11:00–21:00",
+  "sponsor": "Yeonje-gu, Busan"
+},
+"4054884": {
+  "title": "Jangja Lake Cherry Blossom Stroll",
+  "overview": "Ten days of blossom strolling around Guri's Jangja Lake: free-flow flower walks on weekdays and a programmed weekend of performances, street art, booths, and visitor events by the water.",
+  "addr": "537 Gyomun-dong, Guri-si, Gyeonggi-do",
+  "place": "Jangja Lake Park",
+  "fee": "Free (booths paid)",
+  "hours": "10:00–20:00",
+  "sponsor": "Guri City"
+},
+"2485128": {
+  "title": "Gyeongju Daereungwon Stone Wall Road Festival",
+  "overview": "Gyeongju's signature spring scene: cherry blossoms over the stone walls and royal mounds of Daereungwon, with the road fully pedestrianized for the festival. Street arts, nightly blossom lighting, a QR-ordered zero-waste restaurant street, and road playgrounds for kids.",
+  "addr": "Hwangnam-dong, Gyeongju-si, Gyeongsangbuk-do",
+  "place": "Daereungwon stone wall road",
+  "fee": "Free",
+  "hours": "13:00–22:00",
+  "sponsor": "Gyeongju City"
+},
+"3107440": {
+  "title": "Move Salon: Salon Ground",
+  "overview": "An open-air community salon on the Yangjaecheon walking path: taste-based meetups anyone can join — or host — under the bridge by Kant's Walk, a city hideout for unwinding with neighbors.",
+  "addr": "Yangjae-dong, Seocho-gu, Seoul",
+  "place": "Under Yeongdong Bridge 1, Yangjaecheon",
+  "fee": "Free (some programs paid)",
+  "hours": "11:00–21:00",
+  "sponsor": "Move Culture · Yangjaecheon Merchants"
+},
+"3359409": {
+  "title": "Guryong Village Cherry Blossom Festival",
+  "overview": "Blossoms and night lights along the Dongsam seawater stream on Yeongdo, Busan — 'Guryong nights, light and blossom fantasy': lighting ceremony, experience booths, flea markets, busking, and food zones by Amir Park.",
+  "addr": "55 Haeyang-ro 301beon-gil, Yeongdo-gu, Busan",
+  "place": "Amir Park",
+  "fee": "Free",
+  "hours": "10:00–21:00",
+  "sponsor": "Dongsam 1-dong Council"
+},
+"1592898": {
+  "title": "Seokchon Lake Cherry Blossom Festival",
+  "overview": "A thousand king cherry trees ring Seokchon Lake beneath Lotte World Tower — Seoul's most famous blossom tunnel. The festival adds busking, markets, food trucks, and a full-bloom concert, with night lighting turning the white canopy luminous after dark. Expect crowds; go early or late.",
+  "addr": "206 Songpanaru-gil, Songpa-gu, Seoul",
+  "place": "Seokchon Lake",
+  "fee": "Free",
+  "hours": "10:00–21:00",
+  "sponsor": "Songpa-gu Office"
+},
+"695592": {
+  "title": "Gangneung Gyeongpo Cherry Blossom Festival",
+  "overview": "Blossoms wrap Gyeongpo Lake all the way to the beach — a drive-and-walk classic since 1993 drawing 250,000 visitors a year. The wetland plaza hosts blossom song contests, picnics, play zones, and a 'catch the blossom thief' event, with evening lights across the lakeshore. Dates track the bloom.",
+  "addr": "365 Gyeongpo-ro, Gangneung-si, Gangwon-do",
+  "place": "Gyeongpo wetland plaza",
+  "fee": "Free",
+  "hours": "13:00–18:00 weekdays (blossom road always open)",
+  "sponsor": "Gangneung City"
+},
+"3483016": {
+  "title": "Gangseo Spring Light Festa",
+  "overview": "An evening spring festival at Banghwa Park in western Seoul — 'spring light, moonlight, play all night': camping-style rest zones, retro experience booths, and light displays for all ages.",
+  "addr": "178 Geumnanghwa-ro, Gangseo-gu, Seoul",
+  "place": "Banghwa Park",
+  "fee": "Free",
+  "hours": "17:00–22:00",
+  "sponsor": "Gangseo-gu"
+},
+"3482354": {
+  "title": "Golche Oreum Cherry Blossom Festival",
+  "overview": "A hidden Jeju blossom spot: villagers of Seonheul 2-ri have planted king cherries on Golche Oreum for 20 years, and each April the little volcanic cone turns pink. A gentle two-day village festival with music, home-style food stalls, and easy slopes for all ages.",
+  "addr": "1914 Seonheul-ri, Jocheon-eup, Jeju-si, Jeju",
+  "place": "Golche Oreum",
+  "fee": "Free",
+  "hours": "11:00–18:00",
+  "sponsor": "Seonheul 2-ri Village"
+},
+"4046410": {
+  "title": "Blooming Namhae Spring Festival",
+  "overview": "Cherry blossoms over the strait where Admiral Yi fell: Namhae's spring festival at Chungnyeolsa Shrine and the Noryang battle site pairs history with drone light shows, fireworks, stamp tours, and flea markets.",
+  "addr": "27 Noryang-ro 183beon-gil, Seolcheon-myeon, Namhae-gun, Gyeongsangnam-do",
+  "place": "Chungnyeolsa Shrine plaza, Namhae",
+  "fee": "Free",
+  "hours": "13:00–20:00 (Sun 11:00–17:00)",
+  "sponsor": "Namhae County"
+},
+"3110082": {
+  "title": "Mulgeum Cherry Blossom Festival",
+  "overview": "Blossoms along the old Mulgeum rail line and Hwangsan Park — the Nakdong River's biggest waterside park: the blossom road goes car-free for walkers, with exhibitions, experience booths, rest zones, and night landscape lighting.",
+  "addr": "275 Hwangsangongwon 1-gil, Mulgeum-eup, Yangsan-si, Gyeongsangnam-do",
+  "place": "Hwangsan Park",
+  "fee": "Free (some booths paid)",
+  "hours": "10:00–21:00",
+  "sponsor": "Yangsan City"
+},
+"141647": {
+  "title": "Jecheon Cheongpung Lake Cherry Blossom Festival",
+  "overview": "The 30th blossom festival on Cheongpung Lake — Jecheon's inland sea: busking and local performances by day, a blossom laser show and open-air cinema by night, with lawn plazas for slow lake-and-petal viewing.",
+  "addr": "20 Cheongpungho-ro 56-gil, Cheongpung-myeon, Jecheon-si, Chungcheongbuk-do",
+  "place": "Cheongpung lakeside",
+  "fee": "Free",
+  "hours": "11:00–21:00",
+  "sponsor": "Jecheon Cultural Foundation"
+},
+"3484079": {
+  "title": "Yangyang Namdaecheon Cherry Blossom Festival",
+  "overview": "A quiet-leaning blossom festival on the Namdaecheon in Yangyang: petal walks, lawn concerts, and a full-moon photo zone timed to the lunar 17th — lantern-lit blossom paths completing the spring evening.",
+  "addr": "505-3 Songam-ri, Yangyang-eup, Yangyang-gun, Gangwon-do",
+  "place": "Songi Sculpture Park",
+  "fee": "Free",
+  "hours": "10:00–21:00",
+  "sponsor": "Yangyang County"
+},
+"2952960": {
+  "title": "Uijeongbu Howon Cherry Blossom Festa",
+  "overview": "Uijeongbu's neighborhood blossom festival on the Jungnangcheon: performances and exhibitions under the trees, food booths, flea and sharing markets, and picnic space along the stream.",
+  "addr": "Howon-dong, Uijeongbu-si, Gyeonggi-do",
+  "place": "Jungnangcheon stage, Howon 1-dong",
+  "fee": "Free",
+  "hours": "12:00–18:00",
+  "sponsor": "Howon Festival Committee"
+},
+"1592837": {
+  "title": "Trot Festival X Spring Flower Festival",
+  "overview": "Dongdaemun-gu pairs its blossom festival with Korea's beloved trot music: local singer competitions, booths, and resident-run food stalls at the Jangan waterside park, with photo zones and night lighting along the Jangan blossom road.",
+  "addr": "Jangan-dong, Dongdaemun-gu, Seoul",
+  "place": "Jangan 1 waterside park",
+  "fee": "Free",
+  "hours": "11:00–21:00",
+  "sponsor": "Dongdaemun-gu"
+},
+"142186": {
+  "title": "Saenggeo Jincheon Nongdari Festival",
+  "overview": "A spring festival at Nongdari — the thousand-year-old stepping-stone bridge of stacked stones across the Semi River, Korea's oldest surviving stone bridge: performances, exhibitions, and food against Chopyeong Lake scenery.",
+  "addr": "Gusandong-ri, Munbaek-myeon, Jincheon-gun, Chungcheongbuk-do",
+  "place": "Nongdari Bridge area",
+  "fee": "Free (parking paid)",
+  "hours": "11:00–16:30 (varies by day)",
+  "sponsor": "Saenggeo Jincheon Cultural Foundation"
+},
+"140736": {
+  "title": "Yudalsan Spring Festival",
+  "overview": "Mokpo's mountain festival under the spring blossoms of Yudalsan — 'a picnic on a blooming day': slow walks on the ring road, treasure hunts, rock-stacking at Nojeokbong, and rentable picnic sets with harbor views.",
+  "addr": "Daeui-dong 2-ga, Mokpo-si, Jeollanam-do",
+  "place": "Yudalsan and Nojeokbong",
+  "fee": "Free",
+  "hours": "12:00–17:00",
+  "sponsor": "Mokpo City"
+},
+"2615461": {
+  "title": "Gyeongbokgung Saenggwabang Royal Dessert House",
+  "overview": "The royal dessert kitchen of Gyeongbokgung reopens as a tearoom: court sweets and medicinal teas recreated from the Annals, served in the palace's kitchen quarter. The 2026 edition presents storytelling tea tables built on two kings — Yeongjo's austere longevity table and Sukjong's celebratory banquet spread. Ticketed sessions; reserve ahead.",
+  "addr": "161 Sajik-ro, Jongno-gu, Seoul",
+  "place": "Sojubang kitchen quarter, Gyeongbokgung",
+  "fee": "Paid (reservation)",
+  "hours": "10:00–16:50",
+  "sponsor": "Royal Palaces and Tombs Center"
+},
+"1252849": {
+  "title": "Changnyeong Nakdonggang Canola Festival",
+  "overview": "Korea's largest single canola field — 110 hectares of yellow along the Nakdong River at Namji — blooms into Changnyeong's signature spring festival, running since 2006 with performances, orienteering through the flowers, and riverside picnicking.",
+  "addr": "177 Namjigangbyeon-gil, Namji-eup, Changnyeong-gun, Gyeongsangnam-do",
+  "place": "Namji Sports Park riverside",
+  "fee": "Free",
+  "hours": "09:00–21:00",
+  "sponsor": "Changnyeong County"
+},
+"1907888": {
+  "title": "Busan Urban Agriculture Expo",
+  "overview": "A city-farming expo in the canola fields of Daejeo Eco Park: urban growing, healing and companion agriculture, landscape farming exhibitions, and hands-on programs over four spring days.",
+  "addr": "Daejeo 1-dong, Gangseo-gu, Busan",
+  "place": "Daejeo Eco Park canola complex",
+  "fee": "Free",
+  "hours": "09:00–18:00",
+  "sponsor": "Busan Metropolitan City"
+},
+"2828328": {
+  "title": "Seoul Spring Festival",
+  "overview": "Seoul's K-lifestyle mega-festival — beauty, fashion, pop, food, art — staged across the Han River itself in 2026: programs on the water and along the banks turn walking the river into the festival experience.",
+  "addr": "330 Yeouidong-ro, Yeongdeungpo-gu, Seoul",
+  "place": "Hangang parks",
+  "fee": "Partially paid",
+  "hours": "10:00–21:00",
+  "sponsor": "Seoul Metropolitan Government"
+},
+"3113469": {
+  "title": "Treasure Island Canola Festival (Gwanmaedo)",
+  "overview": "Canola gold on Gwanmaedo — a remote island of the Jindo archipelago reachable only by ferry: 75,000 pyeong of blossom fields with mini-train rides, folk games, island trail walks with forest interpreters, and local stalls by the wharf.",
+  "addr": "Gwanmaedo-ri, Jodo-myeon, Jindo-gun, Jeollanam-do",
+  "place": "Gwanmaedo Island",
+  "fee": "Free",
+  "hours": "10:00–16:30",
+  "sponsor": "Jindo County"
+},
+"1800991": {
+  "title": "April 19 Revolution National Culture Festival",
+  "overview": "A national commemoration of the 1960 April Revolution — the student-led uprising that toppled a rigged election — at the National April 19 Democratic Cemetery: memorials, performances, and citizen programs carrying the movement's values of freedom, democracy, and justice.",
+  "addr": "13 Dobong-ro 89-gil, Gangbuk-gu, Seoul",
+  "place": "National April 19 Cemetery and Gangbuk district",
+  "fee": "Free",
+  "hours": "13:00–22:30",
+  "sponsor": "April 19 Revolution Associations · Gangbuk-gu"
+},
+"4056086": {
+  "title": "Jinju Strawberry Festival",
+  "overview": "Jinju leads Korea's strawberry exports, and its spring festival celebrates the premium Geumsil variety: picking and tastings, sales at farm prices, performances, and family events in the growing heartland of Sugok-myeon.",
+  "addr": "226-1 Daecheon-ri, Sugok-myeon, Jinju-si, Gyeongsangnam-do",
+  "place": "Jinseo school grounds, Sugok-myeon",
+  "fee": "Free (some programs paid)",
+  "hours": "Daytime",
+  "sponsor": "Jinju City"
+},
+"3482515": {
+  "title": "Sancheong Farm Products Festival",
+  "overview": "The medicinal-herb county under Jirisan brings its best to Donguibogam Village: honey, strawberries, herbs, wild greens, and black pork direct from growers, with programs and performances in the herbal-medicine theme park.",
+  "addr": "45-2 Donguibogam-ro 555beon-gil, Geumseo-myeon, Sancheong-gun, Gyeongsangnam-do",
+  "place": "Donguibogam Village",
+  "fee": "Free",
+  "hours": "09:00–17:00",
+  "sponsor": "Korea Beekeeping Association Sancheong"
+},
+"3093268": {
+  "title": "Library Day & Library Week",
+  "overview": "Korea's national library celebration around April 12: an international conference and hackathon at the National Library, a commemorative ceremony, and campaigns at libraries nationwide in the 62nd library week.",
+  "addr": "201 Banpo-daero, Seocho-gu, Seoul",
+  "place": "National Library of Korea and libraries nationwide",
+  "fee": "Free",
+  "hours": "10:00–18:00",
+  "sponsor": "Ministry of Culture, Sports and Tourism"
+},
+"2842412": {
+  "title": "Donghaeng Festival",
+  "overview": "Korea's biggest small-business shopping festival: nationwide discounts and events across traditional markets, local shops, and online platforms, opening with ceremonies in Jeonju — a country-wide campaign rather than a single-venue event.",
+  "addr": "308 Gwonsamdeuk-ro, Deokjin-gu, Jeonju-si, Jeonbuk",
+  "place": "Opening in Jeonju · nationwide markets and platforms",
+  "fee": "Free",
+  "hours": "Opening Apr 11, 18:00",
+  "sponsor": "Ministry of SMEs and Startups"
+},
+"2740921": {
+  "title": "Korea Science Festival with Busan Science Festival",
+  "overview": "The 25th Busan Science Festival joins forces with the national science festival at BEXCO, themed 'the taste of science — AI cooks too': taste-labeled experiment zones, robot and research booths from local universities and institutes, lectures, and shows for families.",
+  "addr": "55 APEC-ro, Haeundae-gu, Busan",
+  "place": "BEXCO Hall 1",
+  "fee": "Free",
+  "hours": "10:00–17:00",
+  "sponsor": "Ministry of Science and ICT · Busan"
+},
+"2950952": {
+  "title": "Geumsan Bogok Valley Wild Cherry Festival",
+  "overview": "Korea's largest wild-cherry (san-beotkkot) colony — roughly 10 million square meters of hillsides in Bogok Valley — blushes pink each April. Footpaths from 'Boineyo-gil' to 'Jajinbaengi-gil' wind through untouched spring woodland dotted with dogwood, azalea, and wildflowers.",
+  "addr": "39 Jajinbaengi-gil, Gunbuk-myeon, Geumsan-gun, Chungcheongnam-do",
+  "place": "Wild Cherry Village campground",
+  "fee": "Free",
+  "hours": "10:00–16:00",
+  "sponsor": "Geumsan County"
+},
+"3486026": {
+  "title": "Yeongnangho Cherry Blossom Festival",
+  "overview": "Sokcho's lakeside blossom festival: an 8km blossom-tunnel loop around Yeongnang Lake with walking events, lakeside yoga, busking, 40 food and market stalls, and a lit blossom tunnel after dark — with Seoraksan's peaks in the background.",
+  "addr": "206 Yeongnanghoban-gil, Sokcho-si, Gangwon-do",
+  "place": "Yeongnang Lake lawn plaza",
+  "fee": "Free",
+  "hours": "10:00–22:00",
+  "sponsor": "Sokcho City"
+},
+"3485660": {
+  "title": "Jayu Park Cherry Blossom Festival",
+  "overview": "Incheon's classic blossom spot — Jayu (Freedom) Park above the open port — hosts a spring festival with local and headline stages (past lineups include Jang Yoon-jeong and K.Will), world-DJ sets, pressed-flower crafts, the 1888 art market, and food zones.",
+  "addr": "46 Jemullyang-ro 232beon-gil, Jung-gu, Incheon",
+  "place": "Jayu Park",
+  "fee": "Free",
+  "hours": "13:00–21:00",
+  "sponsor": "Jemulpo-gu, Incheon"
+},
+"3480383": {
+  "title": "Gimpo Cherry Blossom Festival",
+  "overview": "Two days of blossoms along the Gyeyangcheon stream — 'purely blossoms': citizen-arts-school ukulele and magic stages, busking, photo zones, and rest spots on Gimpo's favorite petal walk.",
+  "addr": "Bukbyeon-dong, Gimpo-si, Gyeonggi-do",
+  "place": "Gyeyangcheon walking path",
+  "fee": "Free",
+  "hours": "10:00–20:00",
+  "sponsor": "Gimpo City"
+},
+"4053719": {
+  "title": "Seoul Buramsan Azalea Festival",
+  "overview": "A hundred thousand royal azaleas paint Buramsan's healing town pink for one short window each spring: flower-path walks, sensory performances, and family programs at the mountain's foot in northeast Seoul.",
+  "addr": "51-27 Hangeulbiseok-ro 12-gil, Nowon-gu, Seoul",
+  "place": "Buramsan Healing Town",
+  "fee": "Free",
+  "hours": "10:00–18:00",
+  "sponsor": "Nowon-gu Office"
+},
+"2508126": {
+  "title": "Yangju Hoeamsa Temple Site Royal Festival",
+  "overview": "Hoeamsa was the greatest temple of late-Goryeo Korea — King Taejo Yi Seong-gye retreated here — and its excavated site is on UNESCO's tentative list. The festival reenacts the royal procession and governor's welcome, with site-mystery quests, bell experiences, heritage performances, temple-food talks, and healing concerts among the ruins.",
+  "addr": "11 Hoeamsa-gil, Yangju-si, Gyeonggi-do",
+  "place": "Hoeamsa Temple Site",
+  "fee": "Free (some programs paid)",
+  "hours": "10:00–20:00",
+  "sponsor": "Yangju City"
+},
+"4056794": {
+  "title": "Busan Spring Flower Exhibition",
+  "overview": "Busan Citizens Park in full spring dress — 'Garden Go Round': flower sculptures and topiary, themed beds, bonsai and wildflower special exhibitions, a national flower-tea contest, proposal photo zones, and a growers' market.",
+  "addr": "73 Simingongwon-ro, Busanjin-gu, Busan",
+  "place": "Busan Citizens Park",
+  "fee": "Free",
+  "hours": "10:00–17:00",
+  "sponsor": "Busan Metropolitan City"
+},
+"4054430": {
+  "title": "Hwasun Spring Flower Festival",
+  "overview": "Flower roads by day, 'blossom night walk' by night: Hwasun's spring festival strings canola fields, pop-up pochas, dinosaur installations, and performances along the flower river path and Namsan Park.",
+  "addr": "481 Dae-ri, Hwasun-eup, Hwasun-gun, Jeollanam-do",
+  "place": "Hwasun flower river road and Namsan Park",
+  "fee": "Free",
+  "hours": "15:00–21:00",
+  "sponsor": "Hwasun County"
+},
+"3486674": {
+  "title": "Gangjin Jeolla Byeongyeongseong Fortress Festival",
+  "overview": "A history festival inside the actual walls of Jeolla Byeongyeongseong — the garrison fortress that commanded Jeolla and Jeju for 500 years: soldier-drill reenactments, period costume, and traditional performances along the ramparts.",
+  "addr": "175 Byeongyeongseong-ro, Byeongyeong-myeon, Gangjin-gun, Jeollanam-do",
+  "place": "Jeolla Byeongyeongseong Fortress",
+  "fee": "Free (some programs paid)",
+  "hours": "10:00–18:00",
+  "sponsor": "Gangjin County"
+},
+"2849025": {
+  "title": "Namhansanseong World Heritage Programs",
+  "overview": "Season-long programs at UNESCO-listed Namhansanseong: palace education experiences, the OUV Expedition storytelling walk along the walls, a climate-protection program for the fortress, and participatory lectures remembering the 1636 siege.",
+  "addr": "Sanseong-ri, Namhansanseong-myeon, Gwangju-si, Gyeonggi-do",
+  "place": "Namhansanseong Fortress",
+  "fee": "Free",
+  "hours": "10:00–16:00",
+  "sponsor": "Gyeonggi Namhansanseong World Heritage Center"
+},
+"1803449": {
+  "title": "Biseulsan Azalea Festival",
+  "overview": "Korea's largest azalea colony — some 300,000 pyeong across Biseulsan's 1,000m summit plateau — turns the mountaintop pink in mid-April. Running since 1997, the festival pairs shuttle-accessible viewing with performances at the mountain base; the summit fields at full bloom are among Korea's great spring sights.",
+  "addr": "10 Ilyeonseonsa-gil, Yuga-eup, Dalseong-gun, Daegu",
+  "place": "Biseulsan (youth hostel base area)",
+  "fee": "Free",
+  "hours": "08:00–16:00",
+  "sponsor": "Dalseong County"
+},
+"3113152": {
+  "title": "Play Turns Into Science!",
+  "overview": "The Incheon Children's Science Museum's Science Day festival: science shows, family challenges, roaming events, robot and AI experiences, and hands-on programs built for kids across the museum.",
+  "addr": "21 Bangchuk-ro, Gyeyang-gu, Incheon",
+  "place": "Incheon Children's Science Museum",
+  "fee": "Free",
+  "hours": "10:00–17:00",
+  "sponsor": "Incheon Facilities Corp."
+},
+"3484594": {
+  "title": "Seonnong Daeje Royal Farming Rite",
+  "overview": "The 47th reenactment of Joseon's royal farming rite at Seonnongdan altar — where kings prayed for good harvests and plowed the first furrow themselves. After the rite and royal procession, the crowd shares seolleongtang from giant cauldrons: the beef soup whose very name, tradition says, comes from this altar.",
+  "addr": "38 Muhak-ro 44-gil, Dongdaemun-gu, Seoul",
+  "place": "Seonnongdan Altar History Park",
+  "fee": "Free",
+  "hours": "09:00–15:00",
+  "sponsor": "Dongdaemun Cultural Foundation"
+},
+"2594815": {
+  "title": "Queen Jeongsun Culture Festival",
+  "overview": "A festival for Queen Jeongsun, who was separated from the deposed boy-king Danjong at eighteen and spent sixty years gazing east toward his exile from Dongmangbong hill. Her story of 'purple longing' becomes a neighborhood festival of remembrance and consolation at Sungin Park.",
+  "addr": "150 Dongmangsan-gil, Jongno-gu, Seoul",
+  "place": "Sungin Park (Dongmangbong)",
+  "fee": "Free (some programs paid)",
+  "hours": "12:00–16:00",
+  "sponsor": "Jongno-gu"
+},
+"511801": {
+  "title": "Gochang Green Barley Field Festival",
+  "overview": "Korea's original landscape-agriculture festival: 770,000 square meters of young green barley waving at Hagwon Farm, drawing 300,000 visitors each spring since 2004. Walk the barley path (3,000 won), browse farm markets, and catch the fields at their photogenic peak from mid-April to mid-May.",
+  "addr": "150 Hagwonnongjang-gil, Gong-eum-myeon, Gochang-gun, Jeonbuk",
+  "place": "Hagwon Farm",
+  "fee": "Parking 10,000 won (refunded in local currency) · barley path 3,000 won",
+  "hours": "09:00–18:00",
+  "sponsor": "Gochang County"
+},
+"2953055": {
+  "title": "Reading Korea Campaign Launch",
+  "overview": "A World Book Day launch event at COEX's Byeolmadang Library: a mass book-opening performance and message wall kicking off the national reading campaign, with side programs through the weekend.",
+  "addr": "513 Yeongdong-daero, Gangnam-gu, Seoul",
+  "place": "Byeolmadang Library open stage, COEX",
+  "fee": "Free",
+  "hours": "16:00–19:00",
+  "sponsor": "Ministry of Culture, Sports and Tourism"
+},
+"2608888": {
+  "title": "Gwangju Heritage Night Tour",
+  "overview": "The 10th anniversary of Gwangju's heritage night: the '8 nights' format — night views, history tours, crafts, exhibitions, performances, food, market, and stay — around the May 18 Democracy Plaza and the old town's heritage sites.",
+  "addr": "38 Munhwajeondang-ro, Dong-gu, Gwangju",
+  "place": "May 18 Democracy Plaza and heritage sites",
+  "fee": "Free (some paid)",
+  "hours": "18:00–22:00",
+  "sponsor": "Dong-gu, Gwangju"
+},
+"292977": {
+  "title": "Gijang Anchovy Festival",
+  "overview": "Thirty years of spring anchovies at Daebyeon Port: free myeolchi sashimi tastings, boat-fishing trips, surprise seafood auctions, bare-hand fish catching, a song contest, EDM parties, an anniversary parade, and fireworks over the harbor — Busan's definitive taste-of-spring festival.",
+  "addr": "605 Gijanghaean-ro, Gijang-eup, Gijang-gun, Busan",
+  "place": "Daebyeon Port",
+  "fee": "Free (some programs paid)",
+  "hours": "Daytime–evening",
+  "sponsor": "Festival Committee"
+}
+}

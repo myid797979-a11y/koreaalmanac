@@ -3,18 +3,18 @@ VERSION:2.0
 PRODID:-//KoreaAlmanac//EN
 X-WR-CALNAME:Korea Festivals - Gangwon
 BEGIN:VEVENT
-UID:3435533@koreaalmanac
-DTSTART;VALUE=DATE:20260404
-DTEND;VALUE=DATE:20261128
-SUMMARY:ARI-The Spirit of Korea
-LOCATION:Jeongseon Arirang Center  51  Aesan-ro  Jeongseon-eup  Jeongseon-gun  Gangwon-do
-END:VEVENT
-BEGIN:VEVENT
 UID:3385446@koreaalmanac
 DTSTART;VALUE=DATE:20260404
 DTEND;VALUE=DATE:20261129
 SUMMARY:Raftman
 LOCATION:Jeongseon Arirang Culture  Arirang Hall  51  Aesan-ro  Jeongseon-eup  Jeongseon-gun  Gangwon-do
+END:VEVENT
+BEGIN:VEVENT
+UID:3435533@koreaalmanac
+DTSTART;VALUE=DATE:20260404
+DTEND;VALUE=DATE:20261128
+SUMMARY:ARI-The Spirit of Korea
+LOCATION:Jeongseon Arirang Center  51  Aesan-ro  Jeongseon-eup  Jeongseon-gun  Gangwon-do
 END:VEVENT
 BEGIN:VEVENT
 UID:2766000@koreaalmanac
@@ -94,18 +94,18 @@ SUMMARY:Jeongseon Arirang Festival
 LOCATION:Jeongseon Public Stadium
 END:VEVENT
 BEGIN:VEVENT
-UID:421977@koreaalmanac
-DTSTART;VALUE=DATE:20261002
-DTEND;VALUE=DATE:20261006
-SUMMARY:Goseong Pollack Festival
-LOCATION:Geojin 11-ri Beach
-END:VEVENT
-BEGIN:VEVENT
 UID:2027215@koreaalmanac
 DTSTART;VALUE=DATE:20261002
 DTEND;VALUE=DATE:20261005
 SUMMARY:Anheung Steamed Bun Festival
 LOCATION:Anheung Jjinppang Village
+END:VEVENT
+BEGIN:VEVENT
+UID:421977@koreaalmanac
+DTSTART;VALUE=DATE:20261002
+DTEND;VALUE=DATE:20261006
+SUMMARY:Goseong Pollack Festival
+LOCATION:Geojin 11-ri Beach
 END:VEVENT
 BEGIN:VEVENT
 UID:293131@koreaalmanac
