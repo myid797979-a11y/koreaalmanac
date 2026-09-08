@@ -47,11 +47,13 @@ jobs:
           dotnet run --project Tour.Collector -- init
           dotnet run --project Tour.Collector -- restore
 
-      - name: 축제 수집 (목록 갱신 + 신규 상세만)
+      - name: 축제 수집 (목록 갱신 + 신규 상세 + 이미지 드레인)
         run: |
           dotnet run --project Tour.Collector -- festivals
           dotnet run --project Tour.Collector -- details eng
           dotnet run --project Tour.Collector -- details kor
+          dotnet run --project Tour.Collector -- images eng
+          dotnet run --project Tour.Collector -- images kor
           dotnet run --project Tour.Collector -- stats
 
       - name: 익스포트 + 덤프 갱신

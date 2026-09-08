@@ -108,7 +108,11 @@ export default function CalendarPage() {
     <>
       <div className="crumb"><Link href="/">Home</Link> › Calendar</div>
       <h1>Festival Calendar</h1>
-      <p className="sub">Festivals by start date, next 12 months</p>
+      <p className="sub">
+        Festivals by start date, next 12 months ·
+        {' '}<a href="/feeds/all.ics" style={{ textDecoration: 'underline' }}>subscribe in your calendar app (.ics)</a>
+        {' '}— refreshed daily
+      </p>
 
       {ongoing.length > 0 && (
         <details className="ongoing-box">

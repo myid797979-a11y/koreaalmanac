@@ -1,0 +1,54 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//KoreaAlmanac//EN
+X-WR-CALNAME:Korea Festivals - Daejeon
+BEGIN:VEVENT
+UID:3435541@koreaalmanac
+DTSTART;VALUE=DATE:20260314
+DTEND;VALUE=DATE:20261129
+SUMMARY:Daejeon Yeonjeong Korean Traditional Music Group’s Saturday Gugak Show
+LOCATION:Daejeon Yeonjeong Korean Traditional Music Center Jakeunmadang (Little Hall)  181  Dunsan-daero  Seo-gu  Daejeon
+END:VEVENT
+BEGIN:VEVENT
+UID:4098134@koreaalmanac
+DTSTART;VALUE=DATE:20260814
+DTEND;VALUE=DATE:20261212
+SUMMARY:Yuseong On-Day
+LOCATION:Yuseong Hot Springs district
+END:VEVENT
+BEGIN:VEVENT
+UID:4106719@koreaalmanac
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20261018
+SUMMARY:Moonlight Music Nights
+LOCATION:Parks and streamsides across Daejeon
+END:VEVENT
+BEGIN:VEVENT
+UID:4104786@koreaalmanac
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260914
+SUMMARY:Daejeon Jung-gu Heritage Night Tour
+LOCATION:Original downtown  Jung-gu  Daejeon
+END:VEVENT
+BEGIN:VEVENT
+UID:4091877@koreaalmanac
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260914
+SUMMARY:Daejeon Jung-gu Book Festival
+LOCATION:Seonnidan-gil in Jung-gu  Daejeon
+END:VEVENT
+BEGIN:VEVENT
+UID:3352431@koreaalmanac
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260920
+SUMMARY:8th Daejeon Special Visual Effects Film Festival
+LOCATION:DCC Exhibition Hall 2 and cinemas across Daejeon
+END:VEVENT
+BEGIN:VEVENT
+UID:3113001@koreaalmanac
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261012
+SUMMARY:Daejeon Donggu-dongnak Festival
+LOCATION:Soje-dong east plaza and Daedongcheon stream
+END:VEVENT
+END:VCALENDAR

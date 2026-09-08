@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Hahmlet } from 'next/font/google';
 import Logo from '@/app/components/Logo';
+import SearchBox from '@/app/components/SearchBox';
 import { SITE_URL, SITE_NAME } from '@/lib/site';
 import { fmt, today } from '@/lib/data';
 import './globals.css';
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="site">
           <div className="wrap">
             <Link href="/" className="wordmark"><Logo />{SITE_NAME}</Link>
+            <SearchBox />
             <nav className="nav">
               <Link href="/plan/">Trip Planner</Link>
               <Link href="/festivals/">Festivals</Link>

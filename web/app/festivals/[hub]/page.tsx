@@ -2,16 +2,17 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Card from '@/app/components/Card';
 import {
-  MONTHS_FULL, MONTH_SLUGS, REGIONS, REGION_MONTH_MIN,
-  monthFestivals, regionFestivals, regionMonthList,
+  MONTHS_FULL, MONTH_SLUGS, REGIONS, REGION_MONTH_MIN, CATEGORIES,
+  monthFestivals, regionFestivals, regionMonthList, categoryFestivals, categoryLabel,
   status, today,
 } from '@/lib/data';
-import { MONTH_INTROS, REGION_INTROS } from '@/lib/editorial';
+import { MONTH_INTROS, REGION_INTROS, CATEGORY_INTROS } from '@/lib/editorial';
 
 export function generateStaticParams() {
   return [
     ...MONTH_SLUGS.map(hub => ({ hub })),
     ...REGIONS.map(r => ({ hub: r.toLowerCase() })),
+    ...CATEGORIES.map(c => ({ hub: c.slug })),
   ];
 }
 
@@ -27,11 +28,19 @@ export async function generateMetadata({ params }: { params: Promise<{ hub: stri
     };
   }
   const region = REGIONS.find(r => r.toLowerCase() === hub);
-  if (!region) return {};
-  const n = regionFestivals(region).filter(f => status(f) !== 'ended').length;
+  if (region) {
+    const n = regionFestivals(region).filter(f => status(f) !== 'ended').length;
+    return {
+      title: 'Festivals in ' + region + ' — ' + n + ' happening or upcoming',
+      description: 'Every festival in ' + region + ', Korea with real dates, venues, and fees — from official Korea Tourism Organization data, updated daily.',
+    };
+  }
+  const cat = CATEGORIES.find(c => c.slug === hub);
+  if (!cat) return {};
+  const cn = categoryFestivals(cat.slug).filter(f => status(f) !== 'ended').length;
   return {
-    title: 'Festivals in ' + region + ' — ' + n + ' happening or upcoming',
-    description: 'Every festival in ' + region + ', Korea with real dates, venues, and fees — from official Korea Tourism Organization data, updated daily.',
+    title: cat.label + ' Festivals in Korea — ' + cn + ' happening or upcoming',
+    description: cn + ' ' + cat.label.toLowerCase() + ' festivals across Korea with real dates and venues — from official tourism data, updated daily.',
   };
 }
 
@@ -93,7 +102,8 @@ function RegionHub({ region }: { region: string }) {
       <div className="crumb"><Link href="/">Festivals</Link> › {region}</div>
       <h1>Festivals in {region}</h1>
       <p className="sub">
-        {live.length} happening or upcoming · {ended} past editions tracked · updated daily
+        {live.length} happening or upcoming · {ended} past editions tracked · updated daily ·
+        {' '}<a href={'/feeds/' + region.toLowerCase() + '.ics'} style={{ textDecoration: 'underline' }}>subscribe (.ics)</a>
       </p>
       <p className="intro">{REGION_INTROS[region]}</p>
       {months.length > 0 && (
@@ -116,11 +126,36 @@ function RegionHub({ region }: { region: string }) {
   );
 }
 
+function CategoryHub({ slug }: { slug: string }) {
+  const t = today();
+  const all = categoryFestivals(slug);
+  const live = all.filter(f => status(f, t) !== 'ended')
+    .sort((a, b) => (a.start ?? '').localeCompare(b.start ?? ''));
+  const label = categoryLabel(slug);
+
+  return (
+    <>
+      <div className="crumb"><Link href="/">Festivals</Link> › {label}</div>
+      <h1>{label} Festivals in Korea</h1>
+      <p className="sub">{live.length} happening or upcoming · {all.length - live.length} past editions tracked · updated daily</p>
+      <p className="intro">{CATEGORY_INTROS[slug]}</p>
+      <div className="grid">{live.map(f => <Card key={f.id} f={f} t={t} />)}</div>
+      <h2 className="sect">Other interests</h2>
+      <p className="strip">
+        {CATEGORIES.filter(c => c.slug !== slug).map(c => (
+          <Link key={c.slug} href={'/festivals/' + c.slug + '/'}>{c.label}</Link>
+        ))}
+      </p>
+    </>
+  );
+}
+
 export default async function HubPage({ params }: { params: Promise<{ hub: string }> }) {
   const { hub } = await params;
   const mIdx = MONTH_SLUGS.indexOf(hub);
   if (mIdx >= 0) return <MonthHub monthIdx={mIdx} />;
   const region = REGIONS.find(r => r.toLowerCase() === hub);
   if (region) return <RegionHub region={region} />;
+  if (CATEGORIES.some(c => c.slug === hub)) return <CategoryHub slug={hub} />;
   notFound();
 }

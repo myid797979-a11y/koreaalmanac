@@ -47,3 +47,13 @@ export const FEATURED_IDS: string[] = [
   "3521741", // Seoul BBQ Festival
   "141105",  // Goseong Dinosaur World Expo
 ];
+
+export const CATEGORY_INTROS: Record<string, string> = {
+  traditional: "Palace guard ceremonies, mask dance, fortress night tours, gugak stages — Korea keeps its traditions on public display, and most of it is free. These are the festivals where the country's thousand-year backstory is the main act.",
+  lights: "Korea does darkness well: lantern rivers, drone swarms, media-art facades, palace night openings, and fireworks over the water. Night festivals also double as the best way to dodge summer heat and catch city skylines at their best.",
+  food: "From hanwoo beef grill-outs and craft beer parks to ginseng harvests and steamed-bun villages — Korean food festivals are direct lines to regional specialties at farm prices, usually with free entry and paid plates.",
+  nature: "Cherry blossoms in April, lotus in July, red spider lilies in September, foliage in October: Korea's flower and nature festivals track the seasons tightly, which makes dates matter more here than anywhere else on this site.",
+  music: "Jazz on lake shores, busking world cups, hip-hop in front of ancient tombs, and free open-air stages all summer — Korean music festivals range from ticketed headliners to city streets that simply fill with sound.",
+  art: "Two of Asia's leading biennales (Gwangju and Jeju), photography festivals in mountain counties, design weeks, and craft fairs — Korea's art calendar rewards travelers willing to leave Seoul.",
+  family: "Dinosaur expos, puppet festivals, alien sports days, pet festas — these are the events built for kids first, usually free, with hands-on programs that do not need Korean to enjoy.",
+};

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import {
-  festivals, MONTH_SLUGS, REGIONS, REGION_MONTH_MIN, regionMonthList,
+  festivals, MONTH_SLUGS, REGIONS, REGION_MONTH_MIN, regionMonthList, CATEGORIES,
 } from '@/lib/data';
 import { SITE_URL } from '@/lib/site';
 
@@ -18,6 +18,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const m of MONTH_SLUGS)
     urls.push({ url: SITE_URL + '/festivals/' + m + '/', priority: 0.9 });
+
+  for (const c of CATEGORIES)
+    urls.push({ url: SITE_URL + '/festivals/' + c.slug + '/', priority: 0.8 });
 
   for (const r of REGIONS) {
     urls.push({ url: SITE_URL + '/festivals/' + r.toLowerCase() + '/', priority: 0.8 });

@@ -6,7 +6,7 @@ export type Festival = {
   addr: string | null; mapx: string | null; mapy: string | null;
   image: string | null; tel: string | null; overview: string | null;
   homepage: string | null; place: string | null; fee: string | null;
-  hours: string | null; duration: string | null; sponsor: string | null; mt?: boolean;
+  hours: string | null; duration: string | null; sponsor: string | null; mt?: boolean; tags?: string[]; images?: string[];
 };
 
 export const festivals = festivalsJson as Festival[];
@@ -138,4 +138,22 @@ export function onWeekend(t = today()): Festival[] {
       const bStarts = b.start! >= from ? 0 : 1;
       return aStarts - bStarts || a.start!.localeCompare(b.start!);
     });
+}
+
+// ── 카테고리 (Exporter의 태그 규칙과 슬러그 일치) ──────────
+export const CATEGORIES: { slug: string; label: string }[] = [
+  { slug: 'traditional', label: 'Heritage & Traditional' },
+  { slug: 'lights', label: 'Fireworks & Lights' },
+  { slug: 'food', label: 'Food & Drink' },
+  { slug: 'nature', label: 'Flowers & Nature' },
+  { slug: 'music', label: 'Music & Performance' },
+  { slug: 'art', label: 'Art & Exhibitions' },
+  { slug: 'family', label: 'Family & Kids' },
+];
+
+export const categoryLabel = (slug: string): string =>
+  CATEGORIES.find(c => c.slug === slug)?.label ?? slug;
+
+export function categoryFestivals(slug: string): Festival[] {
+  return festivals.filter(f => (f.tags ?? []).includes(slug));
 }

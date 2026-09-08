@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Card, { Stamp } from '@/app/components/Card';
 import {
   festivals, bySlug, status, dateRange, daysUntil, today,
-  icsHref, MONTH_SLUGS, MONTHS_FULL,
+  icsHref, MONTH_SLUGS, MONTHS_FULL, categoryLabel,
 } from '@/lib/data';
 
 export function generateStaticParams() {
@@ -50,6 +50,22 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
 
       <h1>{f.title} {badge}</h1>
       <p className="sub">{dateRange(f)} · {f.region}</p>
+
+      {(f.tags ?? []).length > 0 && (
+        <p className="strip" style={{ marginTop: -10 }}>
+          {f.tags!.map(tg => (
+            <Link key={tg} className="chip" href={'/festivals/' + tg + '/'}>{categoryLabel(tg)}</Link>
+          ))}
+        </p>
+      )}
+
+      {status(f, t) === 'ended' && (
+        <div className="ended-banner">
+          This festival has ended — many return annually, so it may come back next year.
+          {' '}<Link href={'/festivals/' + f.region.toLowerCase() + '/'}>See current festivals in {f.region}</Link>
+          {' '}or <Link href="/plan/">plan around your dates</Link>.
+        </div>
+      )}
 
       <table className="facts">
         <tbody>
@@ -104,6 +120,20 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
             </p>
           )}
         </div>
+      )}
+
+      {(f.images ?? []).filter(u => u !== f.image).length > 0 && (
+        <>
+          <h2 className="sect">Photos</h2>
+          <div className="gallery">
+            {f.images!.filter(u => u !== f.image).map(u => (
+              <a key={u} href={u} target="_blank" rel="noopener">
+                <img src={u} alt={f.title} loading="lazy" />
+              </a>
+            ))}
+          </div>
+          <p className="meta">Photos: Korea Tourism Organization</p>
+        </>
       )}
 
       {nearby.length > 0 && (

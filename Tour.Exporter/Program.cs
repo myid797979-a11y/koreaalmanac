@@ -23,15 +23,17 @@ var regions = new Dictionary<string, string>
     ["47"] = "Gyeongbuk", ["48"] = "Gyeongnam", ["50"] = "Jeju",
 };
 
-var all = conn.Query<(string Lang, string Id, string List, string Common, string Intro)>("""
-    select lang, contentid, list_json::text, coalesce(common_json::text,'{}'), coalesce(intro_json::text,'{}')
+var all = conn.Query<(string Lang, string Id, string List, string Common, string Intro, string Img)>("""
+    select lang, contentid, list_json::text, coalesce(common_json::text,'{}'), coalesce(intro_json::text,'{}'),
+           coalesce(images_json::text,'[]')
     from raw_item where detailed_at is not null
     """).Select(r =>
 {
     var l = JsonDocument.Parse(r.List).RootElement;
     var c = JsonDocument.Parse(r.Common).RootElement;
     var i = JsonDocument.Parse(r.Intro).RootElement;
-    return new Rec(r.Lang, r.Id, l, c, i);
+    var im = JsonDocument.Parse(r.Img).RootElement;
+    return new Rec(r.Lang, r.Id, l, c, i, im);
 }).ToList();
 
 var kor = all.Where(r => r.Lang == "kor").ToList();
@@ -109,17 +111,63 @@ File.WriteAllText(Path.Combine(webData, "festivals.json"), JsonSerializer.Serial
 File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
     JsonSerializer.Serialize(queue, new JsonSerializerOptions { WriteIndented = true, Encoder = jsonOpt.Encoder }));
 
+// 검색 인덱스 (헤더 검색박스용 슬림, ~40KB)
+var pubDir = Path.Combine(root, "web", "public");
+Directory.CreateDirectory(pubDir);
+File.WriteAllText(Path.Combine(pubDir, "search-index.json"),
+    JsonSerializer.Serialize(fests.Select(f => new
+    {
+        t = f["title"], s = f["slug"], r = f["region"], d = f["start"], e = f["end"],
+    }), jsonOpt));
+
+// 지역별 .ics 구독 피드 — 진행·예정 축제만, 매일 재생성
+var feedDir = Path.Combine(pubDir, "feeds");
+Directory.CreateDirectory(feedDir);
+var CRLF = "" + (char)13 + (char)10;
+var todayKst = DateTime.UtcNow.AddHours(9).ToString("yyyyMMdd");
+string Ics(string name, IEnumerable<Dictionary<string, object?>> list)
+{
+    var lines = new List<string> { "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//KoreaAlmanac//EN", "X-WR-CALNAME:" + name };
+    foreach (var f in list)
+    {
+        var start = f["start"] as string;
+        var end = f["end"] as string ?? start;
+        if (start == null || string.Compare(end, todayKst, StringComparison.Ordinal) < 0) continue;
+        var dtEnd = DateTime.ParseExact(end!, "yyyyMMdd", null).AddDays(1).ToString("yyyyMMdd");
+        lines.AddRange(new[]
+        {
+            "BEGIN:VEVENT",
+            "UID:" + f["id"] + "@koreaalmanac",
+            "DTSTART;VALUE=DATE:" + start,
+            "DTEND;VALUE=DATE:" + dtEnd,
+            "SUMMARY:" + (f["title"] as string)?.Replace(",", " "),
+            "LOCATION:" + ((f["place"] ?? f["addr"] ?? f["region"]) as string)?.Replace(",", " "),
+            "END:VEVENT",
+        });
+    }
+    lines.Add("END:VCALENDAR");
+    return string.Join(CRLF, lines);
+}
+File.WriteAllText(Path.Combine(feedDir, "all.ics"), Ics("Korea Festivals", fests));
+foreach (var rg in regions.Values.Distinct())
+    File.WriteAllText(Path.Combine(feedDir, rg.ToLowerInvariant() + ".ics"),
+        Ics("Korea Festivals - " + rg, fests.Where(f => (string)f["region"]! == rg)));
+
 Console.WriteLine($"""
     festivals.json      {fests.Count:N0}건 (영문 {eng.Count:N0} + 번역 병합 {translated:N0})
     translation_queue   {queue.Count:N0}건 (active {queue.Count(q => (bool)q["active"]!):N0})
+    search-index + feeds ({regions.Values.Distinct().Count() + 1}개 .ics) 생성
     """);
 
 Dictionary<string, object?> Build(Rec r, Dictionary<string, string?>? tr)
 {
     var titleRaw = tr?.GetValueOrDefault("title") ?? r.S("title") ?? "";
     var title = CleanTitle(titleRaw);
+    // 카테고리 태그 — 한·영 키워드 규칙 (titleFull엔 영문 항목도 괄호 한글이 있어 양쪽 다 잡힘)
+    var tagText = (r.S("title") ?? "") + " " + title + " " + (r.I("eventplace") ?? "");
     return new()
     {
+        ["tags"] = Tags(tagText),
         ["id"] = r.Id,
         ["slug"] = Slug(title) + "-" + r.Id,
         ["title"] = title,
@@ -140,7 +188,27 @@ Dictionary<string, object?> Build(Rec r, Dictionary<string, string?>? tr)
         ["duration"] = tr?.GetValueOrDefault("duration") ?? r.I("spendtimefestival"),
         ["sponsor"] = tr?.GetValueOrDefault("sponsor") ?? r.I("sponsor1"),
         ["mt"] = tr != null,   // 기계번역 표시 (페이지 하단 고지용)
+        ["images"] = r.Images(8),
     };
+}
+
+// 카테고리 규칙 — 장식이 아니라 브라우징 축. 슬러그는 web의 CATEGORIES와 일치해야 함
+string[] Tags(string text)
+{
+    var rules = new (string Slug, string[] Keys)[]
+    {
+        ("lights", new[] { "불꽃", "드론", "야행", "야경", "등불", "유등", "미디어아트", "루미나리에", "빛축제", "랜턴", "야간개장", "일루미", "firework", "drone", "lantern", "light show", "starlight", "night view" }),
+        ("traditional", new[] { "문화제", "전통", "국악", "한옥", "궁", "수문장", "민속", "마당극", "농악", "탈춤", "산성", "읍성", "서원", "왕릉", "유교", "국가유산", "heritage", "palace", "royal", "traditional", "folk", "hanok", "gugak", "mask dance", "fortress", "confucian" }),
+        ("music", new[] { "음악", "뮤직", "재즈", "버스킹", "콘서트", "밴드", "힙합", "가요", "합창", "오케스트라", "록페", "music", "jazz", "busking", "concert", "band", "hip-hop", "orchestra", "philharmonic" }),
+        ("food", new[] { "음식", "먹거리", "맥주", "커피", "와인", "미식", "푸드", "장터", "수산", "한우", "사과", "포도", "인삼", "대추", "찐빵", "김치", "떡볶이", "율무", "명태", "새우", "산삼", "약수", "food", "beer", "coffee", "wine", "bbq", "gourmet", "seafood", "ginseng" }),
+        ("nature", new[] { "꽃", "정원", "장미", "벚꽃", "단풍", "숲", "생태", "철쭉", "국화", "상사화", "연꽃", "메밀", "해변", "산림", "garden", "flower", "blossom", "foliage", "eco", "forest", "island", "beach", "sea road" }),
+        ("art", new[] { "비엔날레", "미술", "전시", "아트", "사진", "영화", "디자인", "일러스트", "공예", "조각", "도자", "백자", "biennale", "art", "exhibition", "photo", "film festival", "design", "craft", "illustration", "ceramic" }),
+        ("family", new[] { "어린이", "가족", "키즈", "공룡", "반려", "인형", "애니", "장난감", "과학", "우주", "children", "kids", "family", "dinosaur", "pet", "puppet", "toy", "alien" }),
+    };
+    return rules
+        .Where(rule => rule.Keys.Any(k => text.Contains(k, StringComparison.OrdinalIgnoreCase)))
+        .Select(rule => rule.Slug)
+        .ToArray();
 }
 
 static string CleanTitle(string t)
@@ -180,11 +248,21 @@ static string FindRepoRoot()
     return dir ?? Directory.GetCurrentDirectory();
 }
 
-record Rec(string Lang, string Id, JsonElement L, JsonElement Cm, JsonElement In)
+record Rec(string Lang, string Id, JsonElement L, JsonElement Cm, JsonElement In, JsonElement Im)
 {
     public string? S(string n) => Get(L, n);
     public string? C(string n) => Get(Cm, n);
     public string? I(string n) => Get(In, n);
+
+    // 갤러리: originimgurl 상위 n장 (firstimage 중복 제외는 웹에서)
+    public string[] Images(int max) =>
+        Im.ValueKind != JsonValueKind.Array ? [] :
+        Im.EnumerateArray()
+          .Select(x => x.TryGetProperty("originimgurl", out var u) && u.ValueKind == JsonValueKind.String ? u.GetString() : null)
+          .Where(u => !string.IsNullOrWhiteSpace(u))
+          .Distinct()
+          .Take(max)
+          .ToArray()!;
     static string? Get(JsonElement e, string n) =>
         e.TryGetProperty(n, out var v) && v.ValueKind == JsonValueKind.String &&
         !string.IsNullOrWhiteSpace(v.GetString()) ? v.GetString()!.Trim() : null;

@@ -33,3 +33,6 @@ create table if not exists api_call_log (
     calls int  not null default 0,
     primary key (day, lang)
 );
+
+-- 축제 사진 갤러리 (detailImage2) — 2026-09-08 추가
+alter table raw_item add column if not exists images_json jsonb;

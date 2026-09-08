@@ -181,6 +181,45 @@ h2.sect {
 .stamp.ended { background: rgba(35, 33, 28, 0.72); }
 .stamp.inline { position: static; display: inline-block; vertical-align: 4px; box-shadow: none; margin-left: 6px; }
 
+/* ── 칩·검색·종료 배너 ─────────────────────────────────── */
+.chip {
+  display: inline-block; font-size: 12.5px; font-weight: 600;
+  color: var(--jjok); background: var(--card);
+  border: 1px solid var(--line); border-radius: 99px;
+  padding: 3px 11px;
+}
+.chip:hover { border-color: var(--seal); color: var(--seal); }
+
+.searchbox { position: relative; margin-left: auto; }
+.searchbox input {
+  font: inherit; font-size: 13.5px; width: 170px;
+  background: var(--hanji); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 99px;
+  padding: 7px 14px;
+}
+.searchbox input:focus { outline: none; border-color: var(--jjok); width: 220px; transition: width 0.15s; }
+.search-drop {
+  position: absolute; top: 40px; right: 0; z-index: 50;
+  list-style: none; margin: 0; padding: 6px;
+  width: 300px; background: var(--card);
+  border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(35, 33, 28, 0.14);
+}
+.search-drop li a {
+  display: block; padding: 8px 10px; border-radius: 6px; font-size: 14px;
+}
+.search-drop li a:hover { background: var(--hanji); color: var(--seal); }
+.searchbox + .nav { margin-left: 0; }
+
+.ended-banner {
+  margin: 4px 0 14px; padding: 12px 16px;
+  background: var(--card); border: 1px solid var(--line);
+  border-left: 4px solid var(--ink); border-radius: 6px;
+  font-size: 14px; color: var(--muted);
+}
+.ended-banner a { color: var(--jjok); text-decoration: underline; }
+.ended-banner a:hover { color: var(--seal); }
+
 /* ── 스트립(월·지역 링크) ──────────────────────────────── */
 .strip { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 14px 0 22px; font-size: 14px; }
 .strip a { color: var(--jjok); border-bottom: 1px solid var(--line); padding-bottom: 1px; }
@@ -205,6 +244,16 @@ h2.sect {
 }
 .facts tr:last-child th, .facts tr:last-child td { border-bottom: 0; }
 .facts a { color: var(--jjok); }
+.gallery {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px; margin-bottom: 6px;
+}
+.gallery img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  border-radius: 8px; border: 1px solid var(--line); background: #eceadf;
+}
+.gallery a:hover img { border-color: var(--seal); }
+
 .mapbox { margin: 10px 0 4px; }
 .mapbox iframe {
   width: 100%; height: 340px; border: 1px solid var(--line);

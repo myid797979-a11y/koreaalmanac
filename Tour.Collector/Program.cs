@@ -95,13 +95,49 @@ switch (args.FirstOrDefault())
         break;
     }
 
+    // images [kor|eng] [n] — 상세 완료 항목의 사진 갤러리 (detailImage2, 1콜/건, 예산 내 드레인)
+    case "images":
+    {
+        var lang = LangArg(args) ?? "kor";
+        var limitItems = args.Skip(1).Where(a => int.TryParse(a, out _)).Select(int.Parse).FirstOrDefault(int.MaxValue);
+        using var conn = Db.Open(cfg);
+        var api = new TourApi(cfg.ApiKeyEncoded, lang);
+        var todo = conn.Query<string>("""
+            select contentid from raw_item
+            where lang = @lang and detailed_at is not null and images_json is null
+            order by (coalesce(list_json->>'eventenddate','00000000') >= to_char(current_date,'YYYYMMDD')) desc,
+                     list_json->>'eventstartdate' desc
+            """, new { lang }).ToList();
+
+        int done = 0;
+        foreach (var id in todo)
+        {
+            if (done >= limitItems) break;
+            if (Used(conn, lang) + 1 > DailyBudget)
+            {
+                Console.WriteLine($"⚠ [{lang}] 일일 예산 도달 — 내일 이어서 (남은 {todo.Count - done:N0}건)");
+                break;
+            }
+            Spend(conn, lang, 1);
+            var (items, _) = await api.Get("detailImage2", $"&contentId={id}&imageYN=Y", rows: 20);
+            var arr = "[" + string.Join(",", items.Select(x => x.GetRawText())) + "]";
+            conn.Execute("update raw_item set images_json = @a::jsonb where lang = @lang and contentid = @id",
+                new { lang, id, a = arr });
+            done++;
+            if (done % 50 == 0) Console.WriteLine($"  [{lang}] 이미지 {done:N0} / {todo.Count:N0}");
+            await Task.Delay(80);
+        }
+        Console.WriteLine($"[{lang}] 이미지 수집 {done:N0}건 · 남은 미수집 {todo.Count - done:N0}건 · 오늘 사용 {Used(conn, lang):N0}콜");
+        break;
+    }
+
     // dump/restore — GitHub Actions의 임시 PG용. 수집분을 repo(db/dump)에 담아
     // 매일 전량 재수집(쿼터 초과)을 피하고 증분만 API로 받는다.
     case "dump":
     {
         using var conn = Db.Open(cfg);
-        var rows = conn.Query<(string Lang, string Id, string Ct, string List, string? Common, string? Intro, DateTime? Det)>(
-            "select lang, contentid, contenttypeid, list_json::text, common_json::text, intro_json::text, detailed_at from raw_item");
+        var rows = conn.Query<(string Lang, string Id, string Ct, string List, string? Common, string? Intro, string? Img, DateTime? Det)>(
+            "select lang, contentid, contenttypeid, list_json::text, common_json::text, intro_json::text, images_json::text, detailed_at from raw_item");
         var dir = Path.Combine(Path.GetDirectoryName(FindUp("db/schema.sql"))!, "dump");
         Directory.CreateDirectory(dir);
         var path = Path.Combine(dir, "raw_item.jsonl.gz");
@@ -114,7 +150,7 @@ switch (args.FirstOrDefault())
             {
                 w.WriteLine(JsonSerializer.Serialize(new
                 {
-                    r.Lang, r.Id, r.Ct, r.List, r.Common, r.Intro,
+                    r.Lang, r.Id, r.Ct, r.List, r.Common, r.Intro, r.Img,
                     Det = r.Det?.ToString("O"),
                 }));
                 n++;
@@ -142,16 +178,17 @@ switch (args.FirstOrDefault())
             var e = doc.RootElement;
             string? S(string name) => e.TryGetProperty(name, out var v) && v.ValueKind == JsonValueKind.String ? v.GetString() : null;
             conn.Execute("""
-                insert into raw_item (lang, contentid, contenttypeid, list_json, common_json, intro_json, detailed_at)
-                values (@lang, @id, @ct, @list::jsonb, @common::jsonb, @intro::jsonb, @det)
+                insert into raw_item (lang, contentid, contenttypeid, list_json, common_json, intro_json, images_json, detailed_at)
+                values (@lang, @id, @ct, @list::jsonb, @common::jsonb, @intro::jsonb, @img::jsonb, @det)
                 on conflict (lang, contentid) do update set
                   list_json = excluded.list_json, common_json = excluded.common_json,
-                  intro_json = excluded.intro_json, detailed_at = excluded.detailed_at
+                  intro_json = excluded.intro_json, images_json = excluded.images_json,
+                  detailed_at = excluded.detailed_at
                 """,
                 new
                 {
                     lang = S("Lang"), id = S("Id"), ct = S("Ct"), list = S("List"),
-                    common = S("Common"), intro = S("Intro"),
+                    common = S("Common"), intro = S("Intro"), img = S("Img"),
                     det = S("Det") is { } d ? DateTime.Parse(d).ToUniversalTime() : (DateTime?)null,
                 });
             n++;

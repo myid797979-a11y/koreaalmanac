@@ -3,7 +3,7 @@ import Card, { Stamp } from '@/app/components/Card';
 import RegionCard from '@/app/components/RegionCard';
 import {
   festivals, status, today, dateRange, onWeekend, weekendWindow,
-  MONTHS_FULL, MONTH_SLUGS, REGIONS, type Festival,
+  MONTHS_FULL, MONTH_SLUGS, REGIONS, CATEGORIES, categoryFestivals, type Festival,
 } from '@/lib/data';
 import { FEATURED_IDS } from '@/lib/editorial';
 
@@ -111,6 +111,16 @@ export default function Home() {
 
       <SectionHead title="Starting soon" href="/festivals/" more={'all ' + upcoming.length + ' upcoming'} />
       <div className="grid">{upcoming.slice(0, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
+
+      <h2 className="sect" style={{ marginTop: 36 }}>Browse by interest</h2>
+      <p className="strip">
+        {CATEGORIES.map(c => {
+          const n = categoryFestivals(c.slug).filter(f => status(f, t) !== 'ended').length;
+          return n > 0
+            ? <Link key={c.slug} className="chip" href={'/festivals/' + c.slug + '/'}>{c.label} ({n})</Link>
+            : null;
+        })}
+      </p>
 
       <SectionHead title="Browse by region" href="/regions/" more="all regions" />
       <div className="grid">
