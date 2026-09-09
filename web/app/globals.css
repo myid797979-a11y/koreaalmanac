@@ -492,3 +492,53 @@ footer.site .strip a:hover { color: var(--seal); }
   border-radius: 10px; display: block; background: #000;
 }
 .c-video .meta { margin: 8px 0 0; }
+
+/* ── 캘린더: 공연 이벤트 색 구분 ────────────────────────── */
+.cal .ev-concert { background: #fbeceb; color: var(--seal); }
+.cal .ev-concert:hover { background: var(--seal); color: #fff; }
+
+.cal-legend { display: flex; gap: 18px; margin: 0 0 18px; font-size: 13px; color: var(--muted); }
+.cal-legend .lg { display: inline-flex; align-items: center; gap: 6px; }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.dot-festival { background: var(--jjok); }
+.dot-concert { background: var(--seal); }
+/* 목록(agenda)의 종류 점 — 데스크톱 그리드에는 영향 없음 */
+.agenda .dot { margin-right: 7px; vertical-align: 1px; }
+
+@media (max-width: 720px) {
+  .cal .ev.ev-concert { background: var(--seal); }
+}
+
+/* ── 콘서트 상세: 방문자 팁 콜아웃 ─────────────────────── */
+.c-tip {
+  margin: 4px 0 8px; padding: 12px 16px; max-width: 700px;
+  background: var(--card); border: 1px solid var(--line);
+  border-left: 4px solid var(--jjok); border-radius: 6px;
+  font-size: 14.5px; line-height: 1.65; color: var(--ink);
+}
+.c-tip strong { color: var(--jjok); }
+
+/* ── 허브 카드 (What's On) ──────────────────────────────── */
+.hubgrid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px; margin: 20px 0 8px;
+}
+.hubcard {
+  display: block; padding: 22px 24px 20px; background: var(--card);
+  border: 1px solid var(--line); border-top: 4px double var(--ink);
+  border-radius: 0 0 10px 10px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.hubcard:hover { border-color: var(--ink); box-shadow: 0 10px 24px rgba(35, 33, 28, 0.09); }
+.hubcard .hc-n {
+  display: block; font-family: var(--font-display), Georgia, serif;
+  font-size: 40px; line-height: 1; font-weight: 800; color: var(--seal);
+  font-variant-numeric: tabular-nums;
+}
+.hubcard h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 21px; font-weight: 700; margin: 6px 0 8px;
+}
+.hubcard:hover h2 { color: var(--seal); }
+.hubcard p { margin: 0 0 12px; font-size: 14.5px; line-height: 1.65; color: var(--muted); }
+.hubcard .hc-go { font-size: 13.5px; color: var(--jjok); }

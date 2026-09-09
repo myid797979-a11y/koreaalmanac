@@ -42,14 +42,14 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
   return (
     <>
       <div className="crumb">
-        <Link href="/">Festivals</Link> › <Link href={'/festivals/' + hub + '/'}>{region}</Link> › {MONTHS_FULL[mIdx]}
+        <Link href="/">Festivals</Link> › <Link href={'/events/festivals/' + hub + '/'}>{region}</Link> › {MONTHS_FULL[mIdx]}
       </div>
       <h1>{region} Festivals in {MONTHS_FULL[mIdx]} {year}</h1>
       <p className="sub">{list.length} festivals with confirmed dates · updated daily</p>
       <div className="grid">{list.map(f => <Card key={f.id} f={f} />)}</div>
       <p className="strip" style={{ marginTop: 24 }}>
-        <Link href={'/festivals/' + hub + '/'}>All {region} festivals</Link>
-        <Link href={'/festivals/' + month + '/'}>All Korea in {MONTHS_FULL[mIdx]}</Link>
+        <Link href={'/events/festivals/' + hub + '/'}>All {region} festivals</Link>
+        <Link href={'/events/festivals/' + month + '/'}>All Korea in {MONTHS_FULL[mIdx]}</Link>
       </p>
     </>
   );

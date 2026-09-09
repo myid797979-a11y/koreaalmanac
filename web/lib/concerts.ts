@@ -8,10 +8,15 @@ export type Concert = {
   start: string; end: string;
   venue: string; city: string; region: string;
   kind: 'concert' | 'award' | 'festival';
-  note?: string;
-  intl?: boolean;   // 내한공연 — 컴팩트 섹션에 노출
-  video?: string;   // 검증된 공식 유튜브 영상 ID만 (저작권자 배포). 없으면 지도만.
-  ticket?: string;  // 공식 예매처 URL (있을 때만)
+  note?: string;        // 목록 카드용 짧은 소개
+  overview?: string;    // 상세페이지용 상세 소개 (조사·자체작성, 사실 기반)
+  showTimes?: string;   // 공연 시간 (발표된 경우)
+  ticketInfo?: string;  // 예매처·방법 안내 텍스트
+  price?: string;       // 가격대
+  tip?: string;         // 외국인 방문 팁
+  intl?: boolean;       // 내한공연 — 컴팩트 섹션에 노출
+  video?: string;       // 검증된 공식 유튜브 영상 ID만 (저작권자 배포). 없으면 지도만.
+  ticket?: string;      // 공식 예매처 URL (있을 때만)
 };
 
 /** id 로 단건 조회 (상세페이지 generateStaticParams용) — 지난 공연도 조회 가능 */

@@ -50,7 +50,7 @@ function MonthStrip({ current }: { current?: number }) {
       {MONTH_SLUGS.map((slug, i) =>
         i === current
           ? <strong key={slug}>{MONTHS_FULL[i].slice(0, 3)}</strong>
-          : <Link key={slug} href={'/festivals/' + slug + '/'}>{MONTHS_FULL[i].slice(0, 3)}</Link>
+          : <Link key={slug} href={'/events/festivals/' + slug + '/'}>{MONTHS_FULL[i].slice(0, 3)}</Link>
       )}
     </p>
   );
@@ -76,7 +76,7 @@ function MonthHub({ monthIdx }: { monthIdx: number }) {
           <h2 className="sect">By region in {name}</h2>
           <p className="strip">
             {regionLinks.map(x => (
-              <Link key={x.r} href={'/festivals/' + x.r.toLowerCase() + '/' + MONTH_SLUGS[monthIdx] + '/'}>
+              <Link key={x.r} href={'/events/festivals/' + x.r.toLowerCase() + '/' + MONTH_SLUGS[monthIdx] + '/'}>
                 {x.r} ({x.n})
               </Link>
             ))}
@@ -109,7 +109,7 @@ function RegionHub({ region }: { region: string }) {
       {months.length > 0 && (
         <p className="strip">
           {months.map(x => (
-            <Link key={x.slug} href={'/festivals/' + region.toLowerCase() + '/' + x.slug + '/'}>
+            <Link key={x.slug} href={'/events/festivals/' + region.toLowerCase() + '/' + x.slug + '/'}>
               {MONTHS_FULL[x.i].slice(0, 3)} ({x.n})
             </Link>
           ))}
@@ -119,7 +119,7 @@ function RegionHub({ region }: { region: string }) {
       <h2 className="sect">Other regions</h2>
       <p className="strip">
         {REGIONS.filter(r => r !== region).map(r => (
-          <Link key={r} href={'/festivals/' + r.toLowerCase() + '/'}>{r}</Link>
+          <Link key={r} href={'/events/festivals/' + r.toLowerCase() + '/'}>{r}</Link>
         ))}
       </p>
     </>
@@ -143,7 +143,7 @@ function CategoryHub({ slug }: { slug: string }) {
       <h2 className="sect">Other interests</h2>
       <p className="strip">
         {CATEGORIES.filter(c => c.slug !== slug).map(c => (
-          <Link key={c.slug} href={'/festivals/' + c.slug + '/'}>{c.label}</Link>
+          <Link key={c.slug} href={'/events/festivals/' + c.slug + '/'}>{c.label}</Link>
         ))}
       </p>
     </>

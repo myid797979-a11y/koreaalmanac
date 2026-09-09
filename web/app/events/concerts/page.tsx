@@ -27,7 +27,7 @@ export default function ConcertsPage() {
       {items.length === 0 ? (
         <div className="ended-banner">
           Nothing confirmed right now — big shows are usually announced 1–3 months ahead.
-          Meanwhile, see the <Link href="/festivals/music/">music festivals</Link> happening
+          Meanwhile, see the <Link href="/events/festivals/music/">music festivals</Link> happening
           across Korea, or plan around dates with the <Link href="/plan/">Trip Planner</Link>.
         </div>
       ) : (
@@ -40,15 +40,15 @@ export default function ConcertsPage() {
               </div>
               <div className="c-body">
                 <h2>
-                  <Link href={'/concerts/' + c.id + '/'}>
+                  <Link href={'/concert/' + c.id + '/'}>
                     {c.title}{c.artist !== 'Various artists' && c.title.indexOf(c.artist) === -1 ? ' — ' + c.artist : ''}
                   </Link>
                 </h2>
                 <p className="c-venue">
-                  {c.venue} · <Link href={'/festivals/' + c.region.toLowerCase() + '/'}>{c.city}</Link>
+                  {c.venue} · <Link href={'/events/festivals/' + c.region.toLowerCase() + '/'}>{c.city}</Link>
                 </p>
                 {c.note && <p className="c-note">{c.note}</p>}
-                <p className="c-more"><Link href={'/concerts/' + c.id + '/'}>Details &amp; venue map →</Link></p>
+                <p className="c-more"><Link href={'/concert/' + c.id + '/'}>Details &amp; venue map →</Link></p>
               </div>
             </article>
           ))}
@@ -66,8 +66,8 @@ export default function ConcertsPage() {
             {intl.map(c => (
               <li key={c.id}>
                 <span className="ad">{concertDateRange(c)}</span>
-                <Link href={'/concerts/' + c.id + '/'}><strong>{c.artist}</strong></Link> · {c.venue} ·{' '}
-                <Link href={'/festivals/' + c.region.toLowerCase() + '/'}>{c.city}</Link>
+                <Link href={'/concert/' + c.id + '/'}><strong>{c.artist}</strong></Link> · {c.venue} ·{' '}
+                <Link href={'/events/festivals/' + c.region.toLowerCase() + '/'}>{c.city}</Link>
               </li>
             ))}
           </ul>
@@ -82,7 +82,7 @@ export default function ConcertsPage() {
         fan-club presales open before general sale. Always buy from the official seller
         named in the announcement; secondary-market tickets are routinely cancelled at
         the door by identity checks.
-        {' '}<Link href="/concerts/tickets/">Read the full K-pop ticket-buying guide →</Link>
+        {' '}<Link href="/guides/kpop-tickets/">Read the full K-pop ticket-buying guide →</Link>
       </p>
       <p className="meta">
         Dates and venues are compiled by hand from official announcements and may change —
@@ -92,8 +92,8 @@ export default function ConcertsPage() {
       <h2 className="sect">More around your dates</h2>
       <p className="strip">
         <Link href="/plan/">Trip Planner</Link>
-        <Link href="/festivals/music/">Music festivals</Link>
-        <Link href="/festivals/">All festivals</Link>
+        <Link href="/events/festivals/music/">Music festivals</Link>
+        <Link href="/events/festivals/">All festivals</Link>
         <Link href="/calendar/">Calendar</Link>
       </p>
     </>

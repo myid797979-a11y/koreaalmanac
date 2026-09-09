@@ -30,14 +30,14 @@ export default function FestivalsPage() {
 
       <p className="strip">
         {MONTH_SLUGS.map((slug, i) => (
-          <Link key={slug} href={'/festivals/' + slug + '/'}>{MONTHS_FULL[i].slice(0, 3)}</Link>
+          <Link key={slug} href={'/events/festivals/' + slug + '/'}>{MONTHS_FULL[i].slice(0, 3)}</Link>
         ))}
       </p>
       <p className="strip">
         {REGIONS.map(r => {
           const n = regionFestivals(r).filter(f => status(f, t) !== 'ended').length;
           return n > 0
-            ? <Link key={r} href={'/festivals/' + r.toLowerCase() + '/'}>{r} ({n})</Link>
+            ? <Link key={r} href={'/events/festivals/' + r.toLowerCase() + '/'}>{r} ({n})</Link>
             : null;
         })}
       </p>

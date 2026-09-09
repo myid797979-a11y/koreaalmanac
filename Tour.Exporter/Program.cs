@@ -174,7 +174,8 @@ Dictionary<string, object?> Build(Rec r, Dictionary<string, string?>? tr)
         ["titleFull"] = r.S("title"),
         ["start"] = r.S("eventstartdate"),
         ["end"] = r.S("eventenddate"),
-        ["region"] = regions.GetValueOrDefault(r.S("lDongRegnCd") ?? "", "Korea"),
+        ["region"] = regions.TryGetValue(r.S("lDongRegnCd") ?? "", out var rgn)
+            ? rgn : RegionFromAddr(tr?.GetValueOrDefault("addr") ?? r.S("addr1")),
         ["addr"] = tr?.GetValueOrDefault("addr") ?? r.S("addr1"),
         ["mapx"] = r.S("mapx"),
         ["mapy"] = r.S("mapy"),
@@ -231,11 +232,66 @@ static string Slug(string s)
 static string? Strip(string? html) => html == null ? null
     : Nul(Regex.Replace(Regex.Replace(html, "<br[^>]*>", " · "), "<[^>]+>", ""));
 
+// 홈페이지 필드엔 앵커 태그·평문 URL·"공식 홈페이지 https://..." 설명문이 섞여 온다.
+// 링크로 쓸 수 있는 절대 URL만 뽑는다 (상대경로가 새어나가 깨진 링크가 되던 문제).
 static string? Href(string? html)
 {
     if (html == null) return null;
+
     var m = Regex.Match(html, "href=\u0022([^\u0022]+)\u0022");
-    return m.Success ? m.Groups[1].Value : Nul(Regex.Replace(html, "<[^>]+>", ""));
+    if (m.Success && m.Groups[1].Value.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+        return m.Groups[1].Value;
+
+    var text = Regex.Replace(html, "<[^>]+>", " ");
+    var url = Regex.Match(text, "https?://[^\\s\u0022'<>)]+");
+    if (url.Success) return url.Value;
+
+    var bare = Regex.Match(text, "(?:^|\\s)(www\\.[^\\s\u0022'<>)]+)");
+    return bare.Success ? "https://" + bare.Groups[1].Value : null;
+}
+
+// lDongRegnCd 가 비어 오는 항목이 있어 지역이 "Korea"로 뭉개졌다 → 영문 주소로 보정.
+static string RegionFromAddr(string? addr)
+{
+    if (string.IsNullOrWhiteSpace(addr)) return "Korea";
+    var a = addr.ToLowerInvariant();
+    if (a.Contains("seoul")) return "Seoul";
+    if (a.Contains("busan")) return "Busan";
+    if (a.Contains("incheon")) return "Incheon";
+    if (a.Contains("daegu")) return "Daegu";
+    if (a.Contains("daejeon")) return "Daejeon";
+    if (a.Contains("ulsan")) return "Ulsan";
+    if (a.Contains("sejong")) return "Sejong";
+    if (a.Contains("jeju")) return "Jeju";
+    if (a.Contains("gyeonggi")) return "Gyeonggi";
+    if (a.Contains("gangwon")) return "Gangwon";
+    if (a.Contains("chungbuk") || a.Contains("chungcheongbuk")) return "Chungbuk";
+    if (a.Contains("chungnam") || a.Contains("chungcheongnam")) return "Chungnam";
+    if (a.Contains("jeonbuk") || a.Contains("jeollabuk")) return "Jeonbuk";
+    if (a.Contains("jeonnam") || a.Contains("jeollanam")) return "Jeonnam";
+    if (a.Contains("gyeongbuk") || a.Contains("gyeongsangbuk")) return "Gyeongbuk";
+    if (a.Contains("gyeongnam") || a.Contains("gyeongsangnam")) return "Gyeongnam";
+    if (a.Contains("gwangju")) return "Gwangju";   // Jeonnam-Gwangju 통합 표기가 있어 뒤에 둔다
+
+    // 번역이 안 된 한글 주소가 남는 경우 대비
+    if (addr.Contains("서울")) return "Seoul";
+    if (addr.Contains("부산")) return "Busan";
+    if (addr.Contains("인천")) return "Incheon";
+    if (addr.Contains("대구")) return "Daegu";
+    if (addr.Contains("대전")) return "Daejeon";
+    if (addr.Contains("울산")) return "Ulsan";
+    if (addr.Contains("세종")) return "Sejong";
+    if (addr.Contains("제주")) return "Jeju";
+    if (addr.Contains("경기")) return "Gyeonggi";
+    if (addr.Contains("강원")) return "Gangwon";
+    if (addr.Contains("충북") || addr.Contains("충청북")) return "Chungbuk";
+    if (addr.Contains("충남") || addr.Contains("충청남")) return "Chungnam";
+    if (addr.Contains("전북") || addr.Contains("전라북")) return "Jeonbuk";
+    if (addr.Contains("전남") || addr.Contains("전라남")) return "Jeonnam";
+    if (addr.Contains("경북") || addr.Contains("경상북")) return "Gyeongbuk";
+    if (addr.Contains("경남") || addr.Contains("경상남")) return "Gyeongnam";
+    if (addr.Contains("광주")) return "Gwangju";
+    return "Korea";
 }
 
 static string? Nul(string? s) => string.IsNullOrWhiteSpace(s) ? null : s.Trim();

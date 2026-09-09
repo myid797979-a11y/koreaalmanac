@@ -44,7 +44,7 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
   return (
     <>
       <div className="crumb">
-        <Link href="/">Festivals</Link> › <Link href={'/festivals/' + f.region.toLowerCase() + '/'}>{f.region}</Link> › {f.title}
+        <Link href="/">Festivals</Link> › <Link href={'/events/festivals/' + f.region.toLowerCase() + '/'}>{f.region}</Link> › {f.title}
       </div>
 
       {f.image && <div className="hero"><img src={f.image} alt={f.title} /></div>}
@@ -55,7 +55,7 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
       {(f.tags ?? []).length > 0 && (
         <p className="strip" style={{ marginTop: -10 }}>
           {f.tags!.map(tg => (
-            <Link key={tg} className="chip" href={'/festivals/' + tg + '/'}>{categoryLabel(tg)}</Link>
+            <Link key={tg} className="chip" href={'/events/festivals/' + tg + '/'}>{categoryLabel(tg)}</Link>
           ))}
         </p>
       )}
@@ -63,7 +63,7 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
       {status(f, t) === 'ended' && (
         <div className="ended-banner">
           This festival has ended — many return annually, so it may come back next year.
-          {' '}<Link href={'/festivals/' + f.region.toLowerCase() + '/'}>See current festivals in {f.region}</Link>
+          {' '}<Link href={'/events/festivals/' + f.region.toLowerCase() + '/'}>See current festivals in {f.region}</Link>
           {' '}or <Link href="/plan/">plan around your dates</Link>.
         </div>
       )}
@@ -84,11 +84,11 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
       <p className="strip">
         {icsHref(f) && <a href={icsHref(f)!} download={f.slug + '.ics'}>Add to calendar (.ics)</a>}
         {f.start && (
-          <Link href={'/festivals/' + MONTH_SLUGS[Number(f.start.slice(4, 6)) - 1] + '/'}>
+          <Link href={'/events/festivals/' + MONTH_SLUGS[Number(f.start.slice(4, 6)) - 1] + '/'}>
             All Korea festivals in {MONTHS_FULL[Number(f.start.slice(4, 6)) - 1]}
           </Link>
         )}
-        <Link href={'/festivals/' + f.region.toLowerCase() + '/'}>All {f.region} festivals</Link>
+        <Link href={'/events/festivals/' + f.region.toLowerCase() + '/'}>All {f.region} festivals</Link>
       </p>
 
       {hasMap && (

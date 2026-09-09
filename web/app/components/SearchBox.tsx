@@ -28,8 +28,8 @@ export default function SearchBox() {
     <div className="searchbox">
       <input
         type="search"
-        placeholder="Search festivals"
-        aria-label="Search festivals"
+        placeholder="Search events"
+        aria-label="Search festivals and concerts"
         value={q}
         onFocus={() => { load(); setOpen(true); }}
         onBlur={() => setTimeout(() => setOpen(false), 150)}

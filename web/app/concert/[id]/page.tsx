@@ -33,7 +33,7 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
   return (
     <>
       <div className="crumb">
-        <Link href="/">Home</Link> › <Link href="/concerts/">Concerts</Link> › {c.title}
+        <Link href="/">Home</Link> › <Link href="/events/concerts/">Concerts</Link> › {c.title}
       </div>
 
       <div className="c-hero">
@@ -56,18 +56,24 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
         </div>
       )}
 
-      {c.note && <p className="overview">{c.note}</p>}
+      {(c.overview || c.note) && <p className="overview">{c.overview || c.note}</p>}
 
       <table className="facts">
         <tbody>
           <tr><th>Dates</th><td>{concertDateRange(c)}</td></tr>
+          {c.showTimes && <tr><th>Show times</th><td>{c.showTimes}</td></tr>}
           <tr><th>Type</th><td>{KIND_LABEL[c.kind]}</td></tr>
           <tr><th>Venue</th><td>{c.venue}</td></tr>
-          <tr><th>City</th><td><Link href={'/festivals/' + c.region.toLowerCase() + '/'}>{c.city}</Link></td></tr>
+          <tr><th>City</th><td><Link href={'/events/festivals/' + c.region.toLowerCase() + '/'}>{c.city}</Link></td></tr>
           {c.artist !== 'Various artists' && <tr><th>Artist</th><td>{c.artist}</td></tr>}
-          {c.ticket && <tr><th>Official tickets</th><td><a href={c.ticket} target="_blank" rel="noopener" style={{ textDecoration: 'underline' }}>Official ticketing ↗</a></td></tr>}
+          {c.ticketInfo && <tr><th>Tickets</th><td>{c.ticketInfo}</td></tr>}
+          {c.price && <tr><th>Price</th><td>{c.price}</td></tr>}
         </tbody>
       </table>
+
+      {c.tip && (
+        <p className="c-tip"><strong>For visitors:</strong> {c.tip}</p>
+      )}
 
       <h2 className="sect">Getting there</h2>
       <div className="mapbox">
@@ -89,7 +95,7 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
         official announcement — resold tickets are routinely voided by identity checks
         at the door.
         {c.kind === 'concert' && !c.intl && (
-          <>{' '}<Link href="/concerts/tickets/">Read the full K-pop ticket-buying guide →</Link></>
+          <>{' '}<Link href="/guides/kpop-tickets/">Read the full K-pop ticket-buying guide →</Link></>
         )}
       </p>
       <p className="meta">
@@ -104,7 +110,7 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
             {others.map(x => (
               <li key={x.id}>
                 <span className="ad">{concertDateRange(x)}</span>
-                <Link href={'/concerts/' + x.id + '/'}>{x.artist === 'Various artists' ? x.title : x.artist}</Link>
+                <Link href={'/concert/' + x.id + '/'}>{x.artist === 'Various artists' ? x.title : x.artist}</Link>
                 {' · '}{x.city}
               </li>
             ))}

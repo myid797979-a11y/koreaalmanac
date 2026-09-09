@@ -6,6 +6,7 @@ import {
   MONTHS_FULL, MONTH_SLUGS, REGIONS, CATEGORIES, categoryFestivals, type Festival,
 } from '@/lib/data';
 import { FEATURED_IDS } from '@/lib/editorial';
+import { upcomingConcerts, concertDateRange, KIND_LABEL } from '@/lib/concerts';
 
 function SectionHead({ title, href, more }: { title: string; href: string; more: string }) {
   return (
@@ -44,6 +45,7 @@ export default function Home() {
 
   const weekend = photoFirst(onWeekend(t));
   const wkLabel = weekendWindow(t).label;
+  const concerts = upcomingConcerts(t);
 
   const day = Number(t.slice(6, 8));
   const mIdx = Number(t.slice(4, 6)) - 1;
@@ -56,11 +58,12 @@ export default function Home() {
     <>
       <section className="hero-home">
         <div className="hero-copy">
-          <h1>Every festival in Korea, with real dates</h1>
+          <h1>What&apos;s on in Korea, with real dates</h1>
           <p className="sub">
-            {festivals.length} festivals from official Korea Tourism Organization data,
-            refreshed every morning — dates, fees, venues, and what to expect.
-            Hundreds of them appear in English only here.
+            Festivals, K-pop concerts and live shows across all 17 regions — dates, venues,
+            fees and what to expect. Festival data comes straight from the Korea Tourism
+            Organization and refreshes every morning; hundreds of them appear in English
+            only here.
           </p>
           <form className="tripform" action="/plan/" method="get">
             <label>Arrive
@@ -69,11 +72,11 @@ export default function Home() {
             <label>Leave
               <input type="date" name="to" defaultValue={isoDay(t, 7)} />
             </label>
-            <button type="submit">Find festivals</button>
+            <button type="submit">Find events</button>
           </form>
           <p className="strip">
             {MONTH_SLUGS.map((slug, i) => (
-              <Link key={slug} href={'/festivals/' + slug + '/'}>{MONTHS_FULL[i].slice(0, 3)}</Link>
+              <Link key={slug} href={'/events/festivals/' + slug + '/'}>{MONTHS_FULL[i].slice(0, 3)}</Link>
             ))}
           </p>
         </div>
@@ -82,8 +85,9 @@ export default function Home() {
           <div className="alm-day">{day}</div>
           <div className="alm-wd">{weekday}, Korea</div>
           <div className="alm-facts">
-            <Link href="/festivals/"><b>{ongoing.length}</b> festivals on today</Link>
-            <Link href={'/festivals/' + MONTH_SLUGS[mIdx] + '/'}><b>{startingThisMonth}</b> more start this month</Link>
+            <Link href="/events/festivals/"><b>{ongoing.length}</b> festivals on today</Link>
+            <Link href={'/events/festivals/' + MONTH_SLUGS[mIdx] + '/'}><b>{startingThisMonth}</b> more start this month</Link>
+            <Link href="/events/concerts/"><b>{concerts.length}</b> concerts coming up</Link>
           </div>
         </aside>
       </section>
@@ -106,10 +110,35 @@ export default function Home() {
       <SectionHead title={'This weekend, ' + wkLabel} href="/calendar/" more="full calendar" />
       <div className="grid">{weekend.slice(0, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
 
-      <SectionHead title="Happening now" href="/festivals/" more={'all ' + ongoing.length} />
+      {concerts.length > 0 && (
+        <>
+          <SectionHead title="Concerts &amp; live music" href="/events/concerts/" more={'all ' + concerts.length} />
+          <div className="concert-list">
+            {concerts.slice(0, 4).map(c => (
+              <article key={c.id} className="concert">
+                <div className="c-date">
+                  <span className="c-when">{concertDateRange(c)}</span>
+                  <span className={'c-kind k-' + c.kind}>{KIND_LABEL[c.kind]}</span>
+                </div>
+                <div className="c-body">
+                  <h2>
+                    <Link href={'/concert/' + c.id + '/'}>
+                      {c.artist === 'Various artists' ? c.title : c.artist}
+                    </Link>
+                  </h2>
+                  <p className="c-venue">{c.venue} · {c.city}</p>
+                  {c.note && <p className="c-note">{c.note}</p>}
+                </div>
+              </article>
+            ))}
+          </div>
+        </>
+      )}
+
+      <SectionHead title="Happening now" href="/events/festivals/" more={'all ' + ongoing.length} />
       <div className="grid">{ongoing.slice(0, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
 
-      <SectionHead title="Starting soon" href="/festivals/" more={'all ' + upcoming.length + ' upcoming'} />
+      <SectionHead title="Starting soon" href="/events/festivals/" more={'all ' + upcoming.length + ' upcoming'} />
       <div className="grid">{upcoming.slice(0, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
 
       <h2 className="sect" style={{ marginTop: 36 }}>Browse by interest</h2>
@@ -117,7 +146,7 @@ export default function Home() {
         {CATEGORIES.map(c => {
           const n = categoryFestivals(c.slug).filter(f => status(f, t) !== 'ended').length;
           return n > 0
-            ? <Link key={c.slug} className="chip" href={'/festivals/' + c.slug + '/'}>{c.label} ({n})</Link>
+            ? <Link key={c.slug} className="chip" href={'/events/festivals/' + c.slug + '/'}>{c.label} ({n})</Link>
             : null;
         })}
       </p>
@@ -129,9 +158,11 @@ export default function Home() {
 
       <section className="about-strip">
         <p>
-          <strong>What this site is:</strong> every festival registered with the Korea Tourism
-          Organization, merged from Korean and English official data and refreshed every morning —
-          including hundreds of festivals that never appear on English-language sites.
+          <strong>What this site is:</strong> a practical reference for what is on in Korea while
+          you are there — every festival registered with the Korea Tourism Organization, merged
+          from Korean and English official data and refreshed every morning, plus hand-picked
+          concerts and live shows. Hundreds of these festivals never appear on English-language
+          sites.
           {' '}<Link href="/about/" style={{ textDecoration: 'underline' }}>More about the data</Link>
         </p>
       </section>

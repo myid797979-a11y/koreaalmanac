@@ -59,13 +59,6 @@ SUMMARY:Suwon Nammun Market Night Market 'Bulchwimugwi'
 LOCATION:Paldalmun plaza and Jidonggyo Bridge area
 END:VEVENT
 BEGIN:VEVENT
-UID:4095402@koreaalmanac
-DTSTART;VALUE=DATE:20260908
-DTEND;VALUE=DATE:20260909
-SUMMARY:Bookshelf Concert: Sherlock Holmes
-LOCATION:Small Theater  Gyeonggi Arts Center
-END:VEVENT
-BEGIN:VEVENT
 UID:3333149@koreaalmanac
 DTSTART;VALUE=DATE:20260911
 DTEND;VALUE=DATE:20260914

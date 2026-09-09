@@ -9,7 +9,7 @@ export default function RegionCard({ region, t = today() }: { region: string; t?
   const next = live.find(f => status(f, t) === 'upcoming') ?? live[0];
   const img = live.find(f => f.image)?.image;
   return (
-    <Link href={'/festivals/' + region.toLowerCase() + '/'} className="card rcard">
+    <Link href={'/events/festivals/' + region.toLowerCase() + '/'} className="card rcard">
       {img ? <img className="ph" src={img} alt={region} loading="lazy" /> : <div className="noph">{region}</div>}
       <div className="body">
         <h3>{region}</h3>
