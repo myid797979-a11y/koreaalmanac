@@ -9,7 +9,9 @@ export const metadata = {
 
 export default function ConcertsPage() {
   const t = today();
-  const items = upcomingConcerts(t);
+  const all = upcomingConcerts(t);
+  const items = all.filter(c => !c.intl);
+  const intl = all.filter(c => c.intl);
 
   return (
     <>
@@ -46,6 +48,25 @@ export default function ConcertsPage() {
             </article>
           ))}
         </div>
+      )}
+
+      {intl.length > 0 && (
+        <>
+          <h2 className="sect">International tours stopping in Korea</h2>
+          <p className="intro">
+            Not K-pop, but if you are already here on these dates: major overseas acts
+            playing Korean venues. Tickets follow the same Korean platforms and rules below.
+          </p>
+          <ul className="agenda">
+            {intl.map(c => (
+              <li key={c.id}>
+                <span className="ad">{concertDateRange(c)}</span>
+                <strong>{c.artist}</strong> · {c.venue} ·{' '}
+                <Link href={'/festivals/' + c.region.toLowerCase() + '/'}>{c.city}</Link>
+              </li>
+            ))}
+          </ul>
+        </>
       )}
 
       <h2 className="sect">Getting tickets</h2>

@@ -1,6 +1,6 @@
 {
   "updated": "20260909",
-  "note": "수동 큐레이션. 공식 발표·공연장 일정을 확인해 선별 정리한 목록이며 전수 목록이 아니다. 지난 공연은 사이트에서 자동으로 숨겨지므로, 갱신이 늦어도 틀린 정보가 남지는 않는다.",
+  "note": "수동 큐레이션. 공식 발표·공연장 일정(StagePick)·정리 사이트(Songkick, kconcertguide, Soompi, kpopofficial)를 교차 확인해 선별한 목록이며 전수가 아니다. 지난 공연은 자동으로 숨겨진다. intl=true 는 내한공연 섹션에 컴팩트하게 노출.",
   "items": [
     {
       "id": "plave-incheon-2026",
@@ -15,6 +15,18 @@
       "note": "PLAVE are a virtual idol group — the members perform live through motion-captured animated avatars, and the show is built around large-screen staging. One of the few K-pop acts you genuinely cannot experience the same way anywhere else."
     },
     {
+      "id": "nct127-kspo-2026",
+      "artist": "NCT 127",
+      "title": "NCT 127 5th Tour — NEO CITY: SEOUL",
+      "start": "20260918",
+      "end": "20260920",
+      "venue": "KSPO Dome, Olympic Park",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "note": "Three nights at Korea's main indoor K-pop arena to open the fifth NCT 127 tour. KSPO Dome sits inside Olympic Park on subway lines 5 and 9 — one of the biggest K-pop bookings of the autumn, so expect the presale to decide most seats."
+    },
+    {
       "id": "tfma-busan-2026",
       "artist": "Various artists",
       "title": "The Fact Music Awards",
@@ -25,6 +37,18 @@
       "region": "Busan",
       "kind": "award",
       "note": "A stadium-scale awards night with a long performance lineup rather than a single headliner. Awards shows are the easiest way to see many groups in one evening, and they are announced months ahead — useful if you are planning a trip around one."
+    },
+    {
+      "id": "silicagel-kspo-2026",
+      "artist": "Silica Gel",
+      "title": "Silica Gel Asia Tour — Seoul",
+      "start": "20260926",
+      "end": "20260927",
+      "venue": "KSPO Dome, Olympic Park",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "note": "Not idol pop — Silica Gel are the biggest name in current Korean indie rock, closing an Asia tour with two arena nights. The pick if your taste runs to bands rather than groups, and tickets are far gentler to get than for idol shows."
     },
     {
       "id": "objet-kpop-festa-2026",
@@ -39,6 +63,66 @@
       "note": "A two-day multi-artist festival at the KINTEX convention centre, about 40 minutes from central Seoul on Line 3. Festival line-ups are usually revealed in stages, so check the official channels close to the date."
     },
     {
+      "id": "andteam-kspo-2026",
+      "artist": "&TEAM",
+      "title": "&TEAM Tour — BLAZE THE WAY, Seoul Encore",
+      "start": "20261003",
+      "end": "20261004",
+      "venue": "KSPO Dome, Olympic Park",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "note": "Encore Seoul dates closing the HYBE Japan group's tour — a crossover act with a strong international fanbase, at the Olympic Park arena over the Chuseok holiday weekend."
+    },
+    {
+      "id": "edc-korea-2026",
+      "artist": "Various DJs",
+      "title": "EDC Korea (Electric Daisy Carnival)",
+      "start": "20261003",
+      "end": "20261004",
+      "venue": "INSPIRE Arena, Yeongjong Island",
+      "city": "Incheon",
+      "region": "Incheon",
+      "kind": "festival",
+      "note": "The Korean edition of the Las Vegas mega-rave: two days of EDM stages at the arena-resort complex next to Incheon Airport. Hotels on site and an airport rail link make it one of the easiest festivals in Korea to fly in for."
+    },
+    {
+      "id": "akmu-kspo-2026",
+      "artist": "AKMU",
+      "title": "AKMU Concert — Paradise of Rumors",
+      "start": "20261009",
+      "end": "20261011",
+      "venue": "KSPO Dome, Olympic Park",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "note": "The sibling duo beloved across every Korean generation, playing three arena nights. Less light-stick spectacle, more songwriting and sing-along — a good pick if you want Korean pop beyond the idol format."
+    },
+    {
+      "id": "triples-jangchung-2026",
+      "artist": "tripleS",
+      "title": "tripleS World Tour — Andless, Seoul",
+      "start": "20261010",
+      "end": "20261011",
+      "venue": "Jangchung Gymnasium",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "note": "The 24-member rotating girl group at Jangchung Gymnasium — a compact old-school arena in central Seoul on Line 3, which means closer sightlines than the dome shows."
+    },
+    {
+      "id": "grand-mint-festival-2026",
+      "artist": "Various artists",
+      "title": "Grand Mint Festival",
+      "start": "20261017",
+      "end": "20261018",
+      "venue": "Olympic Park",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "festival",
+      "note": "Seoul's picnic-blanket autumn festival: indie, acoustic and band line-ups across outdoor stages in Olympic Park. The gentlest possible introduction to Korean festival culture — bring a mat, not earplugs."
+    },
+    {
       "id": "illit-inspire-2026",
       "artist": "ILLIT",
       "title": "ILLIT Concert",
@@ -51,6 +135,18 @@
       "note": "INSPIRE Arena sits next to Incheon Airport, which makes it unusually convenient if you are flying in for the show — the resort complex has hotels on site and an airport rail link into Seoul."
     },
     {
+      "id": "exo-kspo-2026",
+      "artist": "EXO",
+      "title": "EXO PLANET #6 — EXhOrizon, Seoul",
+      "start": "20261106",
+      "end": "20261108",
+      "venue": "KSPO Dome, Olympic Park",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "note": "Second-generation royalty on a full-group arena run — three nights at KSPO Dome. Expect the fastest sell-out of the season; if general sale fails, plan around the official cancellation-ticket release."
+    },
+    {
       "id": "melon-music-awards-2026",
       "artist": "Various artists",
       "title": "Melon Music Awards",
@@ -61,6 +157,114 @@
       "region": "Seoul",
       "kind": "award",
       "note": "One of the year's biggest K-pop nights, held over two days at Korea's only domed stadium. Gocheok is inside Seoul on Line 1, so it is the most accessible of the large-venue events for visitors without a car."
+    },
+    {
+      "id": "post-malone-goyang-2026",
+      "artist": "Post Malone",
+      "title": "Post Malone in Korea",
+      "start": "20261002",
+      "end": "20261002",
+      "venue": "Goyang Sports Complex Main Stadium",
+      "city": "Goyang",
+      "region": "Gyeonggi",
+      "kind": "concert",
+      "intl": true
+    },
+    {
+      "id": "lany-kintex-2026",
+      "artist": "LANY",
+      "title": "LANY in Korea",
+      "start": "20261003",
+      "end": "20261003",
+      "venue": "KINTEX Hall 9, Ilsan",
+      "city": "Goyang",
+      "region": "Gyeonggi",
+      "kind": "concert",
+      "intl": true
+    },
+    {
+      "id": "the-weeknd-goyang-2026",
+      "artist": "The Weeknd",
+      "title": "The Weeknd — Hyundai Card Super Concert",
+      "start": "20261007",
+      "end": "20261008",
+      "venue": "Goyang Sports Complex Main Stadium",
+      "city": "Goyang",
+      "region": "Gyeonggi",
+      "kind": "concert",
+      "intl": true
+    },
+    {
+      "id": "charlie-puth-goyang-2026",
+      "artist": "Charlie Puth",
+      "title": "Charlie Puth in Korea",
+      "start": "20261011",
+      "end": "20261011",
+      "venue": "Goyang Sports Complex",
+      "city": "Goyang",
+      "region": "Gyeonggi",
+      "kind": "concert",
+      "intl": true
+    },
+    {
+      "id": "mcr-paradise-2026",
+      "artist": "My Chemical Romance",
+      "title": "My Chemical Romance in Korea",
+      "start": "20261107",
+      "end": "20261107",
+      "venue": "Paradise City, Yeongjong Island",
+      "city": "Incheon",
+      "region": "Incheon",
+      "kind": "concert",
+      "intl": true
+    },
+    {
+      "id": "jason-mraz-kintex-2026",
+      "artist": "Jason Mraz",
+      "title": "Jason Mraz in Korea",
+      "start": "20261114",
+      "end": "20261114",
+      "venue": "KINTEX, Ilsan",
+      "city": "Goyang",
+      "region": "Gyeonggi",
+      "kind": "concert",
+      "intl": true
+    },
+    {
+      "id": "5sos-kintex-2026",
+      "artist": "5 Seconds of Summer",
+      "title": "5 Seconds of Summer in Korea",
+      "start": "20261119",
+      "end": "20261119",
+      "venue": "KINTEX, Ilsan",
+      "city": "Goyang",
+      "region": "Gyeonggi",
+      "kind": "concert",
+      "intl": true
+    },
+    {
+      "id": "khalid-kintex-2026",
+      "artist": "Khalid",
+      "title": "Khalid in Korea",
+      "start": "20261205",
+      "end": "20261205",
+      "venue": "KINTEX, Ilsan",
+      "city": "Goyang",
+      "region": "Gyeonggi",
+      "kind": "concert",
+      "intl": true
+    },
+    {
+      "id": "fkj-kintex-2026",
+      "artist": "FKJ",
+      "title": "FKJ in Korea",
+      "start": "20261206",
+      "end": "20261206",
+      "venue": "KINTEX Hall 10, Ilsan",
+      "city": "Goyang",
+      "region": "Gyeonggi",
+      "kind": "concert",
+      "intl": true
     }
   ]
 }

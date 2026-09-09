@@ -8,7 +8,8 @@ export type Concert = {
   start: string; end: string;
   venue: string; city: string; region: string;
   kind: 'concert' | 'award' | 'festival';
-  note: string;
+  note?: string;
+  intl?: boolean;   // 내한공연 — 컴팩트 섹션에 노출
 };
 
 type ConcertsFile = { updated: string; note: string; items: Concert[] };
