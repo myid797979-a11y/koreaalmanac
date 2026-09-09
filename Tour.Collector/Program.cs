@@ -260,6 +260,76 @@ switch (args.FirstOrDefault())
         break;
     }
 
+    // places — 영문 관광지(76)·문화시설(78). db/places.json 에 보존.
+    // eng 쿼터를 축제와 공유하므로 목록은 하루 몇 콜, 상세(overview)는 예산 여유분만 소진.
+    case "places":
+    {
+        var papi = new PlaceApi(cfg.ApiKeyEncoded);
+        var outPath = Path.Combine(Path.GetDirectoryName(FindUp("db/schema.sql"))!, "places.json");
+        var store = File.Exists(outPath)
+            ? JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, string>>>(File.ReadAllText(outPath))!
+            : new Dictionary<string, Dictionary<string, string>>();
+
+        using var conn = Db.Open(cfg);
+        conn.Execute(File.ReadAllText(FindUp("db/schema.sql")));   // idempotent
+        var used = Used(conn, "eng");
+        var budget = Math.Max(0, DailyBudget - used);
+        Console.WriteLine($"eng 예산 잔여 {budget}콜 (오늘 사용 {used})");
+
+        var calls = 0;
+        foreach (var tid in new[] { 76, 78 })
+        {
+            for (var page = 1; page <= 5 && calls < budget; page++)
+            {
+                var (items, _) = await papi.AreaBased(tid, page);
+                calls++;
+                foreach (var el in items)
+                {
+                    var id = el.TryGetProperty("contentid", out var cid) ? cid.GetString() : null;
+                    if (id == null) continue;
+                    var d = store.TryGetValue(id, out var prev) ? prev : new Dictionary<string, string>();
+                    foreach (var pr in el.EnumerateObject())
+                    {
+                        var v = pr.Value.ValueKind == JsonValueKind.String ? pr.Value.GetString() : pr.Value.ToString();
+                        if (!string.IsNullOrWhiteSpace(v)) d[pr.Name] = v!;
+                    }
+                    d["_ctype"] = tid.ToString();
+                    store[id] = d;
+                }
+                if (items.Length < 1000) break;
+            }
+        }
+        Console.WriteLine($"목록 {store.Count:N0}건 ({calls}콜)");
+
+        // 소개문(overview) 미수집분 — 남은 예산만큼만
+        var need = store.Where(kv => !kv.Value.ContainsKey("_detailed")).Select(kv => kv.Key).ToList();
+        var got = 0;
+        foreach (var id in need)
+        {
+            if (calls >= budget) break;
+            try
+            {
+                var det = await papi.Detail(id);
+                calls++;
+                if (det.HasValue && det.Value.TryGetProperty("overview", out var ov))
+                {
+                    var t = ov.GetString();
+                    if (!string.IsNullOrWhiteSpace(t)) store[id]["overview"] = t!;
+                }
+                store[id]["_detailed"] = "1";
+                got++;
+            }
+            catch (Exception e) { Console.WriteLine("  상세 실패 " + id + ": " + e.Message); break; }
+        }
+
+        Spend(conn, "eng", calls);
+        var opts = new JsonSerializerOptions { WriteIndented = false, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
+        File.WriteAllText(outPath, JsonSerializer.Serialize(store.OrderBy(kv => kv.Key).ToDictionary(kv => kv.Key, kv => kv.Value), opts));
+        var left = store.Count(kv => !kv.Value.ContainsKey("_detailed"));
+        Console.WriteLine($"places.json   {store.Count:N0}건 (소개문 신규 {got}건, 남은 상세 {left}건, 총 {calls}콜)");
+        break;
+    }
+
     case "stats":
     {
         using var conn = Db.Open(cfg);
@@ -285,6 +355,7 @@ switch (args.FirstOrDefault())
               festivals [kor|eng]  축제 목록 전량 수집 (기본: 둘 다)
               details <kor|eng> [n] 상세 수집 (일일 예산 내에서, 진행·예정 우선)
               culture              문화정보(국악·전통공연·전시) 수집 → db/culture.json
+              places               영문 관광지·문화시설 수집 → db/places.json
               stats                적재 현황
             """);
         break;

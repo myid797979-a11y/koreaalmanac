@@ -198,6 +198,76 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
     }
 }
 
+// ── 관광지(Places) ──────────────────────────────────────────
+// db/places.json (Collector places) → web/data/places.json.
+// 영문 원문이라 번역 불필요. 대신 ①의료·법인 노이즈 제거 ②9개 카테고리 분류
+// ③지역코드 없는 항목의 주소 기반 보정이 핵심.
+{
+    var placePath = Path.Combine(root, "db", "places.json");
+    if (File.Exists(placePath))
+    {
+        var raw = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, string>>>(
+            File.ReadAllText(placePath))!;
+
+        // 의료관광 등록업체가 '관광지'로 분류되어 들어온다 (279건) — 반드시 제외
+        var MED = new Regex("clinic|hospital|medical|dermatolog|plastic surgery|dental|rhinoplasty|oriental medicine",
+            RegexOptions.IgnoreCase);
+        var BIZ = new Regex("\\bcompany\\b|\\bco\\.,? ?ltd|\\binc\\b|corporation", RegexOptions.IgnoreCase);
+
+        var areaMap = new Dictionary<string, string>
+        {
+            ["1"] = "Seoul", ["2"] = "Incheon", ["3"] = "Daejeon", ["4"] = "Daegu", ["5"] = "Gwangju",
+            ["6"] = "Busan", ["7"] = "Ulsan", ["8"] = "Sejong", ["31"] = "Gyeonggi", ["32"] = "Gangwon",
+            ["33"] = "Chungbuk", ["34"] = "Chungnam", ["35"] = "Gyeongbuk", ["36"] = "Gyeongnam",
+            ["37"] = "Jeonbuk", ["38"] = "Jeonnam", ["39"] = "Jeju",
+        };
+
+        var places = new List<Dictionary<string, object?>>();
+        foreach (var (id, it) in raw)
+        {
+            var title = Decode(it.GetValueOrDefault("title")) ?? "";
+            if (title.Length == 0) continue;
+            if (MED.IsMatch(title) || BIZ.IsMatch(title)) continue;
+
+            var img = Nul(it.GetValueOrDefault("firstimage")) ?? Nul(it.GetValueOrDefault("firstimage2"));
+            if (img == null) continue;   // 카드 UI 기준 — 사진 없으면 제외
+
+            var addr = Decode(it.GetValueOrDefault("addr1"));
+            var region = areaMap.TryGetValue(it.GetValueOrDefault("areacode") ?? "", out var rg)
+                ? rg : RegionFromAddr(addr);
+            if (region == "Korea") continue;   // 지역 판별 불가면 제외 (지역 허브에 못 넣음)
+
+            places.Add(new Dictionary<string, object?>
+            {
+                ["id"] = id,
+                ["slug"] = Slug(title) + "-" + id,
+                ["title"] = title,
+                ["cat"] = PlaceCategory(it.GetValueOrDefault("cat3"), it.GetValueOrDefault("cat2"), title),
+                ["region"] = region,
+                ["addr"] = addr,
+                ["image"] = img,
+                ["mapx"] = Nul(it.GetValueOrDefault("mapx")),
+                ["mapy"] = Nul(it.GetValueOrDefault("mapy")),
+                ["tel"] = Nul(it.GetValueOrDefault("tel")),
+                ["overview"] = Decode(Strip(it.GetValueOrDefault("overview"))),
+            });
+        }
+
+        places.Sort((a, b) => string.CompareOrdinal((string?)a["title"], (string?)b["title"]));
+        File.WriteAllText(Path.Combine(webData, "places.json"), JsonSerializer.Serialize(places, jsonOpt));
+
+        var byCat = places.GroupBy(x => (string?)x["cat"]).OrderByDescending(g => g.Count())
+            .Select(g => g.Key + " " + g.Count());
+        Console.WriteLine($"places.json         {places.Count:N0}건");
+        Console.WriteLine("  분류: " + string.Join(" · ", byCat));
+    }
+    else
+    {
+        File.WriteAllText(Path.Combine(webData, "places.json"), "[]");
+        Console.WriteLine("places.json         (db/places.json 없음 — 빈 배열)");
+    }
+}
+
 // 검색 인덱스 (헤더 검색박스용 슬림, ~40KB)
 var pubDir = Path.Combine(root, "web", "public");
 Directory.CreateDirectory(pubDir);
@@ -308,6 +378,50 @@ static string CleanTitle(string t)
         idx = t.IndexOf('(', idx + 1);
     }
     return t.Trim();
+}
+
+// KTO cat3(소분류) → 여행자가 쓰는 말로 재편한 9개 카테고리.
+// cat3 가 비어 오는 항목이 397건 있고 거기에 하회마을·BIFF광장 같은 알짜가 섞여 있어,
+// 코드가 없으면 제목 키워드로 판정한다 (버리지 않는다).
+static string PlaceCategory(string? cat3, string? cat2, string title)
+{
+    var c = cat3 ?? "";
+
+    // 박물관·미술관은 어느 코드로 들어오든 먼저 잡는다 (220건이 여러 분류에 흩어져 있었다).
+    // "Museum Park"(테마파크) 처럼 이름만 박물관인 것은 제외.
+    if (Regex.IsMatch(title, "museum|gallery|art (center|centre|hall|museum)|memorial hall|exhibition hall", RegexOptions.IgnoreCase)
+        && !Regex.IsMatch(title, "museum park|alive museum|trick ?eye", RegexOptions.IgnoreCase))
+        return "museums";
+    // 궁궐·성곽·유적
+    if (c is "A02010100" or "A02010200" or "A02010300" or "A02010700" or "A02011000") return "heritage";
+    if (c is "A02010800") return "temples";                       // 사찰
+    if (c is "A02010400" or "A02010500" or "A02010600" or "A02030100") return "villages";  // 고택·민속마을
+    if (c is "A01010400" or "A01010200") return "hiking";         // 산·고개
+    if (c is "A01011200" or "A01011300" or "A01011400" or "A01011100") return "coast";     // 해변·섬·항구
+    if (c is "A01010600" or "A01010700" or "A01010900" or "A01011700" or "A01010500" or "A01010800" or "A01011800") return "nature";
+    if (c is "A02050600" or "A02020800") return "views";          // 전망대
+    if (c is "A02030400" or "A02030600" or "A02040800" or "A02040600") return "neighbourhoods";
+    if (c is "A02020200" or "A02020300" or "A02020600" or "A02020700") return "themeparks";
+
+    // cat2 로 한 번 더
+    if (cat2 == "A0201") return "heritage";
+    if (cat2 == "A0101") return "nature";
+    if (cat2 == "A0202") return "themeparks";
+    if (cat2 == "A0203") return "neighbourhoods";
+    if (cat2 == "A0205") return "views";
+
+    // 코드가 없으면 제목으로 판정
+    var t = title.ToLowerInvariant();
+    if (Regex.IsMatch(t, "temple|사찰|\\bsa\\b")) return "temples";
+    if (Regex.IsMatch(t, "palace|fortress|tomb|shrine|궁|성곽|산성|고분")) return "heritage";
+    if (Regex.IsMatch(t, "hanok|folk village|민속마을|한옥마을|traditional village")) return "villages";
+    if (Regex.IsMatch(t, "mountain|peak|trail|hiking|산\\b|봉\\b")) return "hiking";
+    if (Regex.IsMatch(t, "beach|island|port|해수욕장|해변|섬\\b|항\\b")) return "coast";
+    if (Regex.IsMatch(t, "observatory|skywalk|cable car|tower|전망|스카이워크|케이블카")) return "views";
+    if (Regex.IsMatch(t, "market|street|alley|village|시장|거리|골목|마을")) return "neighbourhoods";
+    if (Regex.IsMatch(t, "park|land|world|spa|farm|museum|파크|월드|랜드|온천|농장")) return "themeparks";
+    if (Regex.IsMatch(t, "forest|valley|lake|garden|숲|계곡|호수|수목원")) return "nature";
+    return "neighbourhoods";   // 최후 기본값 — 도시 명소가 대부분
 }
 
 static string Slug(string s)

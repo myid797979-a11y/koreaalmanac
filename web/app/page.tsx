@@ -7,6 +7,7 @@ import {
 } from '@/lib/data';
 import { FEATURED_IDS } from '@/lib/editorial';
 import { upcomingConcerts, concertDateRange, KIND_LABEL } from '@/lib/concerts';
+import { liveCulture, cultureDateRange, isLongRun } from '@/lib/culture';
 
 function SectionHead({ title, href, more }: { title: string; href: string; more: string }) {
   return (
@@ -46,6 +47,10 @@ export default function Home() {
   const weekend = photoFirst(onWeekend(t));
   const wkLabel = weekendWindow(t).label;
   const concerts = upcomingConcerts(t);
+  // 전통공연은 상시 프로그램이 많아 시작일이 과거인 것도 '지금 볼 수 있는' 공연이다.
+  // 사진 있는 것을 앞세우되 곧 시작하는 것 우선.
+  const trad = liveCulture('traditional', t);
+  const exhibitions = liveCulture('exhibition', t).filter(c => c.image);
 
   const day = Number(t.slice(6, 8));
   const mIdx = Number(t.slice(4, 6)) - 1;
@@ -88,6 +93,7 @@ export default function Home() {
             <Link href="/events/festivals/"><b>{ongoing.length}</b> festivals on today</Link>
             <Link href={'/events/festivals/' + MONTH_SLUGS[mIdx] + '/'}><b>{startingThisMonth}</b> more start this month</Link>
             <Link href="/events/concerts/"><b>{concerts.length}</b> concerts coming up</Link>
+            <Link href="/events/exhibitions/"><b>{trad.length + exhibitions.length}</b> shows &amp; exhibitions</Link>
           </div>
         </aside>
       </section>
@@ -141,6 +147,54 @@ export default function Home() {
       <SectionHead title="Starting soon" href="/events/festivals/" more={'all ' + upcoming.length + ' upcoming'} />
       <div className="grid">{upcoming.slice(0, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
 
+      {trad.length > 0 && (
+        <>
+          <SectionHead title="Traditional performance" href="/events/traditional/" more={'all ' + trad.length} />
+          <p className="intro" style={{ marginTop: -4 }}>
+            Gugak, pansori and mask dance run as regular weekend programmes at Korea&apos;s national
+            centres — cheap, rarely sold out, and the easiest authentic performance to slot into a trip.
+          </p>
+          <div className="cult-list">
+            {trad.slice(0, 4).map(c => (
+              <article key={c.id} className="cult">
+                {c.image
+                  ? <Link href={'/culture/' + c.slug + '/'} className="cu-ph"><img src={c.image} alt={c.title} loading="lazy" /></Link>
+                  : <span className="cu-ph cu-noph" aria-hidden="true" />}
+                <div className="cu-body">
+                  <div className="cu-when">
+                    {cultureDateRange(c)}
+                    {isLongRun(c) && <span className="cu-tag">Long run</span>}
+                  </div>
+                  <h2><Link href={'/culture/' + c.slug + '/'}>{c.title}</Link></h2>
+                  <p className="cu-place">{c.venue ? c.venue + ' · ' : ''}{c.region}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </>
+      )}
+
+      {exhibitions.length > 0 && (
+        <>
+          <SectionHead title="Exhibitions" href="/events/exhibitions/" more={'all ' + liveCulture('exhibition', t).length} />
+          <div className="cult-list">
+            {exhibitions.slice(0, 4).map(c => (
+              <article key={c.id} className="cult">
+                <Link href={'/culture/' + c.slug + '/'} className="cu-ph"><img src={c.image!} alt={c.title} loading="lazy" /></Link>
+                <div className="cu-body">
+                  <div className="cu-when">
+                    {cultureDateRange(c)}
+                    {isLongRun(c) && <span className="cu-tag">Long run</span>}
+                  </div>
+                  <h2><Link href={'/culture/' + c.slug + '/'}>{c.title}</Link></h2>
+                  <p className="cu-place">{c.venue ? c.venue + ' · ' : ''}{c.region}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </>
+      )}
+
       <h2 className="sect" style={{ marginTop: 36 }}>Browse by interest</h2>
       <p className="strip">
         {CATEGORIES.map(c => {
@@ -160,9 +214,9 @@ export default function Home() {
         <p>
           <strong>What this site is:</strong> a practical reference for what is on in Korea while
           you are there — every festival registered with the Korea Tourism Organization, merged
-          from Korean and English official data and refreshed every morning, plus hand-picked
-          concerts and live shows. Hundreds of these festivals never appear on English-language
-          sites.
+          from Korean and English official data and refreshed every morning, plus traditional
+          performances and museum exhibitions from Korea&apos;s culture data, and hand-picked
+          concerts. Most of it is translated here and appears in English nowhere else.
           {' '}<Link href="/about/" style={{ textDecoration: 'underline' }}>More about the data</Link>
         </p>
       </section>

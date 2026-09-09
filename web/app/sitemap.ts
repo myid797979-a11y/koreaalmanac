@@ -4,6 +4,7 @@ import {
 } from '@/lib/data';
 import { concertParams } from '@/lib/concerts';
 import { cultureParams, liveCulture } from '@/lib/culture';
+import { placeParams, PLACE_CATS, places } from '@/lib/places';
 import { SITE_URL } from '@/lib/site';
 
 export const dynamic = 'force-static';
@@ -20,6 +21,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(liveCulture('traditional').length ? [{ url: SITE_URL + '/events/traditional/', priority: 0.9 }] : []),
     ...(liveCulture('exhibition').length ? [{ url: SITE_URL + '/events/exhibitions/', priority: 0.9 }] : []),
     ...cultureParams().map(c => ({ url: SITE_URL + '/culture/' + c.slug + '/', priority: 0.7 })),
+    ...(places.length ? [{ url: SITE_URL + '/places/', priority: 0.95 }] : []),
+    ...PLACE_CATS.map(c => ({ url: SITE_URL + '/places/' + c.slug + '/', priority: 0.85 })),
+    ...REGIONS.map(r => ({ url: SITE_URL + '/regions/' + r.toLowerCase() + '/', priority: 0.9 })),
+    ...placeParams().map(p => ({ url: SITE_URL + '/place/' + p.slug + '/', priority: 0.7 })),
     { url: SITE_URL + '/calendar/', priority: 0.9 },
     { url: SITE_URL + '/regions/', priority: 0.8 },
     { url: SITE_URL + '/about/', priority: 0.3 },
