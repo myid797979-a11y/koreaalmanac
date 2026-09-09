@@ -76,13 +76,13 @@ export default function ConcertsPage() {
 
       <h2 className="sect">Getting tickets</h2>
       <p className="intro">
-        Tickets for K-pop shows in Korea are sold almost exclusively through Korean
+        Tickets for shows in Korea are sold almost exclusively through Korean
         platforms — Interpark (Global), Melon Ticket, and Yes24 — and popular shows sell
-        out in minutes. Most require an account made in advance, and fan-club presales
-        open before general sale. Always buy from the official seller announced by the
-        artist&apos;s agency; secondary-market tickets are routinely cancelled at the door
-        by identity checks.
-        {' '}<Link href="/concerts/tickets/">Read the full ticket-buying guide →</Link>
+        out in minutes. Most require an account made in advance, and for K-pop concerts
+        fan-club presales open before general sale. Always buy from the official seller
+        named in the announcement; secondary-market tickets are routinely cancelled at
+        the door by identity checks.
+        {' '}<Link href="/concerts/tickets/">Read the full K-pop ticket-buying guide →</Link>
       </p>
       <p className="meta">
         Dates and venues are compiled by hand from official announcements and may change —

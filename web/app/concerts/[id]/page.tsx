@@ -84,11 +84,13 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
 
       <h2 className="sect">Tickets</h2>
       <p className="overview">
-        K-pop tickets in Korea sell through Korean platforms (Interpark Global, Melon
-        Ticket, Yes24) and popular shows sell out in minutes. Buy only from the seller
-        named in the official announcement — resold tickets are routinely voided by
-        identity checks at the door.
-        {' '}<Link href="/concerts/tickets/">Read the full ticket-buying guide →</Link>
+        Tickets in Korea sell through Korean platforms (Interpark Global, Melon Ticket,
+        Yes24) and popular shows sell out fast. Buy only from the seller named in the
+        official announcement — resold tickets are routinely voided by identity checks
+        at the door.
+        {c.kind === 'concert' && !c.intl && (
+          <>{' '}<Link href="/concerts/tickets/">Read the full K-pop ticket-buying guide →</Link></>
+        )}
       </p>
       <p className="meta">
         Compiled by hand from official announcements and last checked {fmt(CONCERTS_UPDATED)};
