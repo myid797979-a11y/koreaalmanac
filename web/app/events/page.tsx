@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { festivals, status, today, MONTHS_FULL, MONTH_SLUGS } from '@/lib/data';
 import { upcomingConcerts } from '@/lib/concerts';
+import { liveCulture } from '@/lib/culture';
 
 export const metadata = {
   title: "What's On in Korea — Festivals, Concerts & Events",
@@ -12,6 +13,8 @@ export default function EventsHub() {
   const ongoing = festivals.filter(f => status(f, t) === 'ongoing').length;
   const upcomingFest = festivals.filter(f => status(f, t) === 'upcoming').length;
   const concerts = upcomingConcerts(t);
+  const trad = liveCulture('traditional', t);
+  const exh = liveCulture('exhibition', t);
   const curM = Number(t.slice(4, 6)) - 1;
 
   return (
@@ -44,6 +47,30 @@ export default function EventsHub() {
           </p>
           <span className="hc-go">Browse concerts →</span>
         </Link>
+
+        {trad.length > 0 && (
+          <Link href="/events/traditional/" className="hubcard">
+            <span className="hc-n">{trad.length}</span>
+            <h2>Traditional performance</h2>
+            <p>
+              Gugak, folk music, mask dance and court music — much of it running as regular
+              weekend programmes at national centres, where tickets stay cheap and available.
+            </p>
+            <span className="hc-go">Browse performances →</span>
+          </Link>
+        )}
+
+        {exh.length > 0 && (
+          <Link href="/events/exhibitions/" className="hubcard">
+            <span className="hc-n">{exh.length}</span>
+            <h2>Exhibitions</h2>
+            <p>
+              Museum and gallery shows across the country, including the permanent displays
+              at the national museums that are worth building a day around.
+            </p>
+            <span className="hc-go">Browse exhibitions →</span>
+          </Link>
+        )}
       </div>
 
       <h2 className="sect">Browse by month</h2>

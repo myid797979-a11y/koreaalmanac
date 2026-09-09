@@ -111,6 +111,93 @@ File.WriteAllText(Path.Combine(webData, "festivals.json"), JsonSerializer.Serial
 File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
     JsonSerializer.Serialize(queue, new JsonSerializerOptions { WriteIndented = true, Encoder = jsonOpt.Encoder }));
 
+// ── 문화정보(국악·전통공연·전시) ────────────────────────────
+// db/culture.json (Collector culture 명령) → web/data/culture.json.
+// 축제와 같은 번역 전략: 원문은 한국어이므로 data/translations/culture-*.json 을 얹는다.
+{
+    var cultPath = Path.Combine(root, "db", "culture.json");
+    if (File.Exists(cultPath))
+    {
+        var raw = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, string>>>(
+            File.ReadAllText(cultPath))!;
+
+        // 문화정보 전용 번역 병합 (culture- 로 시작하는 파일만)
+        var cTr = new Dictionary<string, Dictionary<string, string?>>();
+        if (Directory.Exists(trDir))
+            foreach (var f in Directory.GetFiles(trDir, "culture-*.json").OrderBy(x => x))
+                foreach (var kv in JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, string?>>>(File.ReadAllText(f))!)
+                    cTr[kv.Key] = kv.Value;
+
+        var TRAD = new Regex("국악|판소리|사물놀이|풍물|가야금|거문고|해금|전통무용|살풀이|탈춤|무형유산|종묘|정악|산조|민요|아리랑|시조|창극");
+        var cult = new List<Dictionary<string, object?>>();
+        var cQueue = new List<Dictionary<string, object?>>();
+        var cToday = DateTime.UtcNow.AddHours(9).ToString("yyyyMMdd");
+
+        foreach (var (seq, it) in raw.OrderBy(kv => kv.Value.GetValueOrDefault("startDate", "")))
+        {
+            var title = it.GetValueOrDefault("title", "").Trim();
+            if (title.Length == 0) continue;
+            var realm = it.GetValueOrDefault("realmName", "");
+            var end = it.GetValueOrDefault("endDate", "");
+            if (string.Compare(end, cToday, StringComparison.Ordinal) < 0) continue;
+
+            var isTrad = realm.Contains("국악") || TRAD.IsMatch(title);
+            var isExh = realm.Contains("전시");
+            if (!isTrad && !isExh) continue;   // 이번 범위는 전통공연·전시만
+
+            cTr.TryGetValue(seq, out var tr);
+            var enTitle = tr?.GetValueOrDefault("title") ?? Decode(title) ?? title;
+
+            cult.Add(new Dictionary<string, object?>
+            {
+                ["id"] = seq,
+                ["slug"] = Slug(enTitle) + "-" + seq,
+                ["title"] = enTitle,
+                ["start"] = it.GetValueOrDefault("startDate"),
+                ["end"] = end,
+                ["venue"] = tr?.GetValueOrDefault("venue") ?? Decode(it.GetValueOrDefault("place")),
+                ["region"] = Nul(it.GetValueOrDefault("area")) ?? "Korea",
+                ["district"] = Nul(it.GetValueOrDefault("sigungu")),
+                ["kind"] = isTrad ? "traditional" : "exhibition",
+                ["image"] = Nul(it.GetValueOrDefault("thumbnail")) ?? Nul(it.GetValueOrDefault("imgUrl")),
+                ["gpsX"] = Nul(it.GetValueOrDefault("gpsX")),
+                ["gpsY"] = Nul(it.GetValueOrDefault("gpsY")),
+                ["price"] = tr?.GetValueOrDefault("price") ?? Decode(it.GetValueOrDefault("price")),
+                ["addr"] = tr?.GetValueOrDefault("addr") ?? Decode(it.GetValueOrDefault("placeAddr")),
+                ["tel"] = Nul(it.GetValueOrDefault("phone")),
+                ["url"] = Href(it.GetValueOrDefault("url")),
+                ["venueUrl"] = Href(it.GetValueOrDefault("placeUrl")),
+                ["overview"] = tr?.GetValueOrDefault("overview") ?? Decode(Strip(it.GetValueOrDefault("contents1"))),
+                ["mt"] = tr != null,
+            });
+
+            if (tr == null)
+                cQueue.Add(new Dictionary<string, object?>
+                {
+                    ["id"] = seq,
+                    ["kind"] = isTrad ? "traditional" : "exhibition",
+                    ["start"] = it.GetValueOrDefault("startDate"),
+                    ["title"] = Decode(title),
+                    ["place"] = Decode(it.GetValueOrDefault("place")),
+                    ["area"] = it.GetValueOrDefault("area"),
+                    ["price"] = Decode(it.GetValueOrDefault("price")),
+                    ["addr"] = Decode(it.GetValueOrDefault("placeAddr")),
+                    ["overview"] = Decode(Strip(it.GetValueOrDefault("contents1"))),
+                });
+        }
+
+        File.WriteAllText(Path.Combine(webData, "culture.json"), JsonSerializer.Serialize(cult, jsonOpt));
+        File.WriteAllText(Path.Combine(root, "data", "culture_queue.json"),
+            JsonSerializer.Serialize(cQueue, new JsonSerializerOptions { WriteIndented = true, Encoder = jsonOpt.Encoder }));
+        Console.WriteLine($"culture.json        {cult.Count:N0}건 (전통 {cult.Count(c => (string?)c["kind"] == "traditional"):N0} · 전시 {cult.Count(c => (string?)c["kind"] == "exhibition"):N0}) · 번역대기 {cQueue.Count:N0}");
+    }
+    else
+    {
+        File.WriteAllText(Path.Combine(webData, "culture.json"), "[]");
+        Console.WriteLine("culture.json        (db/culture.json 없음 — 빈 배열)");
+    }
+}
+
 // 검색 인덱스 (헤더 검색박스용 슬림, ~40KB)
 var pubDir = Path.Combine(root, "web", "public");
 Directory.CreateDirectory(pubDir);
@@ -292,6 +379,21 @@ static string RegionFromAddr(string? addr)
     if (addr.Contains("경남") || addr.Contains("경상남")) return "Gyeongnam";
     if (addr.Contains("광주")) return "Gwangju";
     return "Korea";
+}
+
+// KTO·문화정보 원문에 HTML 엔티티가 이중 인코딩되어 온다 (&amp;lt; → &lt; → <).
+// 안정될 때까지 반복 디코딩한 뒤 남은 제어문자를 정리한다.
+static string? Decode(string? s)
+{
+    if (s == null) return null;
+    var cur = s;
+    for (var i = 0; i < 3; i++)
+    {
+        var next = System.Net.WebUtility.HtmlDecode(cur);
+        if (next == cur) break;
+        cur = next;
+    }
+    return Nul(cur.Replace("\u00a0", " "));
 }
 
 static string? Nul(string? s) => string.IsNullOrWhiteSpace(s) ? null : s.Trim();

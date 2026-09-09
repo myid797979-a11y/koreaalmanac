@@ -3,6 +3,7 @@ import {
   festivals, MONTH_SLUGS, REGIONS, REGION_MONTH_MIN, regionMonthList, CATEGORIES,
 } from '@/lib/data';
 import { concertParams } from '@/lib/concerts';
+import { cultureParams, liveCulture } from '@/lib/culture';
 import { SITE_URL } from '@/lib/site';
 
 export const dynamic = 'force-static';
@@ -16,6 +17,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/events/concerts/', priority: 0.9 },
     { url: SITE_URL + '/guides/kpop-tickets/', priority: 0.8 },
     ...concertParams().map(c => ({ url: SITE_URL + '/concert/' + c.id + '/', priority: 0.7 })),
+    ...(liveCulture('traditional').length ? [{ url: SITE_URL + '/events/traditional/', priority: 0.9 }] : []),
+    ...(liveCulture('exhibition').length ? [{ url: SITE_URL + '/events/exhibitions/', priority: 0.9 }] : []),
+    ...cultureParams().map(c => ({ url: SITE_URL + '/culture/' + c.slug + '/', priority: 0.7 })),
     { url: SITE_URL + '/calendar/', priority: 0.9 },
     { url: SITE_URL + '/regions/', priority: 0.8 },
     { url: SITE_URL + '/about/', priority: 0.3 },

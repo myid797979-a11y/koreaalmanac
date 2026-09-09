@@ -197,6 +197,69 @@ switch (args.FirstOrDefault())
         break;
     }
 
+    // culture — 한국문화정보원 문화정보(국악·전통공연·전시). Postgres 대신 db/culture.json 에 보존.
+    // 축제 파이프라인과 분리해 기존 수집에 영향이 없게 한다. 일 10,000콜이라 매일 전량 재조회.
+    case "culture":
+    {
+        var capi = new CultureApi(cfg.ApiKeyEncoded);
+        var outPath = Path.Combine(Path.GetDirectoryName(FindUp("db/schema.sql"))!, "culture.json");
+
+        var store = File.Exists(outPath)
+            ? JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, string>>>(File.ReadAllText(outPath))!
+            : new Dictionary<string, Dictionary<string, string>>();
+
+        var from = DateTime.UtcNow.AddHours(9).ToString("yyyyMMdd");
+        var to = DateTime.UtcNow.AddHours(9).AddYears(1).ToString("yyyyMMdd");
+        var seen = new HashSet<string>();
+        var calls = 0;
+
+        foreach (var tp in new[] { "A", "B", "C" })
+        {
+            for (var page = 1; page <= 5; page++)
+            {
+                var (items, _) = await capi.Period(tp, from, to, page);
+                calls++;
+                foreach (var it in items)
+                {
+                    var seq = it["seq"];
+                    seen.Add(seq);
+                    if (store.TryGetValue(seq, out var prev))
+                        foreach (var kv in it) prev[kv.Key] = kv.Value;   // 목록 필드 갱신, 상세는 보존
+                    else
+                        store[seq] = new Dictionary<string, string>(it);
+                }
+                if (items.Count < 1000) break;
+            }
+        }
+        Console.WriteLine($"목록 {seen.Count:N0}건 ({calls}콜)");
+
+        // 지난 항목 정리 — 종료일이 오늘보다 이전이면 제거
+        var today = from;
+        var stale = store.Where(kv => kv.Value.GetValueOrDefault("endDate", "99999999").CompareTo(today) < 0)
+                         .Select(kv => kv.Key).ToList();
+        foreach (var k in stale) store.Remove(k);
+
+        // 상세 미수집분 채우기 (예산 여유분 내에서)
+        var need = store.Where(kv => !kv.Value.ContainsKey("_detailed")).Select(kv => kv.Key).Take(600).ToList();
+        var got = 0;
+        foreach (var seq in need)
+        {
+            var d = await capi.Detail(seq);
+            calls++;
+            if (d != null)
+            {
+                foreach (var kv in d) store[seq][kv.Key] = kv.Value;
+                got++;
+            }
+            store[seq]["_detailed"] = "1";
+        }
+
+        var opts = new JsonSerializerOptions { WriteIndented = false, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
+        File.WriteAllText(outPath, JsonSerializer.Serialize(store.OrderBy(kv => kv.Key).ToDictionary(kv => kv.Key, kv => kv.Value), opts));
+        Console.WriteLine($"culture.json  {store.Count:N0}건 (상세 신규 {got}건, 만료 정리 {stale.Count}건, 총 {calls}콜)");
+        break;
+    }
+
     case "stats":
     {
         using var conn = Db.Open(cfg);
@@ -221,6 +284,7 @@ switch (args.FirstOrDefault())
               init                 스키마 적용
               festivals [kor|eng]  축제 목록 전량 수집 (기본: 둘 다)
               details <kor|eng> [n] 상세 수집 (일일 예산 내에서, 진행·예정 우선)
+              culture              문화정보(국악·전통공연·전시) 수집 → db/culture.json
               stats                적재 현황
             """);
         break;
