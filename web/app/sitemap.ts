@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import {
   festivals, MONTH_SLUGS, REGIONS, REGION_MONTH_MIN, regionMonthList, CATEGORIES,
 } from '@/lib/data';
+import { concertParams } from '@/lib/concerts';
 import { SITE_URL } from '@/lib/site';
 
 export const dynamic = 'force-static';
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/festivals/', priority: 0.9 },
     { url: SITE_URL + '/concerts/', priority: 0.9 },
     { url: SITE_URL + '/concerts/tickets/', priority: 0.8 },
+    ...concertParams().map(c => ({ url: SITE_URL + '/concerts/' + c.id + '/', priority: 0.7 })),
     { url: SITE_URL + '/calendar/', priority: 0.9 },
     { url: SITE_URL + '/regions/', priority: 0.8 },
     { url: SITE_URL + '/about/', priority: 0.3 },

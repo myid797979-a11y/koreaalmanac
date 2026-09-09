@@ -10,7 +10,19 @@ export type Concert = {
   kind: 'concert' | 'award' | 'festival';
   note?: string;
   intl?: boolean;   // 내한공연 — 컴팩트 섹션에 노출
+  video?: string;   // 검증된 공식 유튜브 영상 ID만 (저작권자 배포). 없으면 지도만.
+  ticket?: string;  // 공식 예매처 URL (있을 때만)
 };
+
+/** id 로 단건 조회 (상세페이지 generateStaticParams용) — 지난 공연도 조회 가능 */
+export function concertById(id: string): Concert | undefined {
+  return (file.items as Concert[]).find(c => c.id === id);
+}
+
+/** 상세페이지를 생성할 대상: 진행중/예정만 (지난 공연은 정적 생성 안 함) */
+export function concertParams(t = today()): { id: string }[] {
+  return file.items.filter(c => c.end >= t).map(c => ({ id: c.id }));
+}
 
 type ConcertsFile = { updated: string; note: string; items: Concert[] };
 

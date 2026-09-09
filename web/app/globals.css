@@ -463,3 +463,32 @@ footer.site .strip a:hover { color: var(--seal); }
   .concert { flex-direction: column; gap: 10px; padding: 14px 16px; }
   .concert .c-date { flex: none; flex-direction: row; align-items: center; gap: 10px; }
 }
+
+/* ── 콘서트 상세 ────────────────────────────────────────── */
+.c-more { margin: 8px 0 0; font-size: 13.5px; }
+.c-more a { color: var(--jjok); }
+.c-more a:hover { color: var(--seal); }
+.concert h2 a:hover { color: var(--seal); }
+
+.c-hero {
+  margin: 18px 0 20px; padding: 22px 24px;
+  background: var(--card); border: 1px solid var(--line);
+  border-top: 4px double var(--ink); border-radius: 0 0 10px 10px;
+}
+.c-hero .c-kind { display: inline-block; margin-bottom: 10px; }
+.c-hero h1 { margin: 0 0 4px; }
+.c-hero-artist {
+  margin: 0 0 8px; font-family: var(--font-display), Georgia, serif;
+  font-size: 18px; color: var(--seal); font-weight: 600;
+}
+.c-hero-when {
+  margin: 0; font-size: 14.5px; color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.c-video { margin: 0 0 18px; }
+.c-video iframe {
+  width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--line);
+  border-radius: 10px; display: block; background: #000;
+}
+.c-video .meta { margin: 8px 0 0; }

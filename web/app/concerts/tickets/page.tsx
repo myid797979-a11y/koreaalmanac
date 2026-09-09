@@ -9,7 +9,7 @@ export default function TicketGuidePage() {
   return (
     <>
       <div className="crumb">
-        <Link href="/">Home</Link> › <Link href="/concerts/">K-Pop</Link> › Tickets
+        <Link href="/">Home</Link> › <Link href="/concerts/">Concerts</Link> › Tickets
       </div>
       <h1>How to buy K-pop concert tickets as a foreigner</h1>
       <p className="sub">

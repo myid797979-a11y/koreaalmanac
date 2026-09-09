@@ -3,8 +3,8 @@ import { today, fmt } from '@/lib/data';
 import { upcomingConcerts, concertDateRange, KIND_LABEL, CONCERTS_UPDATED } from '@/lib/concerts';
 
 export const metadata = {
-  title: 'K-Pop Concerts & Awards in Korea',
-  description: 'Hand-picked upcoming K-pop concerts, awards shows, and music festivals in Korea — dates, venues, and practical notes for visitors planning a trip around a show.',
+  title: 'Concerts & Music Festivals in Korea',
+  description: 'Hand-picked upcoming concerts in Korea — K-pop, EDM and music festivals, awards shows, and international tours — with dates, venues, and practical notes for visitors planning a trip around a show.',
 };
 
 export default function ConcertsPage() {
@@ -15,13 +15,13 @@ export default function ConcertsPage() {
 
   return (
     <>
-      <div className="crumb"><Link href="/">Home</Link> › K-Pop</div>
-      <h1>K-pop concerts &amp; awards in Korea</h1>
+      <div className="crumb"><Link href="/">Home</Link> › Concerts</div>
+      <h1>Concerts &amp; music festivals in Korea</h1>
       <p className="sub">
         A hand-picked list of major upcoming shows — not a complete database.
-        We track the events worth planning a trip around: arena and stadium concerts,
-        the big year-end awards nights, and multi-artist festivals.
-        Curated {fmt(CONCERTS_UPDATED)}.
+        We track the events worth planning a trip around: K-pop and arena concerts,
+        EDM and music festivals, the big year-end awards nights, and international
+        tours passing through. Curated {fmt(CONCERTS_UPDATED)}.
       </p>
 
       {items.length === 0 ? (
@@ -39,11 +39,16 @@ export default function ConcertsPage() {
                 <span className={'c-kind k-' + c.kind}>{KIND_LABEL[c.kind]}</span>
               </div>
               <div className="c-body">
-                <h2>{c.title}{c.artist !== 'Various artists' && c.title.indexOf(c.artist) === -1 ? ' — ' + c.artist : ''}</h2>
+                <h2>
+                  <Link href={'/concerts/' + c.id + '/'}>
+                    {c.title}{c.artist !== 'Various artists' && c.title.indexOf(c.artist) === -1 ? ' — ' + c.artist : ''}
+                  </Link>
+                </h2>
                 <p className="c-venue">
                   {c.venue} · <Link href={'/festivals/' + c.region.toLowerCase() + '/'}>{c.city}</Link>
                 </p>
-                <p className="c-note">{c.note}</p>
+                {c.note && <p className="c-note">{c.note}</p>}
+                <p className="c-more"><Link href={'/concerts/' + c.id + '/'}>Details &amp; venue map →</Link></p>
               </div>
             </article>
           ))}
@@ -61,7 +66,7 @@ export default function ConcertsPage() {
             {intl.map(c => (
               <li key={c.id}>
                 <span className="ad">{concertDateRange(c)}</span>
-                <strong>{c.artist}</strong> · {c.venue} ·{' '}
+                <Link href={'/concerts/' + c.id + '/'}><strong>{c.artist}</strong></Link> · {c.venue} ·{' '}
                 <Link href={'/festivals/' + c.region.toLowerCase() + '/'}>{c.city}</Link>
               </li>
             ))}
