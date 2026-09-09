@@ -33,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <nav className="nav">
               <Link href="/plan/">Trip Planner</Link>
               <Link href="/festivals/">Festivals</Link>
+              <Link href="/concerts/">K-Pop</Link>
               <Link href="/calendar/">Calendar</Link>
               <Link href="/regions/">Regions</Link>
             </nav>

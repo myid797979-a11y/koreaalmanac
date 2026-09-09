@@ -1,0 +1,66 @@
+{
+  "updated": "20260909",
+  "note": "수동 큐레이션. 공식 발표·공연장 일정을 확인해 선별 정리한 목록이며 전수 목록이 아니다. 지난 공연은 사이트에서 자동으로 숨겨지므로, 갱신이 늦어도 틀린 정보가 남지는 않는다.",
+  "items": [
+    {
+      "id": "plave-incheon-2026",
+      "artist": "PLAVE",
+      "title": "PLAVE Concert",
+      "start": "20260912",
+      "end": "20260913",
+      "venue": "Incheon Munhak Stadium",
+      "city": "Incheon",
+      "region": "Incheon",
+      "kind": "concert",
+      "note": "PLAVE are a virtual idol group — the members perform live through motion-captured animated avatars, and the show is built around large-screen staging. One of the few K-pop acts you genuinely cannot experience the same way anywhere else."
+    },
+    {
+      "id": "tfma-busan-2026",
+      "artist": "Various artists",
+      "title": "The Fact Music Awards",
+      "start": "20260919",
+      "end": "20260919",
+      "venue": "Busan Asiad Main Stadium",
+      "city": "Busan",
+      "region": "Busan",
+      "kind": "award",
+      "note": "A stadium-scale awards night with a long performance lineup rather than a single headliner. Awards shows are the easiest way to see many groups in one evening, and they are announced months ahead — useful if you are planning a trip around one."
+    },
+    {
+      "id": "objet-kpop-festa-2026",
+      "artist": "Various artists",
+      "title": "OBJET K-POP FESTA",
+      "start": "20260926",
+      "end": "20260927",
+      "venue": "KINTEX, Ilsan",
+      "city": "Goyang",
+      "region": "Gyeonggi",
+      "kind": "festival",
+      "note": "A two-day multi-artist festival at the KINTEX convention centre, about 40 minutes from central Seoul on Line 3. Festival line-ups are usually revealed in stages, so check the official channels close to the date."
+    },
+    {
+      "id": "illit-inspire-2026",
+      "artist": "ILLIT",
+      "title": "ILLIT Concert",
+      "start": "20261017",
+      "end": "20261018",
+      "venue": "INSPIRE Arena, Yeongjong Island",
+      "city": "Incheon",
+      "region": "Incheon",
+      "kind": "concert",
+      "note": "INSPIRE Arena sits next to Incheon Airport, which makes it unusually convenient if you are flying in for the show — the resort complex has hotels on site and an airport rail link into Seoul."
+    },
+    {
+      "id": "melon-music-awards-2026",
+      "artist": "Various artists",
+      "title": "Melon Music Awards",
+      "start": "20261114",
+      "end": "20261115",
+      "venue": "Gocheok Sky Dome",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "award",
+      "note": "One of the year's biggest K-pop nights, held over two days at Korea's only domed stadium. Gocheok is inside Seoul on Line 1, so it is the most accessible of the large-venue events for visitors without a car."
+    }
+  ]
+}

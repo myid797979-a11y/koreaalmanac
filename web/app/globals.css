@@ -428,3 +428,38 @@ footer.site .strip a:hover { color: var(--seal); }
   .featured h2 { font-size: 21px; }
   .alm-day { font-size: 72px; }
 }
+
+/* ── K-Pop 공연 목록 (수동 큐레이션) ───────────────────── */
+.concert-list { display: flex; flex-direction: column; gap: 14px; margin: 18px 0 8px; }
+.concert {
+  display: flex; gap: 22px; background: var(--card);
+  border: 1px solid var(--line); border-top: 3px double var(--ink);
+  border-radius: 0 0 8px 8px; padding: 16px 20px;
+}
+.concert .c-date {
+  flex: 0 0 148px; display: flex; flex-direction: column; gap: 7px;
+}
+.concert .c-when {
+  font-size: 14px; font-weight: 700; color: var(--jjok);
+  font-variant-numeric: tabular-nums; line-height: 1.4;
+}
+.concert .c-kind {
+  align-self: flex-start; font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.2px; padding: 3px 8px 4px; border-radius: 4px; color: #fff;
+}
+.concert .k-concert { background: var(--seal); }
+.concert .k-award { background: var(--ink); }
+.concert .k-festival { background: var(--jjok); }
+.concert .c-body { min-width: 0; }
+.concert h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 19px; font-weight: 700; margin: 0 0 4px; line-height: 1.3;
+}
+.concert .c-venue { margin: 0 0 8px; font-size: 13.5px; color: var(--muted); }
+.concert .c-venue a { color: var(--jjok); }
+.concert .c-venue a:hover { color: var(--seal); }
+.concert .c-note { margin: 0; font-size: 14.5px; line-height: 1.65; color: var(--ink); max-width: 640px; }
+@media (max-width: 720px) {
+  .concert { flex-direction: column; gap: 10px; padding: 14px 16px; }
+  .concert .c-date { flex: none; flex-direction: row; align-items: center; gap: 10px; }
+}
