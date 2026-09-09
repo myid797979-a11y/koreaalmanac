@@ -85,6 +85,11 @@ jobs:
           npx wrangler pages project create koreaalmanac --production-branch=main || true
           npx wrangler pages deploy out --project-name=koreaalmanac --commit-dirty=true
 
+      # 배포된 URL 전체를 IndexNow로 통지 (Bing·Naver 등) — 실패해도 배포는 유지
+      - name: IndexNow 핑
+        working-directory: web
+        run: node scripts/indexnow.mjs || true
+
       - name: 데이터 변경분 커밋 (덤프·번역큐·익스포트)
         run: |
           git config user.name "daily-update"

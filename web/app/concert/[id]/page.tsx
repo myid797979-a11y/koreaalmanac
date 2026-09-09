@@ -4,6 +4,7 @@ import {
   concertById, concertParams, concertDateRange, KIND_LABEL, upcomingConcerts, CONCERTS_UPDATED,
 } from '@/lib/concerts';
 import { fmt, today } from '@/lib/data';
+import { concertJsonLd, breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 
 export function generateStaticParams() {
   return concertParams();
@@ -30,8 +31,17 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
   const others = upcomingConcerts(t).filter(x => x.id !== c.id).slice(0, 6);
   const showArtist = c.artist !== 'Various artists' && c.title.indexOf(c.artist) === -1;
 
+  const eventLd = concertJsonLd(c);
+  const crumbLd = breadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'Concerts', path: '/events/concerts/' },
+    { name: c.title, path: '/concert/' + c.id + '/' },
+  ]);
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldStr(eventLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldStr(crumbLd) }} />
       <div className="crumb">
         <Link href="/">Home</Link> › <Link href="/events/concerts/">Concerts</Link> › {c.title}
       </div>

@@ -6,6 +6,7 @@ import {
   festivals, bySlug, status, dateRange, daysUntil, today,
   icsHref, MONTH_SLUGS, MONTHS_FULL, categoryLabel,
 } from '@/lib/data';
+import { festivalJsonLd, breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 
 export function generateStaticParams() {
   return festivals.map(f => ({ slug: f.slug }));
@@ -41,8 +42,18 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
 
   const hasMap = Boolean(f.mapx && f.mapy);
 
+  const eventLd = festivalJsonLd(f);
+  const crumbLd = breadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'Festivals', path: '/events/festivals/' },
+    { name: f.region, path: '/events/festivals/' + f.region.toLowerCase() + '/' },
+    { name: f.title, path: '/festival/' + f.slug + '/' },
+  ]);
+
   return (
     <>
+      {eventLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldStr(eventLd) }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldStr(crumbLd) }} />
       <div className="crumb">
         <Link href="/">Festivals</Link> › <Link href={'/events/festivals/' + f.region.toLowerCase() + '/'}>{f.region}</Link> › {f.title}
       </div>
