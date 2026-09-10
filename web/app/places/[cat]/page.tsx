@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import {
   PLACE_CATS, catBySlug, placesByCat, regionsRanked, type Place,
 } from '@/lib/places';
+import { rankPlaces, isTopPick } from '@/lib/place-rank';
 
 export function generateStaticParams() {
   return PLACE_CATS.map(c => ({ cat: c.slug }));
@@ -25,6 +26,7 @@ function Card({ p }: { p: Place }) {
       <div className="body">
         <div className="when">{p.region}</div>
         <h3>{p.title.replace(/\s*\([^)]*\)\s*$/, '')}</h3>
+        {isTopPick(p) && <span className="pick">Top pick</span>}
       </div>
     </Link>
   );
@@ -39,7 +41,7 @@ export default async function PlaceCatPage({ params }: { params: Promise<{ cat: 
   // 지역별로 묶어 보여준다 — 여행자는 "무엇을" 고른 뒤 "어디서"를 본다
   const ranked = regionsRanked().map(r => ({
     region: r.region,
-    items: list.filter(p => p.region === r.region),
+    items: rankPlaces(list.filter(p => p.region === r.region), r.region),
   })).filter(r => r.items.length > 0);
 
   return (

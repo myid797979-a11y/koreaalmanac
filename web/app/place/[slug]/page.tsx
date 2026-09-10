@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { placeBySlug, placeParams, placesByRegion, catMeta } from '@/lib/places';
+import { rankPlaces } from '@/lib/place-rank';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { SITE_URL } from '@/lib/site';
 
@@ -31,7 +32,7 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
   const hasMap = Boolean(p.mapx && p.mapy);
   const mapQ = hasMap ? p.mapy + ',' + p.mapx : encodeURIComponent(clean + ', South Korea');
 
-  const nearby = placesByRegion(p.region).filter(x => x.id !== p.id).slice(0, 6);
+  const nearby = rankPlaces(placesByRegion(p.region), p.region).filter(x => x.id !== p.id).slice(0, 6);
 
   const ld = {
     '@context': 'https://schema.org',

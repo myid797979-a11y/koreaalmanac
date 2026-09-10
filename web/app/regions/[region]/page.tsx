@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Card from '@/app/components/Card';
 import { REGIONS, festivals, status, today, regionFestivals } from '@/lib/data';
 import { placesByRegion, catMeta, PLACE_CATS, type Place } from '@/lib/places';
+import { rankPlaces, isTopPick } from '@/lib/place-rank';
 import { liveCulture } from '@/lib/culture';
 import { upcomingConcerts } from '@/lib/concerts';
 
@@ -31,6 +32,7 @@ function PlaceCard({ p }: { p: Place }) {
       <div className="body">
         <div className="when">{catMeta(p.cat).label}</div>
         <h3>{p.title.replace(/\s*\([^)]*\)\s*$/, '')}</h3>
+        {isTopPick(p) && <span className="pick">Top pick</span>}
       </div>
     </Link>
   );
@@ -42,7 +44,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
   if (!name) notFound();
 
   const t = today();
-  const spots = placesByRegion(name);
+  const spots = rankPlaces(placesByRegion(name), name);
   const fests = regionFestivals(name).filter(f => status(f, t) !== 'ended');
   const concerts = upcomingConcerts(t).filter(c => c.region === name);
   const culture = [...liveCulture('traditional', t), ...liveCulture('exhibition', t)]
@@ -50,7 +52,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
 
   // 카테고리별로 묶어 보여준다 — 지역 안에서는 "무엇을 볼까"가 다음 질문
   const byCat = PLACE_CATS
-    .map(c => ({ meta: c, items: spots.filter(p => p.cat === c.cat) }))
+    .map(c => ({ meta: c, items: rankPlaces(spots.filter(p => p.cat === c.cat), name) }))
     .filter(g => g.items.length > 0)
     .sort((a, b) => b.items.length - a.items.length);
 
