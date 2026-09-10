@@ -12,7 +12,8 @@ export type Place = {
 
 export type PlaceCat =
   | 'heritage' | 'temples' | 'villages' | 'hiking' | 'coast'
-  | 'nature' | 'views' | 'neighbourhoods' | 'themeparks' | 'museums';
+  | 'nature' | 'views' | 'neighbourhoods' | 'themeparks' | 'museums'
+  | 'markets' | 'shopping' | 'food';
 
 export const places = placesJson as Place[];
 
@@ -35,6 +36,10 @@ export const PLACE_CATS: { slug: string; cat: PlaceCat; label: string; blurb: st
     blurb: 'Market alleys, mural villages, book streets and the districts worth walking without a plan.' },
   { slug: 'theme-parks', cat: 'themeparks', label: 'Theme parks & experiences',
     blurb: 'Amusement parks, water parks, hot springs and hands-on farms — the reliable rainy-day and family options.' },
+  { slug: 'markets', cat: 'markets', label: 'Traditional markets',
+    blurb: 'Covered alleys of food stalls and fabric traders, harbour fish markets, and five-day markets that appear on set dates and vanish again.' },
+  { slug: 'shopping', cat: 'shopping', label: 'Shopping streets & malls',
+    blurb: 'Department stores, outlet malls, duty free, and the streets that specialise — antiques in Insadong, jewellery in Jongno, fashion in Dongdaemun.' },
   { slug: 'museums', cat: 'museums', label: 'Museums & galleries',
     blurb: 'National and city museums, art galleries and memorial halls. Many of the national ones are free.' },
 ];

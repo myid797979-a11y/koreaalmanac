@@ -223,11 +223,19 @@ export default function SeoulThreeDays() {
 
       <h3 className="g-opt">Markets and old streets</h3>
       <p>
-        Start around{' '}
-        <Link href="/place/dongdaemun-dak-hanmari-alley-2590278/">Dongdaemun</Link>, work west
-        through the fabric and tool markets, and end in Euljiro&apos;s printing alleys, which
-        turn into bars after dark.
+        Start at <Link href="/place/gwangjang-market-273761/">Gwangjang Market</Link> — the
+        oldest daily market in the country and the best eating in central Seoul, at its most
+        alive around 11:00 before the queues build. Work west through
+        <Link href="/place/dongdaemun-shopping-complex-dongdaemun-shopping-town-273734/">
+        Dongdaemun</Link>&apos;s fabric and tool markets, and end in Euljiro&apos;s printing
+        alleys, which turn into bars after dark.
       </p>
+      <p>
+        For something smaller, <Link href="/place/tongin-market-1823985/">Tongin Market</Link>
+        beside Gyeongbokgung runs on brass tokens — buy a tray of them at the entrance and
+        spend them stall to stall. It pairs naturally with Day 1.
+      </p>
+      <PlaceRow slugs={['gwangjang-market-273761', 'tongin-market-1823985']} />
 
       <h3 className="g-opt">With children</h3>
       <p>

@@ -285,6 +285,8 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
         var MED = new Regex("clinic|hospital|medical|dermatolog|plastic surgery|dental|rhinoplasty|oriental medicine",
             RegexOptions.IgnoreCase);
         var BIZ = new Regex("\\bcompany\\b|\\bco\\.,? ?ltd|\\binc\\b|corporation", RegexOptions.IgnoreCase);
+        // 쇼핑(79)에는 유니클로 지점·시몬스 매장처럼 여행 목적지가 아닌 체인 점포가 섞여 온다.
+        var CHAIN = new Regex("uniqlo|simmons|memorium|rental shop|eyewear|optic|harmony mart", RegexOptions.IgnoreCase);
 
         var areaMap = new Dictionary<string, string>
         {
@@ -299,7 +301,11 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
         {
             var title = Decode(it.GetValueOrDefault("title")) ?? "";
             if (title.Length == 0) continue;
-            if (MED.IsMatch(title) || BIZ.IsMatch(title)) continue;
+            if (MED.IsMatch(title) || BIZ.IsMatch(title) || CHAIN.IsMatch(title)) continue;
+
+            // 음식점(82)은 수집만 하고 아직 내보내지 않는다 — 462곳 중 소개문이 있는 건
+            // 2%뿐이라 이름과 사진만 남은 카드가 된다. 소개문이 차면 이 줄만 지우면 된다.
+            if (it.GetValueOrDefault("_ctype") == "82") continue;
 
             var img = Nul(it.GetValueOrDefault("firstimage")) ?? Nul(it.GetValueOrDefault("firstimage2"));
             if (img == null) continue;   // 카드 UI 기준 — 사진 없으면 제외
@@ -314,7 +320,7 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
                 ["id"] = id,
                 ["slug"] = Slug(title) + "-" + id,
                 ["title"] = title,
-                ["cat"] = PlaceCategory(it.GetValueOrDefault("cat3"), it.GetValueOrDefault("cat2"), title),
+                ["cat"] = PlaceCategory(it.GetValueOrDefault("cat3"), it.GetValueOrDefault("cat2"), title, it.GetValueOrDefault("_ctype")),
                 ["region"] = region,
                 ["addr"] = addr,
                 ["image"] = img,
@@ -456,9 +462,19 @@ static string CleanTitle(string t)
 // KTO cat3(소분류) → 여행자가 쓰는 말로 재편한 9개 카테고리.
 // cat3 가 비어 오는 항목이 397건 있고 거기에 하회마을·BIFF광장 같은 알짜가 섞여 있어,
 // 코드가 없으면 제목 키워드로 판정한다 (버리지 않는다).
-static string PlaceCategory(string? cat3, string? cat2, string title)
+static string PlaceCategory(string? cat3, string? cat2, string title, string? ctype = null)
 {
     var c = cat3 ?? "";
+
+    // 쇼핑(79)·음식점(82)은 콘텐츠 타입이 곧 분류다 — cat3 가 절반만 채워져 오기 때문.
+    if (ctype == "82") return "food";
+    if (ctype == "79")
+    {
+        // 한국민속촌처럼 쇼핑으로 등록됐지만 실제로는 민속마을인 것이 섞여 있다.
+        if (Regex.IsMatch(title, "folk village|민속촌", RegexOptions.IgnoreCase)) return "villages";
+        return Regex.IsMatch(title, "market|시장|활어|수산|fish center", RegexOptions.IgnoreCase)
+            ? "markets" : "shopping";
+    }
 
     // 박물관·미술관은 어느 코드로 들어오든 먼저 잡는다 (220건이 여러 분류에 흩어져 있었다).
     // "Museum Park"(테마파크) 처럼 이름만 박물관인 것은 제외.

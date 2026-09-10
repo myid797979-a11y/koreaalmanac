@@ -273,13 +273,21 @@ switch (args.FirstOrDefault())
         using var conn = Db.Open(cfg);
         conn.Execute(File.ReadAllText(FindUp("db/schema.sql")));   // idempotent
         var used = Used(conn, "eng");
-        var budget = Math.Max(0, DailyBudget - used);
+        // places 는 축제 파이프라인과 같은 키를 쓰므로 평소엔 같은 상한을 지킨다.
+        // 다만 그날 축제 수집이 이미 끝난 뒤 관광지 소개문만 몰아 받고 싶을 때가 있어
+        // PLACES_EXTRA 로 추가 콜을 허용한다 (쿼터는 자정 KST 에 초기화된다).
+        var extra = int.TryParse(Environment.GetEnvironmentVariable("PLACES_EXTRA"), out var ex) ? ex : 0;
+        var budget = Math.Max(0, DailyBudget + extra - used);
         Console.WriteLine($"eng 예산 잔여 {budget}콜 (오늘 사용 {used})");
 
         var calls = 0;
-        foreach (var tid in new[] { 76, 78 })
+        // 76=관광지 78=문화시설 79=쇼핑 82=음식점.
+        // 79 는 11,071건 중 99.5%가 택스리펀 가맹점(약국·안경점·아울렛 지점) 명부다.
+        // 저장 단계에서 걸러낸다 — 남는 139건이 광장시장·자갈치 같은 실제 목적지다.
+        foreach (var tid in new[] { 76, 78, 79, 82 })
         {
-            for (var page = 1; page <= 5 && calls < budget; page++)
+            var maxPage = tid == 79 ? 12 : 5;   // 79 만 11,071건(12페이지)
+            for (var page = 1; page <= maxPage && calls < budget; page++)
             {
                 var (items, _) = await papi.AreaBased(tid, page);
                 calls++;
@@ -287,6 +295,8 @@ switch (args.FirstOrDefault())
                 {
                     var id = el.TryGetProperty("contentid", out var cid) ? cid.GetString() : null;
                     if (id == null) continue;
+                    if (tid == 79 && el.TryGetProperty("title", out var tt)
+                        && (tt.GetString() ?? "").Contains("Tax Refund", StringComparison.OrdinalIgnoreCase)) continue;
                     var d = store.TryGetValue(id, out var prev) ? prev : new Dictionary<string, string>();
                     foreach (var pr in el.EnumerateObject())
                     {
@@ -302,7 +312,12 @@ switch (args.FirstOrDefault())
         Console.WriteLine($"목록 {store.Count:N0}건 ({calls}콜)");
 
         // 소개문(overview) 미수집분 — 남은 예산만큼만
-        var need = store.Where(kv => !kv.Value.ContainsKey("_detailed")).Select(kv => kv.Key).ToList();
+        // 새로 추가한 쇼핑(79)·음식점(82)부터 채운다 — 소개문이 통째로 비어 있어
+        // 카드에 이름과 사진만 남는다. 관광지(76·78)는 이미 6할이 차 있다.
+        var need = store.Where(kv => !kv.Value.ContainsKey("_detailed"))
+            .OrderBy(kv => kv.Value.GetValueOrDefault("_ctype") is "79" or "82" ? 0 : 1)
+            .ThenBy(kv => kv.Key)
+            .Select(kv => kv.Key).ToList();
         var got = 0;
         foreach (var id in need)
         {

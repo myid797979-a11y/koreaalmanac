@@ -131,12 +131,13 @@ export default function BusanTwoDays() {
             BIFF Square is where the Busan International Film Festival began, its pavement set
             with directors&apos; handprints, and it is one of the country&apos;s best street-food
             alleys — try the <em>ssiat hotteok</em>, a seed-stuffed pancake that is a Busan
-            speciality. Gukje Market runs straight into it: a sprawling traditional market that
-            grew out of postwar trading.
+            speciality.{' '}
+            <Link href="/place/gukje-market-food-street-1024670/">Gukje Market</Link> runs
+            straight into it: a sprawling traditional market that grew out of postwar trading.
           </p>
         </Stop>
 
-        <Stop time="14:00" title="Jagalchi Market" walk="600 m">
+        <Stop slug="jagalchi-market-2382544" time="14:00" title="Jagalchi Market" walk="600 m">
           <p>
             Korea&apos;s largest seafood market, run largely by women — the{' '}
             <em>jagalchi ajumma</em> are a Busan institution. Open 05:00–22:00; pick something
@@ -268,6 +269,7 @@ export default function BusanTwoDays() {
       <p className="strip">
         <Link href="/regions/busan/">Busan: places &amp; events</Link>
         <Link href="/places/beaches-islands/">Beaches &amp; islands</Link>
+        <Link href="/places/markets/">Traditional markets</Link>
         <Link href="/places/neighbourhoods/">Neighbourhoods</Link>
         <Link href="/plan/">Trip Planner</Link>
       </p>
