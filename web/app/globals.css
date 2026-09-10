@@ -587,3 +587,40 @@ footer.site .strip a:hover { color: var(--seal); }
   border: 1px solid #f0d5d2; border-radius: 99px;
   padding: 2px 8px 3px;
 }
+
+/* ── 가이드 글 ──────────────────────────────────────────── */
+.guide { max-width: 760px; }
+.guide h2.sect { margin-top: 40px; }
+.guide p { line-height: 1.75; }
+.guide .facts th { width: 150px; }
+
+.callout {
+  margin: 20px 0; padding: 16px 20px;
+  background: var(--card); border: 1px solid var(--line);
+  border-left: 4px solid var(--jjok); border-radius: 6px;
+  font-size: 14.5px; line-height: 1.7;
+}
+.callout-warn { border-left-color: var(--seal); }
+.callout strong { color: var(--ink); }
+.callout ul { margin: 8px 0 0; padding-left: 20px; }
+.callout li { margin-bottom: 4px; }
+
+/* 일정 타임라인 — 시간이 왼쪽 축을 이룬다 */
+.timeline { list-style: none; padding: 0; margin: 18px 0 8px; }
+.timeline > li {
+  position: relative; padding: 0 0 22px 22px;
+  border-left: 2px solid var(--line);
+}
+.timeline > li:last-child { border-left-color: transparent; padding-bottom: 4px; }
+.timeline > li::before {
+  content: ''; position: absolute; left: -7px; top: 6px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--hanji); border: 2px solid var(--seal);
+}
+.timeline > li > strong {
+  display: block; font-family: var(--font-display), Georgia, serif;
+  font-size: 16.5px; margin-bottom: 4px;
+}
+.timeline > li p { margin: 4px 0 0; font-size: 14.5px; color: var(--muted); }
+.timeline > li p a, .timeline > li > strong a { color: var(--jjok); }
+.timeline .meta { font-size: 12.5px; }

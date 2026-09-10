@@ -34,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/plan/">Plan</Link>
               <Link href="/events/">What&apos;s On</Link>
               <Link href="/places/">Places</Link>
+              <Link href="/guides/">Guides</Link>
               <Link href="/calendar/">Calendar</Link>
               <Link href="/regions/">Regions</Link>
             </nav>

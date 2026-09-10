@@ -16,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/events/', priority: 0.95 },
     { url: SITE_URL + '/events/festivals/', priority: 0.9 },
     { url: SITE_URL + '/events/concerts/', priority: 0.9 },
+    { url: SITE_URL + '/guides/', priority: 0.9 },
+    { url: SITE_URL + '/guides/seoul-3-days/', priority: 0.9 },
     { url: SITE_URL + '/guides/kpop-tickets/', priority: 0.8 },
     ...concertParams().map(c => ({ url: SITE_URL + '/concert/' + c.id + '/', priority: 0.7 })),
     ...(liveCulture('traditional').length ? [{ url: SITE_URL + '/events/traditional/', priority: 0.9 }] : []),
