@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": "397497",
+    "kind": "exhibition",
+    "start": "20260825",
+    "title": "Language of Selves-Paris Contemporary",
+    "place": "갤러리CNK",
+    "area": "대구",
+    "price": "무료",
+    "addr": "대구광역시 중구 이천로 206 Gallery CNK",
+    "overview": null
+  },
+  {
+    "id": "397501",
+    "kind": "exhibition",
+    "start": "20260908",
+    "title": "하반기 열린수장고 소장품 기획전 《풀의 시간》",
+    "place": "대전시립미술관",
+    "area": "대전",
+    "price": "무료",
+    "addr": "대전광역시 서구 둔산대로 155 대전시립미술관",
+    "overview": null
+  }
+]
