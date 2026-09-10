@@ -3,13 +3,6 @@ VERSION:2.0
 PRODID:-//KoreaAlmanac//EN
 X-WR-CALNAME:Korea Festivals - Busan
 BEGIN:VEVENT
-UID:4099532@koreaalmanac
-DTSTART;VALUE=DATE:20260904
-DTEND;VALUE=DATE:20260920
-SUMMARY:Starry Sea Busan: Night Camp-nic at Dadaepo
-LOCATION:Dadaepo Beach Park
-END:VEVENT
-BEGIN:VEVENT
 UID:4100946@koreaalmanac
 DTSTART;VALUE=DATE:20260904
 DTEND;VALUE=DATE:20260920
@@ -101,11 +94,11 @@ SUMMARY:Hurshimchung Bräu Oktoberfest
 LOCATION:Outdoor space & beer garden of Hotel Nongshim
 END:VEVENT
 BEGIN:VEVENT
-UID:1876897@koreaalmanac
+UID:3007256@koreaalmanac
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261019
-SUMMARY:Dongnaeeupseong History Festival
-LOCATION:Areas of Dongnae Culture Center and Dongnaeeupseong Walled Town
+SUMMARY:Jeonggwan Eco-Stream Culture Festival
+LOCATION:Jeonggwan Central Park
 END:VEVENT
 BEGIN:VEVENT
 UID:1275743@koreaalmanac
@@ -115,11 +108,11 @@ SUMMARY:Geumjeongsanseong Fortress Festival
 LOCATION:Geumjeongsanseong plaza and fortress area
 END:VEVENT
 BEGIN:VEVENT
-UID:3007256@koreaalmanac
+UID:1876897@koreaalmanac
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261019
-SUMMARY:Jeonggwan Eco-Stream Culture Festival
-LOCATION:Jeonggwan Central Park
+SUMMARY:Dongnaeeupseong History Festival
+LOCATION:Areas of Dongnae Culture Center and Dongnaeeupseong Walled Town
 END:VEVENT
 BEGIN:VEVENT
 UID:3492576@koreaalmanac
@@ -127,6 +120,13 @@ DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261109
 SUMMARY:Busan Illustration Fair V.7
 LOCATION:BEXCO Exhibition Hall 2  Hall 4
+END:VEVENT
+BEGIN:VEVENT
+UID:235076@koreaalmanac
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:Busan Fireworks Festival
+LOCATION:Gwangalli Beach  Haeundae and Igidae
 END:VEVENT
 BEGIN:VEVENT
 UID:4095478@koreaalmanac

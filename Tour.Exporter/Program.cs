@@ -39,14 +39,52 @@ var all = conn.Query<(string Lang, string Id, string List, string Common, string
 var kor = all.Where(r => r.Lang == "kor").ToList();
 var eng = all.Where(r => r.Lang == "eng").ToList();
 
-// ── 매칭: 영문 제목 괄호 안 한글 → 국문 제목 / 좌표 소수4자리
+// ── 매칭: 영문 제목 괄호 안 한글원제 → 국문 제목.
+// 좌표(소수4자리)만으로 묶으면 같은 공연장의 별개 행사가 하나로 합쳐져 국문 축제가 조용히
+// 사라진다(크리스마스 빌리지가 Busan Food Film Festa 로 묶이던 버그). 그래서 좌표는 단독으로
+// 쓰지 않고, ①제목 정확일치 ②좌표 일치 AND 제목 포함관계 ③원제가 아예 없을 때만 좌표 단독,
+// 순으로 좁혀 간다.
 string NoSp(string s) => s.Replace(" ", "");
-string? KorKey(string t)
+var reOrd = new Regex(@"제?\s*\d+\s*[회차]");
+var reYear = new Regex(@"(?<![0-9])(19|20)\d{2}\s*년?");
+bool IsHangul(char c) => c >= 0xAC00 && c <= 0xD7A3;
+// 같은 축제인데 표기만 다른 경우가 많다 — "2026 " 접두사, "제18회", 〈꺾쇠〉, 한자 병기 (味),
+// 작은따옴표. 연도·회차를 떼고 한글/영숫자만 남겨서 비교한다.
+string TitleKey(string t)
+{
+    var s = reYear.Replace(reOrd.Replace(t, " "), " ");
+    return string.Concat(s.Where(c => IsHangul(c) || char.IsAsciiLetterOrDigit(c))).ToLowerInvariant();
+}
+// 영문 제목에 붙는 한글 원제를 뽑는다. 형태가 제각각이라 후보를 여러 개 만들어 차례로 맞춰본다.
+//   "... (광안리 M(Marvelous) 드론 라이트쇼)"       ← 원제 안에 또 괄호가 있다
+//   "... (Jemulpo Wave Market) (인천 로컬 페스타)"  ← 영문 괄호가 앞에 먼저 나온다
+IEnumerable<string> KorKeys(string t)
 {
     var idx = t.IndexOf('(');
-    if (idx < 0) return null;
-    var inner = t[idx..].Trim('(', ')', ' ');
-    return inner.Length > 0 ? NoSp(inner) : null;
+    if (idx >= 0)
+    {
+        var whole = t[idx..];
+        if (whole.Any(IsHangul)) yield return TitleKey(whole);
+    }
+    var ms = Regex.Matches(t, @"[(]([^()]*)[)]?");
+    for (var i = ms.Count - 1; i >= 0; i--)
+    {
+        var inner = ms[i].Groups[1].Value;
+        if (inner.Any(IsHangul)) yield return TitleKey(inner);
+    }
+}
+// 연도·회차를 떼고 제목을 맞추므로 "제8회(2025)" 와 "제9회(2026)" 가 같은 키가 된다.
+// 시작일이 60일 넘게 벌어지면 다른 회차로 보고 묶지 않는다 — 안 그러면 올해 축제가
+// 작년 영문 레코드에 흡수돼 사이트에서 사라진다.
+bool SameEdition(Rec a, Rec b)
+{
+    const string F = "yyyyMMdd";
+    var sa = a.S("eventstartdate"); var sb = b.S("eventstartdate");
+    if (sa == null || sb == null) return true;
+    var st = System.Globalization.DateTimeStyles.None;
+    if (!DateTime.TryParseExact(sa, F, null, st, out var da)) return true;
+    if (!DateTime.TryParseExact(sb, F, null, st, out var db)) return true;
+    return Math.Abs((da - db).TotalDays) <= 60;
 }
 string? CoordKey(Rec r)
 {
@@ -55,16 +93,49 @@ string? CoordKey(Rec r)
     return decimal.Round(decimal.Parse(x), 4) + "," + decimal.Round(decimal.Parse(y), 4);
 }
 
-var korByTitle = kor.GroupBy(k => NoSp(k.S("title") ?? "")).ToDictionary(g => g.Key, g => g.First());
-var korByCoord = kor.Where(k => CoordKey(k) != null).GroupBy(CoordKey).ToDictionary(g => g.Key!, g => g.First());
+var korByTitle = kor.GroupBy(k => TitleKey(k.S("title") ?? "")).ToDictionary(g => g.Key, g => g.ToList());
+var korAtCoord = kor.Where(k => CoordKey(k) != null)
+                    .GroupBy(k => CoordKey(k)!)
+                    .ToDictionary(g => g.Key, g => g.ToList());
 var matchedKor = new HashSet<string>();
+int mTitle = 0, mNear = 0, mCoord = 0, mUnmatched = 0;
 foreach (var e in eng)
 {
-    var kk = KorKey(e.S("title") ?? "");
-    if (kk != null && korByTitle.TryGetValue(kk, out var m1)) { matchedKor.Add(m1.Id); continue; }
+    var keys = KorKeys(e.S("title") ?? "").Where(k => k.Length >= 4).ToList();
+    Rec? hit = null;
+    foreach (var k in keys)
+        if (korByTitle.TryGetValue(k, out var list))
+        {
+            hit = list.FirstOrDefault(c => SameEdition(e, c));
+            if (hit != null) break;
+        }
+    if (hit != null) { matchedKor.Add(hit.Id); mTitle++; continue; }
+
     var ck = CoordKey(e);
-    if (ck != null && korByCoord.TryGetValue(ck, out var m2)) matchedKor.Add(m2.Id);
+    if (ck != null && korAtCoord.TryGetValue(ck, out var cands))
+    {
+        // 같은 장소 AND 제목 포함관계 — 둘 다 요구해야 별개 행사를 안 묶는다.
+        foreach (var k in keys)
+        {
+            hit = cands.FirstOrDefault(c =>
+            {
+                var kk = TitleKey(c.S("title") ?? "");
+                return kk.Length >= 4 && SameEdition(e, c) && (kk.Contains(k) || k.Contains(kk));
+            });
+            if (hit != null) break;
+        }
+        if (hit != null) { matchedKor.Add(hit.Id); mNear++; continue; }
+        // 한글 원제가 아예 없는 영문 레코드는 좌표 말고 기댈 게 없다.
+        if (keys.Count == 0)
+        {
+            var only = cands.FirstOrDefault(c => SameEdition(e, c));
+            if (only != null) { matchedKor.Add(only.Id); mCoord++; continue; }
+        }
+    }
+    mUnmatched++;
 }
+Console.WriteLine($"kor-eng 매칭        제목 {mTitle:N0} · 좌표+포함 {mNear:N0} · 좌표단독 {mCoord:N0} · 미매칭 {mUnmatched:N0}");
+
 
 // ── 커밋된 번역 로드
 // data/translations/*.json 전부 병합 (배치 단위 커밋 가능, 뒤 파일이 앞을 덮음)

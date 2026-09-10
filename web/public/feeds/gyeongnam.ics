@@ -10,11 +10,11 @@ SUMMARY:Geoje Beer Festival
 LOCATION:Jangseungpo Waterfront Park
 END:VEVENT
 BEGIN:VEVENT
-UID:3485135@koreaalmanac
+UID:2746930@koreaalmanac
 DTSTART;VALUE=DATE:20260918
-DTEND;VALUE=DATE:20260921
-SUMMARY:Ocean Village
-LOCATION:Jangseungpo Waterfront Park
+DTEND;VALUE=DATE:20261012
+SUMMARY:Gamaksan Flower & Star Journey
+LOCATION:Byeolbaram Hill  Gamaksan
 END:VEVENT
 BEGIN:VEVENT
 UID:3377089@koreaalmanac
@@ -24,11 +24,11 @@ SUMMARY:Aragaya Culture Festival
 LOCATION:Haman Museum and Marisan Tumuli
 END:VEVENT
 BEGIN:VEVENT
-UID:2746930@koreaalmanac
+UID:3485135@koreaalmanac
 DTSTART;VALUE=DATE:20260918
-DTEND;VALUE=DATE:20261012
-SUMMARY:Gamaksan Flower & Star Journey
-LOCATION:Byeolbaram Hill  Gamaksan
+DTEND;VALUE=DATE:20260921
+SUMMARY:Ocean Village
+LOCATION:Jangseungpo Waterfront Park
 END:VEVENT
 BEGIN:VEVENT
 UID:2872196@koreaalmanac
@@ -45,18 +45,18 @@ SUMMARY:Gyeongnam Goseong Dinosaur World Expo
 LOCATION:Danghangpo Tourist Area
 END:VEVENT
 BEGIN:VEVENT
-UID:2867143@koreaalmanac
-DTSTART;VALUE=DATE:20261002
-DTEND;VALUE=DATE:20261006
-SUMMARY:Uiryeong Rich Rich Festival
-LOCATION:Uiryeong town area
-END:VEVENT
-BEGIN:VEVENT
 UID:697281@koreaalmanac
 DTSTART;VALUE=DATE:20261002
 DTEND;VALUE=DATE:20261012
 SUMMARY:Sancheong Medicinal Herb Festival
 LOCATION:Donguibogam Village
+END:VEVENT
+BEGIN:VEVENT
+UID:2867143@koreaalmanac
+DTSTART;VALUE=DATE:20261002
+DTEND;VALUE=DATE:20261006
+SUMMARY:Uiryeong Rich Rich Festival
+LOCATION:Uiryeong town area
 END:VEVENT
 BEGIN:VEVENT
 UID:697197@koreaalmanac
