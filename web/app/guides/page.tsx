@@ -15,6 +15,20 @@ const GUIDES = [
     photo: 'gyeongbokgung-palace-264337',
   },
   {
+    href: '/guides/jeju-3-days/',
+    title: '3 days in Jeju',
+    blurb: 'What to sort before you fly: the driving-licence rule that catches foreigners at the rental desk, Hallasan summit permits, and Manjanggul’s 2026 reopening that most guides missed.',
+    tag: 'Itinerary',
+    photo: 'hallasan-mountain-264172',
+  },
+  {
+    href: '/guides/busan-2-days/',
+    title: '2 days in Busan',
+    blurb: 'Split the way the city is — old town west, beaches east. With the Taejongdae train suspension, Jagalchi’s Tuesday closures, and why the Sky Capsule price is per capsule, not per person.',
+    tag: 'Itinerary',
+    photo: 'busan-gamcheon-culture-village-1998211',
+  },
+  {
     href: '/guides/kpop-tickets/',
     title: 'How to buy K-pop concert tickets as a foreigner',
     blurb: 'Which platforms actually sell to overseas buyers, how the presale queue works, and why resold tickets get voided at the door.',
