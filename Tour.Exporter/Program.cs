@@ -250,7 +250,8 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
                 ["mapx"] = Nul(it.GetValueOrDefault("mapx")),
                 ["mapy"] = Nul(it.GetValueOrDefault("mapy")),
                 ["tel"] = Nul(it.GetValueOrDefault("tel")),
-                ["overview"] = Strip(Decode(it.GetValueOrDefault("overview"))),
+                // KTO 영문 데이터에 한국어 원문이 섞여 오는 항목이 있다 — 영어 사이트에 노출하지 않는다.
+                ["overview"] = NoKorean(Strip(Decode(it.GetValueOrDefault("overview")))),
             });
         }
 
@@ -444,6 +445,15 @@ static string Slug(string s)
 {
     var slug = Regex.Replace(s.ToLowerInvariant(), "[^a-z0-9]+", "-").Trim('-');
     return slug.Length > 60 ? slug[..60].Trim('-') : (slug.Length == 0 ? "festival" : slug);
+}
+
+// 한국어가 섞인 소개문은 버린다. KTO 영문 서비스에도 원문이 그대로 실려 오는 항목이 있는데,
+// 영어권 방문자에게는 읽히지 않는 글자라 없느니만 못하다. 한글이 30자를 넘으면 통째로 비운다.
+static string? NoKorean(string? text)
+{
+    if (text == null) return null;
+    var hangul = text.Count(c => c >= 0xAC00 && c <= 0xD7A3);
+    return hangul > 30 ? null : text;
 }
 
 static string? Strip(string? html)

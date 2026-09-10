@@ -24,11 +24,11 @@ SUMMARY:Daejeon Jung-gu Heritage Night Tour
 LOCATION:Original downtown  Jung-gu  Daejeon
 END:VEVENT
 BEGIN:VEVENT
-UID:4106719@koreaalmanac
+UID:4108069@koreaalmanac
 DTSTART;VALUE=DATE:20260911
 DTEND;VALUE=DATE:20261018
-SUMMARY:Moonlight Music Nights
-LOCATION:Parks and streamsides across Daejeon
+SUMMARY:Moonlight Music Festival
+LOCATION:Areas of Gapcheon Ecological Lake Park  Eungubi Park  Urideul Park  Dongchundang Park  Daedongcheon Stream
 END:VEVENT
 BEGIN:VEVENT
 UID:4091877@koreaalmanac

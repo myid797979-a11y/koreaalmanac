@@ -45,11 +45,39 @@ SUMMARY:Korea Youth Day Festival
 LOCATION:Gwangalli Beach
 END:VEVENT
 BEGIN:VEVENT
+UID:3368584@koreaalmanac
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260921
+SUMMARY:Busan Youth Week
+LOCATION:Busan Port Pier 1
+END:VEVENT
+BEGIN:VEVENT
+UID:4109305@koreaalmanac
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20261108
+SUMMARY:Moonlight Workout Busan Challenge
+LOCATION:Busan Citizens Park · North Port Waterfront Park · Hwamyeong Ecological Park
+END:VEVENT
+BEGIN:VEVENT
 UID:3493864@koreaalmanac
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260920
 SUMMARY:Gijang Pet Culture Festival
 LOCATION:Jeonggwan Central Park
+END:VEVENT
+BEGIN:VEVENT
+UID:3546717@koreaalmanac
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20261012
+SUMMARY:Bibliotheca Busan
+LOCATION:Millak Waterside Park area
+END:VEVENT
+BEGIN:VEVENT
+UID:4108758@koreaalmanac
+DTSTART;VALUE=DATE:20260920
+DTEND;VALUE=DATE:20260921
+SUMMARY:Seven Bridges Tour 2026
+LOCATION:Across Busan — major sea bridges and the city centre
 END:VEVENT
 BEGIN:VEVENT
 UID:3006246@koreaalmanac
@@ -73,11 +101,11 @@ SUMMARY:Hurshimchung Bräu Oktoberfest
 LOCATION:Outdoor space & beer garden of Hotel Nongshim
 END:VEVENT
 BEGIN:VEVENT
-UID:3007256@koreaalmanac
+UID:1876897@koreaalmanac
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261019
-SUMMARY:Jeonggwan Eco-Stream Culture Festival
-LOCATION:Jeonggwan Central Park
+SUMMARY:Dongnaeeupseong History Festival
+LOCATION:Areas of Dongnae Culture Center and Dongnaeeupseong Walled Town
 END:VEVENT
 BEGIN:VEVENT
 UID:1275743@koreaalmanac
@@ -87,11 +115,11 @@ SUMMARY:Geumjeongsanseong Fortress Festival
 LOCATION:Geumjeongsanseong plaza and fortress area
 END:VEVENT
 BEGIN:VEVENT
-UID:1876897@koreaalmanac
+UID:3007256@koreaalmanac
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261019
-SUMMARY:Dongnaeeupseong History Festival
-LOCATION:Areas of Dongnae Culture Center and Dongnaeeupseong Walled Town
+SUMMARY:Jeonggwan Eco-Stream Culture Festival
+LOCATION:Jeonggwan Central Park
 END:VEVENT
 BEGIN:VEVENT
 UID:3492576@koreaalmanac

@@ -24,6 +24,13 @@ SUMMARY:2026 DMZ Peace Festa
 LOCATION:Hwagae Garden  Gyodong Island (Ganghwa) and History Park (Cheorwon)
 END:VEVENT
 BEGIN:VEVENT
+UID:3535742@koreaalmanac
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260914
+SUMMARY:Michuhol Media Culture Festival
+LOCATION:Incheon National University Jemulpo Campus plaza
+END:VEVENT
+BEGIN:VEVENT
 UID:2764526@koreaalmanac
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260921
@@ -57,6 +64,13 @@ DTSTART;VALUE=DATE:20261009
 DTEND;VALUE=DATE:20261012
 SUMMARY:Incheon Open Port Heritage Night Tour
 LOCATION:Incheon Open Port Culture District
+END:VEVENT
+BEGIN:VEVENT
+UID:2849159@koreaalmanac
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261011
+SUMMARY:Yeonsu Neungheodae Culture Festival
+LOCATION:Yeonsu Hanmaeum Park
 END:VEVENT
 BEGIN:VEVENT
 UID:2872078@koreaalmanac

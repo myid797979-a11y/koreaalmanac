@@ -24,11 +24,11 @@ SUMMARY:2026 Gyeongbuk K-Story Festival
 LOCATION:Andong Culture & Arts Center
 END:VEVENT
 BEGIN:VEVENT
-UID:3062300@koreaalmanac
-DTSTART;VALUE=DATE:20260919
-DTEND;VALUE=DATE:20260920
-SUMMARY:Gyeongju Golden Carnival
-LOCATION:Golden Street (Hwangnidan-gil and Geumnidan-gil)  Gyeongju
+UID:2614760@koreaalmanac
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260921
+SUMMARY:Gyeongju Heritage Night Walk
+LOCATION:Woljeonggyo Bridge  Gyochon Hanok Village  Cheomseongdae and Gyeongju Eupseong Fortress
 END:VEVENT
 BEGIN:VEVENT
 UID:4107073@koreaalmanac
@@ -36,6 +36,13 @@ DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260921
 SUMMARY:Mungyeong Eco-Camping Festival
 LOCATION:Mungyeong Yeonggang Sports Park
+END:VEVENT
+BEGIN:VEVENT
+UID:3062300@koreaalmanac
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:Gyeongju Golden Carnival
+LOCATION:Golden Street (Hwangnidan-gil and Geumnidan-gil)  Gyeongju
 END:VEVENT
 BEGIN:VEVENT
 UID:697123@koreaalmanac
@@ -59,11 +66,11 @@ SUMMARY:Pohang Sunrise Noodle Festival
 LOCATION:The area around Guryongpo Ara Plaza
 END:VEVENT
 BEGIN:VEVENT
-UID:697368@koreaalmanac
+UID:1718424@koreaalmanac
 DTSTART;VALUE=DATE:20261003
-DTEND;VALUE=DATE:20261012
-SUMMARY:Yeongju Punggi Insam Festival
-LOCATION:Punggi Insam Culture Pop-up Park
+DTEND;VALUE=DATE:20261005
+SUMMARY:Yeongju Museom Single-Log Bridge Festival
+LOCATION:Museom Village
 END:VEVENT
 BEGIN:VEVENT
 UID:506766@koreaalmanac
@@ -73,11 +80,25 @@ SUMMARY:Yeongju Punggi Ginseng Festival
 LOCATION:Namwoncheon stream and Punggi Ginseng Park
 END:VEVENT
 BEGIN:VEVENT
-UID:1718424@koreaalmanac
+UID:697368@koreaalmanac
 DTSTART;VALUE=DATE:20261003
-DTEND;VALUE=DATE:20261005
-SUMMARY:Yeongju Museom Single-Log Bridge Festival
-LOCATION:Museom Village
+DTEND;VALUE=DATE:20261012
+SUMMARY:Yeongju Punggi Insam Festival
+LOCATION:Punggi Insam Culture Pop-up Park
+END:VEVENT
+BEGIN:VEVENT
+UID:229892@koreaalmanac
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261012
+SUMMARY:Yeongcheon Bohyeonsan Starlight Festival
+LOCATION:Bohyeonsan Astronomical Science Museum
+END:VEVENT
+BEGIN:VEVENT
+UID:1718137@koreaalmanac
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261012
+SUMMARY:Silla Culture Festival
+LOCATION:Bonghwangdae Mound and Woljeonggyo Bridge
 END:VEVENT
 BEGIN:VEVENT
 UID:2622679@koreaalmanac
@@ -87,11 +108,11 @@ SUMMARY:8th Yecheon International Smartphone Film Festival
 LOCATION:Public lot by Gyeongbuk Library
 END:VEVENT
 BEGIN:VEVENT
-UID:1718137@koreaalmanac
-DTSTART;VALUE=DATE:20261009
-DTEND;VALUE=DATE:20261012
-SUMMARY:Silla Culture Festival
-LOCATION:Bonghwangdae Mound and Woljeonggyo Bridge
+UID:506544@koreaalmanac
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261019
+SUMMARY:Bonghwa Songi Mushroom Festival
+LOCATION:Naeseongcheon stream area
 END:VEVENT
 BEGIN:VEVENT
 UID:1844150@koreaalmanac

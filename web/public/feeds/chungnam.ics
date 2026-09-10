@@ -24,18 +24,18 @@ SUMMARY:Heritage Media Art at Buyeo Jeongnimsa Temple Site
 LOCATION:Jeongnimsa Temple Site
 END:VEVENT
 BEGIN:VEVENT
-UID:1071143@koreaalmanac
-DTSTART;VALUE=DATE:20260911
-DTEND;VALUE=DATE:20260914
-SUMMARY:Muchangpo Mystic Sea Road Festival
-LOCATION:Muchangpo Plaza
-END:VEVENT
-BEGIN:VEVENT
 UID:3351888@koreaalmanac
 DTSTART;VALUE=DATE:20260911
 DTEND;VALUE=DATE:20260913
 SUMMARY:Seocheon Heritage Night Tour
 LOCATION:Hansan Eupseong Fortress
+END:VEVENT
+BEGIN:VEVENT
+UID:1071143@koreaalmanac
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260914
+SUMMARY:Muchangpo Mystic Sea Road Festival
+LOCATION:Muchangpo Plaza
 END:VEVENT
 BEGIN:VEVENT
 UID:3530743@koreaalmanac
@@ -45,11 +45,11 @@ SUMMARY:Korean Confucian Culture Festival
 LOCATION:Korean Confucian Culture Promotion Institute and Noseong-myeon area
 END:VEVENT
 BEGIN:VEVENT
-UID:3520887@koreaalmanac
+UID:229054@koreaalmanac
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261006
-SUMMARY:Gyeryong Military Culture Festival
-LOCATION:Gyeryongdae Runway and various locations across Gyeryong-si
+SUMMARY:Ground Forces Festival
+LOCATION:Gyeryongdae runway
 END:VEVENT
 BEGIN:VEVENT
 UID:697195@koreaalmanac
@@ -59,11 +59,11 @@ SUMMARY:Cheonan World Dance Festival
 LOCATION:Area of Cheonan Stadium
 END:VEVENT
 BEGIN:VEVENT
-UID:229054@koreaalmanac
+UID:3520887@koreaalmanac
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261006
-SUMMARY:Ground Forces Festival
-LOCATION:Gyeryongdae runway
+SUMMARY:Gyeryong Military Culture Festival
+LOCATION:Gyeryongdae Runway and various locations across Gyeryong-si
 END:VEVENT
 BEGIN:VEVENT
 UID:293106@koreaalmanac
@@ -73,11 +73,25 @@ SUMMARY:Geumsan World K-Insam Festival
 LOCATION:Geumsan World Insam Expo Square
 END:VEVENT
 BEGIN:VEVENT
+UID:2758030@koreaalmanac
+DTSTART;VALUE=DATE:20261003
+DTEND;VALUE=DATE:20261004
+SUMMARY:Dangjin Haenaru Sweet Potato Festival
+LOCATION:Dangjin Sports Complex
+END:VEVENT
+BEGIN:VEVENT
 UID:1057670@koreaalmanac
 DTSTART;VALUE=DATE:20261003
 DTEND;VALUE=DATE:20261012
 SUMMARY:Baekje Cultural Festival
 LOCATION:Buyeo historic sites (Jeongnimsaji Temple Site  Seoktap-ro  Gwanbuk-ri)
+END:VEVENT
+BEGIN:VEVENT
+UID:639993@koreaalmanac
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261012
+SUMMARY:Yeonsan Jujube Festival
+LOCATION:Around Yeonsan Station
 END:VEVENT
 BEGIN:VEVENT
 UID:1829490@koreaalmanac
