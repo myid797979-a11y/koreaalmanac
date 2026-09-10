@@ -624,3 +624,82 @@ footer.site .strip a:hover { color: var(--seal); }
 .timeline > li p { margin: 4px 0 0; font-size: 14.5px; color: var(--muted); }
 .timeline > li p a, .timeline > li > strong a { color: var(--jjok); }
 .timeline .meta { font-size: 12.5px; }
+
+/* ── 가이드: 사진 요소 ──────────────────────────────────── */
+.g-hero {
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px;
+  margin: 20px 0 24px;
+}
+.g-hero figure { margin: 0; position: relative; border-radius: 8px; overflow: hidden; }
+.g-hero img { width: 100%; height: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.g-hero figure:first-child img { aspect-ratio: 16/10; }
+.g-hero figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 18px 10px 7px; font-size: 12px; color: #fff;
+  background: linear-gradient(to top, rgba(20,18,14,0.8), transparent);
+}
+
+/* 하루 배너 */
+.g-day {
+  display: flex; gap: 18px; align-items: flex-start;
+  margin: 44px 0 4px; padding: 18px 20px;
+  background: var(--card); border: 1px solid var(--line);
+  border-top: 4px double var(--ink); border-radius: 0 0 10px 10px;
+}
+.g-day-n {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 15px; font-weight: 800; color: var(--seal);
+  letter-spacing: 0.5px; white-space: nowrap; padding-top: 3px;
+}
+.g-day h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 21px; font-weight: 700; margin: 0 0 5px; line-height: 1.3;
+}
+.g-day p { margin: 0; font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+.g-day .g-avoid { margin-top: 6px; font-size: 13px; color: var(--seal); font-weight: 600; }
+
+/* 사진이 있는 타임라인 */
+.g-timeline { list-style: none; padding: 0; margin: 18px 0 8px; }
+.g-stop {
+  display: flex; gap: 16px; padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.g-stop:last-child { border-bottom: 0; }
+.g-stop-ph {
+  flex: 0 0 148px; display: block; border-radius: 8px; overflow: hidden;
+  background: #eceadf; align-self: flex-start;
+}
+.g-stop-ph img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+  transition: transform 0.2s;
+}
+.g-stop-ph:hover img { transform: scale(1.04); }
+.g-stop-body { min-width: 0; }
+.g-stop-time {
+  font-size: 12.5px; font-weight: 700; color: var(--seal);
+  letter-spacing: 0.3px; margin-bottom: 3px;
+}
+.g-stop-time .g-walk {
+  margin-left: 8px; font-weight: 500; color: var(--muted); letter-spacing: 0;
+}
+.g-stop h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 17.5px; font-weight: 700; margin: 0 0 6px; line-height: 1.3;
+}
+.g-stop h3 a { color: inherit; }
+.g-stop h3 a:hover { color: var(--seal); }
+.g-stop-text p { margin: 0; font-size: 14.5px; line-height: 1.7; color: var(--muted); }
+.g-stop-text a { color: var(--jjok); }
+
+.g-opt {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 17px; font-weight: 700; margin: 26px 0 6px;
+}
+
+@media (max-width: 600px) {
+  .g-hero { grid-template-columns: 1fr 1fr; }
+  .g-hero figure:first-child { grid-column: 1 / -1; }
+  .g-stop { gap: 12px; }
+  .g-stop-ph { flex: 0 0 104px; }
+  .g-day { flex-direction: column; gap: 8px; }
+}
