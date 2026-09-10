@@ -38,13 +38,6 @@ SUMMARY:Hyoseok Cultural Festival
 LOCATION:Hyoseok Culture Village area  Bongpyeong-myeon
 END:VEVENT
 BEGIN:VEVENT
-UID:4075091@koreaalmanac
-DTSTART;VALUE=DATE:20260908
-DTEND;VALUE=DATE:20260910
-SUMMARY:2026 National e-Festival for Students with Disabilities
-LOCATION:Sono Calm Vivaldi Park
-END:VEVENT
-BEGIN:VEVENT
 UID:573459@koreaalmanac
 DTSTART;VALUE=DATE:20260910
 DTEND;VALUE=DATE:20260917

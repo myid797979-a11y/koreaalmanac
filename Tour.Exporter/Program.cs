@@ -410,17 +410,32 @@ static string PlaceCategory(string? cat3, string? cat2, string title)
     if (cat2 == "A0203") return "neighbourhoods";
     if (cat2 == "A0205") return "views";
 
-    // 코드가 없으면 제목으로 판정
+    // 코드가 없으면 제목으로 판정.
+    // ⚠ 단어 경계 필수 — "e-Sports"의 port 가 해변으로, "Geopark"의 park 가
+    //   테마파크로 잡히던 오분류를 막는다.
     var t = title.ToLowerInvariant();
-    if (Regex.IsMatch(t, "temple|사찰|\\bsa\\b")) return "temples";
-    if (Regex.IsMatch(t, "palace|fortress|tomb|shrine|궁|성곽|산성|고분")) return "heritage";
-    if (Regex.IsMatch(t, "hanok|folk village|민속마을|한옥마을|traditional village")) return "villages";
-    if (Regex.IsMatch(t, "mountain|peak|trail|hiking|산\\b|봉\\b")) return "hiking";
-    if (Regex.IsMatch(t, "beach|island|port|해수욕장|해변|섬\\b|항\\b")) return "coast";
-    if (Regex.IsMatch(t, "observatory|skywalk|cable car|tower|전망|스카이워크|케이블카")) return "views";
-    if (Regex.IsMatch(t, "market|street|alley|village|시장|거리|골목|마을")) return "neighbourhoods";
-    if (Regex.IsMatch(t, "park|land|world|spa|farm|museum|파크|월드|랜드|온천|농장")) return "themeparks";
-    if (Regex.IsMatch(t, "forest|valley|lake|garden|숲|계곡|호수|수목원")) return "nature";
+    bool W(string pattern) => Regex.IsMatch(t, "(?<![a-z])(?:" + pattern + ")(?![a-z])");
+
+    // 자연 지형이 먼저 — Geopark·National Park 는 테마파크가 아니다
+    if (W("geopark|national park|provincial park|falls|waterfall|valley|gorge|forest|arboretum|wetland|lake|reservoir|spring|cave|river")
+        || Regex.IsMatch(t, "폭포|계곡|숲|수목원|호수|동굴|습지")) return "nature";
+    if (W("temples?|hermitage") || t.Contains("사찰")) return "temples";
+    if (W("palaces?|fortress(es)?|tombs?|shrines?|ruins?|historic site")
+        || Regex.IsMatch(t, "궁궐|성곽|산성|고분|유적")) return "heritage";
+    if (W("hanok|folk village|traditional village|historic village")
+        || Regex.IsMatch(t, "민속마을|한옥마을")) return "villages";
+    if (W("mountains?|peaks?|trails?|hiking|ridge|summit|pass")
+        || Regex.IsMatch(t, "등산|둘레길")) return "hiking";
+    if (W("beach(es)?|islands?|ports?|harbou?r|coast|cape|seaside")
+        || Regex.IsMatch(t, "해수욕장|해변|해안")) return "coast";
+    if (W("observator(y|ies)|skywalks?|cable cars?|towers?|viewpoints?|lookout|deck")
+        || Regex.IsMatch(t, "전망대|스카이워크|케이블카")) return "views";
+    if (W("markets?|streets?|alleys?|villages?|districts?|square|neighbou?rhood")
+        || Regex.IsMatch(t, "시장|거리|골목")) return "neighbourhoods";
+    if (W("theme parks?|amusement parks?|water ?parks?|resorts?|spas?|hot springs?|farms?|ranch|zoo|aquarium")
+        || Regex.IsMatch(t, "온천|농장|목장|워터파크|테마파크")) return "themeparks";
+    if (W("parks?|gardens?")) return "nature";   // 남은 일반 'park' 는 공원 = 자연 쪽
+
     return "neighbourhoods";   // 최후 기본값 — 도시 명소가 대부분
 }
 
