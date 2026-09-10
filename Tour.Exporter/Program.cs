@@ -167,7 +167,8 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
                 ["tel"] = Nul(it.GetValueOrDefault("phone")),
                 ["url"] = Href(it.GetValueOrDefault("url")),
                 ["venueUrl"] = Href(it.GetValueOrDefault("placeUrl")),
-                ["overview"] = tr?.GetValueOrDefault("overview") ?? Decode(Strip(it.GetValueOrDefault("contents1"))),
+                // 번역본에 overview 가 없으면 비운다 — 한국어 원문이 영어 사이트에 노출되면 안 된다
+                ["overview"] = tr != null ? tr.GetValueOrDefault("overview") : Strip(Decode(it.GetValueOrDefault("contents1"))),
                 ["mt"] = tr != null,
             });
 
@@ -182,7 +183,7 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
                     ["area"] = it.GetValueOrDefault("area"),
                     ["price"] = Decode(it.GetValueOrDefault("price")),
                     ["addr"] = Decode(it.GetValueOrDefault("placeAddr")),
-                    ["overview"] = Decode(Strip(it.GetValueOrDefault("contents1"))),
+                    ["overview"] = Strip(Decode(it.GetValueOrDefault("contents1"))),
                 });
         }
 
@@ -249,7 +250,7 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
                 ["mapx"] = Nul(it.GetValueOrDefault("mapx")),
                 ["mapy"] = Nul(it.GetValueOrDefault("mapy")),
                 ["tel"] = Nul(it.GetValueOrDefault("tel")),
-                ["overview"] = Decode(Strip(it.GetValueOrDefault("overview"))),
+                ["overview"] = Strip(Decode(it.GetValueOrDefault("overview"))),
             });
         }
 
@@ -445,8 +446,20 @@ static string Slug(string s)
     return slug.Length > 60 ? slug[..60].Trim('-') : (slug.Length == 0 ? "festival" : slug);
 }
 
-static string? Strip(string? html) => html == null ? null
-    : Nul(Regex.Replace(Regex.Replace(html, "<br[^>]*>", " · "), "<[^>]+>", ""));
+static string? Strip(string? html)
+{
+    if (html == null) return null;
+    // KTO 원문엔 <PARASITE>(영화 제목)·<Credit: Visit Jeju>(출처) 처럼 꺾쇠가 섞여 온다.
+    // 실제 HTML 태그 이름만 제거하고 나머지는 살린다.
+    const string names = "br|p|div|span|a|b|i|em|strong|u|ul|ol|li|table|tr|td|th|tbody|thead|img|font|h1|h2|h3|h4";
+    // HTML 주석(<!-- wp:paragraph -->)과 스타일 속성이 붙은 태그도 제거한다
+    var s = Regex.Replace(html, "<!--[sS]*?-->", " ");
+    s = Regex.Replace(s, "<br[^>]*>", " · ", RegexOptions.IgnoreCase);
+    s = Regex.Replace(s, "<!--[sS]*?-->", " ");
+    s = Regex.Replace(s, "</?(?:" + names + ")(?=[ />])[^>]*>", " ", RegexOptions.IgnoreCase);
+    s = Regex.Replace(s, "</?(?:" + names + ")>", " ", RegexOptions.IgnoreCase);
+    return Nul(Regex.Replace(s, " {2,}", " "));
+}
 
 // 홈페이지 필드엔 앵커 태그·평문 URL·"공식 홈페이지 https://..." 설명문이 섞여 온다.
 // 링크로 쓸 수 있는 절대 URL만 뽑는다 (상대경로가 새어나가 깨진 링크가 되던 문제).
