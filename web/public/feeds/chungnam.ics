@@ -45,11 +45,11 @@ SUMMARY:Korean Confucian Culture Festival
 LOCATION:Korean Confucian Culture Promotion Institute and Noseong-myeon area
 END:VEVENT
 BEGIN:VEVENT
-UID:697195@koreaalmanac
+UID:229054@koreaalmanac
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261006
-SUMMARY:Cheonan World Dance Festival
-LOCATION:Area of Cheonan Stadium
+SUMMARY:Ground Forces Festival
+LOCATION:Gyeryongdae runway
 END:VEVENT
 BEGIN:VEVENT
 UID:3520887@koreaalmanac
@@ -59,11 +59,11 @@ SUMMARY:Gyeryong Military Culture Festival
 LOCATION:Gyeryongdae Runway and various locations across Gyeryong-si
 END:VEVENT
 BEGIN:VEVENT
-UID:229054@koreaalmanac
+UID:697195@koreaalmanac
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261006
-SUMMARY:Ground Forces Festival
-LOCATION:Gyeryongdae runway
+SUMMARY:Cheonan World Dance Festival
+LOCATION:Area of Cheonan Stadium
 END:VEVENT
 BEGIN:VEVENT
 UID:293106@koreaalmanac
@@ -73,6 +73,13 @@ SUMMARY:Geumsan World K-Insam Festival
 LOCATION:Geumsan World Insam Expo Square
 END:VEVENT
 BEGIN:VEVENT
+UID:2758030@koreaalmanac
+DTSTART;VALUE=DATE:20261003
+DTEND;VALUE=DATE:20261004
+SUMMARY:Dangjin Haenaru Sweet Potato Festival
+LOCATION:Dangjin Sports Complex
+END:VEVENT
+BEGIN:VEVENT
 UID:1057670@koreaalmanac
 DTSTART;VALUE=DATE:20261003
 DTEND;VALUE=DATE:20261012
@@ -80,11 +87,11 @@ SUMMARY:Baekje Cultural Festival
 LOCATION:Buyeo historic sites (Jeongnimsaji Temple Site  Seoktap-ro  Gwanbuk-ri)
 END:VEVENT
 BEGIN:VEVENT
-UID:2758030@koreaalmanac
-DTSTART;VALUE=DATE:20261003
-DTEND;VALUE=DATE:20261004
-SUMMARY:Dangjin Haenaru Sweet Potato Festival
-LOCATION:Dangjin Sports Complex
+UID:639993@koreaalmanac
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261012
+SUMMARY:Yeonsan Jujube Festival
+LOCATION:Around Yeonsan Station
 END:VEVENT
 BEGIN:VEVENT
 UID:1829490@koreaalmanac
@@ -99,13 +106,6 @@ DTSTART;VALUE=DATE:20261009
 DTEND;VALUE=DATE:20261011
 SUMMARY:Welcome to Singwan-dong
 LOCATION:Singwan-dong university street
-END:VEVENT
-BEGIN:VEVENT
-UID:639993@koreaalmanac
-DTSTART;VALUE=DATE:20261009
-DTEND;VALUE=DATE:20261012
-SUMMARY:Yeonsan Jujube Festival
-LOCATION:Around Yeonsan Station
 END:VEVENT
 BEGIN:VEVENT
 UID:3530139@koreaalmanac

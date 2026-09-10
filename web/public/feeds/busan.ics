@@ -31,13 +31,6 @@ SUMMARY:Busan International Performing Arts Festival (BPAF)
 LOCATION:Oncheoncheon stream and PNU university street
 END:VEVENT
 BEGIN:VEVENT
-UID:2412052@koreaalmanac
-DTSTART;VALUE=DATE:20260918
-DTEND;VALUE=DATE:20260921
-SUMMARY:Korea Youth Day Festival
-LOCATION:Gwangalli Beach
-END:VEVENT
-BEGIN:VEVENT
 UID:3368584@koreaalmanac
 DTSTART;VALUE=DATE:20260918
 DTEND;VALUE=DATE:20260921
@@ -45,11 +38,11 @@ SUMMARY:Busan Youth Week
 LOCATION:Busan Port Pier 1
 END:VEVENT
 BEGIN:VEVENT
-UID:4109305@koreaalmanac
-DTSTART;VALUE=DATE:20260919
-DTEND;VALUE=DATE:20261108
-SUMMARY:Moonlight Workout Busan Challenge
-LOCATION:Busan Citizens Park · North Port Waterfront Park · Hwamyeong Ecological Park
+UID:2412052@koreaalmanac
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260921
+SUMMARY:Korea Youth Day Festival
+LOCATION:Gwangalli Beach
 END:VEVENT
 BEGIN:VEVENT
 UID:3493864@koreaalmanac
@@ -57,6 +50,13 @@ DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260920
 SUMMARY:Gijang Pet Culture Festival
 LOCATION:Jeonggwan Central Park
+END:VEVENT
+BEGIN:VEVENT
+UID:4109305@koreaalmanac
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20261108
+SUMMARY:Moonlight Workout Busan Challenge
+LOCATION:Busan Citizens Park · North Port Waterfront Park · Hwamyeong Ecological Park
 END:VEVENT
 BEGIN:VEVENT
 UID:3546717@koreaalmanac
@@ -94,13 +94,6 @@ SUMMARY:Hurshimchung Bräu Oktoberfest
 LOCATION:Outdoor space & beer garden of Hotel Nongshim
 END:VEVENT
 BEGIN:VEVENT
-UID:3007256@koreaalmanac
-DTSTART;VALUE=DATE:20261016
-DTEND;VALUE=DATE:20261019
-SUMMARY:Jeonggwan Eco-Stream Culture Festival
-LOCATION:Jeonggwan Central Park
-END:VEVENT
-BEGIN:VEVENT
 UID:1275743@koreaalmanac
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261019
@@ -113,6 +106,13 @@ DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261019
 SUMMARY:Dongnaeeupseong History Festival
 LOCATION:Areas of Dongnae Culture Center and Dongnaeeupseong Walled Town
+END:VEVENT
+BEGIN:VEVENT
+UID:3007256@koreaalmanac
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261019
+SUMMARY:Jeonggwan Eco-Stream Culture Festival
+LOCATION:Jeonggwan Central Park
 END:VEVENT
 BEGIN:VEVENT
 UID:3492576@koreaalmanac

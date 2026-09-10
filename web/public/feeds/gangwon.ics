@@ -3,18 +3,18 @@ VERSION:2.0
 PRODID:-//KoreaAlmanac//EN
 X-WR-CALNAME:Korea Festivals - Gangwon
 BEGIN:VEVENT
-UID:3385446@koreaalmanac
-DTSTART;VALUE=DATE:20260404
-DTEND;VALUE=DATE:20261129
-SUMMARY:Raftman
-LOCATION:Jeongseon Arirang Culture  Arirang Hall  51  Aesan-ro  Jeongseon-eup  Jeongseon-gun  Gangwon-do
-END:VEVENT
-BEGIN:VEVENT
 UID:3435533@koreaalmanac
 DTSTART;VALUE=DATE:20260404
 DTEND;VALUE=DATE:20261128
 SUMMARY:ARI-The Spirit of Korea
 LOCATION:Jeongseon Arirang Center  51  Aesan-ro  Jeongseon-eup  Jeongseon-gun  Gangwon-do
+END:VEVENT
+BEGIN:VEVENT
+UID:3385446@koreaalmanac
+DTSTART;VALUE=DATE:20260404
+DTEND;VALUE=DATE:20261129
+SUMMARY:Raftman
+LOCATION:Jeongseon Arirang Culture  Arirang Hall  51  Aesan-ro  Jeongseon-eup  Jeongseon-gun  Gangwon-do
 END:VEVENT
 BEGIN:VEVENT
 UID:2766000@koreaalmanac
@@ -80,13 +80,6 @@ SUMMARY:39th Donghae Mureung Festival
 LOCATION:Donghae Wellbeing Leports Town
 END:VEVENT
 BEGIN:VEVENT
-UID:2997256@koreaalmanac
-DTSTART;VALUE=DATE:20260918
-DTEND;VALUE=DATE:20260921
-SUMMARY:Pyeongchang Nongak & Mountain Food Festival
-LOCATION:Pyeongchang Nongak & Mountain Food festival grounds
-END:VEVENT
-BEGIN:VEVENT
 UID:140880@koreaalmanac
 DTSTART;VALUE=DATE:20260918
 DTEND;VALUE=DATE:20260921
@@ -94,11 +87,25 @@ SUMMARY:67th Korean Folk Arts Festival
 LOCATION:Jinbu Sports Park
 END:VEVENT
 BEGIN:VEVENT
+UID:2997256@koreaalmanac
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20260921
+SUMMARY:Pyeongchang Nongak & Mountain Food Festival
+LOCATION:Pyeongchang Nongak & Mountain Food festival grounds
+END:VEVENT
+BEGIN:VEVENT
 UID:697441@koreaalmanac
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261005
 SUMMARY:Jeongseon Arirang Festival
 LOCATION:Jeongseon Public Stadium
+END:VEVENT
+BEGIN:VEVENT
+UID:2027215@koreaalmanac
+DTSTART;VALUE=DATE:20261002
+DTEND;VALUE=DATE:20261005
+SUMMARY:Anheung Steamed Bun Festival
+LOCATION:Anheung Jjinppang Village
 END:VEVENT
 BEGIN:VEVENT
 UID:421977@koreaalmanac
@@ -113,13 +120,6 @@ DTSTART;VALUE=DATE:20261002
 DTEND;VALUE=DATE:20261005
 SUMMARY:Seorak Cultural Festival
 LOCATION:Sokcho Expo Lawn Plaza and the Seorak Rodeo Street area
-END:VEVENT
-BEGIN:VEVENT
-UID:2027215@koreaalmanac
-DTSTART;VALUE=DATE:20261002
-DTEND;VALUE=DATE:20261005
-SUMMARY:Anheung Steamed Bun Festival
-LOCATION:Anheung Jjinppang Village
 END:VEVENT
 BEGIN:VEVENT
 UID:4108615@koreaalmanac
