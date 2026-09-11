@@ -303,10 +303,6 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
             if (title.Length == 0) continue;
             if (MED.IsMatch(title) || BIZ.IsMatch(title) || CHAIN.IsMatch(title)) continue;
 
-            // 음식점(82)은 수집만 하고 아직 내보내지 않는다 — 462곳 중 소개문이 있는 건
-            // 2%뿐이라 이름과 사진만 남은 카드가 된다. 소개문이 차면 이 줄만 지우면 된다.
-            if (it.GetValueOrDefault("_ctype") == "82") continue;
-
             var img = Nul(it.GetValueOrDefault("firstimage")) ?? Nul(it.GetValueOrDefault("firstimage2"));
             if (img == null) continue;   // 카드 UI 기준 — 사진 없으면 제외
 

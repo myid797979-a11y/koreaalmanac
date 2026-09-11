@@ -36,6 +36,8 @@ export const PLACE_CATS: { slug: string; cat: PlaceCat; label: string; blurb: st
     blurb: 'Market alleys, mural villages, book streets and the districts worth walking without a plan.' },
   { slug: 'theme-parks', cat: 'themeparks', label: 'Theme parks & experiences',
     blurb: 'Amusement parks, water parks, hot springs and hands-on farms — the reliable rainy-day and family options.' },
+  { slug: 'restaurants', cat: 'food', label: 'Where to eat',
+    blurb: 'Restaurants and cafes the Korea Tourism Organization writes up in English — a selective list rather than a directory, strongest in Seoul and the southwest.' },
   { slug: 'markets', cat: 'markets', label: 'Traditional markets',
     blurb: 'Covered alleys of food stalls and fabric traders, harbour fish markets, and five-day markets that appear on set dates and vanish again.' },
   { slug: 'shopping', cat: 'shopping', label: 'Shopping streets & malls',
