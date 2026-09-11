@@ -45,6 +45,20 @@ export default function Home() {
   const pick = featured[0];
 
   const weekend = photoFirst(onWeekend(t));
+
+  // 주말·진행중·예정은 서로 겹친다. 히어로까지 합치면 같은 축제가 한 화면에 세 번 나온다.
+  // 위에서 이미 보여준 것은 아래 섹션에서 건너뛴다.
+  const shown = new Set<string>(pick ? [pick.id] : []);
+  const take = (list: Festival[], n: number) => {
+    const out: Festival[] = [];
+    for (const f of list) {
+      if (shown.has(f.id)) continue;
+      shown.add(f.id);
+      out.push(f);
+      if (out.length === n) break;
+    }
+    return out;
+  };
   const wkLabel = weekendWindow(t).label;
   const concerts = upcomingConcerts(t);
   // 전통공연은 상시 프로그램이 많아 시작일이 과거인 것도 '지금 볼 수 있는' 공연이다.
@@ -114,7 +128,7 @@ export default function Home() {
       )}
 
       <SectionHead title={'This weekend, ' + wkLabel} href="/calendar/" more="full calendar" />
-      <div className="grid">{weekend.slice(0, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
+      <div className="grid">{take(weekend, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
 
       {concerts.length > 0 && (
         <>
@@ -142,10 +156,10 @@ export default function Home() {
       )}
 
       <SectionHead title="Happening now" href="/events/festivals/" more={'all ' + ongoing.length} />
-      <div className="grid">{ongoing.slice(0, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
+      <div className="grid">{take(ongoing, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
 
       <SectionHead title="Starting soon" href="/events/festivals/" more={'all ' + upcoming.length + ' upcoming'} />
-      <div className="grid">{upcoming.slice(0, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
+      <div className="grid">{take(upcoming, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
 
       {trad.length > 0 && (
         <>

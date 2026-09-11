@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import {
-  PLACE_CATS, catBySlug, placesByCat, regionsRanked, type Place,
-} from '@/lib/places';
+  PLACE_CATS, catBySlug, placesByCat, regionsRanked, type Place, displayTitle } from '@/lib/places';
 import { rankPlaces, isTopPick } from '@/lib/place-rank';
 
 export function generateStaticParams() {
@@ -25,7 +24,7 @@ function Card({ p }: { p: Place }) {
       <div className="phwrap"><img className="ph" src={p.image} alt={p.title} loading="lazy" /></div>
       <div className="body">
         <div className="when">{p.region}</div>
-        <h3>{p.title.replace(/\s*\([^)]*\)\s*$/, '')}</h3>
+        <h3>{displayTitle(p.title)}</h3>
         {isTopPick(p) && <span className="pick">Top pick</span>}
       </div>
     </Link>

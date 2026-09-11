@@ -46,6 +46,33 @@ export const PLACE_CATS: { slug: string; cat: PlaceCat; label: string; blurb: st
     blurb: 'National and city museums, art galleries and memorial halls. Many of the national ones are free.' },
 ];
 
+/**
+ * 13개를 한 줄로 늘어놓으면 "알아서 고르세요" 가 된다. 여행자가 실제로 나누는
+ * 네 갈래로 묶는다 — 옛 한국 / 야외 / 도시 / 실내.
+ */
+export const CAT_GROUPS: { title: string; blurb: string; cats: PlaceCat[] }[] = [
+  {
+    title: 'Old Korea',
+    blurb: 'Palaces, mountain temples and tiled-roof villages — the things most people come for.',
+    cats: ['heritage', 'temples', 'villages'],
+  },
+  {
+    title: 'The outdoors',
+    blurb: 'Korea is 70% mountains with coastline on three sides, and both start inside the cities.',
+    cats: ['hiking', 'coast', 'nature', 'views'],
+  },
+  {
+    title: 'City life',
+    blurb: 'Where to walk, eat and buy things — the half of a trip that is not sightseeing.',
+    cats: ['neighbourhoods', 'markets', 'food', 'shopping'],
+  },
+  {
+    title: 'Indoors, and with children',
+    blurb: 'The reliable options for a rainy afternoon or a trip with kids in tow.',
+    cats: ['museums', 'themeparks'],
+  },
+];
+
 export const catBySlug = (slug: string) => PLACE_CATS.find(c => c.slug === slug);
 export const catMeta = (cat: PlaceCat) => PLACE_CATS.find(c => c.cat === cat)!;
 
@@ -55,6 +82,42 @@ export function placesByCat(cat: PlaceCat): Place[] {
 
 export function placesByRegion(region: string): Place[] {
   return places.filter(p => p.region === region);
+}
+
+/**
+ * 카드·목록에 쓰는 이름 — 뒤에 붙은 (한글 원제) 를 뗀다.
+ *
+ * 단순 정규식 /\([^)]*\)$/ 으로는 원제 안에 괄호가 또 있는 414건을 못 뗀다:
+ *   "Dynamic Maze (Insa-dong) (다이나믹 메이즈 (서울 인사동점))"
+ * 그래서 뒤에서부터 괄호 깊이를 세어 마지막 한 덩어리만 정확히 잘라낸다.
+ * 한글이 든 덩어리만 뗀다 — "(Insa-dong)" 같은 영문 보조설명은 남긴다.
+ */
+export function displayTitle(title: string): string {
+  const s = title.trimEnd();
+  if (!s.endsWith(')')) return s;
+  let depth = 0;
+  for (let i = s.length - 1; i >= 0; i--) {
+    if (s[i] === ')') depth++;
+    else if (s[i] === '(') {
+      depth--;
+      if (depth > 0) continue;
+      const inner = s.slice(i + 1, s.length - 1);
+      return /[가-힣]/.test(inner) ? displayTitle(s.slice(0, i)) : s;
+    }
+  }
+  return s;
+}
+
+/** 상세 페이지 부제로 쓰는 한글 원제 (택시·지도앱에 보여주기 좋다) */
+export function koreanName(title: string): string | null {
+  const stripped = displayTitle(title);
+  if (stripped === title.trimEnd()) return null;
+  const tail = title.trimEnd().slice(stripped.length).trim().replace(/^\(|\)$/g, '');
+  return tail || null;
+}
+
+export function placeById(id: string): Place | undefined {
+  return places.find(p => p.id === id);
 }
 
 export function placeBySlug(slug: string): Place | undefined {

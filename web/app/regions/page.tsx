@@ -13,7 +13,7 @@ export default function RegionsPage() {
     <>
       <div className="crumb"><Link href="/">Home</Link> › Regions</div>
       <h1>Korea by region</h1>
-      <p className="sub">All 17 regions of Korea · counts include festivals happening now or coming up</p>
+      <p className="sub">All 17 regions of Korea — places to visit in each, plus the festivals, concerts and exhibitions on while you are there.</p>
       <div className="grid">
         {REGIONS.map(r => <RegionCard key={r} region={r} t={t} />)}
       </div>

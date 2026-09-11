@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { placeBySlug } from '@/lib/places';
+import { placeBySlug, displayTitle } from '@/lib/places';
 
 /** 가이드 상단 히어로 — 대표 장소 사진 3장을 가로로 */
 export function GuideHero({ slugs }: { slugs: string[] }) {
@@ -9,8 +9,8 @@ export function GuideHero({ slugs }: { slugs: string[] }) {
     <div className="g-hero">
       {items.map(p => (
         <figure key={p!.id}>
-          <img src={p!.image} alt={p!.title.replace(/\s*\([^)]*\)\s*$/, '')} loading="lazy" />
-          <figcaption>{p!.title.replace(/\s*\([^)]*\)\s*$/, '')}</figcaption>
+          <img src={p!.image} alt={displayTitle(p!.title)} loading="lazy" />
+          <figcaption>{displayTitle(p!.title)}</figcaption>
         </figure>
       ))}
     </div>
@@ -32,7 +32,7 @@ export function Stop({
     <li className="g-stop">
       {p && (
         <Link href={href!} className="g-stop-ph">
-          <img src={p.image} alt={p.title.replace(/\s*\([^)]*\)\s*$/, '')} loading="lazy" />
+          <img src={p.image} alt={displayTitle(p.title)} loading="lazy" />
         </Link>
       )}
       <div className="g-stop-body">
@@ -75,7 +75,7 @@ export function PlaceRow({ slugs }: { slugs: string[] }) {
             <img className="ph" src={p!.image} alt={p!.title} loading="lazy" />
           </div>
           <div className="body">
-            <h3>{p!.title.replace(/\s*\([^)]*\)\s*$/, '')}</h3>
+            <h3>{displayTitle(p!.title)}</h3>
           </div>
         </Link>
       ))}

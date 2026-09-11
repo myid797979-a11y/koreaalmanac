@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Card from '@/app/components/Card';
 import { REGIONS, festivals, status, today, regionFestivals } from '@/lib/data';
-import { placesByRegion, catMeta, PLACE_CATS, type Place } from '@/lib/places';
+import { placesByRegion, catMeta, PLACE_CATS, type Place, displayTitle } from '@/lib/places';
 import { rankPlaces, isTopPick } from '@/lib/place-rank';
 import { liveCulture } from '@/lib/culture';
 import { upcomingConcerts } from '@/lib/concerts';
@@ -31,7 +31,7 @@ function PlaceCard({ p }: { p: Place }) {
       <div className="phwrap"><img className="ph" src={p.image} alt={p.title} loading="lazy" /></div>
       <div className="body">
         <div className="when">{catMeta(p.cat).label}</div>
-        <h3>{p.title.replace(/\s*\([^)]*\)\s*$/, '')}</h3>
+        <h3>{displayTitle(p.title)}</h3>
         {isTopPick(p) && <span className="pick">Top pick</span>}
       </div>
     </Link>

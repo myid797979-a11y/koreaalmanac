@@ -711,3 +711,84 @@ footer.site .strip a:hover { color: var(--seal); }
   .g-stop-ph { flex: 0 0 104px; }
   .g-day { flex-direction: column; gap: 8px; }
 }
+
+/* ── Places 허브 ─────────────────────────────────────────
+   13개 카테고리를 평면으로 늘어놓으면 "알아서 고르세요" 가 된다.
+   대표 명소 → 도시 → 관심사 순으로 내려가며, 전부 사진으로 훑게 한다. */
+
+/* 전국 대표 명소 8곳 */
+.pickgrid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+  gap: 12px; margin: 16px 0 8px;
+}
+.pick {
+  position: relative; display: block; border-radius: 8px; overflow: hidden;
+  background: #eceadf; aspect-ratio: 4 / 3;
+}
+.pick img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.pick:hover img { transform: scale(1.04); }
+.pick .pk-body {
+  position: absolute; inset: auto 0 0 0; padding: 22px 12px 10px; color: #fff;
+  background: linear-gradient(to top, rgba(20, 18, 15, 0.85), rgba(20, 18, 15, 0));
+}
+.pick .pk-body strong {
+  display: block; font-family: var(--font-display), Georgia, serif;
+  font-size: 15px; line-height: 1.3; font-weight: 700;
+}
+.pick .pk-rg { display: block; font-size: 12px; opacity: 0.85; margin-top: 2px; }
+
+/* 도시 카드 — 서울·부산·제주 */
+.regcards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px; margin: 16px 0 12px;
+}
+.regcard {
+  position: relative; display: block; border-radius: 10px; overflow: hidden;
+  background: #eceadf; aspect-ratio: 16 / 9;
+}
+.regcard img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.regcard:hover img { transform: scale(1.04); }
+.regcard .rc-body {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 2px; color: #fff;
+  background: rgba(20, 18, 15, 0.42);
+}
+.regcard .rc-body strong {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 26px; font-weight: 800; letter-spacing: 0.4px;
+}
+.regcard .rc-body span { font-size: 13px; opacity: 0.9; }
+
+/* 관심사 묶음 */
+.catgroup { margin: 22px 0 6px; }
+.catgroup h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 19px; font-weight: 700; margin: 0 0 2px;
+}
+.catgroup > .meta { margin: 0 0 12px; }
+.catrow {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(172px, 1fr)); gap: 12px;
+}
+.cattile {
+  display: flex; align-items: center; gap: 11px; padding: 8px 12px 8px 8px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.cattile:hover { border-color: var(--ink); box-shadow: 0 6px 16px rgba(35, 33, 28, 0.08); }
+.cattile img {
+  flex: 0 0 52px; width: 52px; height: 52px; object-fit: cover;
+  border-radius: 6px; background: #eceadf;
+}
+.cattile .ct-body { min-width: 0; }
+.cattile .ct-body strong {
+  display: block; font-size: 14.5px; font-weight: 700; line-height: 1.3;
+}
+.cattile:hover .ct-body strong { color: var(--seal); }
+.cattile .ct-n { font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+@media (max-width: 600px) {
+  .pickgrid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .pick .pk-body strong { font-size: 13.5px; }
+  .regcard .rc-body strong { font-size: 22px; }
+  .catrow { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+}

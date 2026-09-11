@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { placeBySlug, placeParams, placesByRegion, catMeta } from '@/lib/places';
+import { placeBySlug, placeParams, placesByRegion, catMeta, displayTitle, koreanName } from '@/lib/places';
 import { rankPlaces } from '@/lib/place-rank';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { SITE_URL } from '@/lib/site';
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const p = placeBySlug(slug);
   if (!p) return {};
-  const clean = p.title.replace(/\s*\([^)]*\)\s*$/, '');
+  const clean = displayTitle(p.title);
   return {
     title: clean + ' — ' + p.region,
     description: (clean + ', ' + p.region + '. ' + (p.overview ?? catMeta(p.cat).blurb)).slice(0, 155),
@@ -30,8 +30,8 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
   if (!p) notFound();
 
   const meta = catMeta(p.cat);
-  const clean = p.title.replace(/\s*\([^)]*\)\s*$/, '');
-  const korean = p.title.match(/\(([^)]*[가-힣][^)]*)\)\s*$/)?.[1] ?? null;
+  const clean = displayTitle(p.title);
+  const korean = koreanName(p.title);
   const hasMap = Boolean(p.mapx && p.mapy);
   const mapQ = hasMap ? p.mapy + ',' + p.mapx : encodeURIComponent(clean + ', South Korea');
 
@@ -133,7 +133,7 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
 
       {events.length > 0 && (
         <>
-          <h2 className="sect">On nearby while you&apos;re here</h2>
+          <h2 className="sect">What&apos;s on nearby</h2>
           <p className="intro" style={{ marginTop: -4 }}>
             Events run on fixed dates — check these against your own trip.
             {' '}<Link href="/plan/">Trip Planner</Link> shows everything on for the days you are in Korea.
@@ -164,7 +164,7 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
                   <div className="when">
                     {Number.isFinite(x.km) ? distanceLabel(x.km) : catMeta(x.cat).label}
                   </div>
-                  <h3>{x.title.replace(/\s*\([^)]*\)\s*$/, '')}</h3>
+                  <h3>{displayTitle(x.title)}</h3>
                 </div>
               </Link>
             ))}

@@ -227,13 +227,13 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
                 ["start"] = it.GetValueOrDefault("startDate"),
                 ["end"] = end,
                 ["venue"] = tr?.GetValueOrDefault("venue") ?? Decode(it.GetValueOrDefault("place")),
-                ["region"] = Nul(it.GetValueOrDefault("area")) ?? "Korea",
-                ["district"] = Nul(it.GetValueOrDefault("sigungu")),
+                ["region"] = CultureRegion(it.GetValueOrDefault("area")),
+                ["district"] = EnDistrict(tr?.GetValueOrDefault("addr") ?? Decode(it.GetValueOrDefault("placeAddr"))),
                 ["kind"] = isTrad ? "traditional" : "exhibition",
                 ["image"] = Nul(it.GetValueOrDefault("thumbnail")) ?? Nul(it.GetValueOrDefault("imgUrl")),
                 ["gpsX"] = Nul(it.GetValueOrDefault("gpsX")),
                 ["gpsY"] = Nul(it.GetValueOrDefault("gpsY")),
-                ["price"] = tr?.GetValueOrDefault("price") ?? Decode(it.GetValueOrDefault("price")),
+                ["price"] = EnPrice(tr?.GetValueOrDefault("price") ?? Decode(it.GetValueOrDefault("price"))),
                 ["addr"] = tr?.GetValueOrDefault("addr") ?? Decode(it.GetValueOrDefault("placeAddr")),
                 ["tel"] = Nul(it.GetValueOrDefault("phone")),
                 ["url"] = Href(it.GetValueOrDefault("url")),
@@ -529,6 +529,58 @@ static string Slug(string s)
     var slug = Regex.Replace(s.ToLowerInvariant(), "[^a-z0-9]+", "-").Trim('-');
     return slug.Length > 60 ? slug[..60].Trim('-') : (slug.Length == 0 ? "festival" : slug);
 }
+
+// 요금도 한국어로 온다("전석 2만원"). 번역본에 price 가 없으면 여기로 떨어지는데,
+// 한글을 그대로 내보내느니 기계적으로 옮긴다. 끝까지 한글이 남으면 비운다.
+static string? EnPrice(string? raw)
+{
+    if (raw == null) return null;
+    var s = Regex.Replace(raw.Trim(), @"\s+", " ");
+    bool HasKo(string x) => x.Any(c => c >= 0xAC00 && c <= 0xD7A3);
+    if (!HasKo(s)) return Nul(s);
+
+    if (Regex.IsMatch(s, "^(전석 ?)?(무료입장|무료)$")) return "Free";
+    if (s == "전석초대") return "Invitation only";
+    if (s == "미정") return "To be announced";
+
+    // "2만원" → "20,000 won" 을 먼저 풀고 나머지 낱말을 옮긴다
+    var t = Regex.Replace(s, @"(\d+)만원",
+        m => (int.Parse(m.Groups[1].Value) * 10000).ToString("N0") + " won");
+    t = t.Replace("원", " won");
+    // "전석 20,000 won" 은 영어 어순으로 뒤집는다
+    var allSeats = Regex.Match(t, @"^전석 ?([\d,]+ won)(.*)$");
+    if (allSeats.Success) t = allSeats.Groups[1].Value + ", all seats" + allSeats.Groups[2].Value;
+    t = t.Replace("전석", "all seats").Replace("성인", "adults").Replace("일반", "adults")
+         .Replace("청소년", "youth").Replace("어린이", "children").Replace("학생", "students")
+         .Replace("석", " seats").Replace("무료", "free").Replace("할인", "discount");
+    t = Regex.Replace(t, @"\s+", " ").Trim();
+    return HasKo(t) ? null : Nul(t);
+}
+
+// sigungu 도 한국어로 온다("부여군"). 번역된 영문 주소에 이미 "Buyeo-gun" 이 들어 있으므로
+// 거기서 구/군/시를 집어 쓴다. 못 찾으면 비운다 — 한글을 그대로 내보내느니 없는 편이 낫다.
+static string? EnDistrict(string? addr)
+{
+    if (addr == null || addr.Any(c => c >= 0xAC00 && c <= 0xD7A3)) return null;
+    var parts = addr.Split(',').Select(p => p.Trim());
+    return parts.LastOrDefault(p => Regex.IsMatch(p, "-(gu|gun|si)$", RegexOptions.IgnoreCase));
+}
+
+// 문화정보 API 의 area 는 한국어다("서울","경기"). 축제·관광지는 영문 지역명을 쓰므로
+// 그대로 두면 지역 페이지의 c.region === "Seoul" 비교가 영원히 빗나가
+// 전통공연·전시 340건이 17개 지역 페이지 전부에서 사라진다.
+static string CultureRegion(string? area) => (area ?? "").Trim() switch
+{
+    "서울" => "Seoul",   "부산" => "Busan",   "대구" => "Daegu",
+    "인천" => "Incheon", "광주" => "Gwangju", "대전" => "Daejeon",
+    "울산" => "Ulsan",   "세종" => "Sejong",  "경기" => "Gyeonggi",
+    "강원" => "Gangwon", "충북" => "Chungbuk", "충남" => "Chungnam",
+    "전북" => "Jeonbuk", "전남" => "Jeonnam",  "경북" => "Gyeongbuk",
+    "경남" => "Gyeongnam", "제주" => "Jeju",
+    // 전남·광주 통합특별시 — 주소 기준으로는 광주권으로 들어온다
+    "전남광주통합" => "Gwangju",
+    var s => s.Length > 0 && !s.Any(c => c >= 0xAC00 && c <= 0xD7A3) ? s : "Korea",
+};
 
 // 한국어가 섞인 소개문은 버린다. KTO 영문 서비스에도 원문이 그대로 실려 오는 항목이 있는데,
 // 영어권 방문자에게는 읽히지 않는 글자라 없느니만 못하다. 한글이 30자를 넘으면 통째로 비운다.
