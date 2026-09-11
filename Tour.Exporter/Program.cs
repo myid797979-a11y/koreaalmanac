@@ -632,11 +632,13 @@ static string? Strip(string? html)
     if (html == null) return null;
     // KTO 원문엔 <PARASITE>(영화 제목)·<Credit: Visit Jeju>(출처) 처럼 꺾쇠가 섞여 온다.
     // 실제 HTML 태그 이름만 제거하고 나머지는 살린다.
-    const string names = "br|p|div|span|a|b|i|em|strong|u|ul|ol|li|table|tr|td|th|tbody|thead|img|font|h1|h2|h3|h4";
+    const string names = "br|p|div|span|a|b|i|em|strong|u|ul|ol|li|table|tr|td|th|tbody|thead|img|font"
+        + "|h1|h2|h3|h4|h5|h6|sup|sub|small|big|hr|center|blockquote|pre|code|figure|figcaption"
+        + "|section|article|nav|header|footer|main|dl|dt|dd|caption|colgroup|col|s|strike|mark|wbr";
     // HTML 주석(<!-- wp:paragraph -->)과 스타일 속성이 붙은 태그도 제거한다
-    var s = Regex.Replace(html, "<!--[sS]*?-->", " ");
+    var s = Regex.Replace(html, @"<!--[\s\S]*?-->", " ");
     s = Regex.Replace(s, "<br[^>]*>", " · ", RegexOptions.IgnoreCase);
-    s = Regex.Replace(s, "<!--[sS]*?-->", " ");
+    s = Regex.Replace(s, @"<!--[\s\S]*?-->", " ");
     s = Regex.Replace(s, "</?(?:" + names + ")(?=[ />])[^>]*>", " ", RegexOptions.IgnoreCase);
     s = Regex.Replace(s, "</?(?:" + names + ")>", " ", RegexOptions.IgnoreCase);
     return Nul(Regex.Replace(s, " {2,}", " "));

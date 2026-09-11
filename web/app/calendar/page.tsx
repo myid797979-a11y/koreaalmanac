@@ -6,7 +6,7 @@ import { upcomingConcerts } from '@/lib/concerts';
 
 export const metadata = {
   title: 'Korea Festival & Concert Calendar — next 12 months',
-  description: 'Monthly calendar of festivals and concerts in Korea for the next 12 months, with dates and regions. Festivals updated daily from official tourism data; concerts hand-picked.',
+  description: 'A 12-month calendar of festivals and concerts in Korea, with dates and regions. Festivals update daily from official tourism data.',
 };
 
 const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];

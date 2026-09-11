@@ -4,7 +4,7 @@ import {
   cultureBySlug, cultureParams, cultureDateRange, liveCulture, KIND_META, isLongRun, uniqueCultureTitle } from '@/lib/culture';
 import { today } from '@/lib/data';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
-import { SITE_URL } from '@/lib/site';
+import { SITE_URL, clampDesc } from '@/lib/site';
 
 export function generateStaticParams() {
   return cultureParams();
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const where = [c.venue, c.region].filter(Boolean).join(', ');
   return {
     title: uniqueCultureTitle(c) + ' — ' + KIND_META[c.kind].label,
-    description: (c.title + ' at ' + where + ', ' + cultureDateRange(c) + '. ' + (c.overview ?? '')).slice(0, 155),
+    description: clampDesc(c.title + ' at ' + where + ', ' + cultureDateRange(c) + '. ' + (c.overview ?? '')),
     openGraph: { title: c.title, images: c.image ? [c.image] : [] },
   };
 }

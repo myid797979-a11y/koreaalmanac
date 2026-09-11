@@ -4,7 +4,7 @@ import { upcomingConcerts, concertDateRange, KIND_LABEL, CONCERTS_UPDATED } from
 
 export const metadata = {
   title: 'Concerts & Music Festivals in Korea',
-  description: 'Hand-picked upcoming concerts in Korea — K-pop, EDM and music festivals, awards shows, and international tours — with dates, venues, and practical notes for visitors planning a trip around a show.',
+  description: 'Hand-picked concerts in Korea — K-pop, EDM, festivals, awards shows and international tours, with dates, venues and notes for visitors.',
 };
 
 export default function ConcertsPage() {

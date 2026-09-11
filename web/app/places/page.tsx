@@ -6,7 +6,7 @@ import { NATIONAL_PICKS, rankPlaces } from '@/lib/place-rank';
 
 export const metadata = {
   title: 'Places to Visit in Korea — attractions by type and region',
-  description: 'Palaces, temples, hanok villages, mountains, beaches, markets and neighbourhoods across Korea — with photos, maps and practical detail from official tourism data.',
+  description: 'Palaces, temples, hanok villages, mountains, beaches, markets and neighbourhoods across Korea — with photos, maps and practical detail.',
 };
 
 /** 표시용 이름 — 괄호 안 한글 원제와 [UNESCO World Heritage] 꼬리표를 뗀다 */

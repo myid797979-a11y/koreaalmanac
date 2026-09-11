@@ -1,3 +1,4 @@
+import { clampDesc } from '@/lib/site';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import {
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const who = c.artist === 'Various artists' ? '' : c.artist + ' — ';
   return {
     title: who + c.title + ' (' + fmt(c.start) + ')',
-    description: `${c.title} at ${c.venue}, ${c.city} — ${concertDateRange(c)}. Dates, venue map, and ticket info for K-pop fans visiting Korea.`,
+    description: clampDesc(`${c.title} at ${c.venue}, ${c.city} — ${concertDateRange(c)}. Dates, venue map and ticket info.`),
   };
 }
 

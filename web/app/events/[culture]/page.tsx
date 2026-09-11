@@ -20,11 +20,11 @@ export async function generateMetadata({ params }: { params: Promise<{ culture: 
   return kind === 'traditional'
     ? {
         title: 'Traditional Korean Performances — gugak, folk music & dance',
-        description: 'Upcoming traditional Korean performances: gugak concerts, folk music, mask dance and court music, with dates, venues and maps. Many run as regular weekend programmes at national institutions.',
+        description: 'Traditional Korean performances — gugak, folk music, mask dance and court music, with dates, venues and maps. Many run weekly and stay cheap.',
       }
     : {
         title: 'Exhibitions in Korea — museums & galleries',
-        description: 'Current and upcoming exhibitions at museums and galleries across Korea, including the permanent displays at the national museums. Dates, venues, admission and maps.',
+        description: 'Exhibitions at museums and galleries across Korea, including the national museums’ permanent displays. Dates, venues, admission and maps.',
       };
 }
 

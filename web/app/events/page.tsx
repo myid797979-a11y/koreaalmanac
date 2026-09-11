@@ -5,7 +5,7 @@ import { liveCulture } from '@/lib/culture';
 
 export const metadata = {
   title: "What's On in Korea — Festivals, Concerts & Events",
-  description: 'Everything happening in Korea right now and in the months ahead: festivals, K-pop and live concerts, traditional performances and exhibitions — with dates, venues and maps.',
+  description: 'Everything on in Korea now and in the months ahead: festivals, concerts, traditional performances and exhibitions, with dates and venues.',
 };
 
 export default function EventsHub() {

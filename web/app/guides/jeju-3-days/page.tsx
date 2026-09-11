@@ -4,7 +4,7 @@ import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
 
 export const metadata = {
   title: '3 Days in Jeju — what to book before you fly, and what a car really costs',
-  description: 'A practical 3-day Jeju itinerary: Hallasan summit permits, Manjanggul’s 2026 reopening, whether you actually need to rent a car, and the driving-licence rule that catches foreign visitors out.',
+  description: 'A 3-day Jeju itinerary: Hallasan permits, Manjanggul’s 2026 reopening, and the driving-licence rule that catches foreign visitors out.',
 };
 
 export default function JejuThreeDays() {

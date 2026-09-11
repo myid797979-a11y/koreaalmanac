@@ -3,7 +3,7 @@ import { placeBySlug } from '@/lib/places';
 
 export const metadata = {
   title: 'Korea Travel Guides — practical, checked, and current',
-  description: 'Practical guides for visiting Korea: itineraries built around real opening hours and walking distances, and how-tos for the things that trip up foreign visitors.',
+  description: 'Practical Korea guides: itineraries built around real opening hours and walking distances, plus how-tos for what trips up foreign visitors.',
 };
 
 const GUIDES = [

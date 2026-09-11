@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'How to Buy K-Pop Concert Tickets as a Foreigner',
-  description: 'A practical guide to buying K-pop concert tickets from outside Korea — which platforms to use, how presales work, the queue, identity checks, and how to avoid cancelled scalper tickets.',
+  description: 'Buying K-pop tickets from outside Korea — which platforms sell to you, how presales and the queue work, and why scalper tickets get voided.',
 };
 
 export default function TicketGuidePage() {

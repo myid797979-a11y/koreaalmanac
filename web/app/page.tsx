@@ -14,9 +14,8 @@ import { liveCulture, cultureDateRange, isLongRun } from '@/lib/culture';
 export const metadata = {
   title: "What's On in Korea — Festivals, Concerts & Places to Visit",
   description:
-    "Every festival, concert, traditional performance and exhibition on in Korea right now, " +
-    "with real dates, venues and fees — plus 2,300+ places to visit. Official Korea Tourism " +
-    "Organization data, refreshed every morning, much of it in English only here.",
+    'Festivals, concerts, traditional performances and exhibitions on in Korea now — ' +
+    'with real dates, venues and fees. Plus 2,300+ places to visit.',
 };
 
 function SectionHead({ title, href, more }: { title: string; href: string; more: string }) {

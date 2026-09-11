@@ -4,7 +4,7 @@ import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
 
 export const metadata = {
   title: '2 Days in Busan — the old town and the coast, split the way the city is',
-  description: 'A 2-day Busan itinerary built on the city’s real geography: the old town in the west, the beaches 15 km east. Includes Sky Capsule booking, Jagalchi’s Tuesday closures, and the Taejongdae train suspension.',
+  description: 'A 2-day Busan itinerary split the way the city is: old town west, beaches 15 km east. With the Sky Capsule and Jagalchi’s Tuesday closures.',
 };
 
 export default function BusanTwoDays() {

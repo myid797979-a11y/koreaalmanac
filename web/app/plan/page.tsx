@@ -6,7 +6,7 @@ import { concerts } from '@/lib/concerts';
 
 export const metadata = {
   title: 'Trip Planner — what is on during your dates',
-  description: 'Enter your arrival and departure dates and see every festival, concert, traditional performance and exhibition on in Korea during your trip — from official tourism data, updated daily.',
+  description: 'Enter your arrival and departure dates and see every festival, concert, performance and exhibition on in Korea while you are there.',
 };
 
 export default function PlanPage() {

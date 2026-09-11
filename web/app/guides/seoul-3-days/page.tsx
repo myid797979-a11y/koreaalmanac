@@ -4,7 +4,7 @@ import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
 
 export const metadata = {
   title: '3 Days in Seoul — a first-timer itinerary that respects the closing days',
-  description: 'A practical 3-day Seoul itinerary built around real walking distances and the palace closing days most guides ignore: Gyeongbokgung shuts Tuesdays, Changdeokgung Mondays, and Bukchon has a 5pm curfew with a ₩100,000 fine.',
+  description: 'A 3-day Seoul itinerary built around the palace closing days most guides ignore — and Bukchon’s 5pm curfew, which now carries a fine.',
 };
 
 export default function SeoulThreeDays() {

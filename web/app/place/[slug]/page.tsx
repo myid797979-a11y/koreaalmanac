@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { placeBySlug, placeParams, placesByRegion, catMeta, displayTitle, koreanName } from '@/lib/places';
 import { rankPlaces } from '@/lib/place-rank';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
-import { SITE_URL } from '@/lib/site';
+import { SITE_URL, clampDesc } from '@/lib/site';
 import { nearest, distanceLabel, isWalkable } from '@/lib/geo';
 import { festivals, status, today, dateRange } from '@/lib/data';
 import { liveCulture, cultureDateRange } from '@/lib/culture';
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     // 이름이 3~4자인 곳(음식점 등)은 제목이 너무 짧아 Bing 이 오류로 잡는다.
     // 분류를 넣으면 길이도 해결되고 무엇을 찾는 사람인지도 맞는다.
     title: clean + ' — ' + catMeta(p.cat).label + ', ' + p.region,
-    description: (clean + ', ' + p.region + '. ' + (p.overview ?? catMeta(p.cat).blurb)).slice(0, 155),
+    description: clampDesc(clean + ', ' + p.region + '. ' + (p.overview ?? catMeta(p.cat).blurb)),
     openGraph: { title: clean, images: [p.image] },
   };
 }

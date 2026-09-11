@@ -3,7 +3,7 @@ import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 
 export const metadata = {
   title: 'Korea Basics — the things to sort before you fly',
-  description: 'Entry rules for 2026, why Google Maps cannot give you directions in Korea, transport cards, paying for things, and when to go. The practical groundwork for a first trip.',
+  description: 'Entry rules for 2026, why Google Maps cannot route you in Korea, transport cards, paying for things, and when to go. Groundwork for a first trip.',
 };
 
 export default function KoreaBasics() {
