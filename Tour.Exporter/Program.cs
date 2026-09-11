@@ -437,7 +437,8 @@ Dictionary<string, object?> Build(Rec r, Dictionary<string, string?>? tr)
         ["overview"] = tr?.GetValueOrDefault("overview") ?? r.C("overview"),
         ["homepage"] = Href(r.C("homepage")),
         ["place"] = tr?.GetValueOrDefault("place") ?? r.I("eventplace") ?? r.S("addr2"),
-        ["fee"] = tr?.GetValueOrDefault("fee") ?? Strip(r.I("usetimefestival")),
+        // KTO 영문 레코드에도 요금이 한국어로 오는 건이 있다 — 문화와 같은 변환기를 태운다
+        ["fee"] = EnPrice(tr?.GetValueOrDefault("fee") ?? Strip(r.I("usetimefestival"))),
         ["hours"] = tr?.GetValueOrDefault("hours") ?? Strip(r.I("playtime")),
         ["duration"] = tr?.GetValueOrDefault("duration") ?? r.I("spendtimefestival"),
         ["sponsor"] = tr?.GetValueOrDefault("sponsor") ?? r.I("sponsor1"),
