@@ -9,5 +9,38 @@
     "price": "무료",
     "addr": "전북특별자치도 전주시 완산구 서학로 7 서학아트스페이스",
     "overview": null
+  },
+  {
+    "id": "397992",
+    "kind": "exhibition",
+    "start": "20260903",
+    "title": "《잔디밭 위에 쓴 일행시: Loop + Hole》",
+    "place": "홍익대학교 현대미술관 홍익대학교 홍문관",
+    "area": "서울",
+    "price": "무료",
+    "addr": "서울특별시 마포구 와우산로 94 홍익대학교",
+    "overview": null
+  },
+  {
+    "id": "397990",
+    "kind": "exhibition",
+    "start": "20260911",
+    "title": "《서문들 Texts after the Exhibition》",
+    "place": "아케이드서울 [문래]",
+    "area": "서울",
+    "price": "무료",
+    "addr": "서울특별시 영등포구 도림로128길 23 (문래동3가) 1층",
+    "overview": null
+  },
+  {
+    "id": "397989",
+    "kind": "exhibition",
+    "start": "20260917",
+    "title": "대전광역시 서예진흥원 <제14회 해촌묵연전>",
+    "place": "대전광역시 서예진흥원",
+    "area": "대전",
+    "price": "무료",
+    "addr": "대전광역시 중구 중앙로 119 7층",
+    "overview": null
   }
 ]
