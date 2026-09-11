@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import {
-  cultureBySlug, cultureParams, cultureDateRange, liveCulture, KIND_META, isLongRun,
-} from '@/lib/culture';
+  cultureBySlug, cultureParams, cultureDateRange, liveCulture, KIND_META, isLongRun, uniqueCultureTitle } from '@/lib/culture';
 import { today } from '@/lib/data';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { SITE_URL } from '@/lib/site';
@@ -17,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!c) return {};
   const where = [c.venue, c.region].filter(Boolean).join(', ');
   return {
-    title: c.title + ' — ' + KIND_META[c.kind].label,
+    title: uniqueCultureTitle(c) + ' — ' + KIND_META[c.kind].label,
     description: (c.title + ' at ' + where + ', ' + cultureDateRange(c) + '. ' + (c.overview ?? '')).slice(0, 155),
     openGraph: { title: c.title, images: c.image ? [c.image] : [] },
   };

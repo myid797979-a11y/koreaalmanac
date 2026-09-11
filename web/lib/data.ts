@@ -157,3 +157,23 @@ export const categoryLabel = (slug: string): string =>
 export function categoryFestivals(slug: string): Festival[] {
   return festivals.filter(f => (f.tags ?? []).includes(slug));
 }
+
+
+/**
+ * 제목이 겹치는 회차에만 연도를 붙인다.
+ * "Busan Fireworks Festival" 이 2025·2026 두 건으로 있으면 Bing 이 중복 제목으로 본다
+ * (웹마스터 지침 §13). 이미 제목에 연도가 들어 있으면 그대로 둔다.
+ */
+const titleCounts = (() => {
+  const m = new Map<string, number>();
+  for (const f of festivals) m.set(f.title, (m.get(f.title) ?? 0) + 1);
+  return m;
+})();
+
+export function uniqueTitle(f: Festival): string {
+  const year = (f.start ?? "").slice(0, 4);
+  if (!year) return f.title;
+  if ((titleCounts.get(f.title) ?? 0) < 2) return f.title;
+  if (f.title.includes(year)) return f.title;
+  return f.title + " " + year;
+}

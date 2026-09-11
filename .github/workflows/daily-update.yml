@@ -83,6 +83,12 @@ jobs:
           npm ci
           npm run build
 
+      # 배포 전에 돌려야 한다 — sitemap.xml 에 <lastmod> 를 주입하고(Bing 지침 §3)
+      # 바뀐 URL 목록을 남긴다. 그 목록을 배포 뒤 IndexNow 가 그대로 제출한다(§4).
+      - name: 신선도 신호 (lastmod + 변경분 산출)
+        working-directory: web
+        run: node scripts/freshness.mjs
+
       - name: Cloudflare Pages 배포
         working-directory: web
         env:

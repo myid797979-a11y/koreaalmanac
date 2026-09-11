@@ -4,8 +4,7 @@ import Card, { Stamp } from '@/app/components/Card';
 import Gallery from '@/app/components/Gallery';
 import {
   festivals, bySlug, status, dateRange, daysUntil, today,
-  icsHref, MONTH_SLUGS, MONTHS_FULL, categoryLabel,
-} from '@/lib/data';
+  icsHref, MONTH_SLUGS, MONTHS_FULL, categoryLabel, uniqueTitle } from '@/lib/data';
 import { festivalJsonLd, breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 
 export function generateStaticParams() {
@@ -18,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!f) return {};
   const description = (f.title + ', ' + f.region + ', ' + dateRange(f) + '. ' + (f.overview ?? '')).slice(0, 155);
   return {
-    title: f.title + ' — dates, fees, location',
+    title: uniqueTitle(f) + ' — dates, fees, location',
     description,
     openGraph: {
       title: f.title,

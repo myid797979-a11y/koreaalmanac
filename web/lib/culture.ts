@@ -58,3 +58,18 @@ export function isLongRun(c: CultureEvent): boolean {
   const e = new Date(+c.end.slice(0, 4), +c.end.slice(4, 6) - 1, +c.end.slice(6, 8));
   return (e.getTime() - s.getTime()) / 86400000 > 180;
 }
+
+/** 제목이 겹치는 회차에만 연도를 붙인다 (Bing 지침 §13 중복 제목 방지) */
+const cultureTitleCounts = (() => {
+  const m = new Map<string, number>();
+  for (const c of culture) m.set(c.title, (m.get(c.title) ?? 0) + 1);
+  return m;
+})();
+
+export function uniqueCultureTitle(c: CultureEvent): string {
+  const year = (c.start ?? "").slice(0, 4);
+  if (!year) return c.title;
+  if ((cultureTitleCounts.get(c.title) ?? 0) < 2) return c.title;
+  if (c.title.includes(year)) return c.title;
+  return c.title + " " + year;
+}

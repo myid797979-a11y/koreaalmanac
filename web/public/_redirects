@@ -1,0 +1,5 @@
+# www 는 apex 로 301. canonical 로도 정리되지만 검색엔진엔 리다이렉트가 더 분명하다.
+https://www.koreaalmanac.com/* https://koreaalmanac.com/:splat 301
+
+# Cloudflare Pages 기본 도메인이 그대로 색인되지 않도록
+https://koreaalmanac.pages.dev/* https://koreaalmanac.com/:splat 301
