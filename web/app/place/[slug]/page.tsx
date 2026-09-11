@@ -18,7 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!p) return {};
   const clean = displayTitle(p.title);
   return {
-    title: clean + ' — ' + p.region,
+    // 이름이 3~4자인 곳(음식점 등)은 제목이 너무 짧아 Bing 이 오류로 잡는다.
+    // 분류를 넣으면 길이도 해결되고 무엇을 찾는 사람인지도 맞는다.
+    title: clean + ' — ' + catMeta(p.cat).label + ', ' + p.region,
     description: (clean + ', ' + p.region + '. ' + (p.overview ?? catMeta(p.cat).blurb)).slice(0, 155),
     openGraph: { title: clean, images: [p.image] },
   };

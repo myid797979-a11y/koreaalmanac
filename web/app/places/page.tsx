@@ -42,7 +42,7 @@ export default function PlacesHub() {
       <div className="pickgrid">
         {picks.map(p => (
           <Link key={p!.id} href={'/place/' + p!.slug + '/'} className="pick">
-            <img src={p!.image} alt="" loading="lazy" />
+            <img src={p!.image} alt={clean(p!.title) + ', ' + p!.region} loading="lazy" />
             <span className="pk-body">
               <strong>{clean(p!.title)}</strong>
               <span className="pk-rg">{p!.region}</span>
@@ -57,7 +57,7 @@ export default function PlacesHub() {
           const top = rankPlaces(places.filter(p => p.region === r.region), r.region)[0];
           return (
             <Link key={r.region} href={'/regions/' + r.region.toLowerCase() + '/'} className="regcard">
-              {top && <img src={top.image} alt="" loading="lazy" />}
+              {top && <img src={top.image} alt={'Places to visit in ' + r.region} loading="lazy" />}
               <span className="rc-body">
                 <strong>{r.region}</strong>
                 <span>{r.n} places</span>
@@ -87,7 +87,7 @@ export default function PlacesHub() {
               const thumb = catThumb(cat);
               return (
                 <Link key={meta.slug} href={'/places/' + meta.slug + '/'} className="cattile">
-                  {thumb && <img src={thumb} alt="" loading="lazy" />}
+                  {thumb && <img src={thumb} alt={meta.label + ' in Korea'} loading="lazy" />}
                   <span className="ct-body">
                     <strong>{meta.label}</strong>
                     <span className="ct-n">{n}</span>

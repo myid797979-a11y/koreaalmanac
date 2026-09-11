@@ -45,18 +45,18 @@ SUMMARY:Saenggeo Jincheon Culture Festival
 LOCATION:Baekgokcheon riverside  Jincheon-eup
 END:VEVENT
 BEGIN:VEVENT
-UID:293085@koreaalmanac
-DTSTART;VALUE=DATE:20261015
-DTEND;VALUE=DATE:20261019
-SUMMARY:Yeongdong Nangye Korean Traditional Music Festival
-LOCATION:Yeongdong Rainbow Healing Plaza
-END:VEVENT
-BEGIN:VEVENT
 UID:3522254@koreaalmanac
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261019
 SUMMARY:Chungbuk Garden Expo in Yeongdong
 LOCATION:Yongdu Park
+END:VEVENT
+BEGIN:VEVENT
+UID:293085@koreaalmanac
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261019
+SUMMARY:Yeongdong Nangye Korean Traditional Music Festival
+LOCATION:Yeongdong Rainbow Healing Plaza
 END:VEVENT
 BEGIN:VEVENT
 UID:1344850@koreaalmanac

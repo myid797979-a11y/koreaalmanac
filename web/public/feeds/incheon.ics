@@ -31,18 +31,18 @@ SUMMARY:Michuhol Media Culture Festival
 LOCATION:Incheon National University Jemulpo Campus plaza
 END:VEVENT
 BEGIN:VEVENT
-UID:2829118@koreaalmanac
-DTSTART;VALUE=DATE:20260919
-DTEND;VALUE=DATE:20260920
-SUMMARY:Haksan Madanggeuk Nollae Festival
-LOCATION:Outdoor stage  Subong Park
-END:VEVENT
-BEGIN:VEVENT
 UID:2764526@koreaalmanac
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260921
 SUMMARY:Incheon Reading Festival
 LOCATION:Incheon Art Platform
+END:VEVENT
+BEGIN:VEVENT
+UID:2829118@koreaalmanac
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:Haksan Madanggeuk Nollae Festival
+LOCATION:Outdoor stage  Subong Park
 END:VEVENT
 BEGIN:VEVENT
 UID:1273884@koreaalmanac

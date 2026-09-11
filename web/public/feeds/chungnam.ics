@@ -87,18 +87,18 @@ SUMMARY:Baekje Cultural Festival
 LOCATION:Buyeo historic sites (Jeongnimsaji Temple Site  Seoktap-ro  Gwanbuk-ri)
 END:VEVENT
 BEGIN:VEVENT
-UID:639993@koreaalmanac
-DTSTART;VALUE=DATE:20261009
-DTEND;VALUE=DATE:20261012
-SUMMARY:Yeonsan Jujube Festival
-LOCATION:Around Yeonsan Station
-END:VEVENT
-BEGIN:VEVENT
 UID:1829490@koreaalmanac
 DTSTART;VALUE=DATE:20261009
 DTEND;VALUE=DATE:20261012
 SUMMARY:Seosan Haemi Eupseong Festival
 LOCATION:Haemieupseong Walled Town area
+END:VEVENT
+BEGIN:VEVENT
+UID:639993@koreaalmanac
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261012
+SUMMARY:Yeonsan Jujube Festival
+LOCATION:Around Yeonsan Station
 END:VEVENT
 BEGIN:VEVENT
 UID:2877244@koreaalmanac

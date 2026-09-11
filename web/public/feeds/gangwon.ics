@@ -94,6 +94,13 @@ SUMMARY:Pyeongchang Nongak & Mountain Food Festival
 LOCATION:Pyeongchang Nongak & Mountain Food festival grounds
 END:VEVENT
 BEGIN:VEVENT
+UID:2618014@koreaalmanac
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20261012
+SUMMARY:Inje Autumn Flower Festival
+LOCATION:Yongdae Tourist Area  Inje
+END:VEVENT
+BEGIN:VEVENT
 UID:697441@koreaalmanac
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261005
@@ -155,6 +162,13 @@ DTSTART;VALUE=DATE:20261014
 DTEND;VALUE=DATE:20261019
 SUMMARY:Chuncheon Makguksu & Dakgalbi Festival
 LOCATION:Streamside between Hyojagyo Bridge and Gongjigyo Bridge
+END:VEVENT
+BEGIN:VEVENT
+UID:141252@koreaalmanac
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261019
+SUMMARY:Kim Sakkat Culture Festival
+LOCATION:Nango Kim Sakkat Literary Hall
 END:VEVENT
 BEGIN:VEVENT
 UID:1675246@koreaalmanac

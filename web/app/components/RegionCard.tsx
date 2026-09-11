@@ -20,7 +20,7 @@ export default function RegionCard({ region, t = today() }: { region: string; t?
 
   return (
     <Link href={'/regions/' + region.toLowerCase() + '/'} className="card rcard">
-      {img ? <img className="ph" src={img} alt="" loading="lazy" /> : <div className="noph">{region}</div>}
+      {img ? <img className="ph" src={img} alt={region + ', Korea'} loading="lazy" /> : <div className="noph">{region}</div>}
       <div className="body">
         <h3>{region}</h3>
         <div className="meta">

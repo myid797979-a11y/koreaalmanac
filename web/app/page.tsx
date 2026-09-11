@@ -9,6 +9,16 @@ import { FEATURED_IDS } from '@/lib/editorial';
 import { upcomingConcerts, concertDateRange, KIND_LABEL } from '@/lib/concerts';
 import { liveCulture, cultureDateRange, isLongRun } from '@/lib/culture';
 
+// 홈 제목이 사이트명뿐(13자)이라 Bing URL 검사가 "너무 짧은 제목" 오류를 냈다.
+// 무엇을 찾는 사람이 오는 페이지인지 제목에 담는다.
+export const metadata = {
+  title: "What's On in Korea — Festivals, Concerts & Places to Visit",
+  description:
+    "Every festival, concert, traditional performance and exhibition on in Korea right now, " +
+    "with real dates, venues and fees — plus 2,300+ places to visit. Official Korea Tourism " +
+    "Organization data, refreshed every morning, much of it in English only here.",
+};
+
 function SectionHead({ title, href, more }: { title: string; href: string; more: string }) {
   return (
     <div className="sect-row">

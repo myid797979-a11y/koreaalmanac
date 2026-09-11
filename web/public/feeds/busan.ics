@@ -24,11 +24,11 @@ SUMMARY:14th Busan International Port Conference
 LOCATION:Busan Port International Exhibition & Convention Center
 END:VEVENT
 BEGIN:VEVENT
-UID:2558735@koreaalmanac
+UID:2412052@koreaalmanac
 DTSTART;VALUE=DATE:20260918
 DTEND;VALUE=DATE:20260921
-SUMMARY:Busan International Performing Arts Festival (BPAF)
-LOCATION:Oncheoncheon stream and PNU university street
+SUMMARY:Korea Youth Day Festival
+LOCATION:Gwangalli Beach
 END:VEVENT
 BEGIN:VEVENT
 UID:3368584@koreaalmanac
@@ -38,11 +38,18 @@ SUMMARY:Busan Youth Week
 LOCATION:Busan Port Pier 1
 END:VEVENT
 BEGIN:VEVENT
-UID:2412052@koreaalmanac
+UID:2558735@koreaalmanac
 DTSTART;VALUE=DATE:20260918
 DTEND;VALUE=DATE:20260921
-SUMMARY:Korea Youth Day Festival
-LOCATION:Gwangalli Beach
+SUMMARY:Busan International Performing Arts Festival (BPAF)
+LOCATION:Oncheoncheon stream and PNU university street
+END:VEVENT
+BEGIN:VEVENT
+UID:3546717@koreaalmanac
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20261012
+SUMMARY:Bibliotheca Busan
+LOCATION:Millak Waterside Park area
 END:VEVENT
 BEGIN:VEVENT
 UID:3493864@koreaalmanac
@@ -57,13 +64,6 @@ DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20261108
 SUMMARY:Moonlight Workout Busan Challenge
 LOCATION:Busan Citizens Park · North Port Waterfront Park · Hwamyeong Ecological Park
-END:VEVENT
-BEGIN:VEVENT
-UID:3546717@koreaalmanac
-DTSTART;VALUE=DATE:20260919
-DTEND;VALUE=DATE:20261012
-SUMMARY:Bibliotheca Busan
-LOCATION:Millak Waterside Park area
 END:VEVENT
 BEGIN:VEVENT
 UID:4108758@koreaalmanac
@@ -94,13 +94,6 @@ SUMMARY:Hurshimchung Bräu Oktoberfest
 LOCATION:Outdoor space & beer garden of Hotel Nongshim
 END:VEVENT
 BEGIN:VEVENT
-UID:1275743@koreaalmanac
-DTSTART;VALUE=DATE:20261016
-DTEND;VALUE=DATE:20261019
-SUMMARY:Geumjeongsanseong Fortress Festival
-LOCATION:Geumjeongsanseong plaza and fortress area
-END:VEVENT
-BEGIN:VEVENT
 UID:1876897@koreaalmanac
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261019
@@ -113,6 +106,20 @@ DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261019
 SUMMARY:Jeonggwan Eco-Stream Culture Festival
 LOCATION:Jeonggwan Central Park
+END:VEVENT
+BEGIN:VEVENT
+UID:3532971@koreaalmanac
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261018
+SUMMARY:Busan Seo-gu Medical Tourism Festival
+LOCATION:Songdo Ocean Park
+END:VEVENT
+BEGIN:VEVENT
+UID:1275743@koreaalmanac
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261019
+SUMMARY:Geumjeongsanseong Fortress Festival
+LOCATION:Geumjeongsanseong plaza and fortress area
 END:VEVENT
 BEGIN:VEVENT
 UID:3492576@koreaalmanac

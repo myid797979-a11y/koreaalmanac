@@ -58,7 +58,7 @@ export default function GuidesHub() {
           return (
           <article key={g.href} className="cult">
             {ph
-              ? <Link href={g.href} className="cu-ph"><img src={ph.image} alt="" loading="lazy" /></Link>
+              ? <Link href={g.href} className="cu-ph"><img src={ph.image} alt={g.title} loading="lazy" /></Link>
               : <span className="cu-ph cu-noph" aria-hidden="true" />}
             <div className="cu-body">
               <div className="cu-when">{g.tag}</div>

@@ -152,7 +152,7 @@ export default function Planner({ data, regions, today }: {
               <Link key={x.href} href={x.href} className="card">
                 <div className="phwrap">
                   {x.image
-                    ? <img className="ph" src={x.image} alt="" loading="lazy" />
+                    ? <img className="ph" src={x.image} alt={x.title} loading="lazy" />
                     : <div className="noph">{x.region}</div>}
                   {x.start < f
                     ? <span className="stamp now">Already on</span>

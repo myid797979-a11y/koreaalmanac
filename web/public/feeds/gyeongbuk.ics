@@ -31,13 +31,6 @@ SUMMARY:Gyeongju Heritage Night Walk
 LOCATION:Woljeonggyo Bridge  Gyochon Hanok Village  Cheomseongdae and Gyeongju Eupseong Fortress
 END:VEVENT
 BEGIN:VEVENT
-UID:140897@koreaalmanac
-DTSTART;VALUE=DATE:20260919
-DTEND;VALUE=DATE:20260921
-SUMMARY:Gyeongsan Gatbawi Wish Fulfillment Festival
-LOCATION:Onmaru Plaza  Gyeongsan Sports Park
-END:VEVENT
-BEGIN:VEVENT
 UID:4107073@koreaalmanac
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260921
@@ -50,6 +43,13 @@ DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260920
 SUMMARY:Gyeongju Golden Carnival
 LOCATION:Golden Street (Hwangnidan-gil and Geumnidan-gil)  Gyeongju
+END:VEVENT
+BEGIN:VEVENT
+UID:140897@koreaalmanac
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260921
+SUMMARY:Gyeongsan Gatbawi Wish Fulfillment Festival
+LOCATION:Onmaru Plaza  Gyeongsan Sports Park
 END:VEVENT
 BEGIN:VEVENT
 UID:697123@koreaalmanac
@@ -73,11 +73,11 @@ SUMMARY:Pohang Sunrise Noodle Festival
 LOCATION:The area around Guryongpo Ara Plaza
 END:VEVENT
 BEGIN:VEVENT
-UID:506766@koreaalmanac
+UID:697368@koreaalmanac
 DTSTART;VALUE=DATE:20261003
 DTEND;VALUE=DATE:20261012
-SUMMARY:Yeongju Punggi Ginseng Festival
-LOCATION:Namwoncheon stream and Punggi Ginseng Park
+SUMMARY:Yeongju Punggi Insam Festival
+LOCATION:Punggi Insam Culture Pop-up Park
 END:VEVENT
 BEGIN:VEVENT
 UID:1718424@koreaalmanac
@@ -87,18 +87,11 @@ SUMMARY:Yeongju Museom Single-Log Bridge Festival
 LOCATION:Museom Village
 END:VEVENT
 BEGIN:VEVENT
-UID:697368@koreaalmanac
+UID:506766@koreaalmanac
 DTSTART;VALUE=DATE:20261003
 DTEND;VALUE=DATE:20261012
-SUMMARY:Yeongju Punggi Insam Festival
-LOCATION:Punggi Insam Culture Pop-up Park
-END:VEVENT
-BEGIN:VEVENT
-UID:229892@koreaalmanac
-DTSTART;VALUE=DATE:20261009
-DTEND;VALUE=DATE:20261012
-SUMMARY:Yeongcheon Bohyeonsan Starlight Festival
-LOCATION:Bohyeonsan Astronomical Science Museum
+SUMMARY:Yeongju Punggi Ginseng Festival
+LOCATION:Namwoncheon stream and Punggi Ginseng Park
 END:VEVENT
 BEGIN:VEVENT
 UID:1718137@koreaalmanac
@@ -113,6 +106,13 @@ DTSTART;VALUE=DATE:20261009
 DTEND;VALUE=DATE:20261012
 SUMMARY:8th Yecheon International Smartphone Film Festival
 LOCATION:Public lot by Gyeongbuk Library
+END:VEVENT
+BEGIN:VEVENT
+UID:229892@koreaalmanac
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261012
+SUMMARY:Yeongcheon Bohyeonsan Starlight Festival
+LOCATION:Bohyeonsan Astronomical Science Museum
 END:VEVENT
 BEGIN:VEVENT
 UID:506544@koreaalmanac

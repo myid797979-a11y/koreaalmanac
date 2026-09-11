@@ -3,7 +3,7 @@ import { festivals } from '@/lib/data';
 import { SITE_NAME } from '@/lib/site';
 
 export const metadata = {
-  title: 'About',
+  title: 'About — where the data comes from and how it stays current',
   description: 'What this site is, where the data comes from, and how it stays accurate.',
 };
 

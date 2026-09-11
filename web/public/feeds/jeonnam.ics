@@ -73,6 +73,13 @@ SUMMARY:Yeonggwang Bulgapsan Red Spider Lily Festival
 LOCATION:Bulgapsa Temple tourist area
 END:VEVENT
 BEGIN:VEVENT
+UID:2737313@koreaalmanac
+DTSTART;VALUE=DATE:20260922
+DTEND;VALUE=DATE:20261031
+SUMMARY:Seomjin River International Experimental Art Festival 2025 (SIEAF)
+LOCATION:Amnok Recreation Area  Gokseong
+END:VEVENT
+BEGIN:VEVENT
 UID:752980@koreaalmanac
 DTSTART;VALUE=DATE:20261007
 DTEND;VALUE=DATE:20261012
