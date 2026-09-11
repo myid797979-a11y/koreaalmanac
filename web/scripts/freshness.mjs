@@ -35,6 +35,7 @@ function hashOf(url) {
     .replace(/<script[\s\S]*?<\/script>/g, '')
     .replace(/<link[^>]*>/g, '')
     .replace(/<!--[\s\S]*?-->/g, '')            // <!--1134a6DoyRaVkfKMRzHL9--> 같은 빌드 토큰
+    .replace(/<meta name="next-size-adjust"[^>]*>/g, '')  // Next.js 패치 버전에 따라 있고 없다
     .replace(/__variable_[0-9a-f]+/g, '')
     .replace(/[A-Z][a-z]{2} \d{1,2}, 20\d\d/g, 'DATE');
   return createHash('sha1').update(body).digest('hex').slice(0, 12);
@@ -58,8 +59,14 @@ for (const url of urls) {
 }
 const removed = Object.keys(prev).filter(u => !(u in next));
 
-mkdirSync(dirname(STATE), { recursive: true });
-writeFileSync(STATE, JSON.stringify(next, null, 0));
+// 상태 파일은 실제로 배포하는 쪽(CI)만 쓴다. 로컬은 node_modules 의 Next.js 패치 버전이
+// CI 의 npm ci 결과와 달라 해시가 미묘하게 어긋나므로, 로컬에서 덮어쓰면 다음 CI 배포에서
+// 전량이 '변경'으로 잡힌다. 로컬에서는 보고만 하고, 굳이 쓰려면 --write 를 준다.
+const persist = process.env.CI === 'true' || process.argv.includes('--write');
+if (persist) {
+  mkdirSync(dirname(STATE), { recursive: true });
+  writeFileSync(STATE, JSON.stringify(next, null, 0));
+}
 writeFileSync(CHANGED, JSON.stringify([...changed, ...removed]));
 
 // sitemap 에 <lastmod> 주입 — <loc> 바로 뒤에 넣는다
