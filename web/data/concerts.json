@@ -1,5 +1,5 @@
 {
-  "updated": "20260909",
+  "updated": "20260911",
   "note": "수동 큐레이션. 공식 발표·공연장·예매처를 교차 확인해 사실을 자체 작성한 것이며 전수 목록이 아니다. 지난 공연은 자동으로 숨겨진다. intl=true 는 내한공연 섹션에 노출. 가격·시간은 발표 시점 기준이라 예매 전 공식 확인 필요.",
   "items": [
     {
@@ -238,7 +238,8 @@
       "showTimes": "Oct 3 (Sat) 7:00 PM KST",
       "ticketInfo": "NOL Ticket / Live Nation Korea — English via NOL World and livenation.kr/en",
       "price": "Standing 143,000 · S 154,000 · R 165,000 · P 176,000 won (VIP packages higher)",
-      "tip": "KINTEX is in Ilsan, northwest of Seoul. The fastest route is the new GTX-A express line to Kintex Station; otherwise Subway Line 3 to Daehwa Station (about an hour from downtown)."
+      "tip": "KINTEX is in Ilsan, northwest of Seoul. The fastest route is the new GTX-A express line to Kintex Station; otherwise Subway Line 3 to Daehwa Station (about an hour from downtown).",
+      "note": "American synth-pop trio with a devoted Asian following — an indoor, sing-along-heavy show from a band that tours Korea regularly."
     },
     {
       "id": "the-weeknd-goyang-2026",
@@ -255,7 +256,8 @@
       "showTimes": "Oct 7 (Wed) & Oct 8 (Thu), both 7:45 PM KST",
       "ticketInfo": "NOL Ticket — English via NOL World (world.nol.com)",
       "price": "Roughly 55,000 (restricted view) to 289,000 won; standing 189,000 won",
-      "tip": "Strict 19+ age limit — bring your passport for ID checks. Goyang Stadium is outside central Seoul (nearest is Subway Line 3); for a 100,000-capacity show, plan for heavy post-concert crowds."
+      "tip": "Strict 19+ age limit — bring your passport for ID checks. Goyang Stadium is outside central Seoul (nearest is Subway Line 3); for a 100,000-capacity show, plan for heavy post-concert crowds.",
+      "note": "His first Korea show in about eight years, and a two-night stadium run expected to draw around 100,000. Strict 19+ — bring your passport."
     },
     {
       "id": "charlie-puth-goyang-2026",
@@ -272,7 +274,8 @@
       "showTimes": "Oct 11 (Sun) 7:00 PM KST",
       "ticketInfo": "NOL Ticket / Live Nation Korea — English via NOL World and livenation.kr/en (limit 4 per person)",
       "price": "Roughly 99,000–785,000 won across seating tiers and VIP packages",
-      "tip": "Same venue as The Weeknd (Goyang Stadium), well outside central Seoul — budget about an hour each way from downtown and expect crowded transport after the show."
+      "tip": "Same venue as The Weeknd (Goyang Stadium), well outside central Seoul — budget about an hour each way from downtown and expect crowded transport after the show.",
+      "note": "Back in Korea after roughly two years, with a hit-driven pop set at the same Goyang stadium The Weeknd plays four nights earlier."
     },
     {
       "id": "mcr-paradise-2026",
@@ -289,7 +292,8 @@
       "showTimes": "Nov 7 (Sat) 7:00 PM KST",
       "ticketInfo": "Ticketlink (mainly Korean-language); international presale was handled via UALIVE — English support is more limited than the NOL/Live Nation shows",
       "price": "Standing 175,000 · Seat R 195,000 · Seat P 220,000 won",
-      "tip": "The venue is a big plus for travelers — Paradise City sits beside Incheon Airport on Yeongjong Island, connected to Terminal 1 by the AREX airport railway and free shuttle. It's about an hour from central Seoul, so staying near the airport is easiest."
+      "tip": "The venue is a big plus for travelers — Paradise City sits beside Incheon Airport on Yeongjong Island, connected to Terminal 1 by the AREX airport railway and free shuttle. It's about an hour from central Seoul, so staying near the airport is easiest.",
+      "note": "A rare Korea headline date for the emo standard-bearers, rescheduled to Paradise City — the venue sits beside Incheon Airport."
     },
     {
       "id": "jason-mraz-kintex-2026",
@@ -306,7 +310,8 @@
       "showTimes": "Nov 14 (Sat) 7:00 PM KST",
       "ticketInfo": "NOL Ticket — English via NOL World (world.nol.com)",
       "price": "Standing S 154,000 · Standing R 165,000 won",
-      "tip": "KINTEX is in Ilsan — take the GTX-A line to Kintex Station for the fastest trip, or Subway Line 3 to Daehwa Station. Allow extra travel time from central Seoul."
+      "tip": "KINTEX is in Ilsan — take the GTX-A line to Kintex Station for the fastest trip, or Subway Line 3 to Daehwa Station. Allow extra travel time from central Seoul.",
+      "note": "An acoustic-leaning evening from the ‘I’m Yours’ songwriter, in a standing-only hall at KINTEX in Ilsan."
     },
     {
       "id": "5sos-kintex-2026",
@@ -323,7 +328,8 @@
       "showTimes": "Nov 19 (Thu) 7:30 PM KST",
       "ticketInfo": "NOL Ticket (NOL Interpark) — English via NOL World (world.nol.com)",
       "price": "Standing S 143,000 · Standing R 154,000 won (VIP package 320,000)",
-      "tip": "A fully standing show (no seats) — wear comfortable shoes and arrive early for a good spot. KINTEX Hall 1 is in Ilsan: GTX-A to Kintex Station or Line 3 to Daehwa."
+      "tip": "A fully standing show (no seats) — wear comfortable shoes and arrive early for a good spot. KINTEX Hall 1 is in Ilsan: GTX-A to Kintex Station or Line 3 to Daehwa.",
+      "note": "The Australian pop-rock band’s Seoul stop on the Everyone’s a Star! tour — standing floor, no seated tiers."
     },
     {
       "id": "khalid-kintex-2026",
@@ -340,7 +346,8 @@
       "showTimes": "Dec 5 (Sat) 7:00 PM KST",
       "ticketInfo": "NOL Ticket / Live Nation Korea — English via NOL World and livenation.kr",
       "price": "Standing 154,000 won (VIP packages higher)",
-      "tip": "KINTEX Hall 10 is in the KINTEX 2 building, Ilsan — GTX-A to Kintex Station or Line 3 to Daehwa. It's a December show, so dress for cold weather during transit."
+      "tip": "KINTEX Hall 10 is in the KINTEX 2 building, Ilsan — GTX-A to Kintex Station or Line 3 to Daehwa. It's a December show, so dress for cold weather during transit.",
+      "note": "Grammy-nominated R&B from the ‘Location’ and ‘Talk’ singer, on a standing-only floor at KINTEX."
     },
     {
       "id": "fkj-kintex-2026",
@@ -357,7 +364,8 @@
       "showTimes": "Dec 6 (Sun) — start time to be confirmed",
       "ticketInfo": "NOL Ticket (also on Yes24 Ticket) — English via NOL World; age 12+, limit 4 per person",
       "price": "Standing 143,000 won",
-      "tip": "Same building as the Khalid show (KINTEX Hall 10) — GTX-A to Kintex Station is fastest from Seoul. A standing show in a busy December concert period, so arrive early."
+      "tip": "Same building as the Khalid show (KINTEX Hall 10) — GTX-A to Kintex Station is fastest from Seoul. A standing show in a busy December concert period, so arrive early.",
+      "note": "French multi-instrumentalist Vincent Fenton playing live loops solo — the most improvised show on this list, and the cheapest."
     }
   ]
 }

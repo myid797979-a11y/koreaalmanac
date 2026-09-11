@@ -69,6 +69,29 @@ export function festivalJsonLd(f: Festival): object | null {
   return ld;
 }
 
+/**
+ * 공연 티켓 가격을 Offer 로. 등급이 여러 개면 AggregateOffer 의 lowPrice/highPrice 를 쓴다.
+ *
+ * ⚠ 천 단위 쉼표가 있는 수만 금액으로 본다. "2025 edition" 의 연도를 가격으로 집는 걸 막기 위해서다.
+ *   "To be announced"·"See Yes24 listing" 처럼 스스로 미확정이라 밝힌 표기는 손대지 않는다.
+ */
+function concertOffers(price: string | undefined, url: string, start: string): object | null {
+  if (!price) return null;
+  if (/to be (announced|confirmed)|see .*listing|see official|differ between/i.test(price)) return null;
+  const nums = (price.match(/\d{1,3}(?:,\d{3})+/g) ?? []).map(s => Number(s.replace(/,/g, '')));
+  if (nums.length === 0) return null;
+  const lo = Math.min(...nums), hi = Math.max(...nums);
+  const base = {
+    priceCurrency: 'KRW',
+    availability: 'https://schema.org/InStock',
+    url,
+    validFrom: iso(start),
+  };
+  return lo === hi
+    ? { '@type': 'Offer', ...base, price: String(lo) }
+    : { '@type': 'AggregateOffer', ...base, lowPrice: String(lo), highPrice: String(hi) };
+}
+
 export function concertJsonLd(c: Concert): object {
   return {
     '@context': 'https://schema.org',
@@ -88,9 +111,8 @@ export function concertJsonLd(c: Concert): object {
       : {}),
     ...(c.overview ? { description: c.overview.slice(0, 500) } : {}),
     url: SITE_URL + '/concert/' + c.id + '/',
-    // 공연은 예매처가 값을 쥐고 있다 — 가격은 단정하지 않고 예매 링크만 준다
-    ...(c.ticket
-      ? { offers: { '@type': 'Offer', url: c.ticket, availability: 'https://schema.org/InStock', validFrom: iso(c.start) } }
+    ...(concertOffers(c.price, SITE_URL + '/concert/' + c.id + '/', c.start)
+      ? { offers: concertOffers(c.price, SITE_URL + '/concert/' + c.id + '/', c.start) }
       : {}),
   };
 }
