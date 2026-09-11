@@ -47,17 +47,18 @@ jobs:
           dotnet run --project Tour.Collector -- init
           dotnet run --project Tour.Collector -- restore
 
-      # KTO GW가 장시간 응답 불능인 날에도 복원분(어제 데이터)으로 빌드·배포는 계속한다.
-      # 수집 실패는 그날 갱신만 건너뛰는 것 — 사이트가 하루 통째로 안 나가는 것보다 낫다.
+      # KTO GW 가 장시간 응답 불능인 날에도 복원분(어제 데이터)으로 빌드·배포는 계속한다.
+      #
+      # 명령마다 실패를 따로 흡수한다. 예전엔 bash -e 라 첫 명령(festivals)이 죽으면
+      # 뒤의 details·images·stats 가 통째로 안 돌았다 — 목록 갱신 한 번 실패에
+      # 그날 상세 수집까지 같이 날아갔다. 상세·이미지는 복원된 데이터로도 진행할 수 있다.
       - name: 축제 수집 (목록 갱신 + 신규 상세 + 이미지 드레인)
         continue-on-error: true
         run: |
-          dotnet run --project Tour.Collector -- festivals
-          dotnet run --project Tour.Collector -- details eng
-          dotnet run --project Tour.Collector -- details kor
-          dotnet run --project Tour.Collector -- images eng
-          dotnet run --project Tour.Collector -- images kor
-          dotnet run --project Tour.Collector -- stats
+          for cmd in "festivals" "details eng" "details kor" "images eng" "images kor" "stats"; do
+            echo "── $cmd"
+            dotnet run --project Tour.Collector -- $cmd || echo "⚠ [$cmd] 실패 — 건너뛰고 계속"
+          done
 
       # 문화정보(국악·전통공연·전시) — 별도 API·별도 쿼터(일 10,000콜), 실패해도 배포는 계속
       - name: 문화정보 수집

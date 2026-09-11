@@ -43,15 +43,18 @@ public class TourApi(string keyEncoded, string lang)
 
     // GW가 간헐적으로 30초를 넘기며 응답을 안 준다(새벽 배치가 통째로 죽은 원인).
     // 타임아웃·네트워크 오류만 재시도 — 쿼터 초과(XML 응답)는 재시도해도 소용없으므로 제외.
+    // GW 가 3분 넘게 응답을 안 주는 날이 있다. 20·40·60·80·100초 = 최대 5분까지 버틴다.
+    const int Retries = 5;
+
     static async Task<string> Fetch(string url)
     {
         for (var attempt = 1; ; attempt++)
         {
             try { return await Http.GetStringAsync(url); }
-            catch (Exception e) when (attempt <= 3 && e is TaskCanceledException or HttpRequestException)
+            catch (Exception e) when (attempt <= Retries && e is TaskCanceledException or HttpRequestException)
             {
-                Console.WriteLine($"  HTTP 재시도 {attempt}/3 ({e.GetType().Name})");
-                await Task.Delay(TimeSpan.FromSeconds(attempt * 10));
+                Console.WriteLine($"  HTTP 재시도 {attempt}/{Retries} ({e.GetType().Name}) — {attempt * 20}초 후");
+                await Task.Delay(TimeSpan.FromSeconds(attempt * 20));
             }
         }
     }

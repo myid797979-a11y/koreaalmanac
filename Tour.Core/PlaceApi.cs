@@ -70,10 +70,10 @@ public class PlaceApi(string keyEncoded)
         for (var attempt = 1; ; attempt++)
         {
             try { return await Http.GetStringAsync(url); }
-            catch (Exception e) when (attempt <= 3 && e is TaskCanceledException or HttpRequestException)
+            catch (Exception e) when (attempt <= 5 && e is TaskCanceledException or HttpRequestException)
             {
-                Console.WriteLine($"  HTTP 재시도 {attempt}/3 ({e.GetType().Name})");
-                await Task.Delay(TimeSpan.FromSeconds(attempt * 10));
+                Console.WriteLine($"  HTTP 재시도 {attempt}/5 ({e.GetType().Name})");
+                await Task.Delay(TimeSpan.FromSeconds(attempt * 20));
             }
         }
     }
