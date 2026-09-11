@@ -10,18 +10,18 @@ SUMMARY:2026 Culture Day: Cheongchun Mic (Jeolla & Jeju)
 LOCATION:Gwangju Jungoe Park and venues across Jeolla and Jeju
 END:VEVENT
 BEGIN:VEVENT
-UID:2865136@koreaalmanac
-DTSTART;VALUE=DATE:20260404
-DTEND;VALUE=DATE:20261108
-SUMMARY:Chungjang Raon Festa 2026
-LOCATION:Chungjang-ro district  Dong-gu  Gwangju
-END:VEVENT
-BEGIN:VEVENT
 UID:3478890@koreaalmanac
 DTSTART;VALUE=DATE:20260404
 DTEND;VALUE=DATE:20261108
 SUMMARY:Geumnam-ro Car-Free Street 'Geotjaing' 2026
 LOCATION:Jeonil Building 245 and Geumnam-ro area
+END:VEVENT
+BEGIN:VEVENT
+UID:2865136@koreaalmanac
+DTSTART;VALUE=DATE:20260404
+DTEND;VALUE=DATE:20261108
+SUMMARY:Chungjang Raon Festa 2026
+LOCATION:Chungjang-ro district  Dong-gu  Gwangju
 END:VEVENT
 BEGIN:VEVENT
 UID:617992@koreaalmanac

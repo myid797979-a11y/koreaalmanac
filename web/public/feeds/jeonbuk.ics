@@ -73,13 +73,6 @@ SUMMARY:Gimje Horizon Festival
 LOCATION:Across Gimje (around Byeokgolje Reservoir)
 END:VEVENT
 BEGIN:VEVENT
-UID:1846797@koreaalmanac
-DTSTART;VALUE=DATE:20261002
-DTEND;VALUE=DATE:20261006
-SUMMARY:Gunsan Time Travel Festival
-LOCATION:Old city hall plaza and Time Travel Village
-END:VEVENT
-BEGIN:VEVENT
 UID:2393544@koreaalmanac
 DTSTART;VALUE=DATE:20261002
 DTEND;VALUE=DATE:20261004
@@ -94,11 +87,11 @@ SUMMARY:Wanju Wild & Local Food Festival
 LOCATION:Gosan Natural Recreation Forest
 END:VEVENT
 BEGIN:VEVENT
-UID:2588597@koreaalmanac
-DTSTART;VALUE=DATE:20261008
-DTEND;VALUE=DATE:20261012
-SUMMARY:Imsil N Cheese Festival
-LOCATION:Imsil Cheese Theme Park  Imsil Cheese Village  and the Imsil-eup area
+UID:1846797@koreaalmanac
+DTSTART;VALUE=DATE:20261002
+DTEND;VALUE=DATE:20261006
+SUMMARY:Gunsan Time Travel Festival
+LOCATION:Old city hall plaza and Time Travel Village
 END:VEVENT
 BEGIN:VEVENT
 UID:1105347@koreaalmanac
@@ -106,6 +99,13 @@ DTSTART;VALUE=DATE:20261008
 DTEND;VALUE=DATE:20261019
 SUMMARY:Jeongeup Gujeolcho Flower Festival
 LOCATION:Gujeolcho Provincial Garden
+END:VEVENT
+BEGIN:VEVENT
+UID:2588597@koreaalmanac
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261012
+SUMMARY:Imsil N Cheese Festival
+LOCATION:Imsil Cheese Theme Park  Imsil Cheese Village  and the Imsil-eup area
 END:VEVENT
 BEGIN:VEVENT
 UID:3364857@koreaalmanac
@@ -129,17 +129,17 @@ SUMMARY:Gochang Moyang Fortress Festival
 LOCATION:Gochang Eupseong Fortress
 END:VEVENT
 BEGIN:VEVENT
-UID:2933008@koreaalmanac
-DTSTART;VALUE=DATE:20261016
-DTEND;VALUE=DATE:20261019
-SUMMARY:Buan Red Sunset Festival
-LOCATION:Byeonsan Beach
-END:VEVENT
-BEGIN:VEVENT
 UID:3331805@koreaalmanac
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261018
 SUMMARY:NS Food Festa
 LOCATION:Harim First Kitchen
+END:VEVENT
+BEGIN:VEVENT
+UID:2933008@koreaalmanac
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261019
+SUMMARY:Buan Red Sunset Festival
+LOCATION:Byeonsan Beach
 END:VEVENT
 END:VCALENDAR
