@@ -92,7 +92,8 @@ jobs:
           npx wrangler pages project create koreaalmanac --production-branch=main || true
           npx wrangler pages deploy out --project-name=koreaalmanac --commit-dirty=true
 
-      # 배포된 URL 전체를 IndexNow로 통지 (Bing·Naver 등) — 실패해도 배포는 유지
+      # 변경된 URL만 IndexNow로 통지 (Bing·Naver 등) — 실패해도 배포는 유지.
+      # 전량 제출은 규약 위반에 가깝고 Bing이 신호를 무시한다.
       - name: IndexNow 핑
         working-directory: web
         run: node scripts/indexnow.mjs || true
@@ -101,6 +102,6 @@ jobs:
         run: |
           git config user.name "daily-update"
           git config user.email "actions@users.noreply.github.com"
-          git add db/dump db/culture.json data/translation_queue.json data/culture_queue.json web/data
+          git add db/dump db/culture.json data/translation_queue.json data/culture_queue.json web/data data/indexnow-state.json
           git diff --cached --quiet || git commit -m "data: daily update $(date -u +%F)"
           git push
