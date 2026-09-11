@@ -337,11 +337,38 @@ switch (args.FirstOrDefault())
             catch (Exception e) { Console.WriteLine("  상세 실패 " + id + ": " + e.Message); break; }
         }
 
+        // 개관시간·휴관일·입장료(detailIntro2) — 소개문과 별개 호출이라 따로 드레인한다.
+        // "화요일 휴관"·"09:00-18:00"·"₩3,000" 이 없으면 관광지 페이지는
+        // 여행자의 첫 질문(지금 열었나, 얼마인가)에 답하지 못한다.
+        var needIntro = store.Where(kv => !kv.Value.ContainsKey("_intro"))
+            .OrderBy(kv => kv.Value.GetValueOrDefault("_ctype") is "79" or "82" ? 1 : 0)
+            .ThenBy(kv => kv.Key)
+            .Select(kv => kv.Key).ToList();
+        var gotIntro = 0;
+        foreach (var id in needIntro)
+        {
+            if (calls >= budget) break;
+            try
+            {
+                var intro = await papi.Intro(id, store[id].GetValueOrDefault("_ctype") ?? "76");
+                calls++;
+                if (intro.HasValue)
+                    foreach (var pr in intro.Value.EnumerateObject())
+                    {
+                        var v = pr.Value.ValueKind == JsonValueKind.String ? pr.Value.GetString() : pr.Value.ToString();
+                        if (!string.IsNullOrWhiteSpace(v)) store[id]["i_" + pr.Name] = v!;
+                    }
+                store[id]["_intro"] = "1";
+                gotIntro++;
+            }
+            catch (Exception e) { Console.WriteLine("  개관정보 실패 " + id + ": " + e.Message); break; }
+        }
+
         Spend(conn, "eng", calls);
         var opts = new JsonSerializerOptions { WriteIndented = false, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
         File.WriteAllText(outPath, JsonSerializer.Serialize(store.OrderBy(kv => kv.Key).ToDictionary(kv => kv.Key, kv => kv.Value), opts));
         var left = store.Count(kv => !kv.Value.ContainsKey("_detailed"));
-        Console.WriteLine($"places.json   {store.Count:N0}건 (소개문 신규 {got}건, 남은 상세 {left}건, 총 {calls}콜)");
+        Console.WriteLine($"places.json   {store.Count:N0}건 (소개문 신규 {got}건, 남은 상세 {left}건 · 개관정보 신규 {gotIntro}건, 남은 {store.Count(kv => !kv.Value.ContainsKey("_intro")):N0}건 · 총 {calls}콜)");
         break;
     }
 

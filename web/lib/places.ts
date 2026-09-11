@@ -8,6 +8,9 @@ export type Place = {
   addr: string | null; image: string;
   mapx: string | null; mapy: string | null;
   tel: string | null; overview: string | null;
+  // detailIntro2 — 개관시간·휴관일·요금. 아직 수집 중이라 null 인 항목이 많다.
+  hours: string | null; closed: string | null; fee: string | null;
+  menu: string | null; parking: string | null;
 };
 
 export type PlaceCat =

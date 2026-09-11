@@ -34,6 +34,9 @@ type ConcertsFile = { updated: string; note: string; items: Concert[] };
 const file = concertsJson as ConcertsFile;
 
 export const CONCERTS_UPDATED = file.updated;
+/** 전체 목록 — Trip Planner 처럼 지난 공연까지 포함해야 하는 곳에서 쓴다 */
+export const concerts = file.items as Concert[];
+
 
 /** 오늘 이후(진행 중 포함)의 공연만, 시작일 순 — 지난 공연 자동 만료 */
 export function upcomingConcerts(t = today()): Concert[] {

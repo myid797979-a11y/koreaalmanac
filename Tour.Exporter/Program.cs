@@ -147,6 +147,8 @@ if (Directory.Exists(trDir))
             translations[kv.Key] = kv.Value;
 
 // ── 병합 출력
+// 검색 인덱스 행 — 축제·관광지·문화를 한 곳에 모은다. k=종류, t=제목, u=경로, r=지역.
+var searchRows = new List<object>();
 var fests = new List<Dictionary<string, object?>>();
 foreach (var e in eng) fests.Add(Build(e, null));
 int translated = 0;
@@ -258,6 +260,13 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
                 });
         }
 
+        foreach (var x in cult)
+            searchRows.Add(new {
+                k = (string?)x["kind"] == "traditional" ? "performance" : "exhibition",
+                t = x["title"], u = "/culture/" + x["slug"] + "/", r = x["region"],
+                d = x["start"], e = x["end"],
+            });
+
         File.WriteAllText(Path.Combine(webData, "culture.json"), JsonSerializer.Serialize(cult, jsonOpt));
         File.WriteAllText(Path.Combine(root, "data", "culture_queue.json"),
             JsonSerializer.Serialize(cQueue, new JsonSerializerOptions { WriteIndented = true, Encoder = jsonOpt.Encoder }));
@@ -325,11 +334,23 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
                 ["tel"] = Nul(it.GetValueOrDefault("tel")),
                 // KTO 영문 데이터에 한국어 원문이 섞여 오는 항목이 있다 — 영어 사이트에 노출하지 않는다.
                 ["overview"] = NoKorean(Strip(Decode(it.GetValueOrDefault("overview")))),
+                // detailIntro2 — 콘텐츠 타입마다 필드명이 다르다(i_ 접두사로 저장돼 있다).
+                ["hours"] = IntroField(it, "usetime", "opentimefood", "opentime", "usetimeculture"),
+                ["closed"] = IntroField(it, "restdate", "restdatefood", "restdateshopping", "restdateculture"),
+                ["fee"] = IntroField(it, "usefee", "usefeeculture"),
+                ["menu"] = IntroField(it, "firstmenu", "treatmenu"),
+                ["parking"] = IntroField(it, "parking", "parkingfood", "parkingshopping", "parkingculture"),
             });
         }
 
         places.Sort((a, b) => string.CompareOrdinal((string?)a["title"], (string?)b["title"]));
         File.WriteAllText(Path.Combine(webData, "places.json"), JsonSerializer.Serialize(places, jsonOpt));
+
+        foreach (var x in places)
+            searchRows.Add(new {
+                k = "place", t = x["title"], u = "/place/" + x["slug"] + "/", r = x["region"],
+                d = (string?)null, e = (string?)null,
+            });
 
         var byCat = places.GroupBy(x => (string?)x["cat"]).OrderByDescending(g => g.Count())
             .Select(g => g.Key + " " + g.Count());
@@ -346,11 +367,11 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
 // 검색 인덱스 (헤더 검색박스용 슬림, ~40KB)
 var pubDir = Path.Combine(root, "web", "public");
 Directory.CreateDirectory(pubDir);
-File.WriteAllText(Path.Combine(pubDir, "search-index.json"),
-    JsonSerializer.Serialize(fests.Select(f => new
-    {
-        t = f["title"], s = f["slug"], r = f["region"], d = f["start"], e = f["end"],
-    }), jsonOpt));
+// 통합 검색 인덱스 — 축제만 담던 것을 관광지·문화·공연까지 넓혔다.
+// 예전엔 "Gwangjang Market" 을 쳐도 결과가 없었다(관광지 2,387곳이 인덱스 밖).
+foreach (var x in fests)
+    searchRows.Add(new { k = "festival", t = x["title"], u = "/festival/" + x["slug"] + "/", r = x["region"], d = x["start"], e = x["end"] });
+File.WriteAllText(Path.Combine(pubDir, "search-index.json"), JsonSerializer.Serialize(searchRows, jsonOpt));
 
 // 지역별 .ics 구독 피드 — 진행·예정 축제만, 매일 재생성
 var feedDir = Path.Combine(pubDir, "feeds");
@@ -581,6 +602,21 @@ static string CultureRegion(string? area) => (area ?? "").Trim() switch
     "전남광주통합" => "Gwangju",
     var s => s.Length > 0 && !s.Any(c => c >= 0xAC00 && c <= 0xD7A3) ? s : "Korea",
 };
+
+// detailIntro2 의 필드명은 콘텐츠 타입마다 다르다 — 관광지 usetime, 음식점 opentimefood,
+// 쇼핑 opentime … 이름만 다르고 뜻은 같으니 순서대로 찾아 처음 채워진 것을 쓴다.
+// 수집기가 i_ 접두사를 붙여 저장한다.
+static string? IntroField(Dictionary<string, string> it, params string[] names)
+{
+    foreach (var n in names)
+        if (it.TryGetValue("i_" + n, out var v))
+        {
+            var s = NoKorean(Strip(Decode(v)));
+            // "0" 은 데이터 없음을 뜻하는 자리표시자다
+            if (s != null && s != "0") return s;
+        }
+    return null;
+}
 
 // 한국어가 섞인 소개문은 버린다. KTO 영문 서비스에도 원문이 그대로 실려 오는 항목이 있는데,
 // 영어권 방문자에게는 읽히지 않는 글자라 없느니만 못하다. 한글이 30자를 넘으면 통째로 비운다.

@@ -28,6 +28,19 @@ public class PlaceApi(string keyEncoded)
         return items.Length > 0 ? items[0] : null;
     }
 
+    /// <summary>
+    /// detailIntro2 — 개관시간·휴관일·입장료. 여행자가 가장 먼저 묻는 "지금 열었나, 얼마인가"다.
+    /// 필드명이 콘텐츠 타입마다 다르다: 관광지는 usetime/restdate/expguide,
+    /// 음식점은 opentimefood/restdatefood/firstmenu, 쇼핑은 opentime/restdateshopping.
+    /// </summary>
+    public async Task<JsonElement?> Intro(string contentId, string contentTypeId)
+    {
+        var url = $"{Base}/detailIntro2?serviceKey={keyEncoded}&MobileOS=ETC&MobileApp=tour&_type=json"
+                + $"&contentId={contentId}&contentTypeId={contentTypeId}";
+        var (items, _) = Parse(await Fetch(url));
+        return items.Length > 0 ? items[0] : null;
+    }
+
     static (JsonElement[], int) Parse(string body)
     {
         if (!body.TrimStart().StartsWith('{'))

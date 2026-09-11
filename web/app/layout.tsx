@@ -45,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="wrap">
             <p className="strip" style={{ margin: '0 0 10px' }}>
               <Link href="/plan/">Trip Planner</Link>
+              <Link href="/korea-basics/">Korea Basics</Link>
               <Link href="/events/">What&apos;s On</Link>
               <Link href="/calendar/">Calendar</Link>
               <Link href="/regions/">Regions</Link>

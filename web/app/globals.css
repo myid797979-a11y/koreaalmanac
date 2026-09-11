@@ -792,3 +792,35 @@ footer.site .strip a:hover { color: var(--seal); }
   .regcard .rc-body strong { font-size: 22px; }
   .catrow { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
 }
+
+/* ── Trip Planner 종류 필터 ─────────────────────────────── */
+.kindfilter { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+.kf {
+  font: inherit; font-size: 13.5px; cursor: pointer;
+  padding: 5px 12px 6px; border-radius: 99px;
+  background: var(--card); color: var(--ink);
+  border: 1px solid var(--line); transition: border-color 0.15s, background 0.15s;
+}
+.kf span { color: var(--muted); font-variant-numeric: tabular-nums; }
+.kf:hover { border-color: var(--ink); }
+.kf.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.kf.on span { color: rgba(255, 255, 255, 0.7); }
+.kf.clear { color: var(--muted); border-style: dashed; }
+
+/* ── 통합 검색 페이지 ────────────────────────────────────── */
+.searchpage { margin: 18px 0 6px; }
+.searchpage input {
+  width: 100%; font: inherit; font-size: 17px; padding: 12px 15px;
+  background: var(--card); color: var(--ink);
+  border: 1px solid var(--line); border-top: 3px double var(--ink);
+  border-radius: 0 0 8px 8px;
+}
+.searchpage input:focus { outline: 2px solid var(--jjok); outline-offset: 1px; }
+.reslist { list-style: none; padding: 0; margin: 8px 0 14px; }
+.reslist li {
+  padding: 7px 0; border-bottom: 1px solid var(--line);
+  font-size: 15px; line-height: 1.5;
+}
+.reslist li:last-child { border-bottom: 0; }
+.reslist a { font-weight: 600; }
+.reslist a:hover { color: var(--seal); }

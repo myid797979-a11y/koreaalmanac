@@ -47,6 +47,11 @@ export default function GuidesHub() {
         widely copied facts about Seoul&apos;s palaces are years out of date.
       </p>
 
+      <p className="intro">
+        First trip? Start with <Link href="/korea-basics/">Korea basics</Link> — entry rules,
+        why Google Maps cannot route you here, transport cards and when to go.
+      </p>
+
       <div className="cult-list">
         {GUIDES.map(g => {
           const ph = 'photo' in g && g.photo ? placeBySlug(g.photo as string) : undefined;

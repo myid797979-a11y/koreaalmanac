@@ -109,6 +109,11 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
           <tr><th>Type</th><td>{meta.label}</td></tr>
           <tr><th>Region</th><td><Link href={'/regions/' + p.region.toLowerCase() + '/'}>{p.region}</Link></td></tr>
           {p.addr && <tr><th>Address</th><td>{p.addr}</td></tr>}
+          {p.hours && <tr><th>Hours</th><td>{p.hours}</td></tr>}
+          {p.closed && <tr><th>Closed</th><td>{p.closed}</td></tr>}
+          {p.fee && <tr><th>Admission</th><td>{p.fee}</td></tr>}
+          {p.menu && <tr><th>Known for</th><td>{p.menu}</td></tr>}
+          {p.parking && <tr><th>Parking</th><td>{p.parking}</td></tr>}
           {p.tel && <tr><th>Contact</th><td>{p.tel}</td></tr>}
         </tbody>
       </table>
@@ -127,8 +132,10 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
       </div>
 
       <p className="meta">
-        From Korea Tourism Organization open data. Opening hours and admission can change —
-        check the official page before you go.
+        From Korea Tourism Organization open data.{' '}
+        {p.hours || p.closed || p.fee
+          ? 'Hours and admission change with the season and on public holidays — confirm with the venue before a long trip.'
+          : 'Opening hours and admission are not in the dataset for this place yet — check the official page before you go.'}
       </p>
 
       {events.length > 0 && (
