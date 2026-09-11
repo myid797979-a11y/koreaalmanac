@@ -824,3 +824,11 @@ footer.site .strip a:hover { color: var(--seal); }
 .reslist li:last-child { border-bottom: 0; }
 .reslist a { font-weight: 600; }
 .reslist a:hover { color: var(--seal); }
+
+/* 달력 한 칸의 "+N more" — 월 페이지로 보내지 않고 제자리에서 펼친다 */
+/* display:contents 는 쓰지 않는다 — <details> 의 기본 접힘 동작이 깨진다 */
+.cal .daymore { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.cal .daymore > summary { cursor: pointer; list-style: none; }
+.cal .daymore > summary::-webkit-details-marker { display: none; }
+.cal .daymore > summary:hover { background: var(--muted); color: #fff; }
+.cal .daymore[open] > summary { color: var(--ink); font-weight: 600; }

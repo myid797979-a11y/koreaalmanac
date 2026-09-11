@@ -77,6 +77,21 @@ export function monthFestivals(monthIdx: number): { year: number; list: Festival
   return { year, list };
 }
 
+/**
+ * 지난해 같은 달에 열렸던 축제.
+ *
+ * KTO 는 내년 축제를 몇 달 전에야 등록한다. 그래서 9월에 4월 페이지를 열면
+ * "0 festivals" 만 남는 막다른 길이 된다 — 4월은 벚꽃 시즌인데도.
+ * 대부분 매년 같은 시기에 열리므로, 확정분이 없을 때 지난해 것을 보여주면
+ * "이 달에 한국에서 무슨 일이 벌어지는가"에는 답이 된다. 지난 행사임을 분명히 밝혀서 쓴다.
+ */
+export function lastYearMonth(monthIdx: number): Festival[] {
+  const year = targetYear(monthIdx) - 1;
+  return festivals
+    .filter(f => overlapsMonth(f, year, monthIdx))
+    .sort((a, b) => (a.start ?? '').localeCompare(b.start ?? ''));
+}
+
 export function regionFestivals(region: string): Festival[] {
   return festivals.filter(f => f.region === region);
 }

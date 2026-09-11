@@ -105,6 +105,10 @@ export default function PlacesHub() {
         <Link href="/plan/">Trip Planner</Link> to see what is on while you are in Korea, or read a{' '}
         <Link href="/guides/">city guide</Link> for a route that already accounts for closing days.
       </p>
+      <p>
+        Looking for somewhere specific? <Link href="/search/">Search everything</Link> — places,
+        festivals, performances and exhibitions at once, by name or by city.
+      </p>
 
       <section className="about-strip">
         <p>

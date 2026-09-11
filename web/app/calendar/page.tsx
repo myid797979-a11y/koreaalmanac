@@ -98,7 +98,14 @@ function MonthGrid({ year, mIdx, t, list }: { year: number; mIdx: number; t: str
                   <Link key={e.key} className={'ev ev-' + e.kind} href={e.href} title={e.title}>{e.title}</Link>
                 ))}
                 {evs.length > 3 && (
-                  <Link className="ev ev-more" href={'/events/festivals/' + MONTH_SLUGS[mIdx] + '/'}>+{evs.length - 3} more</Link>
+                  // 그 날의 나머지를 제자리에서 펼친다. 예전엔 월 페이지로 보냈는데,
+                  // 특정 날짜를 눌러 놓고 그 달 전체로 가버리면 누른 의도와 어긋난다.
+                  <details className="daymore">
+                    <summary className="ev ev-more">+{evs.length - 3} more</summary>
+                    {evs.slice(3).map(e => (
+                      <Link key={e.key} className={'ev ev-' + e.kind} href={e.href} title={e.title}>{e.title}</Link>
+                    ))}
+                  </details>
                 )}
               </div>
             </div>

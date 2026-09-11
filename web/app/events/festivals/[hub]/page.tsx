@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Card from '@/app/components/Card';
 import {
   MONTHS_FULL, MONTH_SLUGS, REGIONS, REGION_MONTH_MIN, CATEGORIES,
-  monthFestivals, regionFestivals, regionMonthList, categoryFestivals, categoryLabel,
+  monthFestivals, lastYearMonth, regionFestivals, regionMonthList, categoryFestivals, categoryLabel,
   status, today,
 } from '@/lib/data';
 import { MONTH_INTROS, REGION_INTROS, CATEGORY_INTROS } from '@/lib/editorial';
@@ -56,6 +56,27 @@ function MonthStrip({ current }: { current?: number }) {
   );
 }
 
+/** 확정분이 없는 달 — 지난해 같은 달을 보여준다. 빈 페이지로 돌려보내지 않기 위해서다. */
+function LastYear({ monthIdx, name, year }: { monthIdx: number; name: string; year: number }) {
+  const past = lastYearMonth(monthIdx);
+  if (past.length === 0) return null;
+  return (
+    <>
+      <h2 className="sect">What ran last {name}</h2>
+      <p className="intro" style={{ marginTop: -4 }}>
+        Few dates for {name} {year} are published yet — the Korea Tourism Organization
+        registers most festivals a few months ahead. These {past.length} ran in {name} {year - 1};
+        the great majority are annual, so they give you a fair picture of the month.
+        {' '}<Link href="/plan/">Trip Planner</Link> will pick up the new dates as they land.
+      </p>
+      <div className="grid">{past.slice(0, 24).map(f => <Card key={f.id} f={f} />)}</div>
+      {past.length > 24 && (
+        <p className="meta">+{past.length - 24} more ran that month.</p>
+      )}
+    </>
+  );
+}
+
 function MonthHub({ monthIdx }: { monthIdx: number }) {
   const { year, list } = monthFestivals(monthIdx);
   const name = MONTHS_FULL[monthIdx];
@@ -71,6 +92,8 @@ function MonthHub({ monthIdx }: { monthIdx: number }) {
       <p className="intro">{MONTH_INTROS[monthIdx]}</p>
       <MonthStrip current={monthIdx} />
       <div className="grid">{list.map(f => <Card key={f.id} f={f} />)}</div>
+      {/* 확정분이 한두 건뿐인 달도 사실상 막다른 길이다 — 6건 미만이면 지난해를 곁들인다 */}
+      {list.length < 6 && <LastYear monthIdx={monthIdx} name={name} year={year} />}
       {regionLinks.length > 0 && (
         <>
           <h2 className="sect">By region in {name}</h2>

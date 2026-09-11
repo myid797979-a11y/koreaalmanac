@@ -45,13 +45,26 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
     : rankPlaces(pool, p.region).slice(0, 6).map(x => ({ ...x, km: NaN }));
 
   // 이벤트는 날짜가 있어 '지금 유효한 것'만, 날짜를 분명히 밝혀 보여준다.
+  //
+  // "지금 근처에 뭐가 있나" 를 묻는 자리이므로 후보 단계에서 시기를 자른다.
+  // nearest() 는 거리순으로 먼저 잘라내기 때문에, 뒤에서 정렬해 봐야 8개월 뒤 행사가
+  // 후보에 남아 있으면 그대로 표시된다. 진행중이거나 120일 안에 시작하는 것만 본다.
   const t = today();
+  const HORIZON_DAYS = 120;
+  const soonEnough = (start: string | null) => {
+    if (!start) return false;
+    if (start <= t) return true;                      // 이미 열려 있다
+    const d = (x: string) => new Date(
+      Number(x.slice(0, 4)), Number(x.slice(4, 6)) - 1, Number(x.slice(6, 8)),
+    ).getTime();
+    return (d(start) - d(t)) / 86400000 <= HORIZON_DAYS;
+  };
   const nearEvents = hasMap
     ? nearest(
         p,
         festivals
-          .filter(f => status(f, t) !== 'ended' && f.mapx && f.mapy)
-          .map(f => ({ kind: 'festival' as const, id: f.id, title: f.title, href: '/festival/' + f.slug + '/', when: dateRange(f), mapx: f.mapx, mapy: f.mapy })),
+          .filter(f => status(f, t) !== 'ended' && f.mapx && f.mapy && soonEnough(f.start))
+          .map(f => ({ kind: 'festival' as const, id: f.id, title: f.title, start: f.start ?? '', href: '/festival/' + f.slug + '/', when: dateRange(f), mapx: f.mapx, mapy: f.mapy })),
         3,
         12,
       )
@@ -60,13 +73,30 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
     ? nearest(
         p,
         [...liveCulture('traditional', t), ...liveCulture('exhibition', t)]
-          .filter(c => c.gpsX && c.gpsY)
-          .map(c => ({ kind: 'culture' as const, id: c.id, title: c.title, href: '/culture/' + c.slug + '/', when: cultureDateRange(c), mapx: c.gpsX, mapy: c.gpsY })),
+          .filter(c => c.gpsX && c.gpsY && soonEnough(c.start))
+          .map(c => ({ kind: 'culture' as const, id: c.id, title: c.title, start: c.start, href: '/culture/' + c.slug + '/', when: cultureDateRange(c), mapx: c.gpsX, mapy: c.gpsY })),
         3,
         12,
       )
     : [];
-  const events = [...nearEvents, ...nearCulture].sort((a, b) => a.km - b.km).slice(0, 4);
+  // "지금 근처에 뭐가 있나" 를 묻는 자리다. 거리순으로만 세우면 이번 주 행사보다
+  // 8개월 뒤 행사가 위에 온다. 시기로 먼저 묶고, 그 안에서 가까운 순으로 둔다.
+  const soonBucket = (start: string) => {
+    if (start <= t) return 0;                       // 이미 열려 있다
+    const days = Number(new Date(
+      Number(start.slice(0, 4)), Number(start.slice(4, 6)) - 1, Number(start.slice(6, 8)),
+    )) - Number(new Date(
+      Number(t.slice(0, 4)), Number(t.slice(4, 6)) - 1, Number(t.slice(6, 8)),
+    ));
+    const d = days / 86400000;
+    return d <= 30 ? 1 : d <= 90 ? 2 : 3;
+  };
+  const events = [...nearEvents, ...nearCulture]
+    .sort((a, b) => {
+      const ba = soonBucket(a.start), bb = soonBucket(b.start);
+      return ba !== bb ? ba - bb : a.km - b.km;
+    })
+    .slice(0, 4);
 
   const ld = {
     '@context': 'https://schema.org',
