@@ -17,25 +17,11 @@ SUMMARY:Yuseong On-Day
 LOCATION:Yuseong Hot Springs district
 END:VEVENT
 BEGIN:VEVENT
-UID:4104786@koreaalmanac
-DTSTART;VALUE=DATE:20260911
-DTEND;VALUE=DATE:20260914
-SUMMARY:Daejeon Jung-gu Heritage Night Tour
-LOCATION:Original downtown  Jung-gu  Daejeon
-END:VEVENT
-BEGIN:VEVENT
 UID:4108069@koreaalmanac
 DTSTART;VALUE=DATE:20260911
 DTEND;VALUE=DATE:20261018
 SUMMARY:Moonlight Music Festival
 LOCATION:Areas of Gapcheon Ecological Lake Park  Eungubi Park  Urideul Park  Dongchundang Park  Daedongcheon Stream
-END:VEVENT
-BEGIN:VEVENT
-UID:4091877@koreaalmanac
-DTSTART;VALUE=DATE:20260912
-DTEND;VALUE=DATE:20260914
-SUMMARY:Daejeon Jung-gu Book Festival
-LOCATION:Seonnidan-gil in Jung-gu  Daejeon
 END:VEVENT
 BEGIN:VEVENT
 UID:3352431@koreaalmanac
@@ -57,5 +43,12 @@ DTSTART;VALUE=DATE:20261009
 DTEND;VALUE=DATE:20261012
 SUMMARY:Daejeon Donggu-dongnak Festival
 LOCATION:Soje-dong east plaza and Daedongcheon stream
+END:VEVENT
+BEGIN:VEVENT
+UID:3544873@koreaalmanac
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261012
+SUMMARY:Yuseong Reading Festival
+LOCATION:Yurim Park east lawn
 END:VEVENT
 END:VCALENDAR

@@ -17,13 +17,6 @@ SUMMARY:2026 Culture Day: Cheongchun Mic (Seoul  Gyeonggi & Gangwon)
 LOCATION:Across the capital region and Gangwon
 END:VEVENT
 BEGIN:VEVENT
-UID:3535742@koreaalmanac
-DTSTART;VALUE=DATE:20260912
-DTEND;VALUE=DATE:20260914
-SUMMARY:Michuhol Media Culture Festival
-LOCATION:Incheon National University Jemulpo Campus plaza
-END:VEVENT
-BEGIN:VEVENT
 UID:4103259@koreaalmanac
 DTSTART;VALUE=DATE:20260912
 DTEND;VALUE=DATE:20260928
@@ -45,13 +38,6 @@ SUMMARY:Haksan Madanggeuk Nollae Festival
 LOCATION:Outdoor stage  Subong Park
 END:VEVENT
 BEGIN:VEVENT
-UID:701688@koreaalmanac
-DTSTART;VALUE=DATE:20261002
-DTEND;VALUE=DATE:20261005
-SUMMARY:Soraepogu Festival
-LOCATION:Haeoreum Square and nearby area
-END:VEVENT
-BEGIN:VEVENT
 UID:1273884@koreaalmanac
 DTSTART;VALUE=DATE:20261002
 DTEND;VALUE=DATE:20261005
@@ -59,11 +45,11 @@ SUMMARY:Bupyeong Pungmul Festival
 LOCATION:Bupyeong-daero and the Bupyeong Area
 END:VEVENT
 BEGIN:VEVENT
-UID:2408959@koreaalmanac
-DTSTART;VALUE=DATE:20261009
-DTEND;VALUE=DATE:20261012
-SUMMARY:Incheon Open Port Heritage Night Tour
-LOCATION:Incheon Open Port Culture District
+UID:701688@koreaalmanac
+DTSTART;VALUE=DATE:20261002
+DTEND;VALUE=DATE:20261005
+SUMMARY:Soraepogu Festival
+LOCATION:Haeoreum Square and nearby area
 END:VEVENT
 BEGIN:VEVENT
 UID:2849159@koreaalmanac
@@ -71,6 +57,13 @@ DTSTART;VALUE=DATE:20261009
 DTEND;VALUE=DATE:20261011
 SUMMARY:Yeonsu Neungheodae Culture Festival
 LOCATION:Yeonsu Hanmaeum Park
+END:VEVENT
+BEGIN:VEVENT
+UID:2408959@koreaalmanac
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261012
+SUMMARY:Incheon Open Port Heritage Night Tour
+LOCATION:Incheon Open Port Culture District
 END:VEVENT
 BEGIN:VEVENT
 UID:2872078@koreaalmanac

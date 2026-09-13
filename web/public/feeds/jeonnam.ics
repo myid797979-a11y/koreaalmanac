@@ -38,25 +38,11 @@ SUMMARY:Earthen Vessels: Stories of Our Lives
 LOCATION:National Gwangju Museum Main Building 1st Floor Special Exhibition Hall
 END:VEVENT
 BEGIN:VEVENT
-UID:4010852@koreaalmanac
-DTSTART;VALUE=DATE:20260910
-DTEND;VALUE=DATE:20260914
-SUMMARY:Gwangju ACE Fair
-LOCATION:Kimdaejung Convention Center
-END:VEVENT
-BEGIN:VEVENT
 UID:4095228@koreaalmanac
 DTSTART;VALUE=DATE:20260911
 DTEND;VALUE=DATE:20261101
 SUMMARY:Namdo K-Garden Festival
 LOCATION:Yeomun Culture Street
-END:VEVENT
-BEGIN:VEVENT
-UID:607417@koreaalmanac
-DTSTART;VALUE=DATE:20260911
-DTEND;VALUE=DATE:20260914
-SUMMARY:Myeongnyang Daecheop Festival
-LOCATION:Uldolmok Strait (Usuyeong  Haenam and Nokjin  Jindo)
 END:VEVENT
 BEGIN:VEVENT
 UID:1700219@koreaalmanac
@@ -113,6 +99,13 @@ DTSTART;VALUE=DATE:20261009
 DTEND;VALUE=DATE:20261011
 SUMMARY:Hwasun Jeokbyeok Culture Festival
 LOCATION:Iseo Community Center and Hwasun Jeokbyeok cliffs
+END:VEVENT
+BEGIN:VEVENT
+UID:4109893@koreaalmanac
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261011
+SUMMARY:Damyang Heritage Night Walk
+LOCATION:Gwanbangjerim Forest
 END:VEVENT
 BEGIN:VEVENT
 UID:1807096@koreaalmanac

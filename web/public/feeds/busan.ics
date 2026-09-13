@@ -10,13 +10,6 @@ SUMMARY:Starry Sea Busan - Night Camp Picnic
 LOCATION:Dadaepo Beach (Dadaepo Seaside Park)
 END:VEVENT
 BEGIN:VEVENT
-UID:3020552@koreaalmanac
-DTSTART;VALUE=DATE:20260912
-DTEND;VALUE=DATE:20260913
-SUMMARY:Glocal Culture in Namsan Festival
-LOCATION:Namsan-ro 13–27 area  Geumjeong-gu
-END:VEVENT
-BEGIN:VEVENT
 UID:4033328@koreaalmanac
 DTSTART;VALUE=DATE:20260915
 DTEND;VALUE=DATE:20260917
@@ -94,20 +87,6 @@ SUMMARY:Hurshimchung Bräu Oktoberfest
 LOCATION:Outdoor space & beer garden of Hotel Nongshim
 END:VEVENT
 BEGIN:VEVENT
-UID:1275743@koreaalmanac
-DTSTART;VALUE=DATE:20261016
-DTEND;VALUE=DATE:20261019
-SUMMARY:Geumjeongsanseong Fortress Festival
-LOCATION:Geumjeongsanseong plaza and fortress area
-END:VEVENT
-BEGIN:VEVENT
-UID:3007256@koreaalmanac
-DTSTART;VALUE=DATE:20261016
-DTEND;VALUE=DATE:20261019
-SUMMARY:Jeonggwan Eco-Stream Culture Festival
-LOCATION:Jeonggwan Central Park
-END:VEVENT
-BEGIN:VEVENT
 UID:1876897@koreaalmanac
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261019
@@ -115,11 +94,25 @@ SUMMARY:Dongnaeeupseong History Festival
 LOCATION:Areas of Dongnae Culture Center and Dongnaeeupseong Walled Town
 END:VEVENT
 BEGIN:VEVENT
+UID:1275743@koreaalmanac
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261019
+SUMMARY:Geumjeongsanseong Fortress Festival
+LOCATION:Geumjeongsanseong plaza and fortress area
+END:VEVENT
+BEGIN:VEVENT
 UID:3532971@koreaalmanac
 DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261018
 SUMMARY:Busan Seo-gu Medical Tourism Festival
 LOCATION:Songdo Ocean Park
+END:VEVENT
+BEGIN:VEVENT
+UID:3007256@koreaalmanac
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261019
+SUMMARY:Jeonggwan Eco-Stream Culture Festival
+LOCATION:Jeonggwan Central Park
 END:VEVENT
 BEGIN:VEVENT
 UID:3492576@koreaalmanac

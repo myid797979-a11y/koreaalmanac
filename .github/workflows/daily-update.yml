@@ -67,6 +67,16 @@ jobs:
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
         run: dotnet run --project Tour.Collector -- culture
 
+      # 관광지 소개문·개관시간 — 축제와 같은 eng 쿼터(950콜/일)를 쓰므로 축제 뒤에 둔다.
+      # Collector 가 남은 예산만큼만 받고 멈추므로 축제 수집을 굶기지 않는다.
+      #
+      # 예전엔 이 단계가 워크플로에 없어 사람이 기억할 때만 돌았다. 그 결과
+      # 개관시간·휴관일·입장료가 3,681곳 전부 비어 있었다 — 여행자가 관광지 페이지에서
+      # 가장 먼저 묻는 "지금 열었나, 얼마인가" 에 답하지 못하는 상태였다.
+      - name: 관광지 수집 (소개문 + 개관시간 드레인)
+        continue-on-error: true
+        run: dotnet run --project Tour.Collector -- places || echo "⚠ places 실패 — 건너뛰고 계속"
+
       - name: 익스포트 + 덤프 갱신
         run: |
           dotnet run --project Tour.Exporter
@@ -109,6 +119,6 @@ jobs:
         run: |
           git config user.name "daily-update"
           git config user.email "actions@users.noreply.github.com"
-          git add db/dump db/culture.json data/translation_queue.json data/culture_queue.json web/data data/indexnow-state.json
+          git add db/dump db/culture.json db/places.json data/translation_queue.json data/culture_queue.json web/data data/indexnow-state.json
           git diff --cached --quiet || git commit -m "data: daily update $(date -u +%F)"
           git push

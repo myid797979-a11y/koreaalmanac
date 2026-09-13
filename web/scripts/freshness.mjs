@@ -37,7 +37,14 @@ function hashOf(url) {
     .replace(/<!--[\s\S]*?-->/g, '')            // <!--1134a6DoyRaVkfKMRzHL9--> 같은 빌드 토큰
     .replace(/<meta name="next-size-adjust"[^>]*>/g, '')  // Next.js 패치 버전에 따라 있고 없다
     .replace(/__variable_[0-9a-f]+/g, '')
-    .replace(/[A-Z][a-z]{2} \d{1,2}, 20\d\d/g, 'DATE');
+    .replace(/[A-Z][a-z]{2} \d{1,2}, 20\d\d/g, 'DATE')
+    // 오늘 날짜에서 파생된 표시를 뺀다. D-54 가 D-53 이 되는 건 "내용이 바뀐" 게 아닌데,
+    // 그대로 두면 매일 축제·장소 800여 페이지가 변경으로 잡혀 IndexNow 에 그대로 나간다.
+    // 실제 변경은 하루 15건 남짓이다(신규 등록분).
+    .replace(/<span class="stamp[^"]*">[^<]*<\/span>/g, 'STAMP')
+    .replace(/(?<![A-Za-z])D-(?:\d+|DAY)(?![A-Za-z])/g, 'DDAY')
+    // 장소 상세의 "지금 근처에 뭐가 있나" 는 120일 지평선이라 날마다 목록이 달라진다
+    .replace(/<h2 class="sect">What&#x27;s on nearby<\/h2>[\s\S]*?(?=<h2|<\/main|<footer)/g, 'NEARBY');
   return createHash('sha1').update(body).digest('hex').slice(0, 12);
 }
 

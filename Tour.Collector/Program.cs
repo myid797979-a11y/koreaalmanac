@@ -340,9 +340,14 @@ switch (args.FirstOrDefault())
         // 개관시간·휴관일·입장료(detailIntro2) — 소개문과 별개 호출이라 따로 드레인한다.
         // "화요일 휴관"·"09:00-18:00"·"₩3,000" 이 없으면 관광지 페이지는
         // 여행자의 첫 질문(지금 열었나, 얼마인가)에 답하지 못한다.
+        // 드레인 순서가 중요하다. contentid 를 문자열로 정렬하면 "1000149" < "264337" 이라
+        // 경복궁·해운대·한라산 같은 264xxx 대표 명소가 맨 뒤로 밀린다 — 정확히 거꾸로다.
+        // KTO 가 길게 써준 곳이 대체로 주요 명소이므로 소개문 길이를 우선 신호로 쓰고,
+        // 그다음 contentid 를 숫자로 본다(초기 등록분 26xxxx 가 고전 명소다).
         var needIntro = store.Where(kv => !kv.Value.ContainsKey("_intro"))
             .OrderBy(kv => kv.Value.GetValueOrDefault("_ctype") is "79" or "82" ? 1 : 0)
-            .ThenBy(kv => kv.Key)
+            .ThenByDescending(kv => (kv.Value.GetValueOrDefault("overview") ?? "").Length)
+            .ThenBy(kv => long.TryParse(kv.Key, out var n) ? n : long.MaxValue)
             .Select(kv => kv.Key).ToList();
         var gotIntro = 0;
         foreach (var id in needIntro)

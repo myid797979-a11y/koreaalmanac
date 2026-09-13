@@ -45,13 +45,6 @@ SUMMARY:Saenggeo Jincheon Culture Festival
 LOCATION:Baekgokcheon riverside  Jincheon-eup
 END:VEVENT
 BEGIN:VEVENT
-UID:3522254@koreaalmanac
-DTSTART;VALUE=DATE:20261015
-DTEND;VALUE=DATE:20261019
-SUMMARY:Chungbuk Garden Expo in Yeongdong
-LOCATION:Yongdu Park
-END:VEVENT
-BEGIN:VEVENT
 UID:293085@koreaalmanac
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261019
@@ -59,11 +52,11 @@ SUMMARY:Yeongdong Nangye Korean Traditional Music Festival
 LOCATION:Yeongdong Rainbow Healing Plaza
 END:VEVENT
 BEGIN:VEVENT
-UID:1344850@koreaalmanac
-DTSTART;VALUE=DATE:20261016
+UID:3522254@koreaalmanac
+DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261019
-SUMMARY:King Sejong & Chojeong Mineral Water Festival
-LOCATION:Chojeong Culture Park and Chojeong Haenggung
+SUMMARY:Chungbuk Garden Expo in Yeongdong
+LOCATION:Yongdu Park
 END:VEVENT
 BEGIN:VEVENT
 UID:3020205@koreaalmanac
@@ -71,6 +64,13 @@ DTSTART;VALUE=DATE:20261016
 DTEND;VALUE=DATE:20261019
 SUMMARY:Ho-Camp Returns
 LOCATION:Neowaduri Rural Campground
+END:VEVENT
+BEGIN:VEVENT
+UID:1344850@koreaalmanac
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261019
+SUMMARY:King Sejong & Chojeong Mineral Water Festival
+LOCATION:Chojeong Culture Park and Chojeong Haenggung
 END:VEVENT
 BEGIN:VEVENT
 UID:900168@koreaalmanac
