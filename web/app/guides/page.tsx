@@ -8,6 +8,13 @@ export const metadata = {
 
 const GUIDES = [
   {
+    href: '/guides/autumn-foliage/',
+    title: 'Korea autumn foliage 2026',
+    blurb: 'Peak dates run late this year — Seoraksan 16–25 Oct, Seoul and the south into mid-November. Where to go, and why the cable-car queue decides your day.',
+    tag: 'Seasonal',
+    photo: 'seoraksan-ulsanbawi-rock-264169',
+  },
+  {
     href: '/guides/seoul-3-days/',
     title: '3 days in Seoul',
     blurb: 'A first-timer route built around the palace closing days and Bukchon’s 5pm curfew — the two things that break most published itineraries.',

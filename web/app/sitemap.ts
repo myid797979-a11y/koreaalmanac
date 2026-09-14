@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/korea-basics/', priority: 0.9 },
     { url: SITE_URL + '/search/', priority: 0.5 },
     { url: SITE_URL + '/guides/', priority: 0.9 },
+    { url: SITE_URL + '/guides/autumn-foliage/', priority: 0.9 },
     { url: SITE_URL + '/guides/seoul-3-days/', priority: 0.9 },
     { url: SITE_URL + '/guides/jeju-3-days/', priority: 0.9 },
     { url: SITE_URL + '/guides/busan-2-days/', priority: 0.9 },
