@@ -133,6 +133,6 @@ jobs:
         run: |
           git config user.name "daily-update"
           git config user.email "actions@users.noreply.github.com"
-          git add db/dump db/culture.json db/places.json data/translation_queue.json data/culture_queue.json web/data data/indexnow-state.json db/kopis.json db/kopis_venues.json
+          git add db/dump db/culture.json db/places.json data/translation_queue.json data/culture_queue.json web/data data/indexnow-state.json db/kopis.json db/kopis_venues.json
           git diff --cached --quiet || git commit -m "data: daily update $(date -u +%F)"
           git push
