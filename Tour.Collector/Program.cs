@@ -377,6 +377,138 @@ switch (args.FirstOrDefault())
         break;
     }
 
+    // kopis — 공연예술통합전산망 수집 → db/kopis.json · db/kopis_venues.json
+    //
+    // KTO 축제가 못 채우는 영역(콘서트·뮤지컬·클래식·국악)을 맡는다. 공연 21건을 손으로
+    // 관리하던 것을 대체하는 것이 목적이다 — 2027년 1~2월이 통째로 비어 있던 건 조사를
+    // 못해서가 아니라 9월 시점에 발표 자체가 없었기 때문이고, 이 API 는 예매가 열리는
+    // 즉시 받아온다.
+    //
+    // ⚠ 쿼리 한도가 공개돼 있지 않고 초과하면 서비스가 중지된다. 인증키는 1인 1개라
+    //   재발급으로 복구하기 어려우므로, KTO(950/일)보다도 보수적으로 잡는다.
+    case "kopis":
+    {
+        if (string.IsNullOrWhiteSpace(cfg.KopisKey))
+        {
+            Console.WriteLine("⚠ KOPIS_KEY 없음 — 건너뜁니다 (appsettings.local.json 또는 KOPIS_KEY 환경변수)");
+            break;
+        }
+
+        var kapi = new KopisApi(cfg.KopisKey);
+        var kdir = Path.GetDirectoryName(FindUp("db/schema.sql"))!;
+        var showPath = Path.Combine(kdir, "kopis.json");
+        var venuePath = Path.Combine(kdir, "kopis_venues.json");
+        var shows = LoadStore(showPath);
+        var venues = LoadStore(venuePath);
+
+        var kbudget = int.TryParse(Environment.GetEnvironmentVariable("KOPIS_BUDGET"), out var kb) ? kb : 400;
+        var kcalls = 0;
+
+        // 대중음악(CCCD)만 받는다. 나머지는 실제 데이터를 받아 보고 뺐다 —
+        // 되살리기 전에 아래를 먼저 읽을 것:
+        //  · 클래식(CCCA, 930건): "제190회 한국독일가곡연구회 정기연주회" 같은 동호회·
+        //    학생 독주회가 대부분이다. 해외 방문자가 한국까지 와서 볼 것이 아니다.
+        //  · 뮤지컬(GGGA, 510건): 엘리자벳·드라큘라 등 서양 뮤지컬의 한국어 공연.
+        //    언어 장벽이 그대로다. 넌버벌(점프·페인터즈)만 가치가 있는데 데이터에
+        //    구분 필드가 없어 자동으로 못 고른다 — 필요하면 손으로 몇 건 넣는 편이 낫다.
+        //  · 국악(CCCC, 164건): 관광객이 갈 만한 국립국악원 상설은 이미 문화정보 API
+        //    (db/culture.json)가 커버한다. 중복이다.
+        //  · 연극(AAAA): 대사 중심 한국어.
+        var genres = new[] { ("CCCD", "대중음악") };
+
+        // 지난주부터 — 이미 시작해 진행 중인 공연이 빠지면 안 된다.
+        var kfrom = DateTime.Today.AddDays(-7).ToString("yyyyMMdd");
+        var kto = DateTime.Today.AddDays(240).ToString("yyyyMMdd");
+
+        foreach (var (code, gname) in genres)
+        {
+            var seen = 0;
+            for (var page = 1; page <= 30 && kcalls < kbudget; page++)
+            {
+                var items = await kapi.List(kfrom, kto, code, page);
+                kcalls++;
+                foreach (var it in items)
+                {
+                    if (!it.TryGetValue("mt20id", out var id)) continue;
+                    var d = shows.TryGetValue(id, out var prev) ? prev : new Dictionary<string, string>();
+                    foreach (var kv in it) d[kv.Key] = kv.Value;
+                    d["_cate"] = code;
+                    shows[id] = d;
+                    seen++;
+                }
+                if (items.Count < 100) break;
+                await Task.Delay(80);
+            }
+            Console.WriteLine($"  [{gname}] 목록 {seen:N0}건");
+        }
+        Console.WriteLine($"공연 누적 {shows.Count:N0}건 (목록 {kcalls}콜)");
+
+        // 공연장 좌표 — 이게 있어야 장소 상세의 "What's on nearby" 에 공연이 뜬다.
+        // ⚠ seatscale 은 홀이 아니라 시설 전체 합이다 — 올림픽공원 41,376석(홀 12개),
+        //   세종문화회관 5,372석(홀 8개). 440석짜리 체임버홀 공연이 5,372석으로 잡힌다.
+        //   규모 필터로 쓸 수는 있지만 "좌석수"로 표시하면 거짓말이 된다.
+        // 공연은 수천 건이지만 공연장은 수백 개뿐이라 금방 다 찬다.
+        // ⚠ 상세보다 먼저 받아야 한다. 상세가 예산을 다 쓰면 공연장 차례가 영영 안 온다
+        //   (첫 실행에서 상세 473건을 받고 공연장은 0곳이었다). 공연장은 수백 개뿐이라
+        //   한 번 차면 더 들지 않고, 좌석수(seatscale)가 클럽 공연을 걸러내는 근거가 된다.
+        var needVenue = shows.Values
+            .Select(v => v.GetValueOrDefault("mt10id"))
+            .Where(v => !string.IsNullOrEmpty(v) && !venues.ContainsKey(v!))
+            .Distinct().ToList();
+
+        var gotVenue = 0;
+        foreach (var vid in needVenue)
+        {
+            if (kcalls >= kbudget) break;
+            try
+            {
+                var v = await kapi.Venue(vid!);
+                kcalls++;
+                if (v is not null) venues[vid!] = v;
+                gotVenue++;
+                await Task.Delay(80);
+            }
+            catch (Exception e) { Console.WriteLine($"  공연장 실패 {vid}: {e.Message}"); break; }
+        }
+
+        // 상세 드레인 — 좌석별 가격·공연시간·출연·예매링크는 목록에 없다.
+        // ⚠ 목록 창을 today-7 부터 잡기 때문에 이미 끝난 공연이 섞여 있다(첫 실행 기준 436건).
+        //   시작일만으로 정렬하면 지난 공연부터 받아 호출을 통째로 버린다 — 종료 여부가 1순위다.
+        // 순서: ①안 끝난 것 ②대중음악(수동 관리하던 공연 목록을 대체하는 게 급하다)
+        //       ③시작일 빠른 순 — 여행자가 먼저 만나는 것부터.
+        var ktoday = DateTime.Today.ToString("yyyy.MM.dd");
+        var needDetail = shows
+            .Where(kv => !kv.Value.ContainsKey("_detail"))
+            .OrderBy(kv => string.CompareOrdinal(kv.Value.GetValueOrDefault("prfpdto") ?? "", ktoday) >= 0 ? 0 : 1)
+            .ThenBy(kv => kv.Value.GetValueOrDefault("_cate") == "CCCD" ? 0 : 1)
+            .ThenBy(kv => kv.Value.GetValueOrDefault("prfpdfrom") ?? "9999.99.99")
+            .Select(kv => kv.Key).ToList();
+
+        var gotDetail = 0;
+        foreach (var id in needDetail)
+        {
+            if (kcalls >= kbudget) break;
+            try
+            {
+                var det = await kapi.Detail(id);
+                kcalls++;
+                if (det is not null)
+                    foreach (var kv in det) shows[id][kv.Key] = kv.Value;
+                shows[id]["_detail"] = "1";
+                gotDetail++;
+                await Task.Delay(80);
+            }
+            catch (Exception e) { Console.WriteLine($"  상세 실패 {id}: {e.Message}"); break; }
+        }
+
+        SaveStore(showPath, shows);
+        SaveStore(venuePath, venues);
+        Console.WriteLine(
+            $"kopis.json {shows.Count:N0}건 (상세 신규 {gotDetail}건, 남은 {needDetail.Count - gotDetail:N0}건) · "
+            + $"공연장 {venues.Count:N0}곳 (신규 {gotVenue}곳, 남은 {needVenue.Count - gotVenue:N0}곳) · 총 {kcalls}콜");
+        break;
+    }
+
     case "stats":
     {
         using var conn = Db.Open(cfg);
@@ -403,11 +535,22 @@ switch (args.FirstOrDefault())
               details <kor|eng> [n] 상세 수집 (일일 예산 내에서, 진행·예정 우선)
               culture              문화정보(국악·전통공연·전시) 수집 → db/culture.json
               places               영문 관광지·문화시설 수집 → db/places.json
+              kopis                공연예술통합전산망(콘서트·뮤지컬·클래식·국악) → db/kopis.json
               stats                적재 현황
             """);
         break;
 }
 
+// db/*.json 저장소 — id → 필드 사전. 축제(Postgres)와 달리 장소·공연은 파일로 관리한다
+// (깃에 그대로 담겨 배포 파이프라인이 DB 없이도 돈다).
+static Dictionary<string, Dictionary<string, string>> LoadStore(string path) =>
+    File.Exists(path)
+        ? JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, string>>>(File.ReadAllText(path))!
+        : new Dictionary<string, Dictionary<string, string>>();
+
+static void SaveStore(string path, Dictionary<string, Dictionary<string, string>> store) =>
+    File.WriteAllText(path, JsonSerializer.Serialize(store,
+        new JsonSerializerOptions { WriteIndented = false, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping }));
 static string? LangArg(string[] a) => a.Skip(1).FirstOrDefault(x => x is "kor" or "eng");
 
 static int Used(Npgsql.NpgsqlConnection conn, string lang) =>
