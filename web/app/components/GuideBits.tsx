@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { placeBySlug, displayTitle } from '@/lib/places';
+import { bySlug as festivalBySlug, status, dateRange } from '@/lib/data';
 
 /** 가이드 상단 히어로 — 대표 장소 사진 3장을 가로로 */
 export function GuideHero({ slugs }: { slugs: string[] }) {
@@ -76,6 +77,55 @@ export function PlaceRow({ slugs }: { slugs: string[] }) {
           </div>
           <div className="body">
             <h3>{displayTitle(p!.title)}</h3>
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
+}
+
+/**
+ * 축제 사진은 계절이 맞는 유일한 소스다 — 장소 사진은 KTO가 한 장만 주고
+ * 대개 여름에 찍혀 있어서, 겨울·봄 가이드에서는 축제 쪽을 써야 그림이 맞는다.
+ */
+function festivalWhen(f: NonNullable<ReturnType<typeof festivalBySlug>>) {
+  // 지난 회차 데이터가 남아 있는 축제(KTO가 10~11월에야 갱신)는 작년 날짜를 보여주면 안 된다
+  return status(f) === 'ended' ? 'Annual — next dates to be confirmed' : dateRange(f);
+}
+
+/** 가이드 상단 히어로 — 축제 사진 버전 */
+export function FestivalHero({ slugs }: { slugs: string[] }) {
+  const items = slugs.map(festivalBySlug).filter(Boolean);
+  if (items.length === 0) return null;
+  return (
+    <div className="g-hero">
+      {items.map(f => (
+        <figure key={f!.id}>
+          <img src={f!.image ?? ''} alt={f!.title} loading="lazy" />
+          <figcaption>{f!.title}</figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+}
+
+/** 본문 중간 축제 카드 묶음 — 날짜가 확정된 것만 날짜를 보여준다 */
+export function FestivalRow({ slugs }: { slugs: string[] }) {
+  const items = slugs.map(festivalBySlug).filter(Boolean);
+  if (items.length === 0) return null;
+  return (
+    <div className="grid">
+      {items.map(f => (
+        <Link key={f!.id} href={'/festival/' + f!.slug + '/'} className="card">
+          <div className="phwrap">
+            {f!.image
+              ? <img className="ph" src={f!.image} alt={f!.title} loading="lazy" />
+              : <div className="noph">{f!.region}</div>}
+          </div>
+          <div className="body">
+            <div className="when">{festivalWhen(f!)}</div>
+            <h3>{f!.title}</h3>
+            <div className="meta">{f!.region}</div>
           </div>
         </Link>
       ))}

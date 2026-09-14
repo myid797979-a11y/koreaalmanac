@@ -8,6 +8,13 @@ export const metadata = {
 
 const GUIDES = [
   {
+    href: '/guides/korea-in-winter/',
+    title: 'Korea in winter 2026–27',
+    blurb: 'Cold and dry rather than snowy — and Seollal lands on 7 February 2027, which moves the palace closing days. Ice festivals, ski timing, and the week to plan around.',
+    tag: 'Seasonal',
+    photo: 'wondae-ri-birch-forest-whispering-birch-forest-2475952',
+  },
+  {
     href: '/guides/autumn-foliage/',
     title: 'Korea autumn foliage 2026',
     blurb: 'Peak dates run late this year — Seoraksan 16–25 Oct, Seoul and the south into mid-November. Where to go, and why the cable-car queue decides your day.',
@@ -34,6 +41,13 @@ const GUIDES = [
     blurb: 'Split the way the city is — old town west, beaches east. With the Taejongdae train suspension, Jagalchi’s Tuesday closures, and why the Sky Capsule price is per capsule, not per person.',
     tag: 'Itinerary',
     photo: 'busan-gamcheon-culture-village-1998211',
+  },
+  {
+    href: '/guides/gyeongju-2-days/',
+    title: '2 days in Gyeongju',
+    blurb: 'The Silla capital stopped charging admission in 2023 and most guides never noticed. Downtown is 2 km end to end on foot; Bulguksa is the one bus ride, and the Seokguram shuttle runs hourly.',
+    tag: 'Itinerary',
+    photo: 'gyeongju-daereungwon-ancient-tomb-complex-2818690',
   },
   {
     href: '/guides/kpop-tickets/',
