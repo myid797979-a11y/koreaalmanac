@@ -232,7 +232,7 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
                 ["region"] = CultureRegion(it.GetValueOrDefault("area")),
                 ["district"] = EnDistrict(tr?.GetValueOrDefault("addr") ?? Decode(it.GetValueOrDefault("placeAddr"))),
                 ["kind"] = isTrad ? "traditional" : "exhibition",
-                ["image"] = Nul(it.GetValueOrDefault("thumbnail")) ?? Nul(it.GetValueOrDefault("imgUrl")),
+                ["image"] = Https(Nul(it.GetValueOrDefault("thumbnail")) ?? Nul(it.GetValueOrDefault("imgUrl"))),
                 ["gpsX"] = Nul(it.GetValueOrDefault("gpsX")),
                 ["gpsY"] = Nul(it.GetValueOrDefault("gpsY")),
                 ["price"] = EnPrice(tr?.GetValueOrDefault("price") ?? Decode(it.GetValueOrDefault("price"))),
@@ -312,7 +312,7 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
             if (title.Length == 0) continue;
             if (MED.IsMatch(title) || BIZ.IsMatch(title) || CHAIN.IsMatch(title)) continue;
 
-            var img = Nul(it.GetValueOrDefault("firstimage")) ?? Nul(it.GetValueOrDefault("firstimage2"));
+            var img = Https(Nul(it.GetValueOrDefault("firstimage")) ?? Nul(it.GetValueOrDefault("firstimage2")));
             if (img == null) continue;   // 카드 UI 기준 — 사진 없으면 제외
 
             var addr = Decode(it.GetValueOrDefault("addr1"));
@@ -432,7 +432,7 @@ Dictionary<string, object?> Build(Rec r, Dictionary<string, string?>? tr)
         ["addr"] = tr?.GetValueOrDefault("addr") ?? r.S("addr1"),
         ["mapx"] = r.S("mapx"),
         ["mapy"] = r.S("mapy"),
-        ["image"] = r.S("firstimage") ?? r.S("firstimage2"),
+        ["image"] = Https(r.S("firstimage") ?? r.S("firstimage2")),
         ["tel"] = tr?.GetValueOrDefault("tel") ?? r.S("tel"),
         ["overview"] = tr?.GetValueOrDefault("overview") ?? r.C("overview"),
         ["homepage"] = Href(r.C("homepage")),
@@ -724,6 +724,12 @@ static string? Decode(string? s)
 
 static string? Nul(string? s) => string.IsNullOrWhiteSpace(s) ? null : s.Trim();
 
+// 우리 사이트는 HTTPS 인데 KTO 가 이미지 URL 을 http:// 로 섞어 준다(축제 984건 중 213건).
+// 그대로 내보내면 혼합 콘텐츠가 되어 브라우저가 차단하거나 경고한다 — 같은 경로가
+// https 로도 200 을 주므로 올려서 내보낸다.
+static string? Https(string? s) => s is not null && s.StartsWith("http://", StringComparison.OrdinalIgnoreCase)
+    ? "https://" + s[7..] : s;
+
 static string FindRepoRoot()
 {
     var dir = Directory.GetCurrentDirectory();
@@ -744,6 +750,7 @@ record Rec(string Lang, string Id, JsonElement L, JsonElement Cm, JsonElement In
         Im.EnumerateArray()
           .Select(x => x.TryGetProperty("originimgurl", out var u) && u.ValueKind == JsonValueKind.String ? u.GetString() : null)
           .Where(u => !string.IsNullOrWhiteSpace(u))
+          .Select(u => u!.StartsWith("http://", StringComparison.OrdinalIgnoreCase) ? "https://" + u[7..] : u)
           .Distinct()
           .Take(max)
           .ToArray()!;

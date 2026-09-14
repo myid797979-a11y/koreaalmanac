@@ -47,11 +47,16 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
         <Link href="/">Home</Link> › <Link href="/events/concerts/">Concerts</Link> › {c.title}
       </div>
 
-      <div className="c-hero">
-        <span className={'c-kind k-' + c.kind}>{KIND_LABEL[c.kind]}</span>
-        <h1>{c.title}</h1>
-        {showArtist && <p className="c-hero-artist">{c.artist}</p>}
-        <p className="c-hero-when">{concertDateRange(c)} · {c.venue}, {c.city}</p>
+      <div className={c.poster ? 'c-hero has-poster' : 'c-hero'}>
+        {c.poster && (
+          <img className="c-poster" src={c.poster} alt={c.title + ' poster'} />
+        )}
+        <div className="c-hero-text">
+          <span className={'c-kind k-' + c.kind}>{KIND_LABEL[c.kind]}</span>
+          <h1>{c.title}</h1>
+          {showArtist && <p className="c-hero-artist">{c.artist}</p>}
+          <p className="c-hero-when">{concertDateRange(c)} · {c.venue}, {c.city}</p>
+        </div>
       </div>
 
       {c.video && (

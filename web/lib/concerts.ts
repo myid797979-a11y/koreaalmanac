@@ -17,6 +17,8 @@ export type Concert = {
   intl?: boolean;       // 내한공연 — 컴팩트 섹션에 노출
   video?: string;       // 검증된 공식 유튜브 영상 ID만 (저작권자 배포). 없으면 지도만.
   ticket?: string;      // 공식 예매처 URL (있을 때만)
+  poster?: string;      // KOPIS 포스터 (scripts/kopis-posters.mjs 가 채운다).
+                        //   ⚠ https://kopis.or.kr 로 저장 — http/www 는 혼합콘텐츠·리다이렉트.
   kopisId?: string;     // KOPIS mt20id — 검토 스크립트가 중복을 정확히 거르는 근거.
                         //   음역된 이름(칼리드·위켄드)은 글자 매칭이 안 되므로 ID 로 잇는다.
 };

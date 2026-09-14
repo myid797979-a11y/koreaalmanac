@@ -26,7 +26,7 @@ export default function PlanPage() {
       href: '/concert/' + c.id + '/',
       title: c.artist === 'Various artists' ? c.title : c.artist,
       start: c.start, end: c.end ?? c.start,
-      region: c.region, image: null,
+      region: c.region, image: c.poster ?? null,
       kind: 'concert' as const,
       where: c.venue,
     })),

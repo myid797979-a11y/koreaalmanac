@@ -37,6 +37,11 @@ export default function ConcertsPage() {
               <div className="c-date">
                 <span className="c-when">{concertDateRange(c)}</span>
                 <span className={'c-kind k-' + c.kind}>{KIND_LABEL[c.kind]}</span>
+                {c.poster && (
+                  <Link href={'/concert/' + c.id + '/'} className="c-thumb">
+                    <img src={c.poster} alt="" loading="lazy" />
+                  </Link>
+                )}
               </div>
               <div className="c-body">
                 <h2>

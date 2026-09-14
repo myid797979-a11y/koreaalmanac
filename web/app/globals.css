@@ -490,6 +490,27 @@ footer.site .strip a:hover { color: var(--seal); }
   font-variant-numeric: tabular-nums;
 }
 
+/* 공연 포스터 — KOPIS 가 주는 세로 이미지.
+   원본 비율을 지킨다: 4:3 으로 자르면 포스터의 날짜·출연진 글자가 잘려 나간다. */
+.c-hero.has-poster { display: flex; gap: 20px; align-items: flex-start; }
+.c-hero .c-poster {
+  flex: 0 0 168px; width: 168px; height: auto;
+  border: 1px solid var(--line); border-radius: 4px; background: #eceadf;
+}
+.c-hero-text { min-width: 0; }
+
+.concert .c-thumb { display: block; margin-top: 4px; }
+.concert .c-thumb img {
+  width: 100%; max-width: 148px; height: auto;
+  border: 1px solid var(--line); border-radius: 4px; background: #eceadf;
+}
+
+@media (max-width: 560px) {
+  .c-hero.has-poster { display: block; }
+  .c-hero .c-poster { width: 132px; margin: 0 0 12px; }
+  .concert .c-thumb img { max-width: 96px; }
+}
+
 .c-video { margin: 0 0 18px; }
 .c-video iframe {
   width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--line);
