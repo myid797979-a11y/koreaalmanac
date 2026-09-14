@@ -58,6 +58,25 @@
       "kopisId": "PF298239"
     },
     {
+      "id": "izna-olympic-2026",
+      "artist": "izna",
+      "title": "izna Concert Tour: WHO DAT GIRL?",
+      "start": "20260919",
+      "end": "20260920",
+      "venue": "Olympic Hall, Olympic Park",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "kopisId": "PF296718",
+      "note": "The girl group formed on I-LAND 2, on their first headline tour.",
+      "overview": "izna were assembled through I-LAND 2: N/a, the survival show that aired in 2024, and debuted the same year — which makes this first headline tour their proper introduction as a live act rather than a television product. Two nights at Olympic Park.",
+      "showTimes": "Sep 19 (Sat) 6:00 PM · Sep 20 (Sun) 5:00 PM KST",
+      "ticketInfo": "Interpark (NOL).",
+      "price": "General 154,000 · VIP 198,000 won",
+      "tip": "Ages 7 and over. Olympic Park is on Subway Line 5 (Olympic Park Station) or Line 9 (Hanseong Baekje)."
+    },
+    {
       "id": "onewe-kbsarena-2026",
       "artist": "ONEWE",
       "title": "ONEWE 6th Live Concert: O! NEW E!volution VI",
@@ -150,6 +169,43 @@
       "kopisId": "PF293136"
     },
     {
+      "id": "takuyakimura-inspire-2026",
+      "artist": "Takuya Kimura",
+      "title": "TAKUYA KIMURA Live Tour: Checkpoint in Seoul",
+      "start": "20260926",
+      "end": "20260926",
+      "venue": "INSPIRE Arena, Yeongjong Island",
+      "city": "Incheon",
+      "region": "Incheon",
+      "kind": "concert",
+      "intl": true,
+      "kopisId": "PF294960",
+      "note": "The SMAP member and actor, playing an arena show in Korea as a solo musician.",
+      "overview": "Takuya Kimura spent three decades as one quarter of SMAP, the group that defined Japanese pop television, and has been at least as visible since as an actor. The solo live tour is a relatively recent turn, and the Seoul date is a full arena show at INSPIRE. For anyone who grew up with Japanese drama and pop, this is a considerable draw.",
+      "showTimes": "Sep 26 (Sat) 4:00 PM KST",
+      "ticketInfo": "Interpark (NOL).",
+      "price": "165,000 · 187,000 · VIP 242,000 won",
+      "tip": "Ages 7 and over. INSPIRE Arena is beside Incheon Airport on Yeongjong Island — an hour from central Seoul on the Airport Railroad plus the resort shuttle."
+    },
+    {
+      "id": "busan-rock-2026",
+      "artist": "Various artists",
+      "title": "Busan International Rock Festival 2026",
+      "start": "20261002",
+      "end": "20261004",
+      "venue": "Samnak Ecological Park",
+      "city": "Busan",
+      "region": "Busan",
+      "kind": "festival",
+      "kopisId": "PF294968",
+      "note": "Korea's longest-running rock festival, three days on the Nakdong riverbank in Busan.",
+      "overview": "The Busan International Rock Festival has run since 2000 and is the closest thing Korea has to a classic outdoor rock weekend — multiple stages on the flood plain beside the Nakdong River, a mix of Korean bands and international bookings, and a crowd that skews older and more committed than the K-pop festival circuit. It ran free for most of its history and now charges, which has thinned the crowd and improved the experience. Gates open at 11:00 each day and the music runs into the night.",
+      "showTimes": "Oct 2 (Fri) – Oct 4 (Sun), gates 11:00 AM daily",
+      "ticketInfo": "YES24 Ticket. Day tickets are usually sold alongside the three-day pass — check closer to the date.",
+      "price": "3-day pass 266,000 won",
+      "tip": "All ages. Samnak Ecological Park is in Sasang, west of central Busan — Subway Line 2 to Sasang, then a bus or a 20-minute walk. It is a river flood plain: bring something to sit on, and shoes you do not mind getting muddy. Pairs well with a Busan trip that uses the old town rather than the beaches."
+    },
+    {
       "id": "postmalone-goyang-2026",
       "artist": "Post Malone",
       "title": "Post Malone Live in Seoul",
@@ -219,7 +275,8 @@
       "ticketInfo": "NOL Ticket / Live Nation Korea — English via NOL World and livenation.kr/en",
       "price": "Standing 143,000 · S 154,000 · R 165,000 · P 176,000 won (VIP packages higher)",
       "tip": "KINTEX is in Ilsan, northwest of Seoul. The fastest route is the new GTX-A express line to Kintex Station; otherwise Subway Line 3 to Daehwa Station (about an hour from downtown).",
-      "note": "American synth-pop trio with a devoted Asian following — an indoor, sing-along-heavy show from a band that tours Korea regularly."
+      "note": "American synth-pop trio with a devoted Asian following — an indoor, sing-along-heavy show from a band that tours Korea regularly.",
+      "kopisId": "PF288377"
     },
     {
       "id": "zaralarsson-myunghwa-2026",
@@ -279,6 +336,25 @@
       "kopisId": "PF292331"
     },
     {
+      "id": "10cm-olympic-2026",
+      "artist": "10CM",
+      "title": "10CM Fan Concert: The Missing Tracks",
+      "start": "20261009",
+      "end": "20261011",
+      "venue": "Olympic Hall, Olympic Park",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "kopisId": "PF299306",
+      "note": "Three nights from the Korean singer-songwriter whose ballads keep turning up on drama soundtracks.",
+      "overview": "10CM is Kwon Jung-yeol, working solo under the name since 2017, and one of the few Korean acoustic acts whose songs cross over to listeners who do not follow K-pop — \"Where Is Dream\" from the Goblin soundtrack is the usual entry point. A fan concert is a looser, chattier format than a tour show, but the playing is the same and the room is small enough to hear it.",
+      "showTimes": "Oct 9 (Fri) 6:00 PM · Oct 10 (Sat) · Oct 11 (Sun) KST",
+      "ticketInfo": "Interpark (NOL).",
+      "price": "All seats 132,000 won",
+      "tip": "Ages 7 and over. Olympic Park is on Subway Line 5 (Olympic Park Station) or Line 9 (Hanseong Baekje). Expect long Korean-language talk segments between songs — it is a fan event."
+    },
+    {
       "id": "akmu-kspo-2026",
       "artist": "AKMU",
       "title": "AKMU Concert: Paradise of Rumors",
@@ -295,6 +371,61 @@
       "price": "See Yes24 listing (tiered seating)",
       "tip": "KSPO Dome is inside Olympic Park (Subway Line 5/9). This is a lyrics-forward, emotional show — worth a quick listen to a few AKMU songs beforehand to get the most out of it.",
       "kopisId": "PF297875"
+    },
+    {
+      "id": "ghost-festival-paju-2026",
+      "artist": "Various artists",
+      "title": "GHOST Festival 2026 — Gyeonggi Hallyu OST Festival",
+      "start": "20261009",
+      "end": "20261011",
+      "venue": "Imjingak Peace Nuri Park, Paju",
+      "city": "Paju",
+      "region": "Gyeonggi",
+      "kind": "festival",
+      "kopisId": "PF296133",
+      "note": "Three days of K-drama soundtrack music, staged at the peace park beside the DMZ.",
+      "overview": "GHOST is built around hallyu OST — the ballads and theme songs from Korean dramas, performed live by the singers who recorded them. The 2026 bill includes Yoon Do-hyun, Lee Mu-jin, Lee Seok-hoon and Hong Isaac among others. What makes it worth the trip is the setting: Imjingak Peace Nuri Park sits on the edge of the Civilian Control Line in Paju, a few kilometres from the DMZ, so the festival grounds are the same fields visitors normally see on a day tour.",
+      "showTimes": "Oct 9 (Fri) – Oct 11 (Sun), from 1:00 PM daily",
+      "ticketInfo": "Sold through KREAM rather than the usual ticketing sites.",
+      "price": "1-day 120,000 (early bird 96,000) · 2-day 180,000 · 3-day 240,000 won",
+      "tip": "All ages. Paju is about an hour and a half from central Seoul and public transport thins out in the evening — most people drive or take a shuttle. If you were planning a DMZ day trip anyway, this stacks the two."
+    },
+    {
+      "id": "bangyongguk-understage-2026",
+      "artist": "Bang Yongguk",
+      "title": "BANG YONGGUK World Tour: HAEBANG",
+      "start": "20261010",
+      "end": "20261010",
+      "venue": "Hyundai Card Understage, Itaewon",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "kopisId": "PF298551",
+      "note": "The former B.A.P leader, now making hip-hop on his own terms, in a 200-capacity basement.",
+      "overview": "Bang Yongguk led B.A.P through the group's run and the legal fight that ended it, and has spent the years since making darker, more personal hip-hop as a solo artist. The HAEBANG tour plays small rooms deliberately — this Seoul date is in a basement venue holding a couple of hundred people, which for an artist with an international fanbase this size is unusual.",
+      "showTimes": "Oct 10 (Sat) 6:00 PM KST",
+      "ticketInfo": "Interpark (NOL). Tiered packages go up to a meet-and-greet.",
+      "price": "General 99,000 · Snapshot 55,000 · VIP 170,000 · Ultimate 330,000 won",
+      "tip": "Ages 11 and over. Hyundai Card Understage is by Itaewon Station on Subway Line 6 — the venue is underground and standing-only."
+    },
+    {
+      "id": "jarasum-jazz-gangneung-2026",
+      "artist": "Various artists",
+      "title": "Jarasum Jazz Festival in Gangneung",
+      "start": "20261010",
+      "end": "20261011",
+      "venue": "Gangneung Arts Center",
+      "city": "Gangneung",
+      "region": "Gangwon",
+      "kind": "festival",
+      "kopisId": "PF299362",
+      "note": "The Jarasum jazz programme on the east coast, with an international bill and a ₩20,000 ticket.",
+      "overview": "Jarasum Jazz is Korea's best-known jazz festival, and this is its Gangneung edition — indoors at the Gangneung Arts Center rather than on the island in Gapyeong. The 2026 bill brings in Camille Bertault and Alfredo Rodríguez among others, which is a serious international lineup for the price. At ₩20,000 a ticket it is one of the cheapest ways to see musicians of this level anywhere.",
+      "showTimes": "Oct 10 (Sat) – Oct 11 (Sun), from 4:00 PM",
+      "ticketInfo": "Booked directly through Gangneung Arts Center.",
+      "price": "All seats 20,000 won",
+      "tip": "Ages 7 and over. Gangneung is about two hours from Seoul on the KTX and the arts centre is a short taxi from the station. Mid-October is also when the east coast starts turning — the autumn colour guide has the timings."
     },
     {
       "id": "triples-jangchung-2026",
@@ -330,7 +461,27 @@
       "ticketInfo": "NOL Ticket / Live Nation Korea — English via NOL World and livenation.kr/en (limit 4 per person)",
       "price": "Roughly 99,000–785,000 won across seating tiers and VIP packages",
       "tip": "Same venue as The Weeknd (Goyang Stadium), well outside central Seoul — budget about an hour each way from downtown and expect crowded transport after the show.",
-      "note": "Back in Korea after roughly two years, with a hit-driven pop set at the same Goyang stadium The Weeknd plays four nights earlier."
+      "note": "Back in Korea after roughly two years, with a hit-driven pop set at the same Goyang stadium The Weeknd plays four nights earlier.",
+      "kopisId": "PF290262"
+    },
+    {
+      "id": "tsquare-yonsei-2026",
+      "artist": "T-SQUARE",
+      "title": "T-SQUARE Live in Seoul",
+      "start": "20261011",
+      "end": "20261011",
+      "venue": "Yonsei University Grand Auditorium",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "kopisId": "PF295812",
+      "note": "Japanese fusion veterans, back in Seoul after seven years.",
+      "overview": "T-SQUARE have been playing instrumental fusion since 1978, and their reach outside Japan owes a lot to video games and motorsport broadcasting — \"Truth\" has been the F1 theme in Japan for decades. This is their first headline Seoul date in seven years, in a seated university hall.",
+      "showTimes": "Oct 11 (Sun) 6:00 PM KST",
+      "ticketInfo": "NHN Ticketlink.",
+      "price": "77,000 · 99,000 · 121,000 · VIP 143,000 won",
+      "tip": "Ages 8 and over. The Yonsei campus is a ten-minute walk from Sinchon Station on Subway Line 2 — Hongdae is one stop further if you want somewhere to go afterwards."
     },
     {
       "id": "highlight-jangchung-2026",
@@ -386,6 +537,24 @@
       "tip": "Set up your NOL World (English) account and finish passport verification before tickets open — ILLIT shows sell out fast. Bonus: INSPIRE Arena sits next to Incheon Airport, so it pairs well with an airport-area hotel on arrival or departure."
     },
     {
+      "id": "nolfestival-kintex-2026",
+      "artist": "Various artists",
+      "title": "NOL Festival 2026",
+      "start": "20261017",
+      "end": "20261018",
+      "venue": "KINTEX, Ilsan",
+      "city": "Goyang",
+      "region": "Gyeonggi",
+      "kind": "festival",
+      "kopisId": "PF295653",
+      "note": "A two-day, multi-stage festival at KINTEX — and the K-pop and EDM stages are free.",
+      "overview": "NOL Festival runs across two days and several stages at the KINTEX exhibition halls in Ilsan, splitting a K-pop stage, an EDM stage and a general live stage. The unusual part is the price: the K-pop and EDM stages are ticketed but free, which for a festival of this size is rare in Korea. Free does not mean walk-in — you still need to claim a ticket in advance, and they go.",
+      "showTimes": "Oct 17 (Sat) from 4:00 PM · Oct 18 (Sun) — check each stage separately",
+      "ticketInfo": "Interpark (NOL). Each stage is ticketed separately; the K-pop and EDM stages are free but must be reserved.",
+      "price": "K-pop and EDM stages free · other stages priced separately",
+      "tip": "Ages 15 and over for the EDM stage. KINTEX is quickest on the GTX-A line from Seoul Station; the Line 3 route to Daehwa takes over an hour. Claim free tickets as soon as they open — they are the first thing to go."
+    },
+    {
       "id": "omoinotake-gonggam-2026",
       "artist": "Omoinotake",
       "title": "Omoinotake One Man Tour in Seoul",
@@ -403,6 +572,44 @@
       "price": "General 99,000 · VIP 132,000 won",
       "tip": "All ages. The venue is in Sindang, by Cheonggu Station on Subway Lines 5 and 6 — the tteokbokki alley is a short walk and stays open late.",
       "kopisId": "PF291325"
+    },
+    {
+      "id": "paulgilbert-musinsa-2026",
+      "artist": "Paul Gilbert",
+      "title": "Paul Gilbert: WROC World Tour",
+      "start": "20261018",
+      "end": "20261018",
+      "venue": "Musinsa Garage, Hongdae",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "kopisId": "PF294975",
+      "note": "The Mr. Big and Racer X guitarist, playing a 150-capacity room in Hongdae.",
+      "overview": "Paul Gilbert has been one of the reference points for technical rock guitar since Racer X in the 1980s, and Mr. Big made him famous well beyond guitar circles — \"To Be With You\" was a worldwide number one. He tours small venues by choice and the shows are part concert, part masterclass. The room here holds about 150 people.",
+      "showTimes": "Oct 18 (Sun) 6:00 PM KST",
+      "ticketInfo": "Sold through 29CM rather than the usual ticketing sites.",
+      "price": "All seats 110,000 won",
+      "tip": "Ages 7 and over. Musinsa Garage is in Hongdae, a few minutes from Hongik University Station on Line 2 and the Airport Railroad. Standing-only and it will be full of guitarists."
+    },
+    {
+      "id": "kennyg-kwangwoon-2026",
+      "artist": "Kenny G",
+      "title": "Kenny G Live in Seoul",
+      "start": "20261020",
+      "end": "20261021",
+      "venue": "Donghae Arts Center, Kwangwoon University",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "kopisId": "PF300739",
+      "note": "Two nights from the best-selling instrumental musician in history — and a fixture of Korean coffee shops for thirty years.",
+      "overview": "Kenny G has sold more records than any instrumentalist alive, and in Korea specifically his catalogue occupies a strange cultural position: \"Going Home\" is played in shops, subway stations and department stores at closing time, so much so that most Koreans recognise it as the sound of the day ending rather than as a saxophone record. Two nights in a mid-size university hall.",
+      "showTimes": "Oct 20 (Tue) · Oct 21 (Wed), both 8:00 PM KST",
+      "ticketInfo": "NHN Ticketlink.",
+      "price": "135,000 · 157,000 won by tier",
+      "tip": "Ages 12 and over. The venue is on the Kwangwoon University campus in Nowon, north-east Seoul — Subway Line 1 or 7 to Seokgye Station."
     },
     {
       "id": "bensonboone-kintex-2026",
@@ -495,7 +702,8 @@
       "ticketInfo": "Ticketlink (mainly Korean-language); international presale was handled via UALIVE — English support is more limited than the NOL/Live Nation shows",
       "price": "Standing 175,000 · Seat R 195,000 · Seat P 220,000 won",
       "tip": "The venue is a big plus for travelers — Paradise City sits beside Incheon Airport on Yeongjong Island, connected to Terminal 1 by the AREX airport railway and free shuttle. It's about an hour from central Seoul, so staying near the airport is easiest.",
-      "note": "A rare Korea headline date for the emo standard-bearers, rescheduled to Paradise City — the venue sits beside Incheon Airport."
+      "note": "A rare Korea headline date for the emo standard-bearers, rescheduled to Paradise City — the venue sits beside Incheon Airport.",
+      "kopisId": "PF281962"
     },
     {
       "id": "toucheamore-musinsa-2026",
@@ -532,7 +740,8 @@
       "ticketInfo": "NOL Ticket — English via NOL World (world.nol.com)",
       "price": "Standing S 154,000 · Standing R 165,000 won",
       "tip": "KINTEX is in Ilsan — take the GTX-A line to Kintex Station for the fastest trip, or Subway Line 3 to Daehwa Station. Allow extra travel time from central Seoul.",
-      "note": "An acoustic-leaning evening from the ‘I’m Yours’ songwriter, in a standing-only hall at KINTEX in Ilsan."
+      "note": "An acoustic-leaning evening from the ‘I’m Yours’ songwriter, in a standing-only hall at KINTEX in Ilsan.",
+      "kopisId": "PF291507"
     },
     {
       "id": "melon-music-awards-2026",
@@ -586,7 +795,8 @@
       "ticketInfo": "NOL Ticket (NOL Interpark) — English via NOL World (world.nol.com)",
       "price": "Standing S 143,000 · Standing R 154,000 won (VIP package 320,000)",
       "tip": "A fully standing show (no seats) — wear comfortable shoes and arrive early for a good spot. KINTEX Hall 1 is in Ilsan: GTX-A to Kintex Station or Line 3 to Daehwa.",
-      "note": "The Australian pop-rock band’s Seoul stop on the Everyone’s a Star! tour — standing floor, no seated tiers."
+      "note": "The Australian pop-rock band’s Seoul stop on the Everyone’s a Star! tour — standing floor, no seated tiers.",
+      "kopisId": "PF290915"
     },
     {
       "id": "ellegarden-yes24-2026",
@@ -736,6 +946,25 @@
       "price": "99,000 · 110,000 won by tier",
       "tip": "The venue is in Sindang, near Cheonggu Station on Subway Lines 5 and 6. Sindang's tteokbokki alley is a five-minute walk and stays open late — an easy dinner before or after.",
       "kopisId": "PF299415"
+    },
+    {
+      "id": "wavetoearth-korea-2026",
+      "artist": "wave to earth",
+      "title": "wave to earth Seoul Concert",
+      "start": "20261218",
+      "end": "20261220",
+      "venue": "Hwajung Gymnasium, Korea University",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "kopisId": "PF300312",
+      "note": "Three home-town nights from the Korean trio that has spent the last two years selling out rooms across the US and Europe.",
+      "overview": "wave to earth are Kim Daniel, Shin Dongkyu and Cha Soonjong, playing a soft, jazz-inflected indie that found its audience almost entirely through streaming and almost entirely outside Korea first — \"seasons\" and \"bad\" travelled before anyone at home was paying attention. They now tour internationally more than domestically, which makes a three-night Seoul run something of an event. If you follow them from abroad, this is the show at home.",
+      "showTimes": "Dec 18 (Fri) 8:00 PM · Dec 19 (Sat) 6:00 PM · Dec 20 (Sun) 5:00 PM KST",
+      "ticketInfo": "Interpark (NOL).",
+      "price": "Standing 132,000 · Seated 143,000 won",
+      "tip": "Ages 10 and over. Hwajung Gymnasium is on the Korea University campus — Subway Line 6 to Korea University Station, then about ten minutes uphill. December nights in Seoul are cold and the walk is exposed."
     },
     {
       "id": "fujiikaze-gocheok-2027",
