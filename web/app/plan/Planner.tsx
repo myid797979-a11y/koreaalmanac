@@ -47,6 +47,21 @@ function bucket(span: number): number {
   return 3;                    // 상설 — 언제 와도 볼 수 있으니 맨 아래
 }
 
+/**
+ * 한 해 전 같은 날짜. KTO가 겨울 축제를 10~11월에야 등록해서 1~2월 창이
+ * 사실상 비어 보인다 — 월별 페이지에 넣은 것과 같은 보정을 여기에도 건다.
+ * 문자열 비교만 하므로 윤년 2/29 도 범위 필터로는 무해하다.
+ */
+const yearBack = (d: string) => String(Number(d.slice(0, 4)) - 1) + d.slice(4);
+
+/** 짧은 기간 먼저 — 확정분과 작년분에 같은 정렬을 쓴다 */
+function byRun(a: SlimEvent, b: SlimEvent): number {
+  const ba = bucket(spanDays(a.start, a.end));
+  const bb = bucket(spanDays(b.start, b.end));
+  if (ba !== bb) return ba - bb;
+  return a.start.localeCompare(b.start);
+}
+
 export default function Planner({ data, regions, today }: {
   data: SlimEvent[]; regions: string[]; today: string;
 }) {
@@ -86,12 +101,29 @@ export default function Planner({ data, regions, today }: {
 
   const results = inWindow
     .filter(x => kinds.length === 0 || kinds.includes(x.kind))
-    .sort((a, b) => {
-      const ba = bucket(spanDays(a.start, a.end));
-      const bb = bucket(spanDays(b.start, b.end));
-      if (ba !== bb) return ba - bb;
-      return a.start.localeCompare(b.start);
-    });
+    .sort(byRun);
+
+  // 확정분이 얼마 없으면 작년 같은 기간을 라벨을 달고 병기한다 — 대부분 연례라
+  // "겨울엔 아무것도 없다"는 잘못된 인상을 주지 않기 위해서다.
+  //
+  // ⚠ 판정은 총계가 아니라 축제 수로 해야 한다. 전시는 몇 달씩 이어져 총계를 채우므로
+  //   1월도 총 35건이라 멀쩡해 보이지만 그중 축제는 2건뿐이다 (10월은 120건).
+  //   보충도 축제만 — 올해 전시는 이미 다 나와 있어 작년 것을 겹쳐 봐야 소음이다.
+  const THIN = 10;
+  const showLastYear = valid
+    && inWindow.filter(x => x.kind === 'festival').length < THIN
+    && (kinds.length === 0 || kinds.includes('festival'));
+  const lastYear = !showLastYear ? [] : (() => {
+    const lf = yearBack(f), lt = yearBack(t);
+    const seen = new Set(results.map(x => x.href));
+    return data
+      .filter(x => x.kind === 'festival')
+      .filter(x => x.start <= lt && x.end >= lf)
+      .filter(x => region === 'All' || x.region === region)
+      .filter(x => !seen.has(x.href))
+      .sort(byRun)
+      .slice(0, 24);
+  })();
 
   const countOf = (k: PlanKind) => inWindow.filter(x => x.kind === k).length;
   const toggle = (k: PlanKind) =>
@@ -169,7 +201,40 @@ export default function Planner({ data, regions, today }: {
             ))}
           </div>
 
-          {results.length === 0 && (
+          {lastYear.length > 0 && (
+            <>
+              <h2 className="sect">Festivals that ran on these dates a year earlier</h2>
+              <p className="intro" style={{ marginTop: -4 }}>
+                Few festivals have confirmed dates in your window yet — the Korea Tourism
+                Organization registers most of them only a few months ahead, and winter dates
+                usually land in October and November. These {lastYear.length} ran on the same
+                dates a year earlier, and the great majority are annual, so they show what this
+                stretch of the calendar is normally like.{' '}
+                <strong>Check each one before you build a day around it.</strong>
+              </p>
+              <div className="grid">
+                {lastYear.map(x => (
+                  <Link key={x.href} href={x.href} className="card">
+                    <div className="phwrap">
+                      {x.image
+                        ? <img className="ph" src={x.image} alt={x.title} loading="lazy" />
+                        : <div className="noph">{x.region}</div>}
+                      <span className="stamp ended">Last year</span>
+                    </div>
+                    <div className="body">
+                      <div className="when">{range(x.start, x.end)}</div>
+                      <h3>{x.title}</h3>
+                      <div className="meta">
+                        {KIND_LABEL[x.kind]} · {x.where ?? x.region}
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
+
+          {results.length === 0 && lastYear.length === 0 && (
             <p className="sub">
               Nothing registered for those dates yet — events are added daily, so check back.
               Or try <Link href="/calendar/" style={{ textDecoration: 'underline' }}>the calendar</Link> for nearby dates.
