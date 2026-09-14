@@ -32,7 +32,8 @@ const clean = (s) => (s ?? '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').tr
 // 이미 손으로 넣은 것은 제외 — 날짜(±3일)와 아티스트·제목 조각으로 거칠게 맞춘다.
 // 완벽할 필요는 없다. 잘못 걸러도 사람이 목록을 보고 알아챈다.
 const d8 = (s) => (s ?? '').replace(/\./g, '');
-const known = (x) => mine.some((m) => {
+const linked = new Set(mine.map((m) => m.kopisId).filter(Boolean));
+const known = (x) => linked.has(x.mt20id) || mine.some((m) => {
   const gap = Math.abs(Number(d8(x.prfpdfrom)) - Number(m.start));
   if (gap > 3) return false;
   const a = clean(x.prfnm).toLowerCase();
@@ -63,12 +64,25 @@ const rows = Object.values(shows)
     (b.seat - a.seat) ||
     a.x.prfpdfrom.localeCompare(b.x.prfpdfrom));
 
+// ⚠ 한 건당 한 줄로 낸다. 처음엔 두 줄씩(공연장·가격까지) 찍었는데, 362건이 726줄이 되어
+//   앞 120줄만 읽고 "다 봤다"고 착각했다 — 실제로는 16%만 본 것이었고, 그 뒤에
+//   FLOW(나루토 오프닝)·KANA-BOON·Nujabes 앙상블·HIGHLIGHT 가 묻혀 있었다.
+//   전량을 한 화면 흐름에서 읽을 수 있어야 선별이 성립한다. 상세는 --full 로 본다.
+const full = process.argv.includes('--full');
+
 console.log(`검토 대상 ${rows.length}건` + (since ? ` (${since} 이후 등록)` : ' (전체)') +
   ` · 이미 보유 ${mine.length}건은 제외`);
+console.log('번호 날짜   좌석    구분      공연명');
 console.log('');
-for (const { x, nm, flags, seat: s } of rows) {
-  console.log(
-    `${x.prfpdfrom}~${(x.prfpdto ?? '').slice(5)}  ${String(s || '-').padStart(6)}석  ` +
-    `[${flags.join(',').padEnd(10)}]  ${nm.slice(0, 52)}`);
-  console.log(`        @${clean(x.fcltynm).slice(0, 34)}  ${x.area}  ${(x.pcseguidance ?? '').slice(0, 44)}`);
-}
+
+rows.forEach(({ x, nm, flags, seat: s }, i) => {
+  const tag = (flags.includes('내한') ? '내한' : flags.includes('로마자') ? '로마자' : '국내')
+    + (flags.includes('페스티벌') ? '·페스' : '');
+  console.log(`${String(i + 1).padStart(3)} ${x.prfpdfrom.slice(5)} ${String(s || '-').padStart(6)} ` +
+    `${tag.padEnd(9)} ${nm.slice(0, 58)}`);
+  if (full) console.log(`      @${clean(x.fcltynm).slice(0, 34)}  ${x.area}  ` +
+    `${(x.pcseguidance ?? '').slice(0, 40)}  ${x.relateurl ?? ''}`);
+});
+
+console.log('');
+console.log(`— 끝. ${rows.length}건 전량 출력. 앞부분만 읽지 말 것. 상세는 --full.`);

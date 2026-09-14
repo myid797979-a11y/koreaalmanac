@@ -17,7 +17,8 @@
       "showTimes": "Sep 12 (Sat) & Sep 13 (Sun), both 7:00 PM KST",
       "ticketInfo": "NOL Ticket (Interpark) — English booking via NOL World (world.nol.com)",
       "price": "S 132,000 · R 154,000 · VIP 198,000 won",
-      "tip": "An open-air stadium show (age 12+) — dress for the weather and take Incheon Subway Line 2 to Munhak Stadium Station, as parking is very limited. If you pay by bank transfer, complete it the same day or the order auto-cancels."
+      "tip": "An open-air stadium show (age 12+) — dress for the weather and take Incheon Subway Line 2 to Munhak Stadium Station, as parking is very limited. If you pay by bank transfer, complete it the same day or the order auto-cancels.",
+      "kopisId": "PF294050"
     },
     {
       "id": "nct127-kspo-2026",
@@ -34,7 +35,8 @@
       "showTimes": "Sep 18 (Fri) 7:00 PM · Sep 19 (Sat) 5:00 PM · Sep 20 (Sun) 4:00 PM KST",
       "ticketInfo": "Melon Ticket, with a separate global page for international fans. Sep 19–20 also stream on Beyond LIVE; Sep 20 screens in cinemas worldwide.",
       "price": "General 165,000 · VIP 198,000 won",
-      "tip": "KSPO Dome is inside Olympic Park — take Subway Line 5 to Olympic Park Station or Line 9 to Hanseong Baekje. If the venue sells out, the Beyond LIVE stream or the Sep 20 cinema broadcast is a reliable fallback. Purchase cap is just 1–2 tickets per person."
+      "tip": "KSPO Dome is inside Olympic Park — take Subway Line 5 to Olympic Park Station or Line 9 to Hanseong Baekje. If the venue sells out, the Beyond LIVE stream or the Sep 20 cinema broadcast is a reliable fallback. Purchase cap is just 1–2 tickets per person.",
+      "kopisId": "PF296563"
     },
     {
       "id": "taemin-jamsil-2026",
@@ -52,7 +54,27 @@
       "showTimes": "Sep 18 (Fri) 8:00 PM · Sep 19 (Sat) 6:00 PM · Sep 20 (Sun) 5:00 PM KST · about 2h",
       "ticketInfo": "YES24 Ticket.",
       "price": "Seated 132,000 · 154,000 · VIP 198,000 won",
-      "tip": "Jamsil Sports Complex Station is on Subway Line 2 and sits directly under the venue. The stadium is open-air — September evenings are mild but bring a layer for after dark."
+      "tip": "Jamsil Sports Complex Station is on Subway Line 2 and sits directly under the venue. The stadium is open-air — September evenings are mild but bring a layer for after dark.",
+      "kopisId": "PF298239"
+    },
+    {
+      "id": "onewe-kbsarena-2026",
+      "artist": "ONEWE",
+      "title": "ONEWE 6th Live Concert: O! NEW E!volution VI",
+      "start": "20260919",
+      "end": "20260920",
+      "venue": "KBS Arena, Gangseo",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "note": "A K-pop band that actually plays — guitars, bass, keys and drums, not backing tracks.",
+      "overview": "ONEWE are one of the handful of Korean idol groups built as a live band rather than a dance group, which makes their concerts a different proposition: the arrangements change, the solos are real, and the set runs long. Two nights at KBS Arena for the sixth edition of their own annual show.",
+      "showTimes": "Sep 19 (Sat) 6:00 PM · Sep 20 (Sun) 5:00 PM KST · about 2h 30m",
+      "ticketInfo": "Melon Ticket.",
+      "price": "Standing 143,000 · R 143,000 · S 121,000 won",
+      "tip": "Ages 7 and over. KBS Arena is in Gangseo — Subway Line 9 to Yangcheon Hyanggyo, or Line 5 to Balsan. Further west than most venues, so allow extra time from the centre.",
+      "kopisId": "PF299402"
     },
     {
       "id": "tfma-busan-2026",
@@ -69,7 +91,8 @@
       "showTimes": "Sep 19 (Sat), around 6:00 PM KST",
       "ticketInfo": "Yes24 Ticket (English/global page available). Streams globally via CHZZK for those who can't attend.",
       "price": "A 19,000 · S 49,000 · R 99,000 won",
-      "tip": "From central Busan, take Subway Line 3 to Sports Complex Station, Exit 7 — about a 20-minute walk to the stadium. An affordable A-tier ticket is a low-cost way to catch a dozen-plus top acts at once."
+      "tip": "From central Busan, take Subway Line 3 to Sports Complex Station, Exit 7 — about a 20-minute walk to the stadium. An affordable A-tier ticket is a low-cost way to catch a dozen-plus top acts at once.",
+      "kopisId": "PF297931"
     },
     {
       "id": "vaundy-inspire-2026",
@@ -87,7 +110,8 @@
       "showTimes": "Sep 19 (Sat) 5:00 PM · Sep 20 (Sun) 4:00 PM KST · about 2h",
       "ticketInfo": "Interpark (NOL).",
       "price": "Standing 165,000 · Seated 154,000–165,000 won",
-      "tip": "INSPIRE Arena is beside Incheon Airport on Yeongjong Island, not in Incheon city. Allow an hour from central Seoul on the Airport Railroad plus the resort shuttle, and check the last train back before you go."
+      "tip": "INSPIRE Arena is beside Incheon Airport on Yeongjong Island, not in Incheon city. Allow an hour from central Seoul on the Airport Railroad plus the resort shuttle, and check the last train back before you go.",
+      "kopisId": "PF287093"
     },
     {
       "id": "objet-kpop-festa-2026",
@@ -104,7 +128,8 @@
       "showTimes": "Sep 26 (Sat) & Sep 27 (Sun) — daily schedule announced closer to the event",
       "ticketInfo": "Yes24 Ticket, with a dedicated English/global page — accepts overseas cards and PayPal",
       "price": "General ~167,000 · higher grades and 2-day pass up to ~280,000 won (grade names differ between the English and Korean pages — verify at checkout)",
-      "tip": "Use the Yes24 English page and complete passport verification first; PayPal is accepted, which helps if your card is rejected. Incheon Munhak Stadium is on Incheon Subway Line 2."
+      "tip": "Use the Yes24 English page and complete passport verification first; PayPal is accepted, which helps if your card is rejected. Incheon Munhak Stadium is on Incheon Subway Line 2.",
+      "kopisId": "PF295410"
     },
     {
       "id": "silicagel-kspo-2026",
@@ -121,7 +146,8 @@
       "showTimes": "Sep 26 (Sat) & Sep 27 (Sun) — start times to be confirmed on the ticket page",
       "ticketInfo": "Interpark / NOL Ticket — English page via NOL World (world.nol.com)",
       "price": "Seat S 110,000 · Seat R 121,000 · Standing/Seated VIP 143,000 won",
-      "tip": "This is a rock show — the standing-pit ('Standing VIP') tickets put you closest to the energy. Take Subway Line 5 or 9 to Olympic Park."
+      "tip": "This is a rock show — the standing-pit ('Standing VIP') tickets put you closest to the energy. Take Subway Line 5 or 9 to Olympic Park.",
+      "kopisId": "PF293136"
     },
     {
       "id": "postmalone-goyang-2026",
@@ -139,7 +165,8 @@
       "showTimes": "Oct 2 (Fri) 8:00 PM KST",
       "ticketInfo": "Interpark (NOL). Note this is an 8pm start on a Friday — Goyang is an hour from central Seoul, so plan the return.",
       "price": "Standing 154,000 · Seated 99,000–240,000 · VIP packages 434,000–520,000 won",
-      "tip": "Ages 19 and over only. The stadium is a 20-minute walk from Daehwa Station, the last stop on Subway Line 3 — trains back into Seoul stop before the crowd clears, so either leave a little early or budget for a long taxi queue."
+      "tip": "Ages 19 and over only. The stadium is a 20-minute walk from Daehwa Station, the last stop on Subway Line 3 — trains back into Seoul stop before the crowd clears, so either leave a little early or budget for a long taxi queue.",
+      "kopisId": "PF288814"
     },
     {
       "id": "andteam-kspo-2026",
@@ -156,7 +183,8 @@
       "showTimes": "Oct 3 (Sat) 6:00 PM · Oct 4 (Sun) 5:00 PM KST",
       "ticketInfo": "Interpark Ticket — mobile tickets only (no paper tickets); English page via NOL World",
       "price": "General 165,000 · Sound Check 220,000 · Meet & Greet 253,000 won",
-      "tip": "Tickets are mobile-only, so have the Interpark app installed and logged in with a verified account, and keep your phone charged for entry. KSPO Dome is on Subway Line 5/9. Some Japanese is spoken on stage given the group's makeup, but the show is easy to follow without language."
+      "tip": "Tickets are mobile-only, so have the Interpark app installed and logged in with a verified account, and keep your phone charged for entry. KSPO Dome is on Subway Line 5/9. Some Japanese is spoken on stage given the group's makeup, but the show is easy to follow without language.",
+      "kopisId": "PF298230"
     },
     {
       "id": "edc-korea-2026",
@@ -209,7 +237,8 @@
       "showTimes": "Oct 4 (Sun) 7:30 PM · Oct 5 (Mon) 7:30 PM KST",
       "ticketInfo": "Interpark (NOL). A soundcheck VIP package is sold separately.",
       "price": "Standing 132,000 · Seated 132,000 · Soundcheck VIP package 347,000 won",
-      "tip": "Ages 15 and over. Myunghwa Live Hall is by Yeongdeungpo Station (Line 1 and the mainline KTX/ITX platforms), so it is easy to reach and easy to leave."
+      "tip": "Ages 15 and over. Myunghwa Live Hall is by Yeongdeungpo Station (Line 1 and the mainline KTX/ITX platforms), so it is easy to reach and easy to leave.",
+      "kopisId": "PF293346"
     },
     {
       "id": "the-weeknd-goyang-2026",
@@ -227,7 +256,8 @@
       "ticketInfo": "NOL Ticket — English via NOL World (world.nol.com)",
       "price": "Roughly 55,000 (restricted view) to 289,000 won; standing 189,000 won",
       "tip": "Strict 19+ age limit — bring your passport for ID checks. Goyang Stadium is outside central Seoul (nearest is Subway Line 3); for a 100,000-capacity show, plan for heavy post-concert crowds.",
-      "note": "His first Korea show in about eight years, and a two-night stadium run expected to draw around 100,000. Strict 19+ — bring your passport."
+      "note": "His first Korea show in about eight years, and a two-night stadium run expected to draw around 100,000. Strict 19+ — bring your passport.",
+      "kopisId": "PF291729"
     },
     {
       "id": "ezracollective-yes24-2026",
@@ -245,7 +275,8 @@
       "showTimes": "Oct 8 (Thu) 8:00 PM KST",
       "ticketInfo": "YES24 Ticket.",
       "price": "Standing 88,000 · Seated 99,000 won",
-      "tip": "YES24 Live Hall is by Gwangnaru Station on Subway Line 5, about five minutes' walk. It is a standing-first venue — the seated tier is on the balcony."
+      "tip": "YES24 Live Hall is by Gwangnaru Station on Subway Line 5, about five minutes' walk. It is a standing-first venue — the seated tier is on the balcony.",
+      "kopisId": "PF292331"
     },
     {
       "id": "akmu-kspo-2026",
@@ -262,7 +293,8 @@
       "showTimes": "Oct 9 (Fri) 6:00 PM · Oct 10 (Sat) 5:00 PM · Oct 11 (Sun) 4:00 PM KST",
       "ticketInfo": "Yes24 Ticket (English/global page available)",
       "price": "See Yes24 listing (tiered seating)",
-      "tip": "KSPO Dome is inside Olympic Park (Subway Line 5/9). This is a lyrics-forward, emotional show — worth a quick listen to a few AKMU songs beforehand to get the most out of it."
+      "tip": "KSPO Dome is inside Olympic Park (Subway Line 5/9). This is a lyrics-forward, emotional show — worth a quick listen to a few AKMU songs beforehand to get the most out of it.",
+      "kopisId": "PF297875"
     },
     {
       "id": "triples-jangchung-2026",
@@ -279,7 +311,8 @@
       "showTimes": "Oct 10 (Sat) & Oct 11 (Sun), reportedly 6:00 PM KST",
       "ticketInfo": "Ticketlink (Korean-language platform) — no confirmed English page for the Seoul dates; may require a Korean phone number to register",
       "price": "S seat 30,000 won (premium tiers higher)",
-      "tip": "Jangchung Gymnasium is on Subway Line 3 (Dongguk University Station) in central Seoul. Booking is the hard part: Ticketlink is Korean-only and usually needs phone/ID verification — set up a verified account well ahead, or catch the tour at an overseas stop."
+      "tip": "Jangchung Gymnasium is on Subway Line 3 (Dongguk University Station) in central Seoul. Booking is the hard part: Ticketlink is Korean-only and usually needs phone/ID verification — set up a verified account well ahead, or catch the tour at an overseas stop.",
+      "kopisId": "PF298950"
     },
     {
       "id": "charlie-puth-goyang-2026",
@@ -298,6 +331,25 @@
       "price": "Roughly 99,000–785,000 won across seating tiers and VIP packages",
       "tip": "Same venue as The Weeknd (Goyang Stadium), well outside central Seoul — budget about an hour each way from downtown and expect crowded transport after the show.",
       "note": "Back in Korea after roughly two years, with a hit-driven pop set at the same Goyang stadium The Weeknd plays four nights earlier."
+    },
+    {
+      "id": "highlight-jangchung-2026",
+      "artist": "HIGHLIGHT",
+      "title": "HIGHLIGHT Fan Con 2026",
+      "start": "20261016",
+      "end": "20261018",
+      "venue": "Jangchung Arena",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "note": "Three nights from one of the longest-running groups in K-pop, eighteen years in and still selling out an arena.",
+      "overview": "Highlight are the four remaining members of the group that debuted as BEAST in 2009 — Yoon Doo-joon, Yang Yo-seob, Lee Gi-kwang and Son Dong-woon — and they are one of very few second-generation K-pop acts still touring as a unit. A fan concert is a looser format than a full tour show: more talking, more games, and a set that leans on the catalogue rather than a new album.",
+      "showTimes": "Oct 16 (Fri) 7:30 PM · Oct 17 (Sat) 5:00 PM · Oct 18 (Sun) 4:00 PM KST · about 2h 30m",
+      "ticketInfo": "YES24 Ticket. Fan-club presale usually takes most of the stock, so watch for the general round.",
+      "price": "All seats 132,000 won",
+      "tip": "Ages 6 and over. Jangchung Arena is at Dongguk University Station on Subway Line 3, Exit 1. Expect a lot of Korean-language talk segments — it is a fan event, not a concert with subtitles.",
+      "kopisId": "PF300389"
     },
     {
       "id": "grand-mint-festival-2026",
@@ -334,6 +386,25 @@
       "tip": "Set up your NOL World (English) account and finish passport verification before tickets open — ILLIT shows sell out fast. Bonus: INSPIRE Arena sits next to Incheon Airport, so it pairs well with an airport-area hotel on arrival or departure."
     },
     {
+      "id": "omoinotake-gonggam-2026",
+      "artist": "Omoinotake",
+      "title": "Omoinotake One Man Tour in Seoul",
+      "start": "20261017",
+      "end": "20261017",
+      "venue": "Gonggam Center, Jung-gu",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "note": "The Japanese trio whose 'Ikuoku Kounen' broke out well beyond Japan, in a small Seoul hall.",
+      "overview": "Omoinotake are a piano-led three-piece from Shimane — Hironoshin Tomita, Reo Fujii and Tomoaki Fukushima — who spent years on the live circuit before 'Ikuoku Kounen' turned them into a streaming fixture across Asia. The arrangement is unusual for a band this size: keys rather than guitar carry most of it.",
+      "showTimes": "Oct 17 (Sat) 7:00 PM KST · about 1h 30m",
+      "ticketInfo": "YES24 Ticket.",
+      "price": "General 99,000 · VIP 132,000 won",
+      "tip": "All ages. The venue is in Sindang, by Cheonggu Station on Subway Lines 5 and 6 — the tteokbokki alley is a short walk and stays open late.",
+      "kopisId": "PF291325"
+    },
+    {
       "id": "bensonboone-kintex-2026",
       "artist": "Benson Boone",
       "title": "Benson Boone Live in Korea",
@@ -349,7 +420,46 @@
       "showTimes": "Oct 26 (Mon) 8:00 PM KST",
       "ticketInfo": "Interpark (NOL).",
       "price": "Standing 145,000 · Seated 178,000 won",
-      "tip": "All ages. KINTEX is quickest on the GTX-A line from Seoul Station — the older route via Line 3 to Daehwa takes well over an hour from the centre."
+      "tip": "All ages. KINTEX is quickest on the GTX-A line from Seoul Station — the older route via Line 3 to Daehwa takes well over an hour from the centre.",
+      "kopisId": "PF296524"
+    },
+    {
+      "id": "flow-yes24-2026",
+      "artist": "FLOW",
+      "title": "FLOW: NARUTO The Rock World Tour",
+      "start": "20261028",
+      "end": "20261028",
+      "venue": "YES24 Live Hall, Gwangjin",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "note": "The Japanese band behind more Naruto openings than anyone else, playing a set built entirely around them.",
+      "overview": "If you watched Naruto in any language, you have heard FLOW — 'GO!!!', 'Re:member', 'Sign' and several more of the series' opening themes are theirs. This tour is explicitly the anime set: a rock band playing the songs that a generation associates with a specific title sequence. They have been together since the late 1990s and tour internationally on the strength of exactly this.",
+      "showTimes": "Oct 28 (Wed) 8:00 PM KST · about 1h 30m",
+      "ticketInfo": "YES24 Ticket.",
+      "price": "Standing 99,000 · Seated 110,000 · Standing VIP 165,000 won",
+      "tip": "All ages. YES24 Live Hall is five minutes from Gwangnaru Station on Subway Line 5. A Wednesday night show finishing around 21:30 leaves plenty of time to get back into the centre.",
+      "kopisId": "PF300665"
+    },
+    {
+      "id": "nujabes-ensemble-2026",
+      "artist": "Nujabes Metaphorical Ensemble",
+      "title": "Nujabes Metaphorical Ensemble Live",
+      "start": "20261031",
+      "end": "20261031",
+      "venue": "NOL Theater Hapjeong",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "note": "A live ensemble performing the work of Nujabes — the producer whose Samurai Champloo scores became the template for a whole genre.",
+      "overview": "Jun Seba, who recorded as Nujabes, died in 2010, but his catalogue has only grown since — the Samurai Champloo soundtracks and albums like 'Metaphorical Music' are the origin point for most of what gets filed under lo-fi hip hop today. This is a live ensemble performing that material with real instruments rather than a DJ set, which is a genuinely different experience from the records.",
+      "showTimes": "Oct 31 (Sat) 6:00 PM KST · about 1h 40m",
+      "ticketInfo": "Interpark (NOL).",
+      "price": "Standing 132,000 · Seated 132,000 · VIP 165,000 · VVIP 220,000 won",
+      "tip": "All ages. The venue is inside the Mecenatpolis complex above Hapjeong Station (Subway Lines 2 and 6), which puts you a few minutes from Hongdae afterwards.",
+      "kopisId": "PF300109"
     },
     {
       "id": "exo-kspo-2026",
@@ -366,7 +476,8 @@
       "showTimes": "Nov 6 (Fri) 7:00 PM · Nov 7 (Sat) 6:00 PM · Nov 8 (Sun) 5:00 PM KST",
       "ticketInfo": "Melon Ticket, with a separate global page (pre-sale opened late August)",
       "price": "See Melon Ticket listing (tiered seating)",
-      "tip": "Expect the fastest sell-out of the autumn — set up a Melon Ticket Global account in advance, and if general sale fails, watch for the official cancellation-ticket release. KSPO Dome is on Subway Line 5/9."
+      "tip": "Expect the fastest sell-out of the autumn — set up a Melon Ticket Global account in advance, and if general sale fails, watch for the official cancellation-ticket release. KSPO Dome is on Subway Line 5/9.",
+      "kopisId": "PF299607"
     },
     {
       "id": "mcr-paradise-2026",
@@ -385,6 +496,25 @@
       "price": "Standing 175,000 · Seat R 195,000 · Seat P 220,000 won",
       "tip": "The venue is a big plus for travelers — Paradise City sits beside Incheon Airport on Yeongjong Island, connected to Terminal 1 by the AREX airport railway and free shuttle. It's about an hour from central Seoul, so staying near the airport is easiest.",
       "note": "A rare Korea headline date for the emo standard-bearers, rescheduled to Paradise City — the venue sits beside Incheon Airport."
+    },
+    {
+      "id": "toucheamore-musinsa-2026",
+      "artist": "Touché Amoré",
+      "title": "Touché Amoré: Stage Four 10 Year Anniversary",
+      "start": "20261107",
+      "end": "20261107",
+      "venue": "Musinsa Garage, Hongdae",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "note": "The Los Angeles post-hardcore band playing 'Stage Four' in full, ten years on, in a 150-capacity room.",
+      "overview": "'Stage Four' is Touché Amoré's 2016 record about the death of Jeremy Bolm's mother, and it is the album that moved them from a hardcore band to something people write about differently. Anniversary sets like this usually mean the record start to finish. The venue holds not much more than a hundred people, which for a band of this stature is remarkable.",
+      "showTimes": "Nov 7 (Sat) 7:00 PM KST · about 1h 30m",
+      "ticketInfo": "Sold through 29CM rather than the usual ticketing sites — worth checking early.",
+      "price": "Standing 88,000 won",
+      "tip": "Ages 11 and over. Musinsa Garage is in Hongdae, a few minutes from Hongik University Station on Line 2 and the Airport Railroad. It is standing-only and it will be full.",
+      "kopisId": "PF296308"
     },
     {
       "id": "jason-mraz-kintex-2026",
@@ -437,7 +567,8 @@
       "showTimes": "Nov 18 (Wed) 8:00 PM KST · about 1h 20m",
       "ticketInfo": "Melon Ticket.",
       "price": "99,000 · 110,000 · 132,000 · 143,000 won by tier",
-      "tip": "Ages 6 and over. The Sejong Center is on Gwanghwamun Square — Subway Line 5, Gwanghwamun Station, Exit 1 or 8. Gyeongbokgung is a ten-minute walk north, so an afternoon at the palace pairs with this neatly."
+      "tip": "Ages 6 and over. The Sejong Center is on Gwanghwamun Square — Subway Line 5, Gwanghwamun Station, Exit 1 or 8. Gyeongbokgung is a ten-minute walk north, so an afternoon at the palace pairs with this neatly.",
+      "kopisId": "PF295591"
     },
     {
       "id": "5sos-kintex-2026",
@@ -458,6 +589,25 @@
       "note": "The Australian pop-rock band’s Seoul stop on the Everyone’s a Star! tour — standing floor, no seated tiers."
     },
     {
+      "id": "ellegarden-yes24-2026",
+      "artist": "ELLEGARDEN",
+      "title": "ELLEGARDEN: Bad For Education Tour II",
+      "start": "20261128",
+      "end": "20261129",
+      "venue": "YES24 Live Hall, Gwangjin",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "note": "Two nights from the Japanese band that made English-language punk rock work in Asia, and never really went away.",
+      "overview": "ELLEGARDEN formed in Chiba in 1998 and sang mostly in English, which is part of why they travelled as well as they did — 'Riot on the Grill' and 'ELEVEN FIRE CRACKERS' are still reference points for Japanese rock abroad. They went on hiatus in 2008, came back a decade later, and have been touring steadily since. Two nights here, and the ticket price is unusually reasonable for an international act.",
+      "showTimes": "Nov 28 (Sat) · Nov 29 (Sun), both 6:00 PM KST · about 1h 30m",
+      "ticketInfo": "YES24 Ticket.",
+      "price": "Standing 88,000 · Seated 88,000 won",
+      "tip": "Ages 6 and over. Gwangnaru Station, Subway Line 5. At ₩88,000 this is one of the cheapest international rock tickets on the autumn calendar.",
+      "kopisId": "PF299935"
+    },
+    {
       "id": "leeseungchul-kspo-2026",
       "artist": "Lee Seung-chul",
       "title": "THE VOICE: LEE SEUNG CHUL — 40th Anniversary Tour",
@@ -470,7 +620,27 @@
       "note": "Three nights from one of the defining voices of Korean rock and ballad, closing a 40th-anniversary tour that has crossed the country since July.",
       "overview": "Lee Seung-chul has been a fixture of Korean popular music since 1985, when he arrived as the vocalist of Boohwal — one of the bands that built Korean rock — before going solo at the end of the decade. Four decades on he is still touring arenas, and the voice that earned him the nickname cheonsang-ui moksori, the heavenly voice, is the entire point of the show. The anniversary tour opened in Cheongju in July 2026 and runs through Gwangju, Daejeon, Daegu, Incheon and Busan; these three nights at the KSPO Dome are the Seoul dates, staged with a full band and a production scaled to the arena. Expect a career-spanning set — the ballads that everyone in the room can sing back, and the rock material that made his name.",
       "ticketInfo": "Yes24 Ticket. There is no dedicated English booking page, and Korean ticketing usually requires a Korean phone number or identity verification — see our K-pop ticket guide for the ways around that.",
-      "tip": "This is a Korean-language show for a domestic audience, with no subtitles or English support — worth knowing before you book. If you are going anyway, the KSPO Dome sits inside Olympic Park: Subway Line 5 to Olympic Park Station, or Line 9 to Hanseong Baekje Station. Early December in Seoul is properly cold, and the walk in from the station is exposed."
+      "tip": "This is a Korean-language show for a domestic audience, with no subtitles or English support — worth knowing before you book. If you are going anyway, the KSPO Dome sits inside Olympic Park: Subway Line 5 to Olympic Park Station, or Line 9 to Hanseong Baekje Station. Early December in Seoul is properly cold, and the walk in from the station is exposed.",
+      "kopisId": "PF297746"
+    },
+    {
+      "id": "kanaboon-yes24-2026",
+      "artist": "KANA-BOON",
+      "title": "KANA-BOON: Critical Hit Parade — Asian Adventure",
+      "start": "20261205",
+      "end": "20261205",
+      "venue": "YES24 Live Hall, Gwangjin",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "note": "Japanese guitar rock with an anime pedigree — 'Silhouette' was a Naruto Shippuden opening, and it has outlived the show.",
+      "overview": "KANA-BOON came out of Osaka in the early 2010s playing fast, melodic guitar rock, and 'Silhouette' — written as a Naruto Shippuden opening — became the song that carried them abroad. The live set is short, loud and built for a room this size rather than an arena.",
+      "showTimes": "Dec 5 (Sat) 6:00 PM KST · about 1h 30m",
+      "ticketInfo": "YES24 Ticket.",
+      "price": "Standing 138,000 · Seated 138,000 won",
+      "tip": "Ages 7 and over. Gwangnaru Station, Subway Line 5. An early 6pm start means you are out by half past seven — easy to pair with dinner in Gwangjin or a trip back to Hongdae.",
+      "kopisId": "PF298220"
     },
     {
       "id": "khalid-kintex-2026",
@@ -488,7 +658,8 @@
       "ticketInfo": "NOL Ticket / Live Nation Korea — English via NOL World and livenation.kr",
       "price": "Standing 154,000 won (VIP packages higher)",
       "tip": "KINTEX Hall 10 is in the KINTEX 2 building, Ilsan — GTX-A to Kintex Station or Line 3 to Daehwa. It's a December show, so dress for cold weather during transit.",
-      "note": "Grammy-nominated R&B from the ‘Location’ and ‘Talk’ singer, on a standing-only floor at KINTEX."
+      "note": "Grammy-nominated R&B from the ‘Location’ and ‘Talk’ singer, on a standing-only floor at KINTEX.",
+      "kopisId": "PF296039"
     },
     {
       "id": "yuuri-inspire-2026",
@@ -506,7 +677,8 @@
       "showTimes": "Dec 5 (Sat) 6:00 PM · Dec 6 (Sun) 5:00 PM KST · about 1h 30m",
       "ticketInfo": "Interpark (NOL).",
       "price": "143,000 · 154,000 · 165,000 won by tier",
-      "tip": "INSPIRE is on Yeongjong Island next to the airport, not in Incheon city — an hour from central Seoul on the Airport Railroad plus a shuttle. If you are flying out the next morning it is unusually convenient; otherwise book a room on site or plan the trip back carefully."
+      "tip": "INSPIRE is on Yeongjong Island next to the airport, not in Incheon city — an hour from central Seoul on the Airport Railroad plus a shuttle. If you are flying out the next morning it is unusually convenient; otherwise book a room on site or plan the trip back carefully.",
+      "kopisId": "PF297519"
     },
     {
       "id": "fkj-kintex-2026",
@@ -524,7 +696,8 @@
       "ticketInfo": "NOL Ticket (also on Yes24 Ticket) — English via NOL World; age 12+, limit 4 per person",
       "price": "Standing 143,000 won",
       "tip": "Same building as the Khalid show (KINTEX Hall 10) — GTX-A to Kintex Station is fastest from Seoul. A standing show in a busy December concert period, so arrive early.",
-      "note": "French multi-instrumentalist Vincent Fenton playing live loops solo — the most improvised show on this list, and the cheapest."
+      "note": "French multi-instrumentalist Vincent Fenton playing live loops solo — the most improvised show on this list, and the cheapest.",
+      "kopisId": "PF295528"
     },
     {
       "id": "slowdive-kbsarena-2026",
@@ -542,7 +715,8 @@
       "showTimes": "Dec 8 (Tue) 8:00 PM KST",
       "ticketInfo": "Interpark (NOL).",
       "price": "Standing 132,000 · Seated 132,000–143,000 won",
-      "tip": "Ages 12 and over. KBS Arena is in Gangseo, west of the centre — Subway Line 9 to Yangcheon Hyanggyo, or Line 5 to Balsan. It is a genuinely loud show; the venue does not hand out earplugs."
+      "tip": "Ages 12 and over. KBS Arena is in Gangseo, west of the centre — Subway Line 9 to Yangcheon Hyanggyo, or Line 5 to Balsan. It is a genuinely loud show; the venue does not hand out earplugs.",
+      "kopisId": "PF299778"
     },
     {
       "id": "domijdbeck-gonggam-2026",
@@ -560,7 +734,8 @@
       "showTimes": "Dec 12 (Sat) 7:00 PM KST · about 1h 30m",
       "ticketInfo": "Interpark (NOL).",
       "price": "99,000 · 110,000 won by tier",
-      "tip": "The venue is in Sindang, near Cheonggu Station on Subway Lines 5 and 6. Sindang's tteokbokki alley is a five-minute walk and stays open late — an easy dinner before or after."
+      "tip": "The venue is in Sindang, near Cheonggu Station on Subway Lines 5 and 6. Sindang's tteokbokki alley is a five-minute walk and stays open late — an easy dinner before or after.",
+      "kopisId": "PF299415"
     },
     {
       "id": "fujiikaze-gocheok-2027",
@@ -578,7 +753,8 @@
       "showTimes": "Jan 9 (Sat) 6:00 PM KST",
       "ticketInfo": "Melon Ticket. Melon usually requires Korean identity verification — see our K-pop ticket guide for what overseas buyers can actually do.",
       "price": "Floor 187,000–210,000 · Seated 132,000–165,000 won",
-      "tip": "Gocheok Sky Dome is on Subway Line 1 at Guil Station, about five minutes' walk. It is a baseball stadium with a roof, so unlike an outdoor January show you will be warm — but bring layers for the walk back to the station."
+      "tip": "Gocheok Sky Dome is on Subway Line 1 at Guil Station, about five minutes' walk. It is a baseball stadium with a roof, so unlike an outdoor January show you will be warm — but bring layers for the walk back to the station.",
+      "kopisId": "PF294073"
     },
     {
       "id": "maroon5-kintex-2027",
@@ -596,7 +772,8 @@
       "showTimes": "Jan 27 (Wed) 8:00 PM KST",
       "ticketInfo": "Interpark (NOL).",
       "price": "Standing 143,000–167,000 · Seated 132,000–242,000 · VIP packages 350,000–425,000 won",
-      "tip": "Ages 12 and over. KINTEX is served by Daehwa Station on Line 3 plus a walk, or the GTX-A line which is much faster from central Seoul. A Wednesday 8pm start in Ilsan means the last trains back are tight — check before you commit."
+      "tip": "Ages 12 and over. KINTEX is served by Daehwa Station on Line 3 plus a walk, or the GTX-A line which is much faster from central Seoul. A Wednesday 8pm start in Ilsan means the last trains back are tight — check before you commit.",
+      "kopisId": "PF298279"
     }
   ]
 }
