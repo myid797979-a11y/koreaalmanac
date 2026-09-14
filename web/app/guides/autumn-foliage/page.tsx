@@ -4,7 +4,7 @@ import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 
 export const metadata = {
   title: 'Korea Autumn Foliage 2026 — when and where, region by region',
-  description: 'Peak foliage dates for 2026 run late: Seoraksan Oct 16–25, the centre Oct 31–Nov 5, Seoul and the south to mid-November. Where to go, and how to avoid the queue.',
+  description: 'Peak dates for 2026 run late: Seoraksan Oct 16–25, the centre Oct 31–Nov 5, Seoul and the south to mid-November. Where to go, and when to arrive.',
 };
 
 export default function AutumnFoliage() {
