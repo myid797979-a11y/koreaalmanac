@@ -66,7 +66,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/privacy/">Privacy</Link>
             </p>
             Festival data: Korea Tourism Organization (TourAPI), refreshed {fmt(today())} (KST).
-            Concerts are compiled by hand from official announcements.
+            Concert listings are compiled by hand from official announcements, using data from
+            the Korea Performing Arts Box Office Information System (KOPIS,
+            {' '}<a href="https://www.kopis.or.kr" target="_blank" rel="noopener">www.kopis.or.kr</a>)
+            provided by the Korea Arts Management Service.
             This site is not affiliated with KTO or any venue or promoter —
             details can change, so check official pages before you go.
           </div>

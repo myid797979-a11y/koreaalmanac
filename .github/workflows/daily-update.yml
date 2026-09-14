@@ -77,6 +77,20 @@ jobs:
         continue-on-error: true
         run: dotnet run --project Tour.Collector -- places || echo "⚠ places 실패 — 건너뛰고 계속"
 
+      # 공연예술통합전산망(KOPIS) — 또 다른 기관(예술경영지원센터)이라 쿼터가 완전히 별개다.
+      # 정상 운영 시 하루 약 24콜만 쓴다(목록 6 + 신규 상세 ~16 + 신규 공연장 1~2).
+      #
+      # ⚠ 이 데이터는 사이트에 바로 나가지 않는다. 규칙으로는 "외국인이 갈 만한 공연"을
+      #   가려낼 수 없기 때문이다 — 좌석수로 거르면 윤종신·부활이 올라오고, 로마자 제목으로
+      #   거르면 `현대카드 슈퍼콘서트 28, 위켄드 (The Weeknd)` 가 떨어진다.
+      #   수집만 자동으로 하고, 노출은 scripts/kopis-review.mjs 로 사람이 골라
+      #   web/data/concerts.json 에 영어로 써 넣는다.
+      - name: 공연 수집 (KOPIS)
+        continue-on-error: true
+        env:
+          KOPIS_KEY: ${{ secrets.KOPIS_KEY }}
+        run: dotnet run --project Tour.Collector -- kopis || echo "⚠ kopis 실패 — 건너뛰고 계속"
+
       - name: 익스포트 + 덤프 갱신
         run: |
           dotnet run --project Tour.Exporter
@@ -119,6 +133,6 @@ jobs:
         run: |
           git config user.name "daily-update"
           git config user.email "actions@users.noreply.github.com"
-          git add db/dump db/culture.json db/places.json data/translation_queue.json data/culture_queue.json web/data data/indexnow-state.json
+          git add db/dump db/culture.json db/places.json data/translation_queue.json data/culture_queue.json web/data data/indexnow-state.json db/kopis.json db/kopis_venues.json
           git diff --cached --quiet || git commit -m "data: daily update $(date -u +%F)"
           git push
