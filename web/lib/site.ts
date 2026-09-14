@@ -16,3 +16,7 @@ export function clampDesc(text: string, max = 155): string {
   const at = cut.lastIndexOf(' ');
   return (at > max * 0.6 ? cut.slice(0, at) : cut).replace(/[,;:.\s]+$/, '') + '…';
 }
+
+// Google Analytics 4 — Mediavine Journey 심사가 GA4 로 트래픽을 검증한다
+// (Tier 1 기준 30일 1,000세션). 트래픽이 오기 전에 붙여야 이력이 남는다.
+export const GA_ID = 'G-QK9J11YDBN';

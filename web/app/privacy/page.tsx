@@ -19,10 +19,17 @@ export default function PrivacyPage() {
 
       <h2 className="sect">Analytics</h2>
       <p>
-        We may use privacy-conscious analytics to understand which pages are useful
-        (page views, referring site, country-level location). This data is aggregated and
-        is not used to identify individuals. This section will be updated with the specific
-        provider before any analytics is enabled.
+        We use <strong>Google Analytics 4</strong> to understand which pages are useful —
+        page views, the site you arrived from, and country-level location. Google Analytics
+        sets cookies and processes this data under
+        {' '}<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&apos;s privacy policy</a>.
+        We do not use it to identify individuals, and we do not sell or share the data.
+      </p>
+      <p>
+        To opt out, install
+        {' '}<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google&apos;s opt-out browser add-on</a>,
+        or block analytics cookies in your browser settings. The site works exactly the same
+        either way.
       </p>
 
       <h2 className="sect">Advertising</h2>

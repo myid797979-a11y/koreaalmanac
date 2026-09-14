@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { Hahmlet } from 'next/font/google';
 import Logo from '@/app/components/Logo';
 import SearchBox from '@/app/components/SearchBox';
-import { SITE_URL, SITE_NAME } from '@/lib/site';
+import Script from 'next/script';
+import { SITE_URL, SITE_NAME, GA_ID } from '@/lib/site';
 import { fmt, today } from '@/lib/data';
 import './globals.css';
 
@@ -26,6 +27,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={hahmlet.variable}>
       <body>
+        {/* GA4 — 정적 내보내기라 next/script 로 붙인다. 페이지 렌더를 막지 않도록 afterInteractive. */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-QK9J11YDBN');`}
+        </Script>
         <header className="site">
           <div className="wrap">
             <Link href="/" className="wordmark"><Logo />{SITE_NAME}</Link>
