@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Card from '@/app/components/Card';
+import { rankShortFirst } from '@/lib/festival-rank';
 import {
   MONTHS_FULL, MONTH_SLUGS, REGIONS, REGION_MONTH_MIN, CATEGORIES,
   monthFestivals, lastYearMonth, regionFestivals, regionMonthList, categoryFestivals, categoryLabel,
@@ -91,7 +92,7 @@ function MonthHub({ monthIdx }: { monthIdx: number }) {
       <p className="sub">{list.length} festivals with confirmed dates · updated daily from official tourism data</p>
       <p className="intro">{MONTH_INTROS[monthIdx]}</p>
       <MonthStrip current={monthIdx} />
-      <div className="grid">{list.map(f => <Card key={f.id} f={f} />)}</div>
+      <div className="grid">{rankShortFirst(list, 'date').map(f => <Card key={f.id} f={f} />)}</div>
       {/* 확정분이 한두 건뿐인 달도 사실상 막다른 길이다 — 6건 미만이면 지난해를 곁들인다 */}
       {list.length < 6 && <LastYear monthIdx={monthIdx} name={name} year={year} />}
       {regionLinks.length > 0 && (
@@ -113,8 +114,7 @@ function MonthHub({ monthIdx }: { monthIdx: number }) {
 function RegionHub({ region }: { region: string }) {
   const t = today();
   const all = regionFestivals(region);
-  const live = all.filter(f => status(f, t) !== 'ended')
-    .sort((a, b) => (a.start ?? '').localeCompare(b.start ?? ''));
+  const live = rankShortFirst(all.filter(f => status(f, t) !== 'ended'), 'date');
   const ended = all.length - live.length;
   const months = MONTH_SLUGS
     .map((slug, i) => ({ slug, i, n: regionMonthList(region, i).length }))
@@ -161,8 +161,7 @@ function RegionHub({ region }: { region: string }) {
 function CategoryHub({ slug }: { slug: string }) {
   const t = today();
   const all = categoryFestivals(slug);
-  const live = all.filter(f => status(f, t) !== 'ended')
-    .sort((a, b) => (a.start ?? '').localeCompare(b.start ?? ''));
+  const live = rankShortFirst(all.filter(f => status(f, t) !== 'ended'), 'date');
   const label = categoryLabel(slug);
 
   return (

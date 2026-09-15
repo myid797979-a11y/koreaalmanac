@@ -123,18 +123,28 @@ function runDays(f: Festival): number {
 }
 
 /**
- * "이번 주말" 처럼 기간이 한정된 자리용 정렬.
+ * 짧게 열리는 것을 먼저 묶는 정렬.
  *
- * ⚠ 여기서 rankFestivals 를 그대로 쓰면 안 된다. 수문장 교대·봉수의식 같은 연중 상설이
- *   PICKS 상위라 매번 1등으로 올라오는데, 그건 "이번 주말"의 정보가 아니다
- *   (Trip Planner 도 같은 이유로 짧은 기간을 먼저 둔다).
- *   짧게 열리는 것끼리 먼저 묶고, 그 안에서 중요도로 정렬한다.
+ * ⚠ 기간이 한정된 자리(이번 주말·지역 허브)에 rankFestivals 를 그대로 쓰면 안 된다.
+ *   수문장 교대·봉수의식 같은 연중 상설이 PICKS 상위라 매번 1등으로 올라오는데,
+ *   그건 "이번 주말" 이나 "9월 서울" 의 정보가 아니다.
+ *   서울 축제 허브는 2022 년에 시작한 상설 공연(The Painters)이 1위였고,
+ *   정작 내일 열리는 축제는 13번째였다. Trip Planner 도 같은 이유로 짧은 기간을 먼저 둔다.
+ *
+ * @param within 같은 묶음 안에서의 순서
+ *   'rank' — 중요도. 몇 건만 골라 보여주는 자리(홈 "This weekend")용.
+ *   'date' — 날짜. 전량을 훑는 목록(지역·월별 허브)용. 52건을 늘어놓을 때
+ *            중요도로 섞으면 날짜가 앞뒤로 튀어 읽기 어렵다.
  */
-export function rankShortFirst(list: Festival[]): Festival[] {
+export function rankShortFirst(list: Festival[], within: 'rank' | 'date' = 'rank'): Festival[] {
   const bucket = (f: Festival) => {
     const n = runDays(f);
     return n <= 14 ? 0 : n <= 60 ? 1 : n <= 180 ? 2 : 3;
   };
+  if (within === 'date') {
+    return [...list].sort((a, b) =>
+      bucket(a) - bucket(b) || (a.start ?? '').localeCompare(b.start ?? ''));
+  }
   const ranked = rankFestivals(list);
   const order = new Map(ranked.map((f, i) => [f.id, i]));
   return ranked.sort((a, b) => bucket(a) - bucket(b) || order.get(a.id)! - order.get(b.id)!);

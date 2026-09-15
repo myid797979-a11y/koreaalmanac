@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { regionFestivals, status, today, fmt } from '@/lib/data';
 import { placesByRegion } from '@/lib/places';
 import { rankPlaces } from '@/lib/place-rank';
+import { rankShortFirst } from '@/lib/festival-rank';
 
 /**
  * 지역 카드 — /regions/{지역}/ 으로 보낸다.
@@ -9,9 +10,8 @@ import { rankPlaces } from '@/lib/place-rank';
  * 축제가 하나도 없는 지역이 목록에서 통째로 사라지던 것도 같은 이유로 고쳤다.
  */
 export default function RegionCard({ region, t = today() }: { region: string; t?: string }) {
-  const live = regionFestivals(region)
-    .filter(f => status(f, t) !== 'ended')
-    .sort((a, b) => (a.start ?? '').localeCompare(b.start ?? ''));
+  // 카드에는 두세 건만 들어간다 — 연중 상설이 아니라 곧 열리는 것을 보여줘야 한다
+  const live = rankShortFirst(regionFestivals(region).filter(f => status(f, t) !== 'ended'));
   const spots = placesByRegion(region);
   const next = live.find(f => status(f, t) === 'upcoming') ?? live[0];
 

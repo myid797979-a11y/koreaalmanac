@@ -4,6 +4,7 @@ import Card from '@/app/components/Card';
 import { REGIONS, festivals, status, today, regionFestivals } from '@/lib/data';
 import { placesByRegion, catMeta, PLACE_CATS, type Place, displayTitle } from '@/lib/places';
 import { rankPlaces, isTopPick } from '@/lib/place-rank';
+import { rankShortFirst } from '@/lib/festival-rank';
 import { liveCulture } from '@/lib/culture';
 import { upcomingConcerts } from '@/lib/concerts';
 
@@ -45,7 +46,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
 
   const t = today();
   const spots = rankPlaces(placesByRegion(name), name);
-  const fests = regionFestivals(name).filter(f => status(f, t) !== 'ended');
+  const fests = rankShortFirst(regionFestivals(name).filter(f => status(f, t) !== 'ended'), 'date');
   const concerts = upcomingConcerts(t).filter(c => c.region === name);
   const culture = [...liveCulture('traditional', t), ...liveCulture('exhibition', t)]
     .filter(c => c.region === name);

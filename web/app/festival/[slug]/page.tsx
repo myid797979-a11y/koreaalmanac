@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Card from '@/app/components/Card';
+import { rankShortFirst } from '@/lib/festival-rank';
 import Stamp from '@/app/components/Stamp';
 import Gallery from '@/app/components/Gallery';
 import {
@@ -35,9 +36,8 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
 
   const t = today();
   const badge = <Stamp start={f.start} end={f.end} t={t} inline />;
-  const nearby = festivals
-    .filter(x => x.id !== f.id && x.region === f.region && status(x, t) !== 'ended')
-    .sort((a, b) => (a.start ?? '').localeCompare(b.start ?? ''))
+  const nearby = rankShortFirst(festivals
+    .filter(x => x.id !== f.id && x.region === f.region && status(x, t) !== 'ended'))
     .slice(0, 4);
 
   const hasMap = Boolean(f.mapx && f.mapy);

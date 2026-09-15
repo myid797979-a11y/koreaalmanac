@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Card from '@/app/components/Card';
+import { rankShortFirst } from '@/lib/festival-rank';
 import {
   MONTHS_FULL, MONTH_SLUGS, REGIONS, REGION_MONTH_MIN,
   regionMonthList, targetYear,
@@ -46,7 +47,7 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
       </div>
       <h1>{region} Festivals in {MONTHS_FULL[mIdx]} {year}</h1>
       <p className="sub">{list.length} festivals with confirmed dates · updated daily</p>
-      <div className="grid">{list.map(f => <Card key={f.id} f={f} />)}</div>
+      <div className="grid">{rankShortFirst(list, 'date').map(f => <Card key={f.id} f={f} />)}</div>
       <p className="strip" style={{ marginTop: 24 }}>
         <Link href={'/events/festivals/' + hub + '/'}>All {region} festivals</Link>
         <Link href={'/events/festivals/' + month + '/'}>All Korea in {MONTHS_FULL[mIdx]}</Link>
