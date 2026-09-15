@@ -55,7 +55,7 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
       {eventLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldStr(eventLd) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldStr(crumbLd) }} />
       <div className="crumb">
-        <Link href="/">Festivals</Link> › <Link href={'/events/festivals/' + f.region.toLowerCase() + '/'}>{f.region}</Link> › {f.title}
+        <Link href="/">Home</Link> › <Link href="/events/festivals/">Festivals</Link> › <Link href={'/events/festivals/' + f.region.toLowerCase() + '/'}>{f.region}</Link> › {f.title}
       </div>
 
       {f.image && <div className="hero"><img src={f.image} alt={f.title} /></div>}

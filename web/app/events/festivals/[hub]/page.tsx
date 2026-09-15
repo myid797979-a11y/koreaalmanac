@@ -86,7 +86,7 @@ function MonthHub({ monthIdx }: { monthIdx: number }) {
 
   return (
     <>
-      <div className="crumb"><Link href="/">Festivals</Link> › {name}</div>
+      <div className="crumb"><Link href="/">Home</Link> › <Link href="/events/festivals/">Festivals</Link> › {name}</div>
       <h1>Korea Festivals in {name} {year}</h1>
       <p className="sub">{list.length} festivals with confirmed dates · updated daily from official tourism data</p>
       <p className="intro">{MONTH_INTROS[monthIdx]}</p>
@@ -122,7 +122,7 @@ function RegionHub({ region }: { region: string }) {
 
   return (
     <>
-      <div className="crumb"><Link href="/">Festivals</Link> › {region}</div>
+      <div className="crumb"><Link href="/">Home</Link> › <Link href="/events/festivals/">Festivals</Link> › {region}</div>
       <h1>Festivals in {region}</h1>
       <p className="sub">
         {live.length} happening or upcoming · {ended} past editions tracked · updated daily ·
@@ -139,6 +139,15 @@ function RegionHub({ region }: { region: string }) {
         </p>
       )}
       <div className="grid">{live.map(f => <Card key={f.id} f={f} t={t} />)}</div>
+
+      <p className="intro">
+        Looking for more than festivals?{' '}
+        <Link href={'/regions/' + region.toLowerCase() + '/'}>
+          Everything in {region} →
+        </Link>{' '}
+        — places to visit, concerts and exhibitions on the same page.
+      </p>
+
       <h2 className="sect">Other regions</h2>
       <p className="strip">
         {REGIONS.filter(r => r !== region).map(r => (
@@ -158,7 +167,7 @@ function CategoryHub({ slug }: { slug: string }) {
 
   return (
     <>
-      <div className="crumb"><Link href="/">Festivals</Link> › {label}</div>
+      <div className="crumb"><Link href="/">Home</Link> › <Link href="/events/festivals/">Festivals</Link> › {label}</div>
       <h1>{label} Festivals in Korea</h1>
       <p className="sub">{live.length} happening or upcoming · {all.length - live.length} past editions tracked · updated daily</p>
       <p className="intro">{CATEGORY_INTROS[slug]}</p>

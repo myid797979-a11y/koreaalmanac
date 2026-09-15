@@ -42,13 +42,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="wrap">
             <Link href="/" className="wordmark"><Logo />{SITE_NAME}</Link>
             <SearchBox />
+            {/*
+              메뉴는 네 개까지만 — 여행자의 질문은 "언제 / 무엇이 열리나 / 어디를 / 어떻게"
+              네 가지다. Calendar 와 Regions 는 각각 What's On 과 Places 첫 화면에서
+              링크하므로 상단에서 빼도 닿는 길이 끊기지 않는다(푸터에도 남겨 둔다).
+            */}
             <nav className="nav">
               <Link href="/plan/">Plan</Link>
               <Link href="/events/">What&apos;s On</Link>
               <Link href="/places/">Places</Link>
               <Link href="/guides/">Guides</Link>
-              <Link href="/calendar/">Calendar</Link>
-              <Link href="/regions/">Regions</Link>
             </nav>
           </div>
         </header>

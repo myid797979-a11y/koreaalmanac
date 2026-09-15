@@ -14,6 +14,14 @@ import { createHash } from 'crypto';
 import { join, dirname } from 'path';
 
 const HOST = 'koreaalmanac.com';
+
+// 해시 계산 방식을 바꾸면 이 번호를 올린다.
+//
+// 왜 필요한가: 해시 함수를 고치면 저장된 해시와 전부 어긋나 3,900 페이지가 한꺼번에
+// "변경"으로 잡히고 IndexNow 에 전량 나간다 — 내용은 하나도 안 바뀌었는데도.
+// 번호가 다르면 해시만 조용히 다시 계산하고 lastmod 와 제출 목록은 건드리지 않는다.
+//   v2: <header>·<footer> 를 해시에서 제외 (메뉴 링크 하나 바꿔도 전량이 잡혔다)
+const HASH_VERSION = 2;
 const STATE = '../data/indexnow-state.json';
 const CHANGED = 'out/.changed-urls.json';
 
@@ -36,6 +44,11 @@ function hashOf(url) {
     .replace(/<link[^>]*>/g, '')
     .replace(/<!--[\s\S]*?-->/g, '')            // <!--1134a6DoyRaVkfKMRzHL9--> 같은 빌드 토큰
     .replace(/<meta name="next-size-adjust"[^>]*>/g, '')  // Next.js 패치 버전에 따라 있고 없다
+    // 상단 메뉴·푸터는 전 페이지가 공유한다. 여기에 링크 하나만 넣거나 빼도
+    // 3,900 페이지가 통째로 "변경"으로 잡혀 IndexNow 에 전량 나간다 — 정작 그 페이지의
+    // 내용은 그대로다. 페이지 고유 내용(<main>)만 보고 판단한다.
+    .replace(/<header[\s\S]*?<\/header>/g, '')
+    .replace(/<footer[\s\S]*?<\/footer>/g, '')
     .replace(/__variable_[0-9a-f]+/g, '')
     .replace(/[A-Z][a-z]{2} \d{1,2}, 20\d\d/g, 'DATE')
     // 오늘 날짜에서 파생된 표시를 뺀다. D-54 가 D-53 이 되는 건 "내용이 바뀐" 게 아닌데,
@@ -48,11 +61,17 @@ function hashOf(url) {
   return createHash('sha1').update(body).digest('hex').slice(0, 12);
 }
 
-// 예전 상태는 {url: "해시"} 였다. 지금은 {url: {h, m}} — 읽을 때 흡수한다.
+// 예전 상태는 {url: "해시"} 였다. 지금은 {url: {h, m}} + 맨 위에 _v(해시 버전).
 const rawPrev = existsSync(STATE) ? JSON.parse(readFileSync(STATE, 'utf8')) : {};
+const prevVersion = rawPrev._v ?? 1;
+const migrating = Object.keys(rawPrev).length > 0 && prevVersion !== HASH_VERSION;
 const prev = {};
 for (const [u, v] of Object.entries(rawPrev)) {
+  if (u === '_v') continue;
   prev[u] = typeof v === 'string' ? { h: v, m: kst } : v;
+}
+if (migrating) {
+  console.log(`해시 v${prevVersion} → v${HASH_VERSION} — 해시만 다시 계산하고 제출은 건너뜁니다`);
 }
 
 const next = {};
@@ -62,6 +81,7 @@ for (const url of urls) {
   if (h === null) continue;
   const was = prev[url];
   if (was && was.h === h) next[url] = was;               // 그대로 — 날짜 유지
+  else if (was && migrating) next[url] = { h, m: was.m }; // 해시 방식만 바뀜 — 날짜 유지, 제출 안 함
   else { next[url] = { h, m: kst }; changed.push(url); } // 바뀌었다 — 오늘로
 }
 const removed = Object.keys(prev).filter(u => !(u in next));
@@ -72,7 +92,7 @@ const removed = Object.keys(prev).filter(u => !(u in next));
 const persist = process.env.CI === 'true' || process.argv.includes('--write');
 if (persist) {
   mkdirSync(dirname(STATE), { recursive: true });
-  writeFileSync(STATE, JSON.stringify(next, null, 0));
+  writeFileSync(STATE, JSON.stringify({ _v: HASH_VERSION, ...next }, null, 0));
 }
 writeFileSync(CHANGED, JSON.stringify([...changed, ...removed]));
 

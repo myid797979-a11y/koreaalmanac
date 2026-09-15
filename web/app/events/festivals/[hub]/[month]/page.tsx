@@ -42,7 +42,7 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
   return (
     <>
       <div className="crumb">
-        <Link href="/">Festivals</Link> › <Link href={'/events/festivals/' + hub + '/'}>{region}</Link> › {MONTHS_FULL[mIdx]}
+        <Link href="/">Home</Link> › <Link href="/events/festivals/">Festivals</Link> › <Link href={'/events/festivals/' + hub + '/'}>{region}</Link> › {MONTHS_FULL[mIdx]}
       </div>
       <h1>{region} Festivals in {MONTHS_FULL[mIdx]} {year}</h1>
       <p className="sub">{list.length} festivals with confirmed dates · updated daily</p>
