@@ -28,9 +28,15 @@ export function concertById(id: string): Concert | undefined {
   return (file.items as Concert[]).find(c => c.id === id);
 }
 
-/** 상세페이지를 생성할 대상: 진행중/예정만 (지난 공연은 정적 생성 안 함) */
-export function concertParams(t = today()): { id: string }[] {
-  return file.items.filter(c => c.end >= t).map(c => ({ id: c.id }));
+/**
+ * 상세페이지를 생성할 대상 — 지난 공연도 포함한다.
+ *
+ * 예전에는 종료분을 걸렀는데, 그러면 어제까지 있던 URL 이 오늘 404 가 된다.
+ * 북마크·구글 색인·기사 링크가 전부 깨지는 셈이라 축제와 같이 남기고
+ * 페이지 안에서 Ended 배너로 알린다. 목록(upcomingConcerts)에서는 그대로 빠진다.
+ */
+export function concertParams(): { id: string }[] {
+  return file.items.map(c => ({ id: c.id }));
 }
 
 type ConcertsFile = { updated: string; note: string; items: Concert[] };

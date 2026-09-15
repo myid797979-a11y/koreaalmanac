@@ -1,13 +1,16 @@
 import Link from 'next/link';
-import Card, { Stamp } from '@/app/components/Card';
+import Card from '@/app/components/Card';
+import Stamp from '@/app/components/Stamp';
 import RegionCard from '@/app/components/RegionCard';
 import {
   festivals, status, today, dateRange, onWeekend, weekendWindow,
   MONTHS_FULL, MONTH_SLUGS, REGIONS, CATEGORIES, categoryFestivals, type Festival,
 } from '@/lib/data';
 import { FEATURED_IDS } from '@/lib/editorial';
+import { rankFestivals, rankShortFirst } from '@/lib/festival-rank';
 import { upcomingConcerts, concertDateRange, KIND_LABEL } from '@/lib/concerts';
-import { liveCulture, cultureDateRange, isLongRun } from '@/lib/culture';
+import { liveCulture } from '@/lib/culture';
+import CultureCard from '@/app/components/CultureCard';
 
 // 홈 제목이 사이트명뿐(13자)이라 Bing URL 검사가 "너무 짧은 제목" 오류를 냈다.
 // 무엇을 찾는 사람이 오는 페이지인지 제목에 담는다.
@@ -51,7 +54,9 @@ export default function Home() {
   const featured = FEATURED_IDS
     .map(id => festivals.find(f => f.id === id))
     .filter((f): f is Festival => Boolean(f && f.image && status(f, t) !== 'ended'));
-  const pick = featured[0];
+  // 히어로는 갤러리 사진이 있는 것을 먼저 고른다 — 대표 이미지가 포스터뿐인 축제를
+  // 크게 띄우면 여백만 큰 카드가 된다 (광주비엔날레 포스터가 그랬다).
+  const pick = featured.find(f => (f.images?.length ?? 0) >= 3) ?? featured[0];
 
   const weekend = photoFirst(onWeekend(t));
 
@@ -125,7 +130,7 @@ export default function Home() {
         <Link href={'/festival/' + pick.slug + '/'} className="featured">
           <div className="f-ph">
             <img src={pick.image!} alt={pick.title} />
-            <Stamp f={pick} t={t} />
+            <Stamp start={pick.start} end={pick.end} t={t} />
           </div>
           <div className="f-body">
             <div className="when">{dateRange(pick)} · {pick.region}</div>
@@ -137,7 +142,7 @@ export default function Home() {
       )}
 
       <SectionHead title={'This weekend, ' + wkLabel} href="/calendar/" more="full calendar" />
-      <div className="grid">{take(weekend, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
+      <div className="grid">{take(rankShortFirst(weekend), 4).map(f => <Card key={f.id} f={f} t={t} />)}</div>
 
       {concerts.length > 0 && (
         <>
@@ -148,13 +153,14 @@ export default function Home() {
                 <div className="c-date">
                   <span className="c-when">{concertDateRange(c)}</span>
                   <span className={'c-kind k-' + c.kind}>{KIND_LABEL[c.kind]}</span>
+                  <Stamp start={c.start} end={c.end} t={t} inline />
                 </div>
                 <div className="c-body">
-                  <h2>
+                  <h3>
                     <Link href={'/concert/' + c.id + '/'}>
                       {c.artist === 'Various artists' ? c.title : c.artist}
                     </Link>
-                  </h2>
+                  </h3>
                   <p className="c-venue">{c.venue} · {c.city}</p>
                   {c.note && <p className="c-note">{c.note}</p>}
                 </div>
@@ -164,11 +170,20 @@ export default function Home() {
         </>
       )}
 
-      <SectionHead title="Happening now" href="/events/festivals/" more={'all ' + ongoing.length} />
-      <div className="grid">{take(ongoing, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
-
-      <SectionHead title="Starting soon" href="/events/festivals/" more={'all ' + upcoming.length + ' upcoming'} />
-      <div className="grid">{take(upcoming, 8).map(f => <Card key={f.id} f={f} t={t} />)}</div>
+      {/*
+        예전에는 "Happening now" 와 "Starting soon" 을 8장씩 따로 뒀다. 둘 다 시작일 순이라
+        여행자 눈에는 같은 목록이 두 번 나오는 것으로 보였고, 왜 이 축제가 저쪽이 아니라
+        이쪽에 있는지 설명되지 않았다. 하나로 합치고 순위를 매긴다 — 지금 갈 수 있는 것 중
+        '큰 것'을 먼저 보여주는 편이 날짜로 쪼개는 것보다 쓸모 있다.
+      */}
+      <SectionHead
+        title="On now and coming up"
+        href="/events/festivals/"
+        more={'all ' + (ongoing.length + upcoming.length)}
+      />
+      <div className="grid">
+        {take(rankFestivals([...ongoing, ...upcoming]), 8).map(f => <Card key={f.id} f={f} t={t} />)}
+      </div>
 
       {trad.length > 0 && (
         <>
@@ -178,21 +193,7 @@ export default function Home() {
             centres — cheap, rarely sold out, and the easiest authentic performance to slot into a trip.
           </p>
           <div className="cult-list">
-            {trad.slice(0, 4).map(c => (
-              <article key={c.id} className="cult">
-                {c.image
-                  ? <Link href={'/culture/' + c.slug + '/'} className="cu-ph"><img src={c.image} alt={c.title} loading="lazy" /></Link>
-                  : <span className="cu-ph cu-noph" aria-hidden="true" />}
-                <div className="cu-body">
-                  <div className="cu-when">
-                    {cultureDateRange(c)}
-                    {isLongRun(c) && <span className="cu-tag">Long run</span>}
-                  </div>
-                  <h2><Link href={'/culture/' + c.slug + '/'}>{c.title}</Link></h2>
-                  <p className="cu-place">{c.venue ? c.venue + ' · ' : ''}{c.region}</p>
-                </div>
-              </article>
-            ))}
+            {trad.slice(0, 4).map(c => <CultureCard key={c.id} c={c} t={t} />)}
           </div>
         </>
       )}
@@ -201,19 +202,7 @@ export default function Home() {
         <>
           <SectionHead title="Exhibitions" href="/events/exhibitions/" more={'all ' + liveCulture('exhibition', t).length} />
           <div className="cult-list">
-            {exhibitions.slice(0, 4).map(c => (
-              <article key={c.id} className="cult">
-                <Link href={'/culture/' + c.slug + '/'} className="cu-ph"><img src={c.image!} alt={c.title} loading="lazy" /></Link>
-                <div className="cu-body">
-                  <div className="cu-when">
-                    {cultureDateRange(c)}
-                    {isLongRun(c) && <span className="cu-tag">Long run</span>}
-                  </div>
-                  <h2><Link href={'/culture/' + c.slug + '/'}>{c.title}</Link></h2>
-                  <p className="cu-place">{c.venue ? c.venue + ' · ' : ''}{c.region}</p>
-                </div>
-              </article>
-            ))}
+            {exhibitions.slice(0, 4).map(c => <CultureCard key={c.id} c={c} t={t} />)}
           </div>
         </>
       )}

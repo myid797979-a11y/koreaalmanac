@@ -3,20 +3,17 @@ import {
   MONTHS_FULL, MONTH_SLUGS, festivals, status, today, dateRange, fmt,
 } from '@/lib/data';
 import { upcomingConcerts } from '@/lib/concerts';
+import CalendarGrid, { type CalEvent } from './CalendarGrid';
 
 export const metadata = {
   title: 'Korea Festival & Concert Calendar — next 12 months',
   description: 'A 12-month calendar of festivals and concerts in Korea, with dates and regions. Festivals update daily from official tourism data.',
 };
 
-const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const GRID_MIN = 4;   // 이벤트가 이보다 적은 달은 그리드 대신 목록으로
 
 // 축제와 공연을 하나의 달력 이벤트로 통합. kind 로 색을 구분한다.
-type CalEvent = {
-  key: string; start: string; title: string; href: string;
-  kind: 'festival' | 'concert'; region: string;
-};
+// 타입은 CalendarGrid(클라이언트) 가 소유한다 — 격자가 그 모양에 맞춰 렌더하므로.
 
 const festEvents: CalEvent[] = festivals
   .filter(f => f.start)
@@ -66,54 +63,18 @@ function MonthList({ list }: { list: CalEvent[] }) {
   return <ul className="agenda">{list.map(e => <EventRow key={e.key} e={e} />)}</ul>;
 }
 
+// 격자는 클라이언트에서 그린다 — 모바일 바텀시트 때문. 아젠다 목록은 그대로 서버에서.
 function MonthGrid({ year, mIdx, t, list }: { year: number; mIdx: number; t: string; list: CalEvent[] }) {
-  const mm = String(mIdx + 1).padStart(2, '0');
-  const byDay = new Map<number, CalEvent[]>();
-  for (const e of list) {
-    const d = Number(e.start.slice(6, 8));
-    const arr = byDay.get(d) ?? [];
-    arr.push(e);
-    byDay.set(d, arr);
-  }
-
-  const first = new Date(year, mIdx, 1).getDay();
-  const days = new Date(year, mIdx + 1, 0).getDate();
-  const tail = (7 - (first + days) % 7) % 7;
-
   return (
     <>
-      <div className="cal">
-        {DOW.map(d => <div key={d} className="dow">{d}</div>)}
-        {Array.from({ length: first }).map((_, i) => <div key={'b' + i} className="day blank" />)}
-        {Array.from({ length: days }).map((_, i) => {
-          const d = i + 1;
-          const ds = String(year) + mm + String(d).padStart(2, '0');
-          const evs = byDay.get(d) ?? [];
-          const dow = (first + i) % 7;
-          return (
-            <div key={d} className={'day' + (ds === t ? ' today' : '')}>
-              <span className={'dn' + (dow === 0 ? ' sun' : dow === 6 ? ' sat' : '')}>{d}</span>
-              <div className="evs">
-                {evs.slice(0, 3).map(e => (
-                  <Link key={e.key} className={'ev ev-' + e.kind} href={e.href} title={e.title}>{e.title}</Link>
-                ))}
-                {evs.length > 3 && (
-                  // 그 날의 나머지를 제자리에서 펼친다. 예전엔 월 페이지로 보냈는데,
-                  // 특정 날짜를 눌러 놓고 그 달 전체로 가버리면 누른 의도와 어긋난다.
-                  <details className="daymore">
-                    <summary className="ev ev-more">+{evs.length - 3} more</summary>
-                    {evs.slice(3).map(e => (
-                      <Link key={e.key} className={'ev ev-' + e.kind} href={e.href} title={e.title}>{e.title}</Link>
-                    ))}
-                  </details>
-                )}
-              </div>
-            </div>
-          );
-        })}
-        {Array.from({ length: tail }).map((_, i) => <div key={'e' + i} className="day blank" />)}
-      </div>
-
+      <CalendarGrid
+        year={year}
+        mIdx={mIdx}
+        monthName={MONTHS_FULL[mIdx]}
+        t={t}
+        list={list}
+        monthHref={'/events/festivals/' + MONTH_SLUGS[mIdx] + '/'}
+      />
       <ul className="agenda cal-list">{list.map(e => <EventRow key={e.key} e={e} />)}</ul>
     </>
   );

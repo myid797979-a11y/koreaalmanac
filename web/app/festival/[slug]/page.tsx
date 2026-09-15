@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import Card, { Stamp } from '@/app/components/Card';
+import Card from '@/app/components/Card';
+import Stamp from '@/app/components/Stamp';
 import Gallery from '@/app/components/Gallery';
 import {
   festivals, bySlug, status, dateRange, daysUntil, today,
@@ -33,7 +34,7 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
   if (!f) notFound();
 
   const t = today();
-  const badge = <Stamp f={f} t={t} inline />;
+  const badge = <Stamp start={f.start} end={f.end} t={t} inline />;
   const nearby = festivals
     .filter(x => x.id !== f.id && x.region === f.region && status(x, t) !== 'ended')
     .sort((a, b) => (a.start ?? '').localeCompare(b.start ?? ''))
@@ -87,7 +88,7 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
           {f.hours && <tr><th>Hours</th><td>{f.hours}</td></tr>}
           {f.duration && <tr><th>Duration</th><td>{f.duration}</td></tr>}
           {f.tel && <tr><th>Contact</th><td>{f.tel}</td></tr>}
-          {f.homepage && <tr><th>Website</th><td><a href={f.homepage} target="_blank" style={{ textDecoration: 'underline' }}>{f.homepage.replace('https://', '').replace('http://', '').slice(0, 50)} ↗</a></td></tr>}
+          {f.homepage && <tr><th>Official site</th><td><a href={f.homepage} target="_blank" style={{ textDecoration: 'underline' }}>{f.homepage.replace('https://', '').replace('http://', '').slice(0, 50)} ↗</a></td></tr>}
         </tbody>
       </table>
 
@@ -102,6 +103,8 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
       </p>
 
       {hasMap && (
+        <>
+        <h2 className="sect">Getting there</h2>
         <div className="mapbox">
           <iframe
             src={'https://maps.google.com/maps?q=' + f.mapy + ',' + f.mapx + '&z=14&output=embed&hl=en'}
@@ -115,6 +118,7 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
             <a href={'https://map.kakao.com/link/map/' + encodeURIComponent(f.title) + ',' + f.mapy + ',' + f.mapx} target="_blank" rel="noopener">Kakao Map for local directions ↗</a>
           </p>
         </div>
+        </>
       )}
 
       {f.overview && (

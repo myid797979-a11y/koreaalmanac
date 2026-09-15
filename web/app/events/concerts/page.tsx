@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { today, fmt } from '@/lib/data';
 import { upcomingConcerts, concertDateRange, KIND_LABEL, CONCERTS_UPDATED } from '@/lib/concerts';
+import Stamp from '@/app/components/Stamp';
 
 export const metadata = {
   title: 'Concerts & Music Festivals in Korea',
@@ -37,6 +38,7 @@ export default function ConcertsPage() {
               <div className="c-date">
                 <span className="c-when">{concertDateRange(c)}</span>
                 <span className={'c-kind k-' + c.kind}>{KIND_LABEL[c.kind]}</span>
+                <Stamp start={c.start} end={c.end} t={t} inline />
                 {c.poster && (
                   <Link href={'/concert/' + c.id + '/'} className="c-thumb">
                     <img src={c.poster} alt="" loading="lazy" />

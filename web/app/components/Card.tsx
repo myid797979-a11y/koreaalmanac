@@ -1,12 +1,8 @@
 import Link from 'next/link';
-import { type Festival, status, dateRange, daysUntil, today } from '@/lib/data';
+import { type Festival, dateRange, today } from '@/lib/data';
+import Stamp from './Stamp';
 
-export function Stamp({ f, t = today(), inline = false }: { f: Festival; t?: string; inline?: boolean }) {
-  const st = status(f, t);
-  const cls = 'stamp ' + (st === 'ongoing' ? 'now' : st === 'upcoming' ? 'soon' : 'ended') + (inline ? ' inline' : '');
-  const label = st === 'ongoing' ? 'Now' : st === 'upcoming' ? 'D-' + daysUntil(f.start!, t) : 'Ended';
-  return <span className={cls}>{label}</span>;
-}
+// 배지는 app/components/Stamp.tsx 로 옮겼다 — 축제·공연·전시가 같은 문법을 쓰도록.
 
 export default function Card({ f, t = today() }: { f: Festival; t?: string }) {
   return (
@@ -15,7 +11,7 @@ export default function Card({ f, t = today() }: { f: Festival; t?: string }) {
         {f.image
           ? <img className="ph" src={f.image} alt={f.title} loading="lazy" />
           : <div className="noph">{f.region}</div>}
-        <Stamp f={f} t={t} />
+        <Stamp start={f.start} end={f.end} t={t} />
       </div>
       <div className="body">
         <div className="when">{dateRange(f)}</div>

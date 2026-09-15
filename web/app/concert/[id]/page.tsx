@@ -47,6 +47,14 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
         <Link href="/">Home</Link> › <Link href="/events/concerts/">Concerts</Link> › {c.title}
       </div>
 
+      {c.end < t && (
+        <div className="ended-banner">
+          This show has finished.
+          {' '}<Link href="/events/concerts/">See what is coming up</Link>
+          {' '}or <Link href="/plan/">plan around your dates</Link>.
+        </div>
+      )}
+
       <div className={c.poster ? 'c-hero has-poster' : 'c-hero'}>
         {c.poster && (
           <img className="c-poster" src={c.poster} alt={c.title + ' poster'} />
@@ -83,7 +91,7 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
           <tr><th>City</th><td><Link href={'/events/festivals/' + c.region.toLowerCase() + '/'}>{c.city}</Link></td></tr>
           {c.artist !== 'Various artists' && <tr><th>Artist</th><td>{c.artist}</td></tr>}
           {c.ticketInfo && <tr><th>Tickets</th><td>{c.ticketInfo}</td></tr>}
-          {c.price && <tr><th>Price</th><td>{c.price}</td></tr>}
+          {c.price && <tr><th>Admission</th><td>{c.price}</td></tr>}
         </tbody>
       </table>
 

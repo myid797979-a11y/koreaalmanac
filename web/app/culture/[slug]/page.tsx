@@ -88,8 +88,8 @@ export default async function CultureDetail({ params }: { params: Promise<{ slug
           {c.addr && <tr><th>Address</th><td>{c.addr}</td></tr>}
           {c.price && <tr><th>Admission</th><td>{c.price}</td></tr>}
           {c.tel && <tr><th>Contact</th><td>{c.tel}</td></tr>}
-          {c.url && <tr><th>Booking</th><td><a href={c.url} target="_blank" rel="noopener" style={{ textDecoration: 'underline' }}>Official booking ↗</a></td></tr>}
-          {c.venueUrl && <tr><th>Venue site</th><td><a href={c.venueUrl} target="_blank" rel="noopener" style={{ textDecoration: 'underline' }}>{c.venueUrl.replace(/^https?:\/\//, '').slice(0, 40)} ↗</a></td></tr>}
+          {c.url && <tr><th>Tickets</th><td><a href={c.url} target="_blank" rel="noopener" style={{ textDecoration: 'underline' }}>Official booking ↗</a></td></tr>}
+          {c.venueUrl && <tr><th>Official site</th><td><a href={c.venueUrl} target="_blank" rel="noopener" style={{ textDecoration: 'underline' }}>{c.venueUrl.replace(/^https?:\/\//, '').slice(0, 40)} ↗</a></td></tr>}
         </tbody>
       </table>
 

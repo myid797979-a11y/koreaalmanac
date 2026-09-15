@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { liveCulture, KIND_META, cultureDateRange, isLongRun, type CultureEvent } from '@/lib/culture';
+import { liveCulture, KIND_META, type CultureEvent } from '@/lib/culture';
+import CultureCard from '@/app/components/CultureCard';
 import { today } from '@/lib/data';
 
 const SLUGS: Record<string, CultureEvent['kind']> = {
@@ -28,24 +29,8 @@ export async function generateMetadata({ params }: { params: Promise<{ culture: 
       };
 }
 
-function Row({ c }: { c: CultureEvent }) {
-  return (
-    <article className="cult">
-      {c.image
-        ? <Link href={'/culture/' + c.slug + '/'} className="cu-ph"><img src={c.image} alt={c.title} loading="lazy" /></Link>
-        : <span className="cu-ph cu-noph" aria-hidden="true" />}
-      <div className="cu-body">
-        <div className="cu-when">
-          {cultureDateRange(c)}
-          {isLongRun(c) && <span className="cu-tag">Long run</span>}
-        </div>
-        <h2><Link href={'/culture/' + c.slug + '/'}>{c.title}</Link></h2>
-        <p className="cu-place">
-          {c.venue ? c.venue + ' · ' : ''}{c.region}{c.district ? ', ' + c.district : ''}
-        </p>
-      </div>
-    </article>
-  );
+function Row({ c, t }: { c: CultureEvent; t: string }) {
+  return <CultureCard c={c} t={t} heading="h2" />;
 }
 
 export default async function CultureHub({ params }: { params: Promise<{ culture: string }> }) {
@@ -82,7 +67,7 @@ export default async function CultureHub({ params }: { params: Promise<{ culture
           {' '}<Link href="/events/concerts/">concerts and live music</Link>.
         </div>
       ) : (
-        <div className="cult-list">{list.map(c => <Row key={c.id} c={c} />)}</div>
+        <div className="cult-list">{list.map(c => <Row key={c.id} c={c} t={t} />)}</div>
       )}
 
       <p className="meta" style={{ marginTop: 18 }}>

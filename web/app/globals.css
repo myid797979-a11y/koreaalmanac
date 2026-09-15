@@ -301,7 +301,7 @@ h2.sect {
   text-align: center; background: var(--hanji); border-bottom: 1px solid var(--line);
   font-family: var(--font-display), Georgia, serif;
 }
-.cal .day {
+.cal .day { position: relative;
   min-height: 94px; min-width: 0;
   border-top: 1px solid var(--line); border-left: 1px solid var(--line);
   padding: 6px; display: flex; flex-direction: column; gap: 4px;
@@ -356,6 +356,9 @@ footer.site .strip a:hover { color: var(--seal); }
     border-radius: 50%; background: var(--jjok);
   }
   .cal .ev-more { background: var(--muted); }
+  /* 점은 밀도 표시일 뿐 탭 대상이 아니다 — 칸 전체를 버튼이 덮는다 */
+  .cal .evs { pointer-events: none; }
+  .cal .day-tap { display: block; }
   .cal-list { display: block; margin-top: 10px; }
   .agenda .ad { min-width: 130px; }
 }
@@ -461,10 +464,10 @@ footer.site .strip a:hover { color: var(--seal); }
 .concert .k-festival { background: var(--jjok); }
 .concert .c-body { min-width: 0; }
 .concert { position: relative; }
-.concert h2 a::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+.concert h2 a::after, .concert h3 a::after { content: ''; position: absolute; inset: 0; z-index: 1; }
 /* 지역·상세 링크는 카드 오버레이보다 위에 둬서 각자의 목적지를 지킨다 */
 .concert .c-venue a, .concert .c-more a { position: relative; z-index: 2; }
-.concert h2 {
+.concert h2, .concert h3 {
   font-family: var(--font-display), Georgia, serif;
   font-size: 19px; font-weight: 700; margin: 0 0 4px; line-height: 1.3;
 }
@@ -481,7 +484,7 @@ footer.site .strip a:hover { color: var(--seal); }
 .c-more { margin: 8px 0 0; font-size: 13.5px; }
 .c-more a { color: var(--jjok); }
 .c-more a:hover { color: var(--seal); }
-.concert h2 a:hover { color: var(--seal); }
+.concert h2 a:hover, .concert h3 a:hover { color: var(--seal); }
 
 .c-hero {
   margin: 18px 0 20px; padding: 22px 24px;
@@ -530,6 +533,57 @@ footer.site .strip a:hover { color: var(--seal); }
 /* ── 캘린더: 공연 이벤트 색 구분 ────────────────────────── */
 .cal .ev-concert { background: #fbeceb; color: var(--seal); }
 .cal .ev-concert:hover { background: var(--seal); color: #fff; }
+
+/* ── 달력 날짜 시트 ───────────────────────────────────── */
+/* 데스크톱에서는 글자가 보이고 링크를 직접 누르므로 버튼이 필요 없다. */
+.cal .day-tap {
+  display: none; position: absolute; inset: 0;
+  width: 100%; height: 100%; padding: 0; margin: 0;
+  border: 0; background: transparent; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.cal .day-tap:focus-visible { outline: 2px solid var(--seal); outline-offset: -2px; }
+
+.daysheet {
+  border: 0; padding: 0; background: transparent;
+  max-width: 560px; width: 100%; margin: auto;
+}
+.daysheet::backdrop { background: rgba(35, 33, 28, 0.45); }
+.ds-panel {
+  background: var(--card); border: 1px solid var(--line);
+  border-top: 4px double var(--ink); border-radius: 0 0 12px 12px;
+  padding: 16px 18px 18px; max-height: 80vh; overflow-y: auto;
+}
+.ds-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.ds-head strong { font-family: var(--font-display), Georgia, serif; font-size: 18px; }
+.ds-head button {
+  border: 0; background: none; font-size: 26px; line-height: 1;
+  color: var(--muted); cursor: pointer; padding: 0 4px;
+}
+.ds-head button:hover { color: var(--ink); }
+.ds-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.ds-item {
+  display: grid; grid-template-columns: auto 1fr; gap: 3px 10px;
+  padding: 10px 8px; border-radius: 6px; align-items: baseline;
+}
+.ds-item:hover { background: var(--hanji); }
+.ds-kind {
+  grid-row: span 2; align-self: start; margin-top: 2px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2px;
+  padding: 3px 7px 4px; border-radius: 4px; color: #fff; white-space: nowrap;
+}
+.ds-kind.k-festival { background: var(--jjok); }
+.ds-kind.k-concert { background: var(--seal); }
+.ds-title { font-weight: 600; line-height: 1.35; color: var(--ink); }
+.ds-item:hover .ds-title { color: var(--seal); }
+.ds-meta { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ds-all { display: inline-block; margin-top: 14px; font-size: 14px; color: var(--jjok); }
+
+/* 모바일에서는 화면 아래에 붙는 시트로 */
+@media (max-width: 720px) {
+  .daysheet { margin: auto auto 0; max-width: none; }
+  .ds-panel { border-radius: 12px 12px 0 0; border-bottom: 0; padding-bottom: 26px; max-height: 72vh; }
+  .ds-item { padding: 12px 8px; }
+}
 
 .cal-legend { display: flex; gap: 18px; margin: 0 0 18px; font-size: 13px; color: var(--muted); }
 .cal-legend .lg { display: inline-flex; align-items: center; gap: 6px; }
