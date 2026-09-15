@@ -21,7 +21,8 @@ const HOST = 'koreaalmanac.com';
 // "변경"으로 잡히고 IndexNow 에 전량 나간다 — 내용은 하나도 안 바뀌었는데도.
 // 번호가 다르면 해시만 조용히 다시 계산하고 lastmod 와 제출 목록은 건드리지 않는다.
 //   v2: <header>·<footer> 를 해시에서 제외 (메뉴 링크 하나 바꿔도 전량이 잡혔다)
-const HASH_VERSION = 2;
+//   v3: 축제 상세의 "More festivals in" 블록 제외 (허브 정렬만 바꿔도 1,032 건이 나갔다)
+const HASH_VERSION = 3;
 const STATE = '../data/indexnow-state.json';
 const CHANGED = 'out/.changed-urls.json';
 
@@ -56,8 +57,12 @@ function hashOf(url) {
     // 실제 변경은 하루 15건 남짓이다(신규 등록분).
     .replace(/<span class="stamp[^"]*">[^<]*<\/span>/g, 'STAMP')
     .replace(/(?<![A-Za-z])D-(?:\d+|DAY)(?![A-Za-z])/g, 'DDAY')
-    // 장소 상세의 "지금 근처에 뭐가 있나" 는 120일 지평선이라 날마다 목록이 달라진다
-    .replace(/<h2 class="sect">What&#x27;s on nearby<\/h2>[\s\S]*?(?=<h2|<\/main|<footer)/g, 'NEARBY');
+    // 페이지 끝의 "관련 목록" 블록들 — 그 페이지의 내용이 아니라 다른 페이지로 가는 통로다.
+    //   · 장소 상세의 "What's on nearby" 는 120일 지평선이라 날마다 목록이 달라진다
+    //   · 축제 상세의 "More festivals in <지역>" 도 같다. 실제로 허브 정렬을 한 번 바꿨더니
+    //     내용이 하나도 안 바뀐 축제 1,032 페이지가 전부 변경으로 잡혀 IndexNow 에 나갔다.
+    .replace(/<h2 class="sect">What&#x27;s on nearby<\/h2>[\s\S]*?(?=<h2|<\/main|<footer)/g, 'NEARBY')
+    .replace(/<h2 class="sect">More festivals in[\s\S]*?(?=<h2|<\/main|<footer)/g, 'RELATED');
   return createHash('sha1').update(body).digest('hex').slice(0, 12);
 }
 
