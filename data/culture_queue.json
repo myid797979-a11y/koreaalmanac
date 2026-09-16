@@ -77,17 +77,6 @@
     "overview": null
   },
   {
-    "id": "398159",
-    "kind": "exhibition",
-    "start": "20260911",
-    "title": "민서 개인전 <ㅁㅜㄴㄷㅡㄱ>",
-    "place": "봄내극장 춘천미술관",
-    "area": "강원",
-    "price": "[홈페이지 내용 참고]",
-    "addr": "강원특별자치도 춘천시 서부대성로 71 춘천 봄내극장",
-    "overview": null
-  },
-  {
     "id": "398168",
     "kind": "exhibition",
     "start": "20260915",
@@ -107,28 +96,6 @@
     "area": "충남",
     "price": "무료",
     "addr": "충청남도 천안시 동남구 성남면 종합휴양지로 185 천안시립미술관",
-    "overview": null
-  },
-  {
-    "id": "394701",
-    "kind": "traditional",
-    "start": "20260916",
-    "title": "[평택] 사물놀이 느닷, 양평 아리랑",
-    "place": "평택시북부문예회관",
-    "area": "경기",
-    "price": "전석 10,000원",
-    "addr": null,
-    "overview": null
-  },
-  {
-    "id": "396962",
-    "kind": "traditional",
-    "start": "20260916",
-    "title": "한대식의 금야월명 네 번째 “가사(歌詞)를 공부하는 선비” 그리고 가곡(歌曲)과 시조(時調)",
-    "place": "서울돈화문국악당",
-    "area": "서울",
-    "price": "전석무료",
-    "addr": "서울특별시 종로구 율곡로 102 서울돈화문국악당",
     "overview": null
   },
   {
@@ -154,6 +121,17 @@
     "overview": null
   },
   {
+    "id": "397779",
+    "kind": "traditional",
+    "start": "20260917",
+    "title": "2026 국가무형유산 기획행사, 보성소리가 전하는 판소리 눈대목",
+    "place": "서울돈화문국악당",
+    "area": "서울",
+    "price": "전석무료",
+    "addr": "서울특별시 종로구 율곡로 102 서울돈화문국악당",
+    "overview": null
+  },
+  {
     "id": "393798",
     "kind": "traditional",
     "start": "20260918",
@@ -162,6 +140,17 @@
     "area": "광주",
     "price": "R석 40,000원, S석 30,000원",
     "addr": "전남광주통합특별시 동구 문화전당로 38 국립아시아문화전당",
+    "overview": null
+  },
+  {
+    "id": "393961",
+    "kind": "traditional",
+    "start": "20260918",
+    "title": "창작국악그룹 Scene(씬) : Scene of Scene",
+    "place": "구로창의아트홀",
+    "area": "서울",
+    "price": "전석 20,000원",
+    "addr": null,
     "overview": null
   },
   {
