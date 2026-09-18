@@ -242,17 +242,6 @@
     "overview": null
   },
   {
-    "id": "398604",
-    "kind": "exhibition",
-    "start": "20260915",
-    "title": "All Do Art & 이음 전시회",
-    "place": "강원문화재단",
-    "area": "강원",
-    "price": "무료",
-    "addr": "강원특별자치도 춘천시 안마산로 85 한숲캐슬 4층 강원문화재단",
-    "overview": null
-  },
-  {
     "id": "398615",
     "kind": "exhibition",
     "start": "20260915",
@@ -305,17 +294,6 @@
     "area": "광주",
     "price": "R석 40,000원, S석 30,000원",
     "addr": "전남광주통합특별시 동구 문화전당로 38 국립아시아문화전당",
-    "overview": null
-  },
-  {
-    "id": "393961",
-    "kind": "traditional",
-    "start": "20260918",
-    "title": "창작국악그룹 Scene(씬) : Scene of Scene",
-    "place": "구로창의아트홀",
-    "area": "서울",
-    "price": "전석 20,000원",
-    "addr": null,
     "overview": null
   },
   {
