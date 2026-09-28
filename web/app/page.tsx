@@ -11,6 +11,8 @@ import { rankFestivals, rankShortFirst } from '@/lib/festival-rank';
 import { upcomingConcerts, concertDateRange, KIND_LABEL } from '@/lib/concerts';
 import { liveCulture } from '@/lib/culture';
 import CultureCard from '@/app/components/CultureCard';
+import { placeBySlug } from '@/lib/places';
+import { GUIDES, HOME_GUIDE_HREFS } from '@/lib/guides';
 
 // 홈 제목이 사이트명뿐(13자)이라 Bing URL 검사가 "너무 짧은 제목" 오류를 냈다.
 // 무엇을 찾는 사람이 오는 페이지인지 제목에 담는다.
@@ -206,6 +208,26 @@ export default function Home() {
           </div>
         </>
       )}
+
+      {/* 가이드 — 홈에서 가이드로 가는 링크가 없었다 (2026-09-28). 시즌에 맞는 넷만, lib/guides.ts 가 고른다. */}
+      <SectionHead title="Plan around the season" href="/guides/" more="all guides" />
+      <div className="cult-list">
+        {HOME_GUIDE_HREFS.map(h => GUIDES.find(g => g.href === h)).filter(Boolean).map(g => {
+          const ph = g!.photo ? placeBySlug(g!.photo) : undefined;
+          return (
+            <article key={g!.href} className="cult">
+              {ph
+                ? <Link href={g!.href} className="cu-ph"><img src={ph.image} alt={g!.title} loading="lazy" /></Link>
+                : <span className="cu-ph cu-noph" aria-hidden="true" />}
+              <div className="cu-body">
+                <div className="cu-when">{g!.tag}</div>
+                <h3><Link href={g!.href}>{g!.title}</Link></h3>
+                <p className="cu-place">{g!.blurb}</p>
+              </div>
+            </article>
+          );
+        })}
+      </div>
 
       <h2 className="sect" style={{ marginTop: 36 }}>Browse by interest</h2>
       <p className="strip">

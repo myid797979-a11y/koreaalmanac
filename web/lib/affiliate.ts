@@ -73,6 +73,7 @@ const SUWON_TOUR: Offer = { label: 'Suwon Hwaseong Fortress tours', url: search(
 const GANGNEUNG_TOUR: Offer = { label: 'Gangneung day tours from Seoul', url: search('Gangneung day tour') };
 const JEJU_TOUR: Offer = { label: 'Jeju east and west coast day tours', url: search('Jeju day tour') };
 const HALLASAN: Offer = { label: 'Hallasan hiking tours', url: search('Hallasan hiking') };
+const KBO_TICKETS: Offer = { label: 'KBO baseball tickets sold to overseas visitors', url: search('KBO baseball'), note: 'Seoul home games, when listed' };
 
 // ── 축제 id → 상품 ─────────────────────────────────────────
 // id 는 web/lib/festival-rank.ts 의 FESTIVAL_PICKS 와 같은 KTO contentid.
@@ -134,6 +135,8 @@ export const GUIDE_OFFERS = {
   christmas:        [MORNING_CALM_LIGHTS, ESIM, AREX],     // 연말 가이드
   seollal:          [HANBOK_GBG, ESIM],                    // 설 가이드 — 한복이면 궁 무료
   cherry:           [JINHAE_SEOUL, JINHAE_BUSAN, KR_PASS], // 벚꽃 가이드
+  halloween:        [EVERLAND, LOTTE_WORLD, ESIM],         // 할로윈 가이드 — 테마파크가 안전한 선택지
+  baseball:         [KBO_TICKETS],                         // 야구 가이드
 } as const;
 
 // ── Agoda (숙소) ─────────────────────────────────────────
@@ -216,6 +219,8 @@ export const GUIDE_STAY = {
   christmas: [STAY_SEOUL, STAY_GANGNEUNG, STAY_BUSAN],
   seollal:   [STAY_SEOUL],
   winterSki: [STAY_PYEONGCHANG, STAY_HWACHEON],
+  halloween: [STAY_SEOUL],
+  baseball:  [STAY_SEOUL, STAY_BUSAN],
 } as const;
 
 export function offersFor(kind: 'festival' | 'place', id: string): Offer[] {

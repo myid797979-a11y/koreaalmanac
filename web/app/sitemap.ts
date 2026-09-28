@@ -24,6 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/guides/christmas-new-year-seoul/', priority: 0.9 },
     { url: SITE_URL + '/guides/seollal-2027/', priority: 0.9 },
     { url: SITE_URL + '/guides/cherry-blossom-2027/', priority: 0.9 },
+    { url: SITE_URL + '/guides/halloween-seoul-2026/', priority: 0.9 },
+    { url: SITE_URL + '/guides/baseball-in-korea/', priority: 0.9 },
     { url: SITE_URL + '/guides/autumn-foliage/', priority: 0.9 },
     { url: SITE_URL + '/guides/gyeongju-2-days/', priority: 0.9 },
     { url: SITE_URL + '/guides/seoul-3-days/', priority: 0.9 },

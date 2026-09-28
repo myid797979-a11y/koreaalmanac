@@ -140,6 +140,12 @@ export default async function VenuePage({ params }: { params: Promise<{ slug: st
         </>
       )}
 
+      {(v.slug === 'gocheok-sky-dome' || v.slug === 'jamsil') && (
+        <p className="strip">
+          <Link href="/guides/baseball-in-korea/">This is also a baseball stadium — how to see a game here →</Link>
+        </p>
+      )}
+
       <h2 className="sect">Other venues</h2>
       <p className="strip">
         {others.map(o => <Link key={o.slug} href={'/venue/' + o.slug + '/'}>{o.name}</Link>)}

@@ -1,0 +1,110 @@
+// 가이드 목록 — 가이드 인덱스(app/guides)와 홈(app/page)이 같이 쓴다.
+// 순서 = 인덱스 노출 순서. 시즌 가이드는 시즌이 지나면 뒤로 내리고, 다음 해 것으로 갈아끼운다.
+export type Guide = {
+  href: string;
+  title: string;
+  blurb: string;
+  tag: 'Seasonal' | 'Itinerary' | 'How-to';
+  photo?: string;   // KTO 장소 슬러그 — 카드 사진을 빌려 쓴다
+};
+
+export const GUIDES: Guide[] = [
+  {
+    href: '/guides/halloween-seoul-2026/',
+    title: 'Halloween in Seoul 2026',
+    blurb: 'It falls on a Saturday this year. Where the night actually happens now — Hongdae, the theme parks, the ticketed club parties — how the city manages the crowds since 2022, and what to know before you go to Itaewon.',
+    tag: 'Seasonal',
+    photo: 'itaewon-shopping-street-273721',
+  },
+  {
+    href: '/guides/christmas-new-year-seoul/',
+    title: 'Christmas & New Year in Seoul 2026–27',
+    blurb: 'Both holidays fall on a Friday this year. The Bosingak bell at midnight, a month of lantern and light festivals, the 1,000-won ice rink, and the east-coast sunrise trains that sell out in minutes.',
+    tag: 'Seasonal',
+    photo: 'cheonggyecheon-stream-897540',
+  },
+  {
+    href: '/guides/seollal-2027/',
+    title: 'Seollal 2027: 6–9 February',
+    blurb: 'The lunar new year is a day later than China’s this year. What closes, what opens free, why the palace closing days flip, and why it is secretly a good week to be in Seoul.',
+    tag: 'Seasonal',
+    photo: 'namsangol-hanok-village-264116',
+  },
+  {
+    href: '/guides/cherry-blossom-2027/',
+    title: 'Cherry blossom 2027: planning before the forecast',
+    blurb: 'The forecast arrives in late February. Until then: how the front moves from Jeju to Seoul, what the last six years actually did, and how to book a trip to a date that does not exist yet.',
+    tag: 'Seasonal',
+    photo: 'yeouido-hangang-park-1064767',
+  },
+  {
+    href: '/guides/korea-in-winter/',
+    title: 'Korea in winter 2026–27',
+    blurb: 'Cold and dry rather than snowy — and Seollal lands on 7 February 2027, which moves the palace closing days. Ice festivals, ski timing, and the week to plan around.',
+    tag: 'Seasonal',
+    photo: 'wondae-ri-birch-forest-whispering-birch-forest-2475952',
+  },
+  {
+    href: '/guides/autumn-foliage/',
+    title: 'Korea autumn foliage 2026',
+    blurb: 'Peak dates run late this year — Seoraksan 16–25 Oct, Seoul and the south into mid-November. Where to go, and why the cable-car queue decides your day.',
+    tag: 'Seasonal',
+    photo: 'seoraksan-ulsanbawi-rock-264169',
+  },
+  {
+    href: '/guides/baseball-in-korea/',
+    title: 'How to see a baseball game in Korea',
+    blurb: 'The cheering, the chicken, the ₩15,000 seats and the honest way for a foreigner to get a ticket. Ten teams, nine stadiums, plus a note on K League football.',
+    tag: 'How-to',
+    photo: 'gocheok-sky-dome-3006386',
+  },
+  {
+    href: '/venues/',
+    title: 'Concert venues: getting there, what to expect, where to stay',
+    blurb: 'Goyang Stadium, INSPIRE Arena, Olympic Park, KINTEX, Gocheok Sky Dome and four more — the nearest station, the route from Incheon Airport, and the trick for getting out afterwards.',
+    tag: 'How-to',
+    photo: 'olympic-park-789703',
+  },
+  {
+    href: '/guides/seoul-3-days/',
+    title: '3 days in Seoul',
+    blurb: 'A first-timer route built around the palace closing days and Bukchon’s 5pm curfew — the two things that break most published itineraries.',
+    tag: 'Itinerary',
+    photo: 'gyeongbokgung-palace-264337',
+  },
+  {
+    href: '/guides/jeju-3-days/',
+    title: '3 days in Jeju',
+    blurb: 'What to sort before you fly: the driving-licence rule that catches foreigners at the rental desk, Hallasan summit permits, and Manjanggul’s 2026 reopening that most guides missed.',
+    tag: 'Itinerary',
+    photo: 'hallasan-mountain-264172',
+  },
+  {
+    href: '/guides/busan-2-days/',
+    title: '2 days in Busan',
+    blurb: 'Split the way the city is — old town west, beaches east. With the Taejongdae train suspension, Jagalchi’s Tuesday closures, and why the Sky Capsule price is per capsule, not per person.',
+    tag: 'Itinerary',
+    photo: 'busan-gamcheon-culture-village-1998211',
+  },
+  {
+    href: '/guides/gyeongju-2-days/',
+    title: '2 days in Gyeongju',
+    blurb: 'The Silla capital stopped charging admission in 2023 and most guides never noticed. Downtown is 2 km end to end on foot; Bulguksa is the one bus ride, and the Seokguram shuttle runs hourly.',
+    tag: 'Itinerary',
+    photo: 'gyeongju-daereungwon-ancient-tomb-complex-2818690',
+  },
+  {
+    href: '/guides/kpop-tickets/',
+    title: 'How to buy K-pop concert tickets as a foreigner',
+    blurb: 'Which platforms actually sell to overseas buyers, how the presale queue works, and why resold tickets get voided at the door.',
+    tag: 'How-to',
+  },
+];
+
+/** 홈에 보여줄 것 — 지금 시즌에 맞는 넷 */
+export const HOME_GUIDE_HREFS = [
+  '/guides/halloween-seoul-2026/',
+  '/guides/christmas-new-year-seoul/',
+  '/guides/autumn-foliage/',
+  '/venues/',
+];
