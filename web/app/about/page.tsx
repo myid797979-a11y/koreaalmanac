@@ -58,9 +58,9 @@ export default function AboutPage() {
 
       <h2 className="sect">How the site is funded</h2>
       <p>
-        A small number of pages carry a box of booking links to Klook, a travel booking
-        platform, marked &ldquo;on Klook&rdquo;. If you book through one of those links we earn a
-        commission from Klook; you pay the same price either way. The boxes are added by hand
+        Some pages carry a box of booking links to Klook (tours and tickets) or Agoda (hotels),
+        marked &ldquo;on Klook&rdquo; or &ldquo;on Agoda&rdquo;. If you book through one of those
+        links we earn a commission from that platform; you pay the same price either way. The boxes are added by hand
         only where a tour or ticket is the practical way to visit, and they have no bearing on
         what is listed or how it is ranked. Details are in the{' '}
         <Link href="/privacy/">privacy policy</Link>.

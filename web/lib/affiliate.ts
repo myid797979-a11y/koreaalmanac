@@ -13,7 +13,8 @@
 export const KLOOK_AID = '136897';
 export const KLOOK_ADID = '1460726';
 
-export type Offer = { label: string; url: string; note?: string };
+export type Provider = 'klook' | 'agoda';
+export type Offer = { label: string; url: string; note?: string; provider?: Provider };
 
 /** 임의의 Klook URL → 추적 링크 */
 export function klook(target: string): string {
@@ -133,6 +134,88 @@ export const GUIDE_OFFERS = {
   christmas:        [MORNING_CALM_LIGHTS, ESIM, AREX],     // 연말 가이드
   seollal:          [HANBOK_GBG, ESIM],                    // 설 가이드 — 한복이면 궁 무료
   cherry:           [JINHAE_SEOUL, JINHAE_BUSAN, KR_PASS], // 벚꽃 가이드
+} as const;
+
+// ── Agoda (숙소) ─────────────────────────────────────────
+// 파트너 사이트 ID = CID 1976112 (2026-09-28 등록, 승인 대기). 어떤 Agoda URL 이든 ?cid= 를 붙이면
+// 추적된다. 호텔 id·도시 id 없이 걸 수 있는 도시 페이지(/city/<slug>.html)를 쓴다 — 아래 슬러그는
+// 전부 curl 로 200 확인했고, 없는 슬러그는 404 라 검증이 유효하다. textToSearch 만으로는 홈으로 튕긴다.
+//
+// 숙소 커미션은 1건에 만 원 단위라 eSIM 몇백 원과 차원이 다르다. 그래서 붙이는 자리는
+// "비행기 타고 와서 자야 하는" 페이지 — 공연장·공연·서울 밖 다박 축제·가이드.
+export const AGODA_CID = '1976112';
+
+function agodaCity(slug: string): string {
+  return 'https://www.agoda.com/city/' + slug + '.html?cid=' + AGODA_CID;
+}
+function stay(label: string, slug: string, note?: string): Offer {
+  return { label, url: agodaCity(slug), note, provider: 'agoda' };
+}
+
+const STAY_SEOUL      = stay('Hotels in Seoul', 'seoul-kr', 'Hongdae or Myeongdong for a first visit; Jamsil for the east-side venues');
+const STAY_GOYANG     = stay('Hotels in Goyang (Ilsan)', 'goyang-si-kr', 'beside KINTEX and the stadium, no late-night trip back');
+const STAY_INCHEON    = stay('Hotels in Incheon, including the airport island', 'incheon-kr', 'Yeongjong hotels are a shuttle ride from INSPIRE Arena');
+const STAY_BUSAN      = stay('Hotels in Busan', 'busan-kr', 'Haeundae for the beach, Seomyeon for the centre');
+const STAY_DAEGU      = stay('Hotels in Daegu', 'daegu-kr');
+const STAY_JINJU      = stay('Hotels in Jinju', 'jinju-si-kr', 'lantern week sells out months ahead; Busan is the fallback');
+const STAY_BORYEONG   = stay('Hotels in Boryeong (Daecheon Beach)', 'boryeong-si-kr', 'mud-festival weekends fill; midweek is easier');
+const STAY_HWACHEON   = stay('Hotels in Hwacheon', 'hwacheon-gun-kr', 'a small town with few rooms; most visitors day-trip from Seoul');
+const STAY_CHANGWON   = stay('Hotels in Changwon, including Jinhae', 'changwon-si-kr', 'Jinhae itself sells out; Changwon city is 20 minutes away');
+const STAY_GYEONGJU   = stay('Hotels in Gyeongju', 'gyeongju-si-kr', 'Hwangnidan-gil for the old town, Bomun Lake for resorts');
+const STAY_GANGNEUNG  = stay('Hotels in Gangneung', 'gangneung-si-kr', 'Gyeongpo Beach for the sunrise, the station area for the KTX');
+const STAY_JEJU       = stay('Hotels on Jeju', 'jeju-kr');
+const STAY_PYEONGCHANG = stay('Hotels in Pyeongchang', 'pyeongchang-gun-kr', 'ski-in resorts at Yongpyong and Alpensia');
+const STAY_YEOSU      = stay('Hotels in Yeosu', 'yeosu-si-kr');
+const STAY_GWANGJU    = stay('Hotels in Gwangju', 'gwangju-kr');
+
+/** 공연장 가이드 → 숙소 */
+export const VENUE_STAY: Record<string, Offer[]> = {
+  'goyang-stadium':      [STAY_GOYANG, STAY_SEOUL],
+  'inspire-arena':       [STAY_INCHEON, STAY_SEOUL],
+  'olympic-park':        [STAY_SEOUL],
+  'kintex':              [STAY_GOYANG, STAY_SEOUL],
+  'gocheok-sky-dome':    [STAY_SEOUL],
+  'jangchung-arena':     [STAY_SEOUL],
+  'yes24-live-hall':     [STAY_SEOUL],
+  'hongdae-live-venues': [STAY_SEOUL],
+  'jamsil':              [STAY_SEOUL],
+};
+
+/** 공연 상세 → 숙소: 공연장 가이드가 있으면 그 기준, 없으면 도시 기준 */
+const CITY_STAY: Record<string, Offer[]> = {
+  Seoul: [STAY_SEOUL], Busan: [STAY_BUSAN], Incheon: [STAY_INCHEON], Goyang: [STAY_GOYANG],
+  Daegu: [STAY_DAEGU], Gangneung: [STAY_GANGNEUNG], Paju: [STAY_SEOUL],
+};
+export function stayOffersForConcert(c: { city: string }, venueSlug?: string): Offer[] {
+  return (venueSlug && VENUE_STAY[venueSlug]) || CITY_STAY[c.city] || [];
+}
+
+/** 서울 밖에서 하루 이상 걸리는 전국구 축제 → 숙소 */
+const FESTIVAL_STAY: Record<string, Offer[]> = {
+  '697197':  [STAY_JINJU, STAY_BUSAN],        // 진주남강유등축제
+  '697135':  [STAY_BORYEONG],                 // 보령머드축제
+  '685135':  [STAY_HWACHEON],                 // 화천산천어축제
+  '700520':  [STAY_CHANGWON, STAY_BUSAN],     // 진해군항제
+  '235076':  [STAY_BUSAN],                    // 부산불꽃축제
+  '1385298': [STAY_BUSAN],                    // 부산불꽃축제 (다른 회차)
+  '3115770': [STAY_BUSAN],                    // 광안리 드론쇼
+  '1675246': [STAY_GANGNEUNG],                // 강릉커피축제
+  '1084180': [STAY_JEJU],                     // 제주올레걷기축제
+  '661861':  [STAY_PYEONGCHANG],              // 평창송어축제
+  '679008':  [STAY_PYEONGCHANG],              // 대관령눈꽃축제
+  '1490063': [STAY_YEOSU],                    // 여수 향일암 해맞이
+  '617992':  [STAY_GWANGJU],                  // 광주비엔날레
+};
+export function stayOffersForFestival(id: string): Offer[] {
+  return FESTIVAL_STAY[id] ?? [];
+}
+
+export const GUIDE_STAY = {
+  gyeongju:  [STAY_GYEONGJU, STAY_BUSAN],
+  cherry:    [STAY_BUSAN, STAY_CHANGWON, STAY_GYEONGJU, STAY_SEOUL],
+  christmas: [STAY_SEOUL, STAY_GANGNEUNG, STAY_BUSAN],
+  seollal:   [STAY_SEOUL],
+  winterSki: [STAY_PYEONGCHANG, STAY_HWACHEON],
 } as const;
 
 export function offersFor(kind: 'festival' | 'place', id: string): Offer[] {

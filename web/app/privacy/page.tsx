@@ -41,12 +41,14 @@ export default function PrivacyPage() {
 
       <h2 className="sect">Affiliate links</h2>
       <p>
-        Some pages include booking links to <strong>Klook</strong>, a travel booking platform,
-        in a box marked &ldquo;on Klook&rdquo;. These are affiliate links: if you book through one,
-        {SITE_NAME} earns a small commission from Klook at no extra cost to you. The links
-        carry a partner identifier so Klook can attribute the booking; when you click one,
-        Klook may set a cookie on its own site under
-        {' '}<a href="https://www.klook.com/privacy/" target="_blank" rel="noopener">Klook&apos;s privacy policy</a>.
+        Some pages include booking links to <strong>Klook</strong>, a tours and tickets
+        platform, and <strong>Agoda</strong>, a hotel booking platform, in boxes marked
+        &ldquo;on Klook&rdquo; or &ldquo;on Agoda&rdquo;. These are affiliate links: if you book
+        through one, {SITE_NAME} earns a small commission from that platform at no extra cost
+        to you. The links carry a partner identifier so the platform can attribute the booking;
+        when you click one, it may set a cookie on its own site under its own privacy policy
+        ({' '}<a href="https://www.klook.com/privacy/" target="_blank" rel="noopener">Klook</a>,{' '}
+        <a href="https://www.agoda.com/info/privacy.html" target="_blank" rel="noopener">Agoda</a>).
         We receive aggregate statistics only (clicks and bookings), never your name or
         payment details.
       </p>

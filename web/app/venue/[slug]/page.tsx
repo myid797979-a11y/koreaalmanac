@@ -6,7 +6,7 @@ import { concertDateRange } from '@/lib/concerts';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { SITE_URL, clampDesc } from '@/lib/site';
 import BookBox from '@/app/components/BookBox';
-import { GUIDE_OFFERS } from '@/lib/affiliate';
+import { GUIDE_OFFERS, VENUE_STAY } from '@/lib/affiliate';
 
 export function generateStaticParams() {
   return venueParams();
@@ -118,6 +118,7 @@ export default async function VenuePage({ params }: { params: Promise<{ slug: st
 
       <h2 className="sect">Where to stay</h2>
       <p>{v.stay}</p>
+      <BookBox provider="agoda" offers={VENUE_STAY[v.slug] ?? []} title={'Hotels for ' + v.name} />
 
       <BookBox
         offers={GUIDE_OFFERS.venueArrival}

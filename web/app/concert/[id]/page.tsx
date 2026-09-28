@@ -7,6 +7,8 @@ import {
 import { fmt, today } from '@/lib/data';
 import { concertJsonLd, breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { venueForConcert } from '@/lib/venues';
+import BookBox from '@/app/components/BookBox';
+import { stayOffersForConcert } from '@/lib/affiliate';
 
 export function generateStaticParams() {
   return concertParams();
@@ -99,6 +101,16 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
           {c.price && <tr><th>Admission</th><td>{c.price}</td></tr>}
         </tbody>
       </table>
+
+      {/* 숙소 상자 — 공연 보러 비행기 타고 오는 사람은 반드시 잔다. 끝난 공연에는 안 붙인다. */}
+      {c.end >= t && (
+        <BookBox
+          provider="agoda"
+          offers={stayOffersForConcert(c, venue?.slug)}
+          title={'Hotels near ' + (venue ? venue.name : c.venue)}
+          intro={venue ? 'Which neighbourhood works for this venue is in the venue guide above.' : undefined}
+        />
+      )}
 
       {c.tip && (
         <p className="c-tip"><strong>For visitors:</strong> {c.tip}</p>

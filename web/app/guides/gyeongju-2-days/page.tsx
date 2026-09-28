@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
-import { GUIDE_OFFERS } from '@/lib/affiliate';
+import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: '2 Days in Gyeongju — the Silla capital, mostly free and mostly on foot',
@@ -116,6 +116,12 @@ export default function GyeongjuTwoDays() {
         offers={GUIDE_OFFERS.gyeongju}
         title="Book ahead"
         intro="If Gyeongju is one stop of several, the rail pass usually pays for itself on the Seoul–Gyeongju–Busan triangle alone."
+      />
+      <BookBox
+        provider="agoda"
+        offers={GUIDE_STAY.gyeongju}
+        title="Where to stay"
+        intro="Two nights in town is the point of this guide; Busan is the alternative if Gyeongju is full."
       />
 
       <DayHead

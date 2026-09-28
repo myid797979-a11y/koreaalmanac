@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { GuideHero, FestivalRow, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
-import { GUIDE_OFFERS } from '@/lib/affiliate';
+import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: 'Korea Cherry Blossom 2027 — forecast, typical dates by city, and how to book before it exists',
@@ -178,6 +178,12 @@ export default function CherryBlossom2027() {
         offers={GUIDE_OFFERS.cherry}
         title="Jinhae without the hotel problem"
         intro="Day tours from Seoul and from Busan run through festival week, and the rail pass covers the Busan–Gyeongju–Seoul route the blossom follows."
+      />
+      <BookBox
+        provider="agoda"
+        offers={GUIDE_STAY.cherry}
+        title="Book refundable, then move with the forecast"
+        intro="Free-cancellation rates are the whole strategy in step 2 above."
       />
 
       <p className="strip">

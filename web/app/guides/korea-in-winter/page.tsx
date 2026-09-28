@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { FestivalHero, FestivalRow, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
-import { GUIDE_OFFERS } from '@/lib/affiliate';
+import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: 'Korea in Winter 2026–27 — how cold, what is on, and the week to avoid',
@@ -252,6 +252,12 @@ export default function KoreaInWinter() {
       <BookBox
         offers={GUIDE_OFFERS.winterSkiLights}
         title="Ski days and the lights, without a car"
+      />
+      <BookBox
+        provider="agoda"
+        offers={GUIDE_STAY.winterSki}
+        title="Staying in the mountains"
+        intro="Pyeongchang for a ski week; Hwacheon only if you want the ice festival at opening time, because the rooms are few."
       />
 
       <h2 className="sect">Seoul, when it is too cold to be outside</h2>

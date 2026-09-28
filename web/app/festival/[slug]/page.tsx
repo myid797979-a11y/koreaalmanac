@@ -5,7 +5,7 @@ import { rankShortFirst } from '@/lib/festival-rank';
 import Stamp from '@/app/components/Stamp';
 import Gallery from '@/app/components/Gallery';
 import BookBox from '@/app/components/BookBox';
-import { offersFor } from '@/lib/affiliate';
+import { offersFor, stayOffersForFestival } from '@/lib/affiliate';
 import {
   festivals, bySlug, status, dateRange, daysUntil, today,
   icsHref, MONTH_SLUGS, MONTHS_FULL, categoryLabel, uniqueTitle } from '@/lib/data';
@@ -106,6 +106,7 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
 
       {/* 제휴 상자 — 사람이 고른 전국구 축제에만, 끝난 회차에는 안 붙인다 (투어 상품도 내려가 있다) */}
       {status(f, t) !== 'ended' && <BookBox offers={offersFor('festival', f.id)} title="Getting there the easy way" />}
+      {status(f, t) !== 'ended' && <BookBox provider="agoda" offers={stayOffersForFestival(f.id)} title="Where to stay for it" />}
 
       {hasMap && (
         <>

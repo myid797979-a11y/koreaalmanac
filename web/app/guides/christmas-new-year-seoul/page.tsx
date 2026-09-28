@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { GuideHero, FestivalRow, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
-import { GUIDE_OFFERS } from '@/lib/affiliate';
+import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: 'Christmas and New Year in Seoul 2026–27 — the bell, the lights, the first sunrise',
@@ -215,6 +215,12 @@ export default function ChristmasNewYearSeoul() {
         offers={GUIDE_OFFERS.christmas}
         title="Book ahead for the season"
         intro="The lighting-festival coach and the two things worth sorting before you land."
+      />
+      <BookBox
+        provider="agoda"
+        offers={GUIDE_STAY.christmas}
+        title="Where to stay over the holidays"
+        intro="Seoul for the bell, Gangneung for the sunrise, Busan for the countdown. The coast books out first."
       />
 
       <p className="strip">

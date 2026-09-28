@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
-import { GUIDE_OFFERS } from '@/lib/affiliate';
+import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: 'Seollal 2027 in Korea — 6 to 9 February: what closes, what opens free, and how to travel',
@@ -164,6 +164,12 @@ export default function Seollal2027() {
         offers={GUIDE_OFFERS.seollal}
         title="Worth sorting before the week"
         intro="Hanbok gets you into the palaces free and into every photograph; the eSIM saves the bank-branch problem."
+      />
+      <BookBox
+        provider="agoda"
+        offers={GUIDE_STAY.seollal}
+        title="Stay in one city"
+        intro="Seoul is the easy answer for the four days: everything that stays open is here, and nothing requires a train."
       />
 
       <p className="strip">
