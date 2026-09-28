@@ -59,6 +59,20 @@ export const GUIDES: Guide[] = [
     photo: 'gocheok-sky-dome-3006386',
   },
   {
+    href: '/guides/korea-on-a-budget/',
+    title: 'Korea on a budget: what things cost in 2026',
+    blurb: 'Real prices for transport, food, beds and sights, three daily budgets from ₩60,000, and honest verdicts on the passes — most of the best things here are free or nearly.',
+    tag: 'How-to',
+    photo: 'gwangjang-market-273761',
+  },
+  {
+    href: '/guides/seoul-nightlife/',
+    title: 'Seoul after dark: where to go by neighbourhood',
+    blurb: 'Hongdae, Itaewon, Gangnam, Seongsu, Euljiro and the river — what each is for, what it costs, the 19+ passport rule, and how to get home after the last train.',
+    tag: 'How-to',
+    photo: 'banpo-bridge-rainbow-fountain-1011983',
+  },
+  {
     href: '/venues/',
     title: 'Concert venues: getting there, what to expect, where to stay',
     blurb: 'Goyang Stadium, INSPIRE Arena, Olympic Park, KINTEX, Gocheok Sky Dome and four more — the nearest station, the route from Incheon Airport, and the trick for getting out afterwards.',

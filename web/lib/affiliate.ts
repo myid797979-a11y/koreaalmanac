@@ -74,6 +74,13 @@ const GANGNEUNG_TOUR: Offer = { label: 'Gangneung day tours from Seoul', url: se
 const JEJU_TOUR: Offer = { label: 'Jeju east and west coast day tours', url: search('Jeju day tour') };
 const HALLASAN: Offer = { label: 'Hallasan hiking tours', url: search('Hallasan hiking') };
 const KBO_TICKETS: Offer = { label: 'KBO baseball tickets sold to overseas visitors', url: search('KBO baseball'), note: 'Seoul home games, when listed' };
+const BIRF: Offer = { label: 'Busan International Rock Festival tickets', url: search('Busan International Rock Festival') };
+const ANDONG_TOUR: Offer = { label: 'Andong Hahoe Village day tours', url: search('Andong Hahoe Village'), note: 'from Seoul or Busan; the mask dance is at the village' };
+const YEOSU_TOUR: Offer = { label: 'Yeosu cable car and day tours', url: search('Yeosu') };
+const SEORAKSAN_TOUR: Offer = { label: 'Seoraksan day tour from Seoul', url: search('Seoraksan day tour'), note: 'coach in, cable car queue and back the same night' };
+const PUB_CRAWL: Offer = { label: 'Seoul pub crawl (Hongdae / Itaewon)', url: search('Seoul pub crawl'), note: 'the easy first night if you are travelling alone' };
+const HAN_RIVER_CRUISE: Offer = { label: 'Han River evening cruise', url: search('Han River cruise'), note: 'from Yeouido, timed for the Banpo Bridge fountain' };
+const NSEOUL_NIGHT: Offer = { label: 'N Seoul Tower observatory ticket', url: search('N Seoul Tower'), note: 'the night view everyone means' };
 
 // ── 축제 id → 상품 ─────────────────────────────────────────
 // id 는 web/lib/festival-rank.ts 의 FESTIVAL_PICKS 와 같은 KTO contentid.
@@ -93,6 +100,15 @@ const FESTIVAL_OFFERS: Record<string, Offer[]> = {
   '1675246': [GANGNEUNG_TOUR],                            // 강릉커피축제
   '1084180': [JEJU_TOUR],                                 // 제주올레걷기축제
   '1866962': [MORNING_CALM_LIGHTS, NAMI_TOUR],            // 아침고요수목원 오색별빛정원전
+  // 2026-09-28 추가 — 10~11월에 열리는 것 중 Klook 에 실제 상품이 있는 축제
+  '293091':  [BIRF],                                      // 부산국제록페스티벌
+  '697123':  [ANDONG_TOUR],                               // 안동국제탈춤페스티벌
+  '978249':  [SUWON_TOUR],                                // 수원화성문화제
+  '2657619': [SUWON_TOUR],                                // 화성행궁 야간개장
+  '3487931': [JEONJU_TOUR],                               // 전주한옥마을 전통공연 퍼레이드
+  '2818138': [HANBOK_GBG],                                // 창경궁 야연 (궁궐 야간, 한복)
+  '4114312': [GANGNEUNG_TOUR],                            // 강릉 빵굽는 마을
+  '2874909': [YEOSU_TOUR],                                // 여수 밤바다 불꽃축제
 };
 
 // ── 관광지 id → 상품 ───────────────────────────────────────
@@ -137,6 +153,8 @@ export const GUIDE_OFFERS = {
   cherry:           [JINHAE_SEOUL, JINHAE_BUSAN, KR_PASS], // 벚꽃 가이드
   halloween:        [EVERLAND, LOTTE_WORLD, ESIM],         // 할로윈 가이드 — 테마파크가 안전한 선택지
   baseball:         [KBO_TICKETS],                         // 야구 가이드
+  foliage:          [SEORAKSAN_TOUR, NAMI_TOUR, KR_PASS],  // 단풍 가이드 (10월 트래픽)
+  nightlife:        [PUB_CRAWL, HAN_RIVER_CRUISE, NSEOUL_NIGHT],
 } as const;
 
 // ── Agoda (숙소) ─────────────────────────────────────────
@@ -170,6 +188,10 @@ const STAY_JEJU       = stay('Hotels on Jeju', 'jeju-kr');
 const STAY_PYEONGCHANG = stay('Hotels in Pyeongchang', 'pyeongchang-gun-kr', 'ski-in resorts at Yongpyong and Alpensia');
 const STAY_YEOSU      = stay('Hotels in Yeosu', 'yeosu-si-kr');
 const STAY_GWANGJU    = stay('Hotels in Gwangju', 'gwangju-kr');
+const STAY_ANDONG     = stay('Hotels in Andong', 'andong-si-kr', 'book early for mask-dance week; Hahoe has a few guesthouses');
+const STAY_JEONJU     = stay('Hotels in Jeonju', 'jeonju-si-kr', 'a hanok stay inside the village is the point');
+const STAY_CHUNCHEON  = stay('Hotels in Chuncheon', 'chuncheon-si-kr', 'the nearest real city to Hwacheon, an hour by bus');
+const STAY_SOKCHO     = stay('Hotels in Sokcho', 'sokcho-si-kr', 'the base for Seoraksan; sells out for peak foliage weekends');
 
 /** 공연장 가이드 → 숙소 */
 export const VENUE_STAY: Record<string, Offer[]> = {
@@ -197,7 +219,7 @@ export function stayOffersForConcert(c: { city: string }, venueSlug?: string): O
 const FESTIVAL_STAY: Record<string, Offer[]> = {
   '697197':  [STAY_JINJU, STAY_BUSAN],        // 진주남강유등축제
   '697135':  [STAY_BORYEONG],                 // 보령머드축제
-  '685135':  [STAY_HWACHEON],                 // 화천산천어축제
+  '685135':  [STAY_HWACHEON, STAY_CHUNCHEON], // 화천산천어축제
   '700520':  [STAY_CHANGWON, STAY_BUSAN],     // 진해군항제
   '235076':  [STAY_BUSAN],                    // 부산불꽃축제
   '1385298': [STAY_BUSAN],                    // 부산불꽃축제 (다른 회차)
@@ -208,6 +230,13 @@ const FESTIVAL_STAY: Record<string, Offer[]> = {
   '679008':  [STAY_PYEONGCHANG],              // 대관령눈꽃축제
   '1490063': [STAY_YEOSU],                    // 여수 향일암 해맞이
   '617992':  [STAY_GWANGJU],                  // 광주비엔날레
+  '293091':  [STAY_BUSAN],                    // 부산국제록페스티벌
+  '697123':  [STAY_ANDONG],                   // 안동국제탈춤페스티벌
+  '637693':  [STAY_CHANGWON],                 // 마산가고파국화축제
+  '697371':  [STAY_GWANGJU],                  // 광주김치축제
+  '3487931': [STAY_JEONJU],                   // 전주한옥마을 전통공연 퍼레이드
+  '4114312': [STAY_GANGNEUNG],                // 강릉 빵굽는 마을
+  '2874909': [STAY_YEOSU],                    // 여수 밤바다 불꽃축제
 };
 export function stayOffersForFestival(id: string): Offer[] {
   return FESTIVAL_STAY[id] ?? [];
@@ -221,6 +250,9 @@ export const GUIDE_STAY = {
   winterSki: [STAY_PYEONGCHANG, STAY_HWACHEON],
   halloween: [STAY_SEOUL],
   baseball:  [STAY_SEOUL, STAY_BUSAN],
+  foliage:   [STAY_SOKCHO, STAY_GANGNEUNG, STAY_SEOUL],
+  nightlife: [STAY_SEOUL],
+  budget:    [STAY_SEOUL, STAY_BUSAN],
 } as const;
 
 export function offersFor(kind: 'festival' | 'place', id: string): Offer[] {

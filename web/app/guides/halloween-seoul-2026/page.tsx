@@ -171,6 +171,7 @@ export default function HalloweenSeoul2026() {
       />
 
       <p className="strip">
+        <Link href="/guides/seoul-nightlife/">Seoul after dark, neighbourhood by neighbourhood</Link>
         <Link href="/events/concerts/">Concerts and club nights this month</Link>
         <Link href="/events/festivals/october/">October festivals</Link>
         <Link href="/guides/christmas-new-year-seoul/">Christmas &amp; New Year</Link>

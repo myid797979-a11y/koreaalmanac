@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
+import BookBox from '@/app/components/BookBox';
+import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: 'Korea Autumn Foliage 2026 — when and where, region by region',
@@ -192,6 +194,17 @@ export default function AutumnFoliage() {
         for the peak weekends months ahead, and it is the single most common way a foliage trip
         goes wrong. If you are reading this in September, that is the thing to do today.
       </p>
+      <BookBox
+        provider="agoda"
+        offers={GUIDE_STAY.foliage}
+        title="Book the mountain nights first"
+        intro="Sokcho for Seoraksan, Gangneung for the coast road; Seoul for the second week of November."
+      />
+      <BookBox
+        offers={GUIDE_OFFERS.foliage}
+        title="If the hotels are gone"
+        intro="A day-tour coach from Seoul gets you to Seoraksan and back without the room; the rail pass covers the rest of the route."
+      />
 
       <p className="strip">
         <Link href="/plan/">Trip Planner</Link>
