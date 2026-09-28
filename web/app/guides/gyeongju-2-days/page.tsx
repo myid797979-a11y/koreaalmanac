@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
+import BookBox from '@/app/components/BookBox';
+import { GUIDE_OFFERS } from '@/lib/affiliate';
 
 export const metadata = {
   title: '2 Days in Gyeongju — the Silla capital, mostly free and mostly on foot',
@@ -110,6 +112,11 @@ export default function GyeongjuTwoDays() {
           </tr>
         </tbody>
       </table>
+      <BookBox
+        offers={GUIDE_OFFERS.gyeongju}
+        title="Book ahead"
+        intro="If Gyeongju is one stop of several, the rail pass usually pays for itself on the Seoul–Gyeongju–Busan triangle alone."
+      />
 
       <DayHead
         day="Day 1"

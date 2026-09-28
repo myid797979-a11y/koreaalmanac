@@ -36,7 +36,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {`window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-QK9J11YDBN');`}
+            gtag('config', 'G-QK9J11YDBN');
+            document.addEventListener('click', function (e) {
+              var el = e.target instanceof Element ? e.target.closest('a[data-aff]') : null;
+              if (el) gtag('event', 'affiliate_click', {
+                provider: el.getAttribute('data-aff'),
+                link_text: (el.textContent || '').trim().slice(0, 80),
+                page_path: location.pathname });
+            }, true);`}
         </Script>
         <header className="site">
           <div className="wrap">

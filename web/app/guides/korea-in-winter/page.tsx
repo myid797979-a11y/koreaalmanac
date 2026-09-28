@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { FestivalHero, FestivalRow, PlaceRow } from '@/app/components/GuideBits';
+import BookBox from '@/app/components/BookBox';
+import { GUIDE_OFFERS } from '@/lib/affiliate';
 
 export const metadata = {
   title: 'Korea in Winter 2026–27 — how cold, what is on, and the week to avoid',
@@ -202,6 +204,11 @@ export default function KoreaInWinter() {
         'hongcheon-river-ice-festival-1769697',
         'cheorwon-hantangang-river-ice-trekking-festival-3310502',
       ]} />
+      <BookBox
+        offers={GUIDE_OFFERS.winterIce}
+        title="Day-tour coaches to the ice"
+        intro="Hwacheon has no rail link and the bus involves a change in Chuncheon; a coach tour from Seoul is what most visitors do."
+      />
 
       <h2 className="sect">Skiing, and what opening day really means</h2>
       <p>
@@ -242,6 +249,10 @@ export default function KoreaInWinter() {
         'gwangbok-ro-winter-light-tree-festival-3576410',
         'suseong-light-art-festival-3565768',
       ]} />
+      <BookBox
+        offers={GUIDE_OFFERS.winterSkiLights}
+        title="Ski days and the lights, without a car"
+      />
 
       <h2 className="sect">Seoul, when it is too cold to be outside</h2>
       <p>
@@ -301,6 +312,11 @@ export default function KoreaInWinter() {
         Skip the snow boots unless you are going to Gangwon. City pavements are cleared quickly
         and are dry more often than not.
       </p>
+      <BookBox
+        offers={GUIDE_OFFERS.arrival}
+        title="Sort out before you land"
+        intro="Three things that are cheaper or simpler bought before the flight than at the airport."
+      />
 
       <p className="strip">
         <Link href="/plan/">Trip Planner</Link>

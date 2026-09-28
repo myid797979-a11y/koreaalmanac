@@ -34,9 +34,26 @@ export default function PrivacyPage() {
 
       <h2 className="sect">Advertising</h2>
       <p>
-        If advertising is enabled on this site, the ad provider may use cookies to serve
-        relevant ads. This page will be updated with provider details and opt-out
-        instructions before that happens.
+        This site does not currently run display advertising. If that changes, this page will
+        name the provider and explain the cookies involved and how to opt out before any ads
+        appear.
+      </p>
+
+      <h2 className="sect">Affiliate links</h2>
+      <p>
+        Some pages include booking links to <strong>Klook</strong>, a travel booking platform,
+        in a box marked &ldquo;on Klook&rdquo;. These are affiliate links: if you book through one,
+        {SITE_NAME} earns a small commission from Klook at no extra cost to you. The links
+        carry a partner identifier so Klook can attribute the booking; when you click one,
+        Klook may set a cookie on its own site under
+        {' '}<a href="https://www.klook.com/privacy/" target="_blank" rel="noopener">Klook&apos;s privacy policy</a>.
+        We receive aggregate statistics only (clicks and bookings), never your name or
+        payment details.
+      </p>
+      <p>
+        Affiliate links never affect which festivals, places or events appear on this site or
+        the order they appear in. Boxes are added by hand to a small number of pages where a
+        tour or ticket is genuinely the practical way to visit.
       </p>
 
       <h2 className="sect">Maps</h2>
