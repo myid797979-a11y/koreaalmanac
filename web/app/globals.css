@@ -934,3 +934,20 @@ footer.site .strip a:hover { color: var(--seal); }
 .book a:hover { color: var(--seal); border-color: var(--seal); }
 .book-note { color: var(--muted); font-size: 13.5px; }
 .book-disc { margin: 10px 0 0; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+/* ── 공연장 가이드 (app/venue, app/venues) ─────────────────── */
+.tips { margin: 14px 0 0; padding-left: 20px; }
+.tips li { margin: 0 0 8px; line-height: 1.6; font-size: 15px; }
+.venue-list { list-style: none; margin: 18px 0 0; padding: 0; }
+.venue-list li { padding: 16px 0; border-top: 1px solid var(--line); }
+.venue-list li:first-child { border-top: 3px double var(--ink); }
+.venue-list h2 { margin: 0 0 2px; font-size: 20px; }
+.venue-list h2 a { color: var(--ink); }
+.venue-list h2 a:hover { color: var(--seal); }
+.venue-list p { margin: 4px 0 0; font-size: 15px; line-height: 1.55; }
+.venue-list .venue-station { color: var(--muted); font-size: 14px; }
+
+/* ── 가이드 번호 목록 (벚꽃 가이드 "예약 순서" 처럼 실제 순서가 있는 내용에만) ── */
+ol.steps { margin: 12px 0 0; padding-left: 24px; }
+ol.steps li { margin: 0 0 10px; line-height: 1.65; font-size: 15.5px; }
+ol.steps li::marker { color: var(--seal); font-weight: 600; }

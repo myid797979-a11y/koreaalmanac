@@ -8,6 +8,27 @@ export const metadata = {
 
 const GUIDES = [
   {
+    href: '/guides/christmas-new-year-seoul/',
+    title: 'Christmas & New Year in Seoul 2026–27',
+    blurb: 'Both holidays fall on a Friday this year. The Bosingak bell at midnight, a month of lantern and light festivals, the 1,000-won ice rink, and the east-coast sunrise trains that sell out in minutes.',
+    tag: 'Seasonal',
+    photo: 'cheonggyecheon-stream-897540',
+  },
+  {
+    href: '/guides/seollal-2027/',
+    title: 'Seollal 2027: 6–9 February',
+    blurb: 'The lunar new year is a day later than China’s this year. What closes, what opens free, why the palace closing days flip, and why it is secretly a good week to be in Seoul.',
+    tag: 'Seasonal',
+    photo: 'namsangol-hanok-village-264116',
+  },
+  {
+    href: '/guides/cherry-blossom-2027/',
+    title: 'Cherry blossom 2027: planning before the forecast',
+    blurb: 'The forecast arrives in late February. Until then: how the front moves from Jeju to Seoul, what the last six years actually did, and how to book a trip to a date that does not exist yet.',
+    tag: 'Seasonal',
+    photo: 'yeouido-hangang-park-1064767',
+  },
+  {
     href: '/guides/korea-in-winter/',
     title: 'Korea in winter 2026–27',
     blurb: 'Cold and dry rather than snowy — and Seollal lands on 7 February 2027, which moves the palace closing days. Ice festivals, ski timing, and the week to plan around.',
@@ -48,6 +69,13 @@ const GUIDES = [
     blurb: 'The Silla capital stopped charging admission in 2023 and most guides never noticed. Downtown is 2 km end to end on foot; Bulguksa is the one bus ride, and the Seokguram shuttle runs hourly.',
     tag: 'Itinerary',
     photo: 'gyeongju-daereungwon-ancient-tomb-complex-2818690',
+  },
+  {
+    href: '/venues/',
+    title: 'Concert venues: getting there, what to expect, where to stay',
+    blurb: 'Goyang Stadium, INSPIRE Arena, Olympic Park, KINTEX, Gocheok Sky Dome and four more — the nearest station, the route from Incheon Airport, and the trick for getting out afterwards.',
+    tag: 'How-to',
+    photo: 'olympic-park-789703',
   },
   {
     href: '/guides/kpop-tickets/',

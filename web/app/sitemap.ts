@@ -3,6 +3,7 @@ import {
   festivals, MONTH_SLUGS, REGIONS, REGION_MONTH_MIN, regionMonthList, CATEGORIES,
 } from '@/lib/data';
 import { concertParams } from '@/lib/concerts';
+import { venueParams } from '@/lib/venues';
 import { cultureParams, liveCulture } from '@/lib/culture';
 import { placeParams, PLACE_CATS, places } from '@/lib/places';
 import { SITE_URL } from '@/lib/site';
@@ -20,6 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/search/', priority: 0.5 },
     { url: SITE_URL + '/guides/', priority: 0.9 },
     { url: SITE_URL + '/guides/korea-in-winter/', priority: 0.9 },
+    { url: SITE_URL + '/guides/christmas-new-year-seoul/', priority: 0.9 },
+    { url: SITE_URL + '/guides/seollal-2027/', priority: 0.9 },
+    { url: SITE_URL + '/guides/cherry-blossom-2027/', priority: 0.9 },
     { url: SITE_URL + '/guides/autumn-foliage/', priority: 0.9 },
     { url: SITE_URL + '/guides/gyeongju-2-days/', priority: 0.9 },
     { url: SITE_URL + '/guides/seoul-3-days/', priority: 0.9 },
@@ -27,6 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/guides/busan-2-days/', priority: 0.9 },
     { url: SITE_URL + '/guides/kpop-tickets/', priority: 0.8 },
     ...concertParams().map(c => ({ url: SITE_URL + '/concert/' + c.id + '/', priority: 0.7 })),
+    { url: SITE_URL + '/venues/', priority: 0.85 },
+    ...venueParams().map(v => ({ url: SITE_URL + '/venue/' + v.slug + '/', priority: 0.85 })),
     ...(liveCulture('traditional').length ? [{ url: SITE_URL + '/events/traditional/', priority: 0.9 }] : []),
     ...(liveCulture('exhibition').length ? [{ url: SITE_URL + '/events/exhibitions/', priority: 0.9 }] : []),
     ...cultureParams().map(c => ({ url: SITE_URL + '/culture/' + c.slug + '/', priority: 0.7 })),

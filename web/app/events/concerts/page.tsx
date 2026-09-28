@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { today, fmt } from '@/lib/data';
 import { upcomingConcerts, concertDateRange, KIND_LABEL, CONCERTS_UPDATED } from '@/lib/concerts';
 import Stamp from '@/app/components/Stamp';
+import { venueForConcert, venues } from '@/lib/venues';
 
 export const metadata = {
   title: 'Concerts & Music Festivals in Korea',
@@ -23,6 +24,10 @@ export default function ConcertsPage() {
         We track the events worth planning a trip around: K-pop and arena concerts,
         EDM and music festivals, the big year-end awards nights, and international
         tours passing through. Curated {fmt(CONCERTS_UPDATED)}.
+      </p>
+      <p className="strip">
+        <strong>Venue guides</strong>
+        {venues.map(v => <Link key={v.slug} href={'/venue/' + v.slug + '/'}>{v.name}</Link>)}
       </p>
 
       {items.length === 0 ? (
@@ -52,7 +57,8 @@ export default function ConcertsPage() {
                   </Link>
                 </h2>
                 <p className="c-venue">
-                  {c.venue} · <Link href={'/events/festivals/' + c.region.toLowerCase() + '/'}>{c.city}</Link>
+                  {(() => { const v = venueForConcert(c); return v ? <Link href={'/venue/' + v.slug + '/'}>{c.venue}</Link> : c.venue; })()}
+                  {' · '}<Link href={'/events/festivals/' + c.region.toLowerCase() + '/'}>{c.city}</Link>
                 </p>
                 {c.note && <p className="c-note">{c.note}</p>}
                 <p className="c-more"><Link href={'/concert/' + c.id + '/'}>Details &amp; venue map →</Link></p>

@@ -6,6 +6,7 @@ import {
 } from '@/lib/concerts';
 import { fmt, today } from '@/lib/data';
 import { concertJsonLd, breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
+import { venueForConcert } from '@/lib/venues';
 
 export function generateStaticParams() {
   return concertParams();
@@ -31,6 +32,7 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
   const mapQuery = encodeURIComponent(c.venue + ', South Korea');
   const others = upcomingConcerts(t).filter(x => x.id !== c.id).slice(0, 6);
   const showArtist = c.artist !== 'Various artists' && c.title.indexOf(c.artist) === -1;
+  const venue = venueForConcert(c);   // 가이드가 있는 공연장이면 링크 (9곳)
 
   const eventLd = concertJsonLd(c);
   const crumbLd = breadcrumbJsonLd([
@@ -87,7 +89,10 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
           <tr><th>Dates</th><td>{concertDateRange(c)}</td></tr>
           {c.showTimes && <tr><th>Show times</th><td>{c.showTimes}</td></tr>}
           <tr><th>Type</th><td>{KIND_LABEL[c.kind]}</td></tr>
-          <tr><th>Venue</th><td>{c.venue}</td></tr>
+          <tr><th>Venue</th><td>
+            {c.venue}
+            {venue && <> · <Link href={'/venue/' + venue.slug + '/'}>Venue guide: getting there, tips, hotels →</Link></>}
+          </td></tr>
           <tr><th>City</th><td><Link href={'/events/festivals/' + c.region.toLowerCase() + '/'}>{c.city}</Link></td></tr>
           {c.artist !== 'Various artists' && <tr><th>Artist</th><td>{c.artist}</td></tr>}
           {c.ticketInfo && <tr><th>Tickets</th><td>{c.ticketInfo}</td></tr>}

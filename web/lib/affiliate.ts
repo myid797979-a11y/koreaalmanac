@@ -129,6 +129,10 @@ export const GUIDE_OFFERS = {
   winterSkiLights:  [VIVALDI, MORNING_CALM_LIGHTS],
   arrival:          [KR_PASS, ESIM, AREX],
   gyeongju:         [KR_PASS, GYEONGJU_BUSAN, GYEONGJU_HANBOK],
+  venueArrival:     [ESIM, AREX],                          // 공연장 가이드 9편 — 비행기 타고 오는 팬
+  christmas:        [MORNING_CALM_LIGHTS, ESIM, AREX],     // 연말 가이드
+  seollal:          [HANBOK_GBG, ESIM],                    // 설 가이드 — 한복이면 궁 무료
+  cherry:           [JINHAE_SEOUL, JINHAE_BUSAN, KR_PASS], // 벚꽃 가이드
 } as const;
 
 export function offersFor(kind: 'festival' | 'place', id: string): Offer[] {
