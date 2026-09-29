@@ -11,7 +11,7 @@ import { MONTH_INTROS, REGION_INTROS, CATEGORY_INTROS } from '@/lib/editorial';
 import { MONTH_FACTS } from '@/lib/month-facts';
 import { concerts, concertDateRange } from '@/lib/concerts';
 import { liveCulture, isLongRun, cultureDateRange } from '@/lib/culture';
-import { GUIDES, MONTH_GUIDES } from '@/lib/guides';
+import { GUIDES, MONTH_GUIDES, REGION_GUIDES } from '@/lib/guides';
 import { placeBySlug } from '@/lib/places';
 import BookBox from '@/app/components/BookBox';
 import { monthOffers, monthStay } from '@/lib/affiliate';
@@ -246,6 +246,16 @@ function RegionHub({ region }: { region: string }) {
         </Link>{' '}
         — places to visit, concerts and exhibitions on the same page.
       </p>
+
+      {(REGION_GUIDES[region] ?? []).length > 0 && (
+        <p className="strip">
+          <strong>Guides</strong>
+          {REGION_GUIDES[region].map(h => {
+            const g = GUIDES.find(x => x.href === h);
+            return g ? <Link key={h} href={h}>{g.title}</Link> : null;
+          })}
+        </p>
+      )}
 
       <h2 className="sect">Other regions</h2>
       <p className="strip">

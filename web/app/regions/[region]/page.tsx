@@ -7,6 +7,7 @@ import { rankPlaces, isTopPick } from '@/lib/place-rank';
 import { rankShortFirst } from '@/lib/festival-rank';
 import { liveCulture } from '@/lib/culture';
 import { upcomingConcerts } from '@/lib/concerts';
+import { GUIDES, REGION_GUIDES } from '@/lib/guides';
 
 export function generateStaticParams() {
   return REGIONS.map(r => ({ region: r.toLowerCase() }));
@@ -126,6 +127,16 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
             {byCat.slice(4).flatMap(g => g.items).slice(0, 8).map(p => <PlaceCard key={p.id} p={p} />)}
           </div>
         </>
+      )}
+
+      {(REGION_GUIDES[name] ?? []).length > 0 && (
+        <p className="strip">
+          <strong>Guides</strong>
+          {REGION_GUIDES[name].map(h => {
+            const g = GUIDES.find(x => x.href === h);
+            return g ? <Link key={h} href={h}>{g.title}</Link> : null;
+          })}
+        </p>
       )}
 
       <h2 className="sect">Other regions</h2>

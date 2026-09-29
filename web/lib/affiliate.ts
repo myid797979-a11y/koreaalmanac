@@ -156,6 +156,7 @@ export const GUIDE_OFFERS = {
   foliage:          [SEORAKSAN_TOUR, NAMI_TOUR, KR_PASS],  // 단풍 가이드 (10월 트래픽)
   nightlife:        [PUB_CRAWL, HAN_RIVER_CRUISE, NSEOUL_NIGHT],
   busanFireworks:   [BUSAN_FIREWORKS, VISIT_BUSAN_PASS, BUSAN_X_SKY],
+  jinju:            [JINJU, JINJU_MORE],
 } as const;
 
 // ── Agoda (숙소) ─────────────────────────────────────────
@@ -255,6 +256,7 @@ export const GUIDE_STAY = {
   nightlife: [STAY_SEOUL],
   budget:    [STAY_SEOUL, STAY_BUSAN],
   busanFireworks: [STAY_BUSAN],
+  jinju:     [STAY_JINJU, STAY_BUSAN],
 } as const;
 
 export function offersFor(kind: 'festival' | 'place', id: string): Offer[] {

@@ -10,6 +10,13 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    href: '/guides/jinju-lantern-festival-2026/',
+    title: 'Jinju Lantern Festival 2026: 3–18 October',
+    blurb: 'Thousands of lanterns on the river below Jinjuseong Fortress. When to go, what is free, floating a wish lantern, the easy day trip from Busan, and what to do when Jinju’s hotels are full.',
+    tag: 'Seasonal',
+    photo: 'jinjuseong-fortress-264596',
+  },
+  {
     href: '/guides/busan-fireworks-2026/',
     title: 'Busan Fireworks Festival 2026: 7 November',
     blurb: 'Korea’s biggest fireworks over Gwangalli Beach. The free viewing spots and when to claim them, whether paid seats are worth it, the hotel problem, and how to leave with a million other people.',
@@ -125,10 +132,22 @@ export const GUIDES: Guide[] = [
 /** 홈에 보여줄 것 — 지금 시즌에 맞는 넷 */
 export const HOME_GUIDE_HREFS = [
   '/guides/halloween-seoul-2026/',
+  '/guides/jinju-lantern-festival-2026/',
   '/guides/busan-fireworks-2026/',
   '/guides/autumn-foliage/',
-  '/venues/',
 ];
+
+/** 지역 허브(축제·지역 페이지) → 그 지역 가이드 */
+export const REGION_GUIDES: Record<string, string[]> = {
+  Seoul:     ['/guides/seoul-3-days/', '/guides/seoul-nightlife/', '/guides/halloween-seoul-2026/', '/guides/christmas-new-year-seoul/'],
+  Busan:     ['/guides/busan-2-days/', '/guides/busan-fireworks-2026/'],
+  Gyeongnam: ['/guides/jinju-lantern-festival-2026/', '/guides/cherry-blossom-2027/'],
+  Gyeongbuk: ['/guides/gyeongju-2-days/'],
+  Jeju:      ['/guides/jeju-3-days/'],
+  Gangwon:   ['/guides/korea-in-winter/', '/guides/autumn-foliage/'],
+  Gyeonggi:  ['/venues/', '/guides/autumn-foliage/'],
+  Incheon:   ['/venues/'],
+};
 
 /** 축제 id → 그 축제를 다룬 가이드 (축제 상세 페이지에서 링크) */
 export const FESTIVAL_GUIDE: Record<string, string> = {
@@ -136,6 +155,8 @@ export const FESTIVAL_GUIDE: Record<string, string> = {
   '1385298': '/guides/busan-fireworks-2026/',
   '685135': '/guides/korea-in-winter/',
   '700520': '/guides/cherry-blossom-2027/',
+  '697197': '/guides/jinju-lantern-festival-2026/',
+  '4113182': '/guides/jinju-lantern-festival-2026/',
 };
 
 /** 월 허브에 보여줄 가이드 — 그 달에 검색하는 사람이 실제로 필요로 하는 순서 */
@@ -149,7 +170,7 @@ export const MONTH_GUIDES: string[][] = [
   ['/guides/baseball-in-korea/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                  // Jul
   ['/guides/baseball-in-korea/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                  // Aug
   ['/guides/baseball-in-korea/', '/guides/autumn-foliage/', '/guides/korea-on-a-budget/'],                                   // Sep
-  ['/guides/autumn-foliage/', '/guides/halloween-seoul-2026/', '/guides/busan-fireworks-2026/', '/venues/'],                  // Oct
+  ['/guides/jinju-lantern-festival-2026/', '/guides/autumn-foliage/', '/guides/halloween-seoul-2026/', '/guides/busan-fireworks-2026/'], // Oct
   ['/guides/busan-fireworks-2026/', '/guides/autumn-foliage/', '/guides/christmas-new-year-seoul/', '/venues/'],             // Nov
   ['/guides/christmas-new-year-seoul/', '/guides/korea-in-winter/', '/venues/'],                                             // Dec
 ];
@@ -160,6 +181,7 @@ export const MONTH_GUIDES: string[][] = [
  */
 export const GUIDE_DATES: Record<string, { published: string; updated: string }> = {
   '/guides/busan-fireworks-2026/':     { published: '2026-09-29', updated: '2026-09-29' },
+  '/guides/jinju-lantern-festival-2026/': { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },
