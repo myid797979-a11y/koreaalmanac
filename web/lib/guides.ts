@@ -73,6 +73,20 @@ export const GUIDES: Guide[] = [
     photo: 'gocheok-sky-dome-3006386',
   },
   {
+    href: '/guides/suwon-day-trip/',
+    title: 'A day trip to Suwon: Hwaseong Fortress and the palace',
+    blurb: 'The UNESCO fortress an hour from Seoul on the subway. Which way round the 5.7 km wall, the palace martial-arts show, galbi or chicken for dinner, and the Hwaseong Festival on 4–11 October.',
+    tag: 'Itinerary',
+    photo: 'suwon-hwaseong-fortress-unesco-world-heritage-264204',
+  },
+  {
+    href: '/guides/nami-island-day-trip/',
+    title: 'A day trip to Nami Island from Seoul',
+    blurb: 'Easy on your own by train, but the places people pair it with are not. When a tour makes sense, the ferry or the zip wire, the gold ginkgo weeks, and dakgalbi in Chuncheon on the way back.',
+    tag: 'Itinerary',
+    photo: 'nami-island-264244',
+  },
+  {
     href: '/guides/dmz-tour-from-seoul/',
     title: 'A DMZ tour from Seoul: what you actually see',
     blurb: 'Imjingak, the Third Tunnel and Dora Observatory explained honestly — what needs a tour and what does not, the JSA question, Cheorwon and Goseong as quieter alternatives, and the passport rule.',
@@ -164,6 +178,16 @@ export const PLACE_GUIDE: Record<string, string> = {
   '264261': '/guides/gyeongju-2-days/',        // Bulguksa
   '264367': '/guides/gyeongju-2-days/',        // Donggung & Wolji
   '3006386': '/guides/baseball-in-korea/',     // Gocheok Sky Dome
+  '264244':  '/guides/nami-island-day-trip/',   // Nami Island
+  '815994':  '/guides/nami-island-day-trip/',   // Petite France
+  '264212':  '/guides/nami-island-day-trip/',   // Garden of Morning Calm
+  '2813153': '/guides/nami-island-day-trip/',   // Alpaca World
+  '264204':  '/guides/suwon-day-trip/',         // Suwon Hwaseong
+  '264410':  '/guides/suwon-day-trip/',         // Hwaseong Haenggung
+  '264387':  '/guides/suwon-day-trip/',         // Paldalmun
+  '264395':  '/guides/suwon-day-trip/',         // Hwahongmun
+  '2617703': '/guides/suwon-day-trip/',         // Banghwasuryujeong
+  '264403':  '/guides/suwon-day-trip/',         // Hwaseong trolley
 };
 
 /** 지역 허브(축제·지역 페이지) → 그 지역 가이드 */
@@ -173,8 +197,8 @@ export const REGION_GUIDES: Record<string, string[]> = {
   Gyeongnam: ['/guides/jinju-lantern-festival-2026/', '/guides/cherry-blossom-2027/'],
   Gyeongbuk: ['/guides/gyeongju-2-days/'],
   Jeju:      ['/guides/jeju-3-days/'],
-  Gangwon:   ['/guides/korea-in-winter/', '/guides/autumn-foliage/'],
-  Gyeonggi:  ['/guides/dmz-tour-from-seoul/', '/venues/', '/guides/autumn-foliage/'],
+  Gangwon:   ['/guides/nami-island-day-trip/', '/guides/korea-in-winter/', '/guides/autumn-foliage/'],
+  Gyeonggi:  ['/guides/suwon-day-trip/', '/guides/nami-island-day-trip/', '/guides/dmz-tour-from-seoul/', '/venues/'],
   Incheon:   ['/venues/'],
 };
 
@@ -186,6 +210,8 @@ export const FESTIVAL_GUIDE: Record<string, string> = {
   '700520': '/guides/cherry-blossom-2027/',
   '697197': '/guides/jinju-lantern-festival-2026/',
   '4113182': '/guides/jinju-lantern-festival-2026/',
+  '978249':  '/guides/suwon-day-trip/',        // 수원화성문화제
+  '2657619': '/guides/suwon-day-trip/',        // 화성행궁 야간개장
 };
 
 /** 월 허브에 보여줄 가이드 — 그 달에 검색하는 사람이 실제로 필요로 하는 순서 */
@@ -199,8 +225,8 @@ export const MONTH_GUIDES: string[][] = [
   ['/guides/baseball-in-korea/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                  // Jul
   ['/guides/baseball-in-korea/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                  // Aug
   ['/guides/baseball-in-korea/', '/guides/autumn-foliage/', '/guides/korea-on-a-budget/'],                                   // Sep
-  ['/guides/jinju-lantern-festival-2026/', '/guides/autumn-foliage/', '/guides/halloween-seoul-2026/', '/guides/busan-fireworks-2026/'], // Oct
-  ['/guides/busan-fireworks-2026/', '/guides/autumn-foliage/', '/guides/christmas-new-year-seoul/', '/venues/'],             // Nov
+  ['/guides/jinju-lantern-festival-2026/', '/guides/suwon-day-trip/', '/guides/autumn-foliage/', '/guides/halloween-seoul-2026/', '/guides/busan-fireworks-2026/'], // Oct
+  ['/guides/busan-fireworks-2026/', '/guides/autumn-foliage/', '/guides/nami-island-day-trip/', '/guides/christmas-new-year-seoul/'], // Nov
   ['/guides/christmas-new-year-seoul/', '/guides/korea-in-winter/', '/venues/'],                                             // Dec
 ];
 
@@ -213,6 +239,8 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/jinju-lantern-festival-2026/': { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/incheon-airport-to-seoul/': { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/dmz-tour-from-seoul/':      { published: '2026-09-29', updated: '2026-09-29' },
+  '/guides/nami-island-day-trip/':     { published: '2026-09-29', updated: '2026-09-29' },
+  '/guides/suwon-day-trip/':           { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },

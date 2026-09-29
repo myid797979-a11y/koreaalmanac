@@ -76,6 +76,7 @@ const HALLASAN: Offer = { label: 'Hallasan hiking tours', url: search('Hallasan 
 const KBO_TICKETS: Offer = { label: 'KBO baseball tickets sold to overseas visitors', url: search('KBO baseball'), note: 'Seoul home games, when listed' };
 const DMZ_MORE: Offer = { label: 'All DMZ tours, including defector-talk and Cheorwon tours', url: search('DMZ tour'), note: 'compare half-day and full-day' };
 const AIRPORT_TRANSFER: Offer = { label: 'Private transfer, Incheon Airport → Seoul hotel', url: search('Incheon airport private transfer'), note: 'fixed price, driver meets you in arrivals' };
+const FOLK_VILLAGE: Offer = { label: 'Korean Folk Village tickets and tours', url: search('Korean Folk Village'), note: '20 minutes from Suwon by bus' };
 const BIRF: Offer = { label: 'Busan International Rock Festival tickets', url: search('Busan International Rock Festival') };
 const ANDONG_TOUR: Offer = { label: 'Andong Hahoe Village day tours', url: search('Andong Hahoe Village'), note: 'from Seoul or Busan; the mask dance is at the village' };
 const YEOSU_TOUR: Offer = { label: 'Yeosu cable car and day tours', url: search('Yeosu') };
@@ -161,6 +162,8 @@ export const GUIDE_OFFERS = {
   jinju:            [JINJU, JINJU_MORE],
   airport:          [AREX, ESIM, AIRPORT_TRANSFER],
   dmz:              [DMZ, DMZ_MORE],
+  nami:             [NAMI_TOUR, NAMI_ALPACA, MORNING_CALM_LIGHTS],
+  suwon:            [SUWON_TOUR, FOLK_VILLAGE],
 } as const;
 
 // ── Agoda (숙소) ─────────────────────────────────────────
@@ -198,6 +201,9 @@ const STAY_ANDONG     = stay('Hotels in Andong', 'andong-si-kr', 'book early for
 const STAY_JEONJU     = stay('Hotels in Jeonju', 'jeonju-si-kr', 'a hanok stay inside the village is the point');
 const STAY_CHUNCHEON  = stay('Hotels in Chuncheon', 'chuncheon-si-kr', 'the nearest real city to Hwacheon, an hour by bus');
 const STAY_SOKCHO     = stay('Hotels in Sokcho', 'sokcho-si-kr', 'the base for Seoraksan; sells out for peak foliage weekends');
+const STAY_GAPYEONG  = stay('Hotels and pensions in Gapyeong', 'gapyeong-gun-kr', 'riverside pensions near Nami; most assume a car');
+const STAY_CHUNCHEON_NAMI = stay('Hotels in Chuncheon', 'chuncheon-si-kr', '20 minutes from Gapyeong by train, near the dakgalbi street');
+const STAY_SUWON     = stay('Hotels in Suwon', 'suwon-si-kr', 'near the fortress walls for the night walk');
 
 /** 공연장 가이드 → 숙소 */
 export const VENUE_STAY: Record<string, Offer[]> = {
@@ -262,6 +268,8 @@ export const GUIDE_STAY = {
   busanFireworks: [STAY_BUSAN],
   jinju:     [STAY_JINJU, STAY_BUSAN],
   airport:   [STAY_INCHEON, STAY_SEOUL],
+  nami:      [STAY_GAPYEONG, STAY_CHUNCHEON_NAMI],
+  suwon:     [STAY_SUWON, STAY_SEOUL],
 } as const;
 
 export function offersFor(kind: 'festival' | 'place', id: string): Offer[] {
