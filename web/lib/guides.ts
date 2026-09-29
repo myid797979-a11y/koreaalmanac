@@ -73,6 +73,13 @@ export const GUIDES: Guide[] = [
     photo: 'gocheok-sky-dome-3006386',
   },
   {
+    href: '/guides/dmz-tour-from-seoul/',
+    title: 'A DMZ tour from Seoul: what you actually see',
+    blurb: 'Imjingak, the Third Tunnel and Dora Observatory explained honestly — what needs a tour and what does not, the JSA question, Cheorwon and Goseong as quieter alternatives, and the passport rule.',
+    tag: 'How-to',
+    photo: 'imjingak-resort-pyeonghwa-nuri-park-264487',
+  },
+  {
     href: '/guides/incheon-airport-to-seoul/',
     title: 'Incheon Airport to Seoul: train, bus or taxi',
     blurb: 'Which way in depends on where your hotel is, not the price. The AREX express and all-stop, limousine buses and taxis compared, the first-hour checklist, and what to do if you land after midnight.',
@@ -144,6 +151,21 @@ export const HOME_GUIDE_HREFS = [
   '/guides/autumn-foliage/',
 ];
 
+/** 장소 id → 그 장소를 다룬 가이드 (장소 상세에서 안내) */
+export const PLACE_GUIDE: Record<string, string> = {
+  '264487': '/guides/dmz-tour-from-seoul/',    // Imjingak
+  '3491461': '/guides/dmz-tour-from-seoul/',   // Peace Gondola
+  '2376049': '/guides/dmz-tour-from-seoul/',   // Camp Greaves
+  '1847807': '/guides/dmz-tour-from-seoul/',   // Dorasan Station
+  '264489': '/guides/dmz-tour-from-seoul/',    // Odusan Observatory
+  '264161': '/guides/dmz-tour-from-seoul/',    // Goseong Unification Observatory
+  '264596': '/guides/jinju-lantern-festival-2026/', // Jinjuseong Fortress
+  '264250': '/guides/busan-fireworks-2026/',   // Gwangalli Beach
+  '264261': '/guides/gyeongju-2-days/',        // Bulguksa
+  '264367': '/guides/gyeongju-2-days/',        // Donggung & Wolji
+  '3006386': '/guides/baseball-in-korea/',     // Gocheok Sky Dome
+};
+
 /** 지역 허브(축제·지역 페이지) → 그 지역 가이드 */
 export const REGION_GUIDES: Record<string, string[]> = {
   Seoul:     ['/guides/seoul-3-days/', '/guides/seoul-nightlife/', '/guides/halloween-seoul-2026/', '/guides/christmas-new-year-seoul/'],
@@ -152,7 +174,7 @@ export const REGION_GUIDES: Record<string, string[]> = {
   Gyeongbuk: ['/guides/gyeongju-2-days/'],
   Jeju:      ['/guides/jeju-3-days/'],
   Gangwon:   ['/guides/korea-in-winter/', '/guides/autumn-foliage/'],
-  Gyeonggi:  ['/venues/', '/guides/autumn-foliage/'],
+  Gyeonggi:  ['/guides/dmz-tour-from-seoul/', '/venues/', '/guides/autumn-foliage/'],
   Incheon:   ['/venues/'],
 };
 
@@ -190,6 +212,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/busan-fireworks-2026/':     { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/jinju-lantern-festival-2026/': { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/incheon-airport-to-seoul/': { published: '2026-09-29', updated: '2026-09-29' },
+  '/guides/dmz-tour-from-seoul/':      { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },

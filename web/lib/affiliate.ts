@@ -74,6 +74,7 @@ const GANGNEUNG_TOUR: Offer = { label: 'Gangneung day tours from Seoul', url: se
 const JEJU_TOUR: Offer = { label: 'Jeju east and west coast day tours', url: search('Jeju day tour') };
 const HALLASAN: Offer = { label: 'Hallasan hiking tours', url: search('Hallasan hiking') };
 const KBO_TICKETS: Offer = { label: 'KBO baseball tickets sold to overseas visitors', url: search('KBO baseball'), note: 'Seoul home games, when listed' };
+const DMZ_MORE: Offer = { label: 'All DMZ tours, including defector-talk and Cheorwon tours', url: search('DMZ tour'), note: 'compare half-day and full-day' };
 const AIRPORT_TRANSFER: Offer = { label: 'Private transfer, Incheon Airport → Seoul hotel', url: search('Incheon airport private transfer'), note: 'fixed price, driver meets you in arrivals' };
 const BIRF: Offer = { label: 'Busan International Rock Festival tickets', url: search('Busan International Rock Festival') };
 const ANDONG_TOUR: Offer = { label: 'Andong Hahoe Village day tours', url: search('Andong Hahoe Village'), note: 'from Seoul or Busan; the mask dance is at the village' };
@@ -159,6 +160,7 @@ export const GUIDE_OFFERS = {
   busanFireworks:   [BUSAN_FIREWORKS, VISIT_BUSAN_PASS, BUSAN_X_SKY],
   jinju:            [JINJU, JINJU_MORE],
   airport:          [AREX, ESIM, AIRPORT_TRANSFER],
+  dmz:              [DMZ, DMZ_MORE],
 } as const;
 
 // ── Agoda (숙소) ─────────────────────────────────────────

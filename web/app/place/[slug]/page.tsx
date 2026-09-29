@@ -9,6 +9,7 @@ import { festivals, status, today, dateRange } from '@/lib/data';
 import { liveCulture, cultureDateRange } from '@/lib/culture';
 import BookBox from '@/app/components/BookBox';
 import AdSlot from '@/app/components/AdSlot';
+import { PLACE_GUIDE, GUIDES } from '@/lib/guides';
 import { offersFor } from '@/lib/affiliate';
 
 export function generateStaticParams() {
@@ -152,6 +153,13 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
           {p.tel && <tr><th>Contact</th><td>{p.tel}</td></tr>}
         </tbody>
       </table>
+
+      {PLACE_GUIDE[p.id] && (
+        <div className="ended-banner" style={{ borderLeftColor: 'var(--jjok)' }}>
+          We cover this in more depth:{' '}
+          <Link href={PLACE_GUIDE[p.id]}>{GUIDES.find(g => g.href === PLACE_GUIDE[p.id])?.title ?? 'the full guide'}</Link>.
+        </div>
+      )}
 
       {/* 제휴 상자 — 상위 관광지에만 (lib/affiliate.ts PLACE_OFFERS) */}
       <BookBox offers={offersFor('place', p.id)} title="Tickets and tours" />
