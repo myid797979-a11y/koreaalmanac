@@ -1,4 +1,5 @@
 import festivalsJson from '@/data/festivals.json';
+import { okImage, okImages } from '@/lib/images';
 
 export type Festival = {
   id: string; slug: string; title: string; titleFull: string;
@@ -9,7 +10,8 @@ export type Festival = {
   hours: string | null; duration: string | null; sponsor: string | null; mt?: boolean; tags?: string[]; images?: string[];
 };
 
-export const festivals = festivalsJson as Festival[];
+// 깨진 KTO 이미지는 대체하거나 갤러리에서 뺀다 (lib/images.ts)
+export const festivals: Festival[] = (festivalsJson as Festival[]).map(f => ({ ...f, image: okImage(f.image), images: okImages(f.images) }));
 
 // KST 기준 오늘 (YYYYMMDD) — 정적 빌드 시점에 박히고, 매일 재빌드로 갱신 (청약각 철학)
 export function today(): string {

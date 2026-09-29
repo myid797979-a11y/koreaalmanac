@@ -1,4 +1,5 @@
 import cultureJson from '@/data/culture.json';
+import { okImage } from '@/lib/images';
 import { today, fmt } from '@/lib/data';
 
 // 한국문화정보원 문화정보 — 국악·전통공연과 전시. 축제와 같은 방식으로
@@ -16,7 +17,7 @@ export type CultureEvent = {
   mt?: boolean;
 };
 
-export const culture = cultureJson as CultureEvent[];
+export const culture: CultureEvent[] = (cultureJson as CultureEvent[]).map(c => ({ ...c, image: okImage(c.image) }));
 
 export const KIND_META: Record<CultureEvent['kind'], { label: string; slug: string; blurb: string }> = {
   traditional: {

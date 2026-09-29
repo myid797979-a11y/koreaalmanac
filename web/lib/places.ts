@@ -1,4 +1,5 @@
 import placesJson from '@/data/places.json';
+import { okImage } from '@/lib/images';
 
 // KTO 영문 관광지 — 원문이 영어라 번역이 필요 없다.
 // 분류는 Exporter 가 KTO cat3 코드를 여행자 언어 9개로 재편해 넣어준다.
@@ -18,7 +19,8 @@ export type PlaceCat =
   | 'nature' | 'views' | 'neighbourhoods' | 'themeparks' | 'museums'
   | 'markets' | 'shopping' | 'food';
 
-export const places = placesJson as Place[];
+// 깨진 KTO 이미지는 대체 이미지로 (lib/images.ts)
+export const places: Place[] = (placesJson as Place[]).map(p => ({ ...p, image: okImage(p.image) }));
 
 export const PLACE_CATS: { slug: string; cat: PlaceCat; label: string; blurb: string }[] = [
   { slug: 'palaces-heritage', cat: 'heritage', label: 'Palaces & heritage',
