@@ -226,8 +226,14 @@ h2.sect {
 
 /* ── 스트립(월·지역 링크) ──────────────────────────────── */
 .strip { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 14px 0 22px; font-size: 14px; }
-.strip a { color: var(--jjok); border-bottom: 1px solid var(--line); padding-bottom: 1px; }
-.strip a:hover { color: var(--seal); border-color: var(--seal); }
+.strip a {
+  color: var(--jjok); padding-bottom: 1px;
+  background:
+    linear-gradient(var(--seal), var(--seal)) 0 100% / 0 1px no-repeat,
+    linear-gradient(var(--line), var(--line)) 0 100% / 100% 1px no-repeat;
+  transition: color 0.15s, background-size 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.strip a:hover, .strip a:focus-visible { color: var(--seal); background-size: 100% 1px, 100% 1px; }
 .strip strong { color: var(--ink); border-bottom: 2px solid var(--seal); padding-bottom: 1px; }
 
 /* ── 상세 페이지 ───────────────────────────────────────── */
@@ -314,7 +320,11 @@ h2.sect {
 }
 .cal .dn.sun { color: var(--seal); }
 .cal .dn.sat { color: var(--jjok); }
-.cal .day.today { background: #fdf4f2; box-shadow: inset 0 0 0 2px var(--seal); }
+.cal .day.today { background: #fdf4f2; }
+.cal .day.today::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  box-shadow: inset 0 0 0 2px var(--seal);
+}
 .cal .day.today .dn { color: var(--seal); font-weight: 800; }
 .cal .evs { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .cal .ev {
@@ -1029,4 +1039,67 @@ ol.steps li::marker { color: var(--seal); font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   .almanac, .alm-day, .stamp.now { animation: none !important; }
   .g-timeline::after { animation: none !important; transform: scaleY(1); }
+}
+
+/* ── 모션 2차 (2026-09-29) — 사용자 동작에 대한 응답 위주 ───────────── */
+
+/* 달력 칸을 누르면: 이중 괘선에 매달린 쪽지가 내려오고, 그날 항목이 한 줄씩 적힌다 */
+.daysheet[open] .ds-panel { animation: slip-down 0.3s cubic-bezier(0.2, 0.8, 0.25, 1) both; transform-origin: 50% 0; }
+.daysheet[open]::backdrop { animation: fade-in 0.2s ease-out both; }
+.daysheet[open] .ds-list li { animation: line-in 0.28s ease-out both; }
+.daysheet[open] .ds-list li:nth-child(1) { animation-delay: 0.12s; }
+.daysheet[open] .ds-list li:nth-child(2) { animation-delay: 0.16s; }
+.daysheet[open] .ds-list li:nth-child(3) { animation-delay: 0.2s; }
+.daysheet[open] .ds-list li:nth-child(4) { animation-delay: 0.24s; }
+.daysheet[open] .ds-list li:nth-child(5) { animation-delay: 0.28s; }
+.daysheet[open] .ds-list li:nth-child(n+6) { animation-delay: 0.32s; }
+@keyframes slip-down {
+  from { transform: translateY(-18px) scaleY(0.92); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+/* 모바일에서는 바닥에서 올라오는 시트다 — 방향을 맞춘다 */
+@keyframes sheet-up {
+  from { transform: translateY(100%); }
+  to   { transform: none; }
+}
+@media (max-width: 720px) {
+  .daysheet[open] .ds-panel { animation: sheet-up 0.32s cubic-bezier(0.2, 0.8, 0.25, 1) both; }
+}
+@keyframes line-in {
+  from { transform: translateX(-6px); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+/* 오늘 칸: 인주 테두리가 한 번 찍힌다 */
+.cal .day.today::after { animation: seal-press 0.4s cubic-bezier(0.2, 0.7, 0.3, 1) 0.3s both; }
+
+/* 가이드 머리 사진: 옛 인화지처럼 흑백에서 색이 올라온다, 한 장씩 */
+.g-hero img { animation: develop 1.1s ease-out both; }
+.g-hero figure:nth-child(2) img { animation-delay: 0.12s; }
+.g-hero figure:nth-child(3) img { animation-delay: 0.24s; }
+@keyframes develop {
+  from { filter: grayscale(1) sepia(0.35) brightness(1.12) contrast(0.85); opacity: 0.35; }
+  45%  { opacity: 1; }
+  to   { filter: none; opacity: 1; }
+}
+
+/* 검색 드롭다운: 입력칸에서 아래로 펼쳐진다 */
+.search-drop { animation: drop-open 0.16s ease-out both; transform-origin: 90% 0; }
+@keyframes drop-open {
+  from { transform: translateY(-4px) scaleY(0.96); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+/* "지금 진행 중" 접힌 목록: 열면 펼쳐진다 */
+.ongoing-box[open] .agenda { animation: slip-down 0.24s ease-out both; transform-origin: 50% 0; }
+
+/* Trip Planner 필터: 누른 칩에 먹이 채워진다 */
+.kf { transition: border-color 0.15s, background 0.2s, color 0.2s; }
+.kf:active { transform: scale(0.97); }
+
+@media (prefers-reduced-motion: reduce) {
+  .daysheet[open] .ds-panel, .daysheet[open]::backdrop, .daysheet[open] .ds-list li,
+  .cal .day.today::after, .g-hero img, .search-drop, .ongoing-box[open] .agenda { animation: none !important; }
+  .kf:active { transform: none; }
 }
