@@ -208,6 +208,8 @@ export default function KoreaBasics() {
       </p>
 
       <p className="strip">
+        <Link href="/guides/incheon-airport-to-seoul/">Incheon Airport to Seoul</Link>
+        <Link href="/guides/korea-on-a-budget/">Korea on a budget</Link>
         <Link href="/guides/">City guides</Link>
         <Link href="/places/">Places to visit</Link>
         <Link href="/plan/">Trip Planner</Link>

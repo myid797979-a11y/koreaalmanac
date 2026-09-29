@@ -73,6 +73,13 @@ export const GUIDES: Guide[] = [
     photo: 'gocheok-sky-dome-3006386',
   },
   {
+    href: '/guides/incheon-airport-to-seoul/',
+    title: 'Incheon Airport to Seoul: train, bus or taxi',
+    blurb: 'Which way in depends on where your hotel is, not the price. The AREX express and all-stop, limousine buses and taxis compared, the first-hour checklist, and what to do if you land after midnight.',
+    tag: 'How-to',
+    photo: 'gwanghwamun-square-929909',
+  },
+  {
     href: '/guides/korea-on-a-budget/',
     title: 'Korea on a budget: what things cost in 2026',
     blurb: 'Real prices for transport, food, beds and sights, three daily budgets from ₩60,000, and honest verdicts on the passes — most of the best things here are free or nearly.',
@@ -182,6 +189,7 @@ export const MONTH_GUIDES: string[][] = [
 export const GUIDE_DATES: Record<string, { published: string; updated: string }> = {
   '/guides/busan-fireworks-2026/':     { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/jinju-lantern-festival-2026/': { published: '2026-09-29', updated: '2026-09-29' },
+  '/guides/incheon-airport-to-seoul/': { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },

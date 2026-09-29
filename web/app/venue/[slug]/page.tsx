@@ -69,7 +69,7 @@ export default async function VenuePage({ params }: { params: Promise<{ slug: st
       <table className="facts">
         <tbody>
           <tr><th>Nearest station</th><td>{v.station}</td></tr>
-          <tr><th>From Incheon Airport</th><td>{v.fromAirport}</td></tr>
+          <tr><th>From Incheon Airport</th><td>{v.fromAirport} <Link href="/guides/incheon-airport-to-seoul/">Airport transport compared →</Link></td></tr>
           <tr><th>Capacity</th><td>{v.capacity}</td></tr>
           <tr><th>Address</th><td>{v.addr}</td></tr>
           {v.official && <tr><th>Official site</th><td><a href={v.official} target="_blank" rel="noopener" style={{ textDecoration: 'underline' }}>{v.official.replace(/^https?:\/\//, '').replace(/\/$/, '')} ↗</a></td></tr>}
