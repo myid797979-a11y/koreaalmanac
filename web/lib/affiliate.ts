@@ -165,6 +165,7 @@ export const GUIDE_OFFERS = {
   dmz:              [DMZ, DMZ_MORE],
   nami:             [NAMI_TOUR, NAMI_ALPACA, MORNING_CALM_LIGHTS],
   suwon:            [SUWON_TOUR, FOLK_VILLAGE],
+  dayTrips:         [NAMI_TOUR, DMZ, SUWON_TOUR, KR_PASS],
   themeParks:       [EVERLAND, EVERLAND_BUS, LOTTE_WORLD, SEOUL_SKY, LEGOLAND],
 } as const;
 

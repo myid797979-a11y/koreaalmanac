@@ -224,6 +224,7 @@ export default function SuwonDayTrip() {
       />
 
       <p className="strip">
+        <Link href="/guides/day-trips-from-seoul/">More day trips from Seoul</Link>
         <Link href="/guides/seoul-3-days/">3 days in Seoul</Link>
         <Link href="/guides/nami-island-day-trip/">Nami Island day trip</Link>
         <Link href="/guides/dmz-tour-from-seoul/">DMZ tour from Seoul</Link>

@@ -73,6 +73,13 @@ export const GUIDES: Guide[] = [
     photo: 'gocheok-sky-dome-3006386',
   },
   {
+    href: '/guides/day-trips-from-seoul/',
+    title: 'Day trips from Seoul: 12 that work without a car',
+    blurb: 'Six an hour away on the subway, six by KTX, bus or tour. Suwon, Nami, the DMZ, Namhansanseong, Incheon, Yangpyeong, and the fast trains to Gangneung and Jeonju — which to pick for your season.',
+    tag: 'Itinerary',
+    photo: 'yangpyeong-dumulmeori-1272552',
+  },
+  {
     href: '/guides/suwon-day-trip/',
     title: 'A day trip to Suwon: Hwaseong Fortress and the palace',
     blurb: 'The UNESCO fortress an hour from Seoul on the subway. Which way round the 5.7 km wall, the palace martial-arts show, galbi or chicken for dinner, and the Hwaseong Festival on 4–11 October.',
@@ -199,6 +206,11 @@ export const PLACE_GUIDE: Record<string, string> = {
   '264152':  '/guides/everland-vs-lotte-world/', // Lotte World
   '264361':  '/guides/everland-vs-lotte-world/', // Caribbean Bay
   '3340568': '/guides/everland-vs-lotte-world/', // Everland Rocksville
+  '264362':  '/guides/day-trips-from-seoul/',   // Namhansanseong
+  '1272552': '/guides/day-trips-from-seoul/',   // Dumulmeori
+  '3113166': '/guides/day-trips-from-seoul/',   // Gwangmyeong Cave
+  '264513':  '/guides/day-trips-from-seoul/',   // Incheon Chinatown
+  '264305':  '/guides/day-trips-from-seoul/',   // Wolmido
 };
 
 /** 지역 허브(축제·지역 페이지) → 그 지역 가이드 */
@@ -209,8 +221,8 @@ export const REGION_GUIDES: Record<string, string[]> = {
   Gyeongbuk: ['/guides/gyeongju-2-days/'],
   Jeju:      ['/guides/jeju-3-days/'],
   Gangwon:   ['/guides/nami-island-day-trip/', '/guides/korea-in-winter/', '/guides/autumn-foliage/'],
-  Gyeonggi:  ['/guides/suwon-day-trip/', '/guides/everland-vs-lotte-world/', '/guides/nami-island-day-trip/', '/guides/dmz-tour-from-seoul/', '/venues/'],
-  Incheon:   ['/venues/'],
+  Gyeonggi:  ['/guides/day-trips-from-seoul/', '/guides/suwon-day-trip/', '/guides/everland-vs-lotte-world/', '/guides/nami-island-day-trip/', '/guides/dmz-tour-from-seoul/', '/venues/'],
+  Incheon:   ['/guides/day-trips-from-seoul/', '/guides/incheon-airport-to-seoul/', '/venues/'],
 };
 
 /** 축제 id → 그 축제를 다룬 가이드 (축제 상세 페이지에서 링크) */
@@ -253,6 +265,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/nami-island-day-trip/':     { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/suwon-day-trip/':           { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/everland-vs-lotte-world/':  { published: '2026-09-29', updated: '2026-09-29' },
+  '/guides/day-trips-from-seoul/':     { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },

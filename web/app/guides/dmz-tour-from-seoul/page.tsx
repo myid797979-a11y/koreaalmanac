@@ -159,6 +159,7 @@ export default function DmzTour() {
       />
 
       <p className="strip">
+        <Link href="/guides/day-trips-from-seoul/">More day trips from Seoul</Link>
         <Link href="/guides/seoul-3-days/">3 days in Seoul</Link>
         <Link href="/regions/gyeonggi/">Everything in Gyeonggi</Link>
         <Link href="/regions/gangwon/">Everything in Gangwon</Link>
