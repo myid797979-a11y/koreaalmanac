@@ -933,8 +933,15 @@ footer.site .strip a:hover { color: var(--seal); }
 .book ul { list-style: none; margin: 10px 0 0; padding: 0; }
 .book li { padding: 7px 0; border-top: 1px solid var(--line); font-size: 14.5px; line-height: 1.5; }
 .book li:first-child { border-top: 0; }
-.book a { color: var(--jjok); border-bottom: 1px solid var(--line); padding-bottom: 1px; }
-.book a:hover { color: var(--seal); border-color: var(--seal); }
+.book a {
+  color: var(--jjok); padding-bottom: 1px;
+  /* 먹선: 바탕 괘선 위로 인주색 선이 왼쪽부터 그어진다 (아래 모션 절) */
+  background:
+    linear-gradient(var(--seal), var(--seal)) 0 100% / 0 1px no-repeat,
+    linear-gradient(var(--line), var(--line)) 0 100% / 100% 1px no-repeat;
+  transition: color 0.15s, background-size 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.book a:hover, .book a:focus-visible { color: var(--seal); background-size: 100% 1px, 100% 1px; }
 .book-note { color: var(--muted); font-size: 13.5px; }
 .book-disc { margin: 10px 0 0; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
 
@@ -958,3 +965,68 @@ ol.steps li::marker { color: var(--seal); font-weight: 600; }
 /* ── 광고 자리 (components/AdSlot) — 승인 전엔 그려지지 않는다 ── */
 .adslot { margin: 28px 0; min-height: 280px; text-align: center; }
 .adslot-label { display: block; font-size: 11px; color: var(--muted); letter-spacing: 0.03em; margin-bottom: 4px; }
+
+/* ── 모션 (2026-09-29) ─────────────────────────────────────
+   어휘는 사이트 컨셉에서 온다: 책력 한 장이 넘어오고, 낙관이 찍히고, 먹선이 그어진다.
+   세 곳에만 쓴다 — 홈 책력(페이지 로드 1회), "Now on" 도장(로드 1회), 가이드 타임라인(스크롤).
+   전부 CSS 뿐이라 페이지 HTML 은 그대로다 (freshness 해시 영향 없음 — 새 클래스를 HTML 에 넣지 말 것).
+   ──────────────────────────────────────────────────────── */
+
+/* 1. 홈 책력: 위쪽 철에 매달린 종이가 앞으로 넘어와 붙고, 날짜가 도장처럼 찍힌다 */
+.hero-home { perspective: 1200px; }
+.almanac {
+  transform-origin: 50% 0;
+  animation: alm-sheet 0.7s cubic-bezier(0.2, 0.8, 0.25, 1) 0.1s both;
+}
+.alm-day { animation: seal-press 0.42s cubic-bezier(0.2, 0.7, 0.3, 1) 0.62s both; }
+@keyframes alm-sheet {
+  from { transform: rotateX(-78deg); opacity: 0; box-shadow: 0 0 0 rgba(35, 33, 28, 0); }
+  60%  { opacity: 1; }
+  to   { transform: none; opacity: 1; }
+}
+
+/* 2. 낙관: 크게 떠 있다가 눌려 찍힌다. 인주가 살짝 번졌다 가라앉는다 */
+@keyframes seal-press {
+  0%   { transform: scale(1.7); opacity: 0; filter: blur(2px); }
+  55%  { transform: scale(0.94); opacity: 1; filter: blur(0); }
+  75%  { transform: scale(1.03); }
+  100% { transform: none; opacity: 1; }
+}
+.stamp.now:not(.inline) {
+  animation: seal-press 0.38s cubic-bezier(0.2, 0.7, 0.3, 1) 0.25s both;
+}
+/* 격자에서는 한 장씩 차례로 — 첫 화면의 8장까지만, 나머지는 같이 */
+.grid > :nth-child(2) .stamp.now { animation-delay: 0.31s; }
+.grid > :nth-child(3) .stamp.now { animation-delay: 0.37s; }
+.grid > :nth-child(4) .stamp.now { animation-delay: 0.43s; }
+.grid > :nth-child(5) .stamp.now { animation-delay: 0.49s; }
+.grid > :nth-child(6) .stamp.now { animation-delay: 0.55s; }
+.grid > :nth-child(7) .stamp.now { animation-delay: 0.61s; }
+.grid > :nth-child(n+8) .stamp.now { animation-delay: 0.67s; }
+
+/* 3. 가이드 타임라인: 읽는 위치를 따라 인주색 먹선이 내려온다 (스크롤 연동, 지원 브라우저만) */
+@supports (animation-timeline: view()) {
+  .g-timeline { position: relative; }
+  .g-timeline::before,
+  .g-timeline::after {
+    content: ''; position: absolute; top: 16px; bottom: 16px; left: -14px;
+    width: 2px; border-radius: 2px;
+  }
+  .g-timeline::before { background: var(--line); }
+  .g-timeline::after {
+    background: var(--seal);
+    transform-origin: 50% 0;
+    animation: ink-line linear both;
+    animation-timeline: view();
+    animation-range: cover 45vh cover calc(100% - 45vh);
+  }
+  @keyframes ink-line { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @media (max-width: 600px) {
+    .g-timeline::before, .g-timeline::after { left: -10px; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .almanac, .alm-day, .stamp.now { animation: none !important; }
+  .g-timeline::after { animation: none !important; transform: scaleY(1); }
+}
