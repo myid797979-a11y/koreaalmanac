@@ -92,7 +92,14 @@ for (const url of urls) {
   else if (was && migrating) next[url] = { h, m: was.m }; // 해시 방식만 바뀜 — 날짜 유지, 제출 안 함
   else { next[url] = { h, m: kst }; changed.push(url); } // 바뀌었다 — 오늘로
 }
-const removed = Object.keys(prev).filter(u => !(u in next));
+// 사이트맵에서 뺐을 뿐 페이지는 남아 있는 URL 은 삭제가 아니다 (2026-09-29 사이트맵 우선순위 정리로 850건이
+// 사이트맵에서 빠졌다). 상태는 그대로 이어 가고, 파일이 실제로 사라진 것만 삭제로 제출한다.
+const removed = [];
+for (const u of Object.keys(prev)) {
+  if (u in next) continue;
+  if (hashOf(u) !== null) next[u] = prev[u];   // 페이지는 있다 — 상태 유지, 제출 안 함
+  else removed.push(u);
+}
 
 // 상태 파일은 실제로 배포하는 쪽(CI)만 쓴다. 로컬은 node_modules 의 Next.js 패치 버전이
 // CI 의 npm ci 결과와 달라 해시가 미묘하게 어긋나므로, 로컬에서 덮어쓰면 다음 CI 배포에서
