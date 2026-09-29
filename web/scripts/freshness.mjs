@@ -22,7 +22,9 @@ const HOST = 'koreaalmanac.com';
 // 번호가 다르면 해시만 조용히 다시 계산하고 lastmod 와 제출 목록은 건드리지 않는다.
 //   v2: <header>·<footer> 를 해시에서 제외 (메뉴 링크 하나 바꿔도 전량이 잡혔다)
 //   v3: 축제 상세의 "More festivals in" 블록 제외 (허브 정렬만 바꿔도 1,032 건이 나갔다)
-const HASH_VERSION = 3;
+//   v4: <head> 를 통째로 제외 (2026-09-29 AdSense 메타 태그 한 줄로 4,063페이지 전량이 잡혔다 —
+//       제목·설명 같은 head 내용은 어차피 본문(<main>)이 바뀔 때 같이 바뀐다)
+const HASH_VERSION = 4;
 const STATE = '../data/indexnow-state.json';
 const CHANGED = 'out/.changed-urls.json';
 
@@ -48,6 +50,7 @@ function hashOf(url) {
     // 상단 메뉴·푸터는 전 페이지가 공유한다. 여기에 링크 하나만 넣거나 빼도
     // 3,900 페이지가 통째로 "변경"으로 잡혀 IndexNow 에 전량 나간다 — 정작 그 페이지의
     // 내용은 그대로다. 페이지 고유 내용(<main>)만 보고 판단한다.
+    .replace(/<head>[\s\S]*?<\/head>/g, '')
     .replace(/<header[\s\S]*?<\/header>/g, '')
     .replace(/<footer[\s\S]*?<\/footer>/g, '')
     .replace(/__variable_[0-9a-f]+/g, '')
