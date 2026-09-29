@@ -34,9 +34,22 @@ export default function PrivacyPage() {
 
       <h2 className="sect">Advertising</h2>
       <p>
-        This site does not currently run display advertising. If that changes, this page will
-        name the provider and explain the cookies involved and how to opt out before any ads
-        appear.
+        This site uses <strong>Google AdSense</strong> to show advertising. Google and its
+        partners use cookies and similar technologies to serve ads based on your visits to this
+        and other websites, to measure how ads perform and to limit how often you see the same
+        one. Google&apos;s use of advertising cookies is described in
+        {' '}<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google&apos;s advertising policy</a>.
+      </p>
+      <p>
+        You can turn off personalised advertising in
+        {' '}<a href="https://adssettings.google.com/" target="_blank" rel="noopener">Google Ads Settings</a>,
+        and opt out of many third-party vendors&apos; cookies at
+        {' '}<a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info</a>
+        {' '}or, in the EU, <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener">youronlinechoices.eu</a>.
+        Visitors in the European Economic Area, the UK and Switzerland are shown a consent
+        message before any personalised ads load, and can change that choice at any time from
+        the link in the site footer or by clearing cookies. Ads never influence which festivals,
+        places or events are listed here or the order they appear in.
       </p>
 
       <h2 className="sect">Affiliate links</h2>

@@ -20,3 +20,7 @@ export function clampDesc(text: string, max = 155): string {
 // Google Analytics 4 — Mediavine Journey 심사가 GA4 로 트래픽을 검증한다
 // (Tier 1 기준 30일 1,000세션). 트래픽이 오기 전에 붙여야 이력이 남는다.
 export const GA_ID = 'G-QK9J11YDBN';
+
+// Google AdSense 게시자 ID — 2026-09-29 사이트 추가, 심사 대기. 사용자 개인 계정(2023년 티스토리로 개설).
+// 페이지 소스에 노출되는 공개값이라 코드에 둔다. ads.txt(public/ads.txt) 와 같은 값이어야 한다.
+export const ADSENSE_PUB = 'ca-pub-5585592855648237';

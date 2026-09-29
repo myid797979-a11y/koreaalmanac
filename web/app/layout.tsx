@@ -4,7 +4,7 @@ import { Hahmlet } from 'next/font/google';
 import Logo from '@/app/components/Logo';
 import SearchBox from '@/app/components/SearchBox';
 import Script from 'next/script';
-import { SITE_URL, SITE_NAME, GA_ID } from '@/lib/site';
+import { SITE_URL, SITE_NAME, GA_ID, ADSENSE_PUB } from '@/lib/site';
 import { fmt, today } from '@/lib/data';
 import './globals.css';
 
@@ -21,11 +21,23 @@ export const metadata: Metadata = {
     locale: 'en_US',
   },
   twitter: { card: 'summary_large_image' },
+  // AdSense 사이트 소유 확인용 메타 태그 (심사 시 head 에서 찾는다). 게시자 ID 는 공개값.
+  other: { 'google-adsense-account': ADSENSE_PUB },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={hahmlet.variable}>
+      <head>
+        {/* AdSense — 심사 크롤러가 원본 HTML 의 head 에서 이 태그를 찾으므로 next/script 가 아니라
+            평문 <script async> 로 둔다 (afterInteractive 는 하이드레이션 뒤에 붙어 크롤러가 못 본다).
+            승인 전에는 아무것도 그리지 않는다. 승인 후 자동 광고는 끄고 고정 높이 수동 슬롯만 쓴다. */}
+        <script
+          async
+          src={'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADSENSE_PUB}
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         {/* GA4 — 정적 내보내기라 next/script 로 붙인다. 페이지 렌더를 막지 않도록 afterInteractive. */}
         <Script
