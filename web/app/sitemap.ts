@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/guides/halloween-seoul-2026/', priority: 0.9 },
     { url: SITE_URL + '/guides/baseball-in-korea/', priority: 0.9 },
     { url: SITE_URL + '/guides/seoul-nightlife/', priority: 0.9 },
+    { url: SITE_URL + '/guides/busan-fireworks-2026/', priority: 0.9 },
     { url: SITE_URL + '/guides/korea-on-a-budget/', priority: 0.9 },
     { url: SITE_URL + '/guides/autumn-foliage/', priority: 0.9 },
     { url: SITE_URL + '/guides/gyeongju-2-days/', priority: 0.9 },

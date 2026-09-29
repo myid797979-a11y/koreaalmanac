@@ -6,6 +6,7 @@ import Stamp from '@/app/components/Stamp';
 import Gallery from '@/app/components/Gallery';
 import BookBox from '@/app/components/BookBox';
 import { offersFor, stayOffersForFestival } from '@/lib/affiliate';
+import { FESTIVAL_GUIDE, GUIDES } from '@/lib/guides';
 import {
   festivals, bySlug, status, dateRange, daysUntil, today,
   icsHref, MONTH_SLUGS, MONTHS_FULL, categoryLabel, uniqueTitle } from '@/lib/data';
@@ -103,6 +104,13 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
         )}
         <Link href={'/events/festivals/' + f.region.toLowerCase() + '/'}>All {f.region} festivals</Link>
       </p>
+
+      {FESTIVAL_GUIDE[f.id] && (
+        <div className="ended-banner" style={{ borderLeftColor: 'var(--jjok)' }}>
+          Planning to go? Our guide covers where to watch, tickets, hotels and getting away:{' '}
+          <Link href={FESTIVAL_GUIDE[f.id]}>{GUIDES.find(g => g.href === FESTIVAL_GUIDE[f.id])?.title ?? 'the full guide'}</Link>.
+        </div>
+      )}
 
       {/* 제휴 상자 — 사람이 고른 전국구 축제에만, 끝난 회차에는 안 붙인다 (투어 상품도 내려가 있다) */}
       {status(f, t) !== 'ended' && <BookBox offers={offersFor('festival', f.id)} title="Getting there the easy way" />}

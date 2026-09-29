@@ -10,6 +10,13 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    href: '/guides/busan-fireworks-2026/',
+    title: 'Busan Fireworks Festival 2026: 7 November',
+    blurb: 'Korea’s biggest fireworks over Gwangalli Beach. The free viewing spots and when to claim them, whether paid seats are worth it, the hotel problem, and how to leave with a million other people.',
+    tag: 'Seasonal',
+    photo: 'busan-gwangandaegyo-bridge-1064834',
+  },
+  {
     href: '/guides/halloween-seoul-2026/',
     title: 'Halloween in Seoul 2026',
     blurb: 'It falls on a Saturday this year. Where the night actually happens now — Hongdae, the theme parks, the ticketed club parties — how the city manages the crowds since 2022, and what to know before you go to Itaewon.',
@@ -118,10 +125,18 @@ export const GUIDES: Guide[] = [
 /** 홈에 보여줄 것 — 지금 시즌에 맞는 넷 */
 export const HOME_GUIDE_HREFS = [
   '/guides/halloween-seoul-2026/',
-  '/guides/christmas-new-year-seoul/',
+  '/guides/busan-fireworks-2026/',
   '/guides/autumn-foliage/',
   '/venues/',
 ];
+
+/** 축제 id → 그 축제를 다룬 가이드 (축제 상세 페이지에서 링크) */
+export const FESTIVAL_GUIDE: Record<string, string> = {
+  '235076': '/guides/busan-fireworks-2026/',
+  '1385298': '/guides/busan-fireworks-2026/',
+  '685135': '/guides/korea-in-winter/',
+  '700520': '/guides/cherry-blossom-2027/',
+};
 
 /** 월 허브에 보여줄 가이드 — 그 달에 검색하는 사람이 실제로 필요로 하는 순서 */
 export const MONTH_GUIDES: string[][] = [
@@ -134,8 +149,8 @@ export const MONTH_GUIDES: string[][] = [
   ['/guides/baseball-in-korea/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                  // Jul
   ['/guides/baseball-in-korea/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                  // Aug
   ['/guides/baseball-in-korea/', '/guides/autumn-foliage/', '/guides/korea-on-a-budget/'],                                   // Sep
-  ['/guides/autumn-foliage/', '/guides/halloween-seoul-2026/', '/guides/baseball-in-korea/', '/venues/'],                    // Oct
-  ['/guides/autumn-foliage/', '/guides/christmas-new-year-seoul/', '/venues/'],                                              // Nov
+  ['/guides/autumn-foliage/', '/guides/halloween-seoul-2026/', '/guides/busan-fireworks-2026/', '/venues/'],                  // Oct
+  ['/guides/busan-fireworks-2026/', '/guides/autumn-foliage/', '/guides/christmas-new-year-seoul/', '/venues/'],             // Nov
   ['/guides/christmas-new-year-seoul/', '/guides/korea-in-winter/', '/venues/'],                                             // Dec
 ];
 
@@ -144,6 +159,7 @@ export const MONTH_GUIDES: string[][] = [
  * ⚠ 본문을 고치면 updated 를 손으로 올린다 — 자동이 아니다. 링크만 고친 경우는 그대로 둔다.
  */
 export const GUIDE_DATES: Record<string, { published: string; updated: string }> = {
+  '/guides/busan-fireworks-2026/':     { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },
