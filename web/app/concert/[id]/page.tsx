@@ -8,6 +8,7 @@ import { fmt, today } from '@/lib/data';
 import { concertJsonLd, breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { venueForConcert } from '@/lib/venues';
 import BookBox from '@/app/components/BookBox';
+import AdSlot from '@/app/components/AdSlot';
 import { stayOffersForConcert } from '@/lib/affiliate';
 
 export function generateStaticParams() {
@@ -115,6 +116,8 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
       {c.tip && (
         <p className="c-tip"><strong>For visitors:</strong> {c.tip}</p>
       )}
+
+      <AdSlot placement="detail" />
 
       <h2 className="sect">Getting there</h2>
       <div className="mapbox">

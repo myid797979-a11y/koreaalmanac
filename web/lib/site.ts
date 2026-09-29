@@ -24,3 +24,13 @@ export const GA_ID = 'G-QK9J11YDBN';
 // Google AdSense 게시자 ID — 2026-09-29 사이트 추가, 심사 대기. 사용자 개인 계정(2023년 티스토리로 개설).
 // 페이지 소스에 노출되는 공개값이라 코드에 둔다. ads.txt(public/ads.txt) 와 같은 값이어야 한다.
 export const ADSENSE_PUB = 'ca-pub-5585592855648237';
+
+// 수동 광고 자리 — AdSense 승인 후 켠다 (app/components/AdSlot.tsx 설명 참고).
+// 슬롯 번호는 AdSense → 광고 → 광고 단위 기준 → 디스플레이 광고 를 자리마다 하나씩 만들어 받는다.
+export const ADS_ENABLED = false;
+export type AdPlacement = 'detail' | 'guide' | 'hub';
+export const AD_SLOTS: Record<AdPlacement, string> = {
+  detail: '',   // 축제·장소·공연 상세 — 본문(About) 뒤
+  guide: '',    // 가이드 — 본문 끝, 제휴 상자 앞
+  hub: '',      // 월·지역 허브 — 축제 그리드 앞
+};

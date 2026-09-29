@@ -8,6 +8,7 @@ import { nearest, distanceLabel, isWalkable } from '@/lib/geo';
 import { festivals, status, today, dateRange } from '@/lib/data';
 import { liveCulture, cultureDateRange } from '@/lib/culture';
 import BookBox from '@/app/components/BookBox';
+import AdSlot from '@/app/components/AdSlot';
 import { offersFor } from '@/lib/affiliate';
 
 export function generateStaticParams() {
@@ -154,6 +155,8 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
 
       {/* 제휴 상자 — 상위 관광지에만 (lib/affiliate.ts PLACE_OFFERS) */}
       <BookBox offers={offersFor('place', p.id)} title="Tickets and tours" />
+
+      <AdSlot placement="detail" />
 
       <h2 className="sect">Getting there</h2>
       <div className="mapbox">

@@ -14,6 +14,7 @@ import { liveCulture, isLongRun, cultureDateRange } from '@/lib/culture';
 import { GUIDES, MONTH_GUIDES, REGION_GUIDES } from '@/lib/guides';
 import { placeBySlug } from '@/lib/places';
 import BookBox from '@/app/components/BookBox';
+import AdSlot from '@/app/components/AdSlot';
 import { monthOffers, monthStay } from '@/lib/affiliate';
 
 export function generateStaticParams() {
@@ -189,6 +190,8 @@ function MonthHub({ monthIdx }: { monthIdx: number }) {
 
       <BookBox offers={monthOffers(monthIdx)} title={'Book ahead for ' + name} />
       <BookBox provider="agoda" offers={monthStay(monthIdx)} title={'Where to stay in ' + name} />
+
+      <AdSlot placement="hub" />
 
       <h2 className="sect">{list.length} festivals in {name} {year}</h2>
       <div className="grid">{rankShortFirst(list, 'date').map(f => <Card key={f.id} f={f} />)}</div>

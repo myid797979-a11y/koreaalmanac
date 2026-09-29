@@ -5,6 +5,7 @@ import { rankShortFirst } from '@/lib/festival-rank';
 import Stamp from '@/app/components/Stamp';
 import Gallery from '@/app/components/Gallery';
 import BookBox from '@/app/components/BookBox';
+import AdSlot from '@/app/components/AdSlot';
 import { offersFor, stayOffersForFestival } from '@/lib/affiliate';
 import { FESTIVAL_GUIDE, GUIDES } from '@/lib/guides';
 import {
@@ -150,6 +151,8 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
           )}
         </div>
       )}
+
+      <AdSlot placement="detail" />
 
       {(f.images ?? []).filter(u => u !== f.image).length > 0 && (
         <>
