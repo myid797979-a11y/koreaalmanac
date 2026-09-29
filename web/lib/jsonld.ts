@@ -130,6 +130,26 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]): objec
   };
 }
 
+/** 가이드용 Article — Discover 는 큰 이미지(1200px+)·날짜·저자가 있는 기사형 페이지를 고른다 */
+export function articleJsonLd(a: {
+  title: string; description: string; path: string; image?: string; published: string; modified: string;
+}): object {
+  const org = { '@type': 'Organization', name: SITE_NAME, url: SITE_URL + '/' };
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: a.title,
+    description: a.description,
+    mainEntityOfPage: SITE_URL + a.path,
+    ...(a.image ? { image: [a.image] } : {}),
+    datePublished: a.published,
+    dateModified: a.modified,
+    author: org,
+    publisher: org,
+    inLanguage: 'en',
+  };
+}
+
 export function websiteJsonLd(): object {
   return {
     '@context': 'https://schema.org',

@@ -8,6 +8,13 @@ import {
   status, today,
 } from '@/lib/data';
 import { MONTH_INTROS, REGION_INTROS, CATEGORY_INTROS } from '@/lib/editorial';
+import { MONTH_FACTS } from '@/lib/month-facts';
+import { concerts, concertDateRange } from '@/lib/concerts';
+import { liveCulture, isLongRun, cultureDateRange } from '@/lib/culture';
+import { GUIDES, MONTH_GUIDES } from '@/lib/guides';
+import { placeBySlug } from '@/lib/places';
+import BookBox from '@/app/components/BookBox';
+import { monthOffers, monthStay } from '@/lib/affiliate';
 
 export function generateStaticParams() {
   return [
@@ -22,10 +29,11 @@ export async function generateMetadata({ params }: { params: Promise<{ hub: stri
   const mIdx = MONTH_SLUGS.indexOf(hub);
   if (mIdx >= 0) {
     const { year, list } = monthFestivals(mIdx);
+    // "Korea in October" 계열 검색을 받도록 제목을 넓혔다 (2026-09-29). 'Festivals' 는 남겨 기존 순위를 지킨다.
     return {
-      title: 'Korea Festivals in ' + MONTHS_FULL[mIdx] + ' ' + year,
-      description: list.length + ' festivals across Korea in ' + MONTHS_FULL[mIdx] + ' ' + year +
-        ' — dates, locations, and admission from official tourism data, updated daily.',
+      title: 'Korea in ' + MONTHS_FULL[mIdx] + ' ' + year + ' — Festivals, Concerts & What to Expect',
+      description: list.length + ' festivals plus the month’s concerts, exhibitions, weather and holidays for ' +
+        MONTHS_FULL[mIdx] + ' ' + year + ' in Korea — from official data, updated daily.',
     };
   }
   const region = REGIONS.find(r => r.toLowerCase() === hub);
@@ -85,13 +93,104 @@ function MonthHub({ monthIdx }: { monthIdx: number }) {
     .map(r => ({ r, n: regionMonthList(r, monthIdx).length }))
     .filter(x => x.n >= REGION_MONTH_MIN);
 
+  // "Korea in October" 로 오는 사람은 축제 276장보다 먼저 "그 달이 어떤 달인지" 를 원한다 (2026-09-29).
+  // 날씨·공휴일 표, 그 달의 가이드, 공연, 전시를 축제 그리드 앞에 짧게 둔다.
+  const t = today();
+  const mm = String(monthIdx + 1).padStart(2, '0');
+  const m0 = year + mm + '01', m1 = year + mm + '31';
+  const monthConcerts = concerts
+    .filter(c => c.start <= m1 && c.end >= m0 && c.end >= t)
+    .sort((a, b) => a.start.localeCompare(b.start)).slice(0, 8);
+  const monthCulture = liveCulture(undefined, t)
+    .filter(c => c.start <= m1 && c.end >= m0)
+    .sort((a, b) => (isLongRun(a) ? 1 : 0) - (isLongRun(b) ? 1 : 0) || a.start.localeCompare(b.start))
+    .slice(0, 6);
+  const guides = MONTH_GUIDES[monthIdx].map(h => GUIDES.find(g => g.href === h)).filter(Boolean);
+  const facts = MONTH_FACTS[monthIdx];
+
   return (
     <>
       <div className="crumb"><Link href="/">Home</Link> › <Link href="/events/festivals/">Festivals</Link> › {name}</div>
-      <h1>Korea Festivals in {name} {year}</h1>
-      <p className="sub">{list.length} festivals with confirmed dates · updated daily from official tourism data</p>
+      <h1>Korea in {name} {year}</h1>
+      <p className="sub">
+        {list.length} festivals with confirmed dates
+        {monthConcerts.length > 0 && <> · {monthConcerts.length} concerts</>}
+        {monthCulture.length > 0 && <> · exhibitions and performances</>}
+        {' '}· updated daily from official data
+      </p>
       <p className="intro">{MONTH_INTROS[monthIdx]}</p>
       <MonthStrip current={monthIdx} />
+
+      <table className="facts">
+        <tbody>
+          <tr><th>Weather</th><td>{facts.weather}</td></tr>
+          <tr><th>The season</th><td>{facts.season}</td></tr>
+          <tr><th>Public holidays</th><td>{facts.holidays}</td></tr>
+        </tbody>
+      </table>
+
+      {guides.length > 0 && (
+        <>
+          <h2 className="sect">Guides for {name}</h2>
+          <div className="cult-list">
+            {guides.map(g => {
+              const ph = g!.photo ? placeBySlug(g!.photo) : undefined;
+              return (
+                <article key={g!.href} className="cult">
+                  {ph
+                    ? <Link href={g!.href} className="cu-ph"><img src={ph.image} alt={g!.title} loading="lazy" /></Link>
+                    : <span className="cu-ph cu-noph" aria-hidden="true" />}
+                  <div className="cu-body">
+                    <div className="cu-when">{g!.tag}</div>
+                    <h3><Link href={g!.href}>{g!.title}</Link></h3>
+                    <p className="cu-place">{g!.blurb}</p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </>
+      )}
+
+      {monthConcerts.length > 0 && (
+        <>
+          <h2 className="sect">Concerts in {name}</h2>
+          <ul className="agenda">
+            {monthConcerts.map(c => (
+              <li key={c.id}>
+                <span className="ad">{concertDateRange(c)}</span>
+                <Link href={'/concert/' + c.id + '/'}>{c.title}</Link>
+                <span className="meta"> · {c.venue}, {c.city}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="meta"><Link href="/events/concerts/">All concerts and venue guides →</Link></p>
+        </>
+      )}
+
+      {monthCulture.length > 0 && (
+        <>
+          <h2 className="sect">Exhibitions and performances in {name}</h2>
+          <ul className="agenda">
+            {monthCulture.map(c => (
+              <li key={c.id}>
+                <span className="ad">{cultureDateRange(c)}</span>
+                <Link href={'/culture/' + c.slug + '/'}>{c.title}</Link>
+                <span className="meta"> · {c.venue ?? c.region}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="meta">
+            <Link href="/events/exhibitions/">All exhibitions →</Link>{' · '}
+            <Link href="/events/traditional/">All traditional performances →</Link>
+          </p>
+        </>
+      )}
+
+      <BookBox offers={monthOffers(monthIdx)} title={'Book ahead for ' + name} />
+      <BookBox provider="agoda" offers={monthStay(monthIdx)} title={'Where to stay in ' + name} />
+
+      <h2 className="sect">{list.length} festivals in {name} {year}</h2>
       <div className="grid">{rankShortFirst(list, 'date').map(f => <Card key={f.id} f={f} />)}</div>
       {/* 확정분이 한두 건뿐인 달도 사실상 막다른 길이다 — 6건 미만이면 지난해를 곁들인다 */}
       {list.length < 6 && <LastYear monthIdx={monthIdx} name={name} year={year} />}

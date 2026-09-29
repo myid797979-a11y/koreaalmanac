@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
+import GuideLd from '@/app/components/GuideLd';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -19,6 +20,7 @@ export default function HalloweenSeoul2026() {
   return (
     <div className="guide">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldStr(crumbLd) }} />
+      <GuideLd href="/guides/halloween-seoul-2026/" />
 
       <div className="crumb">
         <Link href="/">Home</Link> › <Link href="/guides/">Guides</Link> › Halloween in Seoul 2026

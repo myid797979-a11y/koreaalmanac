@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image' },
   // AdSense 사이트 소유 확인용 메타 태그 (심사 시 head 에서 찾는다). 게시자 ID 는 공개값.
   other: { 'google-adsense-account': ADSENSE_PUB },
+  // Discover 자격: 큰 이미지 미리보기 허용 (기본값은 작은 썸네일만). KTO 사진은 대부분 1,000px 이상.
+  robots: {
+    index: true, follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

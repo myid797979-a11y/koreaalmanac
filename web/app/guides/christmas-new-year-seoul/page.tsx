@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
+import GuideLd from '@/app/components/GuideLd';
 import { GuideHero, FestivalRow, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -19,6 +20,7 @@ export default function ChristmasNewYearSeoul() {
   return (
     <div className="guide">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldStr(crumbLd) }} />
+      <GuideLd href="/guides/christmas-new-year-seoul/" />
 
       <div className="crumb">
         <Link href="/">Home</Link> › <Link href="/guides/">Guides</Link> › Christmas &amp; New Year 2026–27

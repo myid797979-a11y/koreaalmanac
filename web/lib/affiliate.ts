@@ -259,6 +259,20 @@ export function offersFor(kind: 'festival' | 'place', id: string): Offer[] {
   return (kind === 'festival' ? FESTIVAL_OFFERS : PLACE_OFFERS)[id] ?? [];
 }
 
+/** 월 허브("Korea in October")용 — 그 달에 팔리는 것 */
+export function monthOffers(m: number): readonly Offer[] {
+  if (m === 9 || m === 10) return GUIDE_OFFERS.foliage;          // Oct, Nov
+  if (m === 11 || m <= 1) return GUIDE_OFFERS.winterIce;         // Dec, Jan, Feb
+  if (m === 2 || m === 3) return GUIDE_OFFERS.cherry;            // Mar, Apr
+  return GUIDE_OFFERS.arrival;
+}
+export function monthStay(m: number): readonly Offer[] {
+  if (m === 9 || m === 10) return GUIDE_STAY.foliage;
+  if (m === 11 || m <= 1) return GUIDE_STAY.winterSki;
+  if (m === 2 || m === 3) return GUIDE_STAY.cherry;
+  return GUIDE_STAY.budget;
+}
+
 /** 제휴 상자가 붙는 페이지 수 (About 페이지·작업로그용) */
 export const AFFILIATE_COVERAGE = {
   festivals: Object.keys(FESTIVAL_OFFERS).length,

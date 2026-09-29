@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import GuideLd from '@/app/components/GuideLd';
 
 export const metadata = {
   title: 'How to Buy K-Pop Concert Tickets as a Foreigner',
@@ -8,6 +9,7 @@ export const metadata = {
 export default function TicketGuidePage() {
   return (
     <>
+      <GuideLd href="/guides/kpop-tickets/" />
       <div className="crumb">
         <Link href="/">Home</Link> › <Link href="/events/concerts/">Concerts</Link> › Tickets
       </div>

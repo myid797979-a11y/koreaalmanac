@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
+import GuideLd from '@/app/components/GuideLd';
 import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
 
 export const metadata = {
@@ -17,6 +18,7 @@ export default function BusanTwoDays() {
   return (
     <div className="guide">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldStr(crumbLd) }} />
+      <GuideLd href="/guides/busan-2-days/" />
 
       <div className="crumb">
         <Link href="/">Home</Link> › <Link href="/guides/">Guides</Link> › 2 Days in Busan
