@@ -450,6 +450,9 @@ footer.site .strip a:hover { color: var(--seal); }
 }
 .concert .c-date {
   flex: 0 0 148px; display: flex; flex-direction: column; gap: 7px;
+  align-items: flex-start;   /* D-day 배지(.stamp.inline)가 칸 너비로 늘어나지 않게 */
+}
+.concert .c-date .stamp.inline { margin-left: 0;
 }
 .concert .c-when {
   font-size: 14px; font-weight: 700; color: var(--jjok);
