@@ -70,6 +70,14 @@ export default async function CultureDetail({ params }: { params: Promise<{ slug
         <Link href="/">Home</Link> › <Link href={hubPath}>{hubName}</Link> › {c.title}
       </div>
 
+      {c.end < t && (
+        <div className="ended-banner">
+          This {isTrad ? 'performance' : 'exhibition'} has ended.
+          {' '}<Link href={hubPath}>See what is on now</Link>
+          {' '}or <Link href="/plan/">plan around your dates</Link>.
+        </div>
+      )}
+
       {c.image && <div className="hero"><img src={c.image} alt={c.title} /></div>}
 
       <h1>{c.title}</h1>

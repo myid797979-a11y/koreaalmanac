@@ -42,9 +42,15 @@ export function cultureBySlug(slug: string): CultureEvent | undefined {
   return culture.find(c => c.slug === slug);
 }
 
-/** 상세페이지 생성 대상 — 진행중/예정만 */
-export function cultureParams(t = today()): { slug: string }[] {
-  return culture.filter(c => c.end >= t).map(c => ({ slug: c.slug }));
+/**
+ * 상세페이지 생성 대상 — 끝난 것도 포함한다 (Exporter 가 종료 후 90일까지 데이터를 남긴다).
+ *
+ * 예전에는 진행중/예정만 만들었는데, 그러면 Google 이 색인한 페이지가 종료 다음 날 404 가 된다
+ * (2026-09-29 GSC 404 7건 전부 /culture/). 축제·공연과 같은 규칙: 페이지는 남기고 Ended 배너.
+ * 목록(liveCulture)에서는 그대로 빠진다.
+ */
+export function cultureParams(): { slug: string }[] {
+  return culture.map(c => ({ slug: c.slug }));
 }
 
 export function cultureDateRange(c: CultureEvent): string {

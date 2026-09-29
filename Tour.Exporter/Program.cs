@@ -205,6 +205,10 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
         var cult = new List<Dictionary<string, object?>>();
         var cQueue = new List<Dictionary<string, object?>>();
         var cToday = DateTime.UtcNow.AddHours(9).ToString("yyyyMMdd");
+        // 끝난 항목도 90일까지는 상세 페이지를 남긴다 (Collector 의 보존 기간과 같다).
+        // 목록·검색·번역 대기열에는 진행 중인 것만 — 페이지 쪽은 lib/culture.ts 의 liveCulture 가 거른다.
+        var cKeepFrom = DateTime.UtcNow.AddHours(9).AddDays(-90).ToString("yyyyMMdd");
+        var cEnded = 0;
 
         foreach (var (seq, it) in raw.OrderBy(kv => kv.Value.GetValueOrDefault("startDate", "")))
         {
@@ -212,7 +216,9 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
             if (title.Length == 0) continue;
             var realm = it.GetValueOrDefault("realmName", "");
             var end = it.GetValueOrDefault("endDate", "");
-            if (string.Compare(end, cToday, StringComparison.Ordinal) < 0) continue;
+            if (string.Compare(end, cKeepFrom, StringComparison.Ordinal) < 0) continue;
+            var ended = string.Compare(end, cToday, StringComparison.Ordinal) < 0;
+            if (ended) cEnded++;
 
             var isTrad = realm.Contains("국악") || TRAD.IsMatch(title);
             var isExh = realm.Contains("전시");
@@ -245,7 +251,7 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
                 ["mt"] = tr != null,
             });
 
-            if (tr == null)
+            if (tr == null && !ended)   // 끝난 것은 번역하지 않는다
                 cQueue.Add(new Dictionary<string, object?>
                 {
                     ["id"] = seq,
@@ -260,7 +266,7 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
                 });
         }
 
-        foreach (var x in cult)
+        foreach (var x in cult.Where(x => string.Compare((string?)x["end"] ?? "", cToday, StringComparison.Ordinal) >= 0))
             searchRows.Add(new {
                 k = (string?)x["kind"] == "traditional" ? "performance" : "exhibition",
                 t = x["title"], u = "/culture/" + x["slug"] + "/", r = x["region"],
@@ -270,7 +276,7 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
         File.WriteAllText(Path.Combine(webData, "culture.json"), JsonSerializer.Serialize(cult, jsonOpt));
         File.WriteAllText(Path.Combine(root, "data", "culture_queue.json"),
             JsonSerializer.Serialize(cQueue, new JsonSerializerOptions { WriteIndented = true, Encoder = jsonOpt.Encoder }));
-        Console.WriteLine($"culture.json        {cult.Count:N0}건 (전통 {cult.Count(c => (string?)c["kind"] == "traditional"):N0} · 전시 {cult.Count(c => (string?)c["kind"] == "exhibition"):N0}) · 번역대기 {cQueue.Count:N0}");
+        Console.WriteLine($"culture.json        {cult.Count:N0}건 (전통 {cult.Count(c => (string?)c["kind"] == "traditional"):N0} · 전시 {cult.Count(c => (string?)c["kind"] == "exhibition"):N0} · 종료 후 보존 {cEnded:N0}) · 번역대기 {cQueue.Count:N0}");
     }
     else
     {

@@ -233,9 +233,12 @@ switch (args.FirstOrDefault())
         }
         Console.WriteLine($"목록 {seen.Count:N0}건 ({calls}콜)");
 
-        // 지난 항목 정리 — 종료일이 오늘보다 이전이면 제거
-        var today = from;
-        var stale = store.Where(kv => kv.Value.GetValueOrDefault("endDate", "99999999").CompareTo(today) < 0)
+        // 지난 항목 정리 — 종료 후 90일이 지난 것만 제거.
+        // 예전엔 종료 다음 날 바로 지웠는데, 그러면 Google 이 색인한 지 열흘 된 문화 페이지가 404 가 된다
+        // (2026-09-29 GSC 404 7건 전부 /culture/). 축제·공연과 같이 끝난 뒤에도 페이지를 남기고
+        // Ended 배너를 붙인다. 90일은 색인 정리와 파일 수(한도 20,000) 사이의 타협.
+        var keepFrom = DateTime.UtcNow.AddHours(9).AddDays(-90).ToString("yyyyMMdd");
+        var stale = store.Where(kv => kv.Value.GetValueOrDefault("endDate", "99999999").CompareTo(keepFrom) < 0)
                          .Select(kv => kv.Key).ToList();
         foreach (var k in stale) store.Remove(k);
 
