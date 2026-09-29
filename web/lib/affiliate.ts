@@ -77,6 +77,7 @@ const KBO_TICKETS: Offer = { label: 'KBO baseball tickets sold to overseas visit
 const DMZ_MORE: Offer = { label: 'All DMZ tours, including defector-talk and Cheorwon tours', url: search('DMZ tour'), note: 'compare half-day and full-day' };
 const AIRPORT_TRANSFER: Offer = { label: 'Private transfer, Incheon Airport → Seoul hotel', url: search('Incheon airport private transfer'), note: 'fixed price, driver meets you in arrivals' };
 const LEGOLAND: Offer = { label: 'Legoland Korea tickets', url: search('Legoland Korea'), note: 'Chuncheon, for younger children' };
+const PALACE_TOUR: Offer = { label: 'Guided palace tours in English', url: search('Gyeongbokgung palace tour'), note: 'with hanbok or the Secret Garden' };
 const FOLK_VILLAGE: Offer = { label: 'Korean Folk Village tickets and tours', url: search('Korean Folk Village'), note: '20 minutes from Suwon by bus' };
 const BIRF: Offer = { label: 'Busan International Rock Festival tickets', url: search('Busan International Rock Festival') };
 const ANDONG_TOUR: Offer = { label: 'Andong Hahoe Village day tours', url: search('Andong Hahoe Village'), note: 'from Seoul or Busan; the mask dance is at the village' };
@@ -166,6 +167,7 @@ export const GUIDE_OFFERS = {
   nami:             [NAMI_TOUR, NAMI_ALPACA, MORNING_CALM_LIGHTS],
   suwon:            [SUWON_TOUR, FOLK_VILLAGE],
   dayTrips:         [NAMI_TOUR, DMZ, SUWON_TOUR, KR_PASS],
+  palaces:          [HANBOK_GBG, HANBOK_BUKCHON, PALACE_TOUR],
   themeParks:       [EVERLAND, EVERLAND_BUS, LOTTE_WORLD, SEOUL_SKY, LEGOLAND],
 } as const;
 

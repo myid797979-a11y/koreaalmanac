@@ -73,6 +73,13 @@ export const GUIDES: Guide[] = [
     photo: 'gocheok-sky-dome-3006386',
   },
   {
+    href: '/guides/seoul-palaces/',
+    title: 'Seoul’s five palaces: which to see, and when',
+    blurb: 'Tuesday closes two, Monday closes three. Which palace to choose, free entry in hanbok, the guard ceremony times, the Secret Garden ticket, and the palaces you can visit after dark.',
+    tag: 'How-to',
+    photo: 'changdeokgung-palace-complex-unesco-world-heritage-site-264348',
+  },
+  {
     href: '/guides/day-trips-from-seoul/',
     title: 'Day trips from Seoul: 12 that work without a car',
     blurb: 'Six an hour away on the subway, six by KTX, bus or tour. Suwon, Nami, the DMZ, Namhansanseong, Incheon, Yangpyeong, and the fast trains to Gangneung and Jeonju — which to pick for your season.',
@@ -206,6 +213,14 @@ export const PLACE_GUIDE: Record<string, string> = {
   '264152':  '/guides/everland-vs-lotte-world/', // Lotte World
   '264361':  '/guides/everland-vs-lotte-world/', // Caribbean Bay
   '3340568': '/guides/everland-vs-lotte-world/', // Everland Rocksville
+  '264337':  '/guides/seoul-palaces/',         // Gyeongbokgung
+  '264348':  '/guides/seoul-palaces/',         // Changdeokgung
+  '264350':  '/guides/seoul-palaces/',         // Changgyeonggung
+  '264316':  '/guides/seoul-palaces/',         // Deoksugung
+  '264351':  '/guides/seoul-palaces/',         // Jongmyo
+  '264329':  '/guides/seoul-palaces/',         // Gwanghwamun
+  '2033085': '/guides/seoul-palaces/',         // Changdeokgung Injeongmun
+  '1942577': '/guides/seoul-palaces/',         // Daehanmun
   '264362':  '/guides/day-trips-from-seoul/',   // Namhansanseong
   '1272552': '/guides/day-trips-from-seoul/',   // Dumulmeori
   '3113166': '/guides/day-trips-from-seoul/',   // Gwangmyeong Cave
@@ -215,7 +230,7 @@ export const PLACE_GUIDE: Record<string, string> = {
 
 /** 지역 허브(축제·지역 페이지) → 그 지역 가이드 */
 export const REGION_GUIDES: Record<string, string[]> = {
-  Seoul:     ['/guides/seoul-3-days/', '/guides/everland-vs-lotte-world/', '/guides/seoul-nightlife/', '/guides/halloween-seoul-2026/', '/guides/christmas-new-year-seoul/'],
+  Seoul:     ['/guides/seoul-3-days/', '/guides/seoul-palaces/', '/guides/everland-vs-lotte-world/', '/guides/seoul-nightlife/', '/guides/halloween-seoul-2026/', '/guides/christmas-new-year-seoul/'],
   Busan:     ['/guides/busan-2-days/', '/guides/busan-fireworks-2026/'],
   Gyeongnam: ['/guides/jinju-lantern-festival-2026/', '/guides/cherry-blossom-2027/'],
   Gyeongbuk: ['/guides/gyeongju-2-days/'],
@@ -235,6 +250,11 @@ export const FESTIVAL_GUIDE: Record<string, string> = {
   '4113182': '/guides/jinju-lantern-festival-2026/',
   '978249':  '/guides/suwon-day-trip/',        // 수원화성문화제
   '2657619': '/guides/suwon-day-trip/',        // 화성행궁 야간개장
+  '2648460': '/guides/seoul-palaces/',          // 경복궁 별빛야행
+  '2756396': '/guides/seoul-palaces/',          // 덕수궁 석조전 야간
+  '2818138': '/guides/seoul-palaces/',          // 창경궁 야연
+  '1331175': '/guides/seoul-palaces/',          // 창덕궁 달빛기행
+  '292961':  '/guides/seoul-palaces/',          // 덕수궁 수문장 교대
 };
 
 /** 월 허브에 보여줄 가이드 — 그 달에 검색하는 사람이 실제로 필요로 하는 순서 */
@@ -242,12 +262,12 @@ export const MONTH_GUIDES: string[][] = [
   ['/guides/korea-in-winter/', '/guides/christmas-new-year-seoul/', '/guides/seollal-2027/', '/guides/korea-on-a-budget/'],   // Jan
   ['/guides/seollal-2027/', '/guides/korea-in-winter/', '/guides/cherry-blossom-2027/', '/guides/korea-on-a-budget/'],       // Feb
   ['/guides/cherry-blossom-2027/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                // Mar
-  ['/guides/cherry-blossom-2027/', '/guides/baseball-in-korea/', '/guides/korea-on-a-budget/'],                              // Apr
+  ['/guides/cherry-blossom-2027/', '/guides/seoul-palaces/', '/guides/baseball-in-korea/', '/guides/korea-on-a-budget/'], // Apr
   ['/guides/baseball-in-korea/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                  // May
   ['/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'], // Jun
   ['/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'], // Jul
   ['/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'], // Aug
-  ['/guides/baseball-in-korea/', '/guides/autumn-foliage/', '/guides/korea-on-a-budget/'],                                   // Sep
+  ['/guides/seoul-palaces/', '/guides/baseball-in-korea/', '/guides/autumn-foliage/', '/guides/korea-on-a-budget/'], // Sep
   ['/guides/jinju-lantern-festival-2026/', '/guides/suwon-day-trip/', '/guides/autumn-foliage/', '/guides/halloween-seoul-2026/', '/guides/busan-fireworks-2026/'], // Oct
   ['/guides/busan-fireworks-2026/', '/guides/autumn-foliage/', '/guides/nami-island-day-trip/', '/guides/christmas-new-year-seoul/'], // Nov
   ['/guides/christmas-new-year-seoul/', '/guides/korea-in-winter/', '/venues/'],                                             // Dec
@@ -266,6 +286,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/suwon-day-trip/':           { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/everland-vs-lotte-world/':  { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/day-trips-from-seoul/':     { published: '2026-09-29', updated: '2026-09-29' },
+  '/guides/seoul-palaces/':            { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },

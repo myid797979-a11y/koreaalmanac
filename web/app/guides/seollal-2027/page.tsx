@@ -175,6 +175,7 @@ export default function Seollal2027() {
       />
 
       <p className="strip">
+        <Link href="/guides/seoul-palaces/">Seoul’s five palaces</Link>
         <Link href="/guides/korea-in-winter/">Korea in winter</Link>
         <Link href="/guides/christmas-new-year-seoul/">Christmas &amp; New Year</Link>
         <Link href="/events/festivals/february/">February festivals</Link>
