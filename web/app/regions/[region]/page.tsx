@@ -34,7 +34,7 @@ function PlaceCard({ p }: { p: Place }) {
       <div className="body">
         <div className="when">{catMeta(p.cat).label}</div>
         <h3>{displayTitle(p.title)}</h3>
-        {isTopPick(p) && <span className="pick">Top pick</span>}
+        {isTopPick(p) && <span className="toppick">Top pick</span>}
       </div>
     </Link>
   );
