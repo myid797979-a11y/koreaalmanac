@@ -87,6 +87,13 @@ export const GUIDES: Guide[] = [
     photo: 'nami-island-264244',
   },
   {
+    href: '/guides/everland-vs-lotte-world/',
+    title: 'Everland or Lotte World? Choosing a Seoul theme park',
+    blurb: 'An hour out to the big outdoor coasters and safari, or indoors at a subway station in Seoul. Getting there, the paid queue passes, cheaper tickets, and the weeks the school trips take over.',
+    tag: 'How-to',
+    photo: 'everland-264235',
+  },
+  {
     href: '/guides/dmz-tour-from-seoul/',
     title: 'A DMZ tour from Seoul: what you actually see',
     blurb: 'Imjingak, the Third Tunnel and Dora Observatory explained honestly — what needs a tour and what does not, the JSA question, Cheorwon and Goseong as quieter alternatives, and the passport rule.',
@@ -188,17 +195,21 @@ export const PLACE_GUIDE: Record<string, string> = {
   '264395':  '/guides/suwon-day-trip/',         // Hwahongmun
   '2617703': '/guides/suwon-day-trip/',         // Banghwasuryujeong
   '264403':  '/guides/suwon-day-trip/',         // Hwaseong trolley
+  '264235':  '/guides/everland-vs-lotte-world/', // Everland
+  '264152':  '/guides/everland-vs-lotte-world/', // Lotte World
+  '264361':  '/guides/everland-vs-lotte-world/', // Caribbean Bay
+  '3340568': '/guides/everland-vs-lotte-world/', // Everland Rocksville
 };
 
 /** 지역 허브(축제·지역 페이지) → 그 지역 가이드 */
 export const REGION_GUIDES: Record<string, string[]> = {
-  Seoul:     ['/guides/seoul-3-days/', '/guides/seoul-nightlife/', '/guides/halloween-seoul-2026/', '/guides/christmas-new-year-seoul/'],
+  Seoul:     ['/guides/seoul-3-days/', '/guides/everland-vs-lotte-world/', '/guides/seoul-nightlife/', '/guides/halloween-seoul-2026/', '/guides/christmas-new-year-seoul/'],
   Busan:     ['/guides/busan-2-days/', '/guides/busan-fireworks-2026/'],
   Gyeongnam: ['/guides/jinju-lantern-festival-2026/', '/guides/cherry-blossom-2027/'],
   Gyeongbuk: ['/guides/gyeongju-2-days/'],
   Jeju:      ['/guides/jeju-3-days/'],
   Gangwon:   ['/guides/nami-island-day-trip/', '/guides/korea-in-winter/', '/guides/autumn-foliage/'],
-  Gyeonggi:  ['/guides/suwon-day-trip/', '/guides/nami-island-day-trip/', '/guides/dmz-tour-from-seoul/', '/venues/'],
+  Gyeonggi:  ['/guides/suwon-day-trip/', '/guides/everland-vs-lotte-world/', '/guides/nami-island-day-trip/', '/guides/dmz-tour-from-seoul/', '/venues/'],
   Incheon:   ['/venues/'],
 };
 
@@ -221,9 +232,9 @@ export const MONTH_GUIDES: string[][] = [
   ['/guides/cherry-blossom-2027/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                // Mar
   ['/guides/cherry-blossom-2027/', '/guides/baseball-in-korea/', '/guides/korea-on-a-budget/'],                              // Apr
   ['/guides/baseball-in-korea/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                  // May
-  ['/guides/baseball-in-korea/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                  // Jun
-  ['/guides/baseball-in-korea/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                  // Jul
-  ['/guides/baseball-in-korea/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                  // Aug
+  ['/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'], // Jun
+  ['/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'], // Jul
+  ['/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'], // Aug
   ['/guides/baseball-in-korea/', '/guides/autumn-foliage/', '/guides/korea-on-a-budget/'],                                   // Sep
   ['/guides/jinju-lantern-festival-2026/', '/guides/suwon-day-trip/', '/guides/autumn-foliage/', '/guides/halloween-seoul-2026/', '/guides/busan-fireworks-2026/'], // Oct
   ['/guides/busan-fireworks-2026/', '/guides/autumn-foliage/', '/guides/nami-island-day-trip/', '/guides/christmas-new-year-seoul/'], // Nov
@@ -241,6 +252,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/dmz-tour-from-seoul/':      { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/nami-island-day-trip/':     { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/suwon-day-trip/':           { published: '2026-09-29', updated: '2026-09-29' },
+  '/guides/everland-vs-lotte-world/':  { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },

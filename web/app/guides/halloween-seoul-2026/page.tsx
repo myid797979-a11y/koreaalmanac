@@ -176,6 +176,7 @@ export default function HalloweenSeoul2026() {
         <Link href="/guides/seoul-nightlife/">Seoul after dark, neighbourhood by neighbourhood</Link>
         <Link href="/events/concerts/">Concerts and club nights this month</Link>
         <Link href="/events/festivals/october/">October festivals</Link>
+        <Link href="/guides/everland-vs-lotte-world/">Everland or Lotte World?</Link>
         <Link href="/guides/christmas-new-year-seoul/">Christmas &amp; New Year</Link>
         <Link href="/plan/">Trip Planner</Link>
       </p>

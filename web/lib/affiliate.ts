@@ -76,6 +76,7 @@ const HALLASAN: Offer = { label: 'Hallasan hiking tours', url: search('Hallasan 
 const KBO_TICKETS: Offer = { label: 'KBO baseball tickets sold to overseas visitors', url: search('KBO baseball'), note: 'Seoul home games, when listed' };
 const DMZ_MORE: Offer = { label: 'All DMZ tours, including defector-talk and Cheorwon tours', url: search('DMZ tour'), note: 'compare half-day and full-day' };
 const AIRPORT_TRANSFER: Offer = { label: 'Private transfer, Incheon Airport → Seoul hotel', url: search('Incheon airport private transfer'), note: 'fixed price, driver meets you in arrivals' };
+const LEGOLAND: Offer = { label: 'Legoland Korea tickets', url: search('Legoland Korea'), note: 'Chuncheon, for younger children' };
 const FOLK_VILLAGE: Offer = { label: 'Korean Folk Village tickets and tours', url: search('Korean Folk Village'), note: '20 minutes from Suwon by bus' };
 const BIRF: Offer = { label: 'Busan International Rock Festival tickets', url: search('Busan International Rock Festival') };
 const ANDONG_TOUR: Offer = { label: 'Andong Hahoe Village day tours', url: search('Andong Hahoe Village'), note: 'from Seoul or Busan; the mask dance is at the village' };
@@ -164,6 +165,7 @@ export const GUIDE_OFFERS = {
   dmz:              [DMZ, DMZ_MORE],
   nami:             [NAMI_TOUR, NAMI_ALPACA, MORNING_CALM_LIGHTS],
   suwon:            [SUWON_TOUR, FOLK_VILLAGE],
+  themeParks:       [EVERLAND, EVERLAND_BUS, LOTTE_WORLD, SEOUL_SKY, LEGOLAND],
 } as const;
 
 // ── Agoda (숙소) ─────────────────────────────────────────
