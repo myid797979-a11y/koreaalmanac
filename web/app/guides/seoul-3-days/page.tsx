@@ -277,6 +277,8 @@ export default function SeoulThreeDays() {
       </p>
 
       <p className="strip">
+        <Link href="/guides/where-to-stay-in-seoul/">Where to stay in Seoul</Link>
+        <Link href="/guides/korea-7-day-itinerary/">7 days in Korea</Link>
         <Link href="/guides/korean-food-guide/">Eating in Korea</Link>
         <Link href="/guides/seoul-palaces/">Seoul’s five palaces</Link>
         <Link href="/regions/seoul/">Seoul: places &amp; events</Link>

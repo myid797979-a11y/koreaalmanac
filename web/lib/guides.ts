@@ -157,6 +157,41 @@ export const GUIDES: Guide[] = [
     photo: 'imjingak-resort-pyeonghwa-nuri-park-264487',
   },
   {
+    href: '/guides/korea-entry-requirements/',
+    title: 'Korea entry requirements 2026: K-ETA, e-Arrival Card and customs',
+    blurb: 'Who is exempt from the K-ETA until 31 December 2026, the online arrival card to file within three days of landing, the official sites and the look-alikes, and the customs allowances.',
+    tag: 'How-to',
+    photo: 'gwanghwamun-square-929909',
+  },
+  {
+    href: '/guides/where-to-stay-in-seoul/',
+    title: 'Where to stay in Seoul: the neighbourhoods compared',
+    blurb: 'Myeongdong, Jongno, Hongdae, Gangnam, Seongsu, Itaewon, Dongdaemun, Jamsil and Seoul Station: what each is good for, what to watch out for, and how it connects to the airport.',
+    tag: 'How-to',
+    photo: 'myeong-dong-264312',
+  },
+  {
+    href: '/guides/getting-around-seoul/',
+    title: 'Getting around Seoul: cards, subway, buses and taxis',
+    blurb: 'T-money and the travel cards, how the subway and buses work, free transfers, last trains and night buses, and taxis with Kakao T.',
+    tag: 'How-to',
+    photo: 'cheonggyecheon-stream-897540',
+  },
+  {
+    href: '/guides/esim-and-apps-for-korea/',
+    title: 'eSIM, SIM or pocket Wi-Fi for Korea, and the apps to install',
+    blurb: 'Which connection to choose, and why Naver Map or KakaoMap beats Google Maps here. Kakao T, Papago and the subway app, and the Korean-number problem.',
+    tag: 'How-to',
+    photo: 'yeouido-hangang-park-1064767',
+  },
+  {
+    href: '/guides/hanbok-rental/',
+    title: 'Hanbok rental in Seoul: where, how much, and what you get',
+    blurb: 'The shops by Gyeongbokgung and Bukchon, what two to four hours costs, traditional versus modern styles, free palace entry and winter layers.',
+    tag: 'How-to',
+    photo: 'hanboknam-gyeongbokgung-branch-2593860',
+  },
+  {
     href: '/guides/incheon-airport-to-seoul/',
     title: 'Incheon Airport to Seoul: train, bus or taxi',
     blurb: 'Which way in depends on where your hotel is, not the price. The AREX express and all-stop, limousine buses and taxis compared, the first-hour checklist, and what to do if you land after midnight.',
@@ -185,6 +220,13 @@ export const GUIDES: Guide[] = [
     photo: 'olympic-park-789703',
   },
   {
+    href: '/guides/korea-7-day-itinerary/',
+    title: '7 days in Korea: Seoul, Gyeongju and Busan',
+    blurb: 'Three days in Seoul, a day trip out, the Silla capital and the coast, all by KTX. The order that avoids the closing days, and variations for autumn, winter and K-pop trips.',
+    tag: 'Itinerary',
+    photo: 'gyeongju-daereungwon-ancient-tomb-complex-2818690',
+  },
+  {
     href: '/guides/seoul-3-days/',
     title: '3 days in Seoul',
     blurb: 'A first-timer route built around the palace closing days and Bukchon’s 5pm curfew — the two things that break most published itineraries.',
@@ -211,6 +253,13 @@ export const GUIDES: Guide[] = [
     blurb: 'Korea’s largest hanok village, the Joseon founder’s shrine, a 1914 cathedral, bibimbap at the source and a makgeolli table that keeps filling. With the KTX from Seoul and why to stay the night.',
     tag: 'Itinerary',
     photo: 'jeonju-hanok-village-slow-city-264285',
+  },
+  {
+    href: '/guides/gangneung-sokcho-2-days/',
+    title: '2 days on the east coast: Gangneung and Sokcho',
+    blurb: 'The KTX to the sea, Gyeongpo Beach and the Anmok coffee coast, seawater tofu, then the Sokcho fish market and the Seoraksan cable car before the queues.',
+    tag: 'Itinerary',
+    photo: 'gangneung-gyeongpo-beach-264253',
   },
   {
     href: '/guides/gyeongju-2-days/',
@@ -299,6 +348,13 @@ export const PLACE_GUIDE: Record<string, string> = {
   '1945427': '/guides/jeonju-2-days/',           // Nambu Market
   '3116081': '/guides/jeonju-2-days/',           // Jaman Mural Village
   '3510771': '/guides/jeonju-2-days/',           // Makgeolli street
+  '2593860': '/guides/hanbok-rental/',          // Hanboknam Gyeongbokgung
+  '2475947': '/guides/gangneung-sokcho-2-days/', // Gangneung coffee street
+  '264191':  '/guides/gangneung-sokcho-2-days/', // Ojukheon
+  '264248':  '/guides/gangneung-sokcho-2-days/', // Gwongeumseong / cable car
+  '1955432': '/guides/gangneung-sokcho-2-days/', // Sokcho fish market
+  '264130':  '/guides/gangneung-sokcho-2-days/', // Sokcho Beach
+  '2693549': '/guides/gangneung-sokcho-2-days/', // Chodang sundubu
   '264362':  '/guides/day-trips-from-seoul/',   // Namhansanseong
   '1272552': '/guides/day-trips-from-seoul/',   // Dumulmeori
   '3113166': '/guides/day-trips-from-seoul/',   // Gwangmyeong Cave
@@ -308,12 +364,12 @@ export const PLACE_GUIDE: Record<string, string> = {
 
 /** 지역 허브(축제·지역 페이지) → 그 지역 가이드 */
 export const REGION_GUIDES: Record<string, string[]> = {
-  Seoul:     ['/guides/seoul-3-days/', '/guides/seoul-palaces/', '/guides/korean-food-guide/', '/guides/seoul-shopping/', '/guides/halloween-seoul-2026/', '/guides/seoul-nightlife/'],
+  Seoul:     ['/guides/seoul-3-days/', '/guides/where-to-stay-in-seoul/', '/guides/seoul-palaces/', '/guides/korean-food-guide/', '/guides/getting-around-seoul/', '/guides/halloween-seoul-2026/'],
   Busan:     ['/guides/busan-2-days/', '/guides/busan-fireworks-2026/', '/guides/korean-spa-jjimjilbang/'],
   Gyeongnam: ['/guides/jinju-lantern-festival-2026/', '/guides/templestay-korea/', '/guides/cherry-blossom-2027/'],
   Gyeongbuk: ['/guides/gyeongju-2-days/'],
   Jeju:      ['/guides/jeju-3-days/'],
-  Gangwon:   ['/guides/skiing-in-korea/', '/guides/nami-island-day-trip/', '/guides/korea-in-winter/', '/guides/autumn-foliage/'],
+  Gangwon:   ['/guides/gangneung-sokcho-2-days/', '/guides/skiing-in-korea/', '/guides/nami-island-day-trip/', '/guides/korea-in-winter/', '/guides/autumn-foliage/'],
   Gyeonggi:  ['/guides/day-trips-from-seoul/', '/guides/suwon-day-trip/', '/guides/everland-vs-lotte-world/', '/guides/nami-island-day-trip/', '/guides/dmz-tour-from-seoul/', '/venues/'],
   Jeonbuk:   ['/guides/jeonju-2-days/', '/guides/templestay-korea/'],
   Jeonnam:   ['/guides/templestay-korea/'],
@@ -378,6 +434,13 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/korean-spa-jjimjilbang/':   { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/templestay-korea/':         { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/jeonju-2-days/':            { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/where-to-stay-in-seoul/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/esim-and-apps-for-korea/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/getting-around-seoul/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/korea-7-day-itinerary/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/hanbok-rental/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/gangneung-sokcho-2-days/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/korea-entry-requirements/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },

@@ -89,6 +89,9 @@ const SPA_CIMER: Offer = { label: 'Paradise City Cimer spa ticket', url: search(
 const SPA_BUSAN: Offer = { label: 'Spa Land Centum City ticket', url: search('Spa Land Centum City'), note: 'Busan’s best-known spa' };
 const TEMPLESTAY: Offer = { label: 'Templestay programmes and temple tours', url: search('templestay'), note: 'day and overnight, some with transport' };
 const JEJU_CAR: Offer = { label: 'Jeju car rental', url: search('Jeju car rental'), note: 'bring an International Driving Permit' };
+const SIM_CARD: Offer = { label: 'Korean SIM or eSIM with a phone number', url: search('Korea SIM card'), note: 'for apps that need a Korean number' };
+const POCKET_WIFI: Offer = { label: 'Pocket Wi-Fi, airport pick-up', url: search('Korea pocket wifi'), note: 'one device for the whole group' };
+const TMONEY: Offer = { label: 'T-money and transport cards', url: search('T-money card'), note: 'pick up at the airport' };
 const FOLK_VILLAGE: Offer = { label: 'Korean Folk Village tickets and tours', url: search('Korean Folk Village'), note: '20 minutes from Suwon by bus' };
 const BIRF: Offer = { label: 'Busan International Rock Festival tickets', url: search('Busan International Rock Festival') };
 const ANDONG_TOUR: Offer = { label: 'Andong Hahoe Village day tours', url: search('Andong Hahoe Village'), note: 'from Seoul or Busan; the mask dance is at the village' };
@@ -188,6 +191,12 @@ export const GUIDE_OFFERS = {
   jeonju:           [JEONJU_TOUR, KR_PASS],
   seoul3:           [SEOUL_PASS, HANBOK_GBG, NSEOUL_NIGHT],
   jeju:             [JEJU_CAR, JEJU_TOUR, HALLASAN],
+  connect:          [ESIM, SIM_CARD, POCKET_WIFI],
+  transit:          [WOWPASS, TMONEY, AREX],
+  itinerary7:       [KR_PASS, ESIM, AREX],
+  hanbok:           [HANBOK_GBG, HANBOK_BUKCHON, GYEONGJU_HANBOK],
+  eastCoast:        [SEORAKSAN_TOUR, GANGNEUNG_TOUR, KR_PASS],
+  entry:            [ESIM, AREX],
   themeParks:       [EVERLAND, EVERLAND_BUS, LOTTE_WORLD, SEOUL_SKY, LEGOLAND],
 } as const;
 
@@ -301,6 +310,8 @@ export const GUIDE_STAY = {
   ski:       [STAY_PYEONGCHANG, STAY_GANGNEUNG],
   busan:     [STAY_BUSAN],
   seoul:     [STAY_SEOUL],
+  itinerary7: [STAY_SEOUL, STAY_GYEONGJU, STAY_BUSAN],
+  eastCoast: [STAY_SOKCHO, STAY_GANGNEUNG],
   jeju:      [STAY_JEJU],
   jeonju:    [STAY_JEONJU],
   suwon:     [STAY_SUWON, STAY_SEOUL],

@@ -156,6 +156,8 @@ export default function IncheonAirportToSeoul() {
       />
 
       <p className="strip">
+        <Link href="/guides/korea-entry-requirements/">Entry requirements 2026</Link>
+        <Link href="/guides/esim-and-apps-for-korea/">eSIM and apps</Link>
         <Link href="/korea-basics/">Korea basics</Link>
         <Link href="/guides/seoul-3-days/">3 days in Seoul</Link>
         <Link href="/guides/korea-on-a-budget/">Korea on a budget</Link>

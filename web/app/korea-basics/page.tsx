@@ -208,6 +208,9 @@ export default function KoreaBasics() {
       </p>
 
       <p className="strip">
+        <Link href="/guides/korea-entry-requirements/">Entry requirements 2026</Link>
+        <Link href="/guides/esim-and-apps-for-korea/">eSIM and apps</Link>
+        <Link href="/guides/getting-around-seoul/">Getting around Seoul</Link>
         <Link href="/guides/incheon-airport-to-seoul/">Incheon Airport to Seoul</Link>
         <Link href="/guides/korea-on-a-budget/">Korea on a budget</Link>
         <Link href="/guides/">City guides</Link>
