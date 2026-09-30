@@ -322,7 +322,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/cherry-blossom-2027/':      { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/korea-in-winter/':          { published: '2026-09-14', updated: '2026-09-28' },
-  '/guides/autumn-foliage/':           { published: '2026-09-14', updated: '2026-09-28' },
+  '/guides/autumn-foliage/':           { published: '2026-09-14', updated: '2026-09-30' },
   '/guides/baseball-in-korea/':        { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/korea-on-a-budget/':        { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seoul-nightlife/':          { published: '2026-09-28', updated: '2026-09-28' },

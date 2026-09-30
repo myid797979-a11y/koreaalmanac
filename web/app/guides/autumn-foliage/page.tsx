@@ -68,7 +68,7 @@ export default function AutumnFoliage() {
             <td>
               First colour around <strong>27–30 September</strong>, peak{' '}
               <strong>16–25 October</strong>. The northeast goes first every year, which is why
-              Seoraksan is the one place worth a dedicated trip rather than a detour.
+              Seoraksan is the one place worth a dedicated trip rather than a detour. <strong>Update, 28 September:</strong> the Korea Meteorological Administration recorded the first colour on Seoraksan, and the Korea Forest Service forecasts the peak around <strong>20 October</strong>.
             </td>
           </tr>
           <tr>
