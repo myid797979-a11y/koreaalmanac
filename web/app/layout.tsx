@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: SITE_NAME, template: '%s | ' + SITE_NAME },
   description: "What's on in Korea — festivals, K-pop concerts and live shows with real dates, venues and fees. Festival data from the Korea Tourism Organization, refreshed daily.",
-  alternates: { canonical: './' },
+  alternates: { canonical: './', types: { 'application/rss+xml': [{ url: '/rss.xml', title: 'Korea Almanac guides' }] } },
   openGraph: {
     siteName: SITE_NAME,
     type: 'website',
