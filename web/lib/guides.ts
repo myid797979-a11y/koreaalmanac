@@ -108,6 +108,20 @@ export const GUIDES: Guide[] = [
     photo: 'hapcheon-haeinsa-temple-264238',
   },
   {
+    href: '/guides/rainy-day-seoul/',
+    title: 'Rainy day in Seoul: indoor things to do',
+    blurb: 'Free national museums, the War Memorial, Starfield Library and COEX, Lotte World and its aquarium, a bathhouse afternoon and the underground malls.',
+    tag: 'How-to',
+    photo: 'national-museum-of-korea-268137',
+  },
+  {
+    href: '/guides/korea-with-kids/',
+    title: 'Korea with kids',
+    blurb: 'The free children’s museums and zoo in Seoul, theme parks, aquariums and Jeju, strollers on the subway, children’s fares, family rooms and food for fussy eaters.',
+    tag: 'How-to',
+    photo: 'seoul-children-s-grand-park-1051832',
+  },
+  {
     href: '/guides/korean-food-guide/',
     title: 'Eating in Korea: what to order and how it works',
     blurb: 'Free side dishes, the call bell, the two-portion rule and paying at the counter. The dishes worth ordering, what they cost, the Seoul food markets to start with, and eating as a vegetarian.',
@@ -197,6 +211,13 @@ export const GUIDES: Guide[] = [
     blurb: 'The shops by Gyeongbokgung and Bukchon, what two to four hours costs, traditional versus modern styles, free palace entry and winter layers.',
     tag: 'How-to',
     photo: 'hanboknam-gyeongbokgung-branch-2593860',
+  },
+  {
+    href: '/guides/where-to-stay-in-busan/',
+    title: 'Where to stay in Busan',
+    blurb: 'Haeundae for the beach, Gwangalli for the bridge and the fireworks, Seomyeon for transport and food, Nampo for the old port and markets.',
+    tag: 'How-to',
+    photo: 'haeundae-beach-264155',
   },
   {
     href: '/guides/incheon-airport-to-seoul/',
@@ -296,7 +317,7 @@ export const GUIDE_GROUPS = [
   { id: 'experiences', label: 'Things to do' },
   { id: 'kpop',        label: 'K-pop and live shows' },
 ] as const;
-const BEFORE = ['/guides/korea-entry-requirements/', '/guides/esim-and-apps-for-korea/', '/guides/incheon-airport-to-seoul/', '/guides/getting-around-seoul/', '/guides/where-to-stay-in-seoul/', '/guides/korea-on-a-budget/'];
+const BEFORE = ['/guides/where-to-stay-in-busan/', '/guides/korea-entry-requirements/', '/guides/esim-and-apps-for-korea/', '/guides/incheon-airport-to-seoul/', '/guides/getting-around-seoul/', '/guides/where-to-stay-in-seoul/', '/guides/korea-on-a-budget/'];
 const KPOP = ['/guides/kpop-tickets/', '/guides/kpop-award-shows/', '/venues/'];
 export function guideGroup(g: Guide): (typeof GUIDE_GROUPS)[number]['id'] {
   if (KPOP.includes(g.href)) return 'kpop';
@@ -396,6 +417,16 @@ export const PLACE_GUIDE: Record<string, string> = {
   '1955432': '/guides/gangneung-sokcho-2-days/', // Sokcho fish market
   '264130':  '/guides/gangneung-sokcho-2-days/', // Sokcho Beach
   '2693549': '/guides/gangneung-sokcho-2-days/', // Chodang sundubu
+  '268137':  '/guides/rainy-day-seoul/',        // National Museum of Korea
+  '268131':  '/guides/rainy-day-seoul/',        // War Memorial
+  '268127':  '/guides/rainy-day-seoul/',        // Seoul Museum of History
+  '2642344': '/guides/rainy-day-seoul/',        // Starfield Library
+  '1051832': '/guides/korea-with-kids/',        // Seoul Children's Grand Park
+  '1215579': '/guides/korea-with-kids/',        // Children's Museum (NMK)
+  '1905560': '/guides/korea-with-kids/',        // Seoul Children's Museum
+  '2823618': '/guides/korea-with-kids/',        // Snoopy Garden
+  '264155':  '/guides/where-to-stay-in-busan/', // Haeundae Beach
+  '789805':  '/guides/where-to-stay-in-busan/', // BIFF Square
   '264362':  '/guides/day-trips-from-seoul/',   // Namhansanseong
   '1272552': '/guides/day-trips-from-seoul/',   // Dumulmeori
   '3113166': '/guides/day-trips-from-seoul/',   // Gwangmyeong Cave
@@ -406,7 +437,7 @@ export const PLACE_GUIDE: Record<string, string> = {
 /** 지역 허브(축제·지역 페이지) → 그 지역 가이드 */
 export const REGION_GUIDES: Record<string, string[]> = {
   Seoul:     ['/guides/seoul-3-days/', '/guides/where-to-stay-in-seoul/', '/guides/seoul-palaces/', '/guides/korean-food-guide/', '/guides/getting-around-seoul/', '/guides/halloween-seoul-2026/'],
-  Busan:     ['/guides/busan-2-days/', '/guides/busan-fireworks-2026/', '/guides/korean-spa-jjimjilbang/'],
+  Busan:     ['/guides/busan-2-days/', '/guides/where-to-stay-in-busan/', '/guides/busan-fireworks-2026/', '/guides/korean-spa-jjimjilbang/'],
   Gyeongnam: ['/guides/jinju-lantern-festival-2026/', '/guides/templestay-korea/', '/guides/cherry-blossom-2027/'],
   Gyeongbuk: ['/guides/gyeongju-2-days/'],
   Jeju:      ['/guides/jeju-3-days/'],
@@ -461,7 +492,7 @@ export const MONTH_GUIDES: string[][] = [
   ['/guides/cherry-blossom-2027/', '/guides/seoul-palaces/', '/guides/baseball-in-korea/', '/guides/korea-on-a-budget/'], // Apr
   ['/guides/baseball-in-korea/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                  // May
   ['/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'], // Jun
-  ['/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'], // Jul
+  ['/guides/rainy-day-seoul/', '/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/'], // Jul
   ['/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'], // Aug
   ['/guides/seoul-palaces/', '/guides/baseball-in-korea/', '/guides/autumn-foliage/', '/guides/korea-on-a-budget/'], // Sep
   ['/guides/jinju-lantern-festival-2026/', '/guides/suwon-day-trip/', '/guides/autumn-foliage/', '/guides/halloween-seoul-2026/', '/guides/busan-fireworks-2026/'], // Oct
@@ -490,6 +521,9 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/korean-spa-jjimjilbang/':   { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/templestay-korea/':         { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/jeonju-2-days/':            { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/where-to-stay-in-busan/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/rainy-day-seoul/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/korea-with-kids/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/best-festivals-in-korea/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/where-to-stay-in-seoul/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/esim-and-apps-for-korea/': { published: '2026-09-30', updated: '2026-09-30' },
@@ -508,7 +542,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/korea-on-a-budget/':        { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seoul-nightlife/':          { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seoul-3-days/':             { published: '2026-09-10', updated: '2026-09-11' },
-  '/guides/jeju-3-days/':              { published: '2026-09-10', updated: '2026-09-11' },
+  '/guides/jeju-3-days/':              { published: '2026-09-10', updated: '2026-09-30' },
   '/guides/busan-2-days/':             { published: '2026-09-10', updated: '2026-09-30' },
   '/guides/gyeongju-2-days/':          { published: '2026-09-14', updated: '2026-09-28' },
   '/guides/kpop-tickets/':             { published: '2026-09-09', updated: '2026-09-11' },

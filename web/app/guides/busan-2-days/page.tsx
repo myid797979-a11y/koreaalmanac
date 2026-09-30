@@ -287,6 +287,7 @@ export default function BusanTwoDays() {
       </p>
 
       <p className="strip">
+        <Link href="/guides/where-to-stay-in-busan/">Where to stay in Busan</Link>
         <Link href="/guides/busan-fireworks-2026/">Busan Fireworks 2026</Link>
         <Link href="/regions/busan/">Busan: places &amp; events</Link>
         <Link href="/places/beaches-islands/">Beaches &amp; islands</Link>

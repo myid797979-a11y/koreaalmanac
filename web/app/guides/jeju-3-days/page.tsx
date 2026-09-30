@@ -282,6 +282,29 @@ export default function JejuThreeDays() {
         typhoon season and Jeju sits directly on the track.
       </p>
 
+      <h2 className="sect">Where to stay on the island</h2>
+      <table className="facts">
+        <tbody>
+          <tr><th>Jeju City</th><td>Next to the airport, with the most restaurants, the markets and the night life. Best for a short stay or without a car.</td></tr>
+          <tr><th>Seogwipo and Jungmun</th><td>The warm south coast: waterfalls, Olle trails and the big resort hotels of Jungmun. The base for the south and for Hallasan’s southern trails.</td></tr>
+          <tr><th>Seongsan and the east</th><td>Sunrise Peak, Udo ferries and the haenyeo divers. Quieter, with guesthouses and small hotels.</td></tr>
+          <tr><th>Aewol and Hallim in the west</th><td>Cafés on the coast road, Hyeopjae Beach and the best sunsets. Stay here with a car.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 className="sect">Autumn and winter on Jeju</h2>
+      <ul className="tips">
+        <li><strong>Silver grass</strong> covers the oreum volcanic cones in October and November; Saebyeol Oreum is the famous one.</li>
+        <li><strong>Tangerine picking</strong> runs from about November to January at farms across the island, and is one of the best things to do with children.</li>
+        <li><strong>Camellias</strong> flower from December into early spring; Camellia Hill near Jungmun is the best-known garden.</li>
+        <li>Winter is windy but mild by Korean standards, and the quietest, cheapest time for hotels.</li>
+      </ul>
+      <PlaceRow slugs={[
+        'camellia-hill-1624990',
+        'citrus-gardening-caf-3074236',
+        'hyeopjaegul-lava-tube-hallim-park-779067',
+      ]} />
+
       <h2 className="sect">Check what is on while you are here</h2>
       <p>
         Jeju runs its own festivals and exhibitions through the year. Put your dates into the{' '}

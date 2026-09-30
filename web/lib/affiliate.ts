@@ -197,6 +197,8 @@ export const GUIDE_OFFERS = {
   hanbok:           [HANBOK_GBG, HANBOK_BUKCHON, GYEONGJU_HANBOK],
   eastCoast:        [SEORAKSAN_TOUR, GANGNEUNG_TOUR, KR_PASS],
   entry:            [ESIM, AREX],
+  rainy:            [LOTTE_WORLD, LOTTE_AQUARIUM, SEOUL_SKY, SPA_SEOUL],
+  kids:             [EVERLAND, LOTTE_WORLD, LEGOLAND, LOTTE_AQUARIUM],
   themeParks:       [EVERLAND, EVERLAND_BUS, LOTTE_WORLD, SEOUL_SKY, LEGOLAND],
 } as const;
 
