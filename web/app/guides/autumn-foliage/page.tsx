@@ -61,6 +61,15 @@ export default function AutumnFoliage() {
         </p>
       </div>
 
+      {/* 시즌 중 매주 갱신한다 (10~11월). 갱신하면 GUIDE_DATES 의 updated 도 올린다. */}
+      <h2 className="sect">Right now: updated 30 September</h2>
+      <ul className="tips">
+        <li><strong>Seoraksan</strong> showed its first colour on 28 September, right on schedule. The summit ridges turn first; the valleys follow over the next three weeks.</li>
+        <li><strong>Everywhere else is still green.</strong> Seoul, the central mountains and the south have not started yet.</li>
+        <li><strong>Korea Forest Service peak forecast:</strong> Seoraksan 20 October, Songnisan 28 October, Naejangsan 4 November, Hallasan 6 November. Maples and oaks peak nationally around 31 October, ginkgo trees around 30 October.</li>
+      </ul>
+      <p className="meta">We update this section weekly through October and November.</p>
+
       <h2 className="sect">The 2026 window, north to south</h2>
       <table className="facts">
         <tbody>
