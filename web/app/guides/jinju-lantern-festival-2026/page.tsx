@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, FestivalRow, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -150,6 +151,8 @@ export default function JinjuLantern2026() {
         <Link href="/events/festivals/october/">Korea in October</Link>
         <Link href="/events/festivals/gyeongnam/">All Gyeongnam festivals</Link>
       </p>
+
+      <RelatedGuides href="/guides/jinju-lantern-festival-2026/" />
 
       <p className="meta">
         Dates are as registered by the organisers with the Korea Tourism Organization for 2026.

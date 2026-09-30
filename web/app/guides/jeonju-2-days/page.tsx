@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -158,6 +159,8 @@ export default function JeonjuTwoDays() {
         <Link href="/guides/korean-food-guide/">Eating in Korea</Link>
         <Link href="/regions/jeonbuk/">Everything in Jeonbuk</Link>
       </p>
+
+      <RelatedGuides href="/guides/jeonju-2-days/" />
 
       <p className="meta">
         Train times and opening hours as published by Korail and the city of Jeonju in September 2026.

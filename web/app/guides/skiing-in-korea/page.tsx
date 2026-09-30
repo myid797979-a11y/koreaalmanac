@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
@@ -165,6 +166,8 @@ export default function Skiing() {
         <Link href="/regions/gangwon/">Everything in Gangwon</Link>
         <Link href="/events/festivals/january/">Korea in January</Link>
       </p>
+
+      <RelatedGuides href="/guides/skiing-in-korea/" />
 
       <p className="meta">
         Opening dates depend on the weather and snow-making, and prices change each season; check the

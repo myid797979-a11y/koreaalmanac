@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -202,6 +203,8 @@ export default function KoreanFood() {
         <Link href="/places/restaurants/">Where to eat</Link>
         <Link href="/places/markets/">Traditional markets</Link>
       </p>
+
+      <RelatedGuides href="/guides/korean-food-guide/" />
 
       <p className="meta">
         Prices are typical for central Seoul in September 2026 and vary by neighbourhood; they are

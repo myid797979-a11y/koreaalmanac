@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -266,6 +267,8 @@ export default function KoreaOnABudget() {
         <Link href="/guides/seoul-nightlife/">Seoul after dark</Link>
         <Link href="/plan/">Trip Planner</Link>
       </p>
+
+      <RelatedGuides href="/guides/korea-on-a-budget/" />
 
       <p className="meta">
         Prices are 2026 figures rounded to typical ranges: Seoul transit fares as set in 2025,

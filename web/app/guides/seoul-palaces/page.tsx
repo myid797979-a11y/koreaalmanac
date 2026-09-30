@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -207,6 +208,8 @@ export default function SeoulPalaces() {
         <Link href="/guides/day-trips-from-seoul/">Day trips from Seoul</Link>
         <Link href="/regions/seoul/">Everything in Seoul</Link>
       </p>
+
+      <RelatedGuides href="/guides/seoul-palaces/" />
 
       <p className="meta">
         Prices, opening hours and ceremony times are as published by the Korea Heritage Service up to

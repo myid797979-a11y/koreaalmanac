@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -218,6 +219,8 @@ export default function BaseballInKorea() {
         <Link href="/guides/kpop-tickets/">How Korean ticketing works</Link>
         <Link href="/plan/">Trip Planner</Link>
       </p>
+
+      <RelatedGuides href="/guides/baseball-in-korea/" />
 
       <p className="meta">
         Season structure, ticket prices and stadium details as of September 2026; the KBO

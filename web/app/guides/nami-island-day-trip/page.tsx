@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -229,6 +230,8 @@ export default function NamiIsland() {
         <Link href="/regions/gangwon/">Everything in Gangwon</Link>
         <Link href="/regions/gyeonggi/">Everything in Gyeonggi</Link>
       </p>
+
+      <RelatedGuides href="/guides/nami-island-day-trip/" />
 
       <p className="meta">
         Admission, ferry times and shuttle arrangements are as published by Nami Island and Korail up

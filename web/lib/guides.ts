@@ -84,7 +84,7 @@ export const GUIDES: Guide[] = [
     title: 'K-pop award shows 2026–27: dates and how to get in',
     blurb: 'KGMA and the Melon Music Awards on back-to-back November weekends in Seoul, the broadcasters’ December festivals, and the big ones abroad this year. How tickets work and how to plan a trip around them.',
     tag: 'Seasonal',
-    photo: 'gocheok-sky-dome-3006386',
+    photo: 'olympic-park-789703',
   },
   {
     href: '/guides/korean-spa-jjimjilbang/',

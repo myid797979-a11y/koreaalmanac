@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS } from '@/lib/affiliate';
@@ -166,6 +167,8 @@ export default function DayTrips() {
         <Link href="/guides/korea-on-a-budget/">Korea on a budget</Link>
         <Link href="/plan/">Trip Planner</Link>
       </p>
+
+      <RelatedGuides href="/guides/day-trips-from-seoul/" />
 
       <p className="meta">
         Travel times are typical journeys by the route given and vary with connections and traffic.

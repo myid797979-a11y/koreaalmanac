@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, FestivalRow, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -195,6 +196,8 @@ export default function CherryBlossom2027() {
         <Link href="/guides/busan-2-days/">2 days in Busan</Link>
         <Link href="/plan/">Trip Planner</Link>
       </p>
+
+      <RelatedGuides href="/guides/cherry-blossom-2027/" />
 
       <p className="meta">
         Average first-bloom dates are the 1991–2020 climatological normals for each city’s

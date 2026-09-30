@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
@@ -160,6 +161,8 @@ export default function IncheonAirportToSeoul() {
         <Link href="/guides/korea-on-a-budget/">Korea on a budget</Link>
         <Link href="/venue/inspire-arena/">INSPIRE Arena (on the airport island)</Link>
       </p>
+
+      <RelatedGuides href="/guides/incheon-airport-to-seoul/" />
 
       <p className="meta">
         Fares and journey times are 2026 figures rounded to typical values: AREX as published by

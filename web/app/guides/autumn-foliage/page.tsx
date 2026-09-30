@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -214,6 +215,8 @@ export default function AutumnFoliage() {
         <Link href="/places/parks-nature/">Parks &amp; nature</Link>
         <Link href="/korea-basics/">Korea basics</Link>
       </p>
+
+      <RelatedGuides href="/guides/autumn-foliage/" />
 
       <p className="meta">
         Forecast windows reflect the 2026 season outlook as published in September 2026, which

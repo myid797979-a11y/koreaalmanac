@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -231,6 +232,8 @@ export default function SuwonDayTrip() {
         <Link href="/events/festivals/gyeonggi/">Festivals in Gyeonggi</Link>
         <Link href="/regions/gyeonggi/">Everything in Gyeonggi</Link>
       </p>
+
+      <RelatedGuides href="/guides/suwon-day-trip/" />
 
       <p className="meta">
         Admission, performance times and trolley schedules are as published by the Suwon Cultural

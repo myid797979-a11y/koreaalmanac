@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS } from '@/lib/affiliate';
@@ -137,6 +138,8 @@ export default function KoreanSpa() {
         <Link href="/guides/incheon-airport-to-seoul/">Incheon Airport to Seoul</Link>
         <Link href="/places/theme-parks/">Theme parks &amp; experiences</Link>
       </p>
+
+      <RelatedGuides href="/guides/korean-spa-jjimjilbang/" />
 
       <p className="meta">
         Prices are typical in September 2026 and vary by spa, time of day and weekday or weekend.

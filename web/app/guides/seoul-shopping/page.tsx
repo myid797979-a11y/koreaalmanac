@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -177,6 +178,8 @@ export default function SeoulShopping() {
         <Link href="/places/shopping/">Shopping streets &amp; malls</Link>
         <Link href="/guides/korea-on-a-budget/">Korea on a budget</Link>
       </p>
+
+      <RelatedGuides href="/guides/seoul-shopping/" />
 
       <p className="meta">
         Tax-refund rules are set by the National Tax Service and change from time to time; the shop

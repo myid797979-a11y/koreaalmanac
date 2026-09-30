@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
@@ -105,6 +106,8 @@ export default function TicketGuidePage() {
         <Link href="/plan/">Trip Planner</Link>
         <Link href="/events/festivals/music/">Music festivals</Link>
       </p>
+
+      <RelatedGuides href="/guides/kpop-tickets/" />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { FestivalHero, FestivalRow, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -336,6 +337,8 @@ export default function KoreaInWinter() {
         <Link href="/guides/seoul-3-days/">3 days in Seoul</Link>
         <Link href="/korea-basics/">Korea basics</Link>
       </p>
+
+      <RelatedGuides href="/guides/korea-in-winter/" />
 
       <p className="meta">
         Seollal 2027 dates and the substitute holiday follow the published national holiday

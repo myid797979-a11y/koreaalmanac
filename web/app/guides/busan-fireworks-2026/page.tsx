@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, FestivalRow, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -172,6 +173,8 @@ export default function BusanFireworks2026() {
         <Link href="/events/festivals/busan/">All Busan festivals</Link>
         <Link href="/plan/">Trip Planner</Link>
       </p>
+
+      <RelatedGuides href="/guides/busan-fireworks-2026/" />
 
       <p className="meta">
         The 2026 date is as registered by the organisers with the Korea Tourism Organization.

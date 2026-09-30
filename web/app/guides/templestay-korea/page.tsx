@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS } from '@/lib/affiliate';
@@ -129,6 +130,8 @@ export default function Templestay() {
         <Link href="/guides/autumn-foliage/">Autumn foliage</Link>
         <Link href="/places/temples/">All temples</Link>
       </p>
+
+      <RelatedGuides href="/guides/templestay-korea/" />
 
       <p className="meta">
         Programme times and prices vary by temple and season; each temple publishes its own schedule

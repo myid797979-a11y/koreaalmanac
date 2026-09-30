@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
+import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
@@ -226,6 +227,8 @@ export default function SeoulNightlife() {
         <Link href="/place/gwangjang-market-273761/">Gwangjang Market</Link>
         <Link href="/plan/">Trip Planner</Link>
       </p>
+
+      <RelatedGuides href="/guides/seoul-nightlife/" />
 
       <p className="meta">
         Prices are typical ranges as of September 2026 and vary by venue and night. Last-train
