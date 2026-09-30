@@ -73,6 +73,20 @@ export const GUIDES: Guide[] = [
     photo: 'gocheok-sky-dome-3006386',
   },
   {
+    href: '/guides/korean-food-guide/',
+    title: 'Eating in Korea: what to order and how it works',
+    blurb: 'Free side dishes, the call bell, the two-portion rule and paying at the counter. The dishes worth ordering, what they cost, the Seoul food markets to start with, and eating as a vegetarian.',
+    tag: 'How-to',
+    photo: 'gwangjang-market-273761',
+  },
+  {
+    href: '/guides/seoul-shopping/',
+    title: 'Shopping in Seoul: where to go for what',
+    blurb: 'Myeongdong, Hongdae, Seongsu, Dongdaemun, Gangnam and Insadong by what each is good for. K-beauty, K-pop albums, the instant tax refund, the airport kiosks and duty free.',
+    tag: 'How-to',
+    photo: 'myeong-dong-264312',
+  },
+  {
     href: '/guides/seoul-palaces/',
     title: 'Seoul’s five palaces: which to see, and when',
     blurb: 'Tuesday closes two, Monday closes three. Which palace to choose, free entry in hanbok, the guard ceremony times, the Secret Garden ticket, and the palaces you can visit after dark.',
@@ -221,6 +235,20 @@ export const PLACE_GUIDE: Record<string, string> = {
   '264329':  '/guides/seoul-palaces/',         // Gwanghwamun
   '2033085': '/guides/seoul-palaces/',         // Changdeokgung Injeongmun
   '1942577': '/guides/seoul-palaces/',         // Daehanmun
+  '273761':  '/guides/korean-food-guide/',      // Gwangjang Market
+  '1823985': '/guides/korean-food-guide/',      // Tongin Market
+  '2592401': '/guides/korean-food-guide/',      // Mangwon Market
+  '2590278': '/guides/korean-food-guide/',      // Dak Hanmari Alley
+  '3013976': '/guides/korean-food-guide/',      // Euljiro Nogari Alley
+  '1838143': '/guides/korean-food-guide/',      // Sindang-dong Tteokbokki
+  '3403035': '/guides/korean-food-guide/',      // Jongno 3-ga Pocha Street
+  '264312':  '/guides/seoul-shopping/',         // Myeongdong
+  '273801':  '/guides/seoul-shopping/',         // Lotte Duty Free Myeongdong
+  '1984968': '/guides/seoul-shopping/',         // Starfield COEX Mall
+  '2946682': '/guides/seoul-shopping/',         // Seongsu shoe street
+  '1323377': '/guides/seoul-shopping/',         // Garosu-gil
+  '273734':  '/guides/seoul-shopping/',         // Dongdaemun Shopping Town
+  '3075115': '/guides/seoul-shopping/',         // Insadong
   '264362':  '/guides/day-trips-from-seoul/',   // Namhansanseong
   '1272552': '/guides/day-trips-from-seoul/',   // Dumulmeori
   '3113166': '/guides/day-trips-from-seoul/',   // Gwangmyeong Cave
@@ -230,7 +258,7 @@ export const PLACE_GUIDE: Record<string, string> = {
 
 /** 지역 허브(축제·지역 페이지) → 그 지역 가이드 */
 export const REGION_GUIDES: Record<string, string[]> = {
-  Seoul:     ['/guides/seoul-3-days/', '/guides/seoul-palaces/', '/guides/everland-vs-lotte-world/', '/guides/seoul-nightlife/', '/guides/halloween-seoul-2026/', '/guides/christmas-new-year-seoul/'],
+  Seoul:     ['/guides/seoul-3-days/', '/guides/seoul-palaces/', '/guides/korean-food-guide/', '/guides/seoul-shopping/', '/guides/halloween-seoul-2026/', '/guides/seoul-nightlife/'],
   Busan:     ['/guides/busan-2-days/', '/guides/busan-fireworks-2026/'],
   Gyeongnam: ['/guides/jinju-lantern-festival-2026/', '/guides/cherry-blossom-2027/'],
   Gyeongbuk: ['/guides/gyeongju-2-days/'],
@@ -287,6 +315,8 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/everland-vs-lotte-world/':  { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/day-trips-from-seoul/':     { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/seoul-palaces/':            { published: '2026-09-29', updated: '2026-09-29' },
+  '/guides/korean-food-guide/':        { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/seoul-shopping/':           { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },

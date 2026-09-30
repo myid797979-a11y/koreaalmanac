@@ -46,6 +46,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/guides/dmz-tour-from-seoul/', priority: 0.9 },
     { url: SITE_URL + '/guides/nami-island-day-trip/', priority: 0.9 },
     { url: SITE_URL + '/guides/seoul-palaces/', priority: 0.9 },
+    { url: SITE_URL + '/guides/korean-food-guide/', priority: 0.9 },
+    { url: SITE_URL + '/guides/seoul-shopping/', priority: 0.9 },
     { url: SITE_URL + '/guides/day-trips-from-seoul/', priority: 0.9 },
     { url: SITE_URL + '/guides/suwon-day-trip/', priority: 0.9 },
     { url: SITE_URL + '/guides/everland-vs-lotte-world/', priority: 0.9 },

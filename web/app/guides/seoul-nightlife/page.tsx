@@ -220,6 +220,7 @@ export default function SeoulNightlife() {
       />
 
       <p className="strip">
+        <Link href="/guides/korean-food-guide/">Eating in Korea</Link>
         <Link href="/events/concerts/">Concerts and club nights</Link>
         <Link href="/guides/seoul-3-days/">3 days in Seoul</Link>
         <Link href="/place/gwangjang-market-273761/">Gwangjang Market</Link>

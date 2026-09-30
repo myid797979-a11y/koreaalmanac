@@ -260,6 +260,7 @@ export default function KoreaOnABudget() {
       />
 
       <p className="strip">
+        <Link href="/guides/korean-food-guide/">Eating in Korea</Link>
         <Link href="/korea-basics/">Korea basics</Link>
         <Link href="/guides/seoul-3-days/">3 days in Seoul</Link>
         <Link href="/guides/seoul-nightlife/">Seoul after dark</Link>
