@@ -79,7 +79,8 @@ export default function GettingAroundSeoul() {
 
       <h2 className="sect">The subway</h2>
       <ul className="tips">
-        <li>A basic ride costs about ₩1,500 with a card, more for longer distances. Transfers between subway and bus are free within about 30 minutes if you tap out.</li>
+        <li>A basic ride costs ₩1,550 with a card, more for longer distances. Transfers between subway and bus are free within about 30 minutes if you tap out.</li>
+        <li><strong>Always tap out of the subway.</strong> Since March 2026, leaving without tapping your card at the exit gate adds an extra charge of one base fare.</li>
         <li>Lines are numbered and colour-coded; station signs and announcements are in English. Each station has numbered exits, and directions always give the exit number.</li>
         <li>Trains run from about 05:30 to around midnight. The last train varies by line and direction; the subway app shows it.</li>
         <li>The seats at the ends of each carriage are for elderly and disabled passengers, and the pink seats are for pregnant women. Leave them empty.</li>

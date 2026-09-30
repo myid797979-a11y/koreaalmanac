@@ -72,8 +72,8 @@ export default function SuwonDayTrip() {
           <tr>
             <th>Tickets</th>
             <td>
-              The wall walk costs about <strong>₩1,000</strong>, paid at the booths by the main
-              gates, and Hwaseong Haenggung about ₩2,000. Much of the wall and the streets around
+              The wall walk is a small fee of about <strong>₩1,000</strong>, paid at the booths by the main
+              gates, and Hwaseong Haenggung is ₩1,500 for adults, free if you wear hanbok. Much of the wall and the streets around
               it are open at all hours and free.
             </td>
           </tr>

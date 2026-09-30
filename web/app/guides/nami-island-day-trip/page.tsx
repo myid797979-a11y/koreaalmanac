@@ -88,7 +88,7 @@ export default function NamiIsland() {
             <th>Ferry or zip wire</th>
             <td>
               The ferry runs every 10–20 minutes through the day and takes five. Admission to the
-              island includes the return crossing, around ₩16,000 for an adult. The alternative
+              island includes the return crossing: ₩19,000 for an adult in 2026. The alternative
               way over is the <strong>zip wire</strong> from a tower by the pier, 940 m across the
               water, which includes the ferry back. Book it early in the day at weekends.
             </td>
