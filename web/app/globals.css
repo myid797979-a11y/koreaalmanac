@@ -1136,3 +1136,16 @@ section[id] { scroll-margin-top: 64px; }
   .g-card h3 { font-size: 13.5px; margin: 0; }
   .g-card .g-blurb { display: none; }
 }
+
+/* ── 예산 계산기 (components/BudgetCalculator, 예산 가이드) ── */
+.calc { margin: 14px 0 8px; }
+.calc-form input[type="number"] {
+  font: inherit; font-size: 14px; color: var(--ink); width: 90px;
+  background: var(--hanji); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px;
+}
+.calc-extras { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.calc-extras label { display: inline-flex; align-items: center; gap: 6px; }
+.calc-extras input { accent-color: var(--seal); margin: 0; }
+.calc-out { max-width: 640px; }
+.calc-total th, .calc-total td { font-size: 16px; }
+.calc-total strong { color: var(--seal); font-size: 20px; font-variant-numeric: tabular-nums; }

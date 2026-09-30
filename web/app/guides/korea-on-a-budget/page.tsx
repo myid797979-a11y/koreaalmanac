@@ -4,6 +4,7 @@ import GuideLd from '@/app/components/GuideLd';
 import RelatedGuides from '@/app/components/RelatedGuides';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
+import BudgetCalculator from '@/app/components/BudgetCalculator';
 import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
@@ -57,6 +58,10 @@ export default function KoreaOnABudget() {
           10–20% cheaper on beds and food; Jeju runs dearer on cars and seafood.
         </p>
       </div>
+
+      <h2 className="sect">Work out your own trip</h2>
+      <p>Set the length of your trip, how many of you are travelling and your style; add the big-ticket days out. The figures use the daily budgets above.</p>
+      <BudgetCalculator />
 
       <h2 className="sect">Transport: the biggest saving is not taking taxis</h2>
       <table className="facts">
