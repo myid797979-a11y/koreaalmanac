@@ -222,7 +222,7 @@ export const GUIDES: Guide[] = [
   {
     href: '/venues/',
     title: 'Concert venues: getting there, what to expect, where to stay',
-    blurb: 'Goyang Stadium, INSPIRE Arena, Olympic Park, KINTEX, Gocheok Sky Dome, the Sejong Center and seven more — the nearest station, the route from Incheon Airport, and the trick for getting out afterwards.',
+    blurb: 'Goyang Stadium, INSPIRE Arena, Olympic Park, KINTEX, Gocheok Sky Dome, the Sejong Center, BEXCO and eight more — the nearest station, the route from Incheon Airport, and the trick for getting out afterwards.',
     tag: 'How-to',
     photo: 'sejong-center-268132',
   },

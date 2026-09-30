@@ -21,7 +21,7 @@ export default function VenuesIndex() {
       <div className="crumb"><Link href="/">Home</Link> › <Link href="/events/concerts/">Concerts</Link> › Venues</div>
       <h1>Concert venues in Korea</h1>
       <p className="sub">
-        The thirteen places where the shows on this site actually happen — which station, how far from
+        The fifteen places where the shows on this site actually happen — which station, how far from
         Incheon Airport, what the room is like, and where fans stay. Written for people flying in for
         one show.
       </p>

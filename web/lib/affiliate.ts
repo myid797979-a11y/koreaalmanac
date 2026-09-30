@@ -254,6 +254,8 @@ export const VENUE_STAY: Record<string, Offer[]> = {
   'lg-arts-center-seoul': [STAY_SEOUL, STAY_INCHEON],
   'kyung-hee-grand-peace-palace': [STAY_SEOUL],
   'yonsei-university':   [STAY_SEOUL],
+  'bexco-busan':         [STAY_BUSAN],
+  'busan-asiad-main-stadium': [STAY_BUSAN],
 };
 
 /** 공연 상세 → 숙소: 공연장 가이드가 있으면 그 기준, 없으면 도시 기준 */
