@@ -23,7 +23,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!f) return {};
   const description = (f.title + ', ' + f.region + ', ' + dateRange(f) + '. ' + (f.overview ?? '')).slice(0, 155);
   return {
-    title: uniqueTitle(f) + ' — dates, fees, location',
+    // 사람들은 "… festival 2026" 으로 찾는다 (GSC 2026-09-30). 연도가 제목에 없으면 붙인다.
+    title: (() => {
+      const t = uniqueTitle(f);
+      const y = (f.start ?? '').slice(0, 4);
+      return (y && !t.includes(y) ? t + ' ' + y : t) + ' — dates, fees, location';
+    })(),
     description,
     openGraph: {
       title: f.title,

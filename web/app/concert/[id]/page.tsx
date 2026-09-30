@@ -15,14 +15,44 @@ export function generateStaticParams() {
   return concertParams();
 }
 
+const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+/** "Oct 17–18, 2026" · "Oct 31 – Nov 1, 2026" · "Nov 7, 2026" */
+function shortRange(s: string, e: string): string {
+  const [ys, ms, ds] = [s.slice(0, 4), Number(s.slice(4, 6)) - 1, Number(s.slice(6, 8))];
+  const [ye, me, de] = [e.slice(0, 4), Number(e.slice(4, 6)) - 1, Number(e.slice(6, 8))];
+  if (s === e) return `${MON[ms]} ${ds}, ${ys}`;
+  if (ys !== ye) return `${MON[ms]} ${ds}, ${ys} – ${MON[me]} ${de}, ${ye}`;
+  if (ms === me) return `${MON[ms]} ${ds}–${de}, ${ys}`;
+  return `${MON[ms]} ${ds} – ${MON[me]} ${de}, ${ys}`;
+}
+/** 가격 표기에서 가장 낮은 금액 (천 단위 쉼표가 있는 수만) — 미확정 표기면 없음 */
+function lowestPrice(p?: string): number | null {
+  if (!p || /to be (announced|confirmed)/i.test(p)) return null;
+  const nums = (p.match(/\d{1,3}(?:,\d{3})+/g) ?? []).map(x => Number(x.replace(/,/g, '')));
+  return nums.length ? Math.min(...nums) : null;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const c = concertById(id);
   if (!c) return { title: 'Concert' };
-  const who = c.artist === 'Various artists' ? '' : c.artist + ' — ';
+  // 검색 결과 제목 (2026-09-30 GSC 기준으로 다시 짰다).
+  //  · 공연명에 아티스트가 이미 들어 있으면 앞에 또 붙이지 않는다
+  //    ("My Chemical Romance — My Chemical Romance — Seoul" 이 노출 937회에 클릭률 1%였다).
+  //  · 사람들이 실제로 치는 말은 "… 2026 tickets" 다. 날짜와 "tickets" 를 제목에 넣는다.
+  const name = c.artist === 'Various artists' || c.title.toLowerCase().includes(c.artist.toLowerCase())
+    ? c.title : c.artist + ': ' + c.title;
+  const when = shortRange(c.start, c.end);
+  const from = lowestPrice(c.price);
   return {
-    title: who + c.title + ' (' + fmt(c.start) + ')',
-    description: clampDesc(`${c.title} at ${c.venue}, ${c.city} — ${concertDateRange(c)}. Dates, venue map and ticket info.`),
+    title: `${name} (${when}) — tickets, times & venue guide`,
+    description: clampDesc(
+      // 잘리는 건 뒤쪽이다 — 날짜·장소·가격을 앞에, 소개는 뒤에
+      `${when} at ${c.venue}.` +
+      (from ? ` Tickets from ₩${from.toLocaleString('en-US')}.` : '') +
+      ' Show times, how overseas fans buy tickets, getting there. ' +
+      (c.note ?? ''),
+    ),
   };
 }
 
