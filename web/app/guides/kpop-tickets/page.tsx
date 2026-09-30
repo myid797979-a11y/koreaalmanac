@@ -86,6 +86,7 @@ export default function TicketGuidePage() {
 
       <h2 className="sect">Plan the rest of the trip</h2>
       <p className="strip">
+        <Link href="/guides/kpop-award-shows/">K-pop award shows 2026–27</Link>
         <Link href="/events/concerts/">Upcoming K-pop shows</Link>
         <Link href="/plan/">Trip Planner</Link>
         <Link href="/events/festivals/music/">Music festivals</Link>

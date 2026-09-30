@@ -73,6 +73,13 @@ export const GUIDES: Guide[] = [
     photo: 'gocheok-sky-dome-3006386',
   },
   {
+    href: '/guides/kpop-award-shows/',
+    title: 'K-pop award shows 2026–27: dates and how to get in',
+    blurb: 'KGMA and the Melon Music Awards on back-to-back November weekends in Seoul, the broadcasters’ December festivals, and the big ones abroad this year. How tickets work and how to plan a trip around them.',
+    tag: 'Seasonal',
+    photo: 'gocheok-sky-dome-3006386',
+  },
+  {
     href: '/guides/korean-food-guide/',
     title: 'Eating in Korea: what to order and how it works',
     blurb: 'Free side dishes, the call bell, the two-portion rule and paying at the counter. The dishes worth ordering, what they cost, the Seoul food markets to start with, and eating as a vegetarian.',
@@ -297,8 +304,8 @@ export const MONTH_GUIDES: string[][] = [
   ['/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'], // Aug
   ['/guides/seoul-palaces/', '/guides/baseball-in-korea/', '/guides/autumn-foliage/', '/guides/korea-on-a-budget/'], // Sep
   ['/guides/jinju-lantern-festival-2026/', '/guides/suwon-day-trip/', '/guides/autumn-foliage/', '/guides/halloween-seoul-2026/', '/guides/busan-fireworks-2026/'], // Oct
-  ['/guides/busan-fireworks-2026/', '/guides/autumn-foliage/', '/guides/nami-island-day-trip/', '/guides/christmas-new-year-seoul/'], // Nov
-  ['/guides/christmas-new-year-seoul/', '/guides/korea-in-winter/', '/venues/'],                                             // Dec
+  ['/guides/kpop-award-shows/', '/guides/busan-fireworks-2026/', '/guides/autumn-foliage/', '/guides/nami-island-day-trip/'], // Nov
+  ['/guides/christmas-new-year-seoul/', '/guides/korea-in-winter/', '/guides/kpop-award-shows/', '/venues/'],                                             // Dec
 ];
 
 /**
@@ -317,6 +324,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/seoul-palaces/':            { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/korean-food-guide/':        { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/seoul-shopping/':           { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/kpop-award-shows/':         { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },

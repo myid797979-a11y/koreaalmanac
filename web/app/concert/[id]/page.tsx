@@ -113,6 +113,12 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
         />
       )}
 
+      {c.kind === 'award' && (
+        <div className="ended-banner" style={{ borderLeftColor: 'var(--jjok)' }}>
+          All of this season’s award shows, which are in Korea, and how tickets work:{' '}
+          <Link href="/guides/kpop-award-shows/">K-pop award shows 2026–27</Link>.
+        </div>
+      )}
       {c.tip && (
         <p className="c-tip"><strong>For visitors:</strong> {c.tip}</p>
       )}
