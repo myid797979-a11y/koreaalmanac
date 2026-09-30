@@ -57,3 +57,113 @@ export const CATEGORY_INTROS: Record<string, string> = {
   art: "Two of Asia's leading biennales (Gwangju and Jeju), photography festivals in mountain counties, design weeks, and craft fairs — Korea's art calendar rewards travelers willing to leave Seoul.",
   family: "Dinosaur expos, puppet festivals, alien sports days, pet festas — these are the events built for kids first, usually free, with hands-on programs that do not need Korean to enjoy.",
 };
+
+/**
+ * 지역 페이지(app/regions)용 여행 소개 — 축제 허브의 REGION_INTROS 와 달리 "여기는 어떤 곳이고,
+ * 서울에서 얼마나 걸리고, 며칠 있으면 되나" 를 답한다. 목록만 있던 17개 지역 페이지를
+ * 얇은 페이지로 보이지 않게 하는 본문이다 (2026-09-30).
+ */
+export const REGION_TRAVEL: Record<string, { intro: string; from: string; stay: string; best: string }> = {
+  Seoul: {
+    intro: 'The capital and one of the great cities of Asia: five Joseon palaces within walking distance of each other, hanok neighbourhoods, street markets, the Han River parks and a food and nightlife scene that runs until dawn. Almost every trip to Korea starts here, and the subway puts all of it within an hour.',
+    from: '45–60 minutes from Incheon Airport by AREX or limousine bus',
+    stay: '3–4 days, plus day trips',
+    best: 'Palaces, markets, food, shopping, K-pop, nightlife',
+  },
+  Busan: {
+    intro: 'Korea’s second city and biggest port, built along 30 km of coast: city beaches at Haeundae and Gwangalli, the fish market at Jagalchi, the hillside Gamcheon Culture Village and cliff-top temples. More relaxed than Seoul, and it does seafood better than anywhere.',
+    from: 'About 2 hours 30 minutes by KTX, or a one-hour flight',
+    stay: '2–3 days',
+    best: 'Beaches, seafood, the coast, festivals by the sea',
+  },
+  Incheon: {
+    intro: 'Most visitors only see the airport, but Incheon has Korea’s only official Chinatown, the old open-port district of 1900s warehouses, the seafront at Wolmido, the new city of Songdo, and islands such as Ganghwa with their own history.',
+    from: 'An hour on Subway Line 1, or minutes from the airport',
+    stay: 'A day, or your first or last night',
+    best: 'Chinatown and jajangmyeon, a stopover near the airport, islands',
+  },
+  Gyeonggi: {
+    intro: 'The province that wraps around Seoul, and day-trip country: the UNESCO fortress at Suwon, the DMZ at Paju, Everland and the Korean Folk Village at Yongin, the Garden of Morning Calm and the lakes and rivers to the east. Most of it is on the subway or an hour by bus.',
+    from: '30 minutes to 1 hour 30 minutes, much of it by subway',
+    stay: 'Day trips from Seoul',
+    best: 'Suwon, the DMZ, theme parks, gardens',
+  },
+  Gangwon: {
+    intro: 'Korea’s mountain province: Seoraksan and Odaesan national parks, the 2018 Winter Olympic resorts in Pyeongchang, and a long east coast of beaches and seafood towns around Gangneung and Sokcho. Nami Island and Chuncheon sit at its western edge, close to Seoul.',
+    from: 'About 1 hour 50 minutes to Gangneung by KTX; 2–3 hours by bus to the mountains',
+    stay: '2 days on the coast, longer to hike or ski',
+    best: 'Mountains, autumn colour, skiing, the east coast',
+  },
+  Daejeon: {
+    intro: 'Korea’s science city, at the centre of the KTX network: the Expo park and science museums, the hot springs of Yuseong, and Sungsimdang, the bakery people travel across the country for. An easy stop between Seoul and Busan.',
+    from: 'About 1 hour by KTX',
+    stay: 'A stopover or a night',
+    best: 'Science museums, hot springs, bakeries',
+  },
+  Chungbuk: {
+    intro: 'The only landlocked province: the river gorges and caves of Danyang, Songnisan National Park and its UNESCO temple Beopjusa, and Cheongju, where the world’s oldest surviving book printed with metal type was made.',
+    from: '1 hour 30 minutes to 2 hours 30 minutes by bus or train',
+    stay: '1–2 days',
+    best: 'Danyang’s river scenery, temples, quiet countryside',
+  },
+  Chungnam: {
+    intro: 'The west coast province: the Baekje kingdom’s old capitals at Gongju and Buyeo, a UNESCO site, the Boryeong Mud Festival in summer, the tidal flats and pine beaches of Taean, and the hot springs of Asan and Onyang.',
+    from: '1–2 hours by train or bus',
+    stay: 'A day trip or a night',
+    best: 'Baekje history, the mud festival, the west coast',
+  },
+  Sejong: {
+    intro: 'Korea’s young administrative capital, built from scratch since the 2010s around a large lake park, with the National Sejong Arboretum and modern government architecture. A niche stop for architecture and gardens.',
+    from: 'About 1 hour by KTX to Osong, then a short bus',
+    stay: 'Half a day',
+    best: 'The arboretum and lake park',
+  },
+  Daegu: {
+    intro: 'A big inland city known for summer heat, textiles and food: Seomun Market’s night market, the Kim Gwang-seok mural street, Palgongsan’s temples, and a strong local cuisine. A good base for Haeinsa and a stop on the way to Gyeongju.',
+    from: 'About 1 hour 50 minutes by KTX',
+    stay: '1–2 days',
+    best: 'Markets and food, a base for nearby temples',
+  },
+  Gyeongbuk: {
+    intro: 'The heartland of old Korea: Gyeongju, the Silla capital full of royal tombs and UNESCO temples; Andong and the Hahoe folk village with its mask dance; the sunrise coast at Pohang; and the remote volcanic island of Ulleungdo.',
+    from: 'About 2 hours to Gyeongju by KTX',
+    stay: '2 days in Gyeongju, a night in Andong',
+    best: 'History, temples, traditional villages',
+  },
+  Gyeongnam: {
+    intro: 'The south coast province: Jinju’s river lanterns, the island harbours of Tongyeong and Geoje, the cherry blossoms of Jinhae, and two of Korea’s greatest temples, Haeinsa and Tongdosa. Busan is the easiest base for most of it.',
+    from: '3–4 hours by train or bus, or 1 hour from Busan',
+    stay: '1–3 days from Busan',
+    best: 'The coast and islands, festivals, temples',
+  },
+  Ulsan: {
+    intro: 'An industrial city with more to it than shipyards: Ganjeolgot, one of the first places on the mainland to see the new year’s sunrise, the rocky Daewangam coast, whale culture at Jangsaengpo, and the silver-grass ridges of the Yeongnam Alps in autumn.',
+    from: 'About 2 hours 15 minutes by KTX',
+    stay: 'A day or a night, often from Busan or Gyeongju',
+    best: 'Coast, sunrise, autumn hiking',
+  },
+  Jeonbuk: {
+    intro: 'Home of Jeonju, the largest hanok village in Korea and the country’s food capital, plus the colonial-era streets of Gunsan, the autumn colour of Naejangsan and the UNESCO dolmens of Gochang.',
+    from: 'About 1 hour 40 minutes to Jeonju by KTX',
+    stay: '1–2 days in Jeonju',
+    best: 'Hanok stays, food, autumn colour',
+  },
+  Jeonnam: {
+    intro: 'Korea’s deep south-west: the Suncheon Bay wetlands and national garden, Yeosu’s night sea, the green-tea terraces of Boseong, the bamboo forests of Damyang, and more than two thousand islands off the coast. Slow travel country.',
+    from: '2 hours 30 minutes to 3 hours by KTX to Yeosu, Suncheon or Mokpo',
+    stay: '2–3 days',
+    best: 'Nature, islands, tea and bamboo, food',
+  },
+  Gwangju: {
+    intro: 'The city of the Gwangju Biennale and of the 1980 democracy uprising, with the Asia Culture Center, the 18 May memorial sites and a food reputation far bigger than its size. The gateway to the south-west.',
+    from: 'About 1 hour 50 minutes by KTX from Yongsan',
+    stay: 'A day or a night',
+    best: 'Contemporary art, modern history, food',
+  },
+  Jeju: {
+    intro: 'Korea’s volcanic island, a UNESCO site: Hallasan at the centre, hundreds of small volcanic cones, lava tubes, black-rock coastlines, the Olle walking trails and the haenyeo women divers. Warmer than the mainland, and best explored by car.',
+    from: 'About 1 hour by air from Seoul Gimpo or Busan',
+    stay: '3–4 days',
+    best: 'Nature, hiking, beaches, a relaxed pace',
+  },
+};

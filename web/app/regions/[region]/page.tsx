@@ -8,6 +8,8 @@ import { rankShortFirst } from '@/lib/festival-rank';
 import { liveCulture } from '@/lib/culture';
 import { upcomingConcerts } from '@/lib/concerts';
 import { GUIDES, REGION_GUIDES } from '@/lib/guides';
+import { REGION_TRAVEL } from '@/lib/editorial';
+import { clampDesc } from '@/lib/site';
 
 export function generateStaticParams() {
   return REGIONS.map(r => ({ region: r.toLowerCase() }));
@@ -23,7 +25,9 @@ export async function generateMetadata({ params }: { params: Promise<{ region: s
   if (!name) return {};
   return {
     title: name + ', Korea — what to see and what’s on',
-    description: `Places to visit and events happening in ${name}, Korea — attractions, festivals, performances and exhibitions with dates, maps and photos.`,
+    description: clampDesc(REGION_TRAVEL[name]
+      ? REGION_TRAVEL[name].intro
+      : `Places to visit and events happening in ${name}, Korea — attractions, festivals, performances and exhibitions with dates, maps and photos.`),
   };
 }
 
@@ -69,6 +73,28 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
         {fests.length > 0 && ` · ${fests.length} festivals on or coming up`}
         {culture.length > 0 && ` · ${culture.length} shows and exhibitions`}
       </p>
+
+      {REGION_TRAVEL[name] && (
+        <>
+          <p className="intro">{REGION_TRAVEL[name].intro}</p>
+          <table className="facts" style={{ maxWidth: 720 }}>
+            <tbody>
+              <tr><th>From Seoul</th><td>{REGION_TRAVEL[name].from}</td></tr>
+              <tr><th>How long</th><td>{REGION_TRAVEL[name].stay}</td></tr>
+              <tr><th>Best for</th><td>{REGION_TRAVEL[name].best}</td></tr>
+            </tbody>
+          </table>
+        </>
+      )}
+      {(REGION_GUIDES[name] ?? []).length > 0 && (
+        <p className="strip">
+          <strong>Guides</strong>
+          {REGION_GUIDES[name].map(h => {
+            const g = GUIDES.find(x => x.href === h);
+            return g ? <Link key={h} href={h}>{g.title}</Link> : null;
+          })}
+        </p>
+      )}
 
       <p className="strip">
         {byCat.map(g => (
@@ -129,15 +155,6 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
         </>
       )}
 
-      {(REGION_GUIDES[name] ?? []).length > 0 && (
-        <p className="strip">
-          <strong>Guides</strong>
-          {REGION_GUIDES[name].map(h => {
-            const g = GUIDES.find(x => x.href === h);
-            return g ? <Link key={h} href={h}>{g.title}</Link> : null;
-          })}
-        </p>
-      )}
 
       <h2 className="sect">Other regions</h2>
       <p className="strip">
