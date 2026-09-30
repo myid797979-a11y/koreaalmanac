@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Hahmlet } from 'next/font/google';
+import localFont from 'next/font/local';
 import Logo from '@/app/components/Logo';
 import SearchBox from '@/app/components/SearchBox';
 import Script from 'next/script';
@@ -8,7 +8,15 @@ import { SITE_URL, SITE_NAME, GA_ID, ADSENSE_PUB } from '@/lib/site';
 import { fmt, today } from '@/lib/data';
 import './globals.css';
 
-const hahmlet = Hahmlet({ subsets: ['latin'], variable: '--font-display' });
+// 제목용 Hahmlet — 라틴 글꼴 파일 하나만 자체 호스팅한다.
+// next/font/google 은 subsets: ['latin'] 이어도 한글 조각 93개의 @font-face(45KB)를 렌더 차단 CSS 에
+// 넣었다 (2026-09-30 Lighthouse). 사이트 제목은 영어이므로 라틴만 둔다. 한글이 섞이면 Georgia 로 떨어진다.
+const hahmlet = localFont({
+  src: './fonts/hahmlet-latin.woff2',
+  weight: '100 900',
+  display: 'swap',
+  variable: '--font-display',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
