@@ -82,6 +82,8 @@ const FOOD_TOUR: Offer = { label: 'Seoul food tours (markets, night eats, BBQ)',
 const COOKING_CLASS: Offer = { label: 'Korean cooking classes in Seoul', url: search('Korean cooking class Seoul'), note: 'kimchi, bibimbap, market visit' };
 const WOWPASS: Offer = { label: 'WOWPASS prepaid travel card', url: search('WOWPASS'), note: 'T-money and card payments in one, top up in won' };
 const KBEAUTY: Offer = { label: 'K-beauty experiences and shopping tours', url: search('Seoul K-beauty'), note: 'skin analysis, personal colour, shop visits' };
+const SKI_TOURS: Offer = { label: 'All ski day tours from Seoul', url: search('ski tour Seoul'), note: 'Elysian Gangchon, Vivaldi, Yongpyong; gear and lessons' };
+const SKI_YONGPYONG: Offer = { label: 'Yongpyong Resort lift tickets and packages', url: search('Yongpyong ski'), note: 'for a stay in Pyeongchang' };
 const FOLK_VILLAGE: Offer = { label: 'Korean Folk Village tickets and tours', url: search('Korean Folk Village'), note: '20 minutes from Suwon by bus' };
 const BIRF: Offer = { label: 'Busan International Rock Festival tickets', url: search('Busan International Rock Festival') };
 const ANDONG_TOUR: Offer = { label: 'Andong Hahoe Village day tours', url: search('Andong Hahoe Village'), note: 'from Seoul or Busan; the mask dance is at the village' };
@@ -174,6 +176,7 @@ export const GUIDE_OFFERS = {
   palaces:          [HANBOK_GBG, HANBOK_BUKCHON, PALACE_TOUR],
   food:             [GWANGJANG_FOOD, FOOD_TOUR, COOKING_CLASS],
   shopping:         [WOWPASS, ESIM, KBEAUTY],
+  ski:              [VIVALDI, SKI_TOURS, SKI_YONGPYONG],
   themeParks:       [EVERLAND, EVERLAND_BUS, LOTTE_WORLD, SEOUL_SKY, LEGOLAND],
 } as const;
 
@@ -227,6 +230,10 @@ export const VENUE_STAY: Record<string, Offer[]> = {
   'yes24-live-hall':     [STAY_SEOUL],
   'hongdae-live-venues': [STAY_SEOUL],
   'jamsil':              [STAY_SEOUL],
+  'sejong-center':       [STAY_SEOUL],
+  'lg-arts-center-seoul': [STAY_SEOUL, STAY_INCHEON],
+  'kyung-hee-grand-peace-palace': [STAY_SEOUL],
+  'yonsei-university':   [STAY_SEOUL],
 };
 
 /** 공연 상세 → 숙소: 공연장 가이드가 있으면 그 기준, 없으면 도시 기준 */
@@ -280,6 +287,7 @@ export const GUIDE_STAY = {
   jinju:     [STAY_JINJU, STAY_BUSAN],
   airport:   [STAY_INCHEON, STAY_SEOUL],
   nami:      [STAY_GAPYEONG, STAY_CHUNCHEON_NAMI],
+  ski:       [STAY_PYEONGCHANG, STAY_GANGNEUNG],
   suwon:     [STAY_SUWON, STAY_SEOUL],
 } as const;
 

@@ -327,6 +327,7 @@ export default function KoreaInWinter() {
       />
 
       <p className="strip">
+        <Link href="/guides/skiing-in-korea/">Skiing in Korea</Link>
         <Link href="/guides/christmas-new-year-seoul/">Christmas &amp; New Year</Link>
         <Link href="/guides/seollal-2027/">Seollal 2027</Link>
         <Link href="/plan/">Trip Planner</Link>

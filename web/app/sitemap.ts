@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/search/', priority: 0.5 },
     { url: SITE_URL + '/guides/', priority: 0.9 },
     { url: SITE_URL + '/guides/korea-in-winter/', priority: 0.9 },
+    { url: SITE_URL + '/guides/skiing-in-korea/', priority: 0.9 },
     { url: SITE_URL + '/guides/christmas-new-year-seoul/', priority: 0.9 },
     { url: SITE_URL + '/guides/seollal-2027/', priority: 0.9 },
     { url: SITE_URL + '/guides/cherry-blossom-2027/', priority: 0.9 },
