@@ -41,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/guides/halloween-seoul-2026/', priority: 0.9 },
     { url: SITE_URL + '/guides/baseball-in-korea/', priority: 0.9 },
     { url: SITE_URL + '/guides/seoul-nightlife/', priority: 0.9 },
+    { url: SITE_URL + '/guides/best-festivals-in-korea/', priority: 0.9 },
     { url: SITE_URL + '/guides/busan-fireworks-2026/', priority: 0.9 },
     { url: SITE_URL + '/guides/jinju-lantern-festival-2026/', priority: 0.9 },
     { url: SITE_URL + '/guides/incheon-airport-to-seoul/', priority: 0.9 },

@@ -12,7 +12,7 @@ import { upcomingConcerts, concertDateRange, KIND_LABEL } from '@/lib/concerts';
 import { liveCulture } from '@/lib/culture';
 import CultureCard from '@/app/components/CultureCard';
 import { placeBySlug } from '@/lib/places';
-import { GUIDES, HOME_GUIDE_HREFS } from '@/lib/guides';
+import { GUIDES, HOME_GUIDE_HREFS, FIRST_TRIP } from '@/lib/guides';
 
 // 홈 제목이 사이트명뿐(13자)이라 Bing URL 검사가 "너무 짧은 제목" 오류를 냈다.
 // 무엇을 찾는 사람이 오는 페이지인지 제목에 담는다.
@@ -228,6 +228,11 @@ export default function Home() {
           );
         })}
       </div>
+
+      <p className="strip" style={{ marginTop: 18 }}>
+        <strong>First trip to Korea?</strong>
+        {FIRST_TRIP.map(l => <Link key={l.href} href={l.href}>{l.label}</Link>)}
+      </p>
 
       <h2 className="sect" style={{ marginTop: 36 }}>Browse by interest</h2>
       <p className="strip">

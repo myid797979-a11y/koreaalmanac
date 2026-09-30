@@ -17,6 +17,13 @@ export const GUIDES: Guide[] = [
     photo: 'jinjuseong-fortress-264596',
   },
   {
+    href: '/guides/best-festivals-in-korea/',
+    title: 'Korea’s best festivals: 20 worth planning a trip around',
+    blurb: 'Cherry blossoms, mud, lanterns, fireworks and frozen rivers: the festivals worth crossing the country for, season by season, with this year’s dates or when they usually fall.',
+    tag: 'Seasonal',
+    photo: 'gyeonghwa-station-cherry-blossom-street-1643702',
+  },
+  {
     href: '/guides/busan-fireworks-2026/',
     title: 'Busan Fireworks Festival 2026: 7 November',
     blurb: 'Korea’s biggest fireworks over Gwangalli Beach. The free viewing spots and when to claim them, whether paid seats are worth it, the hotel problem, and how to leave with a million other people.',
@@ -299,6 +306,17 @@ export function guideGroup(g: Guide): (typeof GUIDE_GROUPS)[number]['id'] {
   return 'experiences';
 }
 
+/** 첫 여행 준비 — 홈과 월 허브 하단에 한 줄 링크로. 시즌과 무관하게 늘 필요한 것들 */
+export const FIRST_TRIP: { href: string; label: string }[] = [
+  { href: '/guides/korea-entry-requirements/', label: 'Entry requirements 2026' },
+  { href: '/guides/esim-and-apps-for-korea/', label: 'eSIM and apps' },
+  { href: '/guides/incheon-airport-to-seoul/', label: 'Airport to Seoul' },
+  { href: '/guides/getting-around-seoul/', label: 'Getting around Seoul' },
+  { href: '/guides/where-to-stay-in-seoul/', label: 'Where to stay in Seoul' },
+  { href: '/guides/korea-7-day-itinerary/', label: '7 days in Korea' },
+  { href: '/guides/korea-on-a-budget/', label: 'Korea on a budget' },
+];
+
 /** 홈에 보여줄 것 — 지금 시즌에 맞는 넷 */
 export const HOME_GUIDE_HREFS = [
   '/guides/jinju-lantern-festival-2026/',
@@ -409,6 +427,21 @@ export const FESTIVAL_GUIDE: Record<string, string> = {
   '4113182': '/guides/jinju-lantern-festival-2026/',
   '978249':  '/guides/suwon-day-trip/',        // 수원화성문화제
   '2657619': '/guides/suwon-day-trip/',        // 화성행궁 야간개장
+  '697123': '/guides/best-festivals-in-korea/',
+  '1057670': '/guides/best-festivals-in-korea/',
+  '697135': '/guides/best-festivals-in-korea/',
+  '700867': '/guides/best-festivals-in-korea/',
+  '697189': '/guides/best-festivals-in-korea/',
+  '679008': '/guides/best-festivals-in-korea/',
+  '292954': '/guides/best-festivals-in-korea/',
+  '1675246': '/guides/best-festivals-in-korea/',
+  '293155': '/guides/best-festivals-in-korea/',
+  '697182': '/guides/best-festivals-in-korea/',
+  '667418': '/guides/best-festivals-in-korea/',
+  '697205': '/guides/best-festivals-in-korea/',
+  '661861': '/guides/best-festivals-in-korea/',
+  '1718137': '/guides/best-festivals-in-korea/',
+  '2874909': '/guides/best-festivals-in-korea/',
   '3487931': '/guides/jeonju-2-days/',          // 전주한옥마을 퍼레이드
   '2394700': '/guides/jeonju-2-days/',          // 전주 문화유산 야행
   '506838':  '/guides/jeonju-2-days/',          // 전주 한지산업대전
@@ -457,6 +490,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/korean-spa-jjimjilbang/':   { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/templestay-korea/':         { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/jeonju-2-days/':            { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/best-festivals-in-korea/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/where-to-stay-in-seoul/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/esim-and-apps-for-korea/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/getting-around-seoul/': { published: '2026-09-30', updated: '2026-09-30' },

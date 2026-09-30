@@ -11,7 +11,7 @@ import { MONTH_INTROS, REGION_INTROS, CATEGORY_INTROS } from '@/lib/editorial';
 import { MONTH_FACTS } from '@/lib/month-facts';
 import { concerts, concertDateRange } from '@/lib/concerts';
 import { liveCulture, isLongRun, cultureDateRange } from '@/lib/culture';
-import { GUIDES, MONTH_GUIDES, REGION_GUIDES } from '@/lib/guides';
+import { GUIDES, MONTH_GUIDES, REGION_GUIDES, FIRST_TRIP } from '@/lib/guides';
 import { placeBySlug } from '@/lib/places';
 import BookBox from '@/app/components/BookBox';
 import AdSlot from '@/app/components/AdSlot';
@@ -152,6 +152,10 @@ function MonthHub({ monthIdx }: { monthIdx: number }) {
           </div>
         </>
       )}
+      <p className="strip">
+        <strong>Before you go</strong>
+        {FIRST_TRIP.map(l => <Link key={l.href} href={l.href}>{l.label}</Link>)}
+      </p>
 
       {monthConcerts.length > 0 && (
         <>
