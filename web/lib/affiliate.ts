@@ -92,6 +92,9 @@ const JEJU_CAR: Offer = { label: 'Jeju car rental', url: search('Jeju car rental
 const SIM_CARD: Offer = { label: 'Korean SIM or eSIM with a phone number', url: search('Korea SIM card'), note: 'for apps that need a Korean number' };
 const POCKET_WIFI: Offer = { label: 'Pocket Wi-Fi, airport pick-up', url: search('Korea pocket wifi'), note: 'one device for the whole group' };
 const TMONEY: Offer = { label: 'T-money and transport cards', url: search('T-money card'), note: 'pick up at the airport' };
+const LAYOVER_TOUR: Offer = { label: 'Incheon Airport layover tours to Seoul', url: search('Incheon layover tour'), note: 'airport pick-up and return' };
+const BUSAN_FOOD: Offer = { label: 'Busan food and market tours', url: search('Busan food tour'), note: 'Nampo markets and street food' };
+const HIKE_SEOUL: Offer = { label: 'Guided Bukhansan and Seoul hikes', url: search('Bukhansan hiking'), note: 'route, gear tips and transport' };
 const FOLK_VILLAGE: Offer = { label: 'Korean Folk Village tickets and tours', url: search('Korean Folk Village'), note: '20 minutes from Suwon by bus' };
 const BIRF: Offer = { label: 'Busan International Rock Festival tickets', url: search('Busan International Rock Festival') };
 const ANDONG_TOUR: Offer = { label: 'Andong Hahoe Village day tours', url: search('Andong Hahoe Village'), note: 'from Seoul or Busan; the mask dance is at the village' };
@@ -199,6 +202,10 @@ export const GUIDE_OFFERS = {
   entry:            [ESIM, AREX],
   rainy:            [LOTTE_WORLD, LOTTE_AQUARIUM, SEOUL_SKY, SPA_SEOUL],
   kids:             [EVERLAND, LOTTE_WORLD, LEGOLAND, LOTTE_AQUARIUM],
+  layover:          [LAYOVER_TOUR, ESIM, AREX],
+  andong:           [ANDONG_TOUR, KR_PASS],
+  busanFood:        [BUSAN_FOOD, VISIT_BUSAN_PASS],
+  hiking:           [HIKE_SEOUL, SEORAKSAN_TOUR],
   themeParks:       [EVERLAND, EVERLAND_BUS, LOTTE_WORLD, SEOUL_SKY, LEGOLAND],
 } as const;
 
@@ -314,6 +321,7 @@ export const GUIDE_STAY = {
   ski:       [STAY_PYEONGCHANG, STAY_GANGNEUNG],
   busan:     [STAY_BUSAN],
   seoul:     [STAY_SEOUL],
+  andong:    [STAY_ANDONG],
   itinerary7: [STAY_SEOUL, STAY_GYEONGJU, STAY_BUSAN],
   eastCoast: [STAY_SOKCHO, STAY_GANGNEUNG],
   jeju:      [STAY_JEJU],

@@ -122,6 +122,34 @@ export const GUIDES: Guide[] = [
     photo: 'seoul-children-s-grand-park-1051832',
   },
   {
+    href: '/guides/seoul-markets/',
+    title: 'Seoul’s traditional markets: what to eat at each',
+    blurb: 'Gwangjang, Namdaemun, Tongin, Mangwon, Gyeongdong and Noryangjin: the dish to order at each, when to go, and how to eat at a market stall.',
+    tag: 'How-to',
+    photo: 'mangwon-market-2592401',
+  },
+  {
+    href: '/guides/busan-food-guide/',
+    title: 'What to eat in Busan',
+    blurb: 'Dwaeji gukbap, milmyeon, ssiat hotteok, fish cake and raw fish at Jagalchi and Gwangalli, and the food streets of Nampo, Seomyeon and Haeundae.',
+    tag: 'How-to',
+    photo: 'jagalchi-market-2382544',
+  },
+  {
+    href: '/guides/hiking-in-seoul/',
+    title: 'Hiking in Seoul',
+    blurb: 'Bukhansan’s granite summit, the sunset climb up Inwangsan, easy Achasan, the Bugaksan city wall and Gwanaksan: routes, difficulty and how to get there.',
+    tag: 'How-to',
+    photo: 'bukhansan-national-park-seoul-district-1747593',
+  },
+  {
+    href: '/guides/seoul-cafes/',
+    title: 'Seoul café guide',
+    blurb: 'Warehouse cafés in Seongsu, hanok cafés in Ikseon-dong, Yeonnam’s bakeries and Hannam’s roasters, bingsu in summer and how café culture works.',
+    tag: 'How-to',
+    photo: 'yeonnam-dong-2484384',
+  },
+  {
     href: '/guides/korean-food-guide/',
     title: 'Eating in Korea: what to order and how it works',
     blurb: 'Free side dishes, the call bell, the two-portion rule and paying at the counter. The dishes worth ordering, what they cost, the Seoul food markets to start with, and eating as a vegetarian.',
@@ -220,6 +248,13 @@ export const GUIDES: Guide[] = [
     photo: 'haeundae-beach-264155',
   },
   {
+    href: '/guides/incheon-airport-layover/',
+    title: 'An Incheon Airport layover: what you can actually do',
+    blurb: 'The free transit tours for 4–24 hour stopovers, whether Seoul is reachable and back, the paperwork to leave the airport, and what to do if you stay airside.',
+    tag: 'How-to',
+    photo: 'deoksugung-palace-264316',
+  },
+  {
     href: '/guides/incheon-airport-to-seoul/',
     title: 'Incheon Airport to Seoul: train, bus or taxi',
     blurb: 'Which way in depends on where your hotel is, not the price. The AREX express and all-stop, limousine buses and taxis compared, the first-hour checklist, and what to do if you land after midnight.',
@@ -290,6 +325,13 @@ export const GUIDES: Guide[] = [
     photo: 'gangneung-gyeongpo-beach-264253',
   },
   {
+    href: '/guides/andong-hahoe-village/',
+    title: 'Andong and Hahoe Village',
+    blurb: 'The UNESCO clan village in a bend of the river, the Hahoe mask dance, Byeongsan Seowon, jjimdak and Andong soju, and why to spend the night in a village house.',
+    tag: 'Itinerary',
+    photo: 'andong-hahoe-village-unesco-world-heritage-264148',
+  },
+  {
     href: '/guides/gyeongju-2-days/',
     title: '2 days in Gyeongju',
     blurb: 'The Silla capital stopped charging admission in 2023 and most guides never noticed. Downtown is 2 km end to end on foot; Bulguksa is the one bus ride, and the Seokguram shuttle runs hourly.',
@@ -317,7 +359,7 @@ export const GUIDE_GROUPS = [
   { id: 'experiences', label: 'Things to do' },
   { id: 'kpop',        label: 'K-pop and live shows' },
 ] as const;
-const BEFORE = ['/guides/where-to-stay-in-busan/', '/guides/korea-entry-requirements/', '/guides/esim-and-apps-for-korea/', '/guides/incheon-airport-to-seoul/', '/guides/getting-around-seoul/', '/guides/where-to-stay-in-seoul/', '/guides/korea-on-a-budget/'];
+const BEFORE = ['/guides/incheon-airport-layover/', '/guides/where-to-stay-in-busan/', '/guides/korea-entry-requirements/', '/guides/esim-and-apps-for-korea/', '/guides/incheon-airport-to-seoul/', '/guides/getting-around-seoul/', '/guides/where-to-stay-in-seoul/', '/guides/korea-on-a-budget/'];
 const KPOP = ['/guides/kpop-tickets/', '/guides/kpop-award-shows/', '/venues/'];
 export function guideGroup(g: Guide): (typeof GUIDE_GROUPS)[number]['id'] {
   if (KPOP.includes(g.href)) return 'kpop';
@@ -427,6 +469,21 @@ export const PLACE_GUIDE: Record<string, string> = {
   '2823618': '/guides/korea-with-kids/',        // Snoopy Garden
   '264155':  '/guides/where-to-stay-in-busan/', // Haeundae Beach
   '789805':  '/guides/where-to-stay-in-busan/', // BIFF Square
+  '264148':  '/guides/andong-hahoe-village/',   // Hahoe Village
+  '264458':  '/guides/andong-hahoe-village/',   // Byeongsan Seowon
+  '268220':  '/guides/andong-hahoe-village/',   // Hahoe Mask Museum
+  '2944525': '/guides/andong-hahoe-village/',   // Andong jjimdak alley
+  '1767851': '/guides/andong-hahoe-village/',   // Woryeonggyo Bridge
+  '2382544': '/guides/busan-food-guide/',       // Jagalchi Market
+  '1024670': '/guides/busan-food-guide/',       // Gukje Market food street
+  '1468918': '/guides/busan-food-guide/',       // Haeundae Market
+  '1747593': '/guides/hiking-in-seoul/',        // Bukhansan
+  '1348417': '/guides/hiking-in-seoul/',        // Inwangsan
+  '1349267': '/guides/hiking-in-seoul/',        // Achasan
+  '1061818': '/guides/hiking-in-seoul/',        // Bugaksan
+  '1562674': '/guides/hiking-in-seoul/',        // Gwanaksan
+  '2484384': '/guides/seoul-cafes/',            // Yeonnam-dong
+  '3046389': '/guides/seoul-markets/',          // Starbucks Gyeongdong Market
   '264362':  '/guides/day-trips-from-seoul/',   // Namhansanseong
   '1272552': '/guides/day-trips-from-seoul/',   // Dumulmeori
   '3113166': '/guides/day-trips-from-seoul/',   // Gwangmyeong Cave
@@ -437,15 +494,15 @@ export const PLACE_GUIDE: Record<string, string> = {
 /** 지역 허브(축제·지역 페이지) → 그 지역 가이드 */
 export const REGION_GUIDES: Record<string, string[]> = {
   Seoul:     ['/guides/seoul-3-days/', '/guides/where-to-stay-in-seoul/', '/guides/seoul-palaces/', '/guides/korean-food-guide/', '/guides/getting-around-seoul/', '/guides/halloween-seoul-2026/'],
-  Busan:     ['/guides/busan-2-days/', '/guides/where-to-stay-in-busan/', '/guides/busan-fireworks-2026/', '/guides/korean-spa-jjimjilbang/'],
+  Busan:     ['/guides/busan-2-days/', '/guides/where-to-stay-in-busan/', '/guides/busan-food-guide/', '/guides/busan-fireworks-2026/', '/guides/korean-spa-jjimjilbang/'],
   Gyeongnam: ['/guides/jinju-lantern-festival-2026/', '/guides/templestay-korea/', '/guides/cherry-blossom-2027/'],
-  Gyeongbuk: ['/guides/gyeongju-2-days/'],
+  Gyeongbuk: ['/guides/gyeongju-2-days/', '/guides/andong-hahoe-village/'],
   Jeju:      ['/guides/jeju-3-days/'],
   Gangwon:   ['/guides/gangneung-sokcho-2-days/', '/guides/skiing-in-korea/', '/guides/nami-island-day-trip/', '/guides/korea-in-winter/', '/guides/autumn-foliage/'],
   Gyeonggi:  ['/guides/day-trips-from-seoul/', '/guides/suwon-day-trip/', '/guides/everland-vs-lotte-world/', '/guides/nami-island-day-trip/', '/guides/dmz-tour-from-seoul/', '/venues/'],
   Jeonbuk:   ['/guides/jeonju-2-days/', '/guides/templestay-korea/'],
   Jeonnam:   ['/guides/templestay-korea/'],
-  Incheon:   ['/guides/day-trips-from-seoul/', '/guides/incheon-airport-to-seoul/', '/venues/'],
+  Incheon:   ['/guides/incheon-airport-layover/', '/guides/incheon-airport-to-seoul/', '/guides/day-trips-from-seoul/', '/venues/'],
 };
 
 /** 축제 id → 그 축제를 다룬 가이드 (축제 상세 페이지에서 링크) */
@@ -458,7 +515,7 @@ export const FESTIVAL_GUIDE: Record<string, string> = {
   '4113182': '/guides/jinju-lantern-festival-2026/',
   '978249':  '/guides/suwon-day-trip/',        // 수원화성문화제
   '2657619': '/guides/suwon-day-trip/',        // 화성행궁 야간개장
-  '697123': '/guides/best-festivals-in-korea/',
+  '697123': '/guides/andong-hahoe-village/',
   '1057670': '/guides/best-festivals-in-korea/',
   '697135': '/guides/best-festivals-in-korea/',
   '700867': '/guides/best-festivals-in-korea/',
@@ -521,6 +578,12 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/korean-spa-jjimjilbang/':   { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/templestay-korea/':         { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/jeonju-2-days/':            { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/incheon-airport-layover/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/andong-hahoe-village/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/seoul-markets/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/busan-food-guide/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/hiking-in-seoul/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/seoul-cafes/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/where-to-stay-in-busan/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/rainy-day-seoul/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/korea-with-kids/': { published: '2026-09-30', updated: '2026-09-30' },

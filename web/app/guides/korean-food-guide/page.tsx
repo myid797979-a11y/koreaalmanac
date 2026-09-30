@@ -197,6 +197,8 @@ export default function KoreanFood() {
       />
 
       <p className="strip">
+        <Link href="/guides/seoul-markets/">Seoul’s markets</Link>
+        <Link href="/guides/busan-food-guide/">What to eat in Busan</Link>
         <Link href="/guides/seoul-nightlife/">Seoul after dark</Link>
         <Link href="/guides/seoul-3-days/">3 days in Seoul</Link>
         <Link href="/guides/seoul-shopping/">Shopping in Seoul</Link>
