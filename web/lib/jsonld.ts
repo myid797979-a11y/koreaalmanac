@@ -1,6 +1,7 @@
 import { SITE_URL, SITE_NAME } from '@/lib/site';
 import type { Festival } from '@/lib/data';
 import type { Concert } from '@/lib/concerts';
+import { venueForConcert } from '@/lib/venues';
 
 // 구조화 데이터(JSON-LD) — 구글 Event 리치결과 대상.
 // 새 도메인의 색인 속도를 좌우하는 요소 중 우리가 통제할 수 있는 것:
@@ -17,14 +18,13 @@ const iso = (d: string) => d.slice(0, 4) + '-' + d.slice(4, 6) + '-' + d.slice(6
  *   "Varies by program" 처럼 단정할 수 없는 표기는 offers 를 아예 넣지 않는다 —
  *   구조화 데이터는 화면에 보이는 사실과 어긋나면 안 된다(구글·Bing 공통 지침).
  */
-function offersOf(fee: string | null, url: string, start: string): object | null {
+function offersOf(fee: string | null, url: string): object | null {
   if (!fee) return null;
   const base = {
     '@type': 'Offer',
     priceCurrency: 'KRW',
     availability: 'https://schema.org/InStock',
     url,
-    validFrom: iso(start),
   };
   // 입장이 무료인 표기 — 일부 프로그램이 유료여도 입장료 자체는 0원이다
   if (/^free\b|free entry|free admission|^무료/i.test(fee.trim())) {
@@ -56,7 +56,12 @@ export function festivalJsonLd(f: Festival): object | null {
     location: {
       '@type': 'Place',
       name: f.place || f.addr,
-      address: f.addr || f.region + ', South Korea',
+      address: {
+        '@type': 'PostalAddress',
+        ...(f.addr ? { streetAddress: f.addr } : {}),
+        addressRegion: f.region,
+        addressCountry: 'KR',
+      },
     },
     ...(f.image ? { image: [f.image] } : {}),
     ...(f.overview ? { description: f.overview.slice(0, 500) } : {}),
@@ -64,7 +69,7 @@ export function festivalJsonLd(f: Festival): object | null {
     ...(f.sponsor ? { organizer: { '@type': 'Organization', name: f.sponsor } } : {}),
   };
   if (f.fee && /free|무료/i.test(f.fee)) ld.isAccessibleForFree = true;
-  const offers = offersOf(f.fee, SITE_URL + '/festival/' + f.slug + '/', f.start);
+  const offers = offersOf(f.fee, SITE_URL + "/festival/" + f.slug + "/");
   if (offers) ld.offers = offers;
   return ld;
 }
@@ -75,17 +80,17 @@ export function festivalJsonLd(f: Festival): object | null {
  * ⚠ 천 단위 쉼표가 있는 수만 금액으로 본다. "2025 edition" 의 연도를 가격으로 집는 걸 막기 위해서다.
  *   "To be announced"·"See Yes24 listing" 처럼 스스로 미확정이라 밝힌 표기는 손대지 않는다.
  */
-function concertOffers(price: string | undefined, url: string, start: string): object | null {
+function concertOffers(price: string | undefined, url: string, soldOut: boolean): object | null {
   if (!price) return null;
   if (/to be (announced|confirmed)|see .*listing|see official|differ between/i.test(price)) return null;
   const nums = (price.match(/\d{1,3}(?:,\d{3})+/g) ?? []).map(s => Number(s.replace(/,/g, '')));
   if (nums.length === 0) return null;
   const lo = Math.min(...nums), hi = Math.max(...nums);
+  // validFrom 은 "판매 시작일" 이다 — 공연일을 넣으면 틀린 값이 된다. 모르면 비운다.
   const base = {
     priceCurrency: 'KRW',
-    availability: 'https://schema.org/InStock',
+    availability: soldOut ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
     url,
-    validFrom: iso(start),
   };
   return lo === hi
     ? { '@type': 'Offer', ...base, price: String(lo) }
@@ -93,6 +98,10 @@ function concertOffers(price: string | undefined, url: string, start: string): o
 }
 
 export function concertJsonLd(c: Concert): object {
+  const v = venueForConcert(c);
+  const url = SITE_URL + '/concert/' + c.id + '/';
+  const soldOut = /sold out/i.test(c.ticketInfo ?? '');
+  const offers = concertOffers(c.price, url, soldOut);
   return {
     '@context': 'https://schema.org',
     '@type': c.kind === 'festival' ? 'Festival' : 'MusicEvent',
@@ -101,19 +110,25 @@ export function concertJsonLd(c: Concert): object {
     endDate: iso(c.end),
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     eventStatus: 'https://schema.org/EventScheduled',
+    // 공연장 가이드가 있으면 도로명 주소까지 (구글은 지역명만 있는 주소를 '불완전'으로 본다)
     location: {
       '@type': 'Place',
       name: c.venue,
-      address: c.city + ', South Korea',
+      address: {
+        '@type': 'PostalAddress',
+        ...(v ? { streetAddress: v.addr } : {}),
+        addressLocality: c.city,
+        addressRegion: c.region,
+        addressCountry: 'KR',
+      },
     },
+    ...(c.poster ? { image: [c.poster] } : {}),
     ...(c.artist !== 'Various artists'
       ? { performer: { '@type': 'MusicGroup', name: c.artist } }
       : {}),
     ...(c.overview ? { description: c.overview.slice(0, 500) } : {}),
-    url: SITE_URL + '/concert/' + c.id + '/',
-    ...(concertOffers(c.price, SITE_URL + '/concert/' + c.id + '/', c.start)
-      ? { offers: concertOffers(c.price, SITE_URL + '/concert/' + c.id + '/', c.start) }
-      : {}),
+    url,
+    ...(offers ? { offers } : {}),
   };
 }
 
