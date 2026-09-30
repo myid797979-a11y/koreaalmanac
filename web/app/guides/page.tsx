@@ -1,70 +1,73 @@
 import Link from 'next/link';
 import { placeBySlug } from '@/lib/places';
-import { GUIDES } from '@/lib/guides';
+import { GUIDES, GUIDE_GROUPS, HOME_GUIDE_HREFS, guideGroup, type Guide } from '@/lib/guides';
 
 export const metadata = {
   title: 'Korea Travel Guides — practical, checked, and current',
-  description: 'Practical Korea guides: itineraries built around real opening hours and walking distances, plus how-tos for what trips up foreign visitors.',
+  description: 'Practical Korea guides: itineraries built around real opening hours and walking distances, seasonal event guides, what to sort before you fly, and how-tos for what trips up foreign visitors.',
 };
 
-const SECTIONS = [
-  { tag: 'Seasonal', id: 'seasonal', label: 'Seasons and events' },
-  { tag: 'Itinerary', id: 'itineraries', label: 'Itineraries' },
-  { tag: 'How-to', id: 'how-to', label: 'How-to' },
-] as const;
+function GuideCard({ g }: { g: Guide }) {
+  const ph = g.photo ? placeBySlug(g.photo) : undefined;
+  return (
+    <Link href={g.href} className="card g-card">
+      <div className="phwrap">
+        {ph
+          ? <img className="ph" src={ph.image} alt="" loading="lazy" />
+          : <div className="noph">{g.tag}</div>}
+      </div>
+      <div className="body">
+        <h3>{g.title}</h3>
+        <p className="g-blurb">{g.blurb}</p>
+      </div>
+    </Link>
+  );
+}
 
 export default function GuidesHub() {
+  // 맨 위 "지금 시즌" — 홈과 같은 목록을 쓴다. 아래 구역에서는 중복으로 보이지 않게 뺀다.
+  const now = HOME_GUIDE_HREFS.map(h => GUIDES.find(g => g.href === h)).filter(Boolean) as Guide[];
+  const rest = GUIDES.filter(g => !HOME_GUIDE_HREFS.includes(g.href));
+  const groups = GUIDE_GROUPS.map(gr => ({ ...gr, list: rest.filter(g => guideGroup(g) === gr.id) }))
+    .filter(gr => gr.list.length > 0);
+
   return (
     <>
       <div className="crumb"><Link href="/">Home</Link> › Guides</div>
       <h1>Guides</h1>
       <p className="sub">
         Written and checked by hand, with sources. Where a fee or a closing day matters, we
-        verify it against the operator rather than repeating what other guides say — several
-        widely copied facts about Seoul&apos;s palaces are years out of date.
+        verify it against the operator rather than repeating what other guides say.
       </p>
 
-      <p className="intro">
-        First trip? Start with <Link href="/korea-basics/">Korea basics</Link> — entry rules,
-        why Google Maps cannot route you here, transport cards and when to go.
-      </p>
+      {/* 한 페이지 안의 구역 이동. 분류별 URL 은 만들지 않는다 (lib/guides.ts GUIDE_GROUPS 주석) */}
+      <nav className="g-jump" aria-label="Guide sections">
+        <a href="#now">Right now</a>
+        {groups.map(gr => <a key={gr.id} href={'#' + gr.id}>{gr.label} <span>{gr.list.length}</span></a>)}
+      </nav>
 
-      {/* 종류별로 한 페이지 안에서 묶는다. 카테고리별 URL 은 가이드가 30편을 넘기 전에는 만들지 않는다
-          (얇은 목록 페이지가 크롤 예산만 먹는다 — 2026-09-29 판단). */}
-      <p className="strip">
-        {SECTIONS.map(s => <a key={s.tag} href={'#' + s.id}>{s.label}</a>)}
-      </p>
-      {SECTIONS.map(s => {
-        const list = GUIDES.filter(g => g.tag === s.tag);
-        if (list.length === 0) return null;
-        return (
-          <section key={s.tag} id={s.id}>
-            <h2 className="sect">{s.label}</h2>
-            <div className="cult-list">
-              {list.map(g => {
-                const ph = g.photo ? placeBySlug(g.photo) : undefined;
-                return (
-                <article key={g.href} className="cult">
-                  {ph
-                    ? <Link href={g.href} className="cu-ph"><img src={ph.image} alt={g.title} loading="lazy" /></Link>
-                    : <span className="cu-ph cu-noph" aria-hidden="true" />}
-                  <div className="cu-body">
-                    <h3><Link href={g.href}>{g.title}</Link></h3>
-                    <p className="cu-place">{g.blurb}</p>
-                  </div>
-                </article>
-                );
-              })}
-            </div>
-          </section>
-        );
-      })}
+      <section id="now">
+        <h2 className="sect">Right now</h2>
+        <div className="grid g-grid">
+          {now.map(g => <GuideCard key={g.href} g={g} />)}
+        </div>
+      </section>
+
+      {groups.map(gr => (
+        <section key={gr.id} id={gr.id}>
+          <h2 className="sect">{gr.label}</h2>
+          <div className="grid g-grid">
+            {gr.list.map(g => <GuideCard key={g.href} g={g} />)}
+          </div>
+        </section>
+      ))}
 
       <h2 className="sect">Planning around your own dates?</h2>
       <p>
         Guides cover what is always there. For what is on during your trip specifically —
         festivals, concerts, exhibitions — use the{' '}
-        <Link href="/plan/">Trip Planner</Link>.
+        <Link href="/plan/">Trip Planner</Link>. First trip? Start with{' '}
+        <Link href="/korea-basics/">Korea basics</Link>.
       </p>
     </>
   );

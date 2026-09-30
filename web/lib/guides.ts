@@ -273,14 +273,37 @@ export const GUIDES: Guide[] = [
     title: 'How to buy K-pop concert tickets as a foreigner',
     blurb: 'Which platforms actually sell to overseas buyers, how the presale queue works, and why resold tickets get voided at the door.',
     tag: 'How-to',
+    photo: 'kt-g-sangsangmadang-arts-space-hongik-university-kt-g-733295',
   },
 ];
 
+/**
+ * 가이드 목록(app/guides)의 묶음. 한 페이지 안의 구역이다 — 분류별 URL 은 만들지 않는다
+ * (얇은 목록 페이지는 크롤 예산만 먹는다. 한 묶음이 15편을 넘고 그 자체가 검색어가 될 때 다시 판단).
+ * tag 로 기본 배정하고, How-to 는 아래 목록으로 '도착 전 준비'·'K-팝·공연'을 떼어 낸다. 나머지는 '체험'.
+ */
+export const GUIDE_GROUPS = [
+  { id: 'seasons',     label: 'Seasons and events' },
+  { id: 'itineraries', label: 'Itineraries and day trips' },
+  { id: 'before',      label: 'Before you go' },
+  { id: 'experiences', label: 'Things to do' },
+  { id: 'kpop',        label: 'K-pop and live shows' },
+] as const;
+const BEFORE = ['/guides/korea-entry-requirements/', '/guides/esim-and-apps-for-korea/', '/guides/incheon-airport-to-seoul/', '/guides/getting-around-seoul/', '/guides/where-to-stay-in-seoul/', '/guides/korea-on-a-budget/'];
+const KPOP = ['/guides/kpop-tickets/', '/guides/kpop-award-shows/', '/venues/'];
+export function guideGroup(g: Guide): (typeof GUIDE_GROUPS)[number]['id'] {
+  if (KPOP.includes(g.href)) return 'kpop';
+  if (g.tag === 'Seasonal') return 'seasons';
+  if (g.tag === 'Itinerary') return 'itineraries';
+  if (BEFORE.includes(g.href)) return 'before';
+  return 'experiences';
+}
+
 /** 홈에 보여줄 것 — 지금 시즌에 맞는 넷 */
 export const HOME_GUIDE_HREFS = [
-  '/guides/halloween-seoul-2026/',
   '/guides/jinju-lantern-festival-2026/',
-  '/guides/busan-fireworks-2026/',
+  '/guides/suwon-day-trip/',
+  '/guides/halloween-seoul-2026/',
   '/guides/autumn-foliage/',
 ];
 
