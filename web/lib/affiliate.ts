@@ -84,6 +84,10 @@ const WOWPASS: Offer = { label: 'WOWPASS prepaid travel card', url: search('WOWP
 const KBEAUTY: Offer = { label: 'K-beauty experiences and shopping tours', url: search('Seoul K-beauty'), note: 'skin analysis, personal colour, shop visits' };
 const SKI_TOURS: Offer = { label: 'All ski day tours from Seoul', url: search('ski tour Seoul'), note: 'Elysian Gangchon, Vivaldi, Yongpyong; gear and lessons' };
 const SKI_YONGPYONG: Offer = { label: 'Yongpyong Resort lift tickets and packages', url: search('Yongpyong ski'), note: 'for a stay in Pyeongchang' };
+const SPA_SEOUL: Offer = { label: 'Seoul spa and jjimjilbang tickets', url: search('Seoul jjimjilbang spa'), note: 'entry, towels and uniform included' };
+const SPA_CIMER: Offer = { label: 'Paradise City Cimer spa ticket', url: search('Paradise City Cimer'), note: 'by Incheon Airport, good for layovers' };
+const SPA_BUSAN: Offer = { label: 'Spa Land Centum City ticket', url: search('Spa Land Centum City'), note: 'Busan’s best-known spa' };
+const TEMPLESTAY: Offer = { label: 'Templestay programmes and temple tours', url: search('templestay'), note: 'day and overnight, some with transport' };
 const FOLK_VILLAGE: Offer = { label: 'Korean Folk Village tickets and tours', url: search('Korean Folk Village'), note: '20 minutes from Suwon by bus' };
 const BIRF: Offer = { label: 'Busan International Rock Festival tickets', url: search('Busan International Rock Festival') };
 const ANDONG_TOUR: Offer = { label: 'Andong Hahoe Village day tours', url: search('Andong Hahoe Village'), note: 'from Seoul or Busan; the mask dance is at the village' };
@@ -177,6 +181,10 @@ export const GUIDE_OFFERS = {
   food:             [GWANGJANG_FOOD, FOOD_TOUR, COOKING_CLASS],
   shopping:         [WOWPASS, ESIM, KBEAUTY],
   ski:              [VIVALDI, SKI_TOURS, SKI_YONGPYONG],
+  busan:            [BLUELINE, VISIT_BUSAN_PASS, BUSAN_X_SKY],
+  spa:              [SPA_SEOUL, SPA_CIMER, SPA_BUSAN],
+  templestay:       [TEMPLESTAY],
+  jeonju:           [JEONJU_TOUR, KR_PASS],
   themeParks:       [EVERLAND, EVERLAND_BUS, LOTTE_WORLD, SEOUL_SKY, LEGOLAND],
 } as const;
 
@@ -288,6 +296,8 @@ export const GUIDE_STAY = {
   airport:   [STAY_INCHEON, STAY_SEOUL],
   nami:      [STAY_GAPYEONG, STAY_CHUNCHEON_NAMI],
   ski:       [STAY_PYEONGCHANG, STAY_GANGNEUNG],
+  busan:     [STAY_BUSAN],
+  jeonju:    [STAY_JEONJU],
   suwon:     [STAY_SUWON, STAY_SEOUL],
 } as const;
 

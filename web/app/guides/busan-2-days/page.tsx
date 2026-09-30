@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
 import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
+import BookBox from '@/app/components/BookBox';
+import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: '2 Days in Busan — the old town and the coast, split the way the city is',
@@ -260,15 +262,31 @@ export default function BusanTwoDays() {
         'oryukdo-islets-busan-national-geopark-264193',
       ]} />
 
+      <BookBox
+        offers={GUIDE_OFFERS.busan}
+        title="Book ahead in Busan"
+        intro="The Sky Capsule sells out days ahead in good weather; the Visit Busan Pass pays off if you do three or more paid sights in a day."
+      />
+      <BookBox
+        provider="agoda"
+        offers={GUIDE_STAY.busan}
+        title="Where to stay"
+        intro="Stay on the side you will spend the evenings: Haeundae or Gwangalli for the coast, Nampo or Seomyeon for the old town and the trains."
+      />
+
       <h2 className="sect">Check what is on while you are here</h2>
       <p>
-        Busan runs the country&apos;s biggest film festival in October, a fireworks festival that
-        draws a million people, and a steady run of concerts and exhibitions. Put your dates into
+        This autumn the <Link href="/guides/busan-fireworks-2026/">Busan Fireworks Festival</Link>{' '}
+        fills Gwangalli Beach on <strong>7 November</strong>, and the{' '}
+        <Link href="/guides/jinju-lantern-festival-2026/">Jinju Lantern Festival</Link> is an easy day
+        trip until 18 October. Busan also hosts the country&apos;s biggest film festival each autumn
+        and a steady run of concerts and exhibitions. Put your dates into
         the <Link href="/plan/">Trip Planner</Link>, or browse{' '}
         <Link href="/regions/busan/">everything in Busan</Link>.
       </p>
 
       <p className="strip">
+        <Link href="/guides/busan-fireworks-2026/">Busan Fireworks 2026</Link>
         <Link href="/regions/busan/">Busan: places &amp; events</Link>
         <Link href="/places/beaches-islands/">Beaches &amp; islands</Link>
         <Link href="/places/markets/">Traditional markets</Link>

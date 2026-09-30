@@ -193,6 +193,7 @@ export default function SeoulPalaces() {
       ]} />
 
       <p className="strip">
+        <Link href="/guides/templestay-korea/">Templestay in Korea</Link>
         <Link href="/guides/seoul-3-days/">3 days in Seoul</Link>
         <Link href="/guides/seollal-2027/">Seollal: palaces free, closing days flip</Link>
         <Link href="/guides/suwon-day-trip/">Suwon’s fortress palace</Link>

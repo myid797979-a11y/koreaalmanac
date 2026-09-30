@@ -159,6 +159,7 @@ export default function DayTrips() {
       </ul>
 
       <p className="strip">
+        <Link href="/guides/jeonju-2-days/">2 days in Jeonju</Link>
         <Link href="/guides/seoul-3-days/">3 days in Seoul</Link>
         <Link href="/guides/busan-2-days/">2 days in Busan</Link>
         <Link href="/guides/gyeongju-2-days/">2 days in Gyeongju</Link>

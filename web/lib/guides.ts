@@ -87,6 +87,20 @@ export const GUIDES: Guide[] = [
     photo: 'gocheok-sky-dome-3006386',
   },
   {
+    href: '/guides/korean-spa-jjimjilbang/',
+    title: 'Korean spas and jjimjilbang: how they work',
+    blurb: 'The nude bathing floors and the clothed sauna hall, the order of things at the door, the body scrub, sleeping over, tattoos, and the best spas in Seoul, Incheon and Busan.',
+    tag: 'How-to',
+    photo: 'spaland-centum-city-1000306',
+  },
+  {
+    href: '/guides/templestay-korea/',
+    title: 'Templestay in Korea: a night in a Buddhist temple',
+    blurb: 'Day programmes and overnight stays, the 4am dawn service, 108 bows and the four-bowl monastic meal. What it costs, what to bring, and which temple to choose.',
+    tag: 'How-to',
+    photo: 'hapcheon-haeinsa-temple-264238',
+  },
+  {
     href: '/guides/korean-food-guide/',
     title: 'Eating in Korea: what to order and how it works',
     blurb: 'Free side dishes, the call bell, the two-portion rule and paying at the counter. The dishes worth ordering, what they cost, the Seoul food markets to start with, and eating as a vegetarian.',
@@ -192,6 +206,13 @@ export const GUIDES: Guide[] = [
     photo: 'busan-gamcheon-culture-village-1998211',
   },
   {
+    href: '/guides/jeonju-2-days/',
+    title: '2 days in Jeonju',
+    blurb: 'Korea’s largest hanok village, the Joseon founder’s shrine, a 1914 cathedral, bibimbap at the source and a makgeolli table that keeps filling. With the KTX from Seoul and why to stay the night.',
+    tag: 'Itinerary',
+    photo: 'jeonju-hanok-village-slow-city-264285',
+  },
+  {
     href: '/guides/gyeongju-2-days/',
     title: '2 days in Gyeongju',
     blurb: 'The Silla capital stopped charging admission in 2023 and most guides never noticed. Downtown is 2 km end to end on foot; Bulguksa is the one bus ride, and the Seokguram shuttle runs hourly.',
@@ -263,6 +284,21 @@ export const PLACE_GUIDE: Record<string, string> = {
   '1323377': '/guides/seoul-shopping/',         // Garosu-gil
   '273734':  '/guides/seoul-shopping/',         // Dongdaemun Shopping Town
   '3075115': '/guides/seoul-shopping/',         // Insadong
+  '1000306': '/guides/korean-spa-jjimjilbang/',  // Spa Land Centum City
+  '3108186': '/guides/korean-spa-jjimjilbang/',  // Paradise City Cimer
+  '3107207': '/guides/korean-spa-jjimjilbang/',  // Aquafield Goyang
+  '3405270': '/guides/korean-spa-jjimjilbang/',  // Park Habio
+  '610302':  '/guides/korean-spa-jjimjilbang/',  // Spa Lei
+  '264238':  '/guides/templestay-korea/',        // Haeinsa
+  '264189':  '/guides/templestay-korea/',        // Woljeongsa
+  '264304':  '/guides/templestay-korea/',        // Songgwangsa
+  '264216':  '/guides/templestay-korea/',        // Tongdosa
+  '264285':  '/guides/jeonju-2-days/',           // Jeonju Hanok Village
+  '264419':  '/guides/jeonju-2-days/',           // Gyeonggijeon
+  '264421':  '/guides/jeonju-2-days/',           // Jeondong Cathedral
+  '1945427': '/guides/jeonju-2-days/',           // Nambu Market
+  '3116081': '/guides/jeonju-2-days/',           // Jaman Mural Village
+  '3510771': '/guides/jeonju-2-days/',           // Makgeolli street
   '264362':  '/guides/day-trips-from-seoul/',   // Namhansanseong
   '1272552': '/guides/day-trips-from-seoul/',   // Dumulmeori
   '3113166': '/guides/day-trips-from-seoul/',   // Gwangmyeong Cave
@@ -273,12 +309,14 @@ export const PLACE_GUIDE: Record<string, string> = {
 /** 지역 허브(축제·지역 페이지) → 그 지역 가이드 */
 export const REGION_GUIDES: Record<string, string[]> = {
   Seoul:     ['/guides/seoul-3-days/', '/guides/seoul-palaces/', '/guides/korean-food-guide/', '/guides/seoul-shopping/', '/guides/halloween-seoul-2026/', '/guides/seoul-nightlife/'],
-  Busan:     ['/guides/busan-2-days/', '/guides/busan-fireworks-2026/'],
-  Gyeongnam: ['/guides/jinju-lantern-festival-2026/', '/guides/cherry-blossom-2027/'],
+  Busan:     ['/guides/busan-2-days/', '/guides/busan-fireworks-2026/', '/guides/korean-spa-jjimjilbang/'],
+  Gyeongnam: ['/guides/jinju-lantern-festival-2026/', '/guides/templestay-korea/', '/guides/cherry-blossom-2027/'],
   Gyeongbuk: ['/guides/gyeongju-2-days/'],
   Jeju:      ['/guides/jeju-3-days/'],
   Gangwon:   ['/guides/skiing-in-korea/', '/guides/nami-island-day-trip/', '/guides/korea-in-winter/', '/guides/autumn-foliage/'],
   Gyeonggi:  ['/guides/day-trips-from-seoul/', '/guides/suwon-day-trip/', '/guides/everland-vs-lotte-world/', '/guides/nami-island-day-trip/', '/guides/dmz-tour-from-seoul/', '/venues/'],
+  Jeonbuk:   ['/guides/jeonju-2-days/', '/guides/templestay-korea/'],
+  Jeonnam:   ['/guides/templestay-korea/'],
   Incheon:   ['/guides/day-trips-from-seoul/', '/guides/incheon-airport-to-seoul/', '/venues/'],
 };
 
@@ -292,6 +330,10 @@ export const FESTIVAL_GUIDE: Record<string, string> = {
   '4113182': '/guides/jinju-lantern-festival-2026/',
   '978249':  '/guides/suwon-day-trip/',        // 수원화성문화제
   '2657619': '/guides/suwon-day-trip/',        // 화성행궁 야간개장
+  '3487931': '/guides/jeonju-2-days/',          // 전주한옥마을 퍼레이드
+  '2394700': '/guides/jeonju-2-days/',          // 전주 문화유산 야행
+  '506838':  '/guides/jeonju-2-days/',          // 전주 한지산업대전
+  '2757751': '/guides/jeonju-2-days/',          // 전주 거리 인형극 축제
   '2648460': '/guides/seoul-palaces/',          // 경복궁 별빛야행
   '2756396': '/guides/seoul-palaces/',          // 덕수궁 석조전 야간
   '2818138': '/guides/seoul-palaces/',          // 창경궁 야연
@@ -333,6 +375,9 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/seoul-shopping/':           { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/kpop-award-shows/':         { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/skiing-in-korea/':          { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/korean-spa-jjimjilbang/':   { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/templestay-korea/':         { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/jeonju-2-days/':            { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },
@@ -344,7 +389,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/seoul-nightlife/':          { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seoul-3-days/':             { published: '2026-09-10', updated: '2026-09-11' },
   '/guides/jeju-3-days/':              { published: '2026-09-10', updated: '2026-09-11' },
-  '/guides/busan-2-days/':             { published: '2026-09-10', updated: '2026-09-11' },
+  '/guides/busan-2-days/':             { published: '2026-09-10', updated: '2026-09-30' },
   '/guides/gyeongju-2-days/':          { published: '2026-09-14', updated: '2026-09-28' },
   '/guides/kpop-tickets/':             { published: '2026-09-09', updated: '2026-09-11' },
 };
