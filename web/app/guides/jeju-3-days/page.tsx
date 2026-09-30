@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
 import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
+import BookBox from '@/app/components/BookBox';
+import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: '3 Days in Jeju — what to book before you fly, and what a car really costs',
@@ -104,6 +106,18 @@ export default function JejuThreeDays() {
           </tr>
         </tbody>
       </table>
+
+      <BookBox
+        offers={GUIDE_OFFERS.jeju}
+        title="Book ahead for Jeju"
+        intro="Rental cars sell out for holiday weekends; a day tour is the alternative if you do not want to drive."
+      />
+      <BookBox
+        provider="agoda"
+        offers={GUIDE_STAY.jeju}
+        title="Where to stay"
+        intro="Jeju City for the airport and restaurants, Seogwipo for the south coast and the waterfalls; with a car, split the nights between them."
+      />
 
       <DayHead
         day="Day 1"

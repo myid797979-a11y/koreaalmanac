@@ -3,7 +3,7 @@ import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
-import { GUIDE_OFFERS } from '@/lib/affiliate';
+import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: 'Shopping in Seoul: where to go for what, and how the tax refund works',
@@ -162,6 +162,13 @@ export default function SeoulShopping() {
         <li>Sizes run small, especially shoes and women’s clothing. Try things on.</li>
         <li>The <Link href="/guides/incheon-airport-to-seoul/">airport guide</Link> covers leaving time for the refund kiosks on the way out.</li>
       </ul>
+
+      <BookBox
+        provider="agoda"
+        offers={GUIDE_STAY.seoul}
+        title="Where to stay in Seoul"
+        intro="Jongno and Insadong put you walking distance from the palaces and markets; Myeongdong is central for everything else."
+      />
 
       <p className="strip">
         <Link href="/guides/korean-food-guide/">Eating in Korea</Link>

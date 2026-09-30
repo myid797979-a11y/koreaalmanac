@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import GuideLd from '@/app/components/GuideLd';
+import BookBox from '@/app/components/BookBox';
+import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: 'How to Buy K-Pop Concert Tickets as a Foreigner',
@@ -83,6 +85,18 @@ export default function TicketGuidePage() {
         Practices vary by agency and show — the official ticketing notice for each
         concert is always the final word.
       </p>
+
+      <BookBox
+        offers={GUIDE_OFFERS.venueArrival}
+        title="Once you have the ticket"
+        intro="Data from the moment you land, and the fastest train into Seoul."
+      />
+      <BookBox
+        provider="agoda"
+        offers={GUIDE_STAY.seoul}
+        title="Where to stay for the show"
+        intro="Pick the neighbourhood by venue: each of the venue guides says which line gets you home after the encore."
+      />
 
       <h2 className="sect">Plan the rest of the trip</h2>
       <p className="strip">

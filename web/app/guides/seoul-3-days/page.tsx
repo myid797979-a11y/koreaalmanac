@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
 import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
+import BookBox from '@/app/components/BookBox';
+import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: '3 Days in Seoul — a first-timer itinerary that respects the closing days',
@@ -91,6 +93,18 @@ export default function SeoulThreeDays() {
           </tr>
         </tbody>
       </table>
+
+      <BookBox
+        offers={GUIDE_OFFERS.seoul3}
+        title="Book ahead for Seoul"
+        intro="The attraction pass pays off if you do the tower, a palace and a museum or two; hanbok gets you into the palaces free."
+      />
+      <BookBox
+        provider="agoda"
+        offers={GUIDE_STAY.seoul}
+        title="Where to stay"
+        intro="For this route, stay near Line 3 or Line 2: Jongno and Insadong for the palaces, Myeongdong for everything else, Hongdae for the evenings."
+      />
 
       <DayHead
         day="Day 1"

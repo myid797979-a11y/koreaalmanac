@@ -3,7 +3,7 @@ import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
 import { GuideHero, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
-import { GUIDE_OFFERS } from '@/lib/affiliate';
+import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: 'Eating in Korea: what to order, how it works, and where to start in Seoul',
@@ -187,6 +187,13 @@ export default function KoreanFood() {
         <li>Lunch sets between about 11:30 and 14:00 are the cheapest way to eat well. Many small restaurants close between lunch and dinner.</li>
         <li>For what food costs across a whole trip, see <Link href="/guides/korea-on-a-budget/">Korea on a budget</Link>.</li>
       </ul>
+
+      <BookBox
+        provider="agoda"
+        offers={GUIDE_STAY.seoul}
+        title="Where to stay in Seoul"
+        intro="Jongno and Insadong put you walking distance from the palaces and markets; Myeongdong is central for everything else."
+      />
 
       <p className="strip">
         <Link href="/guides/seoul-nightlife/">Seoul after dark</Link>

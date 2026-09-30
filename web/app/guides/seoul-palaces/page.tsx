@@ -3,7 +3,7 @@ import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import GuideLd from '@/app/components/GuideLd';
 import { GuideHero, Stop, DayHead, PlaceRow } from '@/app/components/GuideBits';
 import BookBox from '@/app/components/BookBox';
-import { GUIDE_OFFERS } from '@/lib/affiliate';
+import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: 'Seoul’s five palaces: which to see, closing days, hanbok entry and the guard ceremony',
@@ -191,6 +191,13 @@ export default function SeoulPalaces() {
         'jongmyo-shrine-unesco-world-heritage-264351',
         'deoksugung-stone-wall-path-1748351',
       ]} />
+
+      <BookBox
+        provider="agoda"
+        offers={GUIDE_STAY.seoul}
+        title="Where to stay in Seoul"
+        intro="Jongno and Insadong put you walking distance from the palaces and markets; Myeongdong is central for everything else."
+      />
 
       <p className="strip">
         <Link href="/guides/templestay-korea/">Templestay in Korea</Link>

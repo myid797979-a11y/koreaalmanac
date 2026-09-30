@@ -88,6 +88,7 @@ const SPA_SEOUL: Offer = { label: 'Seoul spa and jjimjilbang tickets', url: sear
 const SPA_CIMER: Offer = { label: 'Paradise City Cimer spa ticket', url: search('Paradise City Cimer'), note: 'by Incheon Airport, good for layovers' };
 const SPA_BUSAN: Offer = { label: 'Spa Land Centum City ticket', url: search('Spa Land Centum City'), note: 'Busan’s best-known spa' };
 const TEMPLESTAY: Offer = { label: 'Templestay programmes and temple tours', url: search('templestay'), note: 'day and overnight, some with transport' };
+const JEJU_CAR: Offer = { label: 'Jeju car rental', url: search('Jeju car rental'), note: 'bring an International Driving Permit' };
 const FOLK_VILLAGE: Offer = { label: 'Korean Folk Village tickets and tours', url: search('Korean Folk Village'), note: '20 minutes from Suwon by bus' };
 const BIRF: Offer = { label: 'Busan International Rock Festival tickets', url: search('Busan International Rock Festival') };
 const ANDONG_TOUR: Offer = { label: 'Andong Hahoe Village day tours', url: search('Andong Hahoe Village'), note: 'from Seoul or Busan; the mask dance is at the village' };
@@ -185,6 +186,8 @@ export const GUIDE_OFFERS = {
   spa:              [SPA_SEOUL, SPA_CIMER, SPA_BUSAN],
   templestay:       [TEMPLESTAY],
   jeonju:           [JEONJU_TOUR, KR_PASS],
+  seoul3:           [SEOUL_PASS, HANBOK_GBG, NSEOUL_NIGHT],
+  jeju:             [JEJU_CAR, JEJU_TOUR, HALLASAN],
   themeParks:       [EVERLAND, EVERLAND_BUS, LOTTE_WORLD, SEOUL_SKY, LEGOLAND],
 } as const;
 
@@ -297,6 +300,8 @@ export const GUIDE_STAY = {
   nami:      [STAY_GAPYEONG, STAY_CHUNCHEON_NAMI],
   ski:       [STAY_PYEONGCHANG, STAY_GANGNEUNG],
   busan:     [STAY_BUSAN],
+  seoul:     [STAY_SEOUL],
+  jeju:      [STAY_JEJU],
   jeonju:    [STAY_JEONJU],
   suwon:     [STAY_SUWON, STAY_SEOUL],
 } as const;
