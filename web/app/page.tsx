@@ -145,6 +145,7 @@ export default function Home() {
 
       <SectionHead title={'This weekend, ' + wkLabel} href="/calendar/" more="full calendar" />
       <div className="grid">{take(rankShortFirst(weekend), 4).map(f => <Card key={f.id} f={f} t={t} />)}</div>
+      <p className="strip" style={{ marginTop: 12 }}><Link href="/seoul-this-weekend/">Everything on in Seoul this weekend: festivals, concerts and shows</Link></p>
 
       {concerts.length > 0 && (
         <>

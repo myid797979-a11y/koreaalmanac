@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const urls: MetadataRoute.Sitemap = [
     { url: SITE_URL + '/', priority: 1.0 },
     { url: SITE_URL + '/plan/', priority: 0.9 },
+    { url: SITE_URL + '/seoul-this-weekend/', priority: 0.9 },
     { url: SITE_URL + '/events/', priority: 0.95 },
     { url: SITE_URL + '/events/festivals/', priority: 0.9 },
     { url: SITE_URL + '/events/concerts/', priority: 0.9 },
