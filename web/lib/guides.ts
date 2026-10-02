@@ -595,7 +595,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/hanbok-rental/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/gangneung-sokcho-2-days/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/korea-entry-requirements/': { published: '2026-09-30', updated: '2026-09-30' },
-  '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-09-28' },
+  '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-10-02' },
   '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/cherry-blossom-2027/':      { published: '2026-09-28', updated: '2026-09-28' },

@@ -100,12 +100,10 @@ export default function HalloweenSeoul2026() {
           <tr>
             <th>Theme parks</th>
             <td>
-              <strong>Everland</strong> has run a Halloween horror season every autumn for years
-              — haunted zones, night parades, costumed staff — from September into November, and
-              it is the most fun you can have on the night without a crowd-safety worry.{' '}
-              <strong>Lotte World</strong> runs its own Halloween programme indoors and out, and
-              Legoland Korea in Chuncheon does a family version. All three are at their busiest
-              on the 31st itself; the weekends before are calmer.
+              <strong>Everland</strong> runs <strong>Blood City Zero</strong> from 12 September to 22 November 2026, the tenth year of its zombie-horror zone, with immersive shows where visitors join the story, night parades and horror-themed food.{' '}
+              <strong>Lotte World</strong> runs its <strong>Mystery Party</strong> Halloween season from 12 September to 15 November, indoors and out, so it works in any weather.
+              Legoland Korea in Chuncheon does a family version. All three are at their busiest on the 31st itself; the weekends before are calmer. See{' '}
+              <Link href="/guides/everland-vs-lotte-world/">Everland or Lotte World?</Link> to choose.
             </td>
           </tr>
         </tbody>
