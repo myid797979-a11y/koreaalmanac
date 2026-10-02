@@ -64,6 +64,9 @@ function hashOf(url) {
     //   · 장소 상세의 "What's on nearby" 는 120일 지평선이라 날마다 목록이 달라진다
     //   · 축제 상세의 "More festivals in <지역>" 도 같다. 실제로 허브 정렬을 한 번 바꿨더니
     //     내용이 하나도 안 바뀐 축제 1,032 페이지가 전부 변경으로 잡혀 IndexNow 에 나갔다.
+    //   · 축제·장소 하단의 "Plan your trip to <지역>" 가이드 줄(components/RegionGuides) — 가이드 목록이
+    //     바뀔 때마다 4천 페이지가 잡히면 안 된다. 추가된 날(2026-10-02)에도 이 규칙 덕에 전량이 잡히지 않는다.
+    .replace(/<nav class="g-related[^"]*"[\s\S]*?<\/nav>/g, '')
     .replace(/<h2 class="sect">What&#x27;s on nearby<\/h2>[\s\S]*?(?=<h2|<\/main|<footer)/g, 'NEARBY')
     .replace(/<h2 class="sect">More festivals in[\s\S]*?(?=<h2|<\/main|<footer)/g, 'RELATED');
   return createHash('sha1').update(body).digest('hex').slice(0, 12);

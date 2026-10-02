@@ -10,6 +10,7 @@ import { liveCulture, cultureDateRange } from '@/lib/culture';
 import BookBox from '@/app/components/BookBox';
 import AdSlot from '@/app/components/AdSlot';
 import { PLACE_GUIDE, GUIDES } from '@/lib/guides';
+import RegionGuides from '@/app/components/RegionGuides';
 import { offersFor } from '@/lib/affiliate';
 
 export function generateStaticParams() {
@@ -185,6 +186,8 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
           ? 'Hours and admission change with the season and on public holidays — confirm with the venue before a long trip.'
           : 'Opening hours and admission are not in the dataset for this place yet — check the official page before you go.'}
       </p>
+
+      <RegionGuides region={p.region} />
 
       {events.length > 0 && (
         <>

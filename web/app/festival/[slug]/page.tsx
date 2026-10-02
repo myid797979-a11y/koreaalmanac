@@ -8,6 +8,7 @@ import BookBox from '@/app/components/BookBox';
 import AdSlot from '@/app/components/AdSlot';
 import { offersFor, stayOffersForFestival } from '@/lib/affiliate';
 import { FESTIVAL_GUIDE, GUIDES } from '@/lib/guides';
+import RegionGuides from '@/app/components/RegionGuides';
 import {
   festivals, bySlug, status, dateRange, daysUntil, today,
   icsHref, MONTH_SLUGS, MONTHS_FULL, categoryLabel, uniqueTitle } from '@/lib/data';
@@ -166,6 +167,8 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
           <p className="meta">Photos: Korea Tourism Organization</p>
         </>
       )}
+
+      <RegionGuides region={f.region} />
 
       {nearby.length > 0 && (
         <>
