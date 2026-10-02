@@ -8,9 +8,14 @@ export function GuideHero({ slugs }: { slugs: string[] }) {
   if (items.length === 0) return null;
   return (
     <div className="g-hero">
-      {items.map(p => (
+      {/* 첫 장은 화면 맨 위의 가장 큰 그림(LCP)이다 — 지연 로드하면 늘 늦게 받는다 (2026-10-02 Lighthouse) */}
+      {items.map((p, i) => (
         <figure key={p!.id}>
-          <img src={p!.image} alt={displayTitle(p!.title)} loading="lazy" />
+          <img
+            src={p!.image}
+            alt={displayTitle(p!.title)}
+            {...(i === 0 ? { fetchPriority: 'high' as const, loading: 'eager' as const } : { loading: 'lazy' as const })}
+          />
           <figcaption>{displayTitle(p!.title)}</figcaption>
         </figure>
       ))}

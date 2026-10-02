@@ -1076,6 +1076,8 @@ ol.steps li::marker { color: var(--seal); font-weight: 600; }
 
 /* 가이드 머리 사진: 옛 인화지처럼 흑백에서 색이 올라온다, 한 장씩 */
 .g-hero img { animation: develop 1.1s ease-out both; }
+/* 첫 장은 LCP 라 현상 효과를 빼고 바로 그린다 (2026-10-02: 렌더 지연 1초) */
+.g-hero figure:first-child img { animation: none; }
 .g-hero figure:nth-child(2) img { animation-delay: 0.12s; }
 .g-hero figure:nth-child(3) img { animation-delay: 0.24s; }
 @keyframes develop {
