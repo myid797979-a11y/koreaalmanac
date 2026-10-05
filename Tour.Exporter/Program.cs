@@ -218,11 +218,11 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
             var end = it.GetValueOrDefault("endDate", "");
             if (string.Compare(end, cKeepFrom, StringComparison.Ordinal) < 0) continue;
             var ended = string.Compare(end, cToday, StringComparison.Ordinal) < 0;
-            if (ended) cEnded++;
 
             var isTrad = realm.Contains("국악") || TRAD.IsMatch(title);
             var isExh = realm.Contains("전시");
             if (!isTrad && !isExh) continue;   // 이번 범위는 전통공연·전시만
+            if (ended) cEnded++;               // 실제로 내보내는 것만 센다 (연극·뮤지컬까지 세서 351로 나왔다)
 
             cTr.TryGetValue(seq, out var tr);
             var enTitle = tr?.GetValueOrDefault("title") ?? Decode(title) ?? title;
