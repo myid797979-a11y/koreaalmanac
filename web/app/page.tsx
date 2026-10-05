@@ -12,6 +12,7 @@ import { upcomingConcerts, concertDateRange, KIND_LABEL } from '@/lib/concerts';
 import { liveCulture } from '@/lib/culture';
 import CultureCard from '@/app/components/CultureCard';
 import { placeBySlug } from '@/lib/places';
+import AlmanacDate from '@/app/components/AlmanacDate';
 import { GUIDES, HOME_GUIDE_HREFS, FIRST_TRIP } from '@/lib/guides';
 
 // 홈 제목이 사이트명뿐(13자)이라 Bing URL 검사가 "너무 짧은 제목" 오류를 냈다.
@@ -116,9 +117,7 @@ export default function Home() {
           </p>
         </div>
         <aside className="almanac">
-          <div className="alm-mon">{MONTHS_FULL[mIdx]} {t.slice(0, 4)}</div>
-          <div className="alm-day">{day}</div>
-          <div className="alm-wd">{weekday}, Korea</div>
+          <AlmanacDate initial={{ month: MONTHS_FULL[mIdx], year: t.slice(0, 4), day: String(day), weekday }} />
           <div className="alm-facts">
             <Link href="/events/festivals/"><b>{ongoing.length}</b> festivals on today</Link>
             <Link href={'/events/festivals/' + MONTH_SLUGS[mIdx] + '/'}><b>{startingThisMonth}</b> more start this month</Link>
