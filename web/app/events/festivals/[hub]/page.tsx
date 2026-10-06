@@ -4,7 +4,7 @@ import Card from '@/app/components/Card';
 import { rankShortFirst } from '@/lib/festival-rank';
 import {
   MONTHS_FULL, MONTH_SLUGS, REGIONS, REGION_MONTH_MIN, CATEGORIES,
-  monthFestivals, lastYearMonth, regionFestivals, regionMonthList, categoryFestivals, categoryLabel,
+  monthFestivals, lastYearMonth, regionFestivals, regionMonthList, categoryFestivals, categoryLabel, isFree,
   status, today,
 } from '@/lib/data';
 import { MONTH_INTROS, REGION_INTROS, CATEGORY_INTROS } from '@/lib/editorial';
@@ -48,9 +48,14 @@ export async function generateMetadata({ params }: { params: Promise<{ hub: stri
   const cat = CATEGORIES.find(c => c.slug === hub);
   if (!cat) return {};
   const cn = categoryFestivals(cat.slug).filter(f => status(f) !== 'ended').length;
+  // "food festivals near me" (Bing 평균 2위, 클릭 0 — 2026-10-06): 지금·이번 주·지역별·무료를 제목과 설명 앞에 둔다
+  const live = categoryFestivals(cat.slug).filter(f => status(f) !== 'ended');
+  const nFree = live.filter(isFree).length;
   return {
-    title: cat.label + ' Festivals in Korea — ' + cn + ' happening or upcoming',
-    description: cn + ' ' + cat.label.toLowerCase() + ' festivals across Korea with real dates and venues — from official tourism data, updated daily.',
+    title: cat.label + ' Festivals in Korea ' + new Date().getFullYear() + ': ' + cn + ' on now and coming up, by date and region',
+    description: cn + ' ' + cat.label.toLowerCase() + ' festivals across Korea on now or coming up' +
+      (nFree ? ', ' + nFree + ' of them free' : '') +
+      ', with dates, venues and maps, sorted by what is on soonest. Updated every morning from official tourism data.',
   };
 }
 
