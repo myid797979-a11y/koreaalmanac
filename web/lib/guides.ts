@@ -24,6 +24,13 @@ export const GUIDES: Guide[] = [
     photo: 'gyeonghwa-station-cherry-blossom-street-1643702',
   },
   {
+    href: '/guides/seoul-in-november/',
+    title: 'Seoul in November 2026',
+    blurb: 'The last gold ginkgo weeks, cold clear days and lower prices, the KGMA and Melon Music Awards on back-to-back weekends, kimjang season and the first lights, with the month’s concerts.',
+    tag: 'Seasonal',
+    photo: 'deoksugung-stone-wall-path-1748351',
+  },
+  {
     href: '/guides/busan-fireworks-2026/',
     title: 'Busan Fireworks Festival 2026: 7 November',
     blurb: 'Korea’s biggest fireworks over Gwangalli Beach. The free viewing spots and when to claim them, whether paid seats are worth it, the hotel problem, and how to leave with a million other people.',
@@ -399,6 +406,7 @@ const NOW_WINDOWS: { href: string; from: string; to: string }[] = [
   { href: '/guides/busan-fireworks-2026/',        from: '20261012', to: '20261107' },
   { href: '/guides/halloween-seoul-2026/',        from: '20261001', to: '20261031' },
   { href: '/guides/autumn-foliage/',              from: '20260915', to: '20261115' },
+  { href: '/guides/seoul-in-november/',           from: '20261020', to: '20261125' },
   { href: '/guides/kpop-award-shows/',            from: '20261019', to: '20261231' },
   { href: '/guides/christmas-new-year-seoul/',    from: '20261101', to: '20270101' },
   { href: '/guides/skiing-in-korea/',             from: '20261108', to: '20270215' },
@@ -586,7 +594,7 @@ export const MONTH_GUIDES: string[][] = [
   ['/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'], // Aug
   ['/guides/seoul-palaces/', '/guides/baseball-in-korea/', '/guides/autumn-foliage/', '/guides/korea-on-a-budget/'], // Sep
   ['/guides/jinju-lantern-festival-2026/', '/guides/suwon-day-trip/', '/guides/autumn-foliage/', '/guides/halloween-seoul-2026/', '/guides/busan-fireworks-2026/'], // Oct
-  ['/guides/kpop-award-shows/', '/guides/busan-fireworks-2026/', '/guides/autumn-foliage/', '/guides/nami-island-day-trip/'], // Nov
+  ['/guides/seoul-in-november/', '/guides/kpop-award-shows/', '/guides/busan-fireworks-2026/', '/guides/autumn-foliage/'], // Nov
   ['/guides/christmas-new-year-seoul/', '/guides/korea-in-winter/', '/guides/skiing-in-korea/', '/guides/kpop-award-shows/'],                                             // Dec
 ];
 
@@ -612,6 +620,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/templestay-korea/':         { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/jeonju-2-days/':            { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/han-river-parks/': { published: '2026-10-06', updated: '2026-10-06' },
+  '/guides/seoul-in-november/': { published: '2026-10-06', updated: '2026-10-06' },
   '/guides/incheon-airport-layover/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/andong-hahoe-village/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/seoul-markets/': { published: '2026-09-30', updated: '2026-10-06' },
