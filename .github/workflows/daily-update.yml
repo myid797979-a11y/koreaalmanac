@@ -138,3 +138,9 @@ jobs:
           git add db/dump db/culture.json db/places.json data/translation_queue.json data/culture_queue.json web/data data/indexnow-state.json db/kopis.json db/kopis_venues.json
           git diff --cached --quiet || git commit -m "data: daily update $(date -u +%F)"
           git push
+
+      # 라이브 점검 — 실제 사이트 HTML 에 GA·AdSense·Klook(aid)·Agoda(cid) 가 있는지. 빠지면 이 실행을 실패로.
+      # 맨 마지막에 둔다: 실패해도 데이터 커밋은 이미 끝나 있다. (청약각 GA 누락 사고, 2026-10)
+      - name: 라이브 점검 (GA·제휴 태그)
+        working-directory: web
+        run: node scripts/live-check.mjs
