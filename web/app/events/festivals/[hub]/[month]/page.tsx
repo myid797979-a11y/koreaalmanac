@@ -4,11 +4,11 @@ import Card from '@/app/components/Card';
 import { rankShortFirst } from '@/lib/festival-rank';
 import {
   MONTHS_FULL, MONTH_SLUGS, REGIONS, REGION_MONTH_MIN,
-  regionMonthList, targetYear, today, type Festival,
+  regionMonthList, targetYear, today, festivals, overlapsMonth, type Festival,
 } from '@/lib/data';
 import { upcomingConcerts, concertDateRange } from '@/lib/concerts';
 import { liveCulture, cultureDateRange, isLongRun } from '@/lib/culture';
-import { GUIDES, REGION_GUIDES, FIRST_TRIP } from '@/lib/guides';
+import { GUIDES, REGION_GUIDES, FIRST_TRIP, MONTH_GUIDES } from '@/lib/guides';
 import { MONTH_FACTS } from '@/lib/month-facts';
 
 // 지역×월은 축제 3건 이상인 조합만 생성 (얇은 페이지 방지)
@@ -78,6 +78,38 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
   const guides = (REGION_GUIDES[region!] ?? []).map(h => GUIDES.find(g => g.href === h)).filter(Boolean);
   const isNow = t >= first && t <= last;
 
+  // 관광공사 등록은 행사 2~4주 전에 몰린다. 몇 주 뒤의 달은 진짜 축제가 몇 개뿐이라(2026-10-06 서울 11월: 2개)
+  // ChatGPT·검색으로 들어온 사람이 빈 페이지를 본다. 그런 달에는
+  //   · 그 달 가이드 링크와 공연 목록을 위로 올리고
+  //   · "작년 이달에 열린 축제(올해 날짜 미정)"를 보여 준다 — 같은 이름의 올해 회차가 이미 있으면 뺀다.
+  const shortCount = list.filter(f => days(f) <= 60).length;
+  const thin = shortCount < 8;
+  const titlesNow = new Set(list.map(f => f.title));
+  const lastYear = thin
+    ? festivals
+        .filter(f => f.region === region && overlapsMonth(f, year - 1, mIdx) && days(f) <= 60 && !titlesNow.has(f.title))
+        .sort((a, b) => (a.start ?? '').localeCompare(b.start ?? ''))
+        .slice(0, 12)
+    : [];
+  const monthGuides = (MONTH_GUIDES[mIdx] ?? []).map(h => GUIDES.find(g => g.href === h)).filter(Boolean);
+
+  const concertsBlock = concerts.length > 0 && (
+    <section id="concerts">
+      <h2 className="sect">Concerts in {region} in {MONTHS_FULL[mIdx]}</h2>
+      <ul className="agenda">
+        {concerts.map(c => (
+          <li key={c.id}>
+            <span className="ad">{concertDateRange(c)}</span>
+            <Link href={'/concert/' + c.id + '/'}>
+              {c.artist === 'Various artists' || c.title.toLowerCase().includes(c.artist.toLowerCase()) ? c.title : c.artist + ': ' + c.title}
+            </Link>
+            <span className="meta"> · {c.venue}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+
   return (
     <>
       <div className="crumb">
@@ -105,6 +137,12 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
         </tbody>
       </table>
 
+      {thin && monthGuides.length > 0 && (
+        <p className="strip">
+          <strong>{MONTHS_FULL[mIdx]} guides</strong>
+          {monthGuides.map(g => <Link key={g!.href} href={g!.href}>{g!.title}</Link>)}
+        </p>
+      )}
       {guides.length > 0 && (
         <p className="strip">
           <strong>Guides</strong>
@@ -112,12 +150,25 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
         </p>
       )}
 
+      {thin && concertsBlock}
+
       {weeks.map((w, i) => (
         <section key={i} id={'w' + i}>
           <h2 className="sect">{w.label}</h2>
           <div className="grid">{rankShortFirst(w.items, 'date').map(f => <Card key={f.id} f={f} t={t} />)}</div>
         </section>
       ))}
+
+      {lastYear.length > 0 && (
+        <section id="last-year">
+          <h2 className="sect">Usually held in {MONTHS_FULL[mIdx]}: dates for {year} not yet announced</h2>
+          <p className="intro" style={{ marginTop: -4 }}>
+            These ran in {MONTHS_FULL[mIdx]} {year - 1}. Organisers usually confirm the new dates a few weeks
+            ahead; this page updates every morning when they do.
+          </p>
+          <div className="grid">{lastYear.map(f => <Card key={f.id} f={f} t={t} />)}</div>
+        </section>
+      )}
 
       {longRun.length > 0 && (
         <section id="year-round">
@@ -127,22 +178,7 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
         </section>
       )}
 
-      {concerts.length > 0 && (
-        <section id="concerts">
-          <h2 className="sect">Concerts in {region} in {MONTHS_FULL[mIdx]}</h2>
-          <ul className="agenda">
-            {concerts.map(c => (
-              <li key={c.id}>
-                <span className="ad">{concertDateRange(c)}</span>
-                <Link href={'/concert/' + c.id + '/'}>
-                  {c.artist === 'Various artists' || c.title.toLowerCase().includes(c.artist.toLowerCase()) ? c.title : c.artist + ': ' + c.title}
-                </Link>
-                <span className="meta"> · {c.venue}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      {!thin && concertsBlock}
 
       {stage.length > 0 && (
         <>
