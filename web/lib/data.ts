@@ -14,6 +14,11 @@ export type Festival = {
 export const festivals: Festival[] = (festivalsJson as Festival[]).map(f => ({ ...f, image: okImage(f.image), images: okImages(f.images) }));
 
 // KST 기준 오늘 (YYYYMMDD) — 정적 빌드 시점에 박히고, 매일 재빌드로 갱신 (청약각 철학)
+/** 입장 무료 — 요금 표기가 Free/무료로 시작하는 것만 ("Free (some programmes paid)" 포함, "5,000 won (children free)" 제외) */
+export function isFree(f: { fee: string | null }): boolean {
+  return !!f.fee && /^\s*(free\b|무료)/i.test(f.fee);
+}
+
 export function today(): string {
   const now = new Date(Date.now() + 9 * 3600 * 1000);
   return now.toISOString().slice(0, 10).split('-').join('');

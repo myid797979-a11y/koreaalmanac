@@ -11,7 +11,7 @@ import { FESTIVAL_GUIDE, GUIDES } from '@/lib/guides';
 import RegionGuides from '@/app/components/RegionGuides';
 import {
   festivals, bySlug, status, dateRange, daysUntil, today,
-  icsHref, MONTH_SLUGS, MONTHS_FULL, categoryLabel, uniqueTitle } from '@/lib/data';
+  icsHref, MONTH_SLUGS, MONTHS_FULL, categoryLabel, uniqueTitle, isFree } from '@/lib/data';
 import { festivalJsonLd, breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 
 export function generateStaticParams() {
@@ -22,13 +22,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const f = bySlug(slug);
   if (!f) return {};
-  const description = (f.title + ', ' + f.region + ', ' + dateRange(f) + '. ' + (f.overview ?? '')).slice(0, 155);
+  const description = (f.title + ', ' + f.region + ', ' + dateRange(f) + '. ' + (isFree(f) ? 'Free entry. ' : '') + (f.overview ?? '')).slice(0, 155);
   return {
     // 사람들은 "… festival 2026" 으로 찾는다 (GSC 2026-09-30). 연도가 제목에 없으면 붙인다.
     title: (() => {
       const t = uniqueTitle(f);
       const y = (f.start ?? '').slice(0, 4);
-      return (y && !t.includes(y) ? t + ' ' + y : t) + ' — dates, fees, location';
+      // 무료면 제목에서 바로 보이게 (2026-10-06) — 축제 대부분이 무료라 클릭 이유가 된다
+      return (y && !t.includes(y) ? t + ' ' + y : t) + (isFree(f) ? ' — free entry, dates, location' : ' — dates, fees, location');
     })(),
     description,
     openGraph: {

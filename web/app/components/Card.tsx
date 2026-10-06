@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { type Festival, dateRange, today } from '@/lib/data';
+import { type Festival, dateRange, today, isFree } from '@/lib/data';
 import Stamp from './Stamp';
 
 // 배지는 app/components/Stamp.tsx 로 옮겼다 — 축제·공연·전시가 같은 문법을 쓰도록.
@@ -16,7 +16,7 @@ export default function Card({ f, t = today() }: { f: Festival; t?: string }) {
       <div className="body">
         <div className="when">{dateRange(f)}</div>
         <h3>{f.title}</h3>
-        <div className="meta">{f.region}</div>
+        <div className="meta">{f.region}{isFree(f) && <span className="free-tag">Free</span>}</div>
       </div>
     </Link>
   );
