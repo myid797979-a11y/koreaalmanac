@@ -380,13 +380,31 @@ export const FIRST_TRIP: { href: string; label: string }[] = [
   { href: '/guides/korea-on-a-budget/', label: 'Korea on a budget' },
 ];
 
-/** 홈에 보여줄 것 — 지금 시즌에 맞는 넷 */
-export const HOME_GUIDE_HREFS = [
-  '/guides/jinju-lantern-festival-2026/',
-  '/guides/suwon-day-trip/',
-  '/guides/halloween-seoul-2026/',
-  '/guides/autumn-foliage/',
+/**
+ * 홈·가이드 목록의 "Right now" — 날짜 창으로 자동 교체한다 (2026-10-06).
+ * 예전엔 손으로 4개를 골라 두었고, 축제가 끝나도 그대로 남아 있었다. 빌드가 매일 돌므로 창에 맞춰 저절로 바뀐다.
+ * 위에서부터 창에 걸린 것 4개, 모자라면 EVERGREEN 으로 채운다. 날짜는 YYYYMMDD(KST).
+ * ⚠ 다음 해 시즌 가이드를 새로 쓰면 여기 창도 추가한다.
+ */
+const NOW_WINDOWS: { href: string; from: string; to: string }[] = [
+  { href: '/guides/jinju-lantern-festival-2026/', from: '20260915', to: '20261018' },
+  { href: '/guides/suwon-day-trip/',              from: '20260915', to: '20261011' },
+  { href: '/guides/busan-fireworks-2026/',        from: '20261012', to: '20261107' },
+  { href: '/guides/halloween-seoul-2026/',        from: '20261001', to: '20261031' },
+  { href: '/guides/autumn-foliage/',              from: '20260915', to: '20261115' },
+  { href: '/guides/kpop-award-shows/',            from: '20261019', to: '20261231' },
+  { href: '/guides/christmas-new-year-seoul/',    from: '20261101', to: '20270101' },
+  { href: '/guides/skiing-in-korea/',             from: '20261108', to: '20270215' },
+  { href: '/guides/korea-in-winter/',             from: '20261116', to: '20270228' },
+  { href: '/guides/seollal-2027/',                from: '20261215', to: '20270209' },
+  { href: '/guides/cherry-blossom-2027/',         from: '20270110', to: '20270410' },
 ];
+const EVERGREEN = ['/guides/korea-7-day-itinerary/', '/guides/best-festivals-in-korea/', '/guides/seoul-palaces/', '/guides/korean-food-guide/'];
+
+export function nowGuideHrefs(t: string, n = 4): string[] {
+  const live = NOW_WINDOWS.filter(w => t >= w.from && t <= w.to).map(w => w.href);
+  return [...live, ...EVERGREEN.filter(h => !live.includes(h))].slice(0, n);
+}
 
 /** 장소 id → 그 장소를 다룬 가이드 (장소 상세에서 안내) */
 export const PLACE_GUIDE: Record<string, string> = {
@@ -562,7 +580,7 @@ export const MONTH_GUIDES: string[][] = [
  * ⚠ 본문을 고치면 updated 를 손으로 올린다 — 자동이 아니다. 링크만 고친 경우는 그대로 둔다.
  */
 export const GUIDE_DATES: Record<string, { published: string; updated: string }> = {
-  '/guides/busan-fireworks-2026/':     { published: '2026-09-29', updated: '2026-09-29' },
+  '/guides/busan-fireworks-2026/':     { published: '2026-09-29', updated: '2026-10-06' },
   '/guides/jinju-lantern-festival-2026/': { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/incheon-airport-to-seoul/': { published: '2026-09-29', updated: '2026-09-29' },
   '/guides/dmz-tour-from-seoul/':      { published: '2026-09-29', updated: '2026-09-29' },

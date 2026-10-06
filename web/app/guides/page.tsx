@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { placeBySlug } from '@/lib/places';
-import { GUIDES, GUIDE_GROUPS, HOME_GUIDE_HREFS, guideGroup, type Guide } from '@/lib/guides';
+import { GUIDES, GUIDE_GROUPS, nowGuideHrefs, guideGroup, type Guide } from '@/lib/guides';
+import { today } from '@/lib/data';
 
 export const metadata = {
   title: 'Korea Travel Guides — practical, checked, and current',
@@ -26,8 +27,9 @@ function GuideCard({ g }: { g: Guide }) {
 
 export default function GuidesHub() {
   // 맨 위 "지금 시즌" — 홈과 같은 목록을 쓴다. 아래 구역에서는 중복으로 보이지 않게 뺀다.
-  const now = HOME_GUIDE_HREFS.map(h => GUIDES.find(g => g.href === h)).filter(Boolean) as Guide[];
-  const rest = GUIDES.filter(g => !HOME_GUIDE_HREFS.includes(g.href));
+  const nowHrefs = nowGuideHrefs(today());
+  const now = nowHrefs.map(h => GUIDES.find(g => g.href === h)).filter(Boolean) as Guide[];
+  const rest = GUIDES.filter(g => !nowHrefs.includes(g.href));
   const groups = GUIDE_GROUPS.map(gr => ({ ...gr, list: rest.filter(g => guideGroup(g) === gr.id) }))
     .filter(gr => gr.list.length > 0);
 

@@ -16,6 +16,7 @@ const overlaps = (s: string | null | undefined, e: string | null | undefined, fr
 
 export type WeekendCity = {
   city: string;                 // 지역명 (festivals.region 과 같은 값)
+  name?: string;                // 화면에 쓰는 이름 (경주 → 지역은 Gyeongbuk). 없으면 city
   slug: string;                 // /<slug>/
   near: string[];               // 당일치기 권역
   nearIntro: React.ReactNode;
@@ -23,7 +24,8 @@ export type WeekendCity = {
 };
 
 /** 도시별 "이번 주말" 페이지 본문 — app/seoul-this-weekend, app/busan-this-weekend */
-export default function CityWeekend({ city, slug, near: nearRegions, nearIntro, links }: WeekendCity) {
+export default function CityWeekend({ city, name: nameProp, slug, near: nearRegions, nearIntro, links }: WeekendCity) {
+  const name = nameProp ?? city;
   const t = today();
   const { from, to, label } = weekendWindow(t);
   const on = festivals.filter(f => overlaps(f.start, f.end, from, to));
@@ -42,17 +44,17 @@ export default function CityWeekend({ city, slug, near: nearRegions, nearIntro, 
 
   const crumbLd = breadcrumbJsonLd([
     { name: 'Home', path: '/' },
-    { name: city + ' this weekend', path: '/' + slug + '/' },
+    { name: name + ' this weekend', path: '/' + slug + '/' },
   ]);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldStr(crumbLd) }} />
-      <div className="crumb"><Link href="/">Home</Link> › {city} this weekend</div>
-      <h1>Things to do in {city} this weekend: {label}</h1>
+      <div className="crumb"><Link href="/">Home</Link> › {name} this weekend</div>
+      <h1>Things to do in {name} this weekend: {label}</h1>
       <p className="sub">
         {local.length} {local.length === 1 ? 'festival' : 'festivals'} · {localConcerts.length} {localConcerts.length === 1 ? 'concert' : 'concerts'} · {shows.length} exhibitions and
-        performances in {city}, Friday to Sunday. Rebuilt every morning from official data.
+        performances in {name}, Friday to Sunday. Rebuilt every morning from official data.
       </p>
 
       <nav className="g-jump" aria-label="Sections">
@@ -65,7 +67,7 @@ export default function CityWeekend({ city, slug, near: nearRegions, nearIntro, 
 
       {local.length > 0 && (
         <section id="festivals">
-          <h2 className="sect">Festivals in {city}</h2>
+          <h2 className="sect">Festivals in {name}</h2>
           <div className="grid">{local.slice(0, 12).map(f => <Card key={f.id} f={f} t={t} />)}</div>
           {local.length > 12 && (
             <p className="meta">Plus {local.length - 12} more: see <Link href={'/events/festivals/' + city.toLowerCase() + '/'}>all festivals in {city}</Link>.</p>
@@ -75,7 +77,7 @@ export default function CityWeekend({ city, slug, near: nearRegions, nearIntro, 
 
       {localConcerts.length > 0 && (
         <section id="concerts">
-          <h2 className="sect">Concerts in {city}</h2>
+          <h2 className="sect">Concerts in {name}</h2>
           <ul className="agenda">
             {localConcerts.map(c => (
               <li key={c.id}>
@@ -121,7 +123,7 @@ export default function CityWeekend({ city, slug, near: nearRegions, nearIntro, 
 
       {near.length > 0 && (
         <section id="day-trips">
-          <h2 className="sect">Day trips: on near {city}</h2>
+          <h2 className="sect">Day trips: on near {name}</h2>
           <p className="intro" style={{ marginTop: -4 }}>{nearIntro}</p>
           <div className="grid">{near.map(f => <Card key={f.id} f={f} t={t} />)}</div>
         </section>

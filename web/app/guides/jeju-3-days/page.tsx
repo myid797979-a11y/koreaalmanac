@@ -313,6 +313,7 @@ export default function JejuThreeDays() {
       </p>
 
       <p className="strip">
+        <Link href="/jeju-this-weekend/">Jeju this weekend</Link>
         <Link href="/regions/jeju/">Jeju: places &amp; events</Link>
         <Link href="/places/parks-nature/">Parks &amp; nature</Link>
         <Link href="/places/beaches-islands/">Beaches &amp; islands</Link>

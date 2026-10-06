@@ -50,7 +50,7 @@ export default function BusanFireworks2026() {
             <tr><th>Date</th><td>Saturday 7 November 2026. If the weather forces a postponement, the organisers announce it a day or two before.</td></tr>
             <tr><th>Afternoon</th><td>Stages and side events along the beach from around 13:00. The crowd builds from late morning.</td></tr>
             <tr><th>Main show</th><td>Around 19:00 for roughly an hour, with a short opening programme before it.</td></tr>
-            <tr><th>Cost</th><td>Free from the beach and the headlands. Paid seats in fenced zones on the sand are sold in advance.</td></tr>
+            <tr><th>Cost</th><td>Free from the beach and the headlands. Paid seats on the sand: R (table and chair) ₩100,000, S (chair) ₩70,000, on sale now through NOL Ticket.</td></tr>
             <tr><th>Weather</th><td>Early November evenings on the coast run 10–14 °C with wind off the sea. Bring a warm layer and something to sit on.</td></tr>
           </tbody>
         </table>
@@ -107,12 +107,15 @@ export default function BusanFireworks2026() {
 
       <h2 className="sect">Are the paid seats worth it?</h2>
       <p>
-        The organisers sell reserved seats and table seats in fenced zones on the sand, released
-        online several weeks before the festival and usually gone quickly. What you buy is not a
+        For 2026 the organisers sell two kinds of seat in fenced zones on the sand:{' '}
+        <strong>R seats with a table, ₩100,000</strong>, and <strong>S seats, ₩70,000</strong>,
+        through NOL Ticket (Interpark) since 4 September and until 5pm on 6 November. Book by{' '}
+        <strong>11 October</strong> if you want the tickets posted to a Korean address;
+        after that they are collected on the day. What you buy is not a
         better view than an early free spot — it is <strong>not having to arrive at noon</strong>{' '}
         and a guaranteed place to sit. If your time in Busan is short, that is a fair trade. If
-        you have the whole day, the free headlands are as good. Watch for sales to foreign visitors
-        opening separately, and ignore anyone reselling seats; resold tickets are not honoured.
+        you have the whole day, the free headlands are as good. NOL World has an English booking
+        page, and ignore anyone reselling seats; resold tickets are not honoured.
       </p>
       <p>
         The other paid option is from the water. <strong>Yacht and cruise packages</strong> sail
@@ -178,7 +181,8 @@ export default function BusanFireworks2026() {
 
       <p className="meta">
         The 2026 date is as registered by the organisers with the Korea Tourism Organization.
-        Programme times, paid-seat sales and station arrangements follow recent editions and are
+        Paid-seat prices and sale dates are as announced by Busan City in September 2026. Programme
+        times and station arrangements follow recent editions and are
         confirmed by the organisers and Busan Transportation Corporation in the week before.
         Photographs: Korea Tourism Organization.
       </p>
