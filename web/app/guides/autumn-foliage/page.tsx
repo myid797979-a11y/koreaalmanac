@@ -62,11 +62,12 @@ export default function AutumnFoliage() {
       </div>
 
       {/* 시즌 중 매주 갱신한다 (10~11월). 갱신하면 GUIDE_DATES 의 updated 도 올린다. */}
-      <h2 className="sect">Right now: updated 30 September</h2>
+      <h2 className="sect">Right now: updated 6 October</h2>
       <ul className="tips">
-        <li><strong>Seoraksan</strong> showed its first colour on 28 September, right on schedule. The summit ridges turn first; the valleys follow over the next three weeks.</li>
-        <li><strong>Everywhere else is still green.</strong> Seoul, the central mountains and the south have not started yet.</li>
-        <li><strong>Korea Forest Service peak forecast:</strong> Seoraksan 20 October, Songnisan 28 October, Naejangsan 4 November, Hallasan 6 November. Maples and oaks peak nationally around 31 October, ginkgo trees around 30 October.</li>
+        <li><strong>Seoraksan</strong>: colour has spread down from Daecheongbong summit past the Hangyeryeong junction and below Bongjeongam hermitage. The high ridges are at their best; the valleys around Seorak-dong and Osaek are still mostly green.</li>
+        <li><strong>Peak forecast unchanged:</strong> Seoraksan around 20 October. If you can only go once, the week of 15–24 October is the safest bet for the cable car and the lower trails.</li>
+        <li><strong>Seoul, the central mountains and the south</strong> have not turned yet. Songnisan is forecast for 28 October, Naejangsan 4 November, Hallasan 6 November; ginkgo streets in Seoul peak around the end of October.</li>
+        <li><strong>Hangeul Day holiday weekend (9–11 October)</strong> will be busy in Seoraksan. Go early, or wait for the weekdays after.</li>
       </ul>
       <p className="meta">We update this section weekly through October and November.</p>
 
