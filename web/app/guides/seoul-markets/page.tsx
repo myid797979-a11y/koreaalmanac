@@ -109,6 +109,14 @@ export default function SeoulMarkets() {
         'sindang-dong-tteokbokki-town-1838143',
       ]} />
 
+      <h2 className="sect">After dark: night markets</h2>
+      <ul className="tips">
+        <li><strong>Myeongdong street food</strong> sets up from late afternoon along the main shopping streets: grilled lobster tails, egg bread, tornado potatoes and skewers, at tourist prices.</li>
+        <li><strong>Gwangjang Market</strong> is at its liveliest in the evening, when the pancake stalls are packed with office workers.</li>
+        <li><strong>Dongdaemun</strong>’s fashion malls trade late into the night, and the Dak Hanmari alley serves until after midnight.</li>
+        <li><strong>Seoul Bamdokkaebi Night Market</strong> is a seasonal weekend market of food trucks and craft stalls, usually from spring to autumn at Yeouido and other Han River sites. Check the current season’s dates. See <Link href="/guides/han-river-parks/">the Han River parks</Link>.</li>
+      </ul>
+
       <p className="strip">
         <Link href="/guides/korean-food-guide/">Eating in Korea</Link>
         <Link href="/guides/seoul-shopping/">Shopping in Seoul</Link>

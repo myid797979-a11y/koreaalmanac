@@ -78,7 +78,9 @@ export default function ChristmasNewYearSeoul() {
         Seoul’s winter illuminations are not a Christmas thing so much as a season. The{' '}
         <strong>Seoul Lantern Festival</strong> fills the Cheonggyecheon stream with lit
         sculptures from mid-December into mid-January, <strong>Seoul Light Gwanghwamun</strong>{' '}
-        projects onto the palace gate and the square over the same weeks, and the stream’s
+        projects onto the palace gate and the square from <strong>11 December 2026 to 3 January
+        2027</strong> (17:30–22:00) with a countdown on New Year’s Eve, the European-style{' '}
+        <strong>Gwanghwamun Market</strong> fills the square in December, and the stream’s
         own <strong>winter lights</strong> run alongside. All three are free, ten minutes’ walk
         apart, and best after 18:00 when the crowds thin a little on weeknights.
       </p>

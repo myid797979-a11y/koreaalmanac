@@ -64,6 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/guides/korean-spa-jjimjilbang/', priority: 0.9 },
     { url: SITE_URL + '/guides/templestay-korea/', priority: 0.9 },
     { url: SITE_URL + '/guides/seoul-3-days/', priority: 0.9 },
+    { url: SITE_URL + '/guides/han-river-parks/', priority: 0.9 },
     { url: SITE_URL + '/guides/incheon-airport-layover/', priority: 0.9 },
     { url: SITE_URL + '/guides/andong-hahoe-village/', priority: 0.9 },
     { url: SITE_URL + '/guides/seoul-markets/', priority: 0.9 },

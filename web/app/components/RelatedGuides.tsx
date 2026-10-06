@@ -18,6 +18,7 @@ const PAIRS: [string, string][] = [
   ['/guides/korean-spa-jjimjilbang/', '/guides/korea-in-winter/'],
   ['/guides/templestay-korea/', '/guides/seoul-palaces/'],
   ['/guides/skiing-in-korea/', '/guides/korea-in-winter/'],
+  ['/guides/han-river-parks/', '/guides/seoul-nightlife/'],
   ['/guides/incheon-airport-layover/', '/guides/incheon-airport-to-seoul/'],
   ['/guides/seoul-markets/', '/guides/korean-food-guide/'],
   ['/guides/busan-food-guide/', '/guides/busan-2-days/'],

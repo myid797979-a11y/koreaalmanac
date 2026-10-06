@@ -150,6 +150,13 @@ export const GUIDES: Guide[] = [
     photo: 'yeonnam-dong-2484384',
   },
   {
+    href: '/guides/han-river-parks/',
+    title: 'Seoul’s Han River parks',
+    blurb: 'Banpo and the rainbow fountain, Yeouido, Ttukseom, Mangwon, Nodeul Island and Seonyudo: ramyeon by the water, chicken delivered to the riverbank, bikes, cruises and when to go.',
+    tag: 'How-to',
+    photo: 'banpo-hangang-park-1013338',
+  },
+  {
     href: '/guides/korean-food-guide/',
     title: 'Eating in Korea: what to order and how it works',
     blurb: 'Free side dishes, the call bell, the two-portion rule and paying at the counter. The dishes worth ordering, what they cost, the Seoul food markets to start with, and eating as a vegetarian.',
@@ -502,6 +509,14 @@ export const PLACE_GUIDE: Record<string, string> = {
   '1562674': '/guides/hiking-in-seoul/',        // Gwanaksan
   '2484384': '/guides/seoul-cafes/',            // Yeonnam-dong
   '3046389': '/guides/seoul-markets/',          // Starbucks Gyeongdong Market
+  '1013338': '/guides/han-river-parks/',        // Banpo Hangang Park
+  '1064349': '/guides/han-river-parks/',        // Mangwon Hangang Park
+  '1000299': '/guides/han-river-parks/',        // Jamsil Hangang Park
+  '2813573': '/guides/han-river-parks/',        // Nodeul Island
+  '3006542': '/guides/han-river-parks/',        // Seonyudo
+  '767100':  '/guides/han-river-parks/',        // Nanji
+  '1011983': '/guides/han-river-parks/',        // Banpo rainbow fountain
+  '1064767': '/guides/han-river-parks/',        // Yeouido Hangang Park
   '264362':  '/guides/day-trips-from-seoul/',   // Namhansanseong
   '1272552': '/guides/day-trips-from-seoul/',   // Dumulmeori
   '3113166': '/guides/day-trips-from-seoul/',   // Gwangmyeong Cave
@@ -596,9 +611,10 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/korean-spa-jjimjilbang/':   { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/templestay-korea/':         { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/jeonju-2-days/':            { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/han-river-parks/': { published: '2026-10-06', updated: '2026-10-06' },
   '/guides/incheon-airport-layover/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/andong-hahoe-village/': { published: '2026-09-30', updated: '2026-09-30' },
-  '/guides/seoul-markets/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/seoul-markets/': { published: '2026-09-30', updated: '2026-10-06' },
   '/guides/busan-food-guide/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/hiking-in-seoul/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/seoul-cafes/': { published: '2026-09-30', updated: '2026-09-30' },
@@ -614,7 +630,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/gangneung-sokcho-2-days/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/korea-entry-requirements/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/halloween-seoul-2026/':     { published: '2026-09-28', updated: '2026-10-02' },
-  '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-09-28' },
+  '/guides/christmas-new-year-seoul/': { published: '2026-09-28', updated: '2026-10-06' },
   '/guides/seollal-2027/':             { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/cherry-blossom-2027/':      { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/korea-in-winter/':          { published: '2026-09-14', updated: '2026-09-28' },
