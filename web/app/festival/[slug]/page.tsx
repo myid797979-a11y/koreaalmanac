@@ -10,12 +10,12 @@ import { offersFor, stayOffersForFestival } from '@/lib/affiliate';
 import { FESTIVAL_GUIDE, GUIDES } from '@/lib/guides';
 import RegionGuides from '@/app/components/RegionGuides';
 import {
-  festivals, bySlug, status, dateRange, daysUntil, today,
+  festivals, allFestivals, DUP_OF, bySlug, status, dateRange, daysUntil, today,
   icsHref, MONTH_SLUGS, MONTHS_FULL, categoryLabel, uniqueTitle, isFree } from '@/lib/data';
 import { festivalJsonLd, breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 
 export function generateStaticParams() {
-  return festivals.map(f => ({ slug: f.slug }));
+  return allFestivals.map(f => ({ slug: f.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -32,6 +32,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       return (y && !t.includes(y) ? t + ' ' + y : t) + (isFree(f) ? ' — free entry, dates, location' : ' — dates, fees, location');
     })(),
     description,
+    // KTO 중복 레코드면 원래 레코드를 정규 URL 로 (lib/data DUP_OF)
+    ...(DUP_OF.has(f.id) ? { alternates: { canonical: '/festival/' + DUP_OF.get(f.id)!.slug + '/' } } : {}),
     openGraph: {
       title: f.title,
       description,

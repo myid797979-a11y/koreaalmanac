@@ -24,7 +24,9 @@ const HOST = 'koreaalmanac.com';
 //   v3: 축제 상세의 "More festivals in" 블록 제외 (허브 정렬만 바꿔도 1,032 건이 나갔다)
 //   v4: <head> 를 통째로 제외 (2026-09-29 AdSense 메타 태그 한 줄로 4,063페이지 전량이 잡혔다 —
 //       제목·설명 같은 head 내용은 어차피 본문(<main>)이 바뀔 때 같이 바뀐다)
-const HASH_VERSION = 4;
+//   v5: 공연 상세의 "More shows like this" 목록 제외 (지나간 공연이 빠질 때마다 공연 페이지 전부가 잡혔다).
+//       2026-10-06 지역×월 허브 요약 문단 추가분도 이 마이그레이션에 흡수된다.
+const HASH_VERSION = 5;
 const STATE = '../data/indexnow-state.json';
 const CHANGED = 'out/.changed-urls.json';
 
@@ -68,7 +70,8 @@ function hashOf(url) {
     //     바뀔 때마다 4천 페이지가 잡히면 안 된다. 추가된 날(2026-10-02)에도 이 규칙 덕에 전량이 잡히지 않는다.
     .replace(/<nav class="g-related[^"]*"[\s\S]*?<\/nav>/g, '')
     .replace(/<h2 class="sect">What&#x27;s on nearby<\/h2>[\s\S]*?(?=<h2|<\/main|<footer)/g, 'NEARBY')
-    .replace(/<h2 class="sect">More festivals in[\s\S]*?(?=<h2|<\/main|<footer)/g, 'RELATED');
+    .replace(/<h2 class="sect">More festivals in[\s\S]*?(?=<h2|<\/main|<footer)/g, 'RELATED')
+    .replace(/<h2 class="sect">More shows like this<\/h2>[\s\S]*?(?=<h2|<\/main|<footer)/g, 'SHOWS');
   return createHash('sha1').update(body).digest('hex').slice(0, 12);
 }
 

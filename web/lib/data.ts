@@ -11,7 +11,25 @@ export type Festival = {
 };
 
 // 깨진 KTO 이미지는 대체하거나 갤러리에서 뺀다 (lib/images.ts)
-export const festivals: Festival[] = (festivalsJson as Festival[]).map(f => ({ ...f, image: okImage(f.image), images: okImages(f.images) }));
+const loaded: Festival[] = (festivalsJson as Festival[]).map(f => ({ ...f, image: okImage(f.image), images: okImages(f.images) }));
+
+// KTO 가 같은 행사를 콘텐츠 ID 두 개로 올린 경우 (사진·시작일·주소가 모두 같다 — 2026-10 기준 3쌍,
+// 예: "Busan Illustration Fair V.7" 와 영문 레코드 "V.6"). 목록에는 원래 레코드(낮은 ID) 하나만 남기고,
+// 중복 레코드의 상세페이지는 지우지 않고 canonical 로 원래 레코드를 가리킨다 (이미 색인된 URL 보호).
+export const DUP_OF = new Map<string, Festival>();
+{
+  const seen = new Map<string, Festival>();
+  for (const f of [...loaded].sort((a, b) => Number(a.id) - Number(b.id))) {
+    if (!f.image || !f.start) continue;
+    const k = f.image + '|' + f.start + '|' + f.addr;
+    const first = seen.get(k);
+    if (first) DUP_OF.set(f.id, first); else seen.set(k, f);
+  }
+}
+/** 상세페이지 생성용 — 중복 레코드 포함 */
+export const allFestivals: Festival[] = loaded;
+/** 목록·허브·사이트맵용 — 중복 레코드 제외 */
+export const festivals: Festival[] = loaded.filter(f => !DUP_OF.has(f.id));
 
 // KST 기준 오늘 (YYYYMMDD) — 정적 빌드 시점에 박히고, 매일 재빌드로 갱신 (청약각 철학)
 /** 입장 무료 — 요금 표기가 Free/무료로 시작하는 것만 ("Free (some programmes paid)" 포함, "5,000 won (children free)" 제외) */
@@ -51,7 +69,7 @@ export function daysUntil(d: string, t = today()): number {
 }
 
 export function bySlug(slug: string): Festival | undefined {
-  return festivals.find(f => f.slug === slug);
+  return allFestivals.find(f => f.slug === slug);
 }
 
 // ── 허브 페이지 헬퍼 ─────────────────────────────────────────

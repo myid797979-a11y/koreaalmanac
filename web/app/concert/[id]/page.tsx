@@ -63,7 +63,17 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
 
   const t = today();
   const mapQuery = encodeURIComponent(c.venue + ', South Korea');
-  const others = upcomingConcerts(t).filter(x => x.id !== c.id).slice(0, 6);
+  // 다음 공연 6개 대신 "이 공연을 본 사람이 같이 볼 만한" 순 — 같은 공연장 > 같은 도시 > 같은 종류·내한 여부,
+  // 날짜가 30일 안쪽이면 가산. 같은 여행 일정에 끼워 넣을 수 있는 공연이 위로 온다. 동점은 빠른 날짜순.
+  const ymd = (s: string) => Date.UTC(+s.slice(0, 4), +s.slice(4, 6) - 1, +s.slice(6, 8));
+  const anchor = c.end >= t ? c.start : t;
+  const score = (x: typeof c) =>
+    (x.venue === c.venue ? 3 : 0) + (x.city === c.city ? 2 : 0) + (x.kind === c.kind ? 1 : 0) +
+    (!!x.intl === !!c.intl ? 1 : 0) + (Math.abs(ymd(x.start) - ymd(anchor)) <= 30 * 864e5 ? 1 : 0);
+  const others = upcomingConcerts(t).filter(x => x.id !== c.id)
+    .map(x => ({ x, s: score(x) }))
+    .sort((a, b) => b.s - a.s || a.x.start.localeCompare(b.x.start))
+    .slice(0, 6).map(o => o.x);
   const showArtist = c.artist !== 'Various artists' && c.title.indexOf(c.artist) === -1;
   const venue = venueForConcert(c);   // 가이드가 있는 공연장이면 링크 (9곳)
 
@@ -185,7 +195,7 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
 
       {others.length > 0 && (
         <>
-          <h2 className="sect">Other upcoming shows</h2>
+          <h2 className="sect">More shows like this</h2>
           <ul className="agenda">
             {others.map(x => (
               <li key={x.id}>
