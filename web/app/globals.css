@@ -1151,3 +1151,10 @@ section[id] { scroll-margin-top: 64px; }
 .calc-out { max-width: 640px; }
 .calc-total th, .calc-total td { font-size: 16px; }
 .calc-total strong { color: var(--seal); font-size: 20px; font-variant-numeric: tabular-nums; }
+
+/* ── 가이드 Quick answers (components/GuideFaq) ── */
+.g-faq details { border-top: 1px solid var(--line); padding: 10px 0; max-width: 760px; }
+.g-faq details:last-child { border-bottom: 1px solid var(--line); }
+.g-faq summary { cursor: pointer; font-weight: 600; font-size: 15px; list-style-position: outside; }
+.g-faq summary:hover { color: var(--seal); }
+.g-faq details p { margin: 8px 0 2px; color: var(--muted); font-size: 14.5px; line-height: 1.65; }

@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { GUIDES, REGION_GUIDES, MONTH_GUIDES, type Guide } from '@/lib/guides';
 import { placeBySlug } from '@/lib/places';
+import { FAQS } from '@/lib/faqs';
+import GuideFaq from './GuideFaq';
 
 /**
  * 가이드 하단 "관련 가이드" — 같은 지역(REGION_GUIDES)·같은 달(MONTH_GUIDES)에 함께 묶인 횟수로
@@ -43,9 +45,12 @@ function related(href: string, n: number): Guide[] {
 
 export default function RelatedGuides({ href }: { href: string }) {
   const list = related(href, 4);
-  if (list.length === 0) return null;
+  const faq = FAQS[href];
+  // 가이드마다 이 컴포넌트가 하단에 하나씩 있으므로 Quick answers 도 여기서 같이 그린다
   return (
     <>
+      {faq && <GuideFaq items={faq} />}
+      {list.length > 0 && <>
       <h2 className="sect">More guides</h2>
       <div className="grid">
         {list.map(g => {
@@ -65,6 +70,7 @@ export default function RelatedGuides({ href }: { href: string }) {
           );
         })}
       </div>
+      </>}
     </>
   );
 }

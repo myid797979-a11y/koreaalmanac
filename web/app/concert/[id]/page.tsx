@@ -139,7 +139,7 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
           provider="agoda"
           offers={stayOffersForConcert(c, venue?.slug)}
           title={'Hotels near ' + (venue ? venue.name : c.venue)}
-          intro={venue ? 'Which neighbourhood works for this venue is in the venue guide above.' : undefined}
+          intro={venue ? venue.stay : 'Book early: hotels near big shows fill weeks ahead, and prices rise for concert weekends.'}
         />
       )}
 
