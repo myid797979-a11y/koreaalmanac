@@ -52,6 +52,10 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
     .slice(0, 4);
 
   const hasMap = Boolean(f.mapx && f.mapy);
+  // 같은 축제의 더 새 회차 (이름이 같고 시작일이 뒤인 것 중 가장 이른 것)
+  const newer = festivals
+    .filter(x => x.id !== f.id && x.title === f.title && (x.start ?? '') > (f.start ?? '') && status(x, t) !== 'ended')
+    .sort((a, b) => (a.start ?? '').localeCompare(b.start ?? ''))[0];
 
   const eventLd = festivalJsonLd(f);
   const crumbLd = breadcrumbJsonLd([
@@ -82,7 +86,14 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
         </p>
       )}
 
-      {status(f, t) === 'ended' && (
+      {/* 같은 이름의 더 새 회차가 있으면 그쪽으로 크게 안내 — 작년 페이지로 들어온 검색을 살린다 */}
+      {status(f, t) === 'ended' && newer && (
+        <div className="ended-banner" style={{ borderLeftColor: 'var(--seal)' }}>
+          <strong>This is the {(f.start ?? '').slice(0, 4)} edition.</strong>{' '}
+          The next one is <Link href={'/festival/' + newer.slug + '/'}><strong>{dateRange(newer)}</strong>: see the {(newer.start ?? '').slice(0, 4)} festival</Link>.
+        </div>
+      )}
+      {status(f, t) === 'ended' && !newer && (
         <div className="ended-banner">
           This festival has ended — many return annually, so it may come back next year.
           {' '}<Link href={'/events/festivals/' + f.region.toLowerCase() + '/'}>See current festivals in {f.region}</Link>
