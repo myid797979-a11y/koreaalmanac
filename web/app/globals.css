@@ -1162,3 +1162,8 @@ section[id] { scroll-margin-top: 64px; }
   display: inline-block; margin-left: 6px; padding: 0 6px 1px; border-radius: 4px;
   font-size: 11.5px; font-weight: 700; color: var(--jjok); border: 1px solid var(--jjok);
 }
+
+/* 주말 공휴일 안내 (components/HolidayNote) — 달력의 빨간 날처럼 왼쪽 붉은 줄 하나 */
+.holiday-note { max-width: 720px; margin: 4px 0 18px; padding: 10px 14px; border-left: 3px solid var(--seal); background: var(--card); font-size: 15px; line-height: 1.6; }
+.holiday-note p { margin: 0; }
+.holiday-note p + p { margin-top: 6px; }

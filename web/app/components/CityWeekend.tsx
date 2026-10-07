@@ -6,6 +6,7 @@ import { upcomingConcerts, concertDateRange } from '@/lib/concerts';
 import { liveCulture, cultureDateRange, isLongRun } from '@/lib/culture';
 import { FIRST_TRIP } from '@/lib/guides';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
+import HolidayNote from '@/app/components/HolidayNote';
 
 // 공연명에 아티스트가 이미 있으면 다시 붙이지 않는다 ("Zara Larsson: Zara Larsson: …")
 const showName = (c: { artist: string; title: string }) =>
@@ -56,6 +57,7 @@ export default function CityWeekend({ city, name: nameProp, slug, near: nearRegi
         {local.length} {local.length === 1 ? 'festival' : 'festivals'} · {localConcerts.length} {localConcerts.length === 1 ? 'concert' : 'concerts'} · {shows.length} exhibitions and
         performances in {name}, Friday to Sunday. Rebuilt every morning from official data.
       </p>
+      <HolidayNote from={from} to={to} />
 
       <nav className="g-jump" aria-label="Sections">
         {local.length > 0 && <a href="#festivals">Festivals</a>}

@@ -13,6 +13,7 @@ import { liveCulture } from '@/lib/culture';
 import CultureCard from '@/app/components/CultureCard';
 import { placeBySlug } from '@/lib/places';
 import AlmanacDate from '@/app/components/AlmanacDate';
+import HolidayNote from '@/app/components/HolidayNote';
 import { GUIDES, nowGuideHrefs, FIRST_TRIP } from '@/lib/guides';
 
 // 홈 제목이 사이트명뿐(13자)이라 Bing URL 검사가 "너무 짧은 제목" 오류를 냈다.
@@ -143,6 +144,7 @@ export default function Home() {
       )}
 
       <SectionHead title={'This weekend, ' + wkLabel} href="/calendar/" more="full calendar" />
+      <HolidayNote from={weekendWindow(t).from} to={weekendWindow(t).to} />
       <div className="grid">{take(rankShortFirst(weekend), 4).map(f => <Card key={f.id} f={f} t={t} />)}</div>
       <p className="strip" style={{ marginTop: 12 }}><Link href="/seoul-this-weekend/">Everything on in Seoul this weekend: festivals, concerts and shows</Link></p>
 
