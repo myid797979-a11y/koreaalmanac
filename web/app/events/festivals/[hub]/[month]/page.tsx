@@ -82,6 +82,15 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
     .slice(0, 10);
   const guides = (REGION_GUIDES[region!] ?? []).map(h => GUIDES.find(g => g.href === h)).filter(Boolean);
   const isNow = t >= first && t <= last;
+  // 앞뒤 달 허브 — 생성된(축제 3건 이상) 달만. 이달 20일부터는 다음 달 허브를 맨 위에서도 안내한다:
+  // AI 답변이 "서울 10월" 링크를 10월 말에도 계속 내주므로, 그 사람이 실제로 갈 달로 넘겨 준다.
+  const hubOf = (i: number) => {
+    const n = regionMonthList(region!, i).length;
+    return n >= REGION_MONTH_MIN ? { i, n, href: '/events/festivals/' + hub + '/' + MONTH_SLUGS[i] + '/' } : null;
+  };
+  const prevHub = hubOf((mIdx + 11) % 12);
+  const nextHub = hubOf((mIdx + 1) % 12);
+  const lateInMonth = isNow && Number(t.slice(6, 8)) >= 20;
 
   // 관광공사 등록은 행사 2~4주 전에 몰린다. 몇 주 뒤의 달은 진짜 축제가 몇 개뿐이라(2026-10-06 서울 11월: 2개)
   // ChatGPT·검색으로 들어온 사람이 빈 페이지를 본다. 그런 달에는
@@ -206,6 +215,13 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
         </p>
       )}
 
+      {lateInMonth && nextHub && (
+        <p className="strip">
+          <strong>{MONTHS_FULL[mIdx]} is nearly over.</strong>
+          <Link href={nextHub.href}>{nextHub.n} festivals in {region} in {MONTHS_FULL[nextHub.i]}</Link>
+        </p>
+      )}
+
       <nav className="g-jump" aria-label="Weeks">
         {weeks.map((w, i) => <a key={i} href={'#w' + i}>{w.label.replace('Already running as ' + MONTHS_FULL[mIdx] + ' begins', 'Already on').replace('Starting ', '')} <span>{w.items.length}</span></a>)}
         {longRun.length > 0 && <a href="#year-round">All season <span>{longRun.length}</span></a>}
@@ -284,6 +300,11 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
       <GuideFaq items={faq} />
 
       <p className="strip" style={{ marginTop: 24 }}>
+        {prevHub && <Link href={prevHub.href}>← {region} in {MONTHS_FULL[prevHub.i]}</Link>}
+        {nextHub && <Link href={nextHub.href}>{region} in {MONTHS_FULL[nextHub.i]} →</Link>}
+        {region === 'Seoul' && <Link href="/seoul-this-weekend/">Seoul this weekend</Link>}
+        {region === 'Busan' && <Link href="/busan-this-weekend/">Busan this weekend</Link>}
+        {region === 'Jeju' && <Link href="/jeju-this-weekend/">Jeju this weekend</Link>}
         <Link href={'/events/festivals/' + hub + '/'}>All {region} festivals</Link>
         <Link href={'/events/festivals/' + month + '/'}>All Korea in {MONTHS_FULL[mIdx]}</Link>
         <Link href={'/regions/' + hub + '/'}>Places to visit in {region}</Link>

@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import {
   concertById, concertParams, concertDateRange, KIND_LABEL, upcomingConcerts, CONCERTS_UPDATED,
 } from '@/lib/concerts';
-import { fmt, today } from '@/lib/data';
+import { fmt, today, regionMonthList, REGION_MONTH_MIN, MONTH_SLUGS, MONTHS_FULL } from '@/lib/data';
 import { concertJsonLd, breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { venueForConcert } from '@/lib/venues';
 import BookBox from '@/app/components/BookBox';
@@ -205,6 +205,14 @@ export default async function ConcertDetail({ params }: { params: Promise<{ id: 
               </li>
             ))}
           </ul>
+          {/* 공연 → 그 달 같은 지역 축제 허브 (이 블록은 freshness 해시에서 빠진다) */}
+          {regionMonthList(c.region, Number(c.start.slice(4, 6)) - 1).length >= REGION_MONTH_MIN && (
+            <p className="strip">
+              <Link href={'/events/festivals/' + c.region.toLowerCase() + '/' + MONTH_SLUGS[Number(c.start.slice(4, 6)) - 1] + '/'}>
+                Festivals in {c.region} in {MONTHS_FULL[Number(c.start.slice(4, 6)) - 1]}
+              </Link>
+            </p>
+          )}
         </>
       )}
     </>

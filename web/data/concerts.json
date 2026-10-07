@@ -933,6 +933,26 @@
       "poster": "https://kopis.or.kr/upload/pfmPoster/PF_PF299607_260828_130100.jpg"
     },
     {
+      "id": "kevin-hays-seoul-2026",
+      "artist": "Kevin Hays",
+      "title": "Kevin Hays Solo Piano Concert",
+      "start": "20261106",
+      "end": "20261106",
+      "venue": "Cosmos Art Hall, Seocho",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "intl": true,
+      "note": "The New York jazz pianist alone at a Steinway in a 220-seat hall.",
+      "overview": "Kevin Hays is an American jazz pianist with three decades of records as a leader. This Seoul date is a solo recital, no band, on a Steinway in a small hall where you hear the touch as much as the notes. He plays a second date the next evening at Jazz In Lab in Sejong.",
+      "showTimes": "Nov 6 (Fri) 7:30 PM KST · about 1h 20m",
+      "ticketInfo": "Interpark (NOL) Ticket, which has an English booking page for overseas buyers.",
+      "price": "All seats 50,000 won",
+      "tip": "Cosmos Art Hall is at 27 Banpo-daero, Seocho-gu, in south Seoul. With 220 seats it can sell out; book ahead rather than hoping for door sales.",
+      "kopisId": "PF301989",
+      "poster": "https://kopis.or.kr/upload/pfmPoster/PF_PF301989_260929_141028.gif"
+    },
+    {
       "id": "incheon-airport-sky-festival-2026",
       "artist": "Various artists",
       "title": "Incheon Airport Sky Festival 2026",
@@ -1628,6 +1648,25 @@
       "tip": "Gocheok Sky Dome is on Subway Line 1 at Guil Station, about five minutes' walk. It is a baseball stadium with a roof, so unlike an outdoor January show you will be warm — but bring layers for the walk back to the station.",
       "kopisId": "PF294073",
       "poster": "https://kopis.or.kr/upload/pfmPoster/PF_PF294073_260618_162911.jpg"
+    },
+    {
+      "id": "epik-high-seoul-2027",
+      "artist": "Epik High",
+      "title": "Epik High Concert",
+      "start": "20270122",
+      "end": "20270124",
+      "venue": "KSPO Dome, Olympic Park",
+      "city": "Seoul",
+      "region": "Seoul",
+      "kind": "concert",
+      "note": "Three nights at KSPO Dome from the hip-hop trio of Tablo, Mithra Jin and DJ Tukutz, one of the few Korean acts to have played Coachella.",
+      "overview": "Epik High have been making records since 2003, long before K-pop had a global audience, and they built their following abroad the slow way, touring clubs and festivals in North America and Europe. Tablo's lyrics carry the weight; the shows lean on the catalogue fans sing back word for word. This January run is a home-crowd weekend at KSPO Dome, the 15,000-seat arena in Olympic Park.",
+      "showTimes": "Jan 22 (Fri) 8:00 PM · Jan 23 (Sat) 6:00 PM · Jan 24 (Sun) 4:00 PM KST · about 2h",
+      "ticketInfo": "Melon Ticket. Melon usually requires Korean identity verification — see our K-pop ticket guide for what overseas buyers can actually do.",
+      "price": "R 176,000 · S 165,000 · A 154,000 won",
+      "tip": "KSPO Dome is inside Olympic Park; Olympic Park Station (Line 5) and Mongchontoseong Station (Line 8) are both about ten minutes' walk. January nights in Seoul drop below freezing, so plan the walk back.",
+      "kopisId": "PF302528",
+      "poster": "https://kopis.or.kr/upload/pfmPoster/PF_PF302528_261006_140550.jpg"
     },
     {
       "id": "maroon5-kintex-2027",

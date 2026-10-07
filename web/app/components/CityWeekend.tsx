@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Card from '@/app/components/Card';
-import { festivals, today, weekendWindow } from '@/lib/data';
+import { festivals, today, weekendWindow, regionMonthList, REGION_MONTH_MIN, MONTH_SLUGS, MONTHS_FULL } from '@/lib/data';
 import { rankShortFirst } from '@/lib/festival-rank';
 import { upcomingConcerts, concertDateRange } from '@/lib/concerts';
 import { liveCulture, cultureDateRange, isLongRun } from '@/lib/culture';
@@ -152,6 +152,12 @@ export default function CityWeekend({ city, name: nameProp, slug, near: nearRegi
       <p className="strip" style={{ marginTop: 28 }}>
         <Link href="/plan/">Trip Planner: your own dates</Link>
         <Link href="/calendar/">Full calendar</Link>
+        {/* 주말 → 그 달 지역 허브 (생성된 허브만) */}
+        {regionMonthList(city, Number(t.slice(4, 6)) - 1).length >= REGION_MONTH_MIN && (
+          <Link href={'/events/festivals/' + city.toLowerCase() + '/' + MONTH_SLUGS[Number(t.slice(4, 6)) - 1] + '/'}>
+            {city} festivals in {MONTHS_FULL[Number(t.slice(4, 6)) - 1]}
+          </Link>
+        )}
         {links.map(l => <Link key={l.href} href={l.href}>{l.label}</Link>)}
       </p>
       <p className="strip">
