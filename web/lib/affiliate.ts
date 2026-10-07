@@ -340,6 +340,25 @@ export function monthOffers(m: number): readonly Offer[] {
   if (m === 2 || m === 3) return GUIDE_OFFERS.cherry;            // Mar, Apr
   return GUIDE_OFFERS.arrival;
 }
+/** 지역×월 허브용 Klook — ChatGPT 유입의 착륙 페이지(서울 10월이 28%). 그 지역에서 그 달에 실제로 쓸 것만.
+ *  목록에 없는 지역은 기차 패스·eSIM. (Agoda 는 승인 확인 뒤 추가 — 2026-10-07 대표 지시) */
+export function regionMonthOffers(region: string, m: number): readonly Offer[] {
+  const autumn = m === 9 || m === 10;
+  switch (region) {
+    case 'Seoul':     return autumn ? [HAN_RIVER_CRUISE, HANBOK_GBG, SEOUL_PASS] : GUIDE_OFFERS.seoul3;
+    case 'Busan':     return m === 9 || m === 10 ? GUIDE_OFFERS.busanFireworks : GUIDE_OFFERS.busan;
+    case 'Gyeonggi':  return [SUWON_TOUR, NAMI_TOUR, EVERLAND, DMZ];
+    case 'Incheon':   return GUIDE_OFFERS.layover;
+    case 'Gangwon':   return autumn ? [SEORAKSAN_TOUR, NAMI_TOUR, GANGNEUNG_TOUR] : m === 11 || m <= 1 ? GUIDE_OFFERS.winterIce : [GANGNEUNG_TOUR, NAMI_TOUR];
+    case 'Jeju':      return GUIDE_OFFERS.jeju;
+    case 'Gyeongbuk': return [GYEONGJU_BUSAN, ANDONG_TOUR, KR_PASS];
+    case 'Jeonbuk':   return GUIDE_OFFERS.jeonju;
+    case 'Gyeongnam': return m === 9 ? GUIDE_OFFERS.jinju : m === 2 || m === 3 ? [JINHAE_BUSAN, JINHAE_SEOUL] : [KR_PASS];
+    // 나머지 지역에 계절 상품(설악산·남이섬 투어)을 걸면 엉뚱하다 — 어디로 가든 쓰는 기차 패스·eSIM 만
+    default:          return [KR_PASS, ESIM];
+  }
+}
+
 export function monthStay(m: number): readonly Offer[] {
   if (m === 9 || m === 10) return GUIDE_STAY.foliage;
   if (m === 11 || m <= 1) return GUIDE_STAY.winterSki;

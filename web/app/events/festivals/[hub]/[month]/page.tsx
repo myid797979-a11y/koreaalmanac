@@ -10,6 +10,11 @@ import { upcomingConcerts, concertDateRange } from '@/lib/concerts';
 import { liveCulture, cultureDateRange, isLongRun } from '@/lib/culture';
 import { GUIDES, REGION_GUIDES, FIRST_TRIP, MONTH_GUIDES } from '@/lib/guides';
 import { MONTH_FACTS } from '@/lib/month-facts';
+import BookBox from '@/app/components/BookBox';
+import GuideFaq from '@/app/components/GuideFaq';
+import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
+import { SITE_URL } from '@/lib/site';
+import { regionMonthOffers } from '@/lib/affiliate';
 
 // 지역×월은 축제 3건 이상인 조합만 생성 (얇은 페이지 방지)
 export function generateStaticParams() {
@@ -107,6 +112,49 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
   const showName = (c: { artist: string; title: string }) =>
     c.artist === 'Various artists' || c.title.toLowerCase().includes(c.artist.toLowerCase()) ? c.title : c.artist;
 
+  // 구조화 데이터 + 짧은 문답 — AI·Bing 이 "서울 10월 축제" 같은 질문에 이 페이지를 인용하도록.
+  // 답은 이 페이지에 이미 있는 사실만, 그리고 오늘 날짜에 따라 바뀌지 않는 값만 쓴다
+  // (위 요약 문단은 매일 바뀌지만 이 문답까지 매일 바뀌면 허브 전부가 매일 '변경'으로 잡힌다).
+  const byStart = [...shortList].sort((a, b) => (a.start ?? '').localeCompare(b.start ?? ''));
+  const named = rankShortFirst(shortList, 'rank').slice(0, 3);
+  const listLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `${region} festivals in ${MONTHS_FULL[mIdx]} ${year}`,
+    numberOfItems: byStart.length,
+    itemListElement: byStart.slice(0, 30).map((f, i) => ({
+      '@type': 'ListItem', position: i + 1, name: f.title, url: SITE_URL + '/festival/' + f.slug + '/',
+    })),
+  };
+  const crumbLd = breadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'Festivals', path: '/events/festivals/' },
+    { name: region, path: '/events/festivals/' + hub + '/' },
+    { name: MONTHS_FULL[mIdx], path: '/events/festivals/' + hub + '/' + month + '/' },
+  ]);
+  const nameList = (xs: string[]) => xs.length < 2 ? xs.join('') : xs.slice(0, -1).join(', ') + ' and ' + xs[xs.length - 1];
+  const faq: { q: string; a: string }[] = [];
+  if (named.length > 0) faq.push({
+    q: `What festivals are on in ${region} in ${MONTHS_FULL[mIdx]} ${year}?`,
+    a: `${shortList.length} festivals in ${region} have confirmed dates in ${MONTHS_FULL[mIdx]} ${year}` +
+      (list.length > shortList.length ? `, plus ${list.length - shortList.length} long-running programmes` : '') + ', including ' +
+      nameList(named.map(f => `${f.title} (${dateRange(f)})`)) + '. They are listed on this page week by week.',
+  });
+  if (shortList.length > 0) faq.push({
+    q: `Are festivals in ${region} free to attend?`,
+    a: nFreeShort > 0
+      ? `${nFreeShort * 2 > shortList.length ? 'Most are. ' : 'Some are. '}${nFreeShort} of the ${shortList.length} festivals listed for ${MONTHS_FULL[mIdx]} are free to enter; some charge for individual programmes or hands-on activities. Each festival page gives the fee.`
+      : `Each festival page gives the entry fee as published by the organiser.`,
+  });
+  const monthConcerts = concerts.filter(c => c.kind !== 'festival');
+  if (monthConcerts.length > 0) faq.push({
+    q: `What concerts are in ${region} in ${MONTHS_FULL[mIdx]} ${year}?`,
+    a: `${concerts.length} concerts and music events are scheduled, including ` +
+      nameList(monthConcerts.slice(0, 3).map(c => `${showName(c)} (${concertDateRange(c)}, ${c.venue})`)) + '.',
+  });
+  faq.push({ q: `What is the weather like in Korea in ${MONTHS_FULL[mIdx]}?`, a: facts.weather });
+  faq.push({ q: `Are there public holidays in Korea in ${MONTHS_FULL[mIdx]}?`, a: facts.holidays });
+
   const concertsBlock = concerts.length > 0 && (
     <section id="concerts">
       <h2 className="sect">Concerts in {region} in {MONTHS_FULL[mIdx]}</h2>
@@ -126,6 +174,8 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldStr(listLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldStr(crumbLd) }} />
       <div className="crumb">
         <Link href="/">Home</Link> › <Link href="/events/festivals/">Festivals</Link> › <Link href={'/events/festivals/' + hub + '/'}>{region}</Link> › {MONTHS_FULL[mIdx]}
       </div>
@@ -211,6 +261,9 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
         </section>
       )}
 
+      {/* 축제 목록을 다 본 뒤, 공연 앞 — 일정을 정한 사람이 표·투어를 고르는 자리 */}
+      <BookBox offers={regionMonthOffers(region, mIdx)} title={'Book ahead for ' + region + ' in ' + MONTHS_FULL[mIdx]} />
+
       {!thin && concertsBlock}
 
       {stage.length > 0 && (
@@ -227,6 +280,8 @@ export default async function RegionMonthPage({ params }: { params: Promise<{ hu
           </ul>
         </>
       )}
+
+      <GuideFaq items={faq} />
 
       <p className="strip" style={{ marginTop: 24 }}>
         <Link href={'/events/festivals/' + hub + '/'}>All {region} festivals</Link>
