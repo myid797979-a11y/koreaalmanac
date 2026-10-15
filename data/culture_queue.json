@@ -22,6 +22,17 @@
     "overview": null
   },
   {
+    "id": "402111",
+    "kind": "exhibition",
+    "start": "20260714",
+    "title": "여민공수與民共守",
+    "place": "서울역사박물관",
+    "area": "서울",
+    "price": "무료",
+    "addr": "서울특별시 종로구 새문안로 55 서울역사박물관",
+    "overview": null
+  },
+  {
     "id": "399220",
     "kind": "exhibition",
     "start": "20260815",
@@ -33,25 +44,25 @@
     "overview": "뉴 비전: 한국 여성 추상 미술 은 더 컬럼스 갤러리 싱가포르 길먼 배럭스(Gilman Barracks) 지점에서 열리는 이번 전시로, 재료적 혁신, 제스처적 표현, 그리고 자연의 풍경과 기억의 잔상, 찰나의 지각을 시적으로 담아내며 현대 추상 미술의 언어를 확장해온 여섯 명의 주요 한국 여성 작가들을 한자리에 모은다. 정종미, 이현정, 강임윤, 차원희(위이), 노기쁨, 에스텔 차는 먹, 목탄, 유화, 수제 한지, 그리고 겹겹이 쌓인 풍부한 표면 등 다양한 매체를 넘나들며 각자 추상을 깊이 촉각적이고 몰입적이며 감각적인 경험으로 변모시킨다. 이들의 시각 언어는 저마다 다르지만, 재료에 대한 예민한 감수성과 물리적 세계와 내면적 경험 사이의 직관적 대화에 대한 공통된 헌신을 공유하며, 현대 한국 추상 미술이 지닌 놀라운 폭과 생명력을 드러낸다 . \n \n\n \n \n \n\n \n Jung Jong Mee (b. 1957, Korea \n \n\n \n 정종미는 한국의 전통 재료와 자연 철학에 기반한 서정적 추상화로 알려져 있다. 전통 모시(저마) 위에 안료와 염료를 겹겹이 쌓아 올리는 방식으로, 윤선도의 시조 '어부사시사'에서 길어 올린 바다와 자연의 정취를 담아낸다. \n \n\n \n \n \n\n \n Lee Hyun Joung (b. 1972, Korea) Lives and works in Paris \n \n\n \n 이현정은 한지에 먹을 사용해 리듬감 있는 구성을 만든다. 흐르는 선을 반복적으로 그어나가며 익숙한 풍경의 형태를 해체하고, 그 자리에 파도처럼 일렁이는 공간, 물과 바람과 지질의 시간성을 담은 명상적 화면을 세운다. \n \n\n \n \n \n\n \n Kang EemYun (b. 1981, Korea) Lives and works in Milan \n \n\n \n 강임윤은 유화의 겹겹이 쌓인 표면과 절제된 필치로 추상을 구축한다. 일상과 기억, 시간의 흐름이 뒤엉킨 화면 안에는 정서적 밀도가 응축되어, 보는 이를 서서히 끌어당기는 몰입감을 만들어낸다. \n \n\n \n \n \n\n \n Whee (b. 1984, Korea) Lives and works in Manila and Seoul \n \n\n \n 위이는 목탄과 파스텔의 거친 질감을 조금씩 쌓아가며 콜라주와 조각, 회화를 넘나드는 작업을 펼친다. 표면 곳곳에 스민 흔적들은 기억의 파편이자 유기체의 성장 과정을 연상시키며, 연약함과 물성 사이에서 아슬아슬한 균형을 이룬다. \n \n\n \n \n \n\n \n Estelle Tcha (b. 1993, Korea) \n \n\n \n 에스텔 차는 유동하는 형태와 색의 겹침, 자연과 동양 철학에서 길어 올린 상징적 이미지로 화면을 구성한다. 순환하는 시간과 만물의 연결성, 보이지 않는 에너지의 흐름을 사유하며, 관람자를 조화와 움직임의 사색적 공간으로 이끈다. \n \n\n \n \n \n\n \n Roh Gippeum (b. 1991-Korea) \n \n\n \n 노기쁨은 3차원 형태를 회화적 공간으로 옮기는 작업을 실험한다. 20세기 조각의 흐름과 현상학적 철학에서 영감을 받아, 대상과 이미지 사이의 이분법을 허문다. 그녀의 조각 작품은 회화의 시각 문법에서 비롯되는데, 생물 형태적 형상이 지닌 부피감의 잔향, 그림자의 유려한 윤곽, 빛과 매스 사이의 상호작용이 그것이다."
   },
   {
-    "id": "401515",
+    "id": "402106",
     "kind": "exhibition",
-    "start": "20260901",
-    "title": "우리가 품은 무게에 대하여",
-    "place": "홍티예술촌",
-    "area": "부산",
-    "price": "무료",
-    "addr": "부산광역시 사하구 홍티로 76 홍티예술촌",
-    "overview": null
-  },
-  {
-    "id": "401511",
-    "kind": "exhibition",
-    "start": "20260905",
-    "title": "[제이작업실] 내가 발을 딛고 선 이곳은",
+    "start": "20260825",
+    "title": "[부산복합문화공간 새모] 무민가족의 모험전",
     "place": "부산문화재단",
     "area": "부산",
     "price": "무료",
     "addr": "부산광역시 남구 우암로 84-1 부산문화재단",
+    "overview": null
+  },
+  {
+    "id": "402101",
+    "kind": "exhibition",
+    "start": "20260905",
+    "title": "Partial Light",
+    "place": "갤러리 플레이리스트",
+    "area": "부산",
+    "price": "무료",
+    "addr": "부산광역시 중구 대청로138번길 3 1층 갤러리 플레이리스트",
     "overview": null
   },
   {
@@ -176,17 +187,6 @@
     "overview": null
   },
   {
-    "id": "401333",
-    "kind": "exhibition",
-    "start": "20261002",
-    "title": "이은정 - 기억의 층(層)",
-    "place": "갤러리 조이",
-    "area": "부산",
-    "price": "무료",
-    "addr": "부산광역시 해운대구 달맞이길65번길 56 부산 해운대구 달맞이길65번길 56",
-    "overview": "이은정 \n \n\n \n 기억의 층(層) \n \n\n \n 2026.10.2. - 10.15 \n \n\n \n 어떤 이미지는 시간이 지나도 완전히 사라지지 않는다. · 한때 마주했던 장면과 감각은 마음 한켠에 머물며, 어느 날 낯선 모습으로 다시 떠오른다. 시간 속에서 기억은 희미해지고, 그 위로 새로운 경험이 포개지며 또 다른 장면을 만든다. \n \n\n \n 투명한 섬유 사이로 스며드는 빛과 공간은 이미지를 고정되지 않게 한다. · 완전히 드러나지도, 감춰지지도 않는 상태는 기억이 남아 있는 방식과 닮아 있다. · 얇은 튤 위에 놓인 이미지는 빛과 시선에 따라 드러나고 물러나며, 담아냄과 비워냄 사이에서 새로운 장면을 만든다. \n \n\n \n 겹쳐지고 투과되는 이미지들은 시간의 층위를 표현한다. · 투과성 섬유는 그 층위를 담아내는 매개가 되어, 작품 안에 과거와 현재가 교차하는 여러 장면을 동시에 존재하게 한다. \n \n\n \n - 작가노트 중에서 \n \n\n \n \n \n\n \n \n \n\n \n \n \n\n \n \nhttps://youtu.be/eJkr_z3sUXk?si=GMDFOJHiYRvTgrSn"
-  },
-  {
     "id": "401737",
     "kind": "exhibition",
     "start": "20261002",
@@ -242,6 +242,17 @@
     "overview": null
   },
   {
+    "id": "402105",
+    "kind": "exhibition",
+    "start": "20261003",
+    "title": "[어라이즈 아트스페이스] 《Between Faces》",
+    "place": "부산문화재단",
+    "area": "부산",
+    "price": "무료",
+    "addr": "부산광역시 남구 우암로 84-1 부산문화재단",
+    "overview": null
+  },
+  {
     "id": "401603",
     "kind": "exhibition",
     "start": "20261004",
@@ -250,6 +261,17 @@
     "area": "서울",
     "price": "무료",
     "addr": "서울특별시 영등포구 도림로128길 23 (문래동3가) 1층",
+    "overview": null
+  },
+  {
+    "id": "402117",
+    "kind": "exhibition",
+    "start": "20261004",
+    "title": "[아케이드 서울] 김영재 개인전 《Ashes to Bones》",
+    "place": "서울문화재단 본관",
+    "area": "서울",
+    "price": "무료",
+    "addr": "서울특별시 동대문구 청계천로 517 서울문화재단 본관",
     "overview": null
   },
   {
@@ -350,6 +372,17 @@
     "price": "무료",
     "addr": null,
     "overview": "<텅에 NEST> \n \n\n \n Artist: PARK Ji Eun · Date: OCT 7 – OCT 24, 2026 · Wed – Sun pm 13:00-18:00 · Opening Reception: 10.7 (Wed) 5pm \n \n\n \n 갤러리진선, 옻칠 화가 박지은 개인전 〈텅에-nest〉전 개최 \n \n\n \n • 옻칠 화가 박지은, 현대인의 심리적 보금자리를 의미하는 〈텅에〉전 개최 \n \n\n \n • 집과 둥지, 쉼터와 보금자리라는 현대인의 희비애환을 담은 주제 탐구 \n \n\n \n • “한국 전통의 기와집에서 나아가 확장된 세계관의 동양적 풍경” 선보여 • 옻칠 기법과 계란 껍질 등 천연재료를 바탕으로 심상적 회화 구축 \n \n\n \n 옻칠과 전통재료를 바탕으로 공감대 넓은 조형언어를 펼치는 박지은 작가의 개인전 ‘텅에(Nest)’가 서울 종로구 삼청동 소재 갤러리 진선에서 오는 10월 7일부터 10월 24일까지 열린다. \n \n\n \n 이번 개인전의 주제인 ‘텅에-nest’는 어린새들의 보금자리 역할을 하는 둥지(둥우리)의 제주방언으로 부담없이 편안하게 쉴 수 있는 보금자리를 의미한다. 박지은 작가는 ‘텅에’의 모티프를 확장해 현대인의 정서적 심리적 보금자리를 표현한다. 돌아가고 싶은 곳이자 머물고 싶은 곳, 이상향이자 상상의 공간으로 등장하는 박지은의 ‘텅에’적 풍경은 저마다의 귀소처를 찾는 현대인들에게 포근하고 편안한 감상을 전달한다. \n \n\n \n 박지은의 작품에서 나타나는 지붕의 형상은 기억과 정서가 안착하는 공간을 상징한다. 작가는 “내 마음이 편한 곳이 내 보금자리가 될 수 있다”는 심리적 양상을 조형화했다고 한다. 이러한 표현의 연구로 등장한 화면 속 지붕을 이루는 기와라는 동양적 양식은 굳건하고 안전한 공간을 표현하는 작가의 개성적 요소이다. \n \n\n \n 박지은 작가의 화면은 옻칠기법과 계란껍질을 비롯한 자연적 소재를 적극적으로 활용한다. \n \n\n \n 알껍질로 이루어진 난각의 물성은 생명을 보호하는 껍질이자 둥지의 모티프로 작동하고, 그의 화면에 일관적으로 등장하는 가옥은 단순한 건축물을 넘어 보호와 안전을 은유한다. 이주희 미술평론가는 박지은의 풍경에 대해 “기와로 대표되는 우리의 친근한 실재와 상상적 자연의 규모가 결합 된, 작가만의 견고한 풍경”이라고 말했다. 또한 “동양적 화재(畫材)와 집과 보금자리라는 현대인의 정감이 함께 작용”하는 작품이라 평했다. \n \n\n \n 박지은은 동덕여대 동양화과를 졸업해 지필묵을 중심으로 자신의 감성과 동양적 문화상이 혼합된 조형언어를 탐색해왔다. 2008년 옻칠 기법과의 만남 이후 확장된 조형언어를 전개하고 있다. 전북 완주 누에아트홀(2024, 2023), 삼례미술관(2022), 한국소리문화의전당(2020) 등 현재까지 25회의 개인전을 개최했으며 우진문화재단 청년작가, 가송문화재단 작가, 이랜드문화재단 작가 등에 선정된 바 있으며 국립현대미술관 미술은행, 전라북도립미술관, 부안군청, 포스코, 완주문화재단 등에 작품이 소장되어 있다. 현재 전북 완주와 서울을 거점으로 작품활동 중이며, 이번 전시에는 박지은 작가의 풍경작품 총 25점이 출품된다. \n \n\n \n \n \n\n \n Title: Teonge - Nest \n \n\n \n ▪ Dates: 2026. 10. 07 – 10. 24 \n \n\n \n ▪ Artist: PARK, Ji Eun \n \n\n \n ▪ Exhibition Location: Gallery Jinsun \n \n\n \n 2F, 59 Samcheong-ro, Jongno-gu, Seoul \n \n\n \n ▷ About the Exhibition \n \n\n \n Gall ery Jinsun to Host Solo Exhibition by Ottchil (Lacquer) Artist PARK, Ji Eun “Teonge - Nest” \n \n\n \n • The Ottchil artist PARK, Ji Eun is mounting a new solo exhibition entitled “Teonge - Nest,” which explores how people in the modern era find psychological sanctuary \n \n\n \n • Investigates the joys and sorrows of modern life through concepts of home, nests, shelters, and sanctuaries \n \n\n \n • Showcases an expanded world view of the “Oriental landscape,” one which has evolved from the traditional Korean tiled-roof (Giwa) houses \n \n\n \n • Paintings utilize natural materials such as Ottchil (lacquer) and eggshells \n \n\n \n PARK, Ji Eun’ s solo exhibition “Teonge - Nest,” in which the artist’s work embodies a broadly resonant visual language based on Ottchil (lacquer) and traditional materials, will be held at Gallery Jinsun in Samcheong-dong, Jongno-gu, Seoul, from October 7 to October 24. \n \n\n \n The theme of this solo exhibition, “Teonge -Nest,” is derived from the word for a nest acting as home for young birds in the Jeju Island dialect of South Korea, and means a place of shelter in which one can rest comfortably and without burden. PARK, Ji Eun expands upon the motif of “Nest” to invoke an emotional and psychological sanctuary for people of the modern era. Appearing as places one longs to return to and wishes to remain, as well as ideal and imagined spaces, PARK, Ji Eun’s “Teonge - Nest” landscapes offer a warm and comforting experience to viewers searching for their own place of return. \n \n\n \n The roofs that appear in PARK, Ji Eun’s works symbolize spaces on which memories and emotions come to rest. The artist explains that she has given form to the psychological idea that “a place where my heart feels at ease can become my home.” Emerging from this exploration of expression, Giwa, or traditional roof tiles, is an Oriental form constituting the roofs within her compositions and is a distinctive element through which the artist conveys a solid and secure space. \n \n\n \n PARK, Ji Eun’s compositions actively employ natural materials, including Ottchil technique and eggshells. \n \n\n \n The physical properties of eggshells both connect to the ‘nest’ motif through proximity and thematically, as a shell that protects life, while the houses that consistently appear in her works metaphorically convey protection and safety, beyond mere architecture. Art critic LEE, Ju Hee has described PARK, Ji Eun’s landscapes as \"a solid landscape unique to the artist, combining our familiar reality represented by tiles with the scale of imaginary nature.\" He also notes that the artist's pieces are \"works in which Eastern painting materials and the modern human sentiment of home and nest operate together.\" \n \n\n \n PARK, Ji Eun graduated from Department of Oriental Painting of Dongduk Women's University, has explored a way of working that combines her sensitivity with Eastern cultural sensibilities, primarily through ink and brush techniques. Since having encountered Ottchil technique in 2008, she has been developing an expanded creative language. She has held a total of 25 solo exhibitions to date, including at Nu- Art Hall in Wanju, Jeonbuk (2024, 2023), Picture Book Art Museum in Samnye (2022), and Sori Arts Center of Jeonbuk State (2020). She has received the Woojin Young Artist Prize and the Ghasong Art Award, and has been selected as an E-Land Cultural Foundation Artist. Her works are held in the collections of the Art Bank at the National Museum of Modern and Contemporary Art, Jeonbuk Museum of Art, Buan County Office, POSCO, and Wanju Culture & Tourism Foundation. Currently, she works from studios in Wanju, Jeonbuk, and Seoul. In this exhibition, a total of 25 landscape works by PARK, Ji Eun will be presented."
+  },
+  {
+    "id": "402115",
+    "kind": "exhibition",
+    "start": "20261007",
+    "title": "예술이야 <하나린주간보호소>",
+    "place": "애니메이션박물관",
+    "area": "강원",
+    "price": "무료",
+    "addr": "강원특별자치도 춘천시 서면 박사로 854 애니메이션박물관",
+    "overview": null
   },
   {
     "id": "401437",
@@ -462,6 +495,39 @@
     "overview": "히든엠갤러리는 오는 10월 10일부터 11월 7일까지 윤종석 작가와 베를린을 기반으로 활동하는 일본 작가 Ken’ichiro Taniguchi의 2인전 <수집가들의 산책 : Collectors' Walk>를 개최한다. 이번 전시는 서로 다른 장소를 거닐며 그곳에서 우연히 마주한 풍경과 흔적을 수집해온 두 작가의 작업을 소개한다. 윤종석은 여행지에서 만난 풍경과 사물, 그 순간에 남겨진 감각을 기록한다면, Taniguchi는 도시의 도로와 벽에 생겨난 균열과 손상에 주목한다. 서로 다른 대상을 바라보는 두 작가의 시선은 일상적인 풍경과 흔적을 새롭게 발견하고, 이를 각자의 조형 언어로 변화시킨다는 점에서 만난다. \n \n\n \n 윤종석의 작업은 여행을 통해 마주한 풍경과 사물, 그리고 그 안에서 경험한 감각을 기록하는 일에서 출발한다. 작가에게 여행은 낯선 장소를 경험하는 동시에, 평소와는 다른 시선으로 주변을 바라보게 하는 시간이다. 익숙한 환경에서라면 무심히 지나쳤을 장면들도 낯선 곳에서는 새롭게 다가오고, 특정한 색과 형태, 사물의 배치가 유난히 선명하게 기억되기도 한다. 작가는 여행 중 마주한 풍경을 눈앞에 보이는 모습 그대로 옮기기보다, 그곳에서 무엇을 발견하고 어떤 인상을 받았는지를 자신의 조형 언어로 기록한다. 그렇게 작품은 특정 장소의 재현을 넘어, 한 장소를 경험한 시선과 감각이 남긴 기록이 된다. \n \n\n \n 이번 전시를 위해 윤종석은 홋카이도에 머물며 새로운 풍경과 사물들을 관찰하고 이를 바탕으로 그안에서 발견한 사물이나 장면들을 작품에 담았다. 작가는 홋카이도 상공에서 내려다본 땅의 풍경을 인상적으로 기억한다. 가지런하게 정돈된 농경지는 넓게 펼쳐져 있었고, 연한 녹색의 들판 사이로 드러난 황토빛 붉은 흙은 풍경에 선명한 대비와 긴장감을 만들어냈다. 상공에서 바라본 풍경은 개별적인 사물의 형태를 넘어 땅의 구조와 색채가 이루는 전체적인 장면으로 다가온다. 한편 홋카이도에 머무는 동안 곳곳에서 마주한 사물들은 또 다른 방식으로 작가의 시선에 포착된다. 이번 전시에서 선보이는 15점의 드로잉을 비롯한 신작에는 넓게 펼쳐진 풍경의 인상과 여행 중 개별적으로 발견한 대상들이 각기 다른 방식으로 담겨 있다. 전체적인 풍경을 바라보는 시선과 눈앞의 사물에 가까이 다가가는 시선은 여행이라는 하나의 경험 안에서 서로 다른 기록으로 남는다. \n \n\n \n 윤종석의 작업에서 여행은 눈앞의 풍경을 기록하는 데 그치지 않는다. 작가는 그곳에서 마주한 장면과 사물에 주목하고, 그로부터 받은 인상을 자신만의 조형 언어로 풀어낸다. 여행지에서 마주한 장면은 그 순간의 경험과 함께 기억되지만, 작품으로 옮겨지는 과정에서 다시 선택되고 구성된다. 어떤 풍경은 전체적인 색과 형태의 인상으로 남고, 어떤 사물은 주변과 구별되는 모습으로 기억된다. 그렇게 수집된 장면들은 하나의 장소를 설명하는 정보가 아니라, 그곳에서 보낸 시간과 시선이 축적된 기록이 된다. 작가의 작업은 여행지의 풍경을 다시 보여주는 동시에, 한 장소가 개인의 감각을 통과하며 어떻게 서로 다른 이미지로 남을 수 있는지를 보여준다. \n \n\n \n Ken’ichiro Taniguchi는 도시의 도로와 벽에 생겨난 균열과 움푹 팬 흔적을 관찰하고 수집해 왔다. 작가는 이러한 흔적을 일본어 동사 ‘헤코무(heko-mu)’에서 파생한 ‘헤코미(hecomi)’라고 부른다. 헤코무는 사물의 표면이 물리적으로 움푹 들어간 상태를 뜻하는 동시에, 감정적으로 침체되거나 우울한 상태를 의미하기도 한다. Taniguchi가 주목하는 것은 인공적으로 만들어진 도시의 표면에 자연스럽게 생겨난 균열과 손상이다. 일반적으로 이러한 흔적은 낡고 더러운 것, 복구하거나 감춰야 할 결함으로 여겨진다. 그러나 작가는 그 안에서 고유한 형태와 표정을 발견한다. 손상된 표면을 단순히 결함으로 바라보는 대신, 그 형태 자체를 세심하게 관찰하면 매력과 강인함, 슬픔을 비롯한 다양한 특성이 드러난다고 본다. 그의 작업은 우리가 도시의 일상적인 표면에서 무엇을 보고, 무엇을 지나쳐 왔는지에 관한 질문에서 출발한다. \n \n\n \n 2000년부터 이어온 헤코미 작업에서 Taniguchi는 세계 여러 도시의 도로와 벽을 관찰하며 마음에 드는 형태를 수집하고, 이를 ‘스톡 형태(stock shapes)’로 기록해 왔다. 현재까지 약 50개국에서 수집한 600여 개의 헤코미는 작가가 지속적으로 탐구해 온 형태의 아카이브를 이룬다. 그러나 수집된 흔적은 원래의 장소를 기록하는 데 머물지 않는다. 작가는 이를 드로잉과 지도 형식의 배열, 입체 조각 등 다양한 방식으로 변환하며 형태가 지닌 가능성을 탐구한다. 도시의 표면에서 우연히 발생한 균열은 작가의 관찰과 개입을 거치면서 본래의 장소에서 분리되고, 새로운 조형적 존재로 드러난다. \n \n\n \n 이러한 변환 과정은 작가의 여러 작업에서 구체적으로 나타난다. Taniguchi는 수집한 헤코미의 형태를 기록하고 배열하며, 이를 새로운 조형적 구조로 발전시켜 왔다. ‘Hecomi Maps’ 시리즈에서는 각각의 형태를 일정한 방식으로 배열해 서로 비교하고 관찰할 수 있도록 한다. 개별적인 흔적들은 하나의 도감처럼 펼쳐지며, 저마다 다른 윤곽과 형태가 지닌 차이를 드러낸다. 반면 ‘Hecomi Fitting’ 시리즈에서는 재활용 압축 PVC 판에서 헤코미의 형태를 오려내어 실제 균열에 다시 끼워 넣는다. 선명한 노란색의 인공적인 소재와 도시 표면의 유기적인 균열이 만나면서, 결함으로 여겨지던 흔적은 밝고 생동감 있는 존재로 변화한다. 작가에게 이러한 과정은 균열을 단순히 감추거나 복구하는 것이 아니라, 그 형태를 존중하고 새로운 방식으로 드러내는 조형적 행위다. 헤코미의 형태를 다루는 작가의 관심은 평면에서 입체로 확장된다. ‘Hecomi Study’ 시리즈에서 형태를 여러 부분으로 나누고 경첩을 이용해 연결한 뒤, 접고 펼치는 과정을 통해 가장 적절한 입체적 형태를 찾아간다. 평면의 윤곽은 접히고 움직이면서 공간을 차지하는 조각으로 변화하며, 고정된 하나의 형태에 머물지 않고 다양한 방식으로 재구성된다. 장난감처럼 움직일 수 있는 이 조각들은 헤코미의 형태를 반복해서 탐구하고 변형하는 과정 자체를 작업의 일부로 만든다. 도시의 표면에서 우연히 발견한 작은 흔적은 이처럼 관찰과 기록, 변형과 재구성의 과정을 거치며 새로운 조형적 가능성을 드러낸다. \n \n\n \n 최근 Taniguchi의 관심은 개별적인 균열에서 도시 전체를 바라보는 시점으로 확장되고 있다. ‘City Study Series’에서 작가는 도시를 공중에서 내려다보는 관점으로 탐구하며, 미시적인 형태와 거시적인 도시 구조 사이를 오가는 시선에 주목한다. 도시의 표면에서 발견한 작은 흔적을 관찰하던 시선이 이제는 그것들이 자리한 공간 전체로 이동하는 것이다. 개별적인 균열과 도시의 구조는 서로 분리된 대상이 아니라, 서로 다른 규모에서 도시를 이해하게 하는 장면으로 연결된다. \n \n\n \n 이번 전시에서 선보이는 공중 설치 작업 ‘City Study for Seoul, Korea’는 이러한 관심을 서울이라는 장소로 확장한다. 도시의 표면에서 흔적을 수집해 온 작가는 이번 작업에서 서울을 대상으로 새로운 조형적 탐구를 이어간다. 공중에 매달린 설치는 작품을 익숙한 지면의 맥락에서 벗어나 바라보게 하며, 관람자가 작품과 공간의 관계를 새롭게 인식하도록 한다. 이는 도시의 표면에서 발견한 형태를 다른 위치와 시선 속에 놓음으로써, 우리가 장소를 바라보는 방식 자체를 환기하는 시도이기도 하다. 개별적인 흔적에서 출발한 작가의 관심이 도시 전체를 바라보는 시점으로 확장되는 가운데, 이번 신작은 특정한 도시를 관찰하고 그 구조를 조형적으로 탐구하는 작업의 새로운 국면을 보여준다. \n \n\n \n 두 작가의 작업은 서로 다른 장소와 대상에서 출발하지만, 그 안에는 공통으로 발견과 관찰의 과정이 놓여 있다. 윤종석은 여행지에서 마주한 풍경과 사물에 주목하고, 그 순간의 감각을 작품으로 기록한다. Taniguchi는 도시의 표면에 남겨진 균열을 발견하고, 그 형태를 추출해 새로운 조형적 존재로 변환한다. 한 작가가 여행 중 만난 풍경을 감각과 기억의 기록으로 남긴다면, 다른 작가는 도시의 흔적을 수집하고 재구성하며 그 안에 잠재된 형태의 가능성을 드러낸다. 두 작가가 수집하는 대상은 다르지만, 모두 익숙한 세계를 당연하게 지나치지 않고 자신의 시선으로 다시 바라보는 데서 작업을 시작한다. \n \n\n \n 또한 두 작가의 작업은 장소를 바라보는 시선의 거리에서도 흥미로운 관계를 형성한다. 윤종석의 신작에는 상공에서 내려다본 넓은 풍경과 여행 중 가까이에서 마주한 사물들이 함께 놓인다. Taniguchi의 작업 역시 개별적인 균열의 형태를 관찰하는 데서 출발해 도시 전체를 바라보는 시점으로 확장된다. 서로 다른 맥락에서 출발한 두 작가의 작업은 가까이 들여다보는 시선과 멀리서 전체를 바라보는 시선이 한 장소를 이해하는 서로 다른 방식임을 보여준다. 멀리서 풍경을 바라볼 때는 전체를 이루는 구조가 드러나고, 가까이 다가갈 때는 그 안에 자리한 작은 형태와 흔적이 눈에 들어온다. 이처럼 두 작가의 작업은 장소를 하나의 고정된 이미지로 제시하기보다, 여러 거리와 시선 속에서 새롭게 발견되는 대상으로 바라보게 한다. \n \n\n \n <수집가들의 산책 : Collectors' Walk>에서 산책은 단순히 장소를 이동하는 행위가 아니다. 그것은 주변을 관찰하고, 우연히 마주한 장면에 머물며, 그 안에서 발견한 것을 자신만의 방식으로 기록하는 과정이다. 윤종석에게 여행은 풍경과 사물을 통해 새로운 감각을 발견하는 시간이고, Taniguchi에게 도시는 평범하게 지나칠 수 있는 흔적을 찾아내는 장소다. 그렇게 발견된 것들은 작품으로 옮겨지면서 원래의 장소에서 경험했던 순간을 넘어 새로운 의미를 만들어낸다. 수집은 지나간 장면을 보존하는 일이면서 동시에 그것을 다른 방식으로 다시 바라보게 하는 일이 된다. \n \n\n \n 우리는 매일 수많은 풍경과 흔적을 마주하지만, 그 모든 것을 기억하거나 자세히 들여다보지는 않는다. 익숙한 풍경은 배경이 되고, 작은 균열은 손상으로 여겨져 시선에서 멀어진다. 그러나 잠시 걸음을 늦추고 바라보면, 무심히 지나쳤던 장면 안에서도 저마다의 형태와 시간이 드러난다. 두 작가가 각자의 여정에서 발견하고 수집한 것들은 바로 그러한 시선의 변화에서 비롯된다. 이번 전시가 익숙한 풍경과 일상의 흔적을 조금 다른 거리에서 바라보고, 그 안에 남겨진 새로운 장면들을 발견하는 시간이 되기를 바란다."
   },
   {
+    "id": "402113",
+    "kind": "exhibition",
+    "start": "20261010",
+    "title": "[새물갤러리] 재니 개인전 《반짝임의 형상》",
+    "place": "부산문화재단",
+    "area": "부산",
+    "price": "무료",
+    "addr": "부산광역시 남구 우암로 84-1 부산문화재단",
+    "overview": null
+  },
+  {
+    "id": "402114",
+    "kind": "exhibition",
+    "start": "20261011",
+    "title": "제29회 대한서화예술대전 (전국공모전)",
+    "place": "부산광역시청 제1전시실",
+    "area": "부산",
+    "price": "무료",
+    "addr": "부산 연제구 중앙대로 1001 부산광역시청",
+    "overview": null
+  },
+  {
+    "id": "402296",
+    "kind": "exhibition",
+    "start": "20261011",
+    "title": "[아트플러그 연수] 김효원 개인전《뼈 구름》",
+    "place": "연수문화재단",
+    "area": "인천",
+    "price": "무료",
+    "addr": "인천광역시 연수구 원인재로 115 연수구청 별관 3층",
+    "overview": null
+  },
+  {
     "id": "400898",
     "kind": "exhibition",
     "start": "20261012",
@@ -473,17 +539,6 @@
     "overview": null
   },
   {
-    "id": "401390",
-    "kind": "exhibition",
-    "start": "20261012",
-    "title": "한지연 · 박세빈 석사학위 청구전 《Our Own Shelter》",
-    "place": "갤러리 지하",
-    "area": "서울",
-    "price": "-",
-    "addr": "서울특별시 마포구 서강로11길 15 지하 1층",
-    "overview": null
-  },
-  {
     "id": "401431",
     "kind": "exhibition",
     "start": "20261012",
@@ -492,6 +547,17 @@
     "area": "강원",
     "price": "무료",
     "addr": "강원특별자치도 삼척시 진주로 28-41 강원 삼척시 진주로 28-41 2층",
+    "overview": null
+  },
+  {
+    "id": "402286",
+    "kind": "exhibition",
+    "start": "20261012",
+    "title": "2026 신진 청년작가 지원사업 <사이>",
+    "place": "은평문화예술회관",
+    "area": "서울",
+    "price": "무료",
+    "addr": "서울특별시 은평구 녹번로 16 은평문화예술회관",
     "overview": null
   },
   {
@@ -528,6 +594,83 @@
     "overview": "청화랑은 2026년 10월 13일부터 10월 31일까지 ‘그리움을 그리는 화가’ 이혜민의 개인전을 개최합니다. \n \n\n \n 1954년생인 이혜민 작가는 서울대학교 응용미술과를 졸업하고 서울대학교 대학원 산업미술과에서 시각디자인을 수료했습니다. 젊은 시절부터 전업작가의 삶을 꿈꾸었지만 졸업 후 대기업에 입사했고, 직장생활을 하는 동안에도 미술의 끈을 놓지 않은 채 틈틈이 그림을 그려왔습니다. 그렇게 쌓인 작업을 바탕으로 마흔 무렵부터 본격적으로 전시 활동을 시작했습니다. \n \n\n \n 이후 작가는 어린 시절의 추억이 남아 있는 경기도 양평의 시골집에 작업실을 마련하고 전업작가로서의 삶을 이어오고 있습니다. 유년의 기억이 머물러 있는 공간에서 작가는 오래전 사라진 풍경과 사람들, 그리고 마음속 깊은 곳에 남아 있는 그리움을 끊임없이 화폭 위로 불러냅니다. \n \n\n \n 이혜민의 그림에는 흰 저고리와 검정 치마를 입고 두 갈래로 머리를 묶은 소녀가 등장합니다. 소녀 곁에는 강아지와 병아리가 있고, 황토빛 담벼락에는 어린아이의 낙서가 남아 있습니다. 봄이 오면 진달래와 개나리가 피어나고, 따스한 햇살 아래 길게 드리워진 그림자는 어느 오래된 오후의 시간을 떠올리게 합니다. \n \n\n \n 그러나 작가가 그리고자 하는 것은 단순히 ‘옛날의 소녀’가 아닙니다. \n \n\n \n “나는 지나간 그 시간이 그립다. 아련하게 내 몸과 마음에 아로새겨진 시간이다. 내가 그리는 것은 소녀가 아니다. 지나간 그 시간에 대한 그리움이다.” \n \n\n \n 작가의 말처럼 그의 작품 속 소녀와 풍경은 특정한 한 사람의 이야기에 머물지 않습니다. 급격한 산업화와 도시화 속에서 어느 순간 우리 곁에서 사라져버린 고향의 풍경이자, 다시 돌아갈 수 없는 유년의 시간이며, 저마다의 마음 한편에 남아 있는 기억의 모습입니다. \n \n\n \n 그렇기에 이혜민의 그림 앞에서 관객들은 자연스럽게 자신의 기억을 꺼내게 됩니다. 누군가에게는 어린 시절 뛰어놀던 시골집의 담벼락일 것이고, 누군가에게는 할머니의 집이나 어머니의 젊은 시절일 수도 있습니다. 또 다른 누군가에게는 정확히 기억나지는 않지만 이상하리만큼 그리운 어느 봄날의 풍경일지도 모릅니다. \n \n\n \n 작품 속 황토벽과 소녀, 꽃과 풀, 강아지와 병아리는 이제 현실에서 쉽게 만날 수 없는 풍경입니다. 그러나 사라졌다고 해서 완전히 없어진 것은 아닙니다. 기억 속에 접혀 있던 시간은 작가의 그림을 통해 다시 모습을 드러내고, 봄날의 꽃처럼 피어납니다. 이혜민의 그림이 세대를 넘어 많은 이들에게 따뜻한 공감과 울림을 전하는 이유도 바로 여기에 있습니다. \n \n\n \n 언제나 평온하고 따뜻한 이혜민 작가의 성품은 작품에도 고스란히 스며 있습니다. 그의 그림을 보고 있으면 때로는 긴 설명이 필요하지 않다는 생각이 듭니다. 한 사람을 미소 짓게 하고, 또 어느 순간에는 마음을 뭉클하게 하며 눈시울을 적시게 하는 것. 미술이 사람의 마음에 건넬 수 있는 감동이 무엇인지 그의 작품은 조용히 보여줍니다. \n \n\n \n 이번 전시를 통해 많은 분들이 이혜민 작가가 그려낸 지나간 시간 속으로 잠시 걸어 들어가 보시기를 바랍니다. 그리고 그곳에서 잊고 지냈던 자신의 유년과 고향, 사랑했던 사람들과 소중했던 순간들을 다시 만나보시기 바랍니다."
   },
   {
+    "id": "402102",
+    "kind": "exhibition",
+    "start": "20261013",
+    "title": "제21회 경기청년작가 선정 초대전",
+    "place": "오산시립미술관",
+    "area": "경기",
+    "price": "무료",
+    "addr": "경기도 오산시 현충로 100 오산시립미술관",
+    "overview": null
+  },
+  {
+    "id": "402104",
+    "kind": "exhibition",
+    "start": "20261013",
+    "title": "《우리는 갈림길의 정원에서 몸과 몸 사이로 질문을 껴안고 서 있었네》",
+    "place": "성북예술창작터",
+    "area": "서울",
+    "price": "무료",
+    "addr": "서울특별시 성북구 성북로 23 성북예술창작터",
+    "overview": null
+  },
+  {
+    "id": "402288",
+    "kind": "exhibition",
+    "start": "20261013",
+    "title": "<공간드림 1472> 신진예술인 단체전 *다층시선*",
+    "place": "관천로 문화플랫폼 S1472",
+    "area": "서울",
+    "price": "무료",
+    "addr": "서울특별시 관악구 관천로 53 관천로 문화플랫폼 S1472",
+    "overview": null
+  },
+  {
+    "id": "402289",
+    "kind": "exhibition",
+    "start": "20261013",
+    "title": "[오산오색문화체육센터] 2026 아트인오산_서양화 정승조展",
+    "place": "오산시립미술관",
+    "area": "경기",
+    "price": "무료",
+    "addr": "경기도 오산시 현충로 100 오산시립미술관",
+    "overview": null
+  },
+  {
+    "id": "402290",
+    "kind": "exhibition",
+    "start": "20261013",
+    "title": "강원현대한국화회 정기 회원전",
+    "place": "강릉아트센터 제1전시실",
+    "area": "강원",
+    "price": "무료",
+    "addr": "강원특별자치도 강릉시 종합운동장길 84 강릉아트센터",
+    "overview": null
+  },
+  {
+    "id": "402292",
+    "kind": "exhibition",
+    "start": "20261013",
+    "title": "[성수아뜰리에] 마음이 머무는 온도",
+    "place": "소월아트홀(성동문화회관)",
+    "area": "서울",
+    "price": "무료",
+    "addr": "서울특별시 성동구 왕십리로 281 소월아트홀",
+    "overview": null
+  },
+  {
+    "id": "402299",
+    "kind": "exhibition",
+    "start": "20261013",
+    "title": "2026년 울산박물관 제2차 특별전  〈울산 문화유산〉",
+    "place": "울산박물관",
+    "area": "울산",
+    "price": "무료",
+    "addr": "울산광역시 남구 두왕로 277 울산박물관",
+    "overview": null
+  },
+  {
     "id": "401689",
     "kind": "exhibition",
     "start": "20261014",
@@ -553,7 +696,7 @@
     "id": "401161",
     "kind": "exhibition",
     "start": "20261015",
-    "title": "형태를 지나 결에 머물다",
+    "title": "박성민 <형태를 지나 결에 머물다>",
     "place": "노화랑",
     "area": "서울",
     "price": "무료",
@@ -570,17 +713,6 @@
     "price": "무료",
     "addr": "울산광역시 북구 명촌로 52 2층",
     "overview": null
-  },
-  {
-    "id": "401454",
-    "kind": "traditional",
-    "start": "20261015",
-    "title": "2026 대한민국국악관현악축제 부산시립국악관현악단",
-    "place": "세종M씨어터",
-    "area": "서울",
-    "price": "전석1만원",
-    "addr": "서울특별시 종로구 세종대로 175 세종문화회관",
-    "overview": "시간을 잇고, 시대를 여는 울림 2026 대한민국국악관현악축제"
   },
   {
     "id": "401598",
@@ -693,6 +825,17 @@
     "overview": null
   },
   {
+    "id": "402367",
+    "kind": "exhibition",
+    "start": "20261016",
+    "title": "김건국 백걸음의 여행 : 남도 시간",
+    "place": "KR갤러리",
+    "area": "광주",
+    "price": "무료관람",
+    "addr": "전남광주통합특별시 목포시 평화로 38 6층",
+    "overview": null
+  },
+  {
     "id": "400945",
     "kind": "traditional",
     "start": "20261017",
@@ -767,6 +910,17 @@
     "area": "부산",
     "price": "무료",
     "addr": "부산광역시 금정구 부산대학로50번길 49 1층",
+    "overview": null
+  },
+  {
+    "id": "402404",
+    "kind": "exhibition",
+    "start": "20261021",
+    "title": "[김근태기념도서관] 10월 오픈도서관 《원추리와 깊은 별》",
+    "place": "김근태기념도서관",
+    "area": "서울",
+    "price": "무료",
+    "addr": "서울특별시 도봉구 도봉산길 14 김근태기념도서관",
     "overview": null
   },
   {
@@ -938,12 +1092,45 @@
     "id": "402018",
     "kind": "traditional",
     "start": "20261107",
-    "title": "[문화릴레이티켓] 국립창극단 <2026 창극 작가 프로젝트 시연회>",
+    "title": "국립창극단 <2026 창극 작가 프로젝트 시연회>",
     "place": "국립극장 하늘극장",
     "area": "서울",
     "price": "전석 2만원",
     "addr": "서울특별시 중구 장충단로 59 국립극장",
     "overview": "네 명의 작가 × 네 명의 작창가 = 네 편의 창극 신작 <서천> <깡철, 씨> <클리타임네스트라> <모차르트의 여덟 마디>"
+  },
+  {
+    "id": "402249",
+    "kind": "traditional",
+    "start": "20261107",
+    "title": "토요명품",
+    "place": "국립국악원 우면당",
+    "area": "서울",
+    "price": "A석 3만원 / B석 2만원",
+    "addr": "서울특별시 서초구 남부순환로 2364 국립국악원",
+    "overview": "전통 국악을 최적의 공간에서 가장 깊이 있고 다채롭게 만날 수 있는 국립국악원의 대표 주말 공연 <토요명품>한민족의 흥과 신명이 살아 숨 쉬는 노래와 음악, 춤을 비롯해세계가 인정한 유네스코 등재 무형문화유산까지.한국인과 외국인 모두 꼭 봐야할 한국의 전통 공연 예술이매주 토요일, 우면당 무대를 가득 채웁니다.대한민국 최고의 연주가들이 선사하는 <토요명품>을 통해 국악이가진 아름다움을 느껴보세요."
+  },
+  {
+    "id": "402251",
+    "kind": "traditional",
+    "start": "20261107",
+    "title": "토요국악동화",
+    "place": "국립국악원 풍류사랑방",
+    "area": "서울",
+    "price": "전석 2만원",
+    "addr": "서울특별시 서초구 남부순환로 2364 국립국악원",
+    "overview": "아이들의 눈높이로 흥미진진한 이야기와 음악을 들려주는 국악 동화 공연이 매주 토요일 오후 어린이와 가족 관객을 맞이합니다.울림 그대로의 소리를 전달하는 한옥 사랑방 형태의 자연음향공연장에서 국악 감수성을 키워주는 어린이극에 온 가족이 함께해 보세요. 12개월 이상이면 누구나 관람 가능합니다."
+  },
+  {
+    "id": "402252",
+    "kind": "traditional",
+    "start": "20261112",
+    "title": "정악단 정기공연 <영상회상>",
+    "place": "국립국악원 예악당",
+    "area": "서울",
+    "price": "S석 3만원 / A석 2만원",
+    "addr": "서울특별시 서초구 남부순환로 2364 국립국악원",
+    "overview": "영산회상은 노래에서 기악곡으로, 하나의 선율에서 여러 악곡으로, 오랜 시간 연주되고 전승되면서 편성과 음역, 연주 방식에 따라 끊임없이 새로운 모습으로 변화해 온 풍류음악의 진수입니다. 수백 년 동안 변하면서도 사라지지 않은 음악, 영산회상. 국립국악원 정악단이 빚어내는 깊이 있는 오랜 시간의 변화를 만나보시기 바랍니다."
   },
   {
     "id": "402030",
@@ -968,6 +1155,17 @@
     "overview": "오디션으로 선발된 젊은 명인들의 열정을 만나는 무대. 경기시나위오케스트라와 함께 전통음악의 새로운 지평을 여는 협연을 선보인다."
   },
   {
+    "id": "402250",
+    "kind": "traditional",
+    "start": "20261125",
+    "title": "다담",
+    "place": "국립국악원 우면당",
+    "area": "서울",
+    "price": "A석 3만원 / B석 2만원",
+    "addr": "서울특별시 서초구 남부순환로 2364 국립국악원",
+    "overview": "2월부터 11월까지 매월 마지막 주 수요일 오전 11시에는 국악과 차, 그리고 이야기가 함께하는 <다담>이 열립니다.다담지기 황수경 아나운서의 진행으로 예술같은 삶을 살고 있는사회 각 분야의 저명 인사를 초청해 이야기와 우리 음악을 나누는토크 콘서트 입니다.진솔한 삶의 이야기에 더해지는 우리 음악 한 잔!오전의 설레이는 햇살 같은 특별한 시간을 느껴보세요."
+  },
+  {
     "id": "402019",
     "kind": "traditional",
     "start": "20261126",
@@ -979,6 +1177,17 @@
     "overview": "15명의 여성 소리꾼이 왕과 왕비, 예언자와 증인이 되어 비극을 빚어낸다. 진실을 좇는 오이디푸스, 그가 끝내 마주할 것은 무엇일까."
   },
   {
+    "id": "402253",
+    "kind": "traditional",
+    "start": "20261126",
+    "title": "민속악단 정기공연 <풍화風化>",
+    "place": "국립국악원 예악당",
+    "area": "서울",
+    "price": "S석 3만원 / A석 2만원 / B석 1만원",
+    "addr": "서울특별시 서초구 남부순환로 2364 국립국악원",
+    "overview": "국립국악원 민속악단은 1981년 6월 9~10일, 장충동 국립극장 소극장에서 첫 번째 '민속음악 연주회'를 개최하면서 성악을 기악화하고 독주를 합주화하여 민속기악이 대중에게 더 깊이 스며들 수 있는 계기를 마련했습니다. 이번 민속악단 정기공연은 선배들이 바위 같은 굳건한 마음으로 시작하여 지금의 민속기악 합주를 대표하는 공연작품으로 자리 잡은 '남도 굿거리, 성주풀이, 육자배기'와 '산조'를 선보입니다."
+  },
+  {
     "id": "401656",
     "kind": "traditional",
     "start": "20261128",
@@ -988,6 +1197,17 @@
     "price": "전석 20,000원 (수봉문화회관 관극회원 50% 할인)",
     "addr": "인천광역시 남구 수봉안길 78 인천수봉문화회관",
     "overview": null
+  },
+  {
+    "id": "402381",
+    "kind": "traditional",
+    "start": "20261210",
+    "title": "송년 음악회",
+    "place": "세종문화회관 세종대극장",
+    "area": "서울",
+    "price": "R석 50,000원 / S석 40,000원 / A석 30,000원",
+    "addr": "서울특별시 종로구 세종대로 175 세종문화회관",
+    "overview": "이희문, 서도, 황린, 사물광대- 국악관현악을 중심으로 서로 다른 매력의 아티스트들이 한 무대에서 만납니다."
   },
   {
     "id": "401593",
