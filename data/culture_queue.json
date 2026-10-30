@@ -33,17 +33,6 @@
     "overview": null
   },
   {
-    "id": "405245",
-    "kind": "exhibition",
-    "start": "20260811",
-    "title": "[백년ABU갤러리] 시선의 결",
-    "place": "부산문화재단",
-    "area": "부산",
-    "price": "무료",
-    "addr": "부산광역시 남구 우암로 84-1 부산문화재단",
-    "overview": null
-  },
-  {
     "id": "405582",
     "kind": "exhibition",
     "start": "20260908",
@@ -88,17 +77,6 @@
     "overview": null
   },
   {
-    "id": "405238",
-    "kind": "exhibition",
-    "start": "20260918",
-    "title": "[어바웃모제이갤러리] 김수연 개인전",
-    "place": "부산문화재단",
-    "area": "부산",
-    "price": "무료",
-    "addr": "부산광역시 남구 우암로 84-1 부산문화재단",
-    "overview": null
-  },
-  {
     "id": "400753",
     "kind": "exhibition",
     "start": "20260922",
@@ -129,17 +107,6 @@
     "area": "광주",
     "price": "6,000원",
     "addr": "전남광주통합특별시 강진군 대구면 청자촌길 61-5 한국민화뮤지엄",
-    "overview": null
-  },
-  {
-    "id": "401649",
-    "kind": "exhibition",
-    "start": "20261001",
-    "title": "한솔비 《식빵 자세》",
-    "place": "갤러리 메일란",
-    "area": "서울",
-    "price": "무료",
-    "addr": "서울특별시 종로구 자하문로 269 갤러리메일란",
     "overview": null
   },
   {
@@ -360,17 +327,6 @@
     "area": "서울",
     "price": "무료",
     "addr": "서울특별시 강남구 압구정로30길 63 서울 강남구 압구정로30길 63",
-    "overview": null
-  },
-  {
-    "id": "405242",
-    "kind": "exhibition",
-    "start": "20261009",
-    "title": "[청년작당소] 손 안의 카메라로 일상을 담다",
-    "place": "부산문화재단",
-    "area": "부산",
-    "price": "무료",
-    "addr": "부산광역시 남구 우암로 84-1 부산문화재단",
     "overview": null
   },
   {
@@ -825,17 +781,6 @@
     "overview": null
   },
   {
-    "id": "401942",
-    "kind": "exhibition",
-    "start": "20261021",
-    "title": "PIXEL SNAKE",
-    "place": "복합문화예술공간MERGE",
-    "area": "부산",
-    "price": "무료",
-    "addr": "부산광역시 금정구 부산대학로50번길 49 1층",
-    "overview": null
-  },
-  {
     "id": "402404",
     "kind": "exhibition",
     "start": "20261021",
@@ -1188,6 +1133,28 @@
     "overview": null
   },
   {
+    "id": "405592",
+    "kind": "exhibition",
+    "start": "20261027",
+    "title": "2026년 제14회 예강도예전",
+    "place": "이천아트홀 아트갤러리",
+    "area": "경기",
+    "price": "무료",
+    "addr": "경기도 이천시 부악로 40 이천아트홀",
+    "overview": null
+  },
+  {
+    "id": "405613",
+    "kind": "exhibition",
+    "start": "20261027",
+    "title": "능동형 창작주체 현장연계 프로젝트 : 《 시간은 흘러도 장면은 남는다 》",
+    "place": "교동아트미술관",
+    "area": "전북",
+    "price": "무료",
+    "addr": "전북특별자치도 전주시 완산구 경기전길 89 교동아트미술관",
+    "overview": null
+  },
+  {
     "id": "401977",
     "kind": "exhibition",
     "start": "20261028",
@@ -1287,6 +1254,28 @@
     "overview": null
   },
   {
+    "id": "405590",
+    "kind": "exhibition",
+    "start": "20261029",
+    "title": "[노을이야기] 출판기념회 및 서예, 서각 전시회",
+    "place": "소월아트홀(성동문화회관)",
+    "area": "서울",
+    "price": "무료",
+    "addr": "서울특별시 성동구 왕십리로 281 소월아트홀",
+    "overview": null
+  },
+  {
+    "id": "405591",
+    "kind": "exhibition",
+    "start": "20261029",
+    "title": "2026 울산시립미술관 신진작가 성과전 : 박지혜",
+    "place": "울산시립미술관",
+    "area": "울산",
+    "price": "1,000원",
+    "addr": "울산광역시 중구 미술관길 72 울산시립미술관",
+    "overview": null
+  },
+  {
     "id": "400934",
     "kind": "traditional",
     "start": "20261030",
@@ -1306,6 +1295,17 @@
     "area": "서울",
     "price": "무료",
     "addr": "서울특별시 중구 퇴계로27길 28 한영빌딩 지하1층 3호 와이아트갤러리",
+    "overview": null
+  },
+  {
+    "id": "405701",
+    "kind": "exhibition",
+    "start": "20261030",
+    "title": "달리·Differently·Dali",
+    "place": "예술의전당(한가람미술관)",
+    "area": "서울",
+    "price": "무료",
+    "addr": "서울특별시 서초구 남부순환로 2406 예술의전당(한가람미술관)",
     "overview": null
   },
   {
@@ -1537,6 +1537,17 @@
     "area": "대전",
     "price": "무료",
     "addr": "대전광역시 중구 중앙로 32 대전예술가의집 누리홀",
+    "overview": null
+  },
+  {
+    "id": "405689",
+    "kind": "exhibition",
+    "start": "20261105",
+    "title": "마리나갤러리 11월 전시: 백은하 개인전",
+    "place": "마리나갤러리",
+    "area": "경기",
+    "price": "무료",
+    "addr": "경기도 고양시 일산서구 호수로 817 레이킨스몰 2층 260호",
     "overview": null
   },
   {
@@ -1977,6 +1988,17 @@
     "area": "충북",
     "price": "무료",
     "addr": "충청북도 청주시 청원구 상당로 314 청주시한국공예관",
+    "overview": null
+  },
+  {
+    "id": "405697",
+    "kind": "traditional",
+    "start": "20261129",
+    "title": "양수연 가야금 독주회 <기록: 가즌회상>",
+    "place": "한국문화의집 KOUS",
+    "area": "서울",
+    "price": "전석 10,000원(학생 50%, 예술인패스 30% 할인)",
+    "addr": "서울특별시 강남구 테헤란로92길 12-9 코우스",
     "overview": null
   },
   {
