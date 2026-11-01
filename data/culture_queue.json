@@ -176,39 +176,6 @@
     "overview": null
   },
   {
-    "id": "401605",
-    "kind": "exhibition",
-    "start": "20261008",
-    "title": "권혜경 《뉴 앙데팡당: 힛 더 스팟 Part.2》",
-    "place": "양평군립미술관",
-    "area": "경기",
-    "price": "500~1,000원",
-    "addr": "경기도 양평군 양평읍 문화복지길 2 양평군립미술관",
-    "overview": null
-  },
-  {
-    "id": "401690",
-    "kind": "exhibition",
-    "start": "20261008",
-    "title": "박태준 《뉴 앙데팡당: 힛 더 스팟 Part.2》",
-    "place": "양평군립미술관",
-    "area": "경기",
-    "price": "500~1,000원",
-    "addr": "경기도 양평군 양평읍 문화복지길 2 양평군립미술관",
-    "overview": null
-  },
-  {
-    "id": "401691",
-    "kind": "exhibition",
-    "start": "20261008",
-    "title": "슬미 앤드 재엔더플루이드 《뉴 앙데팡당: 힛 더 스팟 Part.2》",
-    "place": "양평군립미술관",
-    "area": "경기",
-    "price": "500~1,000원",
-    "addr": "경기도 양평군 양평읍 문화복지길 2 양평군립미술관",
-    "overview": null
-  },
-  {
     "id": "401076",
     "kind": "exhibition",
     "start": "20261009",
@@ -349,17 +316,6 @@
     "area": "서울",
     "price": "무료",
     "addr": "서울특별시 종로구 인사동길 41-1 인사아트센터",
-    "overview": null
-  },
-  {
-    "id": "401910",
-    "kind": "exhibition",
-    "start": "20261014",
-    "title": "무수민, 슈퍼포지션 <아직 그 자리를 비워야 한다 A Place Must Still Be Left (   )>",
-    "place": "16아카이브",
-    "area": "서울",
-    "price": "무료",
-    "addr": "서울특별시 중구 퇴계로45길 31-15 2층 16아카이브",
     "overview": null
   },
   {
@@ -525,28 +481,6 @@
     "area": "경기",
     "price": "무료",
     "addr": "경기도 양주시 장흥면 권율로 103-1 양주시립미술창작스튜디오777레지던스",
-    "overview": null
-  },
-  {
-    "id": "402755",
-    "kind": "exhibition",
-    "start": "20261020",
-    "title": "한국 수공예 아카데미 5회 정기 회원전",
-    "place": "갤러리 스페이스포포",
-    "area": "부산",
-    "price": "무료관람",
-    "addr": "부산광역시 금정구 금정로 79 3층",
-    "overview": null
-  },
-  {
-    "id": "402871",
-    "kind": "exhibition",
-    "start": "20261020",
-    "title": "제11회 그리다방네모展 [보통의 기적]",
-    "place": "천안예술의전당",
-    "area": "충남",
-    "price": "무료",
-    "addr": "충청남도 천안시 동남구 성남면 종합휴양지로 185 천안예술의전당",
     "overview": null
   },
   {
@@ -902,17 +836,6 @@
     "overview": null
   },
   {
-    "id": "405485",
-    "kind": "exhibition",
-    "start": "20261027",
-    "title": "2026년 제27회 신사임당 미술대전 수상작 전시(2부)",
-    "place": "강릉아트센터 제2전시실",
-    "area": "강원",
-    "price": "무료",
-    "addr": "강원특별자치도 강릉시 종합운동장길 84 강릉아트센터",
-    "overview": null
-  },
-  {
     "id": "405512",
     "kind": "exhibition",
     "start": "20261027",
@@ -954,28 +877,6 @@
     "area": "대구",
     "price": "무료",
     "addr": "대구광역시 중구 달성로22길 31-12 대구예술발전소",
-    "overview": null
-  },
-  {
-    "id": "405592",
-    "kind": "exhibition",
-    "start": "20261027",
-    "title": "2026년 제14회 예강도예전",
-    "place": "이천아트홀 아트갤러리",
-    "area": "경기",
-    "price": "무료",
-    "addr": "경기도 이천시 부악로 40 이천아트홀",
-    "overview": null
-  },
-  {
-    "id": "405613",
-    "kind": "exhibition",
-    "start": "20261027",
-    "title": "능동형 창작주체 현장연계 프로젝트 : 《 시간은 흘러도 장면은 남는다 》",
-    "place": "교동아트미술관",
-    "area": "전북",
-    "price": "무료",
-    "addr": "전북특별자치도 전주시 완산구 경기전길 89 교동아트미술관",
     "overview": null
   },
   {
@@ -1111,17 +1012,6 @@
     "overview": null
   },
   {
-    "id": "403149",
-    "kind": "exhibition",
-    "start": "20261031",
-    "title": "Once upon a time",
-    "place": "알지비큐브",
-    "area": "서울",
-    "price": "무료관람",
-    "addr": "서울특별시 마포구 와우산로29라길 26 1.5층",
-    "overview": null
-  },
-  {
     "id": "404876",
     "kind": "exhibition",
     "start": "20261031",
@@ -1153,28 +1043,6 @@
     "price": "무료",
     "addr": null,
     "overview": "신지수 · 장채린 · 최상준 \n \n\n \n 우리는 무언가를 보는 순간 자연스럽게 판단한다. 곰팡이는 부패의 흔적이고, 단단하게 굳은 사물은 움직이지 않으며, 화려하게 꾸민 모습은 자신을 드러내기 위한 것이라고. 그러나 우리가 익숙하게 받아들인 모습이 언제나 그 존재를 온전히 설명하는 것은 아니다. \n \n\n \n 《수상한 표면》은 이러한 익숙한 판단이 어긋나는 순간에서 출발한다. 신지수, 장채린, 최상준은 유리라는 공통된 재료를 사용하지만, 각자가 주목하는 세계는 생명의 순환, 빛에 따른 지각의 변화, 자신을 드러내고 감추는 마음처럼 서로 다른 방향으로 펼쳐진다. \n \n\n \n 신지수는 부패와 오염의 상징으로 여겨지는 곰팡이에서 새로운 생명의 가능성을 발견한다. 작가는 생성과 소멸이 맞닿아 있는 자연의 순환을 유기적인 형태와 질감으로 표현하며, 우리가 쉽게 외면했던 존재를 다시 바라보게 한다. \n \n\n \n 장채린은 고정된 유리의 형태 안에서 끊임없이 달라지는 시각적 경험을 만들어낸다. 빛이 닿는 방향과 관람자의 위치에 따라 색과 이미지가 변화하면서, 하나의 사물에도 여러 모습이 존재할 수 있음을 보여준다. 작품은 완성된 형태에 머무르지 않고 관람자의 움직 임 속에서 새롭게 경험된다. \n \n\n \n 최상준의 〈Beardman〉은 화려한 색과 무늬로 시선을 끌지만, 그 외형은 동시에 자신을 감추고 보호하기 위한 장치이기도 하다. 작가는 캐릭터를 통해 타인에게 보이고 싶은 모습과 숨기고 싶은 마음, 관계를 맺고자 하면서도 자신을 지키려는 복합적인 감정을 드러낸다. \n \n\n \n 세 작가의 작업에서 흥미로운 것은 겉으로 드러난 모습과 그 안에 담긴 이야기가 반드시 일치하지 않는다는 점이다. 끝이라고 생각했던 곳에서 생명이 이어지고, 변하지 않을 것 같은 사물이 새로운 모습을 드러내며, 가장 화려한 얼굴이 오히려 자신을 숨기기도 한다. \n \n\n \n 《수상한 표면》은 관람객에게 작품의 숨겨진 정답을 찾으라고 요구하지 않는다. 대신 눈앞에 놓인 것을 조금 더 오래 바라보고, 자리를 옮기고, 처음의 인상을 다시 생각해 보도록 제안한다. \n \n\n \n 어쩌면 우리가 새롭게 발견하는 것은 작품의 이면에 숨겨진 무언가가 아니라, 지금까지 너무 익숙해서 의심하지 않았던 우리의 시선일지도 모른다. \n \n\n \n \n \n\n \n Shin Jisoo · Jang Chaelin · Choi Sangjun \n \n\n \n We instinctively form judgments the moment we encounter something. We regard mold as a sign of decay, assume that objects hardened into solid form remain motionless, and interpret elaborate appearances as attempts to reveal oneself. Yet the appearances we have come to accept as familiar do not always tell the whole story of what lies before us. \n \n\n \n Suspicious Surfaces begins at the moment when these familiar assumptions no longer hold true. Although Shin Jisoo, Jang Chaelin, and Choi Sangjun share glass as their primary medium, their practices explore distinct subjects, ranging from the cycles of life and shifts in visual perception to the desire to both reveal and conceal oneself. \n \n\n \n Shin Jisoo discovers the potential for new life in mold, commonly associated with decay and contamination. Through organic forms and textures, the artist explores the cycles of nature, where growth and disappearance coexist, inviting us to reconsider what we might otherwise overlook. \n \n\n \n Jang Chaelin creates constantly shifting visual experiences within the fixed forms of glass. As colors and images change according to the direction of light and the viewer's position, her work reveals how a single object can hold multiple appearances. Rather than remaining a fixed visual form, each work unfolds through the movement of the viewer. \n \n\n \n Choi Sangjun's Beardman draws attention through its vivid colors and patterns, yet its elaborate exterior also serves as a means of concealment and self-protection. Through this character, the artist explores the complex emotions that arise between the desire to be seen and the need to remain hidden, as well as the tension between connecting with others and protecting oneself. \n \n\n \n What connects the three artists is the way their works challenge the assumption that outward appearances necessarily correspond to what lies within. Life continues where we might expect only an ending; an object that appears unchanging reveals unexpected variations; and the most conspicuous appearance can become a means of hiding oneself. \n \n\n \n Suspicious Surfaces does not ask viewers to search for definitive answers hidden within the works. Instead, it invites them to look a little longer, shift their positions, and reconsider their first impressions. \n \n\n \n Perhaps what we discover is not something concealed beneath the surface of the works, but our own ways of seeing, so familiar that we have rarely thought to question them."
-  },
-  {
-    "id": "404293",
-    "kind": "traditional",
-    "start": "20261101",
-    "title": "김해숙 가야금 독주회: 풍류노정 2026",
-    "place": "국립국악원 우면당",
-    "area": "서울",
-    "price": "전석 20,000원",
-    "addr": "서울특별시 서초구 남부순환로 2364 국립국악원",
-    "overview": null
-  },
-  {
-    "id": "404392",
-    "kind": "traditional",
-    "start": "20261101",
-    "title": "명품탈춤 천하제일탈",
-    "place": "트라이보울 공연장 (2층)",
-    "area": "인천",
-    "price": "전석 10,000원",
-    "addr": "인천광역시 연수구 인천타워대로 250 트라이보울",
-    "overview": null
   },
   {
     "id": "404867",
@@ -1230,6 +1098,17 @@
     "price": "무료",
     "addr": "서울특별시 강남구 압구정로71길 14 서울 강남구 압구정로71길 14",
     "overview": "《종이, 연필, 지우개, 책》은 작가의 책상 위에 늘 놓여 있던 네 가지 사물의 이름이다. 그러나 이 이름들이 가리키는 것은 사물 그 자체보다 그것들과 함께 이루어지는 ‘그리는 일’이다. 빈 종이 앞에서 기다리고, 연필로 선을 긋고, 지우개로 지우고 다시 그리며, 그렇게 쌓인 시간이 한 권의 책처럼 겹쳐진다. 매일 새로운 이름이 쏟아지는 세상에서 작가는 오래된 이름들을 다시 부르며, 자신의 작업이 무엇으로 이루어져 있는지를 되짚는다. \n \n\n \n 김한나는 상상의 토끼와의 관계를 매개로 타인과의 소통, 환경에의 적응, 내면의 감정을 탐구해 왔으며, 회화, 드로잉, 조각, 애니메이션, 동화를 넘나들며 작업 세계를 넓혀 왔다. 이번 전시에서 작가는 그 세계를 잠시 접고 드로잉과 회화로 손의 자리에 다시 선다. 부드럽게 층층이 쌓인 선과 색으로 화면의 밀도를 만들어 온 작가에게 그리는 일은 그리고, 지우고, 지운 자리 위에 더 깊이 다시 그려 나가는 과정이다. 지운 자리에 남은 희미한 자국과 덧칠한 층 아래의 시간은 이번 출품작에서 작업이 지나온 흔적으로 드러난다. 작가의 오랜 동반자인 토끼 역시 이 시간에서 태어난다. 곧게 가다 멈추고 다른 길을 만나던 연필 선은 “내가 생각하지 못한 곳에서 / 갑자기 토끼의 귀가 된다.” \n \n\n \n 회화는 캔버스에 유화로 그린 작업으로, 제목에서부터 작가 특유의 다정한 유머가 묻어난다. 〈토끼 연필〉과 〈길을 그리자〉는 연필 선 끝에서 길이 시작되고 토끼가 태어나는 순간과 맞닿아 있고, 〈연필 냄새 감별사〉는 너무 익숙해서 지나쳤던 연필의 냄새까지 붙잡아 낸다. 〈안 읽으면 손해야〉, 〈독서의 전진〉, 〈공부〉는 책을 펼치고 한 장씩 넘겨 가는 시간을 불러온다. 유화 물감을 겹겹이 올려 만든 부드러운 색의 층은, 한 번에 완성되지 않고 쌓아 가며 깊어지는 그리기의 시간을 화면 위에 남긴다. \n \n\n \n 드로잉은 종이 위에 색연필과 오일 파스텔, 아크릴을 함께 쓴 작업이다. 색연필의 가는 선, 문지를수록 번지는 오일 파스텔의 질감, 그 위를 덮는 아크릴의 면이 한 장의 종이 위에서 겹친다. 서로 다른 성질의 재료를 긋고, 문지르고, 덮는 손의 움직임이 고스란히 남는 이 작업들은 전시 제목 속 종이와 연필을 가장 가까이에서 보여 준다. \n \n\n \n 전시 도록에서는 오은 시인이 동시의 형식으로 쓴 서문을 만날 수 있다. 행과 행 사이에 여백을 두고 천천히 나아가는 시의 호흡은 한 줄을 긋고 한 장을 넘기는 이번 전시의 시간과 닮아 있으며, 언어로 쓴 시와 손으로 그린 그림은 서로를 비추며 전시를 읽는 또 하나의 길을 열어 준다. \n \n\n \n 《종이, 연필, 지우개, 책》은 새로운 것을 더하기보다 이미 곁에 있던 것을 다시 바라보는 전시다. 관객은 한 줄을 긋고, 한 번 지우고, 다시 그리는 손의 시간을 따라가며, ‘한나와 토끼’의 세계가 종이 위의 한 줄에서 시작되었음을 마주하게 된다. \n \n\n \n “ 종이는 아직 종이다 / 연필은 아직 연필이다 / 지우개는 닳고 있다 / 책은 펼쳐져 있다 / 토끼는 살아 있다 / 그리고 나는 그린다.” \n \n\n \n — 김한나, 작가 노트 중"
+  },
+  {
+    "id": "405778",
+    "kind": "traditional",
+    "start": "20261104",
+    "title": "가양금병창 & 민요시리즈 Ⅰ, 조주선의 더뉴(The New)",
+    "place": "국립국악원 풍류사랑방",
+    "area": "서울",
+    "price": "전석무료",
+    "addr": "서울특별시 서초구 남부순환로 2364 국립국악원",
+    "overview": null
   },
   {
     "id": "401741",
@@ -1306,6 +1185,17 @@
     "area": "경기",
     "price": "무료",
     "addr": "경기도 고양시 일산서구 호수로 817 레이킨스몰 2층 260호",
+    "overview": null
+  },
+  {
+    "id": "405715",
+    "kind": "traditional",
+    "start": "20261105",
+    "title": "피리정악 및 대취타 보존회 기획공연, 양금의 세계: 전통과 현대",
+    "place": "국립국악원 우면당",
+    "area": "서울",
+    "price": "전석무료",
+    "addr": "서울특별시 서초구 남부순환로 2364 국립국악원",
     "overview": null
   },
   {
@@ -1551,6 +1441,17 @@
     "overview": "판소리 다섯 바탕을 한 명의 소리꾼이 처음부터 끝까지 펼쳐 보이는, 오랜 전통의 힘과 묵징한 감동을 느낄 수 있는 공연"
   },
   {
+    "id": "403610",
+    "kind": "traditional",
+    "start": "20261114",
+    "title": "2026 국립남도국악원 토요상설 토요상설: 국악이 좋다, 국립남도국악원 국악연주단 <국악의 향연>",
+    "place": "국립남도국악원 진악당",
+    "area": "광주",
+    "price": "전석무료",
+    "addr": "전남광주통합특별시 진도군 임회면 진도대로 3818 국립남도국악원 국립남도국악원",
+    "overview": null
+  },
+  {
     "id": "405556",
     "kind": "traditional",
     "start": "20261114",
@@ -1559,6 +1460,17 @@
     "area": "경기",
     "price": "무료",
     "addr": "경기도 파주시 탄현면 헤이리로 16 국립극장 무대예술지원센터",
+    "overview": null
+  },
+  {
+    "id": "405761",
+    "kind": "traditional",
+    "start": "20261114",
+    "title": "대전시립연정국악단, 토요국악 (11.14)",
+    "place": "대전시립연정국악원 작은마당",
+    "area": "대전",
+    "price": "전석 2,000원",
+    "addr": "대전광역시 서구 둔산대로 181 대전시립연정국악원",
     "overview": null
   },
   {
