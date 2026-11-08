@@ -1,16 +1,5 @@
 [
   {
-    "id": "401872",
-    "kind": "exhibition",
-    "start": "20260602",
-    "title": "공공수장고 미디어아트_곶자왈: 숨결의 시간",
-    "place": "제주현대미술관",
-    "area": "제주",
-    "price": "성인 2,000원 / 청소년, 군인 1,000원 / 어린이 500원",
-    "addr": "제주특별자치도 제주시 한경면 저지14길 35 제주현대미술관",
-    "overview": null
-  },
-  {
     "id": "401518",
     "kind": "exhibition",
     "start": "20260702",
@@ -22,17 +11,6 @@
     "overview": null
   },
   {
-    "id": "402111",
-    "kind": "exhibition",
-    "start": "20260714",
-    "title": "여민공수與民共守",
-    "place": "서울역사박물관",
-    "area": "서울",
-    "price": "무료",
-    "addr": "서울특별시 종로구 새문안로 55 서울역사박물관",
-    "overview": null
-  },
-  {
     "id": "405907",
     "kind": "exhibition",
     "start": "20260825",
@@ -41,17 +19,6 @@
     "area": "강원",
     "price": "3,000원",
     "addr": "강원특별자치도 양구군 양구읍 금강산로 439-51 양구근현대사박물관",
-    "overview": null
-  },
-  {
-    "id": "406024",
-    "kind": "exhibition",
-    "start": "20260826",
-    "title": "[조현화랑 달맞이, 조현화랑 해운대, 조현화랑 서울] 그대로 As It Is",
-    "place": "부산문화재단",
-    "area": "부산",
-    "price": "무료",
-    "addr": "부산광역시 남구 우암로 84-1 부산문화재단",
     "overview": null
   },
   {
@@ -74,17 +41,6 @@
     "area": "서울",
     "price": "무료",
     "addr": "서울특별시 용산구 이태원로 29 용산전쟁기념관",
-    "overview": null
-  },
-  {
-    "id": "405582",
-    "kind": "exhibition",
-    "start": "20260908",
-    "title": "RE:ART 프로젝트 2부 <이음에 대하여>",
-    "place": "수창청춘맨숀",
-    "area": "대구",
-    "price": "무료",
-    "addr": "대구광역시 중구 달성로22길 27 (수창동 64)",
     "overview": null
   },
   {
@@ -561,17 +517,6 @@
     "overview": null
   },
   {
-    "id": "405513",
-    "kind": "exhibition",
-    "start": "20261020",
-    "title": "봉산 청년작가공모 틈 - 서승희",
-    "place": "봉산문화회관",
-    "area": "대구",
-    "price": "무료",
-    "addr": "대구광역시 중구 봉산문화길 77 봉산문화회관",
-    "overview": null
-  },
-  {
     "id": "402404",
     "kind": "exhibition",
     "start": "20261021",
@@ -704,28 +649,6 @@
     "overview": null
   },
   {
-    "id": "405148",
-    "kind": "exhibition",
-    "start": "20261023",
-    "title": "ACT 페스티벌 2026 아이, 휴먼: 테크네세에 응답하기",
-    "place": "국립아시아문화전당 문화창조원 복합 4관",
-    "area": "광주",
-    "price": "무료",
-    "addr": "전남광주통합특별시 동구 문화전당로 38 국립아시아문화전당",
-    "overview": null
-  },
-  {
-    "id": "406008",
-    "kind": "exhibition",
-    "start": "20261023",
-    "title": "경기상상캠퍼스 10주년 특별전 《상상훈련》",
-    "place": "경기상상캠퍼스 M3",
-    "area": "경기",
-    "price": "무료",
-    "addr": "경기도 수원시 권선구 서둔로 166 경기상상캠퍼스",
-    "overview": null
-  },
-  {
     "id": "406035",
     "kind": "exhibition",
     "start": "20261023",
@@ -745,17 +668,6 @@
     "area": "대구",
     "price": "무료",
     "addr": "대구광역시 남구 중앙대로31길 124 1층 취미인간",
-    "overview": null
-  },
-  {
-    "id": "403464",
-    "kind": "exhibition",
-    "start": "20261024",
-    "title": "《Bubble, Dream, Void》",
-    "place": "예술공간 의식주",
-    "area": "서울",
-    "price": "무료",
-    "addr": "서울특별시 서대문구 홍연길 80 201호",
     "overview": null
   },
   {
@@ -814,17 +726,6 @@
     "overview": "Beloved- 사랑받은 존재들 “Who is your beloved?” \n \n\n \n “Who is your beloved?” 당신의 마음속에 오래 머무는 존재는 누구인가? \n \n\n \n 이나진 작가는 개인전 《Beloved-사랑받은 존재들》을 통해 사랑받는 존재는 무엇으로 기억되는가라는 질문을 던진다. 작품 속 어린 동물들은 화려한 왕관과 보석을 착용한 채 관객을 바라본다. 순수한 눈빛과 묵직한 금빛 장식의 대비는 성장의 무게와 유년기의 기억을 동시에 환기하며, 동물의 초상을 넘어 인간의 삶과 시간에 관한 이야기를 펼쳐낸다. \n \n\n \n 작품의 출발점에는 작가가 일본에서 경험한 동일본대지진과 은사의 죽음이 자리한다. 삶과 죽음, 만남과 상실을 마주한 경험은 지나가는 시간과 그 안에 남겨지는 존재들에 대한 성찰로 이어졌다. 작가의 어린 시절 영국에서의 기억을 담은 왕관과 장신구는 어린 동물들에게 특별한 의미를 부여한다. 이들은 작가 자신의 유년기이자 부모 세대의 어린 시절이며, 지금 성장하고 있는 또 다른 누군가의 모습이기도 하다. \n \n\n \n 현실의 시간은 앞으로 흐르지만 기억의 시간은 끊임없이 되돌아온다. 화폭 속 어린 동물들은 나이를 먹지 않은 채 과거와 현재, 서로 다른 세대의 시간을 연결한다. 작품 제목 《고마워! 나를 키운 꽃과 바람아!》에서 꽃이 기쁨의 순간을, 바람이 눈물과 아픔을 실어 보내는 시간을 상징하듯, 작가는 삶을 이루는 모든 경험이 지금의 자신을 만들어 왔음을 이야기한다. 어린 동물들의 맑은 눈빛은 지나간 시간을 향한 그리움인 동시에 삶을 긍정하는 조용한 위안이다. \n \n\n \n 이러한 사유는 작가의 독창적인 조형 언어를 통해 더욱 깊어진다. 이나진은 케이크를 장식하듯 물감을 짜내는 ‘스퀴징 기법(Squeezing Technique)’을 2003년부터 연구하고 발전시켜 왔다. 다양한 재료를 조합해 만든 물감을 반복적으로 쌓아 올려 섬세한 질감과 입체감을 구현하며, 빛의 방향에 따라 변화하는 색채와 표면으로 회화의 감각적 가능성을 확장한다. 한 땀 한 땀 수놓은 자수에서 영감을 얻은 정교한 표현에는 반복과 축적을 통해 완성도를 높여 가는 장인적 태도가 담겨 있다. \n \n\n \n 작품의 화려한 장식성은 시선을 사로잡는 출발점이지만, 그 이면에는 오랜 시간 축적된 노동과 기억, 삶에 대한 성찰이 자리한다. 작가가 쌓아 올린 물감의 층위가 화면에 깊이를 더하듯, 우리의 삶 역시 기쁨과 슬픔, 만남과 이별의 시간이 겹겹이 쌓여 지금의 모습을 이룬다. \n \n\n \n 《Beloved-사랑받은 존재들》은 특별한 누군가의 관한 이야기이면서 동시에 우리 모두의 이야기다. 사랑했던 존재, 사랑받았던 순간, 그리고 시간이 흘러도 마음속에 남아 있는 얼굴들, 이나진은 어린 동물들의 시선을 통해 관객을 각자의 기억으로 이끌며 묻는다. \n \n\n \n 당신의 마음속에 영원히 머물러 있는 존재는 누구인가? 이번 전시는 그 질문을 통해 지나온 삶을 돌아보고, 우리를 키운 꽃과 바람, 그리고 그 시간 속에서 사랑받았던 자신의 모습을 다시 발견하도록 초대한다. \n \n\n \n GALLERY We \n \n\n \n 경기도 용인시 수지구 호수로 52번길 25-17 \n \n\n \n 031-266-3266 \n \n\n \n gallerywe@gallerywe.com · www.gallerywe.com"
   },
   {
-    "id": "405237",
-    "kind": "exhibition",
-    "start": "20261027",
-    "title": "2026 오산창작예술촌 입주작가展",
-    "place": "오산시립미술관",
-    "area": "경기",
-    "price": "무료",
-    "addr": "경기도 오산시 현충로 100 오산시립미술관",
-    "overview": null
-  },
-  {
     "id": "405261",
     "kind": "exhibition",
     "start": "20261027",
@@ -847,17 +748,6 @@
     "overview": null
   },
   {
-    "id": "405484",
-    "kind": "exhibition",
-    "start": "20261027",
-    "title": "제23회 오미회 정기전",
-    "place": "오산시립미술관",
-    "area": "경기",
-    "price": "무료",
-    "addr": "경기도 오산시 현충로 100 오산시립미술관",
-    "overview": null
-  },
-  {
     "id": "405512",
     "kind": "exhibition",
     "start": "20261027",
@@ -866,17 +756,6 @@
     "area": "대구",
     "price": "무료",
     "addr": "대구광역시 중구 봉산문화길 77 봉산문화회관",
-    "overview": null
-  },
-  {
-    "id": "405555",
-    "kind": "exhibition",
-    "start": "20261027",
-    "title": "2026 공주문화예술촌 릴레이전: 유재권展",
-    "place": "공주문화예술촌",
-    "area": "충남",
-    "price": "무료",
-    "addr": "충청남도 공주시 봉황로 134 공주문화예술촌",
     "overview": null
   },
   {
@@ -910,17 +789,6 @@
     "area": "서울",
     "price": "무료",
     "addr": "서울특별시 종로구 효자로 12 국립고궁박물관",
-    "overview": null
-  },
-  {
-    "id": "406031",
-    "kind": "exhibition",
-    "start": "20261027",
-    "title": "[부산갤러리] 시간의 형상 - 살아있는 장소의 초상, 유영 개인전",
-    "place": "부산문화재단",
-    "area": "부산",
-    "price": "무료",
-    "addr": "부산광역시 남구 우암로 84-1 부산문화재단",
     "overview": null
   },
   {
@@ -965,17 +833,6 @@
     "area": "인천",
     "price": "무료",
     "addr": "인천광역시 부평구 아트센터로 166 부평아트센터",
-    "overview": null
-  },
-  {
-    "id": "405554",
-    "kind": "exhibition",
-    "start": "20261029",
-    "title": "2026 공주 올해의 작가전 배상아展",
-    "place": "아트센터 고마",
-    "area": "충남",
-    "price": "무료",
-    "addr": "충청남도 공주시 고마나루길 90 아트센터 고마",
     "overview": null
   },
   {
@@ -1045,17 +902,6 @@
     "overview": null
   },
   {
-    "id": "405805",
-    "kind": "exhibition",
-    "start": "20261030",
-    "title": "조준연·송성원 《Time in Hands》",
-    "place": "CN갤러리",
-    "area": "서울",
-    "price": "무료",
-    "addr": "서울특별시 종로구 북촌로5길 56-7 (소격동 117-1, 정독도서관 앞)",
-    "overview": null
-  },
-  {
     "id": "405904",
     "kind": "exhibition",
     "start": "20261030",
@@ -1100,17 +946,6 @@
     "overview": null
   },
   {
-    "id": "404876",
-    "kind": "exhibition",
-    "start": "20261031",
-    "title": "<The Art of James J. Choi 5> : 제임스 최 5번째 개인전",
-    "place": "1019 갤러리앤라운지",
-    "area": "인천",
-    "price": "무료",
-    "addr": "인천광역시 연수구 아트센터대로 107 301동 122호",
-    "overview": null
-  },
-  {
     "id": "405589",
     "kind": "exhibition",
     "start": "20261031",
@@ -1130,17 +965,6 @@
     "area": "서울",
     "price": "무료",
     "addr": "서울특별시 서초구 서초대로74길 11 B1, UNAW Gallery",
-    "overview": null
-  },
-  {
-    "id": "406037",
-    "kind": "exhibition",
-    "start": "20261101",
-    "title": "제24회 부산사랑 100경 앵포르멜 전",
-    "place": "부산광역시청 제1전시실",
-    "area": "부산",
-    "price": "무료",
-    "addr": "부산 연제구 중앙대로 1001 부산광역시청",
     "overview": null
   },
   {
@@ -1188,17 +1012,6 @@
     "overview": null
   },
   {
-    "id": "406394",
-    "kind": "exhibition",
-    "start": "20261102",
-    "title": "[원주아트갤러리] 영상미디어센터 빛바라기 사진전",
-    "place": "원주문화재단",
-    "area": "강원",
-    "price": "무료",
-    "addr": "강원특별자치도 원주시 향교길 77 남산골문화센터 신명관 4층, 원주문화재단",
-    "overview": null
-  },
-  {
     "id": "406022",
     "kind": "exhibition",
     "start": "20261103",
@@ -1210,28 +1023,6 @@
     "overview": null
   },
   {
-    "id": "406025",
-    "kind": "exhibition",
-    "start": "20261103",
-    "title": "2026년 제27회 신사임당 미술대전 추천·초대작가전",
-    "place": "강릉아트센터 제1전시실",
-    "area": "강원",
-    "price": "무료",
-    "addr": "강원특별자치도 강릉시 종합운동장길 84 강릉아트센터",
-    "overview": null
-  },
-  {
-    "id": "406054",
-    "kind": "exhibition",
-    "start": "20261103",
-    "title": "능동형 창작주체 현장연계 프로젝트《너와 나 사이의 거리 측정법》",
-    "place": "교동아트미술관",
-    "area": "전북",
-    "price": "무료",
-    "addr": "전북특별자치도 전주시 완산구 경기전길 89 교동아트미술관",
-    "overview": null
-  },
-  {
     "id": "406238",
     "kind": "exhibition",
     "start": "20261103",
@@ -1240,17 +1031,6 @@
     "area": "부산",
     "price": "무료",
     "addr": "부산광역시 동래구 문화로 80 동래문화회관",
-    "overview": null
-  },
-  {
-    "id": "406239",
-    "kind": "exhibition",
-    "start": "20261103",
-    "title": "진선미 개인전 ‘죽은 나비를 기억하는 일’",
-    "place": "갤러리 원",
-    "area": "강원",
-    "price": "무료",
-    "addr": "강원특별자치도 원주시 능라동길 59 4층 갤러리원",
     "overview": null
   },
   {
@@ -1273,28 +1053,6 @@
     "area": "경남",
     "price": "무료",
     "addr": "경상남도 창녕군 창녕읍 우포2로 1189-25 창녕문화예술회관",
-    "overview": null
-  },
-  {
-    "id": "406502",
-    "kind": "exhibition",
-    "start": "20261103",
-    "title": "[원주 갤러리 원] 진선미 개인전 \"죽은 나비를 기억하는 일\"",
-    "place": "갤러리 원",
-    "area": "강원",
-    "price": "무료",
-    "addr": "강원특별자치도 원주시 능라동길 59 4층 갤러리원",
-    "overview": null
-  },
-  {
-    "id": "403104",
-    "kind": "exhibition",
-    "start": "20261104",
-    "title": "[삼거리갤러리] 2026 예술활동 복귀지원사업 결과전시 《서로 다른 나》",
-    "place": "천안문화재단",
-    "area": "충남",
-    "price": "무료",
-    "addr": "충청남도 천안시 서북구 성정8길 5 3층 천안문화재단",
     "overview": null
   },
   {
@@ -1373,17 +1131,6 @@
     "price": "무료",
     "addr": "경기 과천시 양지마을4로 44-18 1,2층",
     "overview": "박용호 작가의 근작을 선보이는 이번 전시 《이어지는(Continuum)》은 작가가 지난 3년간 묵묵히 축적해 온 노동의 시간을 담아낸 결과물입니다. \n \n\n \n 작업의 모티브는 ‘저 너머에는 무엇이 있을까?’라는 근원적인 질문에서 출발했습니다. 어릴 적 미지에 대한 궁금증은 우주와 양자역학에 대한 탐구로 이어졌고, 이는 곧 물리적 확장을 넘어선 개념의 확장으로 변화했습니다. 작가는 인간이 세계의 중심이 아니며, 우리가 인식하는 세상과 자연의 풍경조차 실재와 지각이 상호작용하여 만들어낸 일부분에 불과하다는 사실을 자각합니다. 물질세계의 본성을 온전히 서술하는 것이 불가능하다면 우리가 할 수 있는 일은 표상의 영역을 확장해 나가는 것이며, 작가는 이를 위해 공예적 접근과 회화적 감성으로 ‘인식 밖의 지표’를 만들어냅니다. \n \n\n \n 작품의 기저에는 작가의 치열한 ‘몸의 노동’이 자리하고 있습니다. 금속판을 절단하고 가공하여 교차시키는 과정, 그리고 채색과 조립에 이르는 반복적인 수작업은 상당한 시간과 집중력을 요구합니다. 잘리거나 둥글게 변형된 사각형 조각들은 그리드 프레임의 전후면에 얽혀 배치되며, 서로를 가리고 드러내는 과정에서 다층적인 공간의 깊이와 그림자의 계조를 형성합니다. 작품 속 그리드와 우연의 색채는 곧 인식의 안과 밖을 상징합니다. \n \n\n \n \n \n\n \n 전시장에 놓인 작품들은 관람자의 움직임에 따라 끊임없이 변화하는 관계를 보여줍니다. 채워지지 않은 칸 사이로 빛이 통과하고 그림자가 생기며, 존재와 존재 사이의 간격이나 비어 있는 공간조차 작품의 관계망 속으로 들어옵니다. 작가가 만들어낸 이 형태적, 색채적 ‘낯섦’은 대상을 즉각적으로 규정하려는 인식의 습관을 유예시키고, 아직 알지 못하는 세계의 층위를 바라보게 하는 새로운 인식의 시작점이 됩니다. \n \n\n \n \n \n \n \n\n \n 전시명인 《이어지는(Continuum)》은 세계의 관계에는 결코 최종적인 상태가 없음을 시사합니다. 하나의 부분은 다른 부분과 만나고, 그 만남으로 이루어진 전체는 다시 더 큰 관계의 일부가 되어 끝없이 이어집니다. 인간 중심의 태도에서 벗어나 ‘내 안에는 무엇이 있을까?’라는 새로운 질문으로 나아가는 박용호 작가의 작품을 통해, 관람객 여러분도 익숙한 인식의 경계를 넘어 새로운 지평선을 마주하는 뜻깊은 시간을 경험하시길 바랍니다. \n \n\n \n ​ \n \n\n \n *박용호 작가의 작업 노트 및 이필(미술사, 미술비평, 홍익대 교수) 평론 '존재의 풍경에서 인식의 지평선으로'을 참고 및 발췌하여 작성되었습니다. \n \n\n \n \n \n\n \n \"continuum\" \n \n\n \n Park YongHo \n \n\n \n November 4 – December 3, 2026 | Gallery Dasun, Korea \n \n\n \n Featuring the recent works of artist Park YongHo, this exhibition, Continuum, is the culmination of the time and labor the artist has quietly accumulated over the past three years. \n \n\n \n The motif of the work stems from a fundamental question: \"What lies beyond?\" His childhood curiosity about the unknown led to an exploration of the universe and quantum mechanics, which soon transformed from a physical expansion into a conceptual one. The artist realizes that humans are not the center of the world, and that even the world and natural landscapes we perceive are merely a fragment created through the interaction between reality and perception. If it is impossible to fully describe the nature of the material world, what we can do is expand the realm of representation. To achieve this, the artist creates an \"indicator beyond perception\" through a craft-like approach and a painterly sensibility. \n \n\n \n At the foundation of the artworks lies the artist's intense \"bodily labor.\" The process of cutting, processing, and intersecting metal plates, along with the repetitive handwork of coloring and assembly, requires considerable time and concentration. Square pieces, either cut or rounded, are intertwined and arranged on the front and back of the grid frames. As they conceal and reveal one another, they create multilayered spatial depth and gradations of shadows. The grids and the colors of chance within the works symbolize the inside and outside of perception. \n \n\n \n The works placed in the exhibition hall reveal continuously changing relationships depending on the viewer's movement. Light passes through unfilled spaces, casting shadows, and even the gaps between beings or empty spaces are drawn into the relational network of the artwork. This formal and chromatic \"unfamiliarity\" created by the artist suspends our habitual urge to immediately define objects, serving as a new starting point of perception that allows us to gaze upon the layers of an unknown world. \n \n\n \n The exhibition title, Continuum, suggests that there is never a final state in the relationships of the world. One part encounters another, and the whole formed by this encounter becomes a part of an even larger relationship, continuing endlessly. Through the works of Park YongHo, who moves away from a human-centric attitude to ask a new question, \"What is inside me?\", we hope the audience will also experience a meaningful time stepping beyond the familiar boundaries of perception to face a new horizon. \n \n\n \n *This text was written with references and excerpts from artist Park YongHo's notes and the critique \"From a Landscape of Being to the Horizon of Perception\" by Lee Phil (Art Historian, Art Critic, Professor at Hongik University)."
-  },
-  {
-    "id": "401978",
-    "kind": "exhibition",
-    "start": "20261105",
-    "title": "《환기(換氣): 바람이 지나간 자리》",
-    "place": "갤러리 지하",
-    "area": "서울",
-    "price": "-",
-    "addr": "서울특별시 마포구 서강로11길 15 지하 1층",
-    "overview": null
   },
   {
     "id": "403216",
@@ -1540,17 +1287,6 @@
     "overview": null
   },
   {
-    "id": "405278",
-    "kind": "exhibition",
-    "start": "20261106",
-    "title": "2026 난지미술창작스튜디오 오픈스튜디오: 런타임",
-    "place": "난지미술창작스튜디오",
-    "area": "서울",
-    "price": "무료",
-    "addr": "서울특별시 마포구 하늘공원로 108-1 난지미술창작스튜디오",
-    "overview": null
-  },
-  {
     "id": "405885",
     "kind": "exhibition",
     "start": "20261106",
@@ -1560,28 +1296,6 @@
     "price": "무료",
     "addr": "서울특별시 종로구 낙산성곽동길 53 1층",
     "overview": null
-  },
-  {
-    "id": "401013",
-    "kind": "traditional",
-    "start": "20261107",
-    "title": "2026-2027 국립극장 레퍼토리시즌 국립창극단 <2026 창극 작가 프로젝트 시연회>",
-    "place": "국립극장 하늘극장",
-    "area": "서울",
-    "price": "전석 20,000원",
-    "addr": "서울특별시 중구 장충단로 59 국립극장",
-    "overview": null
-  },
-  {
-    "id": "402018",
-    "kind": "traditional",
-    "start": "20261107",
-    "title": "국립창극단 <2026 창극 작가 프로젝트 시연회>",
-    "place": "국립극장 하늘극장",
-    "area": "서울",
-    "price": "전석 2만원",
-    "addr": "서울특별시 중구 장충단로 59 국립극장",
-    "overview": "네 명의 작가 × 네 명의 작창가 = 네 편의 창극 신작 <서천> <깡철, 씨> <클리타임네스트라> <모차르트의 여덟 마디>"
   },
   {
     "id": "402249",
@@ -1625,39 +1339,6 @@
     "area": "울산",
     "price": "무료",
     "addr": "울산광역시 동구 성끝길 103 슬도아트",
-    "overview": null
-  },
-  {
-    "id": "403710",
-    "kind": "traditional",
-    "start": "20261108",
-    "title": "제24회 (사)최옥삼류가야금산조보존회 정기연주회: 최옥삼 서거 70주기 추모음악회",
-    "place": "국립국악원 풍류사랑방",
-    "area": "서울",
-    "price": "전석무료",
-    "addr": "서울특별시 서초구 남부순환로 2364 국립국악원",
-    "overview": null
-  },
-  {
-    "id": "405340",
-    "kind": "traditional",
-    "start": "20261108",
-    "title": "구각노리 10주년 콘서트 - 잘 살아 보세!",
-    "place": "부평아트센터 달누리극장",
-    "area": "인천",
-    "price": "전석 초대",
-    "addr": "인천광역시 부평구 아트센터로 166 부평아트센터",
-    "overview": null
-  },
-  {
-    "id": "405768",
-    "kind": "traditional",
-    "start": "20261108",
-    "title": "해금앙상블 해이야 제4회 정기연주회: 전통, 새 시간을 걷다",
-    "place": "국립국악원 우면당",
-    "area": "서울",
-    "price": "전석 20,000원",
-    "addr": "서울특별시 서초구 남부순환로 2364 국립국악원",
     "overview": null
   },
   {
@@ -1936,6 +1617,17 @@
     "overview": null
   },
   {
+    "id": "406759",
+    "kind": "traditional",
+    "start": "20261118",
+    "title": "서울가야금앙상블 창단10주년 기념 정기연주회",
+    "place": "국립국악원 우면당",
+    "area": "서울",
+    "price": "전석 20,000원",
+    "addr": "서울특별시 서초구 남부순환로 2364 국립국악원",
+    "overview": null
+  },
+  {
     "id": "401482",
     "kind": "traditional",
     "start": "20261119",
@@ -2002,6 +1694,39 @@
     "overview": null
   },
   {
+    "id": "403608",
+    "kind": "traditional",
+    "start": "20261121",
+    "title": "2026 국립남도국악원 토요상설 <국악이 좋다> 가야토리: 수궁가, 가야금 줄을 타다",
+    "place": "국립남도국악원 진악당",
+    "area": "광주",
+    "price": "전석무료",
+    "addr": "전남광주통합특별시 진도군 임회면 진도대로 3818 국립남도국악원 국립남도국악원",
+    "overview": null
+  },
+  {
+    "id": "405423",
+    "kind": "traditional",
+    "start": "20261121",
+    "title": "국립민속국악원 소리 판 완창무대, 최영란의 동초제 적벽가",
+    "place": "국립민속국악원 예음헌",
+    "area": "전북",
+    "price": "전석무료",
+    "addr": "전북특별자치도 남원시 양림길 54 국립민속국악원",
+    "overview": null
+  },
+  {
+    "id": "405743",
+    "kind": "traditional",
+    "start": "20261121",
+    "title": "[진천] 어린이 국악뮤지컬, 별이와 무지개다리",
+    "place": "진천예술의전당 진아트홀",
+    "area": "충북",
+    "price": "전석 10,000원",
+    "addr": null,
+    "overview": null
+  },
+  {
     "id": "402686",
     "kind": "traditional",
     "start": "20261122",
@@ -2011,6 +1736,17 @@
     "price": "전석 3만원",
     "addr": "서울특별시 강남구 테헤란로92길 12-9 코우스",
     "overview": "이 시대 예인의 삶을 집중 조명하는 공연 시리즈, 아쟁 명인 이태백의 60년 음악인생을 총결산"
+  },
+  {
+    "id": "406925",
+    "kind": "traditional",
+    "start": "20261122",
+    "title": "제6회 한국가야금음악연구회 정기연주회",
+    "place": "국립국악원 우면당",
+    "area": "서울",
+    "price": "전석무료",
+    "addr": "서울특별시 서초구 남부순환로 2364 국립국악원",
+    "overview": null
   },
   {
     "id": "404911",
