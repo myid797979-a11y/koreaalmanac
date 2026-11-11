@@ -291,7 +291,8 @@ export default function SeoulThreeDays() {
 
       <p className="meta">
         Fees, hours and closing days verified against the Korea Heritage Service in September
-        2026. Palace admission is under review and may rise on 1 January 2027. Photographs:
+        2026. A palace fee rise planned for 1 January 2027 was put on hold in October 2026;
+        no new date has been set. Photographs:
         Korea Tourism Organization. Rules change — check the official page for anything your
         trip depends on.
       </p>

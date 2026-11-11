@@ -28,6 +28,10 @@ export default function HalloweenSeoul2026() {
       </div>
 
       <h1>Halloween in Seoul, 2026: where it happens now</h1>
+      <div className="ended-banner">
+        Halloween 2026 is over. The pattern below — theme-park events through October, small
+        neighbourhood parties rather than one big street crowd — is likely to repeat in 2027.
+      </div>
       <p className="sub">
         Halloween is not a holiday in Korea, but for fifteen years it has been one of Seoul’s
         biggest nights out — a costume street party that grew up in Itaewon and spread to

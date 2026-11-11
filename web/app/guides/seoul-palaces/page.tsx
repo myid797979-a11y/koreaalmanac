@@ -106,7 +106,7 @@ export default function SeoulPalaces() {
       </table>
       <p className="meta">
         A combined ticket covers the four paid palaces, the Secret Garden and Jongmyo, and pays for
-        itself if you visit three. Entry is also free on the last Wednesday of each month. The fees are due to rise from 1 January 2027, the first increase in more than twenty years; the prices above are for 2026.
+        itself if you visit three. Entry is also free on the last Wednesday of each month. The first fee rise in more than twenty years was planned for 1 January 2027, but in October 2026 the Korea Heritage Service put it on hold until visitor services are improved — no new prices or date have been set, so the fees above still apply.
       </p>
 
       <BookBox

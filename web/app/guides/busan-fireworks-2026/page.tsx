@@ -28,6 +28,11 @@ export default function BusanFireworks2026() {
       </div>
 
       <h1>Busan Fireworks Festival 2026: how to actually see it</h1>
+      <div className="ended-banner">
+        The 2026 show took place on 7 November. The festival returns every autumn, usually on a
+        Saturday in October or November; 2027 dates have not been announced yet. The
+        viewing spots, seat tiers and getting-home advice below still apply.
+      </div>
       <p className="sub">
         <strong>Saturday 7 November 2026</strong>, over the water at Gwangalli Beach. It is the
         largest fireworks display in Korea — about an hour of shells fired from barges in front of

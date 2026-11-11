@@ -28,6 +28,11 @@ export default function JinjuLantern2026() {
       </div>
 
       <h1>Jinju Namgang Lantern Festival 2026: how to visit</h1>
+      <div className="ended-banner">
+        The 2026 festival ran from 3 to 18 October and has ended. It is held every October around
+        the Namgang river; 2027 dates have not been announced yet. The routes from Busan and Seoul
+        and the advice below still apply.
+      </div>
       <p className="sub">
         <strong>3 to 18 October 2026</strong>, on the Namgang River below Jinjuseong Fortress
         in South Gyeongsang. After dark the river fills with thousands of lanterns — giant figures,

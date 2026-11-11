@@ -39,7 +39,7 @@ export default function EntryRequirements() {
         <ul>
           <li><strong>K-ETA exemption:</strong> citizens of 22 countries, including the US, UK, Canada, Australia, New Zealand, Japan and most of western Europe, do not need a K-ETA until <strong>31 December 2026</strong>.</li>
           <li><strong>e-Arrival Card:</strong> if you enter without a K-ETA, you must file the online arrival card within the <strong>three days before you land</strong>. It applies to every traveller, including children.</li>
-          <li><strong>Travelling in 2027?</strong> Check whether the exemption has been extended before you book; if not, you will need a K-ETA again.</li>
+          <li><strong>Travelling in 2027?</strong> As of 12 November 2026 the government has not announced whether the exemption continues after 31 December. The last extension was confirmed only weeks before the deadline, so check again before you fly; if it lapses you will need a K-ETA (apply at least 72 hours before departure).</li>
         </ul>
       </div>
 

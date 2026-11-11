@@ -62,14 +62,14 @@ export default function AutumnFoliage() {
       </div>
 
       {/* 시즌 중 매주 갱신한다 (10~11월). 갱신하면 GUIDE_DATES 의 updated 도 올린다. */}
-      <h2 className="sect">Right now: updated 6 October</h2>
+      <h2 className="sect">Right now: updated 12 November</h2>
       <ul className="tips">
-        <li><strong>Seoraksan</strong>: colour has spread down from Daecheongbong summit past the Hangyeryeong junction and below Bongjeongam hermitage. The high ridges are at their best; the valleys around Seorak-dong and Osaek are still mostly green.</li>
-        <li><strong>Peak forecast unchanged:</strong> Seoraksan around 20 October. If you can only go once, the week of 15–24 October is the safest bet for the cable car and the lower trails.</li>
-        <li><strong>Seoul, the central mountains and the south</strong> have not turned yet. Songnisan is forecast for 28 October, Naejangsan 4 November, Hallasan 6 November; ginkgo streets in Seoul peak around the end of October.</li>
-        <li><strong>Hangeul Day holiday weekend (9–11 October)</strong> will be busy in Seoraksan. Go early, or wait for the weekdays after.</li>
+        <li><strong>The mountains are done.</strong> Seoraksan, Odaesan and Songnisan are past their best and mostly bare on the ridges. Naejangsan (forecast peak 4 November) is at the tail end — still colour in the lower valley near Naejangsa temple this week, thinning fast.</li>
+        <li><strong>Seoul is the last good bet.</strong> The Korea Meteorological Administration recorded Seoul’s first colour on 27 October, about two weeks late, and the city’s usual peak is around 8 November — so mid-November is it. Go this week or next for Deoksugung’s stone-wall road, Namsan and the palaces. A hot, dry September left more brown leaves than usual this year, so expect patchier colour than the postcards.</li>
+        <li><strong>Jeju:</strong> Hallasan’s forecast peak was 6 November; the high trails are past it, but lower forest roads such as the 1100 Road can still show colour into mid-November.</li>
+        <li>This is the last weekly update for 2026. For what replaces the leaves — Christmas lights and the Seoul Lantern Festival from 11 December — see <Link href="/guides/christmas-new-year-seoul/">Christmas and New Year in Seoul</Link>.</li>
       </ul>
-      <p className="meta">We update this section weekly through October and November.</p>
+      <p className="meta">Updated weekly through October and November 2026. Sources: Korea Forest Service forecast map, Korea Meteorological Administration observations.</p>
 
       <h2 className="sect">The 2026 window, north to south</h2>
       <table className="facts">
