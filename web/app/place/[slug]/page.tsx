@@ -12,6 +12,7 @@ import AdSlot from '@/app/components/AdSlot';
 import { PLACE_GUIDE, GUIDES } from '@/lib/guides';
 import RegionGuides from '@/app/components/RegionGuides';
 import { offersFor } from '@/lib/affiliate';
+import { placeIndexable, NOINDEX } from '@/lib/indexing';
 
 export function generateStaticParams() {
   return placeParams();
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: clean + ' — ' + catMeta(p.cat).label + ', ' + p.region,
     description: clampDesc(clean + ', ' + p.region + '. ' + (p.overview ?? catMeta(p.cat).blurb)),
     openGraph: { title: clean, images: [p.image] },
+    ...(placeIndexable(p) ? {} : { robots: NOINDEX }),
   };
 }
 

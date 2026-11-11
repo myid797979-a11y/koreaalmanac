@@ -13,6 +13,7 @@ import {
   festivals, allFestivals, DUP_OF, bySlug, status, dateRange, daysUntil, today,
   icsHref, MONTH_SLUGS, MONTHS_FULL, categoryLabel, uniqueTitle, isFree } from '@/lib/data';
 import { festivalJsonLd, breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
+import { festivalIndexable, NOINDEX } from '@/lib/indexing';
 
 export function generateStaticParams() {
   return allFestivals.map(f => ({ slug: f.slug }));
@@ -34,6 +35,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description,
     // KTO 중복 레코드면 원래 레코드를 정규 URL 로 (lib/data DUP_OF)
     ...(DUP_OF.has(f.id) ? { alternates: { canonical: '/festival/' + DUP_OF.get(f.id)!.slug + '/' } } : {}),
+    // 끝난 지 60일 넘은 회차는 색인 제외 (lib/indexing). 중복 레코드는 canonical 만 — 둘을 겹치지 않는다.
+    ...(!DUP_OF.has(f.id) && !festivalIndexable(f, today()) ? { robots: NOINDEX } : {}),
     openGraph: {
       title: f.title,
       description,

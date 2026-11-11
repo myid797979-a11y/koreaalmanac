@@ -5,6 +5,7 @@ import {
 import { today } from '@/lib/data';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { SITE_URL, clampDesc } from '@/lib/site';
+import { cultureIndexable, NOINDEX } from '@/lib/indexing';
 
 export function generateStaticParams() {
   return cultureParams();
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: uniqueCultureTitle(c) + ' — ' + KIND_META[c.kind].label,
     description: clampDesc(c.title + ' at ' + where + ', ' + cultureDateRange(c) + '. ' + (c.overview ?? '')),
     openGraph: { title: c.title, images: c.image ? [c.image] : [] },
+    ...(cultureIndexable(c, today()) ? {} : { robots: NOINDEX }),
   };
 }
 

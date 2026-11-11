@@ -3,6 +3,8 @@
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://koreaalmanac.com';
 export const SITE_NAME = 'Korea Almanac';
 export const TAGLINE = "What's on in Korea, with real dates";
+// 공개 연락처 (2026-11-11) — Cloudflare Email Routing 으로 사용자 개인 메일에 전달. 회사(DMTEK) 메일 금지.
+export const CONTACT_EMAIL = 'admin@koreaalmanac.com';
 
 /**
  * meta description 길이 맞추기 — Bing 은 25~160자를 요구하고, 검색 결과에는

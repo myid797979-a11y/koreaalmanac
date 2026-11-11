@@ -1,5 +1,12 @@
 import Link from 'next/link';
-import { GUIDES, REGION_GUIDES, MONTH_GUIDES, type Guide } from '@/lib/guides';
+import { GUIDES, REGION_GUIDES, MONTH_GUIDES, GUIDE_DATES, type Guide } from '@/lib/guides';
+
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+/** '2026-10-06' → '6 October 2026' */
+function longDate(iso: string): string {
+  const [y, m, d] = iso.split('-').map(Number);
+  return `${d} ${MONTHS[m - 1]} ${y}`;
+}
 import { placeBySlug } from '@/lib/places';
 import { FAQS } from '@/lib/faqs';
 import GuideFaq from './GuideFaq';
@@ -46,9 +53,18 @@ function related(href: string, n: number): Guide[] {
 export default function RelatedGuides({ href }: { href: string }) {
   const list = related(href, 4);
   const faq = FAQS[href];
+  const dates = GUIDE_DATES[href];
   // 가이드마다 이 컴포넌트가 하단에 하나씩 있으므로 Quick answers 도 여기서 같이 그린다
   return (
     <>
+      {/* 수정일·확인 방식을 본문에 보이게 (2026-11-11, AdSense 거절 후 신뢰 신호 보강). About 에 이 줄을 약속했다. */}
+      {dates && (
+        <p className="guide-updated" style={{ fontSize: '0.9em', opacity: 0.8, marginTop: 32 }}>
+          Last updated {longDate(dates.updated)}. Prices, dates and opening hours are checked against
+          official sources — <Link href="/about/">how guides are written</Link>.
+          Spotted something out of date? <Link href="/about/">Let us know</Link>.
+        </p>
+      )}
       {faq && <GuideFaq items={faq} />}
       {list.length > 0 && <>
       <h2 className="sect">More guides</h2>

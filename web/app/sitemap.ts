@@ -8,6 +8,7 @@ import { liveCulture } from '@/lib/culture';
 import { PLACE_CATS, places } from '@/lib/places';
 import { SITE_URL } from '@/lib/site';
 import { today } from '@/lib/data';
+import { placeIndexable, festivalIndexable } from '@/lib/indexing';
 
 export const dynamic = 'force-static';
 
@@ -15,15 +16,11 @@ export const dynamic = 'force-static';
 // GSC 에서 2,350페이지가 "발견됨 – 크롤 안 됨" — 새 도메인이라 Google 이 하루 150쪽쯤만 가져간다. 그 예산이
 // 2025년 축제 회차나 시간·요금 없는 장소에 쓰이지 않게, 사이트맵에는 지금 가치 있는 것만 넣는다.
 // 빠진 페이지도 사이트에 그대로 있고 내부 링크로 발견된다. 축제는 다시 열리면(같은 id) 자동으로 돌아온다.
-//   - 축제: 종료 60일 이내 또는 예정   - 문화: 진행 중/예정만   - 장소: 시간·휴무·요금 중 하나라도 있는 것
-function ymdMinus(days: number): string {
-  const d = new Date(Date.now() + 9 * 3600 * 1000); d.setUTCDate(d.getUTCDate() - days);
-  return d.toISOString().slice(0, 10).replace(/-/g, '');
-}
+//   - 축제: 종료 60일 이내 또는 예정   - 문화: 진행 중/예정만   - 장소: 소개 200자 이상 + 시간·휴무·요금 중 하나
+// 2026-11-11: 기준을 lib/indexing.ts 로 옮겼다. 사이트맵에서 빠지는 상세 페이지는 robots noindex 도 같이 붙는다.
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const t = today();
-  const festCutoff = ymdMinus(60);
   const urls: MetadataRoute.Sitemap = [
     { url: SITE_URL + '/', priority: 1.0 },
     { url: SITE_URL + '/plan/', priority: 0.9 },
@@ -95,7 +92,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(places.length ? [{ url: SITE_URL + '/places/', priority: 0.95 }] : []),
     ...PLACE_CATS.map(c => ({ url: SITE_URL + '/places/' + c.slug + '/', priority: 0.85 })),
     ...REGIONS.map(r => ({ url: SITE_URL + '/regions/' + r.toLowerCase() + '/', priority: 0.9 })),
-    ...places.filter(p => p.hours || p.closed || p.fee).map(p => ({ url: SITE_URL + '/place/' + p.slug + '/', priority: 0.7 })),
+    ...places.filter(placeIndexable).map(p => ({ url: SITE_URL + '/place/' + p.slug + '/', priority: 0.7 })),
     { url: SITE_URL + '/calendar/', priority: 0.9 },
     { url: SITE_URL + '/regions/', priority: 0.8 },
     { url: SITE_URL + '/about/', priority: 0.3 },
@@ -115,7 +112,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   for (const f of festivals)
-    if ((f.end ?? f.start ?? '') >= festCutoff)
+    if (festivalIndexable(f, t))
       urls.push({ url: SITE_URL + '/festival/' + f.slug + '/', priority: 0.6 });
 
   return urls;
