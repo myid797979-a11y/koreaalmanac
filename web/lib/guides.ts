@@ -10,6 +10,41 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    href: '/guides/seoul-in-december/',
+    title: 'Seoul in December 2026',
+    blurb: 'Cold, clear and cheap until mid-month, then the Lantern Festival and Gwanghwamun Market from 11 December, the SBS Gayo Daejeon on 24–25 December, Christmas on a Friday and the New Year bell, with the month’s concerts.',
+    tag: 'Seasonal',
+    photo: 'cheonggyecheon-stream-897540',
+  },
+  {
+    href: '/guides/seoul-new-years-eve/',
+    title: 'New Year’s Eve in Seoul 2026–27: the bell and the first sunrise',
+    blurb: 'The Bosingak bell at midnight, which stations close and how late the trains run, the Gwanghwamun and Lotte World Tower countdowns, and where to watch the first sunrise of 2027.',
+    tag: 'Seasonal',
+    photo: 'bosingak-belfry-264135',
+  },
+  {
+    href: '/guides/hwacheon-ice-festival-2027/',
+    title: 'Hwacheon Ice Festival 2027: 9–31 January',
+    blurb: 'Ice fishing for mountain trout on a frozen stream two hours from Seoul: the foreigners’ zone, what it costs, what to wear at −15 °C, and the bus or shuttle there.',
+    tag: 'Seasonal',
+    photo: 'paroho-lake-hwacheon-793179',
+  },
+  {
+    href: '/guides/money-in-korea/',
+    title: 'Money in Korea: cards, cash, WOWPASS and ATMs',
+    blurb: 'Where foreign Visa and Mastercard work and where they fail, how much cash to carry, WOWPASS and T-money, ATMs that take foreign cards, exchanging money, and why there is no tipping.',
+    tag: 'How-to',
+    photo: 'gwangjang-market-273761',
+  },
+  {
+    href: '/guides/tax-refund-korea/',
+    title: 'Tax refunds in Korea: instant refunds, limits and the airport',
+    blurb: 'The ₩15,000 minimum, instant refunds at the till up to ₩1 million a purchase and ₩5 million a trip, downtown booths, the Incheon kiosk and customs steps, hotel refunds and the mistakes that lose you the money.',
+    tag: 'How-to',
+    photo: 'lotte-duty-free-shop-myeongdong-main-store-273801',
+  },
+  {
     href: '/guides/jinju-lantern-festival-2026/',
     title: 'Jinju Lantern Festival 2026: 3–18 October',
     blurb: 'Thousands of lanterns on the river below Jinjuseong Fortress. When to go, what is free, floating a wish lantern, the easy day trip from Busan, and what to do when Jinju’s hotels are full.',
@@ -373,7 +408,7 @@ export const GUIDE_GROUPS = [
   { id: 'experiences', label: 'Things to do' },
   { id: 'kpop',        label: 'K-pop and live shows' },
 ] as const;
-const BEFORE = ['/guides/incheon-airport-layover/', '/guides/where-to-stay-in-busan/', '/guides/korea-entry-requirements/', '/guides/esim-and-apps-for-korea/', '/guides/incheon-airport-to-seoul/', '/guides/getting-around-seoul/', '/guides/where-to-stay-in-seoul/', '/guides/korea-on-a-budget/'];
+const BEFORE = ['/guides/money-in-korea/', '/guides/tax-refund-korea/', '/guides/incheon-airport-layover/', '/guides/where-to-stay-in-busan/', '/guides/korea-entry-requirements/', '/guides/esim-and-apps-for-korea/', '/guides/incheon-airport-to-seoul/', '/guides/getting-around-seoul/', '/guides/where-to-stay-in-seoul/', '/guides/korea-on-a-budget/'];
 const KPOP = ['/guides/kpop-tickets/', '/guides/kpop-award-shows/', '/venues/'];
 export function guideGroup(g: Guide): (typeof GUIDE_GROUPS)[number]['id'] {
   if (KPOP.includes(g.href)) return 'kpop';
@@ -392,6 +427,8 @@ export const FIRST_TRIP: { href: string; label: string }[] = [
   { href: '/guides/where-to-stay-in-seoul/', label: 'Where to stay in Seoul' },
   { href: '/guides/korea-7-day-itinerary/', label: '7 days in Korea' },
   { href: '/guides/korea-on-a-budget/', label: 'Korea on a budget' },
+  { href: '/guides/money-in-korea/', label: 'Money and cards' },
+  { href: '/open-on/', label: 'What’s open today' },
 ];
 
 /**
@@ -408,7 +445,10 @@ const NOW_WINDOWS: { href: string; from: string; to: string }[] = [
   { href: '/guides/autumn-foliage/',              from: '20260915', to: '20261115' },
   { href: '/guides/seoul-in-november/',           from: '20261020', to: '20261125' },
   { href: '/guides/kpop-award-shows/',            from: '20261019', to: '20261231' },
+  { href: '/guides/seoul-in-december/',           from: '20261115', to: '20261228' },
   { href: '/guides/christmas-new-year-seoul/',    from: '20261101', to: '20270101' },
+  { href: '/guides/seoul-new-years-eve/',         from: '20261201', to: '20270101' },
+  { href: '/guides/hwacheon-ice-festival-2027/',  from: '20261201', to: '20270131' },
   { href: '/guides/skiing-in-korea/',             from: '20261108', to: '20270215' },
   { href: '/guides/korea-in-winter/',             from: '20261116', to: '20270228' },
   { href: '/guides/seollal-2027/',                from: '20261215', to: '20270209' },
@@ -534,12 +574,12 @@ export const PLACE_GUIDE: Record<string, string> = {
 
 /** 지역 허브(축제·지역 페이지) → 그 지역 가이드 */
 export const REGION_GUIDES: Record<string, string[]> = {
-  Seoul:     ['/guides/seoul-3-days/', '/guides/where-to-stay-in-seoul/', '/guides/seoul-palaces/', '/guides/korean-food-guide/', '/guides/getting-around-seoul/', '/guides/halloween-seoul-2026/'],
+  Seoul:     ['/guides/seoul-3-days/', '/guides/seoul-in-december/', '/guides/where-to-stay-in-seoul/', '/guides/seoul-palaces/', '/guides/korean-food-guide/', '/guides/getting-around-seoul/', '/open-on/'],
   Busan:     ['/guides/busan-2-days/', '/guides/where-to-stay-in-busan/', '/guides/busan-food-guide/', '/guides/busan-fireworks-2026/', '/guides/korean-spa-jjimjilbang/'],
   Gyeongnam: ['/guides/jinju-lantern-festival-2026/', '/guides/templestay-korea/', '/guides/cherry-blossom-2027/'],
   Gyeongbuk: ['/guides/gyeongju-2-days/', '/guides/andong-hahoe-village/'],
   Jeju:      ['/guides/jeju-3-days/'],
-  Gangwon:   ['/guides/gangneung-sokcho-2-days/', '/guides/skiing-in-korea/', '/guides/nami-island-day-trip/', '/guides/korea-in-winter/', '/guides/autumn-foliage/'],
+  Gangwon:   ['/guides/hwacheon-ice-festival-2027/', '/guides/gangneung-sokcho-2-days/', '/guides/skiing-in-korea/', '/guides/nami-island-day-trip/', '/guides/korea-in-winter/', '/guides/autumn-foliage/'],
   Gyeonggi:  ['/guides/day-trips-from-seoul/', '/guides/suwon-day-trip/', '/guides/everland-vs-lotte-world/', '/guides/nami-island-day-trip/', '/guides/dmz-tour-from-seoul/', '/venues/'],
   Jeonbuk:   ['/guides/jeonju-2-days/', '/guides/templestay-korea/'],
   Jeonnam:   ['/guides/templestay-korea/'],
@@ -550,7 +590,7 @@ export const REGION_GUIDES: Record<string, string[]> = {
 export const FESTIVAL_GUIDE: Record<string, string> = {
   '235076': '/guides/busan-fireworks-2026/',
   '1385298': '/guides/busan-fireworks-2026/',
-  '685135': '/guides/korea-in-winter/',
+  '685135': '/guides/hwacheon-ice-festival-2027/',   // 화천산천어축제 (2026-11-12 전용 가이드로)
   '700520': '/guides/cherry-blossom-2027/',
   '697197': '/guides/jinju-lantern-festival-2026/',
   '4113182': '/guides/jinju-lantern-festival-2026/',
@@ -573,18 +613,20 @@ export const FESTIVAL_GUIDE: Record<string, string> = {
   '2874909': '/guides/best-festivals-in-korea/',
   '3487931': '/guides/jeonju-2-days/',          // 전주한옥마을 퍼레이드
   '2394700': '/guides/jeonju-2-days/',          // 전주 문화유산 야행
-  '506838':  '/guides/jeonju-2-days/',          // 전주 한지산업대전
+  '293037':  '/guides/jeonju-2-days/',          // 전주한지문화축제 (506838 레코드는 데이터에서 빠짐)
   '2757751': '/guides/jeonju-2-days/',          // 전주 거리 인형극 축제
   '2648460': '/guides/seoul-palaces/',          // 경복궁 별빛야행
   '2756396': '/guides/seoul-palaces/',          // 덕수궁 석조전 야간
   '2818138': '/guides/seoul-palaces/',          // 창경궁 야연
   '1331175': '/guides/seoul-palaces/',          // 창덕궁 달빛기행
   '292961':  '/guides/seoul-palaces/',          // 덕수궁 수문장 교대
+  '1117592': '/guides/seoul-new-years-eve/',    // 정동진 해맞이
+  '141375':  '/guides/seoul-new-years-eve/',    // 울주 간절곶 해맞이
 };
 
 /** 월 허브에 보여줄 가이드 — 그 달에 검색하는 사람이 실제로 필요로 하는 순서 */
 export const MONTH_GUIDES: string[][] = [
-  ['/guides/korea-in-winter/', '/guides/skiing-in-korea/', '/guides/christmas-new-year-seoul/', '/guides/seollal-2027/'],   // Jan
+  ['/guides/hwacheon-ice-festival-2027/', '/guides/korea-in-winter/', '/guides/seoul-new-years-eve/', '/guides/skiing-in-korea/', '/guides/seollal-2027/'],   // Jan
   ['/guides/seollal-2027/', '/guides/korea-in-winter/', '/guides/skiing-in-korea/', '/guides/cherry-blossom-2027/'],       // Feb
   ['/guides/cherry-blossom-2027/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                // Mar
   ['/guides/cherry-blossom-2027/', '/guides/seoul-palaces/', '/guides/baseball-in-korea/', '/guides/korea-on-a-budget/'], // Apr
@@ -595,7 +637,7 @@ export const MONTH_GUIDES: string[][] = [
   ['/guides/seoul-palaces/', '/guides/baseball-in-korea/', '/guides/autumn-foliage/', '/guides/korea-on-a-budget/'], // Sep
   ['/guides/jinju-lantern-festival-2026/', '/guides/suwon-day-trip/', '/guides/autumn-foliage/', '/guides/halloween-seoul-2026/', '/guides/busan-fireworks-2026/'], // Oct
   ['/guides/seoul-in-november/', '/guides/kpop-award-shows/', '/guides/busan-fireworks-2026/', '/guides/autumn-foliage/'], // Nov
-  ['/guides/christmas-new-year-seoul/', '/guides/korea-in-winter/', '/guides/skiing-in-korea/', '/guides/kpop-award-shows/'],                                             // Dec
+  ['/guides/seoul-in-december/', '/guides/christmas-new-year-seoul/', '/guides/seoul-new-years-eve/', '/guides/korea-in-winter/', '/guides/skiing-in-korea/', '/guides/hwacheon-ice-festival-2027/'],  // Dec
 ];
 
 /**
@@ -614,13 +656,18 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/seoul-palaces/':            { published: '2026-09-29', updated: '2026-11-12' },
   '/guides/korean-food-guide/':        { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/seoul-shopping/':           { published: '2026-09-30', updated: '2026-09-30' },
-  '/guides/kpop-award-shows/':         { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/kpop-award-shows/':         { published: '2026-09-30', updated: '2026-11-12' },
   '/guides/skiing-in-korea/':          { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/korean-spa-jjimjilbang/':   { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/templestay-korea/':         { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/jeonju-2-days/':            { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/han-river-parks/': { published: '2026-10-06', updated: '2026-10-06' },
   '/guides/seoul-in-november/': { published: '2026-10-06', updated: '2026-10-06' },
+  '/guides/seoul-in-december/':          { published: '2026-11-12', updated: '2026-11-12' },
+  '/guides/seoul-new-years-eve/':        { published: '2026-11-12', updated: '2026-11-12' },
+  '/guides/hwacheon-ice-festival-2027/': { published: '2026-11-12', updated: '2026-11-12' },
+  '/guides/money-in-korea/':             { published: '2026-11-12', updated: '2026-11-12' },
+  '/guides/tax-refund-korea/':           { published: '2026-11-12', updated: '2026-11-12' },
   '/guides/incheon-airport-layover/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/andong-hahoe-village/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/seoul-markets/': { published: '2026-09-30', updated: '2026-10-06' },
@@ -633,7 +680,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/best-festivals-in-korea/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/where-to-stay-in-seoul/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/esim-and-apps-for-korea/': { published: '2026-09-30', updated: '2026-09-30' },
-  '/guides/getting-around-seoul/': { published: '2026-09-30', updated: '2026-09-30' },
+  '/guides/getting-around-seoul/': { published: '2026-09-30', updated: '2026-11-12' },
   '/guides/korea-7-day-itinerary/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/hanbok-rental/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/gangneung-sokcho-2-days/': { published: '2026-09-30', updated: '2026-09-30' },
@@ -645,7 +692,7 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/korea-in-winter/':          { published: '2026-09-14', updated: '2026-09-28' },
   '/guides/autumn-foliage/':           { published: '2026-09-14', updated: '2026-11-12' },
   '/guides/baseball-in-korea/':        { published: '2026-09-28', updated: '2026-09-28' },
-  '/guides/korea-on-a-budget/':        { published: '2026-09-28', updated: '2026-09-30' },
+  '/guides/korea-on-a-budget/':        { published: '2026-09-28', updated: '2026-11-12' },
   '/guides/seoul-nightlife/':          { published: '2026-09-28', updated: '2026-09-28' },
   '/guides/seoul-3-days/':             { published: '2026-09-10', updated: '2026-11-12' },
   '/guides/jeju-3-days/':              { published: '2026-09-10', updated: '2026-09-30' },

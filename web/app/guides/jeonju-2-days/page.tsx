@@ -145,7 +145,7 @@ export default function JeonjuTwoDays() {
       <ul className="tips">
         <li><Link href="/festival/jeonju-hanok-village-traditional-performance-parade-3487931/">Traditional performance parades</Link> through the hanok village on weekends until 31 October.</li>
         <li><Link href="/festival/jeonju-cultural-heritage-night-tour-2394700/">Cultural Heritage Night Tour</Link>, 2–3 October.</li>
-        <li><Link href="/festival/jeonju-international-hanji-industry-fair-506838/">Jeonju International Hanji Fair</Link>, 8–10 October.</li>
+        <li><Link href="/festival/jeonju-hanji-culture-festival-293037/">Jeonju Hanji Culture Festival</Link>, 8–10 October.</li>
         <li><Link href="/festival/jeonju-street-puppet-festival-2757751/">Jeonju Street Puppet Festival</Link>, 10–11 October.</li>
       </ul>
       <PlaceRow slugs={[

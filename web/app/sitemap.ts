@@ -9,6 +9,7 @@ import { PLACE_CATS, places } from '@/lib/places';
 import { SITE_URL } from '@/lib/site';
 import { today } from '@/lib/data';
 import { placeIndexable, festivalIndexable } from '@/lib/indexing';
+import { DAYS } from '@/lib/open-days';
 
 export const dynamic = 'force-static';
 
@@ -34,6 +35,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/korea-basics/', priority: 0.9 },
     { url: SITE_URL + '/search/', priority: 0.5 },
     { url: SITE_URL + '/guides/', priority: 0.9 },
+    { url: SITE_URL + '/guides/seoul-in-december/', priority: 0.9 },
+    { url: SITE_URL + '/guides/seoul-new-years-eve/', priority: 0.9 },
+    { url: SITE_URL + '/guides/hwacheon-ice-festival-2027/', priority: 0.9 },
+    { url: SITE_URL + '/guides/money-in-korea/', priority: 0.9 },
+    { url: SITE_URL + '/guides/tax-refund-korea/', priority: 0.9 },
+    { url: SITE_URL + '/open-on/', priority: 0.9 },
+    ...DAYS.map(d => ({ url: SITE_URL + '/open-on/' + d + '/', priority: 0.8 })),
     { url: SITE_URL + '/guides/korea-in-winter/', priority: 0.9 },
     { url: SITE_URL + '/guides/skiing-in-korea/', priority: 0.9 },
     { url: SITE_URL + '/guides/christmas-new-year-seoul/', priority: 0.9 },

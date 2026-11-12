@@ -109,8 +109,6 @@ export default function AutumnFoliage() {
       {/* 단풍 주차 → 같은 주에 그 지역에서 열리는 축제 (지역×월 허브, 매일 갱신) */}
       <p className="strip">
         <strong>Festivals in the same weeks:</strong>
-        <Link href="/events/festivals/gangwon/october/">Gangwon in October</Link>
-        <Link href="/events/festivals/gyeonggi/october/">Gyeonggi in October</Link>
         <Link href="/events/festivals/gyeonggi/november/">Gyeonggi in November</Link>
         <Link href="/events/festivals/seoul/november/">Seoul in November</Link>
         <Link href="/events/festivals/jeonbuk/november/">Jeonbuk in November</Link>

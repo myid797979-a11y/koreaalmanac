@@ -37,7 +37,7 @@ export default function GettingAroundSeoul() {
         <strong>What to do on day one</strong>
         <ul>
           <li><strong>Get a transport card</strong> at the airport or any convenience store: T-money, or a travel card such as WOWPASS that also pays in shops.</li>
-          <li><strong>Top it up with cash</strong> at subway machines or convenience stores. T-money itself does not take foreign cards for top-ups.</li>
+          <li><strong>Top it up with cash</strong> at subway machines or convenience stores. T-money itself does not take foreign cards for top-ups. Since March 2026 the newer ticket machines on Lines 1–8 do accept foreign cards for single tickets and the Climate Card (about a 3.7% fee), but you still cannot tap a foreign card at the gates.</li>
           <li><strong>Tap in and tap out</strong> on the subway and on buses; tapping out on the bus is what gives you the free transfer.</li>
         </ul>
       </div>

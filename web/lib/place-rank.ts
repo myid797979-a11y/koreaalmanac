@@ -99,7 +99,7 @@ function signalScore(p: Place): number {
 }
 
 /** 여행자에게 보여줄 순서로 정렬 */
-export function rankPlaces(list: Place[], region?: string): Place[] {
+export function rankPlaces<T extends Place>(list: T[], region?: string): T[] {
   const picks = region ? (TOP_PICKS[region] ?? []) : [];
   const pickIdx = new Map(picks.map((id, i) => [id, i]));
 

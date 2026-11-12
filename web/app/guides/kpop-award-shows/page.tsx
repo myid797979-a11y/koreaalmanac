@@ -39,7 +39,7 @@ export default function AwardShows() {
         <ul>
           <li><Link href="/concert/kgma-2026/">Korea Grand Music Awards (KGMA)</Link>: <strong>7–8 November</strong>, Gocheok Sky Dome, Seoul.</li>
           <li><Link href="/concert/melon-music-awards-2026/">Melon Music Awards (MMA)</Link>: <strong>14–15 November</strong>, Gocheok Sky Dome, Seoul. Two days for the first time.</li>
-          <li><strong>The broadcasters’ year-end music festivals</strong> in December: SBS Gayo Daejeon traditionally on Christmas Day, KBS Song Festival in the second half of December, MBC Gayo Daejejeon on New Year’s Eve. 2026 dates are usually announced in the autumn.</li>
+          <li><strong>The broadcasters’ year-end music festivals</strong> in December: SBS Gayo Daejeon traditionally around Christmas (in 2026, 24–25 December at KINTEX in Ilsan, two nights for its 30th edition), KBS Song Festival in the second half of December, MBC Gayo Daejejeon on New Year’s Eve. 2026 dates are usually announced in the autumn.</li>
         </ul>
       </div>
 

@@ -70,7 +70,7 @@ export default function KoreaOnABudget() {
             <th>Subway and bus</th>
             <td>
               A Seoul subway ride is about <strong>₩1,550</strong> and a city bus about{' '}
-              <strong>₩1,500</strong> with a T-money card, with free transfers between them
+              <strong>₩1,550</strong> with a T-money card, with free transfers between them
               within 30 minutes. A day of moving around the city costs ₩5,000–7,000. The card
               itself is ₩3,000–5,000 from any convenience store and works in every city.
             </td>
@@ -245,10 +245,11 @@ export default function KoreaOnABudget() {
 
       <h2 className="sect">Money itself</h2>
       <p>
-        Foreign cards work almost everywhere, including market stalls and taxis, so carry only
-        a little cash — for T-money top-ups and the occasional old restaurant. ATMs marked
+        Foreign cards work almost everywhere, including taxis — the exceptions are many market
+        stalls and street-food carts — so carry only a little cash, for those and for T-money
+        top-ups (see <Link href="/guides/money-in-korea/">money in Korea</Link>). ATMs marked
         “Global” take foreign cards; the ones in convenience stores charge a few thousand won
-        a withdrawal. Shops refund the 10% VAT on purchases over ₩15,000 on the spot when you
+        a withdrawal. Shops refund the VAT on purchases of ₩15,000 or more (under ₩1 million a receipt) on the spot when you
         show a passport, which makes pharmacy and cosmetics shopping cheaper than the ticket
         price. And again: there is no tipping anywhere, and nobody is expecting it.
       </p>
