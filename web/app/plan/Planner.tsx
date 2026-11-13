@@ -76,6 +76,10 @@ export default function Planner({ data, regions, today }: {
   const [to, setTo] = useState(plus(today, 7));
   const [region, setRegion] = useState('All');
   const [kinds, setKinds] = useState<PlanKind[]>([]);
+  // 한 번에 수백 장을 그리면 모바일에서 화면이 8만 px 이 된다(2026-11-13 점검) — 24장씩 늘린다
+  const PAGE = 24;
+  const [limit, setLimit] = useState(PAGE);
+  useEffect(() => { setLimit(PAGE); }, [from, to, region, kinds]);
 
   // 홈 폼(GET)이나 공유 링크로 들어온 쿼리 반영
   useEffect(() => {
@@ -180,7 +184,7 @@ export default function Planner({ data, regions, today }: {
           </p>
 
           <div className="grid">
-            {results.map(x => (
+            {results.slice(0, limit).map(x => (
               <Link key={x.href} href={x.href} className="card">
                 <div className="phwrap">
                   {x.image
@@ -200,6 +204,13 @@ export default function Planner({ data, regions, today }: {
               </Link>
             ))}
           </div>
+          {results.length > limit && (
+            <p style={{ textAlign: 'center', margin: '18px 0' }}>
+              <button type="button" className="more-btn" onClick={() => setLimit(l => l + PAGE * 2)}>
+                Show more ({results.length - limit} left)
+              </button>
+            </p>
+          )}
 
           {lastYear.length > 0 && (
             <>

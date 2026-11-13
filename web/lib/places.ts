@@ -26,7 +26,24 @@ export type PlaceCat =
 
 // 깨진 KTO 이미지는 대체 이미지로 (lib/images.ts)
 // 보강 노트는 KTO 값이 빈 칸만 채운다 — KTO 가 나중에 채우면 그쪽이 이긴다.
-function withNote(p: Place): Place {
+/**
+ * KTO 개관정보는 줄바꿈(<br>)이 빠진 채 와서 "09:00-18:00Winter 09:00-17:00" 처럼 붙는다(2026-11-13 점검: 시간 78곳).
+ * 구분이 확실한 자리만 띄운다 — 숫자 뒤 대문자, "won" 뒤 대문자·대괄호, 글자 뒤 [구역], ] 뒤 글자.
+ * (소문자-대문자 일반 규칙은 "SeoulSky" 같은 고유명사를 깨므로 쓰지 않는다)
+ */
+function unglue(s: string | null): string | null {
+  if (!s) return s;
+  return s
+    .replace(/(\d)([A-Z])/g, '$1; $2')
+    .replace(/\b(won|hrs?|daily)([A-Z[])/g, '$1; $2')
+    .replace(/([a-z.)])\[/g, '$1; [')
+    .replace(/\]([A-Za-z0-9])/g, '] $1');
+}
+
+function withNote(p00: Place): Place {
+  // KTO 영문 소개는 문단 구분을 "· ·" 로 넣어 보낸다(278곳) — 문단 나눔(\n\n)으로 바꾸고 상세에서 문단으로 그린다
+  const p0 = { ...p00, hours: unglue(p00.hours), closed: unglue(p00.closed), fee: unglue(p00.fee) };
+  const p = p0.overview ? { ...p0, overview: p0.overview.replace(/\s*·\s*·\s*/g, '\n\n').trim() } : p0;
   const n = PLACE_NOTES[p.id];
   if (!n) return p;
   const noted = (!p.hours && !!n.hours) || (!p.closed && !!n.closed) || (!p.fee && !!n.fee);
@@ -117,6 +134,15 @@ export function placesByRegion(region: string): Place[] {
  * 한글이 든 덩어리만 뗀다 — "(Insa-dong)" 같은 영문 보조설명은 남긴다.
  */
 export function displayTitle(title: string): string {
+  const out = displayTitleParen(title);
+  if (!/[가-힣]/.test(out)) return out;
+  // 괄호 규칙으로 못 뗀 14곳 (2026-11-13): "[진관사(서울)]", "/ 담다헌 …", 닫히지 않은 "(동해역 (…".
+  // 영어 사이트 제목에 한글을 남기지 않는다 — 첫 한글 앞에서 자르고 남은 여는 기호를 정리한다.
+  const cut = out.slice(0, out.search(/[가-힣]/)).replace(/[\s([/·-]+$/, '').trim();
+  return cut.length >= 3 ? cut : out;
+}
+
+function displayTitleParen(title: string): string {
   const s = title.trimEnd();
   if (!s.endsWith(')')) return s;
   let depth = 0;
@@ -136,7 +162,11 @@ export function displayTitle(title: string): string {
 export function koreanName(title: string): string | null {
   const stripped = displayTitle(title);
   if (stripped === title.trimEnd()) return null;
-  const tail = title.trimEnd().slice(stripped.length).trim().replace(/^\(|\)$/g, '');
+  // "(경복궁)" 외에 "[진관사(서울)]"·"/ 담다헌 …"·닫히지 않은 "(동해역 (…" 도 온다 — 바깥 기호만 벗긴다
+  let tail = title.trimEnd().slice(stripped.length).trim().replace(/^[\s([/]+/, '');
+  if (/^[^([]*[)\]]$/.test(tail) || (tail.match(/\(/g)?.length ?? 0) < (tail.match(/\)/g)?.length ?? 0)) tail = tail.slice(0, -1);
+  else if (tail.endsWith(']')) tail = tail.slice(0, -1);
+  tail = tail.trim();
   return tail || null;
 }
 

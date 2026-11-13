@@ -151,7 +151,7 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
         {' · '}<Link href={'/places/' + meta.slug + '/'}>{meta.label}</Link>
       </p>
 
-      {p.overview && <p className="overview">{p.overview}</p>}
+      {p.overview && p.overview.split('\n\n').map((para, i) => <p key={i} className="overview">{para}</p>)}
 
       <table className="facts">
         <tbody>

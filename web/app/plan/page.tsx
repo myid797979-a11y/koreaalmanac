@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Planner, { type SlimEvent } from './Planner';
 import { festivals, today, REGIONS } from '@/lib/data';
-import { culture } from '@/lib/culture';
+import { culture, englishReady } from '@/lib/culture';
 import { concerts } from '@/lib/concerts';
 
 export const metadata = {
@@ -30,7 +30,7 @@ export default function PlanPage() {
       kind: 'concert' as const,
       where: c.venue,
     })),
-    ...culture.filter(c => c.start).map(c => ({
+    ...culture.filter(c => c.start && englishReady(c)).map(c => ({
       href: '/culture/' + c.slug + '/',
       title: c.title,
       start: c.start, end: c.end ?? c.start,

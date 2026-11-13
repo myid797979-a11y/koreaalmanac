@@ -16,7 +16,16 @@ export type Festival = {
 
 /** 회차가 맞는 노트만 얹는다 — 확인한 시간·요금은 KTO 값보다 우선 */
 const ymdDays = (s: string) => Date.UTC(+s.slice(0, 4), +s.slice(4, 6) - 1, +s.slice(6, 8)) / 86400000;
-function withNote(f0: Festival): Festival {
+/** 번역본에 남은 HTML 조각(<br>, &nbsp;, &amp;) — 2026-11-13 점검에서 14건이 글자 그대로 보였다 */
+function cleanText(s: string | null): string | null {
+  if (!s) return s;
+  return s.replace(/<br\s*\/?>/gi, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+    .replace(/[ \t]{2,}/g, ' ').trim();
+}
+
+function withNote(f00: Festival): Festival {
+  const f0 = { ...f00, overview: cleanText(f00.overview) };
   const o = FESTIVAL_OVERVIEWS[f0.id];
   const f = o ? {
     ...f0, overview: o.overview, place: o.place ?? f0.place, mt: false,

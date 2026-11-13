@@ -9,7 +9,7 @@
 import type { Metadata } from 'next';
 import type { Festival } from '@/lib/data';
 import type { Place } from '@/lib/places';
-import type { CultureEvent } from '@/lib/culture';
+import { englishReady, type CultureEvent } from '@/lib/culture';
 
 /** 장소 소개가 이보다 짧으면 얇은 페이지로 본다 (2026-11-11 기준 74곳) */
 export const PLACE_MIN_OVERVIEW = 200;
@@ -42,5 +42,5 @@ export function festivalIndexable(f: Festival, t: string): boolean {
 
 /** 진행 중·예정인 전시·전통공연만 (끝난 것은 404 방지로 90일 남겨 두지만 색인은 안 함) */
 export function cultureIndexable(c: CultureEvent, t: string): boolean {
-  return c.end >= t;
+  return c.end >= t && englishReady(c);
 }

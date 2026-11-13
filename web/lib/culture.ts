@@ -33,9 +33,19 @@ export const KIND_META: Record<CultureEvent['kind'], { label: string; slug: stri
 };
 
 /** 진행중/예정만 (지난 것은 자동 제외) */
+/**
+ * 영어로 옮겨진 항목인가 — 제목에 한글이 남아 있으면 아직 번역 대기다.
+ * 2026-11-13 사이트 점검에서 진행 중 367건 중 221건이 한국어 제목 그대로 플래너·목록·사이트맵에
+ * 나가고 있었다(영어 사이트에 한국어 페이지 — 심사·검색 모두 최악의 신호). 번역이 들어오기 전까지는
+ * 목록·사이트맵에서 빼고 상세는 noindex(lib/indexing). 번역이 커밋되면 자동으로 돌아온다.
+ */
+export function englishReady(c: CultureEvent): boolean {
+  return !/[가-힣]/.test(c.title);
+}
+
 export function liveCulture(kind?: CultureEvent['kind'], t = today()): CultureEvent[] {
   return culture
-    .filter(c => c.end >= t && (!kind || c.kind === kind))
+    .filter(c => c.end >= t && (!kind || c.kind === kind) && englishReady(c))
     .sort((a, b) => a.start.localeCompare(b.start));
 }
 
