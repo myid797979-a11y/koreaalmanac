@@ -157,7 +157,9 @@ export default function SeoulThreeDays() {
             ₩5,000 timed ticket</strong>: 100 people per session, half online from six days
             ahead, half on the day from 09:00. Unlike what most English guides say, the guided
             tour is <em>not</em> compulsory — since 2023 you may walk the route at your own pace.
-            English commentary at 10:30, 11:30, 14:30, 15:30.
+            English commentary at 10:30, 11:30, 14:30, 15:30. Leave time for{' '}
+            <Link href="/place/nakseonjae-hall-1918896/">Nakseonjae</Link> at the palace&apos;s eastern
+            edge — it is on the ordinary ticket, and most visitors run out of time before they reach it.
           </p>
         </Stop>
 
@@ -205,6 +207,9 @@ export default function SeoulThreeDays() {
           <p>
             Cosmetics, street food, and the densest concentration of English-speaking retail in
             the country. Ninety minutes of walking and eating rather than a destination in itself.
+            For a quiet break, the brick{' '}
+            <Link href="/place/myeongdong-cathedral-264138/">Myeongdong Cathedral</Link> is five minutes
+            east and free to enter.
           </p>
         </Stop>
 

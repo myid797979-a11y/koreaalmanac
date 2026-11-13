@@ -162,7 +162,7 @@ export default function BusanTwoDays() {
         <Stop slug="168-stairs-168-2401023" time="Late afternoon" title="168 Stairs, or Huinnyeoul" walk="2.1 km">
           <p>
             The 168 Stairs climb the hillside above the port in a single straight flight — there
-            is a monorail if you would rather not. Alternatively cross to{' '}
+            is an inclined lift alongside the steps (it replaced the old monorail in 2025) if you would rather not. Alternatively cross to{' '}
             <Link href="/place/huinnyeoul-culture-village-2835497/">Huinnyeoul Culture Village</Link>{' '}
             on Yeongdo, a clifftop row of houses above the sea that was the setting for several
             Korean films.

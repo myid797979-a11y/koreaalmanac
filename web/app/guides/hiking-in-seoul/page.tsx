@@ -54,7 +54,10 @@ export default function HikingSeoul() {
             <th>Inwangsan<br /><span className="meta">Easy–moderate · 1.5–2 hr</span></th>
             <td>
               A rocky peak beside Gyeongbokgung, following the old city wall, with a shamanist
-              shrine on the way up. The best short climb for a sunset view over the palaces.
+              shrine on the way up. The best short climb for a sunset view over the palaces. Near
+              the start above Sajik Park, the archery pavilion{' '}
+              <Link href="/place/hwanghakjeong-pavilion-1909497/">Hwanghakjeong</Link> lets visitors try
+              a traditional bow.
             </td>
           </tr>
           <tr>
@@ -81,6 +84,8 @@ export default function HikingSeoul() {
         'bugaksan-mountain-1061818',
         'gwanaksan-mountain-1562674',
         'seoul-hiking-tourism-center-bugaksan-branch-3107903',
+        'buramsan-mountain-2357787',
+        'suraksan-mountain-1253587',
       ]} />
 
       <BookBox

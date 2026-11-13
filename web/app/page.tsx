@@ -148,6 +148,33 @@ export default function Home() {
       <div className="grid">{take(rankShortFirst(weekend), 4).map(f => <Card key={f.id} f={f} t={t} />)}</div>
       <p className="strip" style={{ marginTop: 12 }}><Link href="/seoul-this-weekend/">Everything on in Seoul this weekend: festivals, concerts and shows</Link></p>
 
+      {/* 가이드 — 홈에서 가이드로 가는 링크가 없었다 (2026-09-28). 시즌에 맞는 넷만, lib/guides.ts 가 고른다.
+          2026-11-13 이번 주말 바로 아래로 올렸다 — 공연·전시 목록 뒤(첫 화면 2,400px 밖)에 있어서
+          홈이 데이터 목록으로만 보였다. 사람이 쓴 글이 첫 화면 가까이 보여야 한다. */}
+      <SectionHead title="Plan around the season" href="/guides/" more="all guides" />
+      <div className="cult-list">
+        {nowGuideHrefs(t).map(h => GUIDES.find(g => g.href === h)).filter(Boolean).map(g => {
+          const ph = g!.photo ? placeBySlug(g!.photo) : undefined;
+          return (
+            <article key={g!.href} className="cult">
+              {ph
+                ? <Link href={g!.href} className="cu-ph"><img src={ph.image} alt={g!.title} loading="lazy" /></Link>
+                : <span className="cu-ph cu-noph" aria-hidden="true" />}
+              <div className="cu-body">
+                <div className="cu-when">{g!.tag}</div>
+                <h3><Link href={g!.href}>{g!.title}</Link></h3>
+                <p className="cu-place">{g!.blurb}</p>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <p className="strip" style={{ marginTop: 18 }}>
+        <strong>First trip to Korea?</strong>
+        {FIRST_TRIP.map(l => <Link key={l.href} href={l.href}>{l.label}</Link>)}
+      </p>
+
       {concerts.length > 0 && (
         <>
           <SectionHead title="Concerts &amp; live music" href="/events/concerts/" more={'all ' + concerts.length} />
@@ -210,31 +237,6 @@ export default function Home() {
           </div>
         </>
       )}
-
-      {/* 가이드 — 홈에서 가이드로 가는 링크가 없었다 (2026-09-28). 시즌에 맞는 넷만, lib/guides.ts 가 고른다. */}
-      <SectionHead title="Plan around the season" href="/guides/" more="all guides" />
-      <div className="cult-list">
-        {nowGuideHrefs(t).map(h => GUIDES.find(g => g.href === h)).filter(Boolean).map(g => {
-          const ph = g!.photo ? placeBySlug(g!.photo) : undefined;
-          return (
-            <article key={g!.href} className="cult">
-              {ph
-                ? <Link href={g!.href} className="cu-ph"><img src={ph.image} alt={g!.title} loading="lazy" /></Link>
-                : <span className="cu-ph cu-noph" aria-hidden="true" />}
-              <div className="cu-body">
-                <div className="cu-when">{g!.tag}</div>
-                <h3><Link href={g!.href}>{g!.title}</Link></h3>
-                <p className="cu-place">{g!.blurb}</p>
-              </div>
-            </article>
-          );
-        })}
-      </div>
-
-      <p className="strip" style={{ marginTop: 18 }}>
-        <strong>First trip to Korea?</strong>
-        {FIRST_TRIP.map(l => <Link key={l.href} href={l.href}>{l.label}</Link>)}
-      </p>
 
       <h2 className="sect" style={{ marginTop: 36 }}>Browse by interest</h2>
       <p className="strip">

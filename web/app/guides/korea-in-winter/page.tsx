@@ -80,7 +80,8 @@ export default function KoreaInWinter() {
             <td>
               The mountain east: several degrees colder again, and where the snow actually is.
               Pyeongchang, Hwacheon and the Daegwallyeong plateau hold snow cover for weeks at a
-              time. This is where you go for a white landscape.
+              time. This is where you go for a white landscape — the highland cabbage fields of{' '}
+              <Link href="/place/anbandegi-village-3060320/">Anbandegi</Link> turn into a snowfield.
             </td>
           </tr>
           <tr>

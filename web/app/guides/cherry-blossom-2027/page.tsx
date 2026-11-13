@@ -116,7 +116,8 @@ export default function CherryBlossom2027() {
           <tr>
             <th>The south-west</th>
             <td>
-              Hadong’s ten-li road to Ssanggyesa temple and the Seomjin river at Gurye, both
+              Hadong’s ten-li road to Ssanggyesa temple and the{' '}
+              <Link href="/place/gurye-seomjingang-cherry-blossom-trail-2713053/">Seomjin river at Gurye</Link>, both
               inland from the south coast, both late March, both less known abroad than they
               deserve.
             </td>

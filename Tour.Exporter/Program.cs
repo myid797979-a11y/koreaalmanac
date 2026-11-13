@@ -311,6 +311,22 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
             ["37"] = "Jeonbuk", ["38"] = "Jeonnam", ["39"] = "Jeju",
         };
 
+        // 영문 detailIntro 가 빈 장소는 같은 장소의 국문 값을 영어로 옮긴 것으로 채운다 (2026-11-13).
+        // scripts/kor-intro.mjs(조회) → scripts/kor-intro-translate.mjs(번역) → data/translations/places-intro.json.
+        // 영문 값이 있으면 영문이 이긴다.
+        var korIntroPath = Path.Combine(root, "data", "translations", "places-intro.json");
+        var korIntro = File.Exists(korIntroPath)
+            ? JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, string?>>>(File.ReadAllText(korIntroPath))!
+            : new Dictionary<string, Dictionary<string, string?>>();
+        var korFilled = 0;
+        string? Kor(string id, string field, string? eng)
+        {
+            if (eng != null || !korIntro.TryGetValue(id, out var k)) return eng;
+            var v = k.GetValueOrDefault(field);
+            if (v != null) korFilled++;
+            return v;
+        }
+
         var places = new List<Dictionary<string, object?>>();
         foreach (var (id, it) in raw)
         {
@@ -341,9 +357,9 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
                 // KTO 영문 데이터에 한국어 원문이 섞여 오는 항목이 있다 — 영어 사이트에 노출하지 않는다.
                 ["overview"] = NoKorean(Strip(Decode(it.GetValueOrDefault("overview")))),
                 // detailIntro2 — 콘텐츠 타입마다 필드명이 다르다(i_ 접두사로 저장돼 있다).
-                ["hours"] = IntroField(it, "usetime", "opentimefood", "opentime", "usetimeculture"),
-                ["closed"] = IntroField(it, "restdate", "restdatefood", "restdateshopping", "restdateculture"),
-                ["fee"] = IntroField(it, "usefee", "usefeeculture"),
+                ["hours"] = Kor(id, "hours", IntroField(it, "usetime", "opentimefood", "opentime", "usetimeculture")),
+                ["closed"] = Kor(id, "closed", IntroField(it, "restdate", "restdatefood", "restdateshopping", "restdateculture")),
+                ["fee"] = Kor(id, "fee", IntroField(it, "usefee", "usefeeculture")),
                 ["menu"] = IntroField(it, "firstmenu", "treatmenu"),
                 ["parking"] = IntroField(it, "parking", "parkingfood", "parkingshopping", "parkingculture"),
             });
@@ -360,7 +376,7 @@ File.WriteAllText(Path.Combine(root, "data", "translation_queue.json"),
 
         var byCat = places.GroupBy(x => (string?)x["cat"]).OrderByDescending(g => g.Count())
             .Select(g => g.Key + " " + g.Count());
-        Console.WriteLine($"places.json         {places.Count:N0}건");
+        Console.WriteLine($"places.json         {places.Count:N0}건 (국문 개관정보 보강 {korFilled}칸)");
         Console.WriteLine("  분류: " + string.Join(" · ", byCat));
     }
     else

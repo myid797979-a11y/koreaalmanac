@@ -1,0 +1,620 @@
+{
+ "264124": {
+  "hours": null,
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "127254"
+ },
+ "264144": {
+  "hours": "09:00–17:00",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126158"
+ },
+ "264155": {
+  "hours": "June–September 09:00–18:00 (see the official website for details)",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126081"
+ },
+ "264241": {
+  "hours": "Always open (access may be closed for safety in rain or high water)",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126441"
+ },
+ "264263": {
+  "hours": "09:00–18:00 (last entry 17:30)",
+  "closed": "1 January; Seollal and Chuseok days",
+  "fee": null,
+  "kor": "126209"
+ },
+ "264315": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126514"
+ },
+ "264346": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126429"
+ },
+ "264354": {
+  "hours": "11:00–21:00",
+  "closed": null,
+  "fee": null,
+  "kor": "2903491"
+ },
+ "264449": {
+  "hours": "Usually open to visitors, but the owners may restrict access at times",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "128560"
+ },
+ "264458": {
+  "hours": "Summer 09:00–18:00; winter 09:00–17:00",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126227"
+ },
+ "264513": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "264512"
+ },
+ "264533": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126223"
+ },
+ "264547": {
+  "hours": "March–October 09:00–18:00; November–February 09:00–17:00",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "125881"
+ },
+ "264582": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "128199"
+ },
+ "264608": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126821"
+ },
+ "264635": {
+  "hours": null,
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "250325"
+ },
+ "611320": {
+  "hours": "09:00–18:00",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126205"
+ },
+ "791341": {
+  "hours": null,
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "125728"
+ },
+ "791377": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "128660"
+ },
+ "794918": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126009"
+ },
+ "799829": {
+  "hours": "09:00–18:00",
+  "closed": "Mondays",
+  "fee": null,
+  "kor": "525648"
+ },
+ "815589": {
+  "hours": "Always open (swimming 09:00–18:00 in the beach season)",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126289"
+ },
+ "815631": {
+  "hours": "Lift runs 09:00–17:00",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "129218"
+ },
+ "820120": {
+  "hours": "Always open",
+  "closed": null,
+  "fee": null,
+  "kor": "126286"
+ },
+ "823350": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "125503"
+ },
+ "1000428": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "128698"
+ },
+ "1002414": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "821412"
+ },
+ "1069525": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "1580402"
+ },
+ "1116196": {
+  "hours": "06:00–20:00 (may vary)",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "127012"
+ },
+ "1116390": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "125989"
+ },
+ "1134541": {
+  "hours": "05:00–18:00",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126503"
+ },
+ "1148919": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "127714"
+ },
+ "1148932": {
+  "hours": "Off-peak 09:00–18:00; peak season 09:00–19:30",
+  "closed": "Open every day (swimming stopped in bad weather or when jellyfish appear)",
+  "fee": null,
+  "kor": "126104"
+ },
+ "1149679": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "129057"
+ },
+ "1149715": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "129413"
+ },
+ "1178697": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126802"
+ },
+ "1213004": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "1166019"
+ },
+ "1348792": {
+  "hours": null,
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "127862"
+ },
+ "1382180": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126297"
+ },
+ "1392977": {
+  "hours": null,
+  "closed": "1 January; Seollal and Chuseok",
+  "fee": null,
+  "kor": "252655"
+ },
+ "1553063": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "749211"
+ },
+ "1562375": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "250304"
+ },
+ "1601858": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126322"
+ },
+ "1624114": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126139"
+ },
+ "1628850": {
+  "hours": "09:00–18:00",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "127125"
+ },
+ "1684868": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "1115042"
+ },
+ "1751264": {
+  "hours": "Feb–May and Sep–Oct 09:00–18:00 (last entry 17:00); Jun–Aug 09:00–18:30 (last entry 17:30); Nov–Jan 09:00–17:30 (last entry 16:30)",
+  "closed": "Mondays (if Monday is a public holiday, closed the next day instead)",
+  "fee": null,
+  "kor": "1605920"
+ },
+ "1751266": {
+  "hours": "Feb–May and Sep–Oct 09:00–18:00 (last entry 17:00); Jun–Aug 09:00–18:30 (last entry 17:30); Nov–Jan 09:00–17:30",
+  "closed": "Mondays (if Monday is a public holiday, closed the next day instead)",
+  "fee": null,
+  "kor": "1605908"
+ },
+ "1751303": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "1621573"
+ },
+ "1751684": {
+  "hours": "10:00–18:00",
+  "closed": "Mondays",
+  "fee": null,
+  "kor": "127978"
+ },
+ "1754033": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "125970"
+ },
+ "1765535": {
+  "hours": "Always open (phone ahead for details)",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "127563"
+ },
+ "1768508": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126822"
+ },
+ "1795298": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "1626777"
+ },
+ "1823988": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "125852"
+ },
+ "1824003": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "128902"
+ },
+ "1875180": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126661"
+ },
+ "1876948": {
+  "hours": null,
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "1704494"
+ },
+ "1883487": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "1623806"
+ },
+ "1889466": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "127310"
+ },
+ "1898554": {
+  "hours": "09:00–18:00 (last entry 17:30)",
+  "closed": "Saturdays and Sundays",
+  "fee": null,
+  "kor": "2554143"
+ },
+ "1905314": {
+  "hours": "Always open",
+  "closed": null,
+  "fee": null,
+  "kor": "1619630"
+ },
+ "1905322": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "2769637"
+ },
+ "1908468": {
+  "hours": "Summer 09:00–21:00; winter 09:00–20:00",
+  "closed": "Mondays (open if Monday is a public holiday)",
+  "fee": null,
+  "kor": "1606001"
+ },
+ "1909474": {
+  "hours": null,
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "128035"
+ },
+ "1909497": {
+  "hours": "Archery exhibition hall 10:00–18:00",
+  "closed": "Archery exhibition hall: Mondays, 1 January, Seollal and Chuseok days",
+  "fee": null,
+  "kor": "1604450"
+ },
+ "1914424": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126407"
+ },
+ "1935404": {
+  "hours": "09:00–16:00 (varies by season — phone ahead)",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "731587"
+ },
+ "1937440": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126591"
+ },
+ "1937457": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "128052"
+ },
+ "1963138": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "127004"
+ },
+ "2359127": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "591798"
+ },
+ "2394329": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "1114686"
+ },
+ "2394336": {
+  "hours": null,
+  "closed": "Open every day",
+  "fee": "Free",
+  "kor": "1123600"
+ },
+ "2401023": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "1942337"
+ },
+ "2487829": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "128359"
+ },
+ "2657490": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "2650824"
+ },
+ "2684275": {
+  "hours": "May–September 09:00–18:30 (tickets until 18:00); October–April 09:00–17:30 (tickets until 17:00); combined tickets until 16:00",
+  "closed": "Mondays (the next day if Monday is a public holiday); 1 January; Seollal and Chuseok holidays",
+  "fee": null,
+  "kor": "2605276"
+ },
+ "2713053": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "2648994"
+ },
+ "2818689": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "2015553"
+ },
+ "2835517": {
+  "hours": "Weekdays 09:30–18:30; weekends 09:30–19:00",
+  "closed": "Wednesdays",
+  "fee": null,
+  "kor": "2899887"
+ },
+ "2944525": {
+  "hours": "08:30–22:00",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "2611137"
+ },
+ "2946803": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "2781577"
+ },
+ "2946814": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "1932056"
+ },
+ "2946942": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "129008"
+ },
+ "2952472": {
+  "hours": "09:00–18:00",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "2616164"
+ },
+ "2991405": {
+  "hours": "Tue and Sat 11:30–18:00; Wed–Fri 09:00–18:00; Sun 09:00–15:00 (closed 12:00–13:00 daily; see the website for Mass times)",
+  "closed": "Mondays",
+  "fee": null,
+  "kor": "2513974"
+ },
+ "2991923": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "128585"
+ },
+ "3019210": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126835"
+ },
+ "3021750": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "2605243"
+ },
+ "3078807": {
+  "hours": "08:00–17:00",
+  "closed": "Seollal and Chuseok days",
+  "fee": null,
+  "kor": "2660770"
+ },
+ "3080384": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "2514003"
+ },
+ "3081379": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "3061112"
+ },
+ "3082339": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "3079415"
+ },
+ "3083644": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "3079483"
+ },
+ "3111201": {
+  "hours": "Lights from sunset to 23:00; fountain from sunset to 22:40 (sunset about 20:00 in May–August, 19:00 in September–October)",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "3046002"
+ },
+ "3334281": {
+  "hours": "09:00–19:00",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "2720498"
+ },
+ "3351554": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126865"
+ },
+ "3355266": {
+  "hours": null,
+  "closed": "Tuesdays",
+  "fee": null,
+  "kor": "3018216"
+ },
+ "3364966": {
+  "hours": "09:00–18:00",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "3357668"
+ },
+ "3454399": {
+  "hours": "09:00–18:00",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126725"
+ },
+ "3468683": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "126424"
+ },
+ "4016976": {
+  "hours": "Always open",
+  "closed": "Open every day",
+  "fee": null,
+  "kor": "3025690"
+ }
+}

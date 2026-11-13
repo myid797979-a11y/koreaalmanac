@@ -107,6 +107,7 @@ export default function SeoulMarkets() {
         'starbucks-gyeongdong-market-1960-3046389',
         'dongdaemun-dak-hanmari-alley-2590278',
         'sindang-dong-tteokbokki-town-1838143',
+        'hwanghak-dong-flea-market-dokkaebi-market-manmul-market-273747',
       ]} />
 
       <h2 className="sect">After dark: night markets</h2>

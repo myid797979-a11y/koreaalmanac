@@ -69,7 +69,10 @@ export default function KoreaInSpring() {
               Yellow canola fields across the island, at their best when they overlap with the
               cherry blossom. The best-known stretch is Noksan-ro near Gasi-ri, a road lined with
               both; the Seogwipo Canola Flower Festival is held there in early April (4–5 April in
-              2026, free).
+              2026, free). Off the south coast,{' '}
+              <Link href="/place/wando-gun-cheongsando-island-slow-city-264610/">Cheongsando</Link>{' '}
+              holds its Slow Walking Festival through April (1–30 April in 2026), with walking
+              trails past terraced fields.
             </td>
           </tr>
           <tr>
@@ -77,7 +80,8 @@ export default function KoreaInSpring() {
             <td>
               The pale-pink wild azalea that covers Korean hillsides before the leaves come out.
               It flowers in early April on the south coast — Yeongchwisan in Yeosu is famous for
-              it — and mid-April around Seoul. The magenta royal-azalea gardens on Buramsan in
+              it — and mid-April around Seoul. The magenta royal-azalea gardens on{' '}
+              <Link href="/place/buramsan-mountain-2357787/">Buramsan</Link> in
               north-east Seoul hold their festival in the second half of April (16–26 April in 2026),
               a subway ride from the centre.
             </td>
@@ -125,6 +129,15 @@ export default function KoreaInSpring() {
         'boseong-green-tea-festival-700867',
         'danyang-sobaeksan-royal-azalea-festival-557329',
       ]} />
+
+      <p>
+        One spring event has nothing to do with flowers. At the largest spring tides, the sea off
+        Jindo in the far south-west draws back to expose a 2.8 km path between Hoedong village
+        and Modo island for about an hour, and the{' '}
+        <Link href="/place/jindo-mysterious-sea-route-264282/">Jindo sea road</Link> festival is
+        timed to it (17–20 April in 2026). The dates follow the tide tables, so check them before
+        you plan around it.
+      </p>
 
       <h2 className="sect">Seoul in April and May</h2>
       <p>

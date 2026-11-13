@@ -161,7 +161,11 @@ export default function JejuThreeDays() {
             of a 7.4 km tube is walkable, ending at a 7.6 m lava column, the largest known
             anywhere. Allow an hour. It holds <strong>11–15 °C year-round</strong>, so bring a
             layer even in August, and wear closed shoes — the floor is wet and uneven.
-            ₩4,000, closed the <strong>first Wednesday</strong> of the month.
+            ₩4,000, closed the <strong>first Wednesday</strong> of the month. Its neighbour{' '}
+            <Link href="/place/gimnyeongsagul-cave-unesco-world-heritage-778998/">Gimnyeongsagul</Link>{' '}
+            is part of the same UNESCO listing but closed to the public; the coast below has{' '}
+            <Link href="/place/gimnyeong-seongsegihaebyeon-beach-778986/">Gimnyeong</Link> and{' '}
+            <Link href="/place/woljeongri-beach-2048244/">Woljeong-ri</Link> beaches.
           </p>
         </Stop>
 
@@ -220,7 +224,10 @@ export default function JejuThreeDays() {
             buses. The 437 km Olle network is waymarked with blue arrows and pony markers rather
             than words, so it works without any Korean. If you would rather swim,{' '}
             <Link href="/place/hyeopjae-beach-264170/">Hyeopjae Beach</Link> on the west coast has
-            the clearest water on the island.
+            the clearest water on the island; on the south coast,{' '}
+            <Link href="/place/hwasun-golden-sand-beach-1872259/">Hwasun</Link> and{' '}
+            <Link href="/place/pyoseon-haevich-beach-1056500/">Pyoseon</Link> are the nearer choices.
+            Swimming is supervised only in the summer season.
           </p>
         </Stop>
       </ol>
@@ -294,7 +301,7 @@ export default function JejuThreeDays() {
 
       <h2 className="sect">Autumn and winter on Jeju</h2>
       <ul className="tips">
-        <li><strong>Silver grass</strong> covers the oreum volcanic cones in October and November; Saebyeol Oreum is the famous one.</li>
+        <li><strong>Silver grass</strong> covers the oreum volcanic cones in October and November; <Link href="/place/saebyeol-oreum-volcanic-cone-1052215/">Saebyeol Oreum</Link> is the famous one.</li>
         <li><strong>Tangerine picking</strong> runs from about November to January at farms across the island, and is one of the best things to do with children.</li>
         <li><strong>Camellias</strong> flower from December into early spring; Camellia Hill near Jungmun is the best-known garden.</li>
         <li>Winter is windy but mild by Korean standards, and the quietest, cheapest time for hotels.</li>

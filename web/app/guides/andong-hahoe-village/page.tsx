@@ -71,6 +71,20 @@ export default function Andong() {
             </td>
           </tr>
           <tr>
+            <th><Link href="/place/bongjeongsa-temple-unesco-world-heritage-264144/">Bongjeongsa</Link></th>
+            <td>
+              A small mountain temple north-west of town whose Geungnakjeon hall is the oldest
+              surviving wooden building in Korea. One of the seven UNESCO-listed mountain temples.
+            </td>
+          </tr>
+          <tr>
+            <th><Link href="/place/imcheonggak-house-264449/">Imcheonggak</Link></th>
+            <td>
+              The 16th-century family house of the independence leader Yi Sang-ryong, by the river
+              in town. Under restoration until 2027, so check what is open before you go.
+            </td>
+          </tr>
+          <tr>
             <th>Hahoe Mask Museum</th>
             <td>Masks from Korea and around the world, by the village entrance.</td>
           </tr>

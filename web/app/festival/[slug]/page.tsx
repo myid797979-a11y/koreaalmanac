@@ -15,6 +15,9 @@ import {
 import { festivalJsonLd, breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { festivalIndexable, NOINDEX } from '@/lib/indexing';
 
+const LONG_MO = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const longDate = (ymd: string) => `${Number(ymd.slice(8, 10))} ${LONG_MO[Number(ymd.slice(5, 7)) - 1]} ${ymd.slice(0, 4)}`;
+
 export function generateStaticParams() {
   return allFestivals.map(f => ({ slug: f.slug }));
 }
@@ -172,6 +175,17 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
               Description translated from official Korean tourism data. Details can change — verify with the organizer before you go.
             </p>
           )}
+        </div>
+      )}
+
+      {f.tip && (
+        <div className="overview">
+          <h2 className="sect">Before you go</h2>
+          <p>{f.tip}</p>
+          <p className="meta">
+            Checked by Korea Almanac against the organiser’s and city announcements on {longDate(f.checked!)}.
+            Times and prices can change — confirm with the organiser before a long trip.
+          </p>
         </div>
       )}
 

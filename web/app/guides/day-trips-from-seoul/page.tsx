@@ -24,7 +24,7 @@ const NEAR: Trip[] = [
   },
   {
     name: 'Incheon Chinatown and Wolmido', time: '1 hr', how: 'Subway Line 1',
-    what: <>Korea’s only official Chinatown, where jajangmyeon was invented, the painted Fairy Tale Village next door, and the seafront at Wolmido. The end of Line 1, so no changes.</>,
+    what: <>Korea’s only official <Link href="/place/incheon-chinatown-264513/">Chinatown</Link>, where jajangmyeon was invented, the painted Fairy Tale Village next door, and the seafront at Wolmido. The end of Line 1, so no changes.</>,
   },
   {
     name: 'Gwangmyeong Cave', time: '45 min', how: 'KTX station + bus',
@@ -36,7 +36,7 @@ const NEAR: Trip[] = [
   },
   {
     name: 'Yangpyeong', time: '1 hr', how: 'Gyeongui–Jungang Line',
-    what: <>Dumulmeori, where the North and South Han rivers meet under an old zelkova tree, famous for morning mist. Flat riverside cycle paths start at Yangsu Station.</>,
+    what: <>Dumulmeori, where the North and South Han rivers meet under an old zelkova tree, famous for morning mist. Flat riverside cycle paths start at Yangsu Station, and further east <Link href="/place/yongmunsan-resort-822791/">Yongmunsan</Link> has the temple with Korea’s most famous ginkgo tree.</>,
   },
 ];
 

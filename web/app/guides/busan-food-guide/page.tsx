@@ -101,7 +101,7 @@ export default function BusanFood() {
       <h2 className="sect">Where to eat</h2>
       <ul className="tips">
         <li><strong>Nampo:</strong> Jagalchi for seafood, Gukje Market’s food street and BIFF Square’s stalls for snacks.</li>
-        <li><strong>Seomyeon:</strong> the dwaeji gukbap alley and endless late-night restaurants.</li>
+        <li><strong>Seomyeon:</strong> the dwaeji gukbap alley and endless late-night restaurants, with the cafés of <Link href="/place/jeonpo-gonggu-street-3035570/">Jeonpo</Link>, in converted tool shops, close by.</li>
         <li><strong>Haeundae:</strong> Haeundae Market’s food alley just back from the beach.</li>
         <li><strong>Gwangalli and Millak:</strong> raw fish with a view of the bridge.</li>
       </ul>

@@ -72,7 +72,8 @@ export default function WhereToStayBusan() {
           <tr>
             <th>Seomyeon<br /><span className="meta">Lines 1 and 2</span></th>
             <td>
-              Busan’s downtown, where the two main subway lines cross: shopping streets,
+              Busan’s downtown, where the two main subway lines cross: shopping streets such as{' '}
+              <Link href="/place/seomyeon-1beon-ga-seomyeon-first-street-1-1065936/">Seomyeon 1beon-ga</Link>,
               underground malls, late-night food and the best choice of mid-range hotels. No sea,
               but twenty minutes from everything.
             </td>

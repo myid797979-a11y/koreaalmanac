@@ -68,7 +68,9 @@ export default function HanRiver() {
             <td>
               The biggest and busiest park, with the cruise piers, bike rental, food trucks and the
               cherry-blossom road in April. The venue for the Seoul International Fireworks
-              Festival.
+              Festival. Across the water sits{' '}
+              <Link href="/place/bamseom-island-ecosystem-conservation-area-3488858/">Bamseom</Link>, a
+              protected wetland island you can watch from the bank but not visit.
             </td>
           </tr>
           <tr>

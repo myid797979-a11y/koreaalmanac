@@ -1,5 +1,6 @@
 import festivalsJson from '@/data/festivals.json';
 import { okImage, okImages } from '@/lib/images';
+import { FESTIVAL_NOTES } from '@/lib/festival-notes';
 
 export type Festival = {
   id: string; slug: string; title: string; titleFull: string;
@@ -8,10 +9,24 @@ export type Festival = {
   image: string | null; tel: string | null; overview: string | null;
   homepage: string | null; place: string | null; fee: string | null;
   hours: string | null; duration: string | null; sponsor: string | null; mt?: boolean; tags?: string[]; images?: string[];
+  /** lib/festival-notes — 이번 회차를 확인해 쓴 방문 팁과 확인 날짜 */
+  tip?: string; checked?: string;
 };
 
+/** 회차가 맞는 노트만 얹는다 — 확인한 시간·요금은 KTO 값보다 우선 */
+const ymdDays = (s: string) => Date.UTC(+s.slice(0, 4), +s.slice(4, 6) - 1, +s.slice(6, 8)) / 86400000;
+function withNote(f: Festival): Festival {
+  const n = FESTIVAL_NOTES[f.id];
+  if (!n || !f.start || Math.abs(ymdDays(f.start) - ymdDays(n.edition)) > 60) return f;
+  return {
+    ...f,
+    start: n.start ?? f.start, end: n.end ?? f.end, place: n.place ?? f.place,
+    hours: n.hours ?? f.hours, fee: n.fee ?? f.fee, tip: n.tip, checked: n.checked,
+  };
+}
+
 // 깨진 KTO 이미지는 대체하거나 갤러리에서 뺀다 (lib/images.ts)
-const loaded: Festival[] = (festivalsJson as Festival[]).map(f => ({ ...f, image: okImage(f.image), images: okImages(f.images) }));
+const loaded: Festival[] = (festivalsJson as Festival[]).map(f => withNote({ ...f, image: okImage(f.image), images: okImages(f.images) }));
 
 // KTO 가 같은 행사를 콘텐츠 ID 두 개로 올린 경우 (사진·시작일·주소가 모두 같다 — 2026-10 기준 3쌍,
 // 예: "Busan Illustration Fair V.7" 와 영문 레코드 "V.6"). 목록에는 원래 레코드(낮은 ID) 하나만 남기고,

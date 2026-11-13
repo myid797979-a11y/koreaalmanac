@@ -69,13 +69,15 @@ export default function SeoulPalaces() {
               The UNESCO-listed palace, built to follow the hillside rather than a grid, and the one
               the kings actually preferred to live in. Behind it is the <strong>Secret Garden</strong>{' '}
               (Huwon), a wooded valley of pavilions and ponds seen on a guided walk of about 90
-              minutes.
+              minutes. At its eastern edge, the unpainted{' '}
+              <Link href="/place/nakseonjae-hall-1918896/">Nakseonjae</Link> is on the ordinary ticket.
             </td>
           </tr>
           <tr>
             <th>Changgyeonggung<br /><span className="meta">Closed Mon · ₩1,000</span></th>
             <td>
-              Next door to Changdeokgung and joined to it by a gate. Quieter, with a lake and a
+              Next door to Changdeokgung and joined to it by a gate; the main entrance is{' '}
+              <Link href="/place/changgyeonggung-palace-honghwamun-gate-1991027/">Honghwamun</Link>. Quieter, with a lake and a
               white Victorian-style glasshouse. <strong>Open until 21:00</strong>, so it works in the
               evening.
             </td>
@@ -161,7 +163,11 @@ export default function SeoulPalaces() {
         <Stop slug="deoksugung-palace-264316" time="18:00" title="Deoksugung after dark" walk="subway 10 min">
           <p>
             The palace stays open until 21:00 and is lit in the evening. Walk the stone-wall path
-            round the outside afterwards. The guard ceremony here runs at the Daehanmun gate
+            round the outside afterwards, past{' '}
+            <Link href="/place/chungdong-first-methodist-church-264635/">Chungdong First Methodist Church</Link>{' '}
+            and up to the white tower of the{' '}
+            <Link href="/place/seoul-former-russian-legation-264475/">former Russian Legation</Link>.
+            The guard ceremony here runs at the Daehanmun gate
             several times a day.
           </p>
         </Stop>

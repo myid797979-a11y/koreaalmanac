@@ -81,7 +81,9 @@ export default function SeoulShopping() {
             <th>Dongdaemun</th>
             <td>
               Fashion malls and wholesale markets, some trading through the night, around the
-              silver curves of Dongdaemun Design Plaza. Fabric and accessories by the metre.
+              silver curves of Dongdaemun Design Plaza, a few minutes south of the old{' '}
+              <Link href="/place/heunginjimun-gate-dongdaemun-gate-264315/">Heunginjimun gate</Link>. Fabric
+              and accessories by the metre.
             </td>
           </tr>
           <tr>

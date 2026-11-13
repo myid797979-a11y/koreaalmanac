@@ -125,7 +125,9 @@ export default function AutumnFoliage() {
         Granite spires with colour running up the gullies, about 2.5 hours from Seoul by express
         bus to Sokcho. <Link href="/place/seoraksan-ulsanbawi-rock-264169/">Ulsanbawi Rock</Link>{' '}
         is the classic hard walk; <Link href="/place/seoraksan-gwongeumseong-fortress-264248/">Gwongeumseong</Link>{' '}
-        is the cable-car ridge for everyone else.
+        is the cable-car ridge for everyone else. From the{' '}
+        <Link href="/place/seoraksan-national-park-southern-section-1758437/">southern side</Link>,
+        Osaek is the shortest, steepest way to the summit.
       </p>
       <div className="callout">
         <strong>The cable car is the bottleneck, and you cannot book it.</strong> Around{' '}

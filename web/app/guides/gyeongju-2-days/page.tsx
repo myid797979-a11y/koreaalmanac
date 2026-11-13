@@ -32,7 +32,8 @@ export default function GyeongjuTwoDays() {
         Gyeongju was the capital of Silla for close to a thousand years, and the tombs of its
         kings are still sitting in the middle of the modern town — grass mounds the size of
         small hills, with a coffee street running along one edge. It is usually described as a
-        museum without walls. What almost no English guide has caught up with is that{' '}
+        museum without walls, and UNESCO lists the core of it as the{' '}
+        <Link href="/place/gyeongju-historic-area-unesco-world-heritage-995361/">Gyeongju Historic Areas</Link>. What almost no English guide has caught up with is that{' '}
         <strong>most of it is now free</strong>.
       </p>
 
@@ -151,7 +152,9 @@ export default function GyeongjuTwoDays() {
             the one tomb that has been excavated and opened up so you can walk inside, still
             charges separately. It is worth it — the grave goods found here included a gold
             crown and the birch-bark saddle flap painted with a white horse that gives the tomb
-            its name.
+            its name. A short walk away,{' '}
+            <Link href="/place/geumgwanchong-tomb-264263/">Geumgwanchong</Link> is where the first
+            Silla gold crown was found, in 1921.
           </p>
           <p className="meta">
             Go early. This is the most photographed spot in the city and the light is better
@@ -200,7 +203,8 @@ export default function GyeongjuTwoDays() {
         >
           <p>
             A 9-metre bottle-shaped tower of cut granite, built in the 630s under Queen Seondeok
-            and generally called the oldest surviving astronomical observatory in East Asia. It
+            (her <Link href="/place/tomb-of-queen-seondeok-804337/">tomb</Link> is in the pine woods
+            on Nangsan, on the south-east edge of town) and generally called the oldest surviving astronomical observatory in East Asia. It
             is small, it is out in the open, and it takes ten minutes — but it has stood on that
             spot for fourteen centuries without being rebuilt, which is rarer in Korea than
             people realise.
