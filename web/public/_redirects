@@ -1,3 +1,6 @@
+# ⚠ 아래 두 줄은 작동하지 않는다 — Pages 의 _redirects 는 다른 도메인(호스트) 리다이렉트를 지원하지 않는다.
+#   2026-11-13 확인: www.koreaalmanac.com 이 200 으로 사이트 전체를 내보내 Search Console "대체 페이지" 668건.
+#   www → apex 는 Cloudflare 대시보드 리디렉션 규칙("Redirect from WWW to root")으로 해야 한다.
 # www 는 apex 로 301. canonical 로도 정리되지만 검색엔진엔 리다이렉트가 더 분명하다.
 https://www.koreaalmanac.com/* https://koreaalmanac.com/:splat 301
 

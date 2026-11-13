@@ -110,6 +110,12 @@ jobs:
           npm ci
           npm run build
 
+      # 제목·번역이 바뀌어 슬러그가 달라진 옛 주소 → 같은 id 의 현재 주소 301 (Search Console 404 대응, 2026-11-13).
+      # data/url-history.json 에 알려진 주소를 누적하고 out/_redirects 에 덧붙인다.
+      - name: 바뀐 주소 리다이렉트
+        working-directory: web
+        run: node scripts/redirects.mjs
+
       # 배포 전에 돌려야 한다 — sitemap.xml 에 <lastmod> 를 주입하고(Bing 지침 §3)
       # 바뀐 URL 목록을 남긴다. 그 목록을 배포 뒤 IndexNow 가 그대로 제출한다(§4).
       - name: 신선도 신호 (lastmod + 변경분 산출)
@@ -135,7 +141,7 @@ jobs:
         run: |
           git config user.name "daily-update"
           git config user.email "actions@users.noreply.github.com"
-          git add db/dump db/culture.json db/places.json data/translation_queue.json data/culture_queue.json web/data data/indexnow-state.json db/kopis.json db/kopis_venues.json
+          git add db/dump db/culture.json db/places.json data/translation_queue.json data/culture_queue.json web/data data/indexnow-state.json data/url-history.json db/kopis.json db/kopis_venues.json
           git diff --cached --quiet || git commit -m "data: daily update $(date -u +%F)"
           git push
 
