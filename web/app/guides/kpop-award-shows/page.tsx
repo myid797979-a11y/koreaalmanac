@@ -37,7 +37,7 @@ export default function AwardShows() {
       <div className="callout">
         <strong>In Korea this season</strong>
         <ul>
-          <li><Link href="/concert/kgma-2026/">Korea Grand Music Awards (KGMA)</Link>: <strong>7–8 November</strong>, Gocheok Sky Dome, Seoul.</li>
+          <li><Link href="/concert/kgma-2026/">Korea Grand Music Awards (KGMA)</Link>: <strong>7–8 November</strong>, Gocheok Sky Dome, Seoul (held).</li>
           <li><Link href="/concert/melon-music-awards-2026/">Melon Music Awards (MMA)</Link>: <strong>14–15 November</strong>, Gocheok Sky Dome, Seoul. Two days for the first time.</li>
           <li><strong>The broadcasters’ year-end music festivals</strong> in December: SBS Gayo Daejeon traditionally around Christmas (in 2026, 24–25 December at KINTEX in Ilsan, two nights for its 30th edition), KBS Song Festival in the second half of December, MBC Gayo Daejejeon on New Year’s Eve. 2026 dates are usually announced in the autumn.</li>
         </ul>
@@ -109,10 +109,10 @@ export default function AwardShows() {
 
       <h2 className="sect">Planning a trip around them</h2>
       <p>
-        KGMA and MMA fall on consecutive weekends at the same venue, so one trip can cover both. The{' '}
+        KGMA (7–8 November, now over) and MMA (14–15 November) fell on consecutive weekends at the same venue. The{' '}
         <Link href="/venue/gocheok-sky-dome/">Gocheok Sky Dome guide</Link> covers the station, the
         crowds after the show and where to stay. November is also the tail of the autumn colour in
-        Seoul, and the <Link href="/guides/busan-fireworks-2026/">Busan Fireworks Festival</Link> is on
+        Seoul, and the <Link href="/guides/busan-fireworks-2026/">Busan Fireworks Festival</Link> was on
         7 November, the same Saturday as KGMA.
       </p>
 

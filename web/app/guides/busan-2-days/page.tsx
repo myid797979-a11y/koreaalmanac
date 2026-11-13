@@ -144,7 +144,7 @@ export default function BusanTwoDays() {
 
         <Stop slug="jagalchi-market-2382544" time="14:00" title="Jagalchi Market" walk="600 m">
           <p>
-            Korea&apos;s largest seafood market, run largely by women — the{' '}
+            One of Korea&apos;s largest seafood markets, run largely by women — the{' '}
             <em>jagalchi ajumma</em> are a Busan institution. Open 05:00–22:00; pick something
             downstairs and they will cook it for you upstairs.{' '}
             <strong>Closed the 1st and 3rd Tuesday of each month.</strong>

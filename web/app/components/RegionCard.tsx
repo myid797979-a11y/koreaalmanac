@@ -26,11 +26,15 @@ export default function RegionCard({ region, t = today() }: { region: string; t?
         <div className="meta">
           {spots.length > 0 && `${spots.length} places`}
           {spots.length > 0 && live.length > 0 && ' · '}
-          {live.length > 0 && `${live.length} events on`}
+          {live.length > 0 && `${live.length} ${live.length === 1 ? 'event' : 'events'} on now or coming up`}
         </div>
+        {/* 2026-11-13 청약각 회의 지적: 예정 행사가 없으면 진행 중인 행사를 "Next … Apr 30, 2026" 으로
+            지난 시작일과 함께 보여 줬다. 진행 중이면 "On now … until 끝나는 날" 로 쓴다. */}
         {next && (
           <div className="meta">
-            Next: {next.title.slice(0, 34)}{next.title.length > 34 ? '…' : ''} · {fmt(next.start)}
+            {status(next, t) === 'upcoming' ? 'Next: ' : 'On now: '}
+            {next.title.slice(0, 34)}{next.title.length > 34 ? '…' : ''} ·{' '}
+            {status(next, t) === 'upcoming' ? fmt(next.start) : 'until ' + fmt(next.end ?? next.start)}
           </div>
         )}
       </div>

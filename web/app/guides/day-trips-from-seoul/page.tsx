@@ -36,7 +36,7 @@ const NEAR: Trip[] = [
   },
   {
     name: 'Yangpyeong', time: '1 hr', how: 'Gyeongui–Jungang Line',
-    what: <>Dumulmeori, where the North and South Han rivers meet under an old zelkova tree, famous for morning mist. Flat riverside cycle paths start at Yangsu Station, and further east <Link href="/place/yongmunsan-resort-822791/">Yongmunsan</Link> has the temple with Korea’s most famous ginkgo tree.</>,
+    what: <>Dumulmeori, where the North and South Han rivers meet under an old zelkova tree, famous for morning mist. Flat riverside cycle paths start at Yangsu Station, and further east <Link href="/place/yongmunsan-resort-822791/">Yongmunsan</Link> has the temple with a ginkgo tree around 1,100 years old, a designated Natural Monument.</>,
   },
 ];
 

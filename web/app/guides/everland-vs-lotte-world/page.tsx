@@ -30,8 +30,8 @@ export default function ThemeParks() {
       <h1>Everland or Lotte World? Choosing a Seoul theme park</h1>
       <p className="sub">
         Seoul has two big theme parks and they are very different days. Everland is a huge
-        outdoor resort in the hills of Yongin, an hour out of the city, with Korea’s best
-        roller coaster and a safari. Lotte World is mostly indoors, under a glass roof in the
+        outdoor resort in the hills of Yongin, an hour out of the city, with the T Express
+        wooden coaster and a safari. Lotte World is mostly indoors, under a glass roof in the
         middle of Seoul, with a subway station at the door. Most visitors only have time for one.
       </p>
 

@@ -8,7 +8,7 @@ import { GUIDE_OFFERS, GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: 'Busan Fireworks Festival 2026 — Saturday 7 November: where to watch, seats, and getting away',
-  description: 'Korea’s biggest fireworks show is over Gwangalli Beach on Saturday 7 November 2026. The free viewing spots and when to claim them, whether the paid seats are worth it, the hotel question, and how to leave with a million other people.',
+  description: 'One of Korea’s two biggest fireworks shows, over Gwangalli Beach on Saturday 7 November 2026. The free viewing spots and when to claim them, whether the paid seats are worth it, the hotel question, and how to leave with a million other people.',
 };
 
 export default function BusanFireworks2026() {
@@ -34,8 +34,8 @@ export default function BusanFireworks2026() {
         viewing spots, seat tiers and getting-home advice below still apply.
       </div>
       <p className="sub">
-        <strong>Saturday 7 November 2026</strong>, over the water at Gwangalli Beach. It is the
-        largest fireworks display in Korea — about an hour of shells fired from barges in front of
+        <strong>Saturday 7 November 2026</strong>, over the water at Gwangalli Beach. It is one of
+        Korea’s two largest fireworks displays, with Seoul’s Yeouido show — about an hour of shells fired from barges in front of
         the Gwangan Bridge, with the bridge’s own lights choreographed into the show — and it
         draws a crowd that organisers put near a million. The show itself is the easy part. The
         hard parts are where you stand, where you sleep, and how you leave, and all three are

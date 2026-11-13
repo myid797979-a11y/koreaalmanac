@@ -165,11 +165,14 @@ export default async function FestivalPage({ params }: { params: Promise<{ slug:
       {f.overview && (
         <div className="overview">
           <h2 className="sect">About</h2>
-          {f.overview.split('. ').reduce<string[][]>((acc, s, i) => {
-            const gi = Math.floor(i / 4);
-            (acc[gi] ??= []).push(s);
-            return acc;
-          }, []).map((g, i) => <p key={i}>{g.join('. ')}</p>)}
+          {/* 다시 쓴 소개(lib/festival-overviews)는 문단을 \n\n 으로 나눠 둔다 — 그대로 쓴다 */}
+          {f.overview.includes('\n\n')
+            ? f.overview.split('\n\n').map((p, i) => <p key={i}>{p}</p>)
+            : f.overview.split('. ').reduce<string[][]>((acc, s, i) => {
+                const gi = Math.floor(i / 4);
+                (acc[gi] ??= []).push(s);
+                return acc;
+              }, []).map((g, i) => <p key={i}>{g.join('. ')}</p>)}
           {f.mt && (
             <p className="meta">
               Description translated from official Korean tourism data. Details can change — verify with the organizer before you go.

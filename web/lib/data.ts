@@ -1,6 +1,7 @@
 import festivalsJson from '@/data/festivals.json';
 import { okImage, okImages } from '@/lib/images';
 import { FESTIVAL_NOTES } from '@/lib/festival-notes';
+import { FESTIVAL_OVERVIEWS } from '@/lib/festival-overviews';
 
 export type Festival = {
   id: string; slug: string; title: string; titleFull: string;
@@ -15,7 +16,12 @@ export type Festival = {
 
 /** 회차가 맞는 노트만 얹는다 — 확인한 시간·요금은 KTO 값보다 우선 */
 const ymdDays = (s: string) => Date.UTC(+s.slice(0, 4), +s.slice(4, 6) - 1, +s.slice(6, 8)) / 86400000;
-function withNote(f: Festival): Festival {
+function withNote(f0: Festival): Festival {
+  const o = FESTIVAL_OVERVIEWS[f0.id];
+  const f = o ? {
+    ...f0, overview: o.overview, place: o.place ?? f0.place, mt: false,
+    hours: o.hours === null ? null : f0.hours, fee: o.fee === null ? null : f0.fee,
+  } : f0;
   const n = FESTIVAL_NOTES[f.id];
   if (!n || !f.start || Math.abs(ymdDays(f.start) - ymdDays(n.edition)) > 60) return f;
   return {

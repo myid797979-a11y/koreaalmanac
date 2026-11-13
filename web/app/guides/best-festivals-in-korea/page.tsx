@@ -19,10 +19,10 @@ const PICKS: { season: string; items: [string, string][] }[] = [
     ['697182', 'Butterfly gardens, flower fields and hands-on nature in the far south-west, very popular with families.'],
     ['700867', 'The terraced green-tea fields of Boseong at the first picking of the year.'],
     ['292954', 'The bamboo groves of Damyang in their fresh May green, with the Juknokwon forest paths.'],
-    ['697189', 'Asia’s biggest mime and physical-theatre festival, ending in an all-night street party.'],
+    ['697189', 'One of Asia’s major mime and physical-theatre festivals, ending in an all-night street party.'],
   ] },
   { season: 'Summer', items: [
-    ['697135', 'Korea’s most famous summer party: mineral mud slides, mud pools and wrestling on Daecheon Beach. Very international and very messy.'],
+    ['697135', 'Korea’s best-known summer party: mineral mud slides, mud pools and wrestling on Daecheon Beach. Very international and very messy.'],
     ['697205', 'Fireflies at night in the clean valleys of Muju, in the last warm weeks of summer.'],
   ] },
   { season: 'Autumn', items: [
@@ -34,7 +34,7 @@ const PICKS: { season: string; items: [string, string][] }[] = [
     ['1718137', 'Gyeongju’s flagship festival among the actual Silla monuments.'],
     ['1675246', 'The coffee town of Gangneung celebrating its roasters by the sea.'],
     ['2874909', 'Fireworks over Yeosu’s famous night sea at the end of October.'],
-    ['235076', 'Korea’s biggest fireworks over Gwangalli Beach and the Gwangan Bridge, with a million people watching.'],
+    ['235076', 'Fireworks over Gwangalli Beach and the Gwangan Bridge, with a crowd organisers put near a million — Korea’s other giant show alongside Seoul’s Yeouido fireworks.'],
   ] },
   { season: 'Winter', items: [
     ['685135', 'Ice fishing for mountain trout through holes in a frozen river, then eating your catch. The best-known winter festival in Korea.'],

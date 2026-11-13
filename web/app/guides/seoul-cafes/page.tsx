@@ -8,7 +8,7 @@ import { GUIDE_STAY } from '@/lib/affiliate';
 
 export const metadata = {
   title: 'Seoul café guide: the neighbourhoods, the bakeries and the bingsu',
-  description: 'Seoul has more cafés per person than almost anywhere: where to find the best of them in Seongsu, Ikseon-dong, Yeonnam and Hannam, the bakery cafés worth a trip, bingsu in summer, and how café culture works.',
+  description: 'Seoul’s café scene, neighbourhood by neighbourhood: where to find the best of them in Seongsu, Ikseon-dong, Yeonnam and Hannam, the bakery cafés worth a trip, bingsu in summer, and how café culture works.',
 };
 
 export default function SeoulCafes() {

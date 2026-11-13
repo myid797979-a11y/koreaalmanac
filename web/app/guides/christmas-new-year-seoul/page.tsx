@@ -29,7 +29,7 @@ export default function ChristmasNewYearSeoul() {
 
       <h1>Christmas and New Year in Seoul, 2026–27: what actually happens</h1>
       <p className="sub">
-        Korea does the season differently. Christmas is a public holiday but a couples’ night
+        Christmas Day is a public holiday in Korea, but it is a couples’ night
         out rather than a family day; the big family holiday is the lunar new year in February.
         What Seoul does brilliantly is <strong>light</strong> — a month of lantern and
         illumination festivals — and the turn of the year itself: a bronze bell struck 33 times

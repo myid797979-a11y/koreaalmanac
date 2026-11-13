@@ -47,8 +47,9 @@ export default function PrivacyPage() {
         {' '}<a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info</a>
         {' '}or, in the EU, <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener">youronlinechoices.eu</a>.
         Visitors in the European Economic Area, the UK and Switzerland are shown a consent
-        message before any personalised ads load, and can change that choice at any time from
-        the link in the site footer or by clearing cookies. Ads never influence which festivals,
+        message (Google&apos;s certified consent tool) before any personalised ads load, and can
+        change that choice at any time from the privacy settings link that comes with that
+        message, or by clearing cookies. Ads never influence which festivals,
         places or events are listed here or the order they appear in.
       </p>
 

@@ -101,7 +101,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/calendar/">Calendar</Link>
               <Link href="/regions/">Regions</Link>
               <Link href="/about/">About</Link>
+              <Link href="/about/#contact">Contact</Link>
               <Link href="/privacy/">Privacy</Link>
+              <Link href="/terms/">Terms</Link>
             </p>
             Festival data: Korea Tourism Organization (TourAPI), refreshed {fmt(today())} (KST).
             Concert listings are compiled by hand from official announcements, using data from

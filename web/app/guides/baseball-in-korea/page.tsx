@@ -86,8 +86,8 @@ export default function BaseballInKorea() {
           <tr>
             <th>Busan</th>
             <td>
-              <strong>Lotte Giants</strong> at Sajik Stadium — the most famous crowd in the
-              league, known for the orange plastic bags worn as hats and the collective shout of
+              <strong>Lotte Giants</strong> at Sajik Stadium — the league’s best-known crowd,
+              famous for the orange plastic bags worn as hats and the collective shout of
               “Ma!” at opposing pitchers. Sajik Station, Busan Line 3.
             </td>
           </tr>

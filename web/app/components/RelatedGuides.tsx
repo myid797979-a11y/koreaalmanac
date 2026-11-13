@@ -60,9 +60,12 @@ export default function RelatedGuides({ href }: { href: string }) {
       {/* 수정일·확인 방식을 본문에 보이게 (2026-11-11, AdSense 거절 후 신뢰 신호 보강). About 에 이 줄을 약속했다. */}
       {dates && (
         <p className="guide-updated" style={{ fontSize: '0.9em', opacity: 0.8, marginTop: 32 }}>
-          Last updated {longDate(dates.updated)}. Prices, dates and opening hours are checked against
-          official sources — <Link href="/about/">how guides are written</Link>.
-          Spotted something out of date? <Link href="/about/">Let us know</Link>.
+          {/* 바이라인 (2026-11-13 청약각 회의) — 익명 1인 운영 결정(11-11)대로 실명·필명은 쓰지 않는다 */}
+          Written by the Korea Almanac editor, a solo operator living in Korea. Last updated{' '}
+          {longDate(dates.updated)}. Prices, dates, opening hours and transport details are checked
+          against the organiser, venue, transport operator or Korea Tourism Organization
+          — <Link href="/about/">how guides are written and checked</Link>.
+          Spotted something out of date? <Link href="/about/#contact">Let us know</Link>.
         </p>
       )}
       {faq && <GuideFaq items={faq} />}

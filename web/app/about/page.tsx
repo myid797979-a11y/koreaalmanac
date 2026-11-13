@@ -82,6 +82,17 @@ export default function AboutPage() {
         sponsored placement. When a number is missing from the official record, the row simply is
         not shown.
       </p>
+      <p>
+        Official records are not always right, so for the busiest pages we check them ourselves.
+        Where our check finds the record out of date, the checked value replaces it and the page
+        says when it was checked. In November 2026, checking the winter festival season against
+        organisers&apos; and city announcements corrected eight festival listings — among them a
+        Christmas market listed as free that charges ₩10,000 at the door, a lantern festival that
+        stays lit an hour later than listed, a light festival still showing last year&apos;s dates,
+        and a fireworks festival that had moved to a different beach. The same round added checked
+        opening hours, admission and visitor notes to 75 well-known places whose official record
+        had none.
+      </p>
 
       <h2 className="sect">How the site is funded</h2>
       <p>
@@ -93,7 +104,7 @@ export default function AboutPage() {
         <Link href="/privacy/">privacy policy</Link>.
       </p>
 
-      <h2 className="sect">Contact</h2>
+      <h2 className="sect" id="contact">Contact</h2>
       <p>
         Found a wrong date, a closed venue or a translation that reads oddly? Corrections are
         always welcome and are usually fixed within a day or two. Write to{' '}

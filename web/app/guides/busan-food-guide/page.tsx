@@ -31,8 +31,8 @@ export default function BusanFood() {
       <p className="sub">
         Busan’s food grew out of its port and its war years, when refugees from the north made do
         with what the city had. The result is some of the most distinctive cooking in Korea: rich
-        pork soups, cold wheat noodles, the freshest seafood in the country, and the best street
-        snacks. Most of it is cheap.
+        pork soups, cold wheat noodles, seafood straight off the boats at Jagalchi, and street
+        snacks you will not find in Seoul. Most of it is cheap.
       </p>
 
       <GuideHero slugs={[

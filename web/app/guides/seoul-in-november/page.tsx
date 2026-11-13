@@ -41,10 +41,11 @@ export default function SeoulInNovember() {
 
       <h1>Seoul in November 2026</h1>
       <p className="sub">
-        November is Seoul’s quiet, golden month: the last of the autumn colour in the first two
-        weeks, cold clear days, fewer tourists and lower hotel prices than October, and the biggest
-        K-pop award shows of the year. By the end of the month the Christmas lights are going up
-        and it feels like winter.
+        Days around 12°C, no public holidays and lower hotel prices than October. In 2026 the
+        autumn colour reached Seoul late (first colour 27 October), so the ginkgo streets are at
+        their best in mid-November; the Melon Music Awards fill the Gocheok Sky Dome on 14–15
+        November; and from late in the month the Christmas lights go up ahead of the Seoul
+        Lantern Festival, which opens on 11 December.
       </p>
 
       <GuideHero slugs={[
@@ -57,7 +58,7 @@ export default function SeoulInNovember() {
         <strong>November at a glance</strong>
         <ul>
           <li><strong>Weather:</strong> around 12°C by day and 2°C at night, dry, with the first frosts and sometimes the first snow flurries late in the month.</li>
-          <li><strong>Autumn colour:</strong> Seoul’s ginkgo streets and palace gardens peak around the end of October and the first week of November; by mid-month the leaves are falling.</li>
+          <li><strong>Autumn colour:</strong> in most years Seoul’s ginkgo streets and palace gardens peak around the end of October and the first week of November. 2026 ran about two weeks late — first colour on 27 October — so mid-November is the window this year, with more brown leaves than usual after a hot, dry September.</li>
           <li><strong>No public holidays</strong>, so trains and hotels are easier to book than in October.</li>
         </ul>
       </div>
@@ -69,7 +70,8 @@ export default function SeoulInNovember() {
             <th>The last of the leaves</th>
             <td>
               The ginkgo avenues of Deoksugung’s stone-wall path, Samcheong-dong and the Seoul
-              Forest turn gold in the first week, and the palaces are at their best. See the{' '}
+              Forest usually turn gold in the first week; in 2026 the colour came late, so the
+              middle of the month is the time. See the{' '}
               <Link href="/guides/autumn-foliage/">autumn foliage guide</Link> and{' '}
               <Link href="/guides/seoul-palaces/">the palaces</Link>.
             </td>
@@ -77,17 +79,17 @@ export default function SeoulInNovember() {
           <tr>
             <th>K-pop award season</th>
             <td>
-              The <Link href="/concert/kgma-2026/">KGMA</Link> (7–8 November) and the{' '}
-              <Link href="/concert/melon-music-awards-2026/">Melon Music Awards</Link> (14–15 November)
-              are on consecutive weekends at the Gocheok Sky Dome. See{' '}
+              The <Link href="/concert/kgma-2026/">KGMA</Link> took place on 7–8 November; the{' '}
+              <Link href="/concert/melon-music-awards-2026/">Melon Music Awards</Link> follow on
+              14–15 November, also at the Gocheok Sky Dome. See{' '}
               <Link href="/guides/kpop-award-shows/">K-pop award shows</Link>.
             </td>
           </tr>
           <tr>
             <th>Busan’s fireworks</th>
             <td>
-              Korea’s biggest fireworks are over Gwangalli Beach on 7 November, a KTX ride away.
-              See the <Link href="/guides/busan-fireworks-2026/">Busan Fireworks guide</Link>.
+              The 2026 Busan Fireworks Festival over Gwangalli Beach took place on 7 November; it
+              returns each autumn. See the <Link href="/guides/busan-fireworks-2026/">Busan Fireworks guide</Link>.
             </td>
           </tr>
           <tr>

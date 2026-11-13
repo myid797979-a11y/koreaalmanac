@@ -28,7 +28,7 @@ export default function GettingAroundSeoul() {
 
       <h1>Getting around Seoul: cards, subway, buses and taxis</h1>
       <p className="sub">
-        Seoul has one of the best public transport systems anywhere: more than twenty subway and
+        Seoul’s public transport is cheap and comprehensive: more than twenty subway and
         rail lines, buses that go everywhere else, and taxis that are cheap by international
         standards. Everything runs on one tap card. Here is how to get it and use it.
       </p>

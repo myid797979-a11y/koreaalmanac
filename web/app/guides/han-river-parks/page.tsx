@@ -125,7 +125,7 @@ export default function HanRiver() {
       <h2 className="sect">When to go</h2>
       <ul className="tips">
         <li><strong>April</strong> for the cherry blossoms at Yeouido. See the <Link href="/guides/cherry-blossom-2027/">cherry blossom guide</Link>.</li>
-        <li><strong>May to June and September to October</strong> are perfect evenings outdoors.</li>
+        <li><strong>May to June and September to October</strong> are the most comfortable evenings outdoors.</li>
         <li><strong>July and August</strong> bring the pools and night markets but also humidity and monsoon rain.</li>
         <li>In winter the parks are empty and cold, but the bridges are still lit; a short walk at Banpo or a cruise is enough.</li>
       </ul>

@@ -224,8 +224,8 @@ export default function KoreaInWinter() {
         <strong>Read opening dates carefully.</strong> In the 2025–26 season Yongpyong opened on
         15 November and High1 and Vivaldi Park on 22 November, but an opening date means one or
         two runs on machine-made snow. The mountain is properly open from around late December,
-        and the best conditions are January and early February. Resorts publish the coming
-        season&apos;s dates in October.
+        and the best conditions are January and early February. Opening dates depend on cold nights for snowmaking: as of mid-November 2026 most resorts
+        had not yet announced theirs for 2026–27, so check the resort’s own site before booking.
       </p>
       <p>
         Night skiing is the local habit and it is genuinely good — slopes are lit late, and it is

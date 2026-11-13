@@ -28,9 +28,8 @@ export default function Layover() {
 
       <h1>An Incheon Airport layover: what you can actually do</h1>
       <p className="sub">
-        Incheon is one of the world’s great transit airports, and one of the few where a layover of
-        a few hours can turn into a real taste of Korea. The airport runs free guided tours for
-        transit passengers, and central Seoul is under an hour away by train. Whether it is worth
+        Incheon runs free guided tours for transit passengers, and central Seoul is under an hour
+        away by train, so a layover of a few hours can turn into a real taste of Korea. Whether it is worth
         leaving depends on how long you have.
       </p>
 
