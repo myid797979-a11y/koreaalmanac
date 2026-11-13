@@ -6,6 +6,7 @@ import { concertDateRange } from '@/lib/concerts';
 import { breadcrumbJsonLd, ldStr } from '@/lib/jsonld';
 import { SITE_URL, clampDesc } from '@/lib/site';
 import BookBox from '@/app/components/BookBox';
+import GuideFaq from '@/app/components/GuideFaq';
 import { GUIDE_OFFERS, VENUE_STAY } from '@/lib/affiliate';
 
 export function generateStaticParams() {
@@ -145,6 +146,21 @@ export default async function VenuePage({ params }: { params: Promise<{ slug: st
           <Link href="/guides/baseball-in-korea/">This is also a baseball stadium — how to see a game here →</Link>
         </p>
       )}
+
+      {/* Quick answers (2026-11-13) — GSC 검색어에 "goyang stadium capacity"·"jangchung arena capacity" 같은
+          질문형이 있었다. 이미 있는 값으로만 만든다(새 사실 없음). 다가오는 공연 답은 매일 빌드로 바뀐다. */}
+      <GuideFaq items={[
+        { q: `How many people does ${v.name} hold?`, a: `${v.capacity}.` },
+        { q: `What is the nearest station to ${v.name}?`, a: v.station },
+        { q: `How do I get to ${v.name} from Incheon Airport?`, a: v.fromAirport },
+        {
+          q: `What concerts are coming up at ${v.name}?`,
+          a: upcoming.length
+            ? upcoming.slice(0, 4).map(c => `${c.artist === 'Various artists' ? c.title : c.artist} (${concertDateRange(c)})`).join('; ') + '.'
+            : 'No shows on our list are announced here yet; we add them as soon as tickets go on sale.',
+        },
+        { q: `Where should I stay for a show at ${v.name}?`, a: v.stay },
+      ]} />
 
       <h2 className="sect">Other venues</h2>
       <p className="strip">

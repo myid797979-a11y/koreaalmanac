@@ -46,13 +46,14 @@ function withNote(p00: Place): Place {
   const p = p0.overview ? { ...p0, overview: p0.overview.replace(/\s*·\s*·\s*/g, '\n\n').trim() } : p0;
   const n = PLACE_NOTES[p.id];
   if (!n) return p;
-  const noted = (!p.hours && !!n.hours) || (!p.closed && !!n.closed) || (!p.fee && !!n.fee);
+  const o = !!n.override;   // 확인해 보니 KTO 값이 틀렸을 때 노트가 이긴다
+  const noted = ((o || !p.hours) && !!n.hours) || ((o || !p.closed) && !!n.closed) || ((o || !p.fee) && !!n.fee);
   return {
     ...p,
     overview: p.overview || n.overview || null,
-    hours: p.hours || n.hours || null,
-    closed: p.closed || n.closed || null,
-    fee: p.fee || n.fee || null,
+    hours: (o ? n.hours || p.hours : p.hours || n.hours) || null,
+    closed: (o ? n.closed || p.closed : p.closed || n.closed) || null,
+    fee: (o ? n.fee || p.fee : p.fee || n.fee) || null,
     tip: n.tip, checked: n.checked, noted,
   };
 }

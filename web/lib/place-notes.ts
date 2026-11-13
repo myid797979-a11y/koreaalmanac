@@ -17,6 +17,8 @@ export type PlaceNote = {
   overview?: string;
   tip: string;
   checked: string;   // YYYY-MM-DD
+  /** true 면 hours/closed/fee 가 KTO 값을 덮어쓴다 — 확인해 보니 KTO 값이 틀렸을 때만 (예: 요금 인상, 시간 변경) */
+  override?: boolean;
 };
 
 export const PLACE_NOTES: Record<string, PlaceNote> = {
@@ -555,5 +557,233 @@ export const PLACE_NOTES: Record<string, PlaceNote> = {
     fee: "Free",
     tip: "Namgyeseowon is a good place to understand how a Confucian academy was laid out, because it sits on a gentle slope with the lecture hall, students' dormitories and shrine climbing one behind another, and the view opens out from the top towards the stream that gives it its name. Cheonggyeseowon, a smaller academy built for a fellow pupil of the same teacher, stands immediately beside it, so look at both. Entry and parking are free. A Korean-language guide can be booked by phone (055-760-4520); allow 30–45 minutes for the two academies together.",
     checked: '2026-11-13',
+  },
+  // COEX Artium — https://soompi.com/article/1401012wpp/smtown-coex-artium-announces-closing-date-and-plans-to-open-at-new-location (2026-09 GSC 노출 페이지)
+  "1024886": {
+    tip: "The overview is out of date: SM Entertainment's SMTOWN complex left the building in 2021, and the theatre now runs as Coexartium Woori Bank Hall, with a programme dominated by K-pop fan meetings, solo concerts and short-run plays rather than long-running musicals. Check what is on before you go and book through NOL Ticket (formerly Interpark Ticket), where many shows are sold exclusively. The venue is inside the COEX complex: from Samseong Station (Line 2), exits 5 and 6 connect directly to COEX. Arrive early, as finding the right entrance through the mall takes time, and pair it with the Starfield Library inside COEX Mall.",
+    checked: '2026-11-13',
+  },
+  // Tteok Museum — https://mediahub.seoul.go.kr/archives/2017164 (2026-09 GSC 노출 페이지)
+  "268197": {
+    tip: "The museum sits on Donhwamun-ro, about five minutes' walk from Jongno 3-ga Station exit 7 (Lines 1, 3 and 5) towards Changdeokgung Palace, so it slots neatly before or after a palace visit. It is closed on Sundays, which catches out weekend visitors. The galleries take under an hour; the real draw is the tteok (rice cake) making class, which must be booked in advance and runs at 10:30, 14:00 and 16:00 for individuals as well as groups. Afterwards, the Ikseon-dong hanok alleys are a short walk east across the main road.",
+    checked: '2026-11-13',
+  },
+  // Gahoe Museum — https://mediahub.seoul.go.kr/archives/2017733 (2026-09 GSC 노출 페이지)
+  "562503": {
+    tip: "The museum is a small hanok on Bukchon-ro, roughly 500 metres uphill from Anguk Station exit 2 (Line 3). Last admission is 40 minutes before closing, and hands-on programmes stop taking people an hour before closing, so do not leave it to late afternoon, especially in winter when it closes at 17:00. Docent talks and folk-painting craft sessions are offered. Note that part of Bukchon around Bukchon-ro 11-gil is a residential zone where tourist visits are restricted outside 10:00–17:00, so plan the museum and the hanok lanes for the middle of the day. The Dong-Lim Knot Museum is a few steps away on Bukchon-ro 12-gil.",
+    checked: '2026-11-13',
+  },
+  // Insa-dong Antique Art Street — https://mediahub.seoul.go.kr/archives/1175926 (2026-09 GSC 노출 페이지)
+  "273731": {
+    tip: "The antique shops are scattered along Insadong-gil and its side lanes rather than gathered in one block; the easiest approach is from Anguk Station exit 6 (Line 3), walking south. Prices are rarely marked, so ask and compare several shops. If you are buying anything genuinely old, be aware that Korean law restricts taking cultural objects made more than 50 years ago out of the country: items are checked by the cultural heritage appraisal offices at airports and ports, and pieces judged to be protected cannot leave without a permit. Ask the dealer about age and paperwork before paying, and allow time at the airport. Weekday mornings are quieter for browsing.",
+    checked: '2026-11-13',
+  },
+  // Triple Street — https://www.airbnb.com/things-to-do/places/16478749 (2026-09 GSC 노출 페이지)
+  "2818720": {
+    tip: "Triple Street is an open-air mall in Songdo International City, about 750 metres from Technopark Station on Incheon Subway Line 1, so allow roughly an hour and a half each way from central Seoul by subway. It is split into lettered blocks with several basement levels, and store listings give the block and floor (for example B-dong, B3), which saves a lot of wandering. Restaurant and shop hours vary; many open around 11:00 and close about 22:00. Parking is free but gets busy at weekends and on public holidays, so visit on a weekday if you are driving. It works best combined with an afternoon in Songdo rather than as a trip on its own.",
+    checked: '2026-11-13',
+  },
+  // Kukkiwon (World Taekwondo Headquarters) — https://www.gangnam.go.kr/gangnamlife/2026/html/vol374/sub01_05.html (2026-09 GSC 노출 페이지)
+  "616931": {
+    tip: "From Gangnam Station (Line 2 / Shinbundang Line) take exit 12 and follow the signs uphill along Teheran-ro 7-gil, which is signposted as Kukkiwon-gil; the walk ends at the main gate and the main hall. Kukkiwon is a working headquarters where gradings and competitions take place, so the main hall may be in use; the Taekwondo museum next to the main building is the part most casual visitors can see. Note its lunchtime closure (11:30–13:00) and that it shuts on public holidays. Yeoksam Culture Park beside it is a pleasant short stroll, and the taekwondo-themed sculptures along the street are lit at night.",
+    checked: '2026-11-13',
+  },
+  // Hado Fishing Experience Village — https://www.ktriptips.com/kor/tourspot/2023328 (2026-09 GSC 노출 페이지)
+  "3586352": {
+    closed: "Experience programmes do not run November–March",
+    tip: "The village's activities, such as bamboo-rod fishing, rock-pool foraging, snorkelling and a haenyeo diving taster, run only in the warmer months and are suspended from November to March. Whether a session can go ahead depends on the tide and the weather, so phone to book before you set out rather than turning up. Entry to the village is free; activities are charged separately (around ₩15,000 for fishing or foraging and ₩40,000 for the diving experience at the time of writing). Out of season, the Haenyeo Museum in the same area is the better reason to come (closed Mondays), and the Hado-ri wetland is worth a look for birdwatchers.",
+    checked: '2026-11-13',
+    override: true,
+  },
+  // Baengnokdam Lake — https://www.wikitree.co.kr/articles/1162513 (2026-09 GSC 노출 페이지)
+  "264591": {
+    fee: "Free (advance trail reservation required)",
+    tip: "You can only reach the crater rim via the Seongpanak and Gwaneumsa trails, and both need a free advance booking on the Hallasan reservation website (visithalla.jeju.go.kr); bookings open on the first working day of each month and weekends fill quickly. Trails open at 05:00, and from October to March the cut-off times are earlier: entry to the Seongpanak and Gwaneumsa trails closes at 11:30, and everyone must start down from the summit by 13:30. In practice that means starting at dawn. Allow a full day (roughly 8–9 hours return), carry crampons and warm layers in winter, and check the daily closure notices, as snow or wind can shut the trails.",
+    checked: '2026-11-13',
+    override: true,
+  },
+  // WATERWORLD JEJU — https://mom-mom.net/travel/places/66a088708925d2355fc6b6b0 (2026-09 GSC 노출 페이지)
+  "2025898": {
+    tip: "Waterworld Jeju is inside the Jeju World Cup Stadium in Seogwipo, where parking is available. Most of the floor is under about 20 cm of water and some areas will soak you completely, so bring a full change of clothes; there are toilets but no proper changing rooms. Aqua shoes are included with admission (bring your own for children under 36 months), and the floor is slippery barefoot. Raincoats are sold at the ticket office, and there are lockers for bags. Plan on one to two hours. Tickets can be booked in advance through Naver or bought on the day.",
+    checked: '2026-11-13',
+  },
+  // Itaewon Shopping Street — https://mediahub.seoul.go.kr/archives/816567 (2026-09 GSC 노출 페이지)
+  "273721": {
+    tip: "The main shopping strip runs along Itaewon-ro either side of Itaewon Station (Line 6), with the Hamilton Hotel as the central landmark. The street is known for large clothing and shoe sizes that are hard to find elsewhere in Seoul, and for long-established tailors. Opposite the Hamilton Hotel, Bogwang-ro leads downhill to the antique furniture street. The narrow alley beside the Hamilton Hotel is the site of the October 2022 crowd crush and now carries a memorial; please be respectful there. For cafés, Gyeongridan-gil is up the hill from Noksapyeong Station exit 2.",
+    checked: '2026-11-13',
+  },
+  // e-Sports Hall of Fame — https://www.ktriptips.com/kor/culture/2825248 (2026-09 GSC 노출 페이지)
+  "3114591": {
+    tip: "The Hall of Fame is on the 11th floor of the S-PLEX Center (Synergium building) in the Digital Media City business district in Sangam-dong, not in a standalone museum. Viewing is restricted on certain days each month when matches are being played or broadcast, so check the calendar on esportshistory.kr before making the trip. Inside are a mock broadcast desk, a play area for esports titles, a VR zone and displays of trophies and players' handprints; an hour is plenty. Audio and foreign-language guidance are available. Digital Media City Station (Line 6, Gyeongui–Jungang Line and AREX) is the nearest interchange.",
+    checked: '2026-11-13',
+  },
+  // Huin-yeoul Coastal Tunnel — https://www.ktriptips.com/kor/tourspot/2606221 (2026-09 GSC 노출 페이지)
+  "3002479": {
+    hours: "Open 24 hours (lighting 09:00–23:00)",
+    fee: "Free",
+    tip: "The tunnel is short, so treat it as one stop on a walk through Huinnyeoul Culture Village and along the Jeoryeong Coastal Trail rather than a destination on its own. Many people walk down through the village lanes to the tunnel; allow around an hour for the whole loop. From Nampo Station exit 6 (Busan Line 1), buses towards Yeongdo such as the 7, 71 and 508 stop near the village. The lanes are steep with many steps, so wear sensible shoes, and keep noise down: people live here. Late afternoon gives the best light over the anchored ships. A public car park beside the coastal trail charges by the 10 minutes.",
+    checked: '2026-11-13',
+    override: true,
+  },
+  // Dong-Lim Knot Museum — https://www.trazy.com/spot/1580/dong-lim-knot-museum-동림매듭공방 (2026-09 GSC 노출 페이지)
+  "562863": {
+    tip: "The museum is in a small hanok on Bukchon-ro 12-gil, a few steps from the Gahoe Museum, and the exhibition itself takes only 20–30 minutes. The main reason to come is a maedeup (knot-making) session, such as a bracelet or phone charm, which takes about 20–40 minutes. Book by phone (02-3673-2778) at least two days ahead; classes are taught in Korean, so a Korean speaker helps, and bring cash. Winter sessions finish earlier in the day. It is closed on Mondays, as are several of the neighbouring small Bukchon museums, so pick another day if you want to combine them.",
+    checked: '2026-11-13',
+  },
+  // Jeonju Nanjang — https://www.ktriptips.com/kor/culture/2778059 (2026-09 GSC 노출 페이지)
+  "3002012": {
+    hours: "Mon–Fri 10:00–19:00; Sat 09:30–19:30; Sun 09:30–19:00 (last entry 1 hour before closing)",
+    closed: "Open every day",
+    fee: "Adults ₩7,500; teenagers and seniors ₩6,500; children ₩5,500",
+    tip: "Jeonju Nanjang is an indoor attraction, which makes it a useful fallback when rain or summer heat makes the Hanok Village streets hard work. It is on Dongmun-gil within the Hanok Village, and the public Hanok Village car park serves it. The 70-plus themed rooms recreate old Korean homes, classrooms, shops and streets, built around a well more than 110 years old, and are designed for photos, so allow 60–90 minutes. Remember entry closes an hour before closing time. Mid-morning on weekdays avoids the school groups and weekend crowds. Groups of ten or more must book ahead on the official website.",
+    checked: '2026-11-13',
+    override: true,
+  },
+  // Samseonggung — https://www.wikitree.co.kr/articles/1137971 (2026-09 GSC 노출 페이지)
+  "3097960": {
+    fee: "Adults ₩8,000; teenagers ₩5,000; children ₩4,000",
+    tip: "Samseonggung is high on the slopes of Jirisan above Cheonghak-dong in Hadong, on mountain roads with little public transport, so a car or taxi is the realistic way to get there. The site is a long walk through stone paths and some 1,500 hand-built stone towers and cairns; allow at least two hours. Stay on the marked paths, do not climb or touch the towers, and do not bring in outside food. The stone steps are uneven and slippery after rain, and the ponds are deep, so keep an eye on children. Arrive by early afternoon, as the last admission is well before dusk, especially in winter.",
+    checked: '2026-11-13',
+    override: true,
+  },
+  // Dongdaemun Stationery Store Street — https://mediahub.seoul.go.kr/archives/2018452 (2026-09 GSC 노출 페이지)
+  "1241248": {
+    tip: "The street runs between Dongdaemun Station exit 4 (Line 1), about three minutes' walk, and Dongmyo Station exits 6 and 7 (Lines 1 and 6). It is primarily a wholesale market, so many prices assume quantity, but individual shoppers are served and it is a cheap source of Korean stationery, character goods, party supplies and seasonal decorations. The alleys are narrow and there is no parking, so come by subway. Go Monday to Saturday in daytime; most shops close around 19:00 and many do not open on Sundays. Combine it with the Dongmyo flea market a few minutes' walk away.",
+    checked: '2026-11-13',
+  },
+  // Seochon Village — https://mediahub.seoul.go.kr/archives/2008037 (2026-09 GSC 노출 페이지)
+  "2037040": {
+    tip: "Start at Gyeongbokgung Station exit 2 (Line 3), which opens straight onto the Sejong Village food street, then walk north up the main road towards Suseong-dong Valley at the foot of Inwangsan. Along the way are Tongin Market and the Park No-soo Art Museum. At Tongin Market you buy brass coins (10 for ₩5,000) on the second floor of the merchants' building in the middle of the market, exchange them for dishes at stalls, then eat in the lunchbox café; coin sales stop at around 16:00, so go for lunch. Allow half a day, and combine it with Gyeongbokgung, which is just east of the station.",
+    checked: '2026-11-13',
+  },
+  // Supsok Hanbang Land — https://www.lguplus.com/korea-sim/kor/pc/support/blog/korea_jjimjilbang_guide (2026-09 GSC 노출 페이지)
+  "3110038": {
+    hours: "06:30–22:00",
+    closed: "Open every day",
+    fee: "Charcoal kiln sauna adults ₩16,000; bathhouse only adults ₩10,000",
+    tip: "Supsok Hanbang Land is up a hill next to Bongwonsa Temple and is too far from a subway station to walk comfortably. The simple route is green bus 7024 from Seoul Station to its last stop, Bongwonsa; alternatively take a taxi from Sinchon Station. Start in the cooler kilns and work up to the hottest, and buy sweet potatoes or rice-cake sticks at the shop to grill over the charcoal braziers between sessions. There is an extra hourly charge if you stay beyond the standard time, so ask at the desk how long your ticket covers. Allow two to three hours, and pair it with a look around Bongwonsa.",
+    checked: '2026-11-13',
+    override: true,
+  },
+  // Haeundae Rodeo Street — https://itwiki.kr/w/%EC%A4%91%EB%8F%99%EC%97%AD(%EB%B6%80%EC%82%B0) (2026-09 GSC 노출 페이지)
+  "3098939": {
+    tip: "Despite the name, the Rodeo Street is not on the beachfront: it is in the Haeundae new town, about six minutes' walk from Jung-dong Station exit 7 on Busan Line 2. Its draw is permanent discount outlets selling clothing and accessories at lower prices, so expect previous-season stock rather than new collections. It works well as a rainy-day stop combined with Haeundae Beach, Mipo or Dalmaji-gil. For independent cafés and shops instead, Haeridan-gil is four to five minutes from Haeundae Station exit 4, one stop west.",
+    checked: '2026-11-13',
+  },
+  // King Sejong Statue — https://mediahub.seoul.go.kr/archives/2019648 (2026-09 GSC 노출 페이지)
+  "1382671": {
+    tip: "Walk round to the back of the statue. Stairs there lead down to 'The Story of King Sejong', a free underground exhibition on Hangeul, the king's scientific instruments and his reign, which many visitors walk straight past. It continues through to the basement of the Sejong Center for the Performing Arts and is closed on Mondays. The square itself is open at all hours. Gwanghwamun Station (Line 5) is the nearest stop. Allow about an hour for the statue, the exhibition and the Admiral Yi Sun-sin statue further south. Gyeongbokgung Palace closes off the northern end of the square, so the two fit easily into one morning.",
+    checked: '2026-11-13',
+  },
+  // Doota Mall — https://www.doota-mall.com/en/info/coupon.do (2026-09 GSC 노출 페이지)
+  "273757": {
+    tip: "Doota is most useful in the evening. It stays open until midnight, long after the street shops close, and Dongdaemun Design Plaza across the road is lit up at night. Visitors on a tourist visa can collect a free coupon book (valid to 31 December 2026) from the 5th-floor information desk by showing their passport. It includes ₩10,000 off purchases over ₩50,000 at most stores, though food outlets, Nike and a few others are excluded. Cafés and restaurants inside keep their own hours. Dongdaemun History & Culture Park Station (Lines 2, 4 and 5) is the closest station. Allow one to two hours.",
+    checked: '2026-11-13',
+  },
+  // Choi Sunu House — http://www.ntculture.or.kr/culturalHeritage/guide/view?id=414&page=1 (2026-09 GSC 노출 페이지)
+  "1810712": {
+    hours: "April–November: Tuesday–Saturday 10:00–17:00 (last entry 16:30)",
+    closed: "Sundays and Mondays; Chuseok day; 1 May; December–March",
+    fee: "Free",
+    tip: "The house is open only from April to November, Tuesday to Saturday, so check the date before crossing town. It is a small 1930s hanok, and 30–45 minutes is enough. Sit on the wooden veranda facing the back garden, and look for the calligraphy board above the study door, which Choi wrote himself. The National Trust has free docent videos on YouTube in English and several other languages, and they are worth playing on your phone as you go round. Take Line 4 to Hansung University Station, exit 5, then walk 10–15 minutes uphill. There is no car park. Seongbuk-dong has other hanok and small museums close by, so this fits well into a half-day walk.",
+    checked: '2026-11-13',
+    override: true,
+  },
+  // Gwangju Chungjang-ro KPOP STAR Street — https://www.ktriptips.com/kor/tourspot/2946224 (2026-09 GSC 노출 페이지)
+  "3394295": {
+    tip: "This is a stretch of Chungjang-ro, Gwangju's old downtown shopping street, rather than a separate attraction. Allow 20–30 minutes. Fans come for the BTS-themed bench that j-hope (a Gwangju native) visited, and they leave notes beside it. There are also album-jacket murals, handprints and sculptures. It is worth coming after dark, when the entrance lighting and the media walls playing K-pop videos are switched on. It is free and open at all hours. There is no parking on the street, so use a public car park or the metro. The surrounding blocks are full of cosmetics shops, fashion shops and cafés, and the Asia Culture Center is a short walk away.",
+    checked: '2026-11-13',
+  },
+  // Jangsaengpo Whale Watching Cruise — https://www.whalecity.kr/EgovPageLink.do?link=tourship/introduction/traffic (2026-09 GSC 노출 페이지)
+  "1835370": {
+    hours: "April–October: whale-watching trips (3 hr) mainly 14:00–17:00 (also 10:00–13:00 on some peak-season days); coastal tours (1 hr 30 min) 11:00–12:30 and 14:00–15:30 on set days; evening coastal tours Fridays and Saturdays 18:00–21:00. March and November: Saturday evening coastal tour only (17:00–20:00)",
+    fee: "Whale-watching: adults ₩20,000, children ₩10,000; coastal tour: adults ₩15,000, children ₩7,000; under 36 months free",
+    tip: "The main season runs from April to October, and off-season sailings are very limited, so check the booking calendar before travelling. Sightings are more often pods of dolphins than great whales. If a whale-watching trip sees nothing, you can choose free entry to the Whale Museum, the old whaling village or the Ulsan warship, or a discount at the Whale Ecology Experience Hall. Bring your passport, as ID is checked before boarding. Be at the pier an hour before departure. Fares are card only, with no cash. From Ulsan Express Bus Terminal, city bus 226 takes about 30 minutes to the Jangsaengpo Whale Museum stop.",
+    checked: '2026-11-13',
+    override: true,
+  },
+  // Central City — https://www.ktriptips.com/kor/shopping/132230 (2026-09 GSC 노출 페이지)
+  "1238277": {
+    hours: "Varies by store",
+    tip: "Central City is a complex rather than one mall. It houses the Shinsegae department store, the Famille Station dining floor, a cinema, a hotel and Central City Terminal, and each part keeps its own hours. Its bus terminal is a separate building from the Seoul Express Bus Terminal next door, so check which one your ticket names before setting off with luggage. Express Bus Terminal Station (Lines 3, 7 and 9) connects underground to the GOTO Mall underground arcade. The wholesale flower market on the 3rd floor of the neighbouring terminal opens around midnight and winds down by about 13:00. It is closed on Sundays.",
+    checked: '2026-11-13',
+    override: true,
+  },
+  // Korea Job World — https://www.koreajobworld.or.kr/portal.do (2026-09 GSC 노출 페이지)
+  "3096883": {
+    tip: "Korea Job World is closed on Sundays, the day many families plan to go, and the Skills Experience Center is also closed on Saturdays. The role-play job zones are aimed at Korean school-age children and run in timed sessions. Book them online in advance, or take whatever places are left on the day. The children's and youth halls take different age ranges, and prices differ by hall, so check before you go. Take the Suin-Bundang Line to Sunae (Korea Job World) Station, exit 3, and walk about 800 m. Roads around the site are congested at weekends, so the subway is easier than driving. Allow half a day for a booked session.",
+    checked: '2026-11-13',
+  },
+  // Hanbyeok Tunnel — https://jjan.kr/article/20250818580023 (2026-09 GSC 노출 페이지)
+  "2946560": {
+    tip: "The tunnel is a former railway tunnel built for the old Jeolla Line during the Japanese colonial period, and it is now a footpath. It sits at the eastern edge of Jeonju Hanok Village, below Hanbyeokdang Pavilion. Five minutes is enough to see the tunnel itself. It works best as the start of the riverside walk beyond it, which follows Jeonjucheon Stream past the Jeonju Natural Ecology Museum and Seungamsa Temple, a quiet alternative to the crowded hanok lanes. The ivy at the entrance is greenest in summer. Jaman Mural Village is about 10 minutes' walk away, so the two pair well.",
+    checked: '2026-11-13',
+  },
+  // Seoul City Wall Museum — https://mediahub.seoul.go.kr/archives/2015733 (2026-09 GSC 노출 페이지)
+  "1939723": {
+    tip: "Visit the museum before you walk the wall rather than after. The permanent exhibition shows how the 18.6 km wall was built and repaired over six centuries, and the stones you pass afterwards mean a good deal more. Allow about an hour. Entry is free, and the museum is closed on Mondays. Take Line 1 or 4 to Dongdaemun Station, exit 1, then walk about 5 minutes. Heunginjimun Gate is just across the road. The Naksan section of the wall trail climbs from the museum's park to Naksan Park and the Ihwa mural village, and it is best walked in the late afternoon for the city views at dusk.",
+    checked: '2026-11-13',
+  },
+  // Uhwajeong Pavilion — https://travelmapjourney.com/naejangsan-autumn-reservation-route-2026/ (2026-09 GSC 노출 페이지)
+  "658438": {
+    tip: "Uhwajeong is the pavilion on the pond near the Naejangsan visitor centre and the classic Naejangsan autumn-colour photograph. Peak colour usually falls in late October and early November, and by mid-November most leaves have dropped. In peak season, cars are restricted inside the park and weekend crowds are heavy, so arrive early or come on a weekday. The pond is an easy, flat walk on the way to Naejangsa Temple. The cable car from the visitor-centre area runs to a viewpoint below Yeonjabong, and weekend waits can top an hour. The nearest rail station is Jeongeup (KTX), with local buses or a taxi to the park.",
+    checked: '2026-11-13',
+  },
+  // Little Prince House — https://www.littleprincehouse.kr (2026-09 GSC 노출 페이지)
+  "4039469": {
+    hours: "09:30–18:30",
+    closed: "Open every day",
+    tip: "Don't confuse this with the well-known Little Prince and fox statue sitting on a wall above Gamcheon Culture Village. That statue is outdoors and free, while this is a separate paid exhibition. Expect a queue for photos at the statue. The exhibition covers four floors and a rooftop, including a darkened 'In the Dark' room. Allow 40–60 minutes. Tickets are often cheaper online than at the door. Take Busan Metro Line 1 to Toseong Station, exit 6, then a green village bus (Saha 1-1, Seogu 2 or Seogu 2-2) from outside the Pusan National University Hospital cancer centre. Village buses are crowded at weekends.",
+    checked: '2026-11-13',
+    override: true,
+  },
+  // Seungjin Toy — https://mediahub.seoul.go.kr/archives/2001468 (2026-09 GSC 노출 페이지)
+  "1327391": {
+    tip: "Seungjin Toy is the landmark of the Changsin-dong stationery and toy street. Look for the big gorilla and bear figures outside. Around 100 discount toy and stationery shops fill the lanes around it, with prices pitched at local parents and small retailers. It is good for character goods, party supplies and Korean stationery below department-store prices. Weekdays are best, because Sunday hours along the street are shorter. Take Line 1 to Dongdaemun Station, exit 4, or go to Dongmyo Station. Heunginjimun Gate and the Seoul City Wall Museum are a few minutes' walk away, so the two make an easy pairing.",
+    checked: '2026-11-13',
+  },
+  // Dodu-dong Rainbow Coastal Road — https://www.visitjeju.net/u/4Ap (2026-09 GSC 노출 페이지)
+  "2949197": {
+    tip: "This short stretch of painted sea wall is about ten minutes by car from Jeju Airport, so it makes a good first or last stop on arrival or departure day. Allow 20–30 minutes for photos. There is a car park by the road. From it you can climb Dodubong, a small oreum, where you watch aircraft landing at the airport below. It is also a popular sunset spot. Iho Taewoo Beach, with its red and white horse-shaped lighthouses, is a short drive west, and the three make an easy half-day loop near the airport. The wall is fully exposed to the sea, so expect strong wind in winter.",
+    checked: '2026-11-13',
+  },
+  // E-Land Cruise (Hangang River Ferry Cruise) — https://www.elandcruise.com (2026-09 GSC 노출 페이지)
+  "1796840": {
+    fee: "Hangang Tour Cruise ₩19,900; Sunset and Starlight cruises ₩25,900; Moonlight Music Cruise ₩32,900 (adult fares listed by the operator)",
+    tip: "Most cruises leave from Yeouido Pier and loop back there, so they are round trips rather than a way to travel across Seoul. The daytime Hangang Tour Cruise turns at Seogang Bridge. The Moonlight Music Cruise (19:00) runs as far as Banpo Bridge with live music, and the Starlight Cruise (22:00) is the last sailing of the day. Book online or through Naver, especially for evening sailings at weekends. Take Line 5 to Yeouinaru Station, exit 3, then walk about 10 minutes. If you drive, write your car number on the boarding form for free parking at Yeouido Car Park 1. A separate set of routes runs from Jamsil Pier.",
+    checked: '2026-11-13',
+    override: true,
+  },
+  // Hagwi Aewol Coastal Road — https://www.telltrip.com/domestic-travel/aewol-coastal-road-attractions/ (2026-09 GSC 노출 페이지)
+  "2823489": {
+    tip: "The road runs for about 9 km along Jeju's north-west coast between Hagwi and Aewol. It is best driven or cycled in the late afternoon so that you reach the coast for sunset. Stop at the Gueom-ri stone salt pans, flat rock terraces once used for drying salt and a classic sunset photo spot. Other stops include the Sineom breakwater and the seaside rest areas along the way. Allow an hour by car with stops. The road is also part of Jeju Olle Route 16 (Gonae Port to Gwangnyeong, about 15.7 km and 5–6 hours on foot), so walkers can do a shorter coastal section. It is free, and there are toilets along the way.",
+    checked: '2026-11-13',
+  },
+  // Apgujeong Rodeo Street — https://www.ivisitkorea.com/?p=63429 (2026-09 GSC 노출 페이지)
+  "264107": {
+    tip: "Rodeo Street is a grid of side streets rather than one road. Boutiques, designer showrooms, cafés and restaurants fill the blocks south of Apgujeong-ro, around Apgujeongrodeo Station on the Suin-Bundang Line, and the Galleria department store stands by the station. Many shops open late in the morning, so come from late morning onwards, or in the evening for restaurants and bars. Weekends are busiest. Allow two to three hours. Cheongdam's luxury flagship stores are a short walk east, Dosan Park lies to the south, and Garosu-gil in Sinsa-dong is to the west, so the whole area can be covered on foot in an afternoon.",
+    checked: '2026-11-13',
+  },
+  // Jungmun Tourist Complex — https://www.ktriptips.com/kor/tourspot/127053 (2026-09 GSC 노출 페이지)
+  "264178": {
+    tip: "Jungmun is a resort district rather than a single sight, so pick your stops in advance. Jungmun Saekdal Beach, known for surfing, and the coastal walks are free. Daepo Jusangjeolli Cliff, with its hexagonal basalt columns, and Cheonjeyeon Falls each charge a small entry fee. The sights and hotels are spread out, so a car or taxi helps. Without a car, airport limousine bus 600 runs from Jeju Airport past the Jungmun hotels to Seogwipo. Allow a full day to combine the cliffs, the falls and the beach. The beach car park is free outside the July–August swimming season.",
+    checked: '2026-11-13',
+  },
+  // Tongyeong Jungang Market — https://www.pressian.com/pages/articles/5466 (2026-09 GSC 노출 페이지)
+  "1886472": {
+    tip: "Come in the morning or around lunchtime, when the fish stalls are busiest, as opening hours vary from stall to stall. A local custom is to buy live fish in the market's live-fish alley, have it sliced, then take it to one of the nearby chojang restaurants. These charge for the table setting, sauces and side dishes. Dongpirang mural village climbs the hill directly behind the market, so you can walk down from it into the market. Gangguan harbour, with its turtle-ship replicas, is just in front. Allow about an hour for the market, or half a day with Dongpirang and the harbour.",
+    checked: '2026-11-13',
+  },
+  // Chuam Beach — https://www.telltrip.com/domestic-travel/chuam-beach-candlestick-rock-suspension-bridge/ (2026-09 GSC 노출 페이지)
+  "264618": {
+    tip: "Chotdaebawi, the candlestick rock, is one of Korea's best-known sunrise views. It appears behind the national anthem on Korean television, so come at dawn and check the sunrise time the night before. A deck path runs from the rock viewpoint past Haeamjeong Pavilion to the 72 m suspension bridge over the sea, opened in 2019, about 200 m away. The bridge has set opening hours, while the beach and the rock viewpoint do not. Allow about an hour for the full loop. Entry is free, and there is a public car park. Donghae Station (KTX) is about 15 minutes away by bus or taxi.",
+    checked: '2026-11-13',
+  },
+  // Sejong National Arboretum — https://sjna.koagi.or.kr (2026-09 GSC 노출 페이지)
+  "2944982": {
+    fee: "Adults ₩5,000; ages 13–18 ₩4,000; children ₩3,000",
+    tip: "In the colder months, start with the Four Seasons Exhibition Greenhouse, with its Mediterranean, tropical and special exhibition houses. It stays green when the outdoor gardens are bare. Allow two to three hours. From November to February the arboretum closes at 17:00, with last entry at 16:00, and it is closed on Mondays. From Osong Station (KTX), take BRT bus B1 or B2 to the Government Complex North stop, then change to bus 221 for the Sejong National Arboretum stop. Visitors claiming a discount or free entry must show ID at the staffed ticket desk.",
+    checked: '2026-11-13',
+    override: true,
   },
 };
