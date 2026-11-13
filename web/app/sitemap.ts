@@ -8,7 +8,7 @@ import { liveCulture } from '@/lib/culture';
 import { PLACE_CATS, places } from '@/lib/places';
 import { SITE_URL } from '@/lib/site';
 import { today } from '@/lib/data';
-import { placeIndexable, festivalIndexable } from '@/lib/indexing';
+import { placeIndexable, festivalIndexable, cultureIndexable } from '@/lib/indexing';
 import { DAYS } from '@/lib/open-days';
 
 export const dynamic = 'force-static';
@@ -98,7 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...venueParams().map(v => ({ url: SITE_URL + '/venue/' + v.slug + '/', priority: 0.85 })),
     ...(liveCulture('traditional').length ? [{ url: SITE_URL + '/events/traditional/', priority: 0.9 }] : []),
     ...(liveCulture('exhibition').length ? [{ url: SITE_URL + '/events/exhibitions/', priority: 0.9 }] : []),
-    ...liveCulture(undefined, t).map(c => ({ url: SITE_URL + '/culture/' + c.slug + '/', priority: 0.7 })),
+    ...liveCulture(undefined, t).filter(c => cultureIndexable(c, t)).map(c => ({ url: SITE_URL + '/culture/' + c.slug + '/', priority: 0.7 })),
     ...(places.length ? [{ url: SITE_URL + '/places/', priority: 0.95 }] : []),
     ...PLACE_CATS.map(c => ({ url: SITE_URL + '/places/' + c.slug + '/', priority: 0.85 })),
     ...REGIONS.map(r => ({ url: SITE_URL + '/regions/' + r.toLowerCase() + '/', priority: 0.9 })),
