@@ -55,6 +55,9 @@ function hashOf(url) {
     .replace(/<head>[\s\S]*?<\/head>/g, '')
     .replace(/<header[\s\S]*?<\/header>/g, '')
     .replace(/<footer[\s\S]*?<\/footer>/g, '')
+    // 템플릿이 전 장소에 한꺼번에 넣는 안내 줄(요일 도구 링크 등, 2026-11-13)은 class="nofresh" 로 표시해 뺀다.
+    // 예전 HTML 에는 이 요소가 없으므로 HASH_VERSION 을 올리지 않아도 기존 해시가 그대로 맞는다.
+    .replace(/<p class="[^"]*\bnofresh\b[^"]*">[\s\S]*?<\/p>/g, '')
     .replace(/__variable_[0-9a-f]+/g, '')
     .replace(/[A-Z][a-z]{2} \d{1,2}, 20\d\d/g, 'DATE')
     // 오늘 날짜에서 파생된 표시를 뺀다. D-54 가 D-53 이 되는 건 "내용이 바뀐" 게 아닌데,

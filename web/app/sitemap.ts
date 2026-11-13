@@ -40,6 +40,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL + '/guides/hwacheon-ice-festival-2027/', priority: 0.9 },
     { url: SITE_URL + '/guides/money-in-korea/', priority: 0.9 },
     { url: SITE_URL + '/guides/tax-refund-korea/', priority: 0.9 },
+    { url: SITE_URL + '/guides/korea-in-spring/', priority: 0.9 },
+    { url: SITE_URL + '/guides/lotus-lantern-festival-2027/', priority: 0.9 },
     { url: SITE_URL + '/open-on/', priority: 0.9 },
     ...DAYS.map(d => ({ url: SITE_URL + '/open-on/' + d + '/', priority: 0.8 })),
     { url: SITE_URL + '/guides/korea-in-winter/', priority: 0.9 },

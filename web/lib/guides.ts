@@ -31,6 +31,20 @@ export const GUIDES: Guide[] = [
     photo: 'paroho-lake-hwacheon-793179',
   },
   {
+    href: '/guides/korea-in-spring/',
+    title: 'Korea in spring 2027: what blooms after the cherry blossom',
+    blurb: 'April and May after the blossom: Jeju canola, azaleas, royal azaleas on the ridges, Boseong green tea and roses, with typical dates — plus the 2027 May holidays, Jongmyo Daeje, yellow dust and what to pack.',
+    tag: 'Seasonal',
+    photo: 'daehan-dawon-tea-plantation-264293',
+  },
+  {
+    href: '/guides/lotus-lantern-festival-2027/',
+    title: 'Lotus Lantern Festival 2027: Buddha’s Birthday in Seoul',
+    blurb: 'Buddha’s Birthday is Thursday 13 May 2027. The night lantern parade from Dongdaemun to Jogyesa, the street fair, where to watch, free temple lunches on the day — and when the 2027 dates are announced.',
+    tag: 'Seasonal',
+    photo: 'jogyesa-temple-264352',
+  },
+  {
     href: '/guides/money-in-korea/',
     title: 'Money in Korea: cards, cash, WOWPASS and ATMs',
     blurb: 'Where foreign Visa and Mastercard work and where they fail, how much cash to carry, WOWPASS and T-money, ATMs that take foreign cards, exchanging money, and why there is no tipping.',
@@ -453,6 +467,8 @@ const NOW_WINDOWS: { href: string; from: string; to: string }[] = [
   { href: '/guides/korea-in-winter/',             from: '20261116', to: '20270228' },
   { href: '/guides/seollal-2027/',                from: '20261215', to: '20270209' },
   { href: '/guides/cherry-blossom-2027/',         from: '20270110', to: '20270410' },
+  { href: '/guides/korea-in-spring/',             from: '20270301', to: '20270531' },
+  { href: '/guides/lotus-lantern-festival-2027/', from: '20270401', to: '20270514' },
 ];
 const EVERGREEN = ['/guides/korea-7-day-itinerary/', '/guides/best-festivals-in-korea/', '/guides/seoul-palaces/', '/guides/korean-food-guide/'];
 
@@ -574,7 +590,7 @@ export const PLACE_GUIDE: Record<string, string> = {
 
 /** 지역 허브(축제·지역 페이지) → 그 지역 가이드 */
 export const REGION_GUIDES: Record<string, string[]> = {
-  Seoul:     ['/guides/seoul-3-days/', '/guides/seoul-in-december/', '/guides/where-to-stay-in-seoul/', '/guides/seoul-palaces/', '/guides/korean-food-guide/', '/guides/getting-around-seoul/', '/open-on/'],
+  Seoul:     ['/guides/seoul-3-days/', '/guides/seoul-in-december/', '/guides/lotus-lantern-festival-2027/', '/guides/where-to-stay-in-seoul/', '/guides/seoul-palaces/', '/guides/korean-food-guide/', '/guides/getting-around-seoul/', '/open-on/'],
   Busan:     ['/guides/busan-2-days/', '/guides/where-to-stay-in-busan/', '/guides/busan-food-guide/', '/guides/busan-fireworks-2026/', '/guides/korean-spa-jjimjilbang/'],
   Gyeongnam: ['/guides/jinju-lantern-festival-2026/', '/guides/templestay-korea/', '/guides/cherry-blossom-2027/'],
   Gyeongbuk: ['/guides/gyeongju-2-days/', '/guides/andong-hahoe-village/'],
@@ -590,6 +606,11 @@ export const REGION_GUIDES: Record<string, string[]> = {
 export const FESTIVAL_GUIDE: Record<string, string> = {
   '235076': '/guides/busan-fireworks-2026/',
   '1385298': '/guides/busan-fireworks-2026/',
+  '972387':  '/guides/lotus-lantern-festival-2027/', // 연등회 (2026-11-13)
+  '1553601': '/guides/lotus-lantern-festival-2027/', // 부산 연등축제
+  '141759':  '/guides/korea-in-spring/',      // 종묘대제
+  '4053719': '/guides/korea-in-spring/',      // 불암산 철쭉제
+  '292976':  '/guides/korea-in-spring/',      // 서귀포 유채꽃축제
   '685135': '/guides/hwacheon-ice-festival-2027/',   // 화천산천어축제 (2026-11-12 전용 가이드로)
   '700520': '/guides/cherry-blossom-2027/',
   '697197': '/guides/jinju-lantern-festival-2026/',
@@ -629,8 +650,8 @@ export const MONTH_GUIDES: string[][] = [
   ['/guides/hwacheon-ice-festival-2027/', '/guides/korea-in-winter/', '/guides/seoul-new-years-eve/', '/guides/skiing-in-korea/', '/guides/seollal-2027/'],   // Jan
   ['/guides/seollal-2027/', '/guides/korea-in-winter/', '/guides/skiing-in-korea/', '/guides/cherry-blossom-2027/'],       // Feb
   ['/guides/cherry-blossom-2027/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                // Mar
-  ['/guides/cherry-blossom-2027/', '/guides/seoul-palaces/', '/guides/baseball-in-korea/', '/guides/korea-on-a-budget/'], // Apr
-  ['/guides/baseball-in-korea/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'],                                  // May
+  ['/guides/cherry-blossom-2027/', '/guides/korea-in-spring/', '/guides/lotus-lantern-festival-2027/', '/guides/seoul-palaces/', '/guides/baseball-in-korea/'], // Apr
+  ['/guides/korea-in-spring/', '/guides/lotus-lantern-festival-2027/', '/guides/templestay-korea/', '/guides/baseball-in-korea/', '/guides/korea-on-a-budget/'], // May
   ['/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'], // Jun
   ['/guides/rainy-day-seoul/', '/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/'], // Jul
   ['/guides/baseball-in-korea/', '/guides/everland-vs-lotte-world/', '/guides/korea-on-a-budget/', '/guides/seoul-nightlife/'], // Aug
@@ -668,6 +689,8 @@ export const GUIDE_DATES: Record<string, { published: string; updated: string }>
   '/guides/hwacheon-ice-festival-2027/': { published: '2026-11-12', updated: '2026-11-12' },
   '/guides/money-in-korea/':             { published: '2026-11-12', updated: '2026-11-12' },
   '/guides/tax-refund-korea/':           { published: '2026-11-12', updated: '2026-11-12' },
+  '/guides/korea-in-spring/':            { published: '2026-11-13', updated: '2026-11-13' },
+  '/guides/lotus-lantern-festival-2027/': { published: '2026-11-13', updated: '2026-11-13' },
   '/guides/incheon-airport-layover/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/andong-hahoe-village/': { published: '2026-09-30', updated: '2026-09-30' },
   '/guides/seoul-markets/': { published: '2026-09-30', updated: '2026-10-06' },

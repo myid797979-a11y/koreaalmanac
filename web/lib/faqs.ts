@@ -78,4 +78,16 @@ export const FAQS: Record<string, { q: string; a: string }[]> = {
     { q: 'Where do I get my tax refund at Incheon Airport?', a: 'Scan your passport and slips at a kiosk in the 3F departures hall before checking your bags, see customs if the kiosk asks, then collect cash after security.' },
     { q: 'Can foreigners get a VAT refund on cosmetic surgery in Korea?', a: 'Not at the moment. The cosmetic-procedure refund ended on 31 December 2025, and no extension had passed as of November 2026.' },
   ],
+  '/guides/korea-in-spring/': [
+    { q: 'When do the azaleas bloom in Korea?', a: 'Wild azaleas flower from early April on the south coast to mid-April around Seoul. The big royal-azalea displays on mountain ridges such as Hwangmaesan come in early May, and Sobaeksan in late May.' },
+    { q: 'What are the public holidays in May 2027 in Korea?', a: 'Labour Day on Saturday 1 May, Children’s Day on Wednesday 5 May and Buddha’s Birthday on Thursday 13 May. There is no long holiday weekend in May 2027.' },
+    { q: 'When is Jongmyo Daeje?', a: 'On the first Sunday of May at Jongmyo Shrine in Seoul — 3 May in 2026, which points to 2 May in 2027, though that date had not been announced in November 2026. Watching is free.' },
+    { q: 'Is yellow dust a problem in spring in Korea?', a: 'On some days. Check the PM2.5 and PM10 forecast on AirKorea or a weather app the night before; on bad days plan indoor sights and wear a KF94 mask outdoors.' },
+  ],
+  '/guides/lotus-lantern-festival-2027/': [
+    { q: 'When is Buddha’s Birthday in 2027?', a: 'Thursday 13 May 2027, a public holiday in Korea.' },
+    { q: 'When is the Lotus Lantern Festival 2027 in Seoul?', a: 'Not announced yet as of November 2026. The parade has come 4 to 9 days before Buddha’s Birthday in recent years, which points to one of the first two weekends of May 2027.' },
+    { q: 'Where does the lantern parade go?', a: 'From Heunginjimun (Dongdaemun Gate) along Jongno to Jogyesa temple, starting at about 19:00 on the Saturday and finishing around 21:30. Watching is free.' },
+    { q: 'Do temples give free food on Buddha’s Birthday?', a: 'Many do: temples such as Jogyesa and Bongeunsa in Seoul serve a simple free lunch, often bibimbap, to visitors on the day while it lasts.' },
+  ],
 };

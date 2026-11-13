@@ -1,5 +1,6 @@
 import placesJson from '@/data/places.json';
 import { okImage } from '@/lib/images';
+import { PLACE_NOTES } from '@/lib/place-notes';
 
 // KTO 영문 관광지 — 원문이 영어라 번역이 필요 없다.
 // 분류는 Exporter 가 KTO cat3 코드를 여행자 언어 9개로 재편해 넣어준다.
@@ -12,6 +13,10 @@ export type Place = {
   // detailIntro2 — 개관시간·휴관일·요금. 아직 수집 중이라 null 인 항목이 많다.
   hours: string | null; closed: string | null; fee: string | null;
   menu: string | null; parking: string | null;
+  // lib/place-notes — 사람이 확인해 덧붙인 방문 팁과 확인 날짜 (없으면 undefined)
+  tip?: string; checked?: string;
+  /** hours/closed/fee 중 하나라도 노트에서 왔는가 (출처 문구용) */
+  noted?: boolean;
 };
 
 export type PlaceCat =
@@ -20,7 +25,21 @@ export type PlaceCat =
   | 'markets' | 'shopping' | 'food';
 
 // 깨진 KTO 이미지는 대체 이미지로 (lib/images.ts)
-export const places: Place[] = (placesJson as Place[]).map(p => ({ ...p, image: okImage(p.image) }));
+// 보강 노트는 KTO 값이 빈 칸만 채운다 — KTO 가 나중에 채우면 그쪽이 이긴다.
+function withNote(p: Place): Place {
+  const n = PLACE_NOTES[p.id];
+  if (!n) return p;
+  const noted = (!p.hours && !!n.hours) || (!p.closed && !!n.closed) || (!p.fee && !!n.fee);
+  return {
+    ...p,
+    overview: p.overview || n.overview || null,
+    hours: p.hours || n.hours || null,
+    closed: p.closed || n.closed || null,
+    fee: p.fee || n.fee || null,
+    tip: n.tip, checked: n.checked, noted,
+  };
+}
+export const places: Place[] = (placesJson as Place[]).map(p => withNote({ ...p, image: okImage(p.image) }));
 
 export const PLACE_CATS: { slug: string; cat: PlaceCat; label: string; blurb: string }[] = [
   { slug: 'palaces-heritage', cat: 'heritage', label: 'Palaces & heritage',

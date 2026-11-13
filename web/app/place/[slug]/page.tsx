@@ -13,6 +13,10 @@ import { PLACE_GUIDE, GUIDES } from '@/lib/guides';
 import RegionGuides from '@/app/components/RegionGuides';
 import { offersFor } from '@/lib/affiliate';
 import { placeIndexable, NOINDEX } from '@/lib/indexing';
+import { parseClosed, DAY_LABEL, OPEN_CATS } from '@/lib/open-days';
+
+const LONG_MO = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const longDate = (ymd: string) => `${Number(ymd.slice(8, 10))} ${LONG_MO[Number(ymd.slice(5, 7)) - 1]} ${ymd.slice(0, 4)}`;
 
 export function generateStaticParams() {
   return placeParams();
@@ -105,6 +109,12 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
     })
     .slice(0, 4);
 
+  // 요일 도구로 가는 길 (2026-11-13) — 휴무 요일이 읽히는 곳만.
+  // 매주 쉬는 요일이 있으면 "그날 대신 여는 곳", 없으면 궁궐·박물관이 많이 쉬는 월요일에 갈 만하다고 안내.
+  // 식당·해변 등은 요일 도구(관광지만 다룸)와 맞지 않아 뺀다.
+  const rule = OPEN_CATS.includes(p.cat) ? parseClosed(p.closed) : parseClosed(null);
+  const shutDays = rule.kind === 'rule' ? rule.weekly : [];
+
   const ld = {
     '@context': 'https://schema.org',
     '@type': 'TouristAttraction',
@@ -157,6 +167,26 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
         </tbody>
       </table>
 
+      {/* nofresh — 전 장소에 한꺼번에 들어가는 줄이라 신선도 해시에서 뺀다 (scripts/freshness.mjs) */}
+      {rule.kind === 'rule' && (shutDays.length > 0 || !rule.some.includes('monday')) && (
+        <p className="meta nofresh">
+          {shutDays.length > 0
+            ? <>Closed on {shutDays.map(d => DAY_LABEL[d] + 's').join(' and ')}? See{' '}
+                {shutDays.map((d, i) => (
+                  <span key={d}>{i > 0 && ' or '}<Link href={'/open-on/' + d + '/'}>what’s open on a {DAY_LABEL[d]}</Link></span>
+                ))} instead.</>
+            : <>Open on Mondays, when many of Korea’s palaces and museums close —{' '}
+                <Link href="/open-on/monday/">see what else is open on a Monday</Link>.</>}
+        </p>
+      )}
+
+      {p.tip && (
+        <>
+          <h2 className="sect">Before you go</h2>
+          <p className="overview">{p.tip}</p>
+        </>
+      )}
+
       {PLACE_GUIDE[p.id] && (
         <div className="ended-banner" style={{ borderLeftColor: 'var(--jjok)' }}>
           We cover this in more depth:{' '}
@@ -184,6 +214,7 @@ export default async function PlaceDetail({ params }: { params: Promise<{ slug: 
 
       <p className="meta">
         From Korea Tourism Organization open data.{' '}
+        {p.checked && <>{p.noted ? 'Hours and admission' : 'Visitor notes'} checked by Korea Almanac against official sources on {longDate(p.checked)}.{' '}</>}
         {p.hours || p.closed || p.fee
           ? 'Hours and admission change with the season and on public holidays — confirm with the venue before a long trip.'
           : 'Opening hours and admission are not in the dataset for this place yet — check the official page before you go.'}

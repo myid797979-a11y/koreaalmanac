@@ -27,9 +27,11 @@ function ymdMinus(t: string, days: number): string {
   return d.toISOString().slice(0, 10).replace(/-/g, '');
 }
 
-/** 소개가 충분하고 시간·휴무·요금 중 하나라도 있는 장소만 */
+/** 소개가 충분하고 시간·휴무·요금 중 하나라도 있는 장소만.
+ *  사람이 쓴 방문 팁(lib/place-notes)도 본문 분량에 넣는다. */
 export function placeIndexable(p: Place): boolean {
-  return (p.overview ?? '').length >= PLACE_MIN_OVERVIEW && Boolean(p.hours || p.closed || p.fee);
+  const body = (p.overview ?? '').length + (p.tip ?? '').length;
+  return body >= PLACE_MIN_OVERVIEW && Boolean(p.hours || p.closed || p.fee);
 }
 
 /** 예정·진행 중이거나 끝난 지 60일 이내인 축제만.
