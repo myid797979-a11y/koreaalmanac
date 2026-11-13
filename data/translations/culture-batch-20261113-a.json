@@ -1,0 +1,462 @@
+{
+  "400748": {
+    "title": "Still/Moving (from the Korean Cultural Centre in Austria)",
+    "venue": "Gangnam Cultural Foundation, Seoul",
+    "addr": "668 Seolleung-ro, Gangnam-gu, Seoul"
+  },
+  "400753": {
+    "title": "Days Trapped in Paradise: Records of Korean Prisoners in a Hawaii POW Camp",
+    "venue": "Bupyeong History Museum, Incheon (organised by the Korean Immigration History Museum)",
+    "addr": "151 Gulpo-ro, Bupyeong-gu, Incheon",
+    "price": "Free"
+  },
+  "401101": {
+    "title": "Stories Hidden Among the Flowers",
+    "venue": "Korean Folk Painting Museum, Gangjin",
+    "addr": "61-5 Cheongjachon-gil, Daegu-myeon, Gangjin-gun, Jeollanam-do",
+    "price": "₩6,000"
+  },
+  "401138": {
+    "title": "MURMUR: D'Young Museum Intern Graduation Exhibition",
+    "venue": "D'Young Museum of Art, Gwangju",
+    "addr": "6 Seongchon-gil, Dong-gu, Gwangju (Ullim-dong)"
+  },
+  "401335": {
+    "title": "Ryu Seung-ju: Unfamiliar Portraits (Project Space Woomin)",
+    "venue": "Woomin Art Center, Cheongju",
+    "addr": "164 Sabuk-ro, Sangdang-gu, Cheongju, Chungcheongbuk-do (B1)",
+    "price": "Free"
+  },
+  "401336": {
+    "title": "Where Do We Come From, Where Are We Going",
+    "venue": "Korea University Museum, Seoul",
+    "addr": "145 Anam-ro, Seongbuk-gu, Seoul (Centennial Samsung Hall)",
+    "price": "Free"
+  },
+  "401394": {
+    "title": "Kim But (Kim Je-min): Fragments of the Self",
+    "venue": "MG Gallery, MG Hwaseong Community Credit Cooperative",
+    "addr": "28-18 Sangni-jungsimsangga-gil, Bongdam-eup, Hyohaeng-gu, Hwaseong, Gyeonggi-do (4F)",
+    "price": "Free"
+  },
+  "401395": {
+    "title": "Lee Byeong-hwan: White Paradise",
+    "venue": "MG Gallery, MG Jeongeup Community Credit Cooperative (Main Branch)",
+    "addr": "76 Jungang 1-gil, Jeongeup, Jeonbuk-do (4F)",
+    "price": "Free"
+  },
+  "401413": {
+    "title": "Jo Yun-a: Some Things Break, Some Remain Intact",
+    "venue": "MG Gallery, MG Bukulsan Community Credit Cooperative, Ulsan",
+    "addr": "52 Myeongchon-ro, Buk-gu, Ulsan (2F)",
+    "price": "Free"
+  },
+  "401433": {
+    "title": "Ryu A-young: Subject, Freedom",
+    "venue": "MG Gallery, MG Choeup-dong Community Credit Cooperative (Main Branch), Busan",
+    "addr": "90 Seongji-ro, Busanjin-gu, Busan (2F)",
+    "price": "Free"
+  },
+  "401437": {
+    "title": "Tender Territory",
+    "venue": "Rhee Seundja Museum of Art, Jinju",
+    "addr": "14 Ena-ro 128beon-gil, Jinju, Gyeongsangnam-do",
+    "price": "Adults ₩2,000; teenagers and soldiers ₩1,000; children ₩500"
+  },
+  "401516": {
+    "title": "A World We Live In Together",
+    "venue": "Ulsan Art Museum",
+    "addr": "72 Misulgwan-gil, Jung-gu, Ulsan",
+    "price": "₩1,000 (Ulsan residents ₩500); children, teenagers and seniors free"
+  },
+  "401518": {
+    "title": "Media Art Project: Julian Opie",
+    "venue": "Ulsan Art Museum",
+    "addr": "72 Misulgwan-gil, Jung-gu, Ulsan",
+    "price": "Adults ₩1,000; university students, soldiers and artists ₩700; Ulsan residents ₩500"
+  },
+  "401529": {
+    "title": "Park So-jin: Turn Right Shortly (Chwimi Ingan Exhibition Project Vol. 2)",
+    "venue": "Chwimi Ingan, Daegu",
+    "addr": "124 Jungang-daero 31-gil, Nam-gu, Daegu (1F)",
+    "price": "Free"
+  },
+  "401602": {
+    "title": "Panorama Walk: The Infinite Light (Panorama Walk Completion Exhibition)",
+    "venue": "POSCO Art Museum Gwangyang",
+    "addr": "187-7 Geumho-ro, Gwangyang, Jeollanam-do (Park1538 Gwangyang)",
+    "price": "Free"
+  },
+  "401604": {
+    "title": "Trails of Toil",
+    "venue": "Art for Lab, Anyang",
+    "addr": "22 Singi-daero 33beon-gil, Dongan-gu, Anyang, Gyeonggi-do (B1)",
+    "price": "Free"
+  },
+  "401647": {
+    "title": "Cheonan Zero Project: A Ruler Without Markings, Things Before Classification",
+    "venue": "Cheonan Museum of Art",
+    "addr": "185 Jonghaphyuyangji-ro, Seongnam-myeon, Dongnam-gu, Cheonan, Chungcheongnam-do",
+    "price": "Free"
+  },
+  "401761": {
+    "title": "Blending into the Wind: Bucheon Cultural Foundation Exhibition",
+    "venue": "Bucheon Citizens' Hall",
+    "addr": "365 Buil-ro, Wonmi-gu, Bucheon, Gyeonggi-do",
+    "price": "Free"
+  },
+  "401888": {
+    "title": "Are We Looking at the Same Moon?",
+    "venue": "Haslla Art World, Gangneung",
+    "addr": "1441 Yulgok-ro, Gangdong-myeon, Gangneung, Gangwon-do",
+    "price": "Hall 1 (this exhibition) free; Halls 2–6 paid (see official website)"
+  },
+  "402044": {
+    "title": "Kim Man-deok, Becoming the Record",
+    "venue": "Kim Man-deok Memorial Hall, Jeju",
+    "addr": "7 Sanji-ro, Jeju",
+    "price": "Free"
+  },
+  "402284": {
+    "title": "Li Chen: A New Eastern Spirit—Genuine and Otherworldly",
+    "venue": "Gana Art, Seoul",
+    "addr": "28 Pyeongchang 30-gil, Jongno-gu, Seoul",
+    "price": "Free",
+    "overview": "Gana Art and Asia Art Center present the first solo exhibition in Korea of Taiwanese sculptor Li Chen (b. 1963). Working in heavy materials such as bronze, he creates rounded forms that seem to float, in a language that neither stays within tradition nor copies Western models. He has shown at a collateral event of the 52nd Venice Biennale, and his work is in major public collections worldwide.\n\nThe show surveys work from 1999 to 2025, from Energy of Emptiness and Spiritual Journey through the Great Ether to the recent Celestial Manuscripts. His swelling bronze forms feel filled with air or energy, reflecting his idea of a 'New Eastern Spirit' that carries classical thought into contemporary form."
+  },
+  "402285": {
+    "title": "Inside Paradise",
+    "venue": "Gallery We, Yongin",
+    "addr": "25-17 Hosu-ro 52beon-gil, Suji-gu, Yongin, Gyeonggi-do",
+    "price": "Free",
+    "overview": "Ira Choi's 'paradises' and 'oases' are less utopias than worlds built from memory and imagination. This exhibition steps inside them: deserts and forests, seas and highlands, moonlight and golden trees, inhabited by leopards, pandas, flamingos, birds, butterflies and a small traveller. The leopard, painted with heart-shaped eyes and nose, acts as the paradise's guardian.\n\nThe landscapes grow from the artist's childhood memories of a 'secret garden' her father made. She builds up oil paint with metal knives she forges herself, creating a thick, layered texture."
+  },
+  "402286": {
+    "title": "In Between: Emerging Young Artists Support Programme",
+    "venue": "Eunpyeong Culture and Arts Center, Seoul",
+    "addr": "16 Nokbeon-ro, Eunpyeong-gu, Seoul",
+    "price": "Free"
+  },
+  "402289": {
+    "title": "Art in Osan: Jeong Seung-jo, Western-style Painting",
+    "venue": "Osan Museum of Art",
+    "addr": "100 Hyeonchung-ro, Osan, Gyeonggi-do",
+    "price": "Free"
+  },
+  "402299": {
+    "title": "Ulsan's Cultural Heritage: Ulsan Museum Special Exhibition II",
+    "venue": "Ulsan Museum",
+    "addr": "277 Duwang-ro, Nam-gu, Ulsan",
+    "price": "Free"
+  },
+  "402404": {
+    "title": "Daylilies and Deep Stars: October Open Library",
+    "venue": "Kim Geun-tae Memorial Library, Seoul",
+    "addr": "14 Dobongsan-gil, Dobong-gu, Seoul",
+    "price": "Free"
+  },
+  "402451": {
+    "title": "International Hyperrealism: A Labyrinth of Reality and Illusion",
+    "venue": "Gwangju Museum of Art",
+    "addr": "52 Haseo-ro, Buk-gu, Gwangju",
+    "price": "Adults (19+) ₩18,000; school students ₩15,000; preschool children (48 months+) ₩10,000"
+  },
+  "402469": {
+    "title": "Taegeukgi, Carrying Everyone's Hopes: Independence Hall Touring Exhibition",
+    "venue": "Jeju Anti-Japanese Memorial Hall",
+    "addr": "303 Sinbuk-ro, Jocheon-eup, Jeju",
+    "price": "Free"
+  },
+  "402534": {
+    "title": "A New Future: Seoul National University 80th Anniversary Exhibition",
+    "venue": "Seoul National University Museum of Art (MoA)",
+    "addr": "1 Gwanak-ro, Gwanak-gu, Seoul",
+    "price": "Free"
+  },
+  "402535": {
+    "title": "Dance: The Rhythm of Brush and Body",
+    "venue": "Lee Ungno Museum, Daejeon",
+    "addr": "157 Dunsan-daero, Seo-gu, Daejeon",
+    "price": "Adults ₩1,000; teenagers and children ₩600"
+  },
+  "402536": {
+    "title": "An Unfinished Story: Lee Jung-seop, the Nation's Painter",
+    "venue": "Ulsan Art Museum",
+    "addr": "72 Misulgwan-gil, Jung-gu, Ulsan",
+    "price": "Adults ₩1,000; university students, soldiers and artists ₩700; Ulsan residents ₩500"
+  },
+  "402537": {
+    "title": "Pretending to Be Alive",
+    "venue": "Tri-bowl, Incheon",
+    "addr": "250 Incheontower-daero, Yeonsu-gu, Incheon",
+    "price": "Free"
+  },
+  "402538": {
+    "title": "The Collection: Scenes of an Era",
+    "venue": "Arko Art Center",
+    "addr": "3 Dongsung-gil, Jongno-gu, Seoul",
+    "price": "Free"
+  },
+  "402794": {
+    "title": "The Time You Gave Became Sangju's History: Donated Artefacts Exhibition",
+    "venue": "Sangju Museum",
+    "addr": "684 Gyeongcheon-ro, Sabeolguk-myeon, Sangju, Gyeongsangbuk-do",
+    "price": "Free"
+  },
+  "402872": {
+    "title": "Umi Hall Project: Stefan Tiede, Time Out of Joint",
+    "venue": "Daegu Art Museum",
+    "addr": "40 Misulgwan-ro, Suseong-gu, Daegu",
+    "price": "Adults ₩1,000; youth, young adults, university students, soldiers and artists ₩700"
+  },
+  "402885": {
+    "title": "Time to Meet at Eye Level",
+    "venue": "Hello Museum, Seoul",
+    "addr": "20 Seongsuil-ro 12-gil, Seongdong-gu, Seoul",
+    "price": "Free"
+  },
+  "402890": {
+    "title": "Suh Se Ok and Do Ho Suh: Caress (Seongbuk Art Week Special Exhibition)",
+    "venue": "Seongbuk Museum of Art, Seoul",
+    "addr": "134 Seongbuk-ro, Seongbuk-gu, Seoul",
+    "price": "Free"
+  },
+  "402891": {
+    "title": "Lynn Hershman Leeson: First Person Plural",
+    "venue": "Seoul Museum of Art, Seosomun Main Branch",
+    "addr": "61 Deoksugung-gil, Jung-gu, Seoul",
+    "price": "Free"
+  },
+  "402892": {
+    "title": "Line and Colour, Memories of the Region: Regional Art Spotlight III",
+    "venue": "Daejeon Museum of Art",
+    "addr": "155 Dunsan-daero, Seo-gu, Daejeon",
+    "price": "Adults ₩500; children, teenagers, soldiers, university students and artists ₩300"
+  },
+  "402907": {
+    "title": "Mun Jun-ho: Landscapes for What Remains",
+    "venue": "Gallery Soheon & Soheon Contemporary, Daegu",
+    "addr": "18 Dongdeok-ro, Jung-gu, Daegu (2F)",
+    "price": "Free",
+    "overview": "A solo show by Mun Jun-ho, who paints with silicone sealant, a material emblematic of modern industry, to depict the vastness of nature and the finitude of human civilisation. His realistic yet reimagined utopian landscapes of forests, light, waterfalls and rivers, often scattered with ruins, play on stark black-and-white contrast and a thick, rubbery texture. Large paintings are shown alongside small silicone drawings of factories and military life.\n\nOpen 20 October to 13 November 2026; closed Sundays and public holidays. Weekdays 10:00–18:00, Saturdays 11:00–17:00. Booking a day ahead is recommended."
+  },
+  "402977": {
+    "title": "The Unfamiliar Within the Familiar",
+    "venue": "Gallery Sejul, Seoul",
+    "addr": "40 Pyeongchang 30-gil, Jongno-gu, Seoul",
+    "price": "Free",
+    "overview": "We look at a familiar world every day, but does familiarity mean we truly know it? The same object looks different depending on time, memory and experience, and the familiar can turn strange at any moment, often because our way of seeing has changed rather than the thing itself.\n\nThis exhibition explores that subtle gap. Objects and landscapes on the canvas are more than representations: light and colour blur boundaries and evoke traces of time and feeling. The strangeness arises not from a new world but from inside the one we know too well. Curated by Kwon Do-eun."
+  },
+  "403033": {
+    "title": "Mun Jun-ho: Landscapes for What Remains",
+    "venue": "Gallery Soheon & Soheon Contemporary, Daegu",
+    "addr": "18 Dongdeok-ro, Jung-gu, Daegu (2F)",
+    "price": "Free"
+  },
+  "403145": {
+    "title": "Gyeonggi International Ceramic Biennale 2026: International Competition",
+    "venue": "Gyeonggi Museum of Contemporary Ceramic Art, Icheon",
+    "addr": "263 Gyeongchung-daero 2697beon-gil, Icheon, Gyeonggi-do"
+  },
+  "403227": {
+    "title": "SJC Archive Window: The Red Room (Window Gallery Permanent Display)",
+    "venue": "Sanjicheon Gallery, Jeju",
+    "addr": "36 Jungang-ro 3-gil, Jeju",
+    "price": "Free"
+  },
+  "403251": {
+    "title": "Perennial Inspiration: Bupyeong Young Artists, 8th Cohort",
+    "venue": "Bupyeong Art Center, Incheon",
+    "addr": "166 Artcenter-ro, Bupyeong-gu, Incheon",
+    "price": "Free"
+  },
+  "403459": {
+    "title": "Ha Jung-woong Collection II: Rediscovering Objects, Zainichi Korean Artists and Korean Contemporary Art",
+    "venue": "Ha Jung-woong Museum of Art, Gwangju Museum of Art",
+    "addr": "1165 Sangmudae-ro, Seo-gu, Gwangju (Nongseong-dong)",
+    "price": "Free"
+  },
+  "403460": {
+    "title": "Contemporary Translocal Series: Ho Tzu Nyen",
+    "venue": "Ulsan Art Museum",
+    "addr": "72 Misulgwan-gil, Jung-gu, Ulsan",
+    "price": "₩1,000"
+  },
+  "404744": {
+    "title": "Lee Jeong-ok Special Exhibition",
+    "venue": "Artifex Gallery, Seoul",
+    "addr": "128 Beobwon-ro, Songpa-gu, Seoul (Building B, Room 715)",
+    "price": "Free"
+  },
+  "404771": {
+    "title": "Kim Nam-jeong: What We Meet While Crossing, Swaying (Gazes Arriving in Uijeongbu)",
+    "venue": "Uijeongbu Culture Station Eum",
+    "price": "Free"
+  },
+  "405146": {
+    "title": "Art of Participation: Ondara Museum of Art (Jeonbuk Art History Research Series II)",
+    "venue": "Jeonbuk Museum of Art",
+    "addr": "111-6 Moaksan-gil, Gui-myeon, Wanju-gun, Jeonbuk-do",
+    "price": "Free"
+  },
+  "405147": {
+    "title": "The Gimje–Mangyeong Plains: Where the Water Once Was",
+    "venue": "Jeonbuk Museum of Art",
+    "addr": "111-6 Moaksan-gil, Gui-myeon, Wanju-gun, Jeonbuk-do",
+    "price": "Free"
+  },
+  "405151": {
+    "title": "Media Art: Spectral Crossings",
+    "venue": "Art Bunker B39, Bucheon",
+    "addr": "53 Samjak-ro, Bucheon, Gyeonggi-do",
+    "price": "Free"
+  },
+  "405230": {
+    "title": "Amid Countless Beginnings",
+    "venue": "BD Gallery, Seoul",
+    "addr": "9 Toegye-ro 18-gil, Jung-gu, Seoul",
+    "price": "Free",
+    "overview": "A two-person show by Kim Da-um and Im Sang-bin, running 24 October to 17 November. Working in different visual languages, both explore the change and possibility that arise between chance and rule, the one and the many. Kim arranges the unpredictable flows and drying marks of paint into repeated forms and patterns, reflecting an uncertain future and the routines of daily life. Im traces how a single stroke connects with others and expands into new forms and worlds."
+  },
+  "405231": {
+    "title": "Beloved",
+    "venue": "Gallery We, Yongin",
+    "addr": "25-17 Hosu-ro 52beon-gil, Suji-gu, Yongin, Gyeonggi-do",
+    "price": "Free",
+    "overview": "\"Who is your beloved?\" In this solo show Lee Na-jin asks how beloved beings are remembered. Her young animals, wearing ornate crowns and jewels, gaze out at the viewer; the contrast of innocent eyes and heavy gold evokes both the weight of growing up and memories of childhood.\n\nThe work grew from her experience of the Great East Japan Earthquake and the death of her mentor; the crowns recall her childhood in Britain. Since 2003 she has developed a 'squeezing technique', piping paint like cake icing and building up embroidery-like layers whose colour shifts with the light."
+  },
+  "405232": {
+    "title": "Ban Min-su: Who Will Go Before Us",
+    "venue": "Gallery FM, Seoul",
+    "addr": "57 Yulgok-ro, Jongno-gu, Seoul",
+    "price": "Free",
+    "overview": "Humanity has always needed something to lead the way: gods and heroes, nations and ideologies, science and technology, and today capital and images. When we cannot tell what is right, we follow what others have chosen, and what many people look at becomes the standard.\n\nIn Ban Min-su's 'Art Auction' series, the auction house is where such belief is formed. The crowd gazes at a single work, but what they see is the value and desire attached to it. Perhaps every era has made its own new 'gods'. The exhibition follows the crowd's gaze and asks: who will go before us, and what will we believe as we follow?"
+  },
+  "405261": {
+    "title": "Kate: A World Still Soft",
+    "venue": "Decrescendo, Seoul",
+    "price": "Free"
+  },
+  "405338": {
+    "title": "Mechanical Gaze: Seeing by Touching (Photo Discovery Project)",
+    "venue": "Photography Seoul Museum of Art (PSeMA)",
+    "addr": "68 Madeul-ro 13-gil, Dobong-gu, Seoul",
+    "price": "Free"
+  },
+  "405483": {
+    "title": "Kim Si-hyeon: Old Newness, Embracing Wolchulsan",
+    "venue": "Yeongam Ha Jung-woong Museum of Art",
+    "addr": "96 Gurim-ro, Gunseo-myeon, Yeongam-gun, Jeollanam-do",
+    "price": "Free"
+  },
+  "405512": {
+    "title": "Glass Box Series: Woo Deok-ha, Reverse Flow",
+    "venue": "Bongsan Cultural Center, Daegu",
+    "addr": "77 Bongsanmunhwa-gil, Jung-gu, Daegu",
+    "price": "Free"
+  },
+  "405544": {
+    "title": "Green Room by Yeon Yeoin",
+    "venue": "Yongsan Cultural Foundation, Seoul",
+    "addr": "274 Itaewon-ro, Yongsan-gu, Seoul",
+    "price": "Free"
+  },
+  "405578": {
+    "title": "Beyond Trivial Everyday Life: 9th Resident Artists' Exhibition, Lee Ungno House Studio",
+    "venue": "Goam Lee Ungno Birthplace Memorial Hall, Hongseong",
+    "addr": "61-7 Ieungno-ro, Hongbuk-eup, Hongseong-gun, Chungcheongnam-do",
+    "price": "Adults ₩1,000; children, teenagers and soldiers ₩500"
+  },
+  "405581": {
+    "title": "The Gravity of Gravity: 16th Creative Residency Showcase",
+    "venue": "Daegu Art Factory",
+    "addr": "31-12 Dalseong-ro 22-gil, Jung-gu, Daegu",
+    "price": "Free"
+  },
+  "405785": {
+    "title": "Yuichi Hirako: POSTFOREST",
+    "venue": "Gallery Baton, Seoul",
+    "addr": "116 Dokseodang-ro, Yongsan-gu, Seoul (Taeseok Building)",
+    "price": "Free",
+    "overview": "Gallery Baton presents POSTFOREST, the third solo exhibition there by Yuichi Hirako (b. 1982), from 22 October to 5 December 2026 in Hannam-dong. Raised amid the nature of Okayama, Japan, Hirako noticed while studying in London that urban greenery exists mainly for human comfort, a concern that runs through his paintings and sculptures of hybrid, tree-like figures living alongside animals in a distant forest.\n\nNew paintings and sculptures reimagine the forest as a layered place of story, community and anonymity. For the first time he shows suspended sculptures, letting visitors walk among floating forms as if moving through a forest."
+  },
+  "405907": {
+    "title": "Han Su-ja at Eighteen: Shouting 'Manse!' Once More",
+    "venue": "Yanggu Museum of Modern History",
+    "addr": "439-51 Geumgangsan-ro, Yanggu-eup, Yanggu-gun, Gangwon-do",
+    "price": "₩3,000"
+  },
+  "405966": {
+    "title": "Face to Face: The Eight Characters Left by Ahn Jung-geun",
+    "venue": "National Palace Museum of Korea, Seoul",
+    "addr": "12 Hyoja-ro, Jongno-gu, Seoul",
+    "price": "Free"
+  },
+  "406007": {
+    "title": "SJC Archive Window: The Red Room, Permanent Display and Artist Talk",
+    "venue": "Sanjicheon Gallery, Jeju",
+    "addr": "36 Jungang-ro 3-gil, Jeju",
+    "price": "Free"
+  },
+  "406027": {
+    "title": "The Balloon Flowers Have Bloomed",
+    "venue": "Gallery Mare, Busan",
+    "addr": "296 Haeundaehaebyeon-ro, Haeundae-gu, Busan",
+    "price": "Free"
+  },
+  "406258": {
+    "title": "That Day, My Everyday Life Became War: Special Exhibition for the 76th Anniversary of the Korean War",
+    "venue": "The War Memorial of Korea, Seoul",
+    "addr": "29 Itaewon-ro, Yongsan-gu, Seoul",
+    "price": "Free"
+  },
+  "406334": {
+    "title": "RE:VIEW, Shall We Look Again? MMCA Art Bank Collection at Gyeonggi MoMA",
+    "venue": "Gyeonggi Museum of Modern Art, Ansan",
+    "addr": "268 Dongsan-ro, Danwon-gu, Ansan, Gyeonggi-do",
+    "price": "Free"
+  },
+  "406392": {
+    "title": "Masters of Spanish Art: Picasso, Miró, Dalí and the Dawn of 20th-Century Graphic Art",
+    "venue": "Aram Art Museum, Goyang Aram Nuri",
+    "addr": "1286 Jungang-ro, Ilsandong-gu, Goyang, Gyeonggi-do",
+    "price": "Adults ₩20,000; youth (14–18) ₩16,000; children (24 months–13) ₩12,000"
+  },
+  "406405": {
+    "title": "Ordinary Density (at Deep Sleep Coffee)",
+    "venue": "Busan Cultural Foundation",
+    "addr": "84-1 Uam-ro, Nam-gu, Busan",
+    "price": "Free"
+  },
+  "407028": {
+    "title": "Choi Su-ryeon: Mustard Seed Garden Grave",
+    "venue": "Gallery Chosun, Seoul",
+    "addr": "64 Bukchon-ro 5-gil, Jongno-gu, Seoul",
+    "price": "Free",
+    "overview": "A solo exhibition by Choi Su-ryeon, running 10 October to 7 December 2026. For several years the artist has been hand-copying Qing-dynasty tales of the strange and classical East Asian painting treatises, checking them against Korean translations. Her study notes, with Chinese characters in black, readings and translations added in whatever colours were to hand, corrections and highlighter marks, became the basis for paintings.\n\nShe imagines that one of the little mounds in the garden of the Mustard Seed Garden Manual of Painting might be a grave hiding something wicked. The show is split across two venues: large paintings modelled on Persian miniatures at Gallery Chosun, and experimental drawings at WWNN."
+  },
+  "407045": {
+    "title": "FONS: Collected Moments",
+    "venue": "Gallery 9.5 Seoul",
+    "addr": "153 Dosan-daero, Gangnam-gu, Seoul",
+    "price": "Free"
+  },
+  "407047": {
+    "title": "Becoming Otherwise (at Gallery Graph)",
+    "venue": "Gangnam Cultural Foundation, Seoul",
+    "addr": "668 Seolleung-ro, Gangnam-gu, Seoul",
+    "price": "Free"
+  },
+  "407426": {
+    "title": "Mirror of Time: Back to the Very First Clothes (Pop-up Exhibition)",
+    "venue": "National Science Museum, Daejeon",
+    "addr": "481 Daedeok-daero, Yuseong-gu, Daejeon",
+    "price": "Free"
+  },
+  "407771": {
+    "title": "Kim Koo and the Police: Special Exhibition",
+    "venue": "Korean Police Museum, Seoul",
+    "addr": "162 Songwol-gil, Jongno-gu, Seoul",
+    "price": "Free"
+  }
+}
