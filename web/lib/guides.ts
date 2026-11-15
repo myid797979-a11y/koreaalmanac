@@ -75,7 +75,7 @@ export const GUIDES: Guide[] = [
   {
     href: '/guides/seoul-in-november/',
     title: 'Seoul in November 2026',
-    blurb: 'The last gold ginkgo weeks, cold clear days and lower prices, the KGMA and Melon Music Awards on back-to-back weekends, kimjang season and the first lights, with the month’s concerts.',
+    blurb: 'The last gold ginkgo weeks, cold clear days and lower prices, kimjang season and the first winter lights, with the month’s concerts.',
     tag: 'Seasonal',
     photo: 'deoksugung-stone-wall-path-1748351',
   },
@@ -145,7 +145,7 @@ export const GUIDES: Guide[] = [
   {
     href: '/guides/kpop-award-shows/',
     title: 'K-pop award shows 2026–27: dates and how to get in',
-    blurb: 'KGMA and the Melon Music Awards on back-to-back November weekends in Seoul, the broadcasters’ December festivals, and the big ones abroad this year. How tickets work and how to plan a trip around them.',
+    blurb: 'The broadcasters’ December year-end music festivals, the January awards and the big shows abroad this season — how tickets work and how to plan a trip around them.',
     tag: 'Seasonal',
     photo: 'olympic-park-789703',
   },
