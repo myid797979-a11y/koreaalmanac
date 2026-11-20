@@ -88,6 +88,17 @@
     "overview": null
   },
   {
+    "id": "408972",
+    "kind": "exhibition",
+    "start": "20261022",
+    "title": "《Problems In Need》",
+    "place": "뮤지엄헤드",
+    "area": "서울",
+    "price": "무료",
+    "addr": "서울특별시 종로구 계동길 84-3 계동 133-6",
+    "overview": null
+  },
+  {
     "id": "408085",
     "kind": "exhibition",
     "start": "20261024",
@@ -349,17 +360,6 @@
     "area": "서울",
     "price": "무료",
     "addr": "서울특별시 성북구 성북로 96 성북선잠박물관",
-    "overview": null
-  },
-  {
-    "id": "408402",
-    "kind": "exhibition",
-    "start": "20261113",
-    "title": "20회 회원정기전 GIACA",
-    "place": "의정부예술의전당",
-    "area": "경기",
-    "price": "무료",
-    "addr": "경기도 의정부시 의정로 1 의정부예술의전당",
     "overview": null
   },
   {
@@ -726,6 +726,17 @@
     "overview": null
   },
   {
+    "id": "408894",
+    "kind": "exhibition",
+    "start": "20261202",
+    "title": "[우리동네 MG갤러리] 오미숙 작가 《마음과 마음을 - 이음》",
+    "place": "MG정읍새마을금고 본점 우리동네 MG갤러리",
+    "area": "전북특별자치도",
+    "price": "무료",
+    "addr": "전북특별자치도 정읍시 중앙1길 76 4층",
+    "overview": null
+  },
+  {
     "id": "408369",
     "kind": "traditional",
     "start": "20261204",
@@ -767,6 +778,17 @@
     "area": "대전",
     "price": "전석 10,000원",
     "addr": "대전광역시 서구 둔산대로 181 대전시립연정국악원",
+    "overview": null
+  },
+  {
+    "id": "408887",
+    "kind": "traditional",
+    "start": "20261205",
+    "title": "국가무형유산 승전무 <통영 가무악 남산에서 춤추다>",
+    "place": "서울남산국악당 크라운해태홀",
+    "area": "서울",
+    "price": "전석 50,000원",
+    "addr": null,
     "overview": null
   },
   {
