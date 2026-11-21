@@ -99,17 +99,6 @@
     "overview": null
   },
   {
-    "id": "408972",
-    "kind": "exhibition",
-    "start": "20261022",
-    "title": "《Problems In Need》",
-    "place": "뮤지엄헤드",
-    "area": "서울",
-    "price": "무료",
-    "addr": "서울특별시 종로구 계동길 84-3 계동 133-6",
-    "overview": null
-  },
-  {
     "id": "408085",
     "kind": "exhibition",
     "start": "20261024",
@@ -506,17 +495,6 @@
     "overview": null
   },
   {
-    "id": "408651",
-    "kind": "exhibition",
-    "start": "20261117",
-    "title": "<송파 청년 아트웨이브> 청년, 송파를 물들이다",
-    "place": "송파문화재단",
-    "area": "서울",
-    "price": "무료",
-    "addr": "서울특별시 송파구 백제고분로42길 5 송파여성문화회관 4층 송파문화재단 사무실",
-    "overview": null
-  },
-  {
     "id": "408664",
     "kind": "exhibition",
     "start": "20261117",
@@ -525,17 +503,6 @@
     "area": "충북",
     "price": "성인 1,000원 / 18세 이하 청소년, 65세 이상 어르신 무료",
     "addr": "충청북도 청주시 서원구 충렬로18번길 50 청주시립미술관",
-    "overview": null
-  },
-  {
-    "id": "408694",
-    "kind": "exhibition",
-    "start": "20261117",
-    "title": "Overlap - 결을 잇고, 빛을 얹고 -",
-    "place": "갤러리허브",
-    "area": "서울",
-    "price": "무료",
-    "addr": "서울특별시 성동구 왕십리광장로 17 비트플렉스 4층 갤러리허브",
     "overview": null
   },
   {
@@ -712,39 +679,6 @@
     "area": "서울",
     "price": "무료",
     "addr": "서울특별시 도봉구 덕릉로 257 국립현대미술관 창동레지던시",
-    "overview": null
-  },
-  {
-    "id": "408445",
-    "kind": "traditional",
-    "start": "20261121",
-    "title": "이지은 창작소리 프로젝트 I <나라은굿>",
-    "place": "리엠아트센터 LEEAM ART CENTER",
-    "area": "서울",
-    "price": "전석 20,000원",
-    "addr": "서울특별시 강남구 학동로2길 56 지하 2층",
-    "overview": null
-  },
-  {
-    "id": "408535",
-    "kind": "traditional",
-    "start": "20261121",
-    "title": "음악그룹 더튠의 <월담> 공연",
-    "place": "양구문화복지센터",
-    "area": "강원",
-    "price": "전석 12,000원(양구사랑상품권 10,000원 환급)",
-    "addr": "강원특별자치도 양구군 양구읍 비봉로73번길 52 양구문화복지센터",
-    "overview": null
-  },
-  {
-    "id": "408791",
-    "kind": "traditional",
-    "start": "20261121",
-    "title": "배승빈 <사라져 간 목소리들> - 5. 제주",
-    "place": "신설동 동네극장 B1",
-    "area": "서울",
-    "price": "전석 20,000원",
-    "addr": null,
     "overview": null
   },
   {
