@@ -77,6 +77,17 @@
     "overview": null
   },
   {
+    "id": "409655",
+    "kind": "exhibition",
+    "start": "20261020",
+    "title": "2026 국립농업박물관 테마전 <따스하게 달그락>",
+    "place": "국립농업박물관",
+    "area": "경기",
+    "price": "무료",
+    "addr": "경기도 수원시 권선구 수인로 154 국립농업박물관",
+    "overview": null
+  },
+  {
     "id": "408057",
     "kind": "exhibition",
     "start": "20261030",
@@ -85,6 +96,17 @@
     "area": "부산",
     "price": "무료",
     "addr": "부산광역시 해운대구 좌동로 162 아세안문화원",
+    "overview": null
+  },
+  {
+    "id": "409671",
+    "kind": "exhibition",
+    "start": "20261031",
+    "title": "이성은 展 《멈춤의 내부 Within Stillness》",
+    "place": "아트리움 모리",
+    "area": "경북",
+    "price": "3,000원",
+    "addr": "경상북도 성주군 월항면 주산로 450 1층",
     "overview": null
   },
   {
@@ -759,6 +781,50 @@
     "overview": null
   },
   {
+    "id": "409528",
+    "kind": "exhibition",
+    "start": "20261124",
+    "title": "솔, 경계를 지우다",
+    "place": "강릉아트센터 제3전시실",
+    "area": "강원",
+    "price": "무료",
+    "addr": "강원특별자치도 강릉시 종합운동장길 84 강릉아트센터",
+    "overview": null
+  },
+  {
+    "id": "409537",
+    "kind": "exhibition",
+    "start": "20261124",
+    "title": "강릉원주대학교 조형예술·디자인학과 (섬유전공) 졸업전시",
+    "place": "강릉아트센터 제1전시실",
+    "area": "강원",
+    "price": "무료",
+    "addr": "강원특별자치도 강릉시 종합운동장길 84 강릉아트센터",
+    "overview": null
+  },
+  {
+    "id": "409656",
+    "kind": "exhibition",
+    "start": "20261124",
+    "title": "한지루트: ROOT to ROUTE",
+    "place": "국립농업박물관",
+    "area": "경기",
+    "price": "무료",
+    "addr": "경기도 수원시 권선구 수인로 154 국립농업박물관",
+    "overview": null
+  },
+  {
+    "id": "409657",
+    "kind": "exhibition",
+    "start": "20261124",
+    "title": "22th 이영란 개인전 -弄絃(농현)",
+    "place": "원주문화원",
+    "area": "강원",
+    "price": "무료",
+    "addr": "강원특별자치도 원주시 무실로 235 원주문화원",
+    "overview": null
+  },
+  {
     "id": "409192",
     "kind": "exhibition",
     "start": "20261125",
@@ -847,25 +913,58 @@
     "overview": null
   },
   {
-    "id": "407004",
-    "kind": "traditional",
-    "start": "20261126",
-    "title": "한아름의 판소리 만정제 춘향가 : 눈",
-    "place": "국립국악원 우면당",
+    "id": "409529",
+    "kind": "exhibition",
+    "start": "20261125",
+    "title": "충북갤러리 서울관 김은식·손미선 2인전 <불 이후의 감각, 기억의 온도>",
+    "place": "인사아트센터 충북갤러리",
     "area": "서울",
-    "price": "전석무료",
-    "addr": "서울특별시 서초구 남부순환로 2364 국립국악원",
+    "price": "무료",
+    "addr": "서울특별시 종로구 인사동길 41-1 인사아트센터",
     "overview": null
   },
   {
-    "id": "408349",
-    "kind": "traditional",
-    "start": "20261126",
-    "title": "[수원] GGAC 청년 국악관현악: 경계를 넘어 빛으로 서다",
-    "place": "경기아트센터",
-    "area": "경기",
-    "price": "전석무료",
-    "addr": "경기도 수원시 팔달구 효원로307번길 20 경기아트센터",
+    "id": "409623",
+    "kind": "exhibition",
+    "start": "20261125",
+    "title": "이기철 조각전 - FAT PET",
+    "place": "갤러리소헌&소헌컨템포러리",
+    "area": "대구",
+    "price": "무료",
+    "addr": "대구광역시 중구 동덕로 18 갤러리소헌",
+    "overview": null
+  },
+  {
+    "id": "409649",
+    "kind": "exhibition",
+    "start": "20261125",
+    "title": "Mountains as Mountains, Waters as Waters",
+    "place": "갤러리 팔조",
+    "area": "대구",
+    "price": "무료",
+    "addr": "대구광역시 수성구 용학로 145-3 대구 수성구 용학로 145-3",
+    "overview": "권순익 작가는 오랜 시간 회화가 형성되는 과정에 주목하며 자신만의 조형 언어를 발전시켜 왔다. 점을 반복해서 찍고, 흙을 섞은 물감으로 색을 쌓고, 흑연으로 표면을 문지르는 작업은 그의 회화를 이루는 주요한 방법이다. 반복되는 손의 움직임과 재료의 반응이 축적되면서 화면에는 형태와 질감, 빛의 변화가 나타난다. 작가는 이러한 작업을 신체의 반복적인 움직임과 집중이 시간과 만나는 과정으로 바라본다. 같은 행위가 반복되는 가운데서도 미세한 차이가 끊임없이 발생하고, 그 차이들이 쌓여 화면의 구조와 감각을 형성한다. 작가에게 작업은 정해진 이미지를 완성하는 데 그치지 않는다. 반복되는 행위에 집중하며 생각과 자아에 대한 집착을 내려놓고, 매 순간의 감각과 마주하는 과정이기도 하다. · · 《산에 비친 산, 물에 비친 물》이라는 전시명은 대상을 바라보는 작가의 태도를 환기한다. 산은 산으로, 물은 물로 존재하듯, 작가는 대상에 특정한 의미를 덧붙이거나 하나의 해석으로 규정하기보다 존재하는 모습과 그 안에서 느껴지는 감각을 바라보려 한다. 이러한 시선은 작품을 이루는 점과 색면, 흑연의 표면에서도 이어진다. 빛의 각도와 바라보는 위치에 따라 달라지는 표면, 반복과 축적이 남긴 흔적은 작품을 한 가지 모습이나 의미로 고정하지 않는다. 작가는 관객이 작품 앞에서 잠시 멈추어 자신의 기억과 감정을 마주하고, 화면의 여백과 층위에 각자의 이야기를 투영하기를 바란다. 작품은 설명을 통해서만 이해되는 대상이 아니라, 고유한 물성과 형식으로 마주하게 되는 하나의 세계다. · 기와 모형의 표면에 흑연을 문질러 독특한 질감과 광택을 만들어내는 설치 작업은 빛의 방향과 보는 위치에 따라 서로 다른 표면의 모습을 드러낸다. · 이번 전시는 점과 색면, 흑연의 마찰과 그 사이의 틈을 통해 전개해 온 권순익의 회화적 탐구를 비롯해 기와 설치 작업을 통해 공간으로 확장되는 그의 조형적 탐구를 함께 보여준다. · · Kwon Soonik has devoted many years to exploring the process through which a painting takes shape, developing a visual language of his own. His principal methods include the repeated application of dots, the building up of layers of paint mixed with soil, and the rubbing of graphite across the surface. As these repeated gestures accumulate and interact with the materials, variations in form, texture, and light emerge across the surface. The artist regards this process as one in which repetitive bodily movements and concentration unfold over time. Even as the same actions are repeated, subtle differences continually arise, and their accumulation gives form to the structure and sensory qualities of the work. For the artist, making a painting is not simply a matter of completing a predetermined image. It is also a process of concentrating on repetitive actions, letting go of attachment to thoughts and to the self, and engaging with the sensations of each moment. · The exhibition title, <Mountains as Mountains, Waters as Waters> , evokes the artist's way of looking at things. Just as a mountain exists as a mountain and water as water, the artist seeks to observe things as they are and attend to the sensations they evoke, rather than imposing particular meanings or defining them through a single interpretation. This perspective extends to the dots, fields of color, and graphite surfaces that constitute his works. The surfaces change according to the angle of light and the viewer's position, while the traces left by repetition and accumulation resist being fixed in a single appearance or meaning. The artist hopes that viewers will pause before the works, encounter their own memories and emotions, and project their individual stories onto the spaces and layers of the surfaces. A work is not an object to be understood through explanation alone, but a world encountered through its own material presence and form. · · In his installation works, graphite is rubbed onto the surfaces of roof-tile forms, creating distinctive textures and sheen that shift with the direction of light and the viewer’s position. · This exhibition brings together Kwon Soonik’s painterly exploration, developed through dots, fields of color, the rubbing of graphite, and the interstices between them, and his exploration of form as it extends into space through his roof-tile installations. ·"
+  },
+  {
+    "id": "409651",
+    "kind": "exhibition",
+    "start": "20261125",
+    "title": "[원주도시재생현장지원센터] 청년 업사이클 창작·전시 프로젝트 「새활용 친구들」",
+    "place": "원주문화재단",
+    "area": "강원",
+    "price": "무료",
+    "addr": "강원특별자치도 원주시 향교길 77 남산골문화센터 신명관 4층, 원주문화재단",
+    "overview": null
+  },
+  {
+    "id": "409659",
+    "kind": "exhibition",
+    "start": "20261125",
+    "title": "[2026년 여섯 번째 박물관 속 작은 전시] 포폄단자",
+    "place": "대전시립박물관",
+    "area": "대전",
+    "price": "무료",
+    "addr": "대전광역시 유성구 도안대로 398 대전시립박물관",
     "overview": null
   },
   {
@@ -910,6 +1009,17 @@
     "area": "경기",
     "price": "성인 4,000원 / 청소년, 군인 2,000원 / 어린이 1,000원",
     "addr": "경기도 수원시 팔달구 정조로 833 수원시립미술관",
+    "overview": null
+  },
+  {
+    "id": "409658",
+    "kind": "exhibition",
+    "start": "20261126",
+    "title": "Artijecta - Host Chamber [프로토타입 시연회]",
+    "place": "충북문화재단",
+    "area": "충북",
+    "price": "무료",
+    "addr": "충청북도 청주시 청원구 향군로94번길 7 충북문화재단",
     "overview": null
   },
   {
@@ -1089,6 +1199,17 @@
     "overview": null
   },
   {
+    "id": "409650",
+    "kind": "exhibition",
+    "start": "20261202",
+    "title": "내게 주는 선물: Blue to White",
+    "place": "소울아트스페이스",
+    "area": "부산",
+    "price": "무료",
+    "addr": "부산광역시 해운대구 해운대해변로 30 부산 해운대구 해운대해변로 30",
+    "overview": "소울아트스페이스는 2026년 12월 2일(수)부터 2027년 2월 23일(화)까지 기획전 《Blue to White : 내게 주는 선물》展을 개최한다. 이번 전시는 소울아트스페이스가 지속적으로 소개해 온 작가들의 작품가운데 겨울의 계절적 정서와 색채를 담아낸 피스들을 선별하여 선보인다. 참여작가는 김덕기, 압바스 키아로스타미(Abbas Kiarostami), 에바 알머슨(Eva Armisén), 이명호, 임창민, 차규선, 한성필, 피에로 스파다로(Piero Spadaro)등 총 8인이다."
+  },
+  {
     "id": "408369",
     "kind": "traditional",
     "start": "20261204",
@@ -1232,6 +1353,17 @@
     "overview": null
   },
   {
+    "id": "409621",
+    "kind": "traditional",
+    "start": "20261209",
+    "title": "컨템포러리 사물 : 소리의 확장",
+    "place": "서울남산국악당 크라운해태홀",
+    "area": "서울",
+    "price": "전석 2만원",
+    "addr": null,
+    "overview": null
+  },
+  {
     "id": "407946",
     "kind": "traditional",
     "start": "20261210",
@@ -1254,6 +1386,17 @@
     "overview": null
   },
   {
+    "id": "409624",
+    "kind": "exhibition",
+    "start": "20261215",
+    "title": "INFINITE COORDINATE-무한 좌표",
+    "place": "소요 갤러리",
+    "area": "대구",
+    "price": "무료",
+    "addr": "대구광역시 동구 아양로 43 3층 소요갤러리",
+    "overview": null
+  },
+  {
     "id": "409448",
     "kind": "exhibition",
     "start": "20261218",
@@ -1262,6 +1405,17 @@
     "area": "서울",
     "price": "성인 8,000원 / 청소년 6,000원 / 어린이 4,000원 / 만 6세 미만 미취학 아동 및 만 65세 이상 무료",
     "addr": "서울특별시 용산구 서빙고로 137 국립중앙박물관",
+    "overview": null
+  },
+  {
+    "id": "409505",
+    "kind": "traditional",
+    "start": "20261219",
+    "title": "제13회 평택시립국악관현악단 정기연주회: 송년 음악회 The Winter: 하나의 울림",
+    "place": "평택아트센터",
+    "area": "경기",
+    "price": "R석 20,000원, S석 15,000원, A석 10,000원",
+    "addr": null,
     "overview": null
   },
   {
